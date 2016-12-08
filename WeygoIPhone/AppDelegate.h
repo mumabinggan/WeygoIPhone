@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@class WGNavigationController;
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
+{
+    WGNavigationController *_rootVC;
+}
 
 @property (strong, nonatomic) UIWindow *window;
-
 
 @end
 

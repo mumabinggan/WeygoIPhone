@@ -15,11 +15,6 @@
 		BE62E23C1DF92176004510A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE62E23A1DF92176004510A5 /* LaunchScreen.storyboard */; };
 		BE62E2471DF92176004510A5 /* WeygoIPhoneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62E2461DF92176004510A5 /* WeygoIPhoneTests.m */; };
 		BE62E2521DF92176004510A5 /* WeygoIPhoneUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62E2511DF92176004510A5 /* WeygoIPhoneUITests.m */; };
-		BE62E26A1DF92187004510A5 /* WGNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62E2611DF92187004510A5 /* WGNavigationController.m */; };
-		BE62E26B1DF92187004510A5 /* WGObject.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62E2631DF92187004510A5 /* WGObject.m */; };
-		BE62E26C1DF92187004510A5 /* WGRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62E2651DF92187004510A5 /* WGRequest.m */; };
-		BE62E26D1DF92187004510A5 /* WGResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62E2671DF92187004510A5 /* WGResponse.m */; };
-		BE62E26E1DF92187004510A5 /* WGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62E2691DF92187004510A5 /* WGViewController.m */; };
 		BE62E4351DF92B74004510A5 /* JHKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE62E4181DF927BC004510A5 /* JHKit.framework */; };
 		BE62E43B1DF92B8C004510A5 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE62E4361DF92B8C004510A5 /* AFNetworking.framework */; };
 		BE62E43C1DF92B8C004510A5 /* IQKeyboardManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE62E4371DF92B8C004510A5 /* IQKeyboardManager.framework */; };
@@ -34,6 +29,13 @@
 		BE62E4531DF92E0F004510A5 /* JSONModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE62E4381DF92B8C004510A5 /* JSONModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BE62E4541DF92E1A004510A5 /* MBProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE62E4391DF92B8C004510A5 /* MBProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BE62E4551DF92E21004510A5 /* FMDB.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE62E4401DF92BA4004510A5 /* FMDB.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BE62E4601DF935E9004510A5 /* WGMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62E45E1DF935E9004510A5 /* WGMainViewController.m */; };
+		BE62E4631DF937F8004510A5 /* AppDelegate+UI.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62E4621DF937F8004510A5 /* AppDelegate+UI.m */; };
+		BE62E47F1DF93A6C004510A5 /* WGNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62E4761DF93A6C004510A5 /* WGNavigationController.m */; };
+		BE62E4801DF93A6C004510A5 /* WGObject.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62E4781DF93A6C004510A5 /* WGObject.m */; };
+		BE62E4811DF93A6C004510A5 /* WGRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62E47A1DF93A6C004510A5 /* WGRequest.m */; };
+		BE62E4821DF93A6C004510A5 /* WGResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62E47C1DF93A6C004510A5 /* WGResponse.m */; };
+		BE62E4831DF93A6C004510A5 /* WGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62E47E1DF93A6C004510A5 /* WGViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,16 +113,6 @@
 		BE62E24D1DF92176004510A5 /* WeygoIPhoneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeygoIPhoneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE62E2511DF92176004510A5 /* WeygoIPhoneUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeygoIPhoneUITests.m; sourceTree = "<group>"; };
 		BE62E2531DF92176004510A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BE62E2601DF92187004510A5 /* WGNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGNavigationController.h; sourceTree = "<group>"; };
-		BE62E2611DF92187004510A5 /* WGNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGNavigationController.m; sourceTree = "<group>"; };
-		BE62E2621DF92187004510A5 /* WGObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGObject.h; sourceTree = "<group>"; };
-		BE62E2631DF92187004510A5 /* WGObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGObject.m; sourceTree = "<group>"; };
-		BE62E2641DF92187004510A5 /* WGRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGRequest.h; sourceTree = "<group>"; };
-		BE62E2651DF92187004510A5 /* WGRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGRequest.m; sourceTree = "<group>"; };
-		BE62E2661DF92187004510A5 /* WGResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGResponse.h; sourceTree = "<group>"; };
-		BE62E2671DF92187004510A5 /* WGResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGResponse.m; sourceTree = "<group>"; };
-		BE62E2681DF92187004510A5 /* WGViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGViewController.h; sourceTree = "<group>"; };
-		BE62E2691DF92187004510A5 /* WGViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGViewController.m; sourceTree = "<group>"; };
 		BE62E3361DF92584004510A5 /* WeygoIPhone-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WeygoIPhone-Prefix.pch"; sourceTree = "<group>"; };
 		BE62E40C1DF927BC004510A5 /* JHKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JHKit.xcodeproj; path = JHKit/JHKit.xcodeproj; sourceTree = "<group>"; };
 		BE62E41D1DF92930004510A5 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = "Submodules/JHKit/Submodules/AFNetworking/build/Debug-iphoneos/AFNetworking.framework"; sourceTree = "<group>"; };
@@ -135,6 +127,20 @@
 		BE62E4391DF92B8C004510A5 /* MBProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBProgressHUD.framework; path = "../../../../../Users/muma/Library/Developer/Xcode/DerivedData/WeygoIPhone-bazkakbqajkamkdrjiddbbrfjhzt/Build/Products/Debug-iphoneos/MBProgressHUD.framework"; sourceTree = "<group>"; };
 		BE62E43A1DF92B8C004510A5 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = "../../../../../Users/muma/Library/Developer/Xcode/DerivedData/WeygoIPhone-bazkakbqajkamkdrjiddbbrfjhzt/Build/Products/Debug-iphoneos/SDWebImage.framework"; sourceTree = "<group>"; };
 		BE62E4401DF92BA4004510A5 /* FMDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FMDB.framework; path = "../../../../../Users/muma/Library/Developer/Xcode/DerivedData/WeygoIPhone-bazkakbqajkamkdrjiddbbrfjhzt/Build/Products/Debug-iphoneos/FMDB.framework"; sourceTree = "<group>"; };
+		BE62E45E1DF935E9004510A5 /* WGMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGMainViewController.m; sourceTree = "<group>"; };
+		BE62E45F1DF935E9004510A5 /* WGMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGMainViewController.h; sourceTree = "<group>"; };
+		BE62E4611DF937F8004510A5 /* AppDelegate+UI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+UI.h"; sourceTree = "<group>"; };
+		BE62E4621DF937F8004510A5 /* AppDelegate+UI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+UI.m"; sourceTree = "<group>"; };
+		BE62E4751DF93A6C004510A5 /* WGNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGNavigationController.h; sourceTree = "<group>"; };
+		BE62E4761DF93A6C004510A5 /* WGNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGNavigationController.m; sourceTree = "<group>"; };
+		BE62E4771DF93A6C004510A5 /* WGObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGObject.h; sourceTree = "<group>"; };
+		BE62E4781DF93A6C004510A5 /* WGObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGObject.m; sourceTree = "<group>"; };
+		BE62E4791DF93A6C004510A5 /* WGRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGRequest.h; sourceTree = "<group>"; };
+		BE62E47A1DF93A6C004510A5 /* WGRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGRequest.m; sourceTree = "<group>"; };
+		BE62E47B1DF93A6C004510A5 /* WGResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGResponse.h; sourceTree = "<group>"; };
+		BE62E47C1DF93A6C004510A5 /* WGResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGResponse.m; sourceTree = "<group>"; };
+		BE62E47D1DF93A6C004510A5 /* WGViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGViewController.h; sourceTree = "<group>"; };
+		BE62E47E1DF93A6C004510A5 /* WGViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,11 +200,15 @@
 		BE62E22B1DF92176004510A5 /* WeygoIPhone */ = {
 			isa = PBXGroup;
 			children = (
-				BE62E25F1DF92187004510A5 /* Base */,
+				BE62E4741DF93A6C004510A5 /* Common */,
 				BE62E22F1DF92176004510A5 /* AppDelegate.h */,
 				BE62E2301DF92176004510A5 /* AppDelegate.m */,
+				BE62E4611DF937F8004510A5 /* AppDelegate+UI.h */,
+				BE62E4621DF937F8004510A5 /* AppDelegate+UI.m */,
 				BE62E2321DF92176004510A5 /* ViewController.h */,
 				BE62E2331DF92176004510A5 /* ViewController.m */,
+				BE62E45F1DF935E9004510A5 /* WGMainViewController.h */,
+				BE62E45E1DF935E9004510A5 /* WGMainViewController.m */,
 				BE62E2351DF92176004510A5 /* Main.storyboard */,
 				BE62E2381DF92176004510A5 /* Assets.xcassets */,
 				BE62E23A1DF92176004510A5 /* LaunchScreen.storyboard */,
@@ -235,23 +245,6 @@
 			path = WeygoIPhoneUITests;
 			sourceTree = "<group>";
 		};
-		BE62E25F1DF92187004510A5 /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				BE62E2601DF92187004510A5 /* WGNavigationController.h */,
-				BE62E2611DF92187004510A5 /* WGNavigationController.m */,
-				BE62E2621DF92187004510A5 /* WGObject.h */,
-				BE62E2631DF92187004510A5 /* WGObject.m */,
-				BE62E2641DF92187004510A5 /* WGRequest.h */,
-				BE62E2651DF92187004510A5 /* WGRequest.m */,
-				BE62E2661DF92187004510A5 /* WGResponse.h */,
-				BE62E2671DF92187004510A5 /* WGResponse.m */,
-				BE62E2681DF92187004510A5 /* WGViewController.h */,
-				BE62E2691DF92187004510A5 /* WGViewController.m */,
-			);
-			path = Base;
-			sourceTree = "<group>";
-		};
 		BE62E3461DF927AE004510A5 /* Submodules */ = {
 			isa = PBXGroup;
 			children = (
@@ -286,6 +279,23 @@
 				BE62E4221DF92930004510A5 /* SDWebImage.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BE62E4741DF93A6C004510A5 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				BE62E4751DF93A6C004510A5 /* WGNavigationController.h */,
+				BE62E4761DF93A6C004510A5 /* WGNavigationController.m */,
+				BE62E4771DF93A6C004510A5 /* WGObject.h */,
+				BE62E4781DF93A6C004510A5 /* WGObject.m */,
+				BE62E4791DF93A6C004510A5 /* WGRequest.h */,
+				BE62E47A1DF93A6C004510A5 /* WGRequest.m */,
+				BE62E47B1DF93A6C004510A5 /* WGResponse.h */,
+				BE62E47C1DF93A6C004510A5 /* WGResponse.m */,
+				BE62E47D1DF93A6C004510A5 /* WGViewController.h */,
+				BE62E47E1DF93A6C004510A5 /* WGViewController.m */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -449,14 +459,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE62E4831DF93A6C004510A5 /* WGViewController.m in Sources */,
 				BE62E2341DF92176004510A5 /* ViewController.m in Sources */,
-				BE62E26A1DF92187004510A5 /* WGNavigationController.m in Sources */,
-				BE62E26E1DF92187004510A5 /* WGViewController.m in Sources */,
-				BE62E26D1DF92187004510A5 /* WGResponse.m in Sources */,
+				BE62E47F1DF93A6C004510A5 /* WGNavigationController.m in Sources */,
+				BE62E4601DF935E9004510A5 /* WGMainViewController.m in Sources */,
 				BE62E2311DF92176004510A5 /* AppDelegate.m in Sources */,
+				BE62E4821DF93A6C004510A5 /* WGResponse.m in Sources */,
 				BE62E22E1DF92176004510A5 /* main.m in Sources */,
-				BE62E26B1DF92187004510A5 /* WGObject.m in Sources */,
-				BE62E26C1DF92187004510A5 /* WGRequest.m in Sources */,
+				BE62E4811DF93A6C004510A5 /* WGRequest.m in Sources */,
+				BE62E4631DF937F8004510A5 /* AppDelegate+UI.m in Sources */,
+				BE62E4801DF93A6C004510A5 /* WGObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
