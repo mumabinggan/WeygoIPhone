@@ -1,0 +1,575 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BE62E22E1DF92176004510A5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62E22D1DF92176004510A5 /* main.m */; };
+		BE62E2311DF92176004510A5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62E2301DF92176004510A5 /* AppDelegate.m */; };
+		BE62E2341DF92176004510A5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62E2331DF92176004510A5 /* ViewController.m */; };
+		BE62E2371DF92176004510A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE62E2351DF92176004510A5 /* Main.storyboard */; };
+		BE62E2391DF92176004510A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE62E2381DF92176004510A5 /* Assets.xcassets */; };
+		BE62E23C1DF92176004510A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE62E23A1DF92176004510A5 /* LaunchScreen.storyboard */; };
+		BE62E2471DF92176004510A5 /* WeygoIPhoneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62E2461DF92176004510A5 /* WeygoIPhoneTests.m */; };
+		BE62E2521DF92176004510A5 /* WeygoIPhoneUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62E2511DF92176004510A5 /* WeygoIPhoneUITests.m */; };
+		BE62E26A1DF92187004510A5 /* WGNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62E2611DF92187004510A5 /* WGNavigationController.m */; };
+		BE62E26B1DF92187004510A5 /* WGObject.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62E2631DF92187004510A5 /* WGObject.m */; };
+		BE62E26C1DF92187004510A5 /* WGRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62E2651DF92187004510A5 /* WGRequest.m */; };
+		BE62E26D1DF92187004510A5 /* WGResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62E2671DF92187004510A5 /* WGResponse.m */; };
+		BE62E26E1DF92187004510A5 /* WGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62E2691DF92187004510A5 /* WGViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BE62E2431DF92176004510A5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE62E2211DF92176004510A5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BE62E2281DF92176004510A5;
+			remoteInfo = WeygoIPhone;
+		};
+		BE62E24E1DF92176004510A5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE62E2211DF92176004510A5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BE62E2281DF92176004510A5;
+			remoteInfo = WeygoIPhone;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BE62E2291DF92176004510A5 /* WeygoIPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeygoIPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE62E22D1DF92176004510A5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BE62E22F1DF92176004510A5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BE62E2301DF92176004510A5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BE62E2321DF92176004510A5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		BE62E2331DF92176004510A5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		BE62E2361DF92176004510A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BE62E2381DF92176004510A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BE62E23B1DF92176004510A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BE62E23D1DF92176004510A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE62E2421DF92176004510A5 /* WeygoIPhoneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeygoIPhoneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE62E2461DF92176004510A5 /* WeygoIPhoneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeygoIPhoneTests.m; sourceTree = "<group>"; };
+		BE62E2481DF92176004510A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE62E24D1DF92176004510A5 /* WeygoIPhoneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeygoIPhoneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE62E2511DF92176004510A5 /* WeygoIPhoneUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeygoIPhoneUITests.m; sourceTree = "<group>"; };
+		BE62E2531DF92176004510A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE62E2601DF92187004510A5 /* WGNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGNavigationController.h; sourceTree = "<group>"; };
+		BE62E2611DF92187004510A5 /* WGNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGNavigationController.m; sourceTree = "<group>"; };
+		BE62E2621DF92187004510A5 /* WGObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGObject.h; sourceTree = "<group>"; };
+		BE62E2631DF92187004510A5 /* WGObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGObject.m; sourceTree = "<group>"; };
+		BE62E2641DF92187004510A5 /* WGRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGRequest.h; sourceTree = "<group>"; };
+		BE62E2651DF92187004510A5 /* WGRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGRequest.m; sourceTree = "<group>"; };
+		BE62E2661DF92187004510A5 /* WGResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGResponse.h; sourceTree = "<group>"; };
+		BE62E2671DF92187004510A5 /* WGResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGResponse.m; sourceTree = "<group>"; };
+		BE62E2681DF92187004510A5 /* WGViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGViewController.h; sourceTree = "<group>"; };
+		BE62E2691DF92187004510A5 /* WGViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BE62E2261DF92176004510A5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE62E23F1DF92176004510A5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE62E24A1DF92176004510A5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BE62E2201DF92176004510A5 = {
+			isa = PBXGroup;
+			children = (
+				BE62E22B1DF92176004510A5 /* WeygoIPhone */,
+				BE62E2451DF92176004510A5 /* WeygoIPhoneTests */,
+				BE62E2501DF92176004510A5 /* WeygoIPhoneUITests */,
+				BE62E22A1DF92176004510A5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BE62E22A1DF92176004510A5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BE62E2291DF92176004510A5 /* WeygoIPhone.app */,
+				BE62E2421DF92176004510A5 /* WeygoIPhoneTests.xctest */,
+				BE62E24D1DF92176004510A5 /* WeygoIPhoneUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BE62E22B1DF92176004510A5 /* WeygoIPhone */ = {
+			isa = PBXGroup;
+			children = (
+				BE62E25F1DF92187004510A5 /* Base */,
+				BE62E22F1DF92176004510A5 /* AppDelegate.h */,
+				BE62E2301DF92176004510A5 /* AppDelegate.m */,
+				BE62E2321DF92176004510A5 /* ViewController.h */,
+				BE62E2331DF92176004510A5 /* ViewController.m */,
+				BE62E2351DF92176004510A5 /* Main.storyboard */,
+				BE62E2381DF92176004510A5 /* Assets.xcassets */,
+				BE62E23A1DF92176004510A5 /* LaunchScreen.storyboard */,
+				BE62E23D1DF92176004510A5 /* Info.plist */,
+				BE62E22C1DF92176004510A5 /* Supporting Files */,
+			);
+			path = WeygoIPhone;
+			sourceTree = "<group>";
+		};
+		BE62E22C1DF92176004510A5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BE62E22D1DF92176004510A5 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BE62E2451DF92176004510A5 /* WeygoIPhoneTests */ = {
+			isa = PBXGroup;
+			children = (
+				BE62E2461DF92176004510A5 /* WeygoIPhoneTests.m */,
+				BE62E2481DF92176004510A5 /* Info.plist */,
+			);
+			path = WeygoIPhoneTests;
+			sourceTree = "<group>";
+		};
+		BE62E2501DF92176004510A5 /* WeygoIPhoneUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BE62E2511DF92176004510A5 /* WeygoIPhoneUITests.m */,
+				BE62E2531DF92176004510A5 /* Info.plist */,
+			);
+			path = WeygoIPhoneUITests;
+			sourceTree = "<group>";
+		};
+		BE62E25F1DF92187004510A5 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				BE62E2601DF92187004510A5 /* WGNavigationController.h */,
+				BE62E2611DF92187004510A5 /* WGNavigationController.m */,
+				BE62E2621DF92187004510A5 /* WGObject.h */,
+				BE62E2631DF92187004510A5 /* WGObject.m */,
+				BE62E2641DF92187004510A5 /* WGRequest.h */,
+				BE62E2651DF92187004510A5 /* WGRequest.m */,
+				BE62E2661DF92187004510A5 /* WGResponse.h */,
+				BE62E2671DF92187004510A5 /* WGResponse.m */,
+				BE62E2681DF92187004510A5 /* WGViewController.h */,
+				BE62E2691DF92187004510A5 /* WGViewController.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BE62E2281DF92176004510A5 /* WeygoIPhone */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE62E2561DF92176004510A5 /* Build configuration list for PBXNativeTarget "WeygoIPhone" */;
+			buildPhases = (
+				BE62E2251DF92176004510A5 /* Sources */,
+				BE62E2261DF92176004510A5 /* Frameworks */,
+				BE62E2271DF92176004510A5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WeygoIPhone;
+			productName = WeygoIPhone;
+			productReference = BE62E2291DF92176004510A5 /* WeygoIPhone.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BE62E2411DF92176004510A5 /* WeygoIPhoneTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE62E2591DF92176004510A5 /* Build configuration list for PBXNativeTarget "WeygoIPhoneTests" */;
+			buildPhases = (
+				BE62E23E1DF92176004510A5 /* Sources */,
+				BE62E23F1DF92176004510A5 /* Frameworks */,
+				BE62E2401DF92176004510A5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BE62E2441DF92176004510A5 /* PBXTargetDependency */,
+			);
+			name = WeygoIPhoneTests;
+			productName = WeygoIPhoneTests;
+			productReference = BE62E2421DF92176004510A5 /* WeygoIPhoneTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BE62E24C1DF92176004510A5 /* WeygoIPhoneUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE62E25C1DF92176004510A5 /* Build configuration list for PBXNativeTarget "WeygoIPhoneUITests" */;
+			buildPhases = (
+				BE62E2491DF92176004510A5 /* Sources */,
+				BE62E24A1DF92176004510A5 /* Frameworks */,
+				BE62E24B1DF92176004510A5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BE62E24F1DF92176004510A5 /* PBXTargetDependency */,
+			);
+			name = WeygoIPhoneUITests;
+			productName = WeygoIPhoneUITests;
+			productReference = BE62E24D1DF92176004510A5 /* WeygoIPhoneUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BE62E2211DF92176004510A5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = weygo.com;
+				TargetAttributes = {
+					BE62E2281DF92176004510A5 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = J2R863TVVR;
+						ProvisioningStyle = Automatic;
+					};
+					BE62E2411DF92176004510A5 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = J2R863TVVR;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BE62E2281DF92176004510A5;
+					};
+					BE62E24C1DF92176004510A5 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = J2R863TVVR;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BE62E2281DF92176004510A5;
+					};
+				};
+			};
+			buildConfigurationList = BE62E2241DF92176004510A5 /* Build configuration list for PBXProject "WeygoIPhone" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BE62E2201DF92176004510A5;
+			productRefGroup = BE62E22A1DF92176004510A5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BE62E2281DF92176004510A5 /* WeygoIPhone */,
+				BE62E2411DF92176004510A5 /* WeygoIPhoneTests */,
+				BE62E24C1DF92176004510A5 /* WeygoIPhoneUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BE62E2271DF92176004510A5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE62E23C1DF92176004510A5 /* LaunchScreen.storyboard in Resources */,
+				BE62E2391DF92176004510A5 /* Assets.xcassets in Resources */,
+				BE62E2371DF92176004510A5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE62E2401DF92176004510A5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE62E24B1DF92176004510A5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BE62E2251DF92176004510A5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE62E2341DF92176004510A5 /* ViewController.m in Sources */,
+				BE62E26A1DF92187004510A5 /* WGNavigationController.m in Sources */,
+				BE62E26E1DF92187004510A5 /* WGViewController.m in Sources */,
+				BE62E26D1DF92187004510A5 /* WGResponse.m in Sources */,
+				BE62E2311DF92176004510A5 /* AppDelegate.m in Sources */,
+				BE62E22E1DF92176004510A5 /* main.m in Sources */,
+				BE62E26B1DF92187004510A5 /* WGObject.m in Sources */,
+				BE62E26C1DF92187004510A5 /* WGRequest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE62E23E1DF92176004510A5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE62E2471DF92176004510A5 /* WeygoIPhoneTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE62E2491DF92176004510A5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE62E2521DF92176004510A5 /* WeygoIPhoneUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BE62E2441DF92176004510A5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BE62E2281DF92176004510A5 /* WeygoIPhone */;
+			targetProxy = BE62E2431DF92176004510A5 /* PBXContainerItemProxy */;
+		};
+		BE62E24F1DF92176004510A5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BE62E2281DF92176004510A5 /* WeygoIPhone */;
+			targetProxy = BE62E24E1DF92176004510A5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BE62E2351DF92176004510A5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BE62E2361DF92176004510A5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BE62E23A1DF92176004510A5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BE62E23B1DF92176004510A5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BE62E2541DF92176004510A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		BE62E2551DF92176004510A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BE62E2571DF92176004510A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = J2R863TVVR;
+				INFOPLIST_FILE = WeygoIPhone/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.starfacealliance.WeygoIPhone;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BE62E2581DF92176004510A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = J2R863TVVR;
+				INFOPLIST_FILE = WeygoIPhone/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.starfacealliance.WeygoIPhone;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		BE62E25A1DF92176004510A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = J2R863TVVR;
+				INFOPLIST_FILE = WeygoIPhoneTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.starfacealliance.WeygoIPhoneTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeygoIPhone.app/WeygoIPhone";
+			};
+			name = Debug;
+		};
+		BE62E25B1DF92176004510A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = J2R863TVVR;
+				INFOPLIST_FILE = WeygoIPhoneTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.starfacealliance.WeygoIPhoneTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeygoIPhone.app/WeygoIPhone";
+			};
+			name = Release;
+		};
+		BE62E25D1DF92176004510A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = J2R863TVVR;
+				INFOPLIST_FILE = WeygoIPhoneUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.starfacealliance.WeygoIPhoneUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = WeygoIPhone;
+			};
+			name = Debug;
+		};
+		BE62E25E1DF92176004510A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = J2R863TVVR;
+				INFOPLIST_FILE = WeygoIPhoneUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.starfacealliance.WeygoIPhoneUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = WeygoIPhone;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BE62E2241DF92176004510A5 /* Build configuration list for PBXProject "WeygoIPhone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE62E2541DF92176004510A5 /* Debug */,
+				BE62E2551DF92176004510A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BE62E2561DF92176004510A5 /* Build configuration list for PBXNativeTarget "WeygoIPhone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE62E2571DF92176004510A5 /* Debug */,
+				BE62E2581DF92176004510A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BE62E2591DF92176004510A5 /* Build configuration list for PBXNativeTarget "WeygoIPhoneTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE62E25A1DF92176004510A5 /* Debug */,
+				BE62E25B1DF92176004510A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BE62E25C1DF92176004510A5 /* Build configuration list for PBXNativeTarget "WeygoIPhoneUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE62E25D1DF92176004510A5 /* Debug */,
+				BE62E25E1DF92176004510A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BE62E2211DF92176004510A5 /* Project object */;
+}
