@@ -1,0 +1,3 @@
+[submodule "Submodules/JHKit"]
+	path = Submodules/JHKit
+	url = https://github.com/mumabinggan/JHKit.git
