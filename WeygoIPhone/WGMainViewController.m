@@ -7,6 +7,11 @@
 //
 
 #import "WGMainViewController.h"
+#import "WGHomeTabViewController.h"
+#import "WGClassifyTabViewController.h"
+#import "WGBenefitTabViewController.h"
+#import "WGForeignTabViewController.h"
+#import "WGMineTabViewController.h"
 
 @interface WGMainViewController ()
 
@@ -17,6 +22,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.viewControllers = [NSArray arrayWithObjects:
+                            [[WGHomeTabViewController alloc] init],
+                            [[WGClassifyTabViewController alloc] init],
+                            [[WGBenefitTabViewController alloc] init],
+                            [[WGForeignTabViewController alloc] init],
+                            [[WGMineTabViewController alloc] init],
+                            nil];
+    self.tabBar.tintColor = WGAppBaseColor;
+    self.tabBar.barStyle = UIBarStyleDefault;
+    self.tabBar.backgroundColor = kWhiteColor;
+//    if (IOS8) {
+//        self.tabBar.translucent = YES;
+//    }
+//    else {
+//        self.tabBar.translucent = NO;
+//    }
+    self.selectedIndex = WGTabIndexHome;
     
 }
 
