@@ -19,19 +19,36 @@
     // Do any additional setup after loading the view.
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    self.navigationItem.title = self.title;
+    
+    // Clear all navigation item properties
+    self.navigationItem.titleView = nil;
+    self.navigationItem.leftBarButtonItem = nil;
+    self.navigationItem.leftBarButtonItems = nil;
+    self.navigationItem.rightBarButtonItem = nil;
+    self.navigationItem.rightBarButtonItems = nil;
+    
+    // init navigation items
+    [self initNavigationItems];
+}
+
+- (void)initNavigationItems {
+    // Realization by sub classes
+}
+
+- (UINavigationController *)navigationController {
+    return self.tabBarController.navigationController;
+}
+
+- (UINavigationItem *)navigationItem {
+    return self.tabBarController.navigationItem;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

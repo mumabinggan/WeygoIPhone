@@ -14,6 +14,18 @@
 
 @implementation WGMineTabViewController
 
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+        self.tabBarIndex = WGTabIndexMine;
+        self.tabBarItem.title = kStr(@"TabMine");
+        self.tabBarItem.image = [UIImage imageNamed:@"tab-mine"];
+        self.tabBarItem.selectedImage = [UIImage imageNamed:@"tab-mine-highlight"];
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.

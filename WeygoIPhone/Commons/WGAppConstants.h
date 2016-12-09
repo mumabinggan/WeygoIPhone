@@ -11,4 +11,7 @@
 
 #define WGAppBaseColor kHRGB(0x4081d6)
 
+
+//Notification
+
 #endif /* WGAppConstants_h */
