@@ -8,6 +8,11 @@
 
 #import "WGTabViewController.h"
 
-@interface WGHomeTabViewController : WGTabViewController
+@class WGSegmentView;
 
+@interface WGHomeTabViewController : WGTabViewController
+{
+    WGSegmentView *_titleSegmentView;
+    JHScrollView *_contentsScrollView;
+}
 @end

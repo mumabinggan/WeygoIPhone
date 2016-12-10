@@ -7,10 +7,13 @@
 //
 
 #import "WGHomeTabViewController.h"
+#import "WGHomeTabViewController+Segment.h"
+#import "WGHomeTabViewController+ScrollContents.h"
 
 @interface WGHomeTabViewController ()
 {
     JHCollectionView *_collectionView;
+    
 }
 @end
 
@@ -39,7 +42,11 @@
 }
 
 - (void)initSubView {
+    JHView *contentView = [[JHView alloc] initWithFrame:self.view.bounds];
+    //[self.view addSubview:contentView];
+    [self addTitleSegmentView];
     
+    [self addContentsScrollView];
 }
 
 - (void)didReceiveMemoryWarning {
