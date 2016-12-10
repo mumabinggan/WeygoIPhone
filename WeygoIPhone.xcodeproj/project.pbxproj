@@ -37,13 +37,13 @@
 		BE62E4AD1DF93E8D004510A5 /* WGResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62E4A51DF93E8D004510A5 /* WGResponse.m */; };
 		BE62E4AE1DF93E8D004510A5 /* WGTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62E4A71DF93E8D004510A5 /* WGTabViewController.m */; };
 		BE62E4AF1DF93E8D004510A5 /* WGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62E4A91DF93E8D004510A5 /* WGViewController.m */; };
-		BE62E4B41DF93F60004510A5 /* WGHomeTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62E4B31DF93F60004510A5 /* WGHomeTabViewController.m */; };
-		BE62E4B71DF93F71004510A5 /* WGClassifyTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62E4B61DF93F71004510A5 /* WGClassifyTabViewController.m */; };
-		BE62E4BA1DF93F8A004510A5 /* WGBenefitTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62E4B91DF93F8A004510A5 /* WGBenefitTabViewController.m */; };
-		BE62E4BD1DF93FB7004510A5 /* WGForeignTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62E4BC1DF93FB7004510A5 /* WGForeignTabViewController.m */; };
-		BE62E4C01DF93FCB004510A5 /* WGMineTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62E4BF1DF93FCB004510A5 /* WGMineTabViewController.m */; };
 		BE62E4C31DF93FF8004510A5 /* WGApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62E4C21DF93FF8004510A5 /* WGApplication.m */; };
 		BE62E4D21DF94EB4004510A5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE62E4D41DF94EB4004510A5 /* Localizable.strings */; };
+		BEB2D91E1DFBDFE900F2E74B /* WGBenefitTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB2D9111DFBDFE900F2E74B /* WGBenefitTabViewController.m */; };
+		BEB2D91F1DFBDFE900F2E74B /* WGClassifyTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB2D9141DFBDFE900F2E74B /* WGClassifyTabViewController.m */; };
+		BEB2D9201DFBDFE900F2E74B /* WGForeignTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB2D9171DFBDFE900F2E74B /* WGForeignTabViewController.m */; };
+		BEB2D9211DFBDFE900F2E74B /* WGHomeTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB2D91A1DFBDFE900F2E74B /* WGHomeTabViewController.m */; };
+		BEB2D9221DFBDFE900F2E74B /* WGMineTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB2D91D1DFBDFE900F2E74B /* WGMineTabViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,22 +153,22 @@
 		BE62E4A81DF93E8D004510A5 /* WGViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGViewController.h; sourceTree = "<group>"; };
 		BE62E4A91DF93E8D004510A5 /* WGViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGViewController.m; sourceTree = "<group>"; };
 		BE62E4B01DF93EA2004510A5 /* WGAppEnum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WGAppEnum.h; sourceTree = "<group>"; };
-		BE62E4B21DF93F60004510A5 /* WGHomeTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGHomeTabViewController.h; sourceTree = "<group>"; };
-		BE62E4B31DF93F60004510A5 /* WGHomeTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGHomeTabViewController.m; sourceTree = "<group>"; };
-		BE62E4B51DF93F71004510A5 /* WGClassifyTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGClassifyTabViewController.h; sourceTree = "<group>"; };
-		BE62E4B61DF93F71004510A5 /* WGClassifyTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGClassifyTabViewController.m; sourceTree = "<group>"; };
-		BE62E4B81DF93F8A004510A5 /* WGBenefitTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGBenefitTabViewController.h; sourceTree = "<group>"; };
-		BE62E4B91DF93F8A004510A5 /* WGBenefitTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGBenefitTabViewController.m; sourceTree = "<group>"; };
-		BE62E4BB1DF93FB7004510A5 /* WGForeignTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGForeignTabViewController.h; sourceTree = "<group>"; };
-		BE62E4BC1DF93FB7004510A5 /* WGForeignTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGForeignTabViewController.m; sourceTree = "<group>"; };
-		BE62E4BE1DF93FCB004510A5 /* WGMineTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGMineTabViewController.h; sourceTree = "<group>"; };
-		BE62E4BF1DF93FCB004510A5 /* WGMineTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGMineTabViewController.m; sourceTree = "<group>"; };
 		BE62E4C11DF93FF8004510A5 /* WGApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGApplication.h; sourceTree = "<group>"; };
 		BE62E4C21DF93FF8004510A5 /* WGApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGApplication.m; sourceTree = "<group>"; };
 		BE62E4CD1DF94D1C004510A5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		BE62E4CE1DF94D1C004510A5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		BE62E4D31DF94EB4004510A5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BE62E4DA1DF94F02004510A5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		BEB2D9101DFBDFE900F2E74B /* WGBenefitTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGBenefitTabViewController.h; sourceTree = "<group>"; };
+		BEB2D9111DFBDFE900F2E74B /* WGBenefitTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGBenefitTabViewController.m; sourceTree = "<group>"; };
+		BEB2D9131DFBDFE900F2E74B /* WGClassifyTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGClassifyTabViewController.h; sourceTree = "<group>"; };
+		BEB2D9141DFBDFE900F2E74B /* WGClassifyTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGClassifyTabViewController.m; sourceTree = "<group>"; };
+		BEB2D9161DFBDFE900F2E74B /* WGForeignTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGForeignTabViewController.h; sourceTree = "<group>"; };
+		BEB2D9171DFBDFE900F2E74B /* WGForeignTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGForeignTabViewController.m; sourceTree = "<group>"; };
+		BEB2D9191DFBDFE900F2E74B /* WGHomeTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGHomeTabViewController.h; sourceTree = "<group>"; };
+		BEB2D91A1DFBDFE900F2E74B /* WGHomeTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGHomeTabViewController.m; sourceTree = "<group>"; };
+		BEB2D91C1DFBDFE900F2E74B /* WGMineTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGMineTabViewController.h; sourceTree = "<group>"; };
+		BEB2D91D1DFBDFE900F2E74B /* WGMineTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGMineTabViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,7 +229,16 @@
 			isa = PBXGroup;
 			children = (
 				BE62E49C1DF93E8D004510A5 /* Commons */,
-				BE62E4B11DF93F16004510A5 /* Tabs */,
+				BEB2D90E1DFBDFE900F2E74B /* Tabs */,
+				BEB2D9041DFBDBFB00F2E74B /* Search */,
+				BEB2D9051DFBDBFB00F2E74B /* Pay */,
+				BEB2D9061DFBDBFB00F2E74B /* Order */,
+				BEB2D9071DFBDBFB00F2E74B /* Mine */,
+				BEB2D9081DFBDBFB00F2E74B /* Login */,
+				BEB2D9091DFBDBFB00F2E74B /* List */,
+				BEB2D90A1DFBDBFB00F2E74B /* Foreign */,
+				BEB2D90B1DFBDBFB00F2E74B /* Detail */,
+				BEB2D90C1DFBDBFB00F2E74B /* Cart */,
 				BE62E22F1DF92176004510A5 /* AppDelegate.h */,
 				BE62E2301DF92176004510A5 /* AppDelegate.m */,
 				BE62E4611DF937F8004510A5 /* AppDelegate+UI.h */,
@@ -334,21 +343,124 @@
 			path = Commons;
 			sourceTree = "<group>";
 		};
-		BE62E4B11DF93F16004510A5 /* Tabs */ = {
+		BEB2D9041DFBDBFB00F2E74B /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				BE62E4B21DF93F60004510A5 /* WGHomeTabViewController.h */,
-				BE62E4B31DF93F60004510A5 /* WGHomeTabViewController.m */,
-				BE62E4B51DF93F71004510A5 /* WGClassifyTabViewController.h */,
-				BE62E4B61DF93F71004510A5 /* WGClassifyTabViewController.m */,
-				BE62E4B81DF93F8A004510A5 /* WGBenefitTabViewController.h */,
-				BE62E4B91DF93F8A004510A5 /* WGBenefitTabViewController.m */,
-				BE62E4BB1DF93FB7004510A5 /* WGForeignTabViewController.h */,
-				BE62E4BC1DF93FB7004510A5 /* WGForeignTabViewController.m */,
-				BE62E4BE1DF93FCB004510A5 /* WGMineTabViewController.h */,
-				BE62E4BF1DF93FCB004510A5 /* WGMineTabViewController.m */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		BEB2D9051DFBDBFB00F2E74B /* Pay */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pay;
+			sourceTree = "<group>";
+		};
+		BEB2D9061DFBDBFB00F2E74B /* Order */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Order;
+			sourceTree = "<group>";
+		};
+		BEB2D9071DFBDBFB00F2E74B /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		BEB2D9081DFBDBFB00F2E74B /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		BEB2D9091DFBDBFB00F2E74B /* List */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		BEB2D90A1DFBDBFB00F2E74B /* Foreign */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Foreign;
+			sourceTree = "<group>";
+		};
+		BEB2D90B1DFBDBFB00F2E74B /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		BEB2D90C1DFBDBFB00F2E74B /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cart;
+			sourceTree = "<group>";
+		};
+		BEB2D90E1DFBDFE900F2E74B /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				BEB2D90F1DFBDFE900F2E74B /* Benefit */,
+				BEB2D9121DFBDFE900F2E74B /* Classify */,
+				BEB2D9151DFBDFE900F2E74B /* Foreign */,
+				BEB2D9181DFBDFE900F2E74B /* Home */,
+				BEB2D91B1DFBDFE900F2E74B /* Mine */,
 			);
 			path = Tabs;
+			sourceTree = "<group>";
+		};
+		BEB2D90F1DFBDFE900F2E74B /* Benefit */ = {
+			isa = PBXGroup;
+			children = (
+				BEB2D9101DFBDFE900F2E74B /* WGBenefitTabViewController.h */,
+				BEB2D9111DFBDFE900F2E74B /* WGBenefitTabViewController.m */,
+			);
+			path = Benefit;
+			sourceTree = "<group>";
+		};
+		BEB2D9121DFBDFE900F2E74B /* Classify */ = {
+			isa = PBXGroup;
+			children = (
+				BEB2D9131DFBDFE900F2E74B /* WGClassifyTabViewController.h */,
+				BEB2D9141DFBDFE900F2E74B /* WGClassifyTabViewController.m */,
+			);
+			path = Classify;
+			sourceTree = "<group>";
+		};
+		BEB2D9151DFBDFE900F2E74B /* Foreign */ = {
+			isa = PBXGroup;
+			children = (
+				BEB2D9161DFBDFE900F2E74B /* WGForeignTabViewController.h */,
+				BEB2D9171DFBDFE900F2E74B /* WGForeignTabViewController.m */,
+			);
+			path = Foreign;
+			sourceTree = "<group>";
+		};
+		BEB2D9181DFBDFE900F2E74B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				BEB2D9191DFBDFE900F2E74B /* WGHomeTabViewController.h */,
+				BEB2D91A1DFBDFE900F2E74B /* WGHomeTabViewController.m */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		BEB2D91B1DFBDFE900F2E74B /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				BEB2D91C1DFBDFE900F2E74B /* WGMineTabViewController.h */,
+				BEB2D91D1DFBDFE900F2E74B /* WGMineTabViewController.m */,
+			);
+			path = Mine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -514,22 +626,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE62E4BA1DF93F8A004510A5 /* WGBenefitTabViewController.m in Sources */,
-				BE62E4C01DF93FCB004510A5 /* WGMineTabViewController.m in Sources */,
 				BE62E2341DF92176004510A5 /* ViewController.m in Sources */,
+				BEB2D9211DFBDFE900F2E74B /* WGHomeTabViewController.m in Sources */,
 				BE62E4AA1DF93E8D004510A5 /* WGNavigationController.m in Sources */,
 				BE62E4601DF935E9004510A5 /* WGMainViewController.m in Sources */,
+				BEB2D91E1DFBDFE900F2E74B /* WGBenefitTabViewController.m in Sources */,
 				BE62E2311DF92176004510A5 /* AppDelegate.m in Sources */,
 				BE62E4C31DF93FF8004510A5 /* WGApplication.m in Sources */,
 				BE62E4AD1DF93E8D004510A5 /* WGResponse.m in Sources */,
+				BEB2D9201DFBDFE900F2E74B /* WGForeignTabViewController.m in Sources */,
 				BE62E22E1DF92176004510A5 /* main.m in Sources */,
-				BE62E4BD1DF93FB7004510A5 /* WGForeignTabViewController.m in Sources */,
-				BE62E4B71DF93F71004510A5 /* WGClassifyTabViewController.m in Sources */,
 				BE62E4AF1DF93E8D004510A5 /* WGViewController.m in Sources */,
 				BE62E4AC1DF93E8D004510A5 /* WGRequest.m in Sources */,
+				BEB2D91F1DFBDFE900F2E74B /* WGClassifyTabViewController.m in Sources */,
 				BE62E4631DF937F8004510A5 /* AppDelegate+UI.m in Sources */,
-				BE62E4B41DF93F60004510A5 /* WGHomeTabViewController.m in Sources */,
 				BE62E4AE1DF93E8D004510A5 /* WGTabViewController.m in Sources */,
+				BEB2D9221DFBDFE900F2E74B /* WGMineTabViewController.m in Sources */,
 				BE62E4AB1DF93E8D004510A5 /* WGObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
