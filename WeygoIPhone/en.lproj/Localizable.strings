@@ -5,5 +5,9 @@
   Created by muma on 2016/12/8.
   Copyright © 2016年 weygo.com. All rights reserved.
 */
-"TabHome" = "Home";
+"TabHome" = "首页";
+"TabClassify" = "分类";
+"TabBenefit" = "优惠";
+"TabForeign" = "外国馆";
+"TabMine" = "我的";
 

@@ -39,6 +39,15 @@ static const float kTabBarHeight = 60;
     [self setCenterTabBarItem];
 }
 
+- (void)resetViewControllersWithIndex:(NSInteger)index {
+    NSMutableArray *array = [[NSMutableArray alloc] initWithArray:self.viewControllers];
+    if (array.count > index) {
+        UIViewController *currentVC = (UIViewController *)array[index];
+        [array replaceObjectAtIndex:index withObject:[[[currentVC class] alloc] init]];
+    }
+    [self setViewControllers:array animated:YES];
+}
+
 - (void)setTabbarHidden:(BOOL)hidden {
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:3];

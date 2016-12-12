@@ -48,6 +48,7 @@
 		BEB2D9621DFBED4100F2E74B /* WGSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB2D9611DFBED4100F2E74B /* WGSegmentView.m */; };
 		BEB2D9691DFC054B00F2E74B /* WGHomeTabViewController+Segment.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB2D9681DFC054B00F2E74B /* WGHomeTabViewController+Segment.m */; };
 		BEB2D96C1DFC579400F2E74B /* WGHomeTabViewController+ScrollContents.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB2D96B1DFC579400F2E74B /* WGHomeTabViewController+ScrollContents.m */; };
+		BEB2D9751DFD933600F2E74B /* WGScrollImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB2D9741DFD933600F2E74B /* WGScrollImageView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -181,6 +182,8 @@
 		BEB2D9681DFC054B00F2E74B /* WGHomeTabViewController+Segment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGHomeTabViewController+Segment.m"; sourceTree = "<group>"; };
 		BEB2D96A1DFC579400F2E74B /* WGHomeTabViewController+ScrollContents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGHomeTabViewController+ScrollContents.h"; sourceTree = "<group>"; };
 		BEB2D96B1DFC579400F2E74B /* WGHomeTabViewController+ScrollContents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGHomeTabViewController+ScrollContents.m"; sourceTree = "<group>"; };
+		BEB2D9731DFD933600F2E74B /* WGScrollImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGScrollImageView.h; sourceTree = "<group>"; };
+		BEB2D9741DFD933600F2E74B /* WGScrollImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGScrollImageView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -482,6 +485,8 @@
 			children = (
 				BEB2D9601DFBED4100F2E74B /* WGSegmentView.h */,
 				BEB2D9611DFBED4100F2E74B /* WGSegmentView.m */,
+				BEB2D9731DFD933600F2E74B /* WGScrollImageView.h */,
+				BEB2D9741DFD933600F2E74B /* WGScrollImageView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -671,6 +676,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE62E2341DF92176004510A5 /* ViewController.m in Sources */,
+				BEB2D9751DFD933600F2E74B /* WGScrollImageView.m in Sources */,
 				BEB2D9211DFBDFE900F2E74B /* WGHomeTabViewController.m in Sources */,
 				BEB2D95E1DFBED1500F2E74B /* WGTabViewController.m in Sources */,
 				BE62E4601DF935E9004510A5 /* WGMainViewController.m in Sources */,

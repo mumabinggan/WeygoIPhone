@@ -8,6 +8,7 @@
 
 #import "WGHomeTabViewController+ScrollContents.h"
 #import "WGSegmentView.h"
+#import "WGScrollImageView.h"
 
 @interface WGHomeTabViewController (ScrollDelegate) <UIScrollViewDelegate>
 
@@ -22,10 +23,12 @@
     _contentsScrollView.delegate = self;
     _contentsScrollView.pagingEnabled = YES;
     for (int num = 0; num < 3; ++num) {
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(kDeviceWidth * num, 0, 100, 100)];
-        label.backgroundColor = kRedColor;
-        label.text = [NSString stringWithFormat:@"%d", num];
-        [_contentsScrollView addSubview:label];
+        NSArray *imageArray = @[@"http://pic32.nipic.com/20130813/9422601_092059943000_2.jpg", @"http://pic38.nipic.com/20140306/2457331_150217053000_2.jpg", @"http://pic32.nipic.com/20130813/9422601_092617803000_2.jpg", @"http://easyread.ph.126.net/j4Ih8eDnIbipPWKBw9kmiw==/7916596969685939749.jpg"];
+        WGScrollImageView *scrollImageView = [[WGScrollImageView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, 200) imageArray:imageArray];
+        //WGScrollImageView *label = [[UILabel alloc] initWithFrame:CGRectMake(kDeviceWidth * num, 0, 100, 100)];
+        //label.backgroundColor = kRedColor;
+        //label.text = [NSString stringWithFormat:@"%d", num];
+        [_contentsScrollView addSubview:scrollImageView];
     }
     [self.view addSubview:_contentsScrollView];
 }
