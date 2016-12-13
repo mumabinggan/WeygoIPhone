@@ -33,7 +33,8 @@
     }
     [self.view addSubview:_contentsScrollView];
     
-    WGScrollAdView *adView = [[WGScrollAdView alloc] initWithFrame:CGRectMake(80, 500, kDeviceWidth - 100, 50) titleArray:@[@"网易是中国领先的互联网技术公司。", @"为用户提供免费邮箱、游戏、搜索引擎服务,开设新闻、娱乐、体育等30多个内容频道。", @"及博客、视频、论坛等互动交流,网聚人的力量。"]];
+    WGScrollAdView *adView = [[WGScrollAdView alloc] initWithFrame:CGRectMake(80, 500, kDeviceWidth - 100, 50) titleArray:@[@"asdfasdfasdfasdfsadf", @"hgfhgfdhdfghdfghdfg", @"popikokkkokjkli"]];
+    //WGScrollAdView *adView = [[WGScrollAdView alloc] initWithFrame:CGRectMake(80, 500, kDeviceWidth - 100, 50) titleArray:@[@"网易是中国领先的互联网技术公司。", @"为用户提供免费邮箱、游戏、搜索引擎服务,开设新闻、娱乐、体育等30多个内容频道。", @"及博客、视频、论坛等互动交流,网聚人的力量。"]];
     adView.onTouch = ^(NSInteger index) {
         DLog(@"---index = %ld", index);
     };

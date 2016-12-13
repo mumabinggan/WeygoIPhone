@@ -45,7 +45,7 @@
     CGRect frame = CGRectMake(self.width, 0, 100, self.height);
     _oneAdsView = [[JHView alloc] initWithFrame:frame];
     _twoAdsView = [[JHView alloc] initWithFrame:frame];
-    UIFont *font = kAppAdaptFont(15);
+    UIFont *font = kAdaptFont(15, @"Oswald");
     float adsViewWidth = 0;
     for (int num = 0; num < _titleArray.count; ++num) {
         NSString *title = _titleArray[num];

@@ -17,7 +17,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
+    DLog(@"--%@", [UIFont familyNames]);
     [self launchUIApplicatioin:application withOptions:launchOptions];
     
     return YES;
