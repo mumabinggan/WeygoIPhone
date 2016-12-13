@@ -12,11 +12,15 @@
 #import "WGBenefitTabViewController.h"
 #import "WGForeignTabViewController.h"
 #import "WGMineTabViewController.h"
+#import "WGSidebarViewController.h"
 
 static const float kTabBarHeight = 60;
 
 @interface WGMainViewController ()
-
+{
+    JHView *_maskView;
+    WGSidebarViewController *_sideBarController;
+}
 @end
 
 @implementation WGMainViewController
@@ -72,6 +76,42 @@ static const float kTabBarHeight = 60;
 
 - (void)touchCenterItem:(id)sender {
     self.selectedIndex = WGTabIndexBenefit;
+}
+
+- (void)openSideBarViewController {
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    if (!_maskView) {
+        _maskView = [[JHView alloc] initWithFrame:window.bounds];
+        _maskView.backgroundColor = kBlackColor;
+        _maskView.alpha = 0;
+        [window addSubview:_maskView];
+    }
+    if (!_sideBarController) {
+        _sideBarController = [[WGSidebarViewController alloc] init];
+        _sideBarController.view.frame = CGRectMake(-kDeviceWidth, 0, kDeviceWidth, kDeviceHeight);
+        __weak typeof (self) weakSelf = self;
+        _sideBarController.onTouchBlankArea = ^(void) {
+            [weakSelf touchSideBarBlankArea];
+        };
+        [window addSubview:_sideBarController.view];
+    }
+    [self setSideBarhidden:NO];
+}
+
+- (void)touchSideBarBlankArea {
+    [self setSideBarhidden:YES];
+}
+
+- (void)setSideBarhidden:(BOOL)hidden {
+    _maskView.hidden = NO;
+    [UIView animateWithDuration:0.2 animations:^(void) {
+        _sideBarController.view.frame = CGRectMake(hidden ? -kDeviceWidth : 0, 0, kDeviceWidth, kDeviceHeight);
+        _maskView.alpha = hidden ? 0 : 0.3;
+    } completion:^(BOOL finish) {
+        if (finish) {
+            _maskView.hidden = hidden;
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -49,6 +49,9 @@
 		BEB2D9691DFC054B00F2E74B /* WGHomeTabViewController+Segment.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB2D9681DFC054B00F2E74B /* WGHomeTabViewController+Segment.m */; };
 		BEB2D96C1DFC579400F2E74B /* WGHomeTabViewController+ScrollContents.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB2D96B1DFC579400F2E74B /* WGHomeTabViewController+ScrollContents.m */; };
 		BEB2D9751DFD933600F2E74B /* WGScrollImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB2D9741DFD933600F2E74B /* WGScrollImageView.m */; };
+		BEB2D9851DFE3FF400F2E74B /* WGHomeTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB2D9841DFE3FF400F2E74B /* WGHomeTitleView.m */; };
+		BEB2D98A1DFE4EEA00F2E74B /* WGSidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB2D9891DFE4EE900F2E74B /* WGSidebarViewController.m */; };
+		BEB2D9931DFE77C100F2E74B /* WGScrollAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB2D9921DFE77C000F2E74B /* WGScrollAdView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -184,6 +187,12 @@
 		BEB2D96B1DFC579400F2E74B /* WGHomeTabViewController+ScrollContents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGHomeTabViewController+ScrollContents.m"; sourceTree = "<group>"; };
 		BEB2D9731DFD933600F2E74B /* WGScrollImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGScrollImageView.h; sourceTree = "<group>"; };
 		BEB2D9741DFD933600F2E74B /* WGScrollImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGScrollImageView.m; sourceTree = "<group>"; };
+		BEB2D9831DFE3FF400F2E74B /* WGHomeTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGHomeTitleView.h; sourceTree = "<group>"; };
+		BEB2D9841DFE3FF400F2E74B /* WGHomeTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGHomeTitleView.m; sourceTree = "<group>"; };
+		BEB2D9881DFE4EE900F2E74B /* WGSidebarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGSidebarViewController.h; sourceTree = "<group>"; };
+		BEB2D9891DFE4EE900F2E74B /* WGSidebarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGSidebarViewController.m; sourceTree = "<group>"; };
+		BEB2D9911DFE77C000F2E74B /* WGScrollAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGScrollAdView.h; sourceTree = "<group>"; };
+		BEB2D9921DFE77C000F2E74B /* WGScrollAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGScrollAdView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +254,7 @@
 			children = (
 				BE62E49C1DF93E8D004510A5 /* Commons */,
 				BEB2D90E1DFBDFE900F2E74B /* Tabs */,
+				BEB2D9871DFE4E6700F2E74B /* Sidebar */,
 				BEB2D9041DFBDBFB00F2E74B /* Search */,
 				BEB2D9051DFBDBFB00F2E74B /* Pay */,
 				BEB2D9061DFBDBFB00F2E74B /* Order */,
@@ -476,6 +486,8 @@
 		BEB2D9261DFBE2FF00F2E74B /* view */ = {
 			isa = PBXGroup;
 			children = (
+				BEB2D9831DFE3FF400F2E74B /* WGHomeTitleView.h */,
+				BEB2D9841DFE3FF400F2E74B /* WGHomeTitleView.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -487,6 +499,8 @@
 				BEB2D9611DFBED4100F2E74B /* WGSegmentView.m */,
 				BEB2D9731DFD933600F2E74B /* WGScrollImageView.h */,
 				BEB2D9741DFD933600F2E74B /* WGScrollImageView.m */,
+				BEB2D9911DFE77C000F2E74B /* WGScrollAdView.h */,
+				BEB2D9921DFE77C000F2E74B /* WGScrollAdView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -510,6 +524,15 @@
 				BEB2D9581DFBED1500F2E74B /* WGViewController.m */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		BEB2D9871DFE4E6700F2E74B /* Sidebar */ = {
+			isa = PBXGroup;
+			children = (
+				BEB2D9881DFE4EE900F2E74B /* WGSidebarViewController.h */,
+				BEB2D9891DFE4EE900F2E74B /* WGSidebarViewController.m */,
+			);
+			path = Sidebar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -679,6 +702,7 @@
 				BEB2D9751DFD933600F2E74B /* WGScrollImageView.m in Sources */,
 				BEB2D9211DFBDFE900F2E74B /* WGHomeTabViewController.m in Sources */,
 				BEB2D95E1DFBED1500F2E74B /* WGTabViewController.m in Sources */,
+				BEB2D9931DFE77C100F2E74B /* WGScrollAdView.m in Sources */,
 				BE62E4601DF935E9004510A5 /* WGMainViewController.m in Sources */,
 				BEB2D91E1DFBDFE900F2E74B /* WGBenefitTabViewController.m in Sources */,
 				BEB2D95D1DFBED1500F2E74B /* WGResponse.m in Sources */,
@@ -692,7 +716,9 @@
 				BEB2D95B1DFBED1500F2E74B /* WGObject.m in Sources */,
 				BEB2D9201DFBDFE900F2E74B /* WGForeignTabViewController.m in Sources */,
 				BE62E22E1DF92176004510A5 /* main.m in Sources */,
+				BEB2D9851DFE3FF400F2E74B /* WGHomeTitleView.m in Sources */,
 				BEB2D91F1DFBDFE900F2E74B /* WGClassifyTabViewController.m in Sources */,
+				BEB2D98A1DFE4EEA00F2E74B /* WGSidebarViewController.m in Sources */,
 				BEB2D9591DFBED1500F2E74B /* WGApplication.m in Sources */,
 				BE62E4631DF937F8004510A5 /* AppDelegate+UI.m in Sources */,
 				BEB2D9221DFBDFE900F2E74B /* WGMineTabViewController.m in Sources */,

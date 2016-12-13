@@ -10,4 +10,6 @@
 
 @interface WGMainViewController : UITabBarController
 
+- (void)openSideBarViewController;
+
 @end

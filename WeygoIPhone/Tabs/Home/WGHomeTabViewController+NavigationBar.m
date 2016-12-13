@@ -7,21 +7,32 @@
 //
 
 #import "WGHomeTabViewController+NavigationBar.h"
+#import "WGHomeTitleView.h"
+#import "WGSidebarViewController.h"
+#import "WGMainViewController.h"
 
 @implementation WGHomeTabViewController (NavigationBar)
 
 - (void)initNavigationItems {
-    //set home titleView
-    JHButton *titleButton = [[JHButton alloc] initWithFrame:CGRectMake(0, 0, kAppAdaptWidth(100), kAppNavigationBarHeight)];
-    UIImage *image = [UIImage imageNamed:@"test"];
-    [titleButton setTitle:kStr(@"米兰") forState:UIControlStateNormal];
-    [titleButton setImage:image forState:UIControlStateNormal];
-    [titleButton setTitleEdgeInsets:UIEdgeInsetsMake(0, -(image.width + 3), 0, (image.width + 3))];
-    CGFloat labelWidth = [titleButton.titleLabel.text returnSize:titleButton.titleLabel.font].width;
-    [titleButton setImageEdgeInsets:UIEdgeInsetsMake(0, labelWidth + 3, 0, -(labelWidth + 3))];
-    self.navigationItem.titleView = titleButton;
+    //set titleView
+    WGHomeTitleView *titleView = [[WGHomeTitleView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth / 2, kAppNavigationBarHeight)];
+    NSString *title = @"米兰米兰米兰米兰米兰米兰米兰米兰米兰米兰";
+    [titleView setTitle:title];
+    self.navigationItem.titleView = titleView;
     
-    //
+    //set leftView
+    UIButton *leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [leftBtn setImage:[UIImage imageNamed:@"test"] forState:UIControlStateNormal];
+    leftBtn.frame = CGRectMake(0, 0, 60, 40);
+    [leftBtn addTarget:self action:@selector(touchLeftButton:) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftBtn];
+}
+
+- (void)touchLeftButton:(id)sender {
+    WGMainViewController *mainViewController = (WGMainViewController *)self.parentViewController;
+    if ([mainViewController respondsToSelector:@selector(openSideBarViewController)]) {
+        [mainViewController openSideBarViewController];
+    }
 }
 
 @end

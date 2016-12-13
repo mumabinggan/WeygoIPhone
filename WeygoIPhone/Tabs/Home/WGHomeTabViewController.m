@@ -13,7 +13,6 @@
 @interface WGHomeTabViewController ()
 {
     JHCollectionView *_collectionView;
-    
 }
 @end
 

@@ -9,8 +9,10 @@
 #ifndef WGAppConstants_h
 #define WGAppConstants_h
 
-#define WGAppBaseColor kHRGB(0x4081d6)
+#define WGAppBaseColor  kHRGB(0x4081d6)
 
+
+#define kWGSideBarWidth  (kDeviceWidth * 2.0/3.0)
 
 //Notification
 

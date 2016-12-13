@@ -71,14 +71,14 @@
     [newImageArray addObject:[imageArray lastObject]];
     [newImageArray addObjectsFromArray:imageArray];
     [newImageArray addObject:[imageArray firstObject]];
-    UITapGestureRecognizer *singleRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(touchImage:)];
-    singleRecognizer.numberOfTapsRequired = 1;
+    
     CGRect frame = _scrollView.frame;
     for (int num = 0; num < newImageArray.count; num++) {
         frame.origin.x = CGRectGetWidth(_scrollView.frame) * (num);
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:frame];
         [imageView setImageWithURL:newImageArray[num] placeholderImage:nil options:JHWebImageOptionsRetryFailed|JHWebImageOptionsRefreshCached];
-        [imageView addGestureRecognizer:singleRecognizer];
+        imageView.userInteractionEnabled = YES;
+        [imageView addSingleTapGestureRecognizerWithTarget:self action:@selector(touchImage:)];
         [_scrollView addSubview:imageView];
     }
     _scrollView.contentOffset = CGPointMake(kDeviceWidth, 0);
@@ -92,15 +92,16 @@
         _timer = nil;
     }
     else {
+        __weak typeof (self) weakSelf = self;
         _timer = [NSTimer scheduledTimerWithTimeInterval:2 repeats:YES block:^(NSTimer *timer) {
-            [self handleTimer:timer];
+            [weakSelf handleTimer:timer];
         }];
     }
 }
 
 - (void)touchImage:(UIGestureRecognizer *)recognizer {
     if (self.onClick) {
-        self.onClick(_pageControl.numberOfPages);
+        self.onClick(_pageControl.currentPage);
     }
 }
 
