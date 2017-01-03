@@ -23,6 +23,8 @@
 		BE5257301DFFB6FE00AB5CB9 /* Oswald-RegularItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE5257201DFFB6FE00AB5CB9 /* Oswald-RegularItalic.ttf */; };
 		BE5257311DFFB6FE00AB5CB9 /* Oswald-Stencil.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE5257211DFFB6FE00AB5CB9 /* Oswald-Stencil.ttf */; };
 		BE5257321DFFB6FE00AB5CB9 /* SIL Open Font License.txt in Resources */ = {isa = PBXBuildFile; fileRef = BE5257221DFFB6FE00AB5CB9 /* SIL Open Font License.txt */; };
+		BE52D5261E1B699100D4FFCD /* WGTopicItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BE52D5251E1B699100D4FFCD /* WGTopicItem.m */; };
+		BE52D5381E1B9D5A00D4FFCD /* WGHomeTopicItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE52D5371E1B9D5A00D4FFCD /* WGHomeTopicItemView.m */; };
 		BE62E22E1DF92176004510A5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62E22D1DF92176004510A5 /* main.m */; };
 		BE62E2311DF92176004510A5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62E2301DF92176004510A5 /* AppDelegate.m */; };
 		BE62E2341DF92176004510A5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62E2331DF92176004510A5 /* ViewController.m */; };
@@ -145,6 +147,10 @@
 		BE5257201DFFB6FE00AB5CB9 /* Oswald-RegularItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-RegularItalic.ttf"; sourceTree = "<group>"; };
 		BE5257211DFFB6FE00AB5CB9 /* Oswald-Stencil.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Stencil.ttf"; sourceTree = "<group>"; };
 		BE5257221DFFB6FE00AB5CB9 /* SIL Open Font License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "SIL Open Font License.txt"; sourceTree = "<group>"; };
+		BE52D5241E1B699100D4FFCD /* WGTopicItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGTopicItem.h; sourceTree = "<group>"; };
+		BE52D5251E1B699100D4FFCD /* WGTopicItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGTopicItem.m; sourceTree = "<group>"; };
+		BE52D5361E1B9D5A00D4FFCD /* WGHomeTopicItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGHomeTopicItemView.h; sourceTree = "<group>"; };
+		BE52D5371E1B9D5A00D4FFCD /* WGHomeTopicItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGHomeTopicItemView.m; sourceTree = "<group>"; };
 		BE62E2291DF92176004510A5 /* WeygoIPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeygoIPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE62E22D1DF92176004510A5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BE62E22F1DF92176004510A5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -296,6 +302,38 @@
 				BE5257221DFFB6FE00AB5CB9 /* SIL Open Font License.txt */,
 			);
 			path = Oswald;
+			sourceTree = "<group>";
+		};
+		BE52D51C1E1B5F1300D4FFCD /* cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		BE52D5211E1B697A00D4FFCD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BE52D5221E1B697A00D4FFCD /* Request */,
+				BE52D5231E1B697A00D4FFCD /* Response */,
+				BE52D5241E1B699100D4FFCD /* WGTopicItem.h */,
+				BE52D5251E1B699100D4FFCD /* WGTopicItem.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BE52D5221E1B697A00D4FFCD /* Request */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		BE52D5231E1B697A00D4FFCD /* Response */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Response;
 			sourceTree = "<group>";
 		};
 		BE62E2201DF92176004510A5 = {
@@ -533,6 +571,8 @@
 		BEB2D9181DFBDFE900F2E74B /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				BE52D5211E1B697A00D4FFCD /* Model */,
+				BE52D51C1E1B5F1300D4FFCD /* cell */,
 				BEB2D9261DFBE2FF00F2E74B /* view */,
 				BEB2D9191DFBDFE900F2E74B /* WGHomeTabViewController.h */,
 				BEB2D91A1DFBDFE900F2E74B /* WGHomeTabViewController.m */,
@@ -558,6 +598,8 @@
 		BEB2D9261DFBE2FF00F2E74B /* view */ = {
 			isa = PBXGroup;
 			children = (
+				BE52D5361E1B9D5A00D4FFCD /* WGHomeTopicItemView.h */,
+				BE52D5371E1B9D5A00D4FFCD /* WGHomeTopicItemView.m */,
 				BEB2D9831DFE3FF400F2E74B /* WGHomeTitleView.h */,
 				BEB2D9841DFE3FF400F2E74B /* WGHomeTitleView.m */,
 			);
@@ -796,11 +838,13 @@
 				BEB2D95D1DFBED1500F2E74B /* WGResponse.m in Sources */,
 				BEB2D9621DFBED4100F2E74B /* WGSegmentView.m in Sources */,
 				BEB2D95F1DFBED1500F2E74B /* WGViewController.m in Sources */,
+				BE52D5381E1B9D5A00D4FFCD /* WGHomeTopicItemView.m in Sources */,
 				BEB2D95A1DFBED1500F2E74B /* WGNavigationController.m in Sources */,
 				BEB2D96C1DFC579400F2E74B /* WGHomeTabViewController+ScrollContents.m in Sources */,
 				BEB2D9691DFC054B00F2E74B /* WGHomeTabViewController+Segment.m in Sources */,
 				BEB2D95C1DFBED1500F2E74B /* WGRequest.m in Sources */,
 				BE62E2311DF92176004510A5 /* AppDelegate.m in Sources */,
+				BE52D5261E1B699100D4FFCD /* WGTopicItem.m in Sources */,
 				BEB2D95B1DFBED1500F2E74B /* WGObject.m in Sources */,
 				BEB2D9201DFBDFE900F2E74B /* WGForeignTabViewController.m in Sources */,
 				BE62E22E1DF92176004510A5 /* main.m in Sources */,
