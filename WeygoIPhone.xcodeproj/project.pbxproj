@@ -25,6 +25,8 @@
 		BE5257321DFFB6FE00AB5CB9 /* SIL Open Font License.txt in Resources */ = {isa = PBXBuildFile; fileRef = BE5257221DFFB6FE00AB5CB9 /* SIL Open Font License.txt */; };
 		BE52D5261E1B699100D4FFCD /* WGTopicItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BE52D5251E1B699100D4FFCD /* WGTopicItem.m */; };
 		BE52D5381E1B9D5A00D4FFCD /* WGHomeTopicItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE52D5371E1B9D5A00D4FFCD /* WGHomeTopicItemView.m */; };
+		BE52D53B1E1BAA5500D4FFCD /* WGHomeFloorTextHeadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE52D53A1E1BAA5500D4FFCD /* WGHomeFloorTextHeadCell.m */; };
+		BE52D53E1E1BADDA00D4FFCD /* WGHomeFloorContentItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BE52D53D1E1BADDA00D4FFCD /* WGHomeFloorContentItem.m */; };
 		BE62E22E1DF92176004510A5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62E22D1DF92176004510A5 /* main.m */; };
 		BE62E2311DF92176004510A5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62E2301DF92176004510A5 /* AppDelegate.m */; };
 		BE62E2341DF92176004510A5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62E2331DF92176004510A5 /* ViewController.m */; };
@@ -50,6 +52,10 @@
 		BE62E4601DF935E9004510A5 /* WGMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62E45E1DF935E9004510A5 /* WGMainViewController.m */; };
 		BE62E4631DF937F8004510A5 /* AppDelegate+UI.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62E4621DF937F8004510A5 /* AppDelegate+UI.m */; };
 		BE62E4D21DF94EB4004510A5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE62E4D41DF94EB4004510A5 /* Localizable.strings */; };
+		BE99E79E1E1C928200210546 /* WGHomeFloorBaseContentItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BE99E79D1E1C928200210546 /* WGHomeFloorBaseContentItem.m */; };
+		BE99E7A21E1C947F00210546 /* WGHomeFloorContentGoodItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BE99E7A11E1C947F00210546 /* WGHomeFloorContentGoodItem.m */; };
+		BE99E7A51E1C94C400210546 /* WGHomeFloorContentClassifyItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BE99E7A41E1C94C400210546 /* WGHomeFloorContentClassifyItem.m */; };
+		BE99E7A81E1C957F00210546 /* WGHomeFloorContentCountryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BE99E7A71E1C957F00210546 /* WGHomeFloorContentCountryItem.m */; };
 		BEB2D91E1DFBDFE900F2E74B /* WGBenefitTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB2D9111DFBDFE900F2E74B /* WGBenefitTabViewController.m */; };
 		BEB2D91F1DFBDFE900F2E74B /* WGClassifyTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB2D9141DFBDFE900F2E74B /* WGClassifyTabViewController.m */; };
 		BEB2D9201DFBDFE900F2E74B /* WGForeignTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB2D9171DFBDFE900F2E74B /* WGForeignTabViewController.m */; };
@@ -151,6 +157,10 @@
 		BE52D5251E1B699100D4FFCD /* WGTopicItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGTopicItem.m; sourceTree = "<group>"; };
 		BE52D5361E1B9D5A00D4FFCD /* WGHomeTopicItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGHomeTopicItemView.h; sourceTree = "<group>"; };
 		BE52D5371E1B9D5A00D4FFCD /* WGHomeTopicItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGHomeTopicItemView.m; sourceTree = "<group>"; };
+		BE52D5391E1BAA5500D4FFCD /* WGHomeFloorTextHeadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGHomeFloorTextHeadCell.h; sourceTree = "<group>"; };
+		BE52D53A1E1BAA5500D4FFCD /* WGHomeFloorTextHeadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGHomeFloorTextHeadCell.m; sourceTree = "<group>"; };
+		BE52D53C1E1BADDA00D4FFCD /* WGHomeFloorContentItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGHomeFloorContentItem.h; sourceTree = "<group>"; };
+		BE52D53D1E1BADDA00D4FFCD /* WGHomeFloorContentItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGHomeFloorContentItem.m; sourceTree = "<group>"; };
 		BE62E2291DF92176004510A5 /* WeygoIPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeygoIPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE62E22D1DF92176004510A5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BE62E22F1DF92176004510A5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -191,6 +201,14 @@
 		BE62E4CE1DF94D1C004510A5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		BE62E4D31DF94EB4004510A5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BE62E4DA1DF94F02004510A5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		BE99E79C1E1C928200210546 /* WGHomeFloorBaseContentItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGHomeFloorBaseContentItem.h; sourceTree = "<group>"; };
+		BE99E79D1E1C928200210546 /* WGHomeFloorBaseContentItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGHomeFloorBaseContentItem.m; sourceTree = "<group>"; };
+		BE99E7A01E1C947F00210546 /* WGHomeFloorContentGoodItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGHomeFloorContentGoodItem.h; sourceTree = "<group>"; };
+		BE99E7A11E1C947F00210546 /* WGHomeFloorContentGoodItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGHomeFloorContentGoodItem.m; sourceTree = "<group>"; };
+		BE99E7A31E1C94C400210546 /* WGHomeFloorContentClassifyItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGHomeFloorContentClassifyItem.h; sourceTree = "<group>"; };
+		BE99E7A41E1C94C400210546 /* WGHomeFloorContentClassifyItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGHomeFloorContentClassifyItem.m; sourceTree = "<group>"; };
+		BE99E7A61E1C957F00210546 /* WGHomeFloorContentCountryItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGHomeFloorContentCountryItem.h; sourceTree = "<group>"; };
+		BE99E7A71E1C957F00210546 /* WGHomeFloorContentCountryItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGHomeFloorContentCountryItem.m; sourceTree = "<group>"; };
 		BEB2D9101DFBDFE900F2E74B /* WGBenefitTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGBenefitTabViewController.h; sourceTree = "<group>"; };
 		BEB2D9111DFBDFE900F2E74B /* WGBenefitTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGBenefitTabViewController.m; sourceTree = "<group>"; };
 		BEB2D9131DFBDFE900F2E74B /* WGClassifyTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGClassifyTabViewController.h; sourceTree = "<group>"; };
@@ -307,6 +325,8 @@
 		BE52D51C1E1B5F1300D4FFCD /* cell */ = {
 			isa = PBXGroup;
 			children = (
+				BE52D5391E1BAA5500D4FFCD /* WGHomeFloorTextHeadCell.h */,
+				BE52D53A1E1BAA5500D4FFCD /* WGHomeFloorTextHeadCell.m */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -318,6 +338,16 @@
 				BE52D5231E1B697A00D4FFCD /* Response */,
 				BE52D5241E1B699100D4FFCD /* WGTopicItem.h */,
 				BE52D5251E1B699100D4FFCD /* WGTopicItem.m */,
+				BE52D53C1E1BADDA00D4FFCD /* WGHomeFloorContentItem.h */,
+				BE52D53D1E1BADDA00D4FFCD /* WGHomeFloorContentItem.m */,
+				BE99E79C1E1C928200210546 /* WGHomeFloorBaseContentItem.h */,
+				BE99E79D1E1C928200210546 /* WGHomeFloorBaseContentItem.m */,
+				BE99E7A01E1C947F00210546 /* WGHomeFloorContentGoodItem.h */,
+				BE99E7A11E1C947F00210546 /* WGHomeFloorContentGoodItem.m */,
+				BE99E7A31E1C94C400210546 /* WGHomeFloorContentClassifyItem.h */,
+				BE99E7A41E1C94C400210546 /* WGHomeFloorContentClassifyItem.m */,
+				BE99E7A61E1C957F00210546 /* WGHomeFloorContentCountryItem.h */,
+				BE99E7A71E1C957F00210546 /* WGHomeFloorContentCountryItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -836,6 +866,8 @@
 				BE62E4601DF935E9004510A5 /* WGMainViewController.m in Sources */,
 				BEB2D91E1DFBDFE900F2E74B /* WGBenefitTabViewController.m in Sources */,
 				BEB2D95D1DFBED1500F2E74B /* WGResponse.m in Sources */,
+				BE52D53B1E1BAA5500D4FFCD /* WGHomeFloorTextHeadCell.m in Sources */,
+				BE99E79E1E1C928200210546 /* WGHomeFloorBaseContentItem.m in Sources */,
 				BEB2D9621DFBED4100F2E74B /* WGSegmentView.m in Sources */,
 				BEB2D95F1DFBED1500F2E74B /* WGViewController.m in Sources */,
 				BE52D5381E1B9D5A00D4FFCD /* WGHomeTopicItemView.m in Sources */,
@@ -845,10 +877,14 @@
 				BEB2D95C1DFBED1500F2E74B /* WGRequest.m in Sources */,
 				BE62E2311DF92176004510A5 /* AppDelegate.m in Sources */,
 				BE52D5261E1B699100D4FFCD /* WGTopicItem.m in Sources */,
+				BE99E7A21E1C947F00210546 /* WGHomeFloorContentGoodItem.m in Sources */,
 				BEB2D95B1DFBED1500F2E74B /* WGObject.m in Sources */,
+				BE52D53E1E1BADDA00D4FFCD /* WGHomeFloorContentItem.m in Sources */,
 				BEB2D9201DFBDFE900F2E74B /* WGForeignTabViewController.m in Sources */,
 				BE62E22E1DF92176004510A5 /* main.m in Sources */,
+				BE99E7A51E1C94C400210546 /* WGHomeFloorContentClassifyItem.m in Sources */,
 				BEB2D9851DFE3FF400F2E74B /* WGHomeTitleView.m in Sources */,
+				BE99E7A81E1C957F00210546 /* WGHomeFloorContentCountryItem.m in Sources */,
 				BEB2D91F1DFBDFE900F2E74B /* WGClassifyTabViewController.m in Sources */,
 				BEB2D98A1DFE4EEA00F2E74B /* WGSidebarViewController.m in Sources */,
 				BEB2D9591DFBED1500F2E74B /* WGApplication.m in Sources */,
