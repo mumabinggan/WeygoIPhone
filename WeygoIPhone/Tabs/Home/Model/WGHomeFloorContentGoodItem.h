@@ -10,6 +10,8 @@
 
 @interface WGHomeFloorContentGoodItem : WGHomeFloorBaseContentItem
 
+@property (nonatomic, strong) NSString *chineseName;
+
 @property (nonatomic, strong) NSString *briefDescription;
 
 @property (nonatomic, assign) float rating;

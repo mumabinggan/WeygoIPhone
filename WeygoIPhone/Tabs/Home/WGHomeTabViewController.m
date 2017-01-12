@@ -8,12 +8,11 @@
 
 #import "WGHomeTabViewController.h"
 #import "WGHomeTabViewController+Segment.h"
-#import "WGHomeTabViewController+ScrollContents.h"
+#import "WGHomeTabViewController+Scroll.h"
+#import "WGHomeTabViewController+Contents.h"
 
 @interface WGHomeTabViewController ()
-{
-    JHCollectionView *_collectionView;
-}
+
 @end
 
 @interface WGHomeTabViewController (CollectionDelegate) <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
@@ -37,15 +36,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [self initData];
+    
     [self initSubView];
 }
 
+- (void)initData {
+    _tabContentMDictionary = [[NSMutableDictionary alloc] init];
+}
+
 - (void)initSubView {
-    JHView *contentView = [[JHView alloc] initWithFrame:self.view.bounds];
+    //JHView *contentView = [[JHView alloc] initWithFrame:self.view.bounds];
     //[self.view addSubview:contentView];
     [self addTitleSegmentView];
-    
+//    
     [self addContentsScrollView];
+    
+    [self addContentsWithIndex:0];
+    //[_contentsScrollView addSubview:[self collectionView]];
 }
 
 - (void)didReceiveMemoryWarning {

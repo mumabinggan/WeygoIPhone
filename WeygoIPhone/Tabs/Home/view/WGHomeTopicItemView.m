@@ -33,7 +33,7 @@
     
     _nameLabel = [[JHLabel alloc] initWithFrame:CGRectMake(0, _imageView.maxY, totalWidth, kAppAdaptHeight(20))];
     _nameLabel.textAlignment = NSTextAlignmentCenter;
-    _nameLabel.font = kAdaptFont(14, @"Oswald-Medium");
+    _nameLabel.font = kWGOswaldMediumAdaptFont(14);
     _nameLabel.textColor = kRGBA(0, 0, 0, 0.87);
     [self addSubview:_nameLabel];
     
@@ -48,7 +48,7 @@
 
 - (void)showWithData:(JHObject *)data {
     _item = (WGTopicItem *)data;
-    NSString *url = _item.url;
+    NSString *url = _item.pictureURL;
     NSString *name = _item.name;
     UIImage *placeholderImage = [UIImage imageNamed:@""];
     

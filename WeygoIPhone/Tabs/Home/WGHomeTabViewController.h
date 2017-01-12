@@ -7,6 +7,7 @@
 //
 
 #import "WGTabViewController.h"
+#import "WGHomeTabContentResponse.h"
 
 @class WGSegmentView;
 
@@ -14,5 +15,8 @@
 {
     WGSegmentView *_titleSegmentView;
     JHScrollView *_contentsScrollView;
+    
+    NSMutableDictionary *_tabContentMDictionary;
+    //TWRefreshCollectionView *_collectionView;
 }
 @end

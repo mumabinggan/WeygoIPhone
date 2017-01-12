@@ -8,7 +8,7 @@
 
 #import "WGHomeTabViewController.h"
 
-@interface WGHomeTabViewController (ScrollContents)
+@interface WGHomeTabViewController (Scroll)
 
 - (void)addContentsScrollView;
 

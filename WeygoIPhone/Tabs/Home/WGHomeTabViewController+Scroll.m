@@ -6,16 +6,17 @@
 //  Copyright © 2016年 weygo.com. All rights reserved.
 //
 
-#import "WGHomeTabViewController+ScrollContents.h"
+#import "WGHomeTabViewController+Scroll.h"
 #import "WGSegmentView.h"
 #import "WGScrollImageView.h"
 #import "WGScrollAdView.h"
+#import "WGHomeTabViewController+Contents.h"
 
 @interface WGHomeTabViewController (ScrollDelegate) <UIScrollViewDelegate>
 
 @end
 
-@implementation WGHomeTabViewController (ScrollContents)
+@implementation WGHomeTabViewController (Scroll)
 
 - (void)addContentsScrollView {
     _contentsScrollView = [[JHScrollView alloc] initWithFrame:CGRectMake(0, _titleSegmentView.maxY, kDeviceWidth, kDeviceHeight - _titleSegmentView.maxY - kAppTabBarHeight)];
@@ -23,14 +24,15 @@
     _contentsScrollView.showsHorizontalScrollIndicator = NO;
     _contentsScrollView.delegate = self;
     _contentsScrollView.pagingEnabled = YES;
-    for (int num = 0; num < 3; ++num) {
-        NSArray *imageArray = @[@"http://pic32.nipic.com/20130813/9422601_092059943000_2.jpg", @"http://pic38.nipic.com/20140306/2457331_150217053000_2.jpg", @"http://pic32.nipic.com/20130813/9422601_092617803000_2.jpg", @"http://easyread.ph.126.net/j4Ih8eDnIbipPWKBw9kmiw==/7916596969685939749.jpg"];
-        WGScrollImageView *scrollImageView = [[WGScrollImageView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, 200) imageArray:imageArray];
-        scrollImageView.onClick = ^(NSInteger index) {
-            DLog(@"--index = %ld", index);
-        };
-        [_contentsScrollView addSubview:scrollImageView];
-    }
+    _contentsScrollView.bounces = NO;
+//    for (int num = 0; num < 3; ++num) {
+//        NSArray *imageArray = @[@"http://pic32.nipic.com/20130813/9422601_092059943000_2.jpg", @"http://pic38.nipic.com/20140306/2457331_150217053000_2.jpg", @"http://pic32.nipic.com/20130813/9422601_092617803000_2.jpg", @"http://easyread.ph.126.net/j4Ih8eDnIbipPWKBw9kmiw==/7916596969685939749.jpg"];
+//        WGScrollImageView *scrollImageView = [[WGScrollImageView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, 200) imageArray:imageArray];
+//        scrollImageView.onClick = ^(NSInteger index) {
+//            DLog(@"--index = %ld", index);
+//        };
+//        [_contentsScrollView addSubview:scrollImageView];
+//    }
     [self.view addSubview:_contentsScrollView];
     
     WGScrollAdView *adView = [[WGScrollAdView alloc] initWithFrame:CGRectMake(80, 500, kDeviceWidth - 100, 50) titleArray:@[@"asdfasdfasdfasdfsadf", @"hgfhgfdhdfghdfghdfg", @"popikokkkokjkli"]];
@@ -38,7 +40,7 @@
     adView.onTouch = ^(NSInteger index) {
         DLog(@"---index = %ld", index);
     };
-    [self.view addSubview:adView];
+    //[self.view addSubview:adView];
 }
 
 - (void)setContentsScrollViewContentsSizeWithItemCount:(NSInteger)itemCount {
@@ -46,8 +48,10 @@
 }
 
 - (void)setContentsScrollViewOffsetWithIndex:(NSInteger)selectedIndex {
-    [UIView animateWithDuration:0.25 animations:^(void) {
+    [UIView animateWithDuration:0.20 animations:^(void) {
         _contentsScrollView.contentOffset = CGPointMake(selectedIndex * kDeviceWidth, 0);
+    } completion:^(BOOL finished) {
+        [self addContentsWithIndex:selectedIndex];
     }];
 }
 
@@ -56,7 +60,9 @@
 @implementation WGHomeTabViewController (ScrollDelegate)
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    [_titleSegmentView setSelectedIndex:((int)(scrollView.contentOffset.x + 1)) / (int)kDeviceWidth];
+    NSInteger selectedIndex = ((int)(scrollView.contentOffset.x + 1)) / (int)kDeviceWidth;
+    [_titleSegmentView setSelectedIndex:selectedIndex];
+    [self addContentsWithIndex:selectedIndex];
 }
 
 @end

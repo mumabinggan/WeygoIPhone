@@ -10,6 +10,7 @@
 #import "WGHomeFloorContentCountryItem.h"
 #import "WGHomeFloorContentGoodItem.h"
 #import "WGHomeFloorContentClassifyItem.h"
+#import "WGHomeFloorContentItem.h"
 
 @implementation WGHomeFloorContentItem
 
@@ -19,10 +20,9 @@
             WGHomeFloorContentCountryItem *countryItem = [[WGHomeFloorContentCountryItem alloc] init];
             _contentItem = countryItem;
         }
-        else if (_type == WGHomeFloorContentItemTypeGoodGrid ||
-                 _type == WGHomeFloorContentItemTypeGoodColumn ||
-                 _type == WGHomeFloorContentItemTypeGoodList) {
+        else if (_type == WGHomeFloorContentItemTypeGood) {
             WGHomeFloorContentGoodItem *goodItem = [[WGHomeFloorContentGoodItem alloc] init];
+            goodItem.chineseName = _chineseName;
             goodItem.briefDescription = _briefDescription;
             goodItem.rating = _rating;
             goodItem.price = _price;
@@ -31,8 +31,7 @@
             goodItem.discount = _discount;
             _contentItem = goodItem;
         }
-        else if (_type == WGHomeFloorContentItemTypeClassifyGrid ||
-                 _type == WGHomeFloorContentItemTypeClassifyColumn) {
+        else if (_type == WGHomeFloorContentItemTypeClassify) {
             WGHomeFloorContentClassifyItem *classifyItem = [[WGHomeFloorContentClassifyItem alloc] init];
             _contentItem = classifyItem;
         }

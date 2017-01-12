@@ -8,14 +8,14 @@
 
 #import "WGHomeTabViewController+Segment.h"
 #import "WGSegmentView.h"
-#import "WGHomeTabViewController+ScrollContents.h"
+#import "WGHomeTabViewController+Scroll.h"
 
 @implementation WGHomeTabViewController (Segment)
 
 - (void)addTitleSegmentView {
     _titleSegmentView = [[WGSegmentView alloc] initWithFrame:CGRectMake(0, kAppNavigationVCY, kDeviceWidth, kAppAdaptHeight(44))];
     [_titleSegmentView setTitleArray:@[@"每日尝鲜", @"精选寿司", @"绿色食品"]];
-    _titleSegmentView.backgroundColor = kRedColor;
+    _titleSegmentView.backgroundColor = kWhiteColor;
     __weak WGHomeTabViewController *weakSelf = self;
     _titleSegmentView.onSelect = ^(NSInteger oldIndex, NSInteger newIndex) {
         [weakSelf setContentsScrollViewOffsetWithIndex:newIndex];

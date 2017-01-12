@@ -31,9 +31,9 @@
 
 - (void)initSubView:(CGRect)frame {
     
-    _titleColor = kBlackColor;
-    _titleSelectedColor = kBlueColor;
-    _lineColor = kGreenColor;
+    _titleColor = WGAppTitleColor;
+    _titleSelectedColor = WGAppBaseColor;
+    _lineColor = WGAppBaseColor;
     _bounces = YES;
     _selectedIndex = 0;
     
@@ -91,6 +91,7 @@
         JHButton *titleBtn = [JHButton buttonWithType:UIButtonTypeCustom];
         titleBtn.frame = CGRectMake(0, 0, itemWidth, self.height);
         [titleBtn setTitle:title forState:UIControlStateNormal];
+        titleBtn.titleLabel.font = kAppAdaptFont(14);
         [titleBtn setTitleColor:(_selectedIndex == num) ? _titleSelectedColor : _titleColor forState:UIControlStateNormal];
         titleBtn.tag = num;
         [titleBtn addTarget:self action:@selector(touchItemBtn:) forControlEvents:UIControlEventTouchUpInside];

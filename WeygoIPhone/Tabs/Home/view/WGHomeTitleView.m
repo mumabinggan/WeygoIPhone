@@ -32,7 +32,7 @@
 - (void)initSubView {
     if (!_titleLabel) {
         _titleLabel = [[JHLabel alloc] initWithFrame:CGRectMake(0, 0, self.width, self.height)];
-        _titleLabel.font = kAppFont(14);
+        _titleLabel.font = kWGSFUIDisplaySemiBoldFont(16);
         _titleLabel.textColor = kWhiteColor;
         [self addSubview:_titleLabel];
     }

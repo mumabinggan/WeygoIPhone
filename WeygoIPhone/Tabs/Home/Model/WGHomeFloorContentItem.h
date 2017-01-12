@@ -11,11 +11,11 @@
 
 typedef NS_ENUM(NSInteger, WGHomeFloorContentItemType) {
     WGHomeFloorContentItemTypeNone,             //no content
-    WGHomeFloorContentItemTypeGoodList,         //good list display
-    WGHomeFloorContentItemTypeGoodColumn,       //good column display
-    WGHomeFloorContentItemTypeGoodGrid,         //good grid display
-    WGHomeFloorContentItemTypeClassifyGrid,     //classify grid display
-    WGHomeFloorContentItemTypeClassifyColumn,   //classify column display
+    
+    WGHomeFloorContentItemTypeGood,         //good display
+    
+    WGHomeFloorContentItemTypeClassify,   //classify display
+    
     WGHomeFloorContentItemTypeCountry,          //country display
 };
 
@@ -26,6 +26,8 @@ typedef NS_ENUM(NSInteger, WGHomeFloorContentItemType) {
 @property (nonatomic, assign) long long id;
 
 @property (nonatomic, strong) NSString *name;
+
+@property (nonatomic, strong) NSString *chineseName;
 
 @property (nonatomic, strong) NSString *pictureURL;
 
