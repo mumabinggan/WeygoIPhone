@@ -8,6 +8,21 @@
 
 #import "WGHomeTabContentViewController.h"
 #import "WGHomeFloorItem.h"
+#import "WGHomeCarouselFiguresCell.h"
+#import "WGHomeTopicCell.h"
+#import "WGNews.h"
+#import "WGHomeNewsCell.h"
+#import "WGHomeFloorNameHeadCell.h"
+#import "WGHomeFloorNameAndBriefInfoHeadCell.h"
+#import "WGHomeFloorPictureHeadCell.h"
+#import "WGHomeFloorCountryCell.h"
+#import "WGHomeFloorClassifyListItemCell.h"
+#import "WGHomeFloorClassifyColumnCell.h"
+#import "WGHomeFloorClassifyGridItemCell.h"
+#import "WGHomeFloorGoodGridItemCell.h"
+#import "WGHomeFloorGoodColumnCell.h"
+#import "WGHomeFloorGoodListMoreCell.h"
+#import "WGHomeFloorGoodListItemCell.h"
 
 //can delete
 #import "WGCarouselFigureItem.h"
@@ -17,10 +32,6 @@
 #import "WGHomeFloorContentItem.h"
 
 @interface WGHomeTabContentViewController ()
-
-@end
-
-@interface WGHomeTabContentViewController (CollectionDelegate)<UICollectionViewDataSource, UICollectionViewDelegate, TWCollectionViewRefreshingDelegate>
 
 @end
 
@@ -49,26 +60,33 @@
     _homeData.carouselFigures = @[carouselFigureItem, carouselFigureItem1];
     
     //WGTopicItem
-    WGTopicItem *topic = [[WGTopicItem alloc] init];
-    topic.pictureURL = @"http://www.pp3.cn/uploads/201609/2016090910.jpg";
-    WGTopicItem *topic1 = [[WGTopicItem alloc] init];
-    topic.pictureURL = @"http://www.pp3.cn/uploads/201609/2016091012.jpg";
-    WGTopicItem *topic2 = [[WGTopicItem alloc] init];
-    topic.pictureURL = @"http://www.pp3.cn/uploads/201609/2016091012.jpg";
-    WGTopicItem *topic3 = [[WGTopicItem alloc] init];
-    topic.pictureURL = @"http://www.pp3.cn/uploads/201609/2016091606.jpg";
-    _homeData.topics = @[topic, topic1, topic2, topic3];
+    WGTopicItem *topicItem = [[WGTopicItem alloc] init];
+    topicItem.pictureURL = @"http://www.pp3.cn/uploads/201609/2016090910.jpg";
+    topicItem.name = @"zheng";
+    WGTopicItem *topicItem1 = [[WGTopicItem alloc] init];
+    topicItem1.pictureURL = @"http://www.pp3.cn/uploads/201609/2016091012.jpg";
+    topicItem1.name = @"zhengyuan";
+    WGTopicItem *topicItem2 = [[WGTopicItem alloc] init];
+    topicItem2.pictureURL = @"http://www.pp3.cn/uploads/201609/2016091012.jpg";
+    topicItem2.name = @"zhengyuanqian";
+    WGTopicItem *topicItem3 = [[WGTopicItem alloc] init];
+    topicItem3.pictureURL = @"http://www.pp3.cn/uploads/201609/2016091606.jpg";
+    topicItem3.name = @"zhengyuanqian haha";
+    _homeData.topics = @[topicItem, topicItem1, topicItem2, topicItem3];;
     
     //New
-    WGNewsItem *new1 = [[WGNewsItem alloc] init];
-    new1.name = @"[言阙]:送别的我要骂人的。";
-    WGNewsItem *new2 = [[WGNewsItem alloc] init];
-    new2.name = @"动物分类学家根据动物的各种特征。";
-    WGNewsItem *new3 = [[WGNewsItem alloc] init];
-    new3.name = @"中国,国情,野生动物,濒危野生动物。";
-    WGNewsItem *new4 = [[WGNewsItem alloc] init];
-    new4.name = @"狮子和鬣狗天生就是对手。";
-    _homeData.news = @[new1, new2, new3, new4];
+    WGNewsItem *newItem1 = [[WGNewsItem alloc] init];
+    newItem1.name = @"How do you return a multiline text CGSize from the new iOS 7 method sizeW";
+    WGNewsItem *newItem2 = [[WGNewsItem alloc] init];
+    newItem2.name = @"CGSize textSize = [text sizeWithAttributes:@{ NSFontAttributeName : [UIFon";
+    WGNewsItem *newItem3 = [[WGNewsItem alloc] init];
+    newItem3.name = @"or the first time i see this notation for di";
+    WGNewsItem *newItem4 = [[WGNewsItem alloc] init];
+    newItem4.name = @"Have a look at this: stackoverflow.com/question";
+    WGNews *news = [[WGNews alloc] init];
+    news.name = @"好消息";
+    news.contents = @[newItem1, newItem2, newItem3, newItem4];
+    _homeData.news = news;
     
     WGHomeFloorItem *floor = [[WGHomeFloorItem alloc] init];
     floor.type = WGHomeFloorItemTypeGoodList;
@@ -77,9 +95,10 @@
     floor.pictureURL = @"http://www.pp3.cn/uploads/201609/2016091606.jpg";
     
     WGHomeFloorContentItem *floorItem = [[WGHomeFloorContentItem alloc] init];
+    floorItem.type = WGHomeFloorItemTypeGoodList;
     floorItem.name = @"zhengyuanqian";
     floorItem.chineseName = @"郑渊谦";
-    floorItem.briefDescription = @"天生性情温驯，毛色有纯色、";
+    floorItem.briefDescription = @"fdfasdfasdfasdf asfdaad";
     floorItem.price = 12.3;
     floorItem.pictureURL = @"http://www.pp3.cn/uploads/201609/2016091606.jpg";
     floorItem.discount = 0.3;
@@ -87,9 +106,10 @@
     floorItem.currentPrice = 10.1;
     
     WGHomeFloorContentItem *floorItem1 = [[WGHomeFloorContentItem alloc] init];
+    floorItem1.type = WGHomeFloorItemTypeGoodList;
     floorItem1.name = @"zhengyuanqian";
     floorItem1.chineseName = @"渊谦";
-    floorItem1.briefDescription = @"天生性情温驯，毛色有纯色、";
+    floorItem1.briefDescription = @"fdfasdfasdfasdf";
     floorItem1.price = 12.3;
     floorItem1.pictureURL = @"http://www.pp3.cn/uploads/201609/2016091606.jpg";
     floorItem1.discount = 0.3;
@@ -97,6 +117,7 @@
     floorItem1.currentPrice = 10.1;
     
     WGHomeFloorContentItem *floorItem2 = [[WGHomeFloorContentItem alloc] init];
+    floorItem2.type = WGHomeFloorItemTypeGoodList;
     floorItem2.name = @"zhengyuanqian";
     floorItem2.chineseName = @"郑谦";
     floorItem2.briefDescription = @"天生性情温驯，毛色有纯色、";
@@ -114,6 +135,7 @@
     floor1.pictureURL = @"http://www.pp3.cn/uploads/201609/2016091606.jpg";
     
     WGHomeFloorContentItem *floorItem3 = [[WGHomeFloorContentItem alloc] init];
+    floorItem3.type = WGHomeFloorItemTypeGoodColumn;
     floorItem3.name = @"zhengyuanqian";
     floorItem3.chineseName = @"郑渊谦";
     floorItem3.briefDescription = @"天生性情温驯，毛色有纯色、";
@@ -124,6 +146,7 @@
     floorItem3.currentPrice = 10.1;
     
     WGHomeFloorContentItem *floorItem4 = [[WGHomeFloorContentItem alloc] init];
+    floorItem4.type = WGHomeFloorItemTypeGoodColumn;
     floorItem4.name = @"zhengyuanqian";
     floorItem4.chineseName = @"渊谦";
     floorItem4.briefDescription = @"天生性情温驯，毛色有纯色、";
@@ -134,6 +157,7 @@
     floorItem4.currentPrice = 10.1;
     
     WGHomeFloorContentItem *floorItem5 = [[WGHomeFloorContentItem alloc] init];
+    floorItem5.type = WGHomeFloorItemTypeGoodColumn;
     floorItem5.name = @"zhengyuanqian";
     floorItem5.chineseName = @"郑谦";
     floorItem5.briefDescription = @"天生性情温驯，毛色有纯色、";
@@ -151,6 +175,7 @@
     floor2.pictureURL = @"http://www.pp3.cn/uploads/201609/2016091606.jpg";
     
     WGHomeFloorContentItem *floorItem6 = [[WGHomeFloorContentItem alloc] init];
+    floorItem6.type = WGHomeFloorItemTypeGoodGrid;
     floorItem6.name = @"zhengyuanqian";
     floorItem6.chineseName = @"郑渊谦";
     floorItem6.briefDescription = @"天生性情温驯，毛色有纯色、";
@@ -161,6 +186,7 @@
     floorItem6.currentPrice = 10.1;
     
     WGHomeFloorContentItem *floorItem7 = [[WGHomeFloorContentItem alloc] init];
+    floorItem7.type = WGHomeFloorItemTypeGoodGrid;
     floorItem7.name = @"zhengyuanqian";
     floorItem7.chineseName = @"渊谦";
     floorItem7.briefDescription = @"天生性情温驯，毛色有纯色、";
@@ -171,6 +197,7 @@
     floorItem7.currentPrice = 10.1;
     
     WGHomeFloorContentItem *floorItem8 = [[WGHomeFloorContentItem alloc] init];
+    floorItem8.type = WGHomeFloorItemTypeGoodGrid;
     floorItem8.name = @"zhengyuanqian";
     floorItem8.chineseName = @"郑谦";
     floorItem8.briefDescription = @"天生性情温驯，毛色有纯色、";
@@ -187,6 +214,7 @@
     floor3.breifDescription = @"IOS 开发工程师";
     floor3.pictureURL = @"http://www.pp3.cn/uploads/201609/2016091606.jpg";
     WGHomeFloorContentItem *floorItem9 = [[WGHomeFloorContentItem alloc] init];
+    floorItem9.type = WGHomeFloorItemTypeCountry;
     floorItem9.name = @"zhengyuanqian";
     floorItem9.chineseName = @"郑谦";
     floorItem9.briefDescription = @"天生性情温驯，毛色有纯色、";
@@ -199,6 +227,7 @@
     floor4.breifDescription = @"IOS 开发工程师";
     floor4.pictureURL = @"http://www.pp3.cn/uploads/201609/2016091606.jpg";
     WGHomeFloorContentItem *floorItem10 = [[WGHomeFloorContentItem alloc] init];
+    floorItem10.type = WGHomeFloorItemTypeClassifyList;
     floorItem10.name = @"zhengyuanqian";
     floorItem10.chineseName = @"郑谦";
     floorItem10.briefDescription = @"天生性情温驯，毛色有纯色、";
@@ -211,6 +240,7 @@
     floor5.breifDescription = @"IOS 开发工程师";
     floor5.pictureURL = @"http://www.pp3.cn/uploads/201609/2016091606.jpg";
     WGHomeFloorContentItem *floorItem11 = [[WGHomeFloorContentItem alloc] init];
+    floorItem11.type = WGHomeFloorItemTypeClassifyColumn;
     floorItem11.name = @"zhengyuanqian";
     floorItem11.chineseName = @"郑谦";
     floorItem11.briefDescription = @"天生性情温驯，毛色有纯色、";
@@ -223,6 +253,7 @@
     floor6.breifDescription = @"IOS 开发工程师";
     floor6.pictureURL = @"http://www.pp3.cn/uploads/201609/2016091606.jpg";
     WGHomeFloorContentItem *floorItem12 = [[WGHomeFloorContentItem alloc] init];
+    floorItem12.type = WGHomeFloorItemTypeClassifyGrid;
     floorItem12.name = @"zhengyuanqian";
     floorItem12.chineseName = @"郑谦";
     floorItem12.briefDescription = @"天生性情温驯，毛色有纯色、";
@@ -242,24 +273,6 @@
         _tableView.separatorStyle = UITableViewCellSelectionStyleNone;
     }
     return _tableView;
-}
-
-- (TWRefreshCollectionView *)collectionView {
-    if (!_collectionView) {
-        UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-        layout.scrollDirection = UICollectionViewScrollDirectionVertical;
-        layout.itemSize = CGSizeMake(100, 100);
-        layout.footerReferenceSize = CGSizeMake(kDeviceWidth, 50);
-        _collectionView = [[TWRefreshCollectionView alloc]initWithFrame:self.view.bounds collectionViewLayout:layout];
-        _collectionView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-        //        _collectionView = [[TWRefreshCollectionView alloc]initWithFrame:_contentsScrollView.bounds collectionViewLayout:layout refreshType:TWRefreshTypeTop | TWRefreshTypeBottom];
-        //_collectionView.collectionViewLayout = layout;
-        _collectionView.delegate = self;
-        _collectionView.dataSource = self;
-        //_collectionView.refreshDelegate = self;
-        [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cellId"];
-    }
-    return _collectionView;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -337,29 +350,133 @@
     }
 }
 
+- (NSString *)tableViewCellIdentifier:(NSIndexPath *)indexPath {
+    NSString *identifier = @"cellIdentifier";
+    if (indexPath.section == 0) {
+        identifier = [NSString stringWithFormat:@"%ld_%ld", indexPath.section, indexPath.row];
+    }
+    else {
+        if (indexPath.row == 0 || indexPath.row == 1) {
+            identifier = [NSString stringWithFormat:@"%ld_%ld", indexPath.section, indexPath.row];
+        }
+        else {
+            NSInteger index = indexPath.section - 1;
+            if (_homeData.floors.count > index) {
+                WGHomeFloorItem *item = _homeData.floors[index];
+                if (item.type == WGHomeFloorItemTypeGoodList &&
+                    item.contents.count <= indexPath.row - 2) {
+                    identifier = [NSString stringWithFormat:@"type_%ld_more", item.type];
+                }
+                else {
+                    identifier = [NSString stringWithFormat:@"type_%ld", item.type];
+                }
+            }
+        }
+    }
+    return [NSString stringWithFormat:@"cell_%@", identifier];
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *cellId = @"cell";
+    static NSString *cellId = nil;
+    cellId = [self tableViewCellIdentifier:indexPath];
     JHTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
     if (!cell) {
-        cell = [[JHTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+        if (indexPath.section == 0) {
+            if (indexPath.row == 0) {
+                cell = [[WGHomeCarouselFiguresCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+            }
+            else if (indexPath.row == 1) {
+                cell = [[WGHomeTopicCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+            }
+            else {
+                cell = [[WGHomeNewsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+            }
+        }
+        else {
+            WGHomeFloorItem *item = _homeData.floors[indexPath.section - 1];
+            if (indexPath.row == 0) {
+                cell = [[WGHomeFloorNameAndBriefInfoHeadCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+            }
+            else if (indexPath.row == 1) {
+                cell = [[WGHomeFloorPictureHeadCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+            }
+            else {
+                if (item.type == WGHomeFloorItemTypeCountry) {
+                    cell = [[WGHomeFloorCountryCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+                }
+                else if (item.type == WGHomeFloorItemTypeGoodList) {
+                    cell = [[WGHomeFloorGoodListItemCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+                    JHView *line = [[JHView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kAppSepratorLineHeight)];
+                    line.backgroundColor = WGAppSeparateLineColor;
+                    [cell.contentView addSubview:line];
+                }
+                else if (item.type == WGHomeFloorItemTypeGoodColumn) {
+                    cell = [[WGHomeFloorGoodColumnCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+                }
+                else if (item.type == WGHomeFloorItemTypeGoodGrid) {
+                    cell = [[WGHomeFloorGoodGridItemCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+                }
+                else if (item.type == WGHomeFloorItemTypeClassifyList) {
+                    cell = [[WGHomeFloorClassifyListItemCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+                }
+                else if (item.type == WGHomeFloorItemTypeClassifyColumn) {
+                    cell = [[WGHomeFloorClassifyColumnCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+                }
+                else if (item.type == WGHomeFloorItemTypeClassifyGrid) {
+                    cell = [[WGHomeFloorClassifyGridItemCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+                }
+            }
+        }
+        if (!cell) {
+            cell = [[JHTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+        }
+        cell.clipsToBounds = YES;
     }
-    if (indexPath.row == 0) {
-        cell.backgroundColor = kRedColor;
+    if (indexPath.section == 0) {
+        if (indexPath.row == 0) {
+            [cell showWithArray:_homeData.carouselFiguresPictureArray];
+        }
+        else if (indexPath.row == 1) {
+            [cell showWithArray:_homeData.topics];
+        }
+        else {
+            [cell showWithData:_homeData.news];
+        }
     }
-    else if (indexPath.row == 1) {
-        cell.backgroundColor = kGreenColor;
-    }
-    else if (indexPath.row == 2) {
-        cell.backgroundColor = kBlueColor;
-    }
-    else if (indexPath.row == 3) {
-        cell.backgroundColor = kGrayColor;
-    }
-    else if (indexPath.row == 4) {
-        cell.backgroundColor = kYellowColor;
-    }
-    else if (indexPath.row == 5) {
-        cell.backgroundColor = kRandomColor;
+    else {
+        WGHomeFloorItem *item = _homeData.floors[indexPath.section - 1];
+        if (indexPath.row == 0 || indexPath.row == 1) {
+            [cell showWithData:item];
+        }
+        else {
+            NSInteger contentIndex = indexPath.row - 2;
+            NSInteger contentCount = item.contents.count;
+            if (item.type == WGHomeFloorItemTypeGoodList ||
+                item.type == WGHomeFloorItemTypeClassifyList) {
+                if (contentCount > contentIndex) {
+                    [cell showWithData:item.contents[contentIndex]];
+                }
+            }
+            else {
+                NSRange range;
+                if (item.type == WGHomeFloorItemTypeCountry ||
+                    item.type == WGHomeFloorItemTypeClassifyGrid) {
+                    NSUInteger loc = contentIndex * 4;
+                    range = NSMakeRange(loc, (((contentCount - loc) / 4) > 0) ? 4 : ((contentCount - loc) % 4));
+                }
+                else if (item.type == WGHomeFloorItemTypeGoodGrid) {
+                    NSUInteger loc = contentIndex * 2;
+                    range = NSMakeRange(loc, (((contentCount - loc) / 2) > 0) ? 2 : ((contentCount - loc) % 2));
+                }
+                else if (item.type == WGHomeFloorItemTypeGoodColumn ||
+                         item.type == WGHomeFloorItemTypeClassifyColumn) {
+                    range = NSMakeRange(0, item.contents.count);
+                }
+                NSIndexSet *set = [NSIndexSet indexSetWithIndexesInRange:range];
+                NSArray *dataArray = [item.contents objectsAtIndexes:set];
+                [cell showWithArray:dataArray];
+            }
+        }
     }
     return cell;
 }
@@ -378,48 +495,3 @@
 
 @end
 
-@implementation WGHomeTabContentViewController (CollectionDelegate)
-
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    NSInteger number = 0;
-    if (_homeData) {
-        number = ((_homeData.floors) ? _homeData.floors.count : 0) + 1;
-    }
-    return number;
-}
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    NSInteger number = 0;
-    if (_homeData) {
-        if (section == 0) {
-            number = (_homeData.carouselFigures == nil || _homeData.carouselFigures.count == 0) ? 0 : 1;
-            number = (_homeData.topics == nil || _homeData.topics.count == 0) ? 0 : 1;
-            number = (_homeData.news == nil || _homeData.news.count == 0) ? 0 : 1;
-        }
-        else {
-            NSArray *floors = _homeData.floors;
-            WGHomeFloorItem *floorItem = nil;
-            if (floors.count > section - 1) {
-                floorItem = floors[section - 1];
-                number = floorItem.homeRowCount;
-            }
-        }
-    }
-    return number;
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell * cell  = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellId" forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor colorWithRed:arc4random()%255/255.0 green:arc4random()%255/255.0 blue:arc4random()%255/255.0 alpha:1];
-    return cell;
-}
-
-- (void)beginRefreshHeader:(TWRefreshCollectionView*) collectionView {
-    DLog(@"---header collection");
-}
-
-- (void)beginRefreshFooter:(TWRefreshCollectionView*) collectionView {
-    DLog(@"---footer collection");
-}
-
-@end

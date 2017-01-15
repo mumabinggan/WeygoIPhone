@@ -8,13 +8,15 @@
 
 #import "WGObject.h"
 
+@class WGNews;
+
 @interface WGHome : WGObject
 
 @property (nonatomic, strong) NSArray *carouselFigures;
 
 @property (nonatomic, strong) NSArray *topics;
 
-@property (nonatomic, strong) NSArray *news;
+@property (nonatomic, strong) WGNews *news;
 
 @property (nonatomic, strong) NSArray *floors;
 
@@ -24,5 +26,7 @@
 @property (nonatomic, assign, readonly) float homeTopicsHeight;
 
 @property (nonatomic, assign, readonly) float homeNewsHeight;
+
+@property (nonatomic, strong) NSArray *carouselFiguresPictureArray;
 
 @end

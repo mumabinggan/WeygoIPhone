@@ -21,9 +21,8 @@
 
 - (void)loadSubviews {
     [super loadSubviews];
-
-    self.backgroundColor = kRGB(248, 255, 255);
     
+    self.backgroundColor = kRGB(247, 249, 250);
     float totalWidth = self.width;
     float width = kAppAdaptWidth(64);
     float height = kAppAdaptWidth(64);
@@ -31,9 +30,10 @@
     _imageView.contentMode = UIViewContentModeScaleAspectFit;
     [self addSubview:_imageView];
     
-    _nameLabel = [[JHLabel alloc] initWithFrame:CGRectMake(0, _imageView.maxY, totalWidth, kAppAdaptHeight(20))];
+    _nameLabel = [[JHLabel alloc] initWithFrame:CGRectMake(0, _imageView.maxY, totalWidth, kAppAdaptHeight(32))];
     _nameLabel.textAlignment = NSTextAlignmentCenter;
-    _nameLabel.font = kWGOswaldMediumAdaptFont(14);
+    _nameLabel.font = kAppAdaptFont(12);
+    _nameLabel.numberOfLines = 2;
     _nameLabel.textColor = kRGBA(0, 0, 0, 0.87);
     [self addSubview:_nameLabel];
     

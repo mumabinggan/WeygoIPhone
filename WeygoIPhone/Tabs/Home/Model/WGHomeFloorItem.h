@@ -7,20 +7,7 @@
 //
 
 #import "WGObject.h"
-
-typedef NS_ENUM(NSInteger, WGHomeFloorItemType) {
-    WGHomeFloorItemTypeNone,             //no content
-    
-    WGHomeFloorItemTypeGoodList,         //good list display
-    WGHomeFloorItemTypeGoodColumn,       //good column display
-    WGHomeFloorItemTypeGoodGrid,         //good grid display
-    
-    WGHomeFloorItemTypeClassifyList,   //classify list display
-    WGHomeFloorItemTypeClassifyColumn,   //classify column display
-    WGHomeFloorItemTypeClassifyGrid,     //classify grid display
-    
-    WGHomeFloorItemTypeCountry,          //country display
-};
+#import "WGHomeFloorContentItem.h"
 
 @interface WGHomeFloorItem : WGObject
 
@@ -39,8 +26,7 @@ typedef NS_ENUM(NSInteger, WGHomeFloorItemType) {
 //for dif skip
 @property (nonatomic, assign) int requestParameter;
 
-//home page height
-@property (nonatomic, assign) float height;
+
 
 //home page name height
 @property (nonatomic, assign) float homeNameHeight;
@@ -51,7 +37,12 @@ typedef NS_ENUM(NSInteger, WGHomeFloorItemType) {
 //home page numberOfRowInSection
 @property (nonatomic, assign) NSInteger homeRowCount;
 
+//text head only name
+@property (nonatomic, assign, readonly) BOOL onlyName;
+
 //home page height of indexpath
 - (CGFloat)heightOfContentItemOfRow:(NSInteger)row;
+
+//texthead
 
 @end

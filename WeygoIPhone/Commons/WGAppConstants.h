@@ -11,6 +11,7 @@
 
 #define WGAppBaseColor  kRGB(233, 122, 60)
 #define WGAppTitleColor  kRGBA(0, 0, 0, 0.54)
+#define WGAppSeparateLineColor kHRGB(0x999999);
 
 #define kWGSideBarWidth  (kDeviceWidth * 2.0/3.0)
 
@@ -22,6 +23,12 @@
 
 #define kWGSFUIDisplayRegularFont(fsize)    kFont(fsize, @"SF-UI-Display-Regular")
 #define kWGSFUIDisplayRegularAdaptFont(fsize)    kWGSFUIDisplayRegularFont(fsize * kDeviceWidthScaleTo47Inch)
+
+#define kWGSFUIDisplayMediumFont(fsize)    kFont(fsize, @"SF-UI-Display-Medium")
+#define kWGSFUIDisplayMediumAdaptFont(fsize)    kWGSFUIDisplayMediumFont(fsize * kDeviceWidthScaleTo47Inch)
+
+#define kWGSFUIDisplayBoldFont(fsize)    kFont(fsize, @"SF-UI-Display-Bold")
+#define kWGSFUIDisplayBoldAdaptFont(fsize)    kWGSFUIDisplayBoldFont(fsize * kDeviceWidthScaleTo47Inch)
 
 #define kWGOswaldRegularFont(fsize)    kFont(fsize, @"Oswald-Regular")
 #define kWGOswaldRegularAdaptFont(fsize)    kWGOswaldRegularFont(fsize * kDeviceWidthScaleTo47Inch)
@@ -38,11 +45,14 @@
 
 #define kHomeTopicPlaceholderImage [UIImage imageNamed:@""]
 
+#define kHomeFloorPictureHeaderPlaceholderImage [UIImage imageNamed:@""]
+
 #define kHomeGoodListPlaceholderImage [UIImage imageNamed:@""]
 #define kHomeGoodColumnPlaceholderImage [UIImage imageNamed:@""]
 #define kHomeGoodGridPlaceholderImage [UIImage imageNamed:@""]
 #define kHomeClassifyGridPlaceholderImage [UIImage imageNamed:@""]
 #define kHomeClassifyColumnPlaceholderImage [UIImage imageNamed:@""]
+#define kHomeClassifyListPlaceholderImage [UIImage imageNamed:@""]
 #define kHomeCountryPlaceholderImage [UIImage imageNamed:@""]
 
 #endif /* WGAppConstants_h */

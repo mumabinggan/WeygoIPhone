@@ -19,7 +19,7 @@
     if (self) {
         // Custom initialization
         self.tabBarIndex = WGTabIndexForeign;
-        self.tabBarItem.title = kStr(@"TabMine");
+        self.tabBarItem.title = kStr(@"TabForeign");
         self.tabBarItem.image = [UIImage imageNamed:@"tab-mine"];
         self.tabBarItem.selectedImage = [UIImage imageNamed:@"tab-mine-highlight"];
     }

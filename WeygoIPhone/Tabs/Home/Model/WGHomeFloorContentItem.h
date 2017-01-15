@@ -9,19 +9,23 @@
 #import "WGObject.h"
 #import "WGHomeFloorBaseContentItem.h"
 
-typedef NS_ENUM(NSInteger, WGHomeFloorContentItemType) {
-    WGHomeFloorContentItemTypeNone,             //no content
+typedef NS_ENUM(NSInteger, WGHomeFloorItemType) {
+    WGHomeFloorItemTypeNone,             //no content
     
-    WGHomeFloorContentItemTypeGood,         //good display
+    WGHomeFloorItemTypeGoodList,         //good list display
+    WGHomeFloorItemTypeGoodColumn,       //good column display
+    WGHomeFloorItemTypeGoodGrid,         //good grid display
     
-    WGHomeFloorContentItemTypeClassify,   //classify display
+    WGHomeFloorItemTypeClassifyList,   //classify list display
+    WGHomeFloorItemTypeClassifyColumn,   //classify column display
+    WGHomeFloorItemTypeClassifyGrid,     //classify grid display
     
-    WGHomeFloorContentItemTypeCountry,          //country display
+    WGHomeFloorItemTypeCountry,          //country display
 };
 
 @interface WGHomeFloorContentItem : WGObject
 
-@property (nonatomic, assign) WGHomeFloorContentItemType type;
+@property (nonatomic, assign) WGHomeFloorItemType type;
 
 @property (nonatomic, assign) long long id;
 

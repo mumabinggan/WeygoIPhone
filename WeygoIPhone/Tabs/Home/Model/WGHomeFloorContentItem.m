@@ -16,11 +16,13 @@
 
 - (WGHomeFloorBaseContentItem *)contentItem {
     if (!_contentItem) {
-        if (_type == WGHomeFloorContentItemTypeCountry) {
+        if (_type == WGHomeFloorItemTypeCountry) {
             WGHomeFloorContentCountryItem *countryItem = [[WGHomeFloorContentCountryItem alloc] init];
             _contentItem = countryItem;
         }
-        else if (_type == WGHomeFloorContentItemTypeGood) {
+        else if (_type == WGHomeFloorItemTypeGoodList ||
+                 _type == WGHomeFloorItemTypeGoodColumn ||
+                 _type == WGHomeFloorItemTypeGoodGrid) {
             WGHomeFloorContentGoodItem *goodItem = [[WGHomeFloorContentGoodItem alloc] init];
             goodItem.chineseName = _chineseName;
             goodItem.briefDescription = _briefDescription;
@@ -31,7 +33,9 @@
             goodItem.discount = _discount;
             _contentItem = goodItem;
         }
-        else if (_type == WGHomeFloorContentItemTypeClassify) {
+        else if (_type == WGHomeFloorItemTypeClassifyList ||
+                 _type == WGHomeFloorItemTypeClassifyColumn ||
+                 _type == WGHomeFloorItemTypeClassifyGrid) {
             WGHomeFloorContentClassifyItem *classifyItem = [[WGHomeFloorContentClassifyItem alloc] init];
             _contentItem = classifyItem;
         }
@@ -41,6 +45,32 @@
         _contentItem.requestParameter = _requestParameter;
     }
     return _contentItem;
+}
+
+- (void)calculateContentHeight {
+    float height = 0.0f;
+    if (_type == WGHomeFloorItemTypeCountry) {
+        height = kAppAdaptHeight(120);
+    }
+    else if (_type == WGHomeFloorItemTypeGoodList) {
+        height = kAppAdaptHeight(124);
+    }
+    else if (_type == WGHomeFloorItemTypeGoodColumn) {
+        height = kAppAdaptHeight(232);
+    }
+    else if (_type == WGHomeFloorItemTypeGoodGrid) {
+        height = kAppAdaptHeight(320);
+    }
+    else if (_type == WGHomeFloorItemTypeClassifyList) {
+        height = kAppAdaptHeight(184);
+    }
+    else if (_type == WGHomeFloorItemTypeClassifyColumn) {
+        height = kAppAdaptHeight(130);
+    }
+    else if (_type == WGHomeFloorItemTypeClassifyGrid) {
+        height = kAppAdaptHeight(136);;
+    }
+    _contentHeight = height;
 }
 
 @end

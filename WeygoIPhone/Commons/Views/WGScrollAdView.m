@@ -45,7 +45,8 @@
     CGRect frame = CGRectMake(self.width, 0, 100, self.height);
     _oneAdsView = [[JHView alloc] initWithFrame:frame];
     _twoAdsView = [[JHView alloc] initWithFrame:frame];
-    UIFont *font = kAdaptFont(15, @"Oswald");
+    UIFont *font = kAppAdaptFont(16);
+    //UIFont *font = kWGSFUIDisplayMediumAdaptFont(14);
     float adsViewWidth = 0;
     for (int num = 0; num < _titleArray.count; ++num) {
         NSString *title = _titleArray[num];
@@ -63,7 +64,7 @@
         copyLabel.font = label.font;
         copyLabel.tag = num;
         copyLabel.userInteractionEnabled = YES;
-        [label addSingleTapGestureRecognizerWithTarget:self action:@selector(touchItem:)];
+        [copyLabel addSingleTapGestureRecognizerWithTarget:self action:@selector(touchItem:)];
         [_twoAdsView addSubview:copyLabel];
         
         adsViewWidth += (size.width + _space);

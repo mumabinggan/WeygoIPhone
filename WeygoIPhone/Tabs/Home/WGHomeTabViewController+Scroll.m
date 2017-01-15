@@ -20,7 +20,7 @@
 
 - (void)addContentsScrollView {
     _contentsScrollView = [[JHScrollView alloc] initWithFrame:CGRectMake(0, _titleSegmentView.maxY, kDeviceWidth, kDeviceHeight - _titleSegmentView.maxY - kAppTabBarHeight)];
-    _contentsScrollView.contentSize = CGSizeMake(3 * kDeviceWidth, _contentsScrollView.height);
+    //_contentsScrollView.contentSize = CGSizeMake(3 * kDeviceWidth, _contentsScrollView.height);
     _contentsScrollView.showsHorizontalScrollIndicator = NO;
     _contentsScrollView.delegate = self;
     _contentsScrollView.pagingEnabled = YES;

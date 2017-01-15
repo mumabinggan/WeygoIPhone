@@ -7,7 +7,6 @@
 //
 
 #import "WGHomeFloorItem.h"
-#import "WGHomeFloorContentItem.h"
 
 @implementation WGHomeFloorItem
 
@@ -30,58 +29,18 @@
     return [NSString isNullOrEmpty:_pictureURL] ? 0 : kAppAdaptHeight(136);
 }
 
-- (float)height {
-    if (_height >= 0.001) {
-        return _height;
-    }
-    float height = 0.0;
-    //title cell
-    height += self.homeNameHeight;
-    
-    //picture cell
-    height += self.homePictureHeight;
-    
-    //content cell
-    if (_type == WGHomeFloorItemTypeCountry) {
-        height += 120;
-    }
-    else if (_type == WGHomeFloorItemTypeGoodList) {
-        height += (kAppAdaptHeight(124) * _contents.count + kAppAdaptHeight(56));
-    }
-    else if (_type == WGHomeFloorItemTypeGoodColumn) {
-        height += kAppAdaptHeight(232);
-    }
-    else if (_type == WGHomeFloorItemTypeGoodGrid) {
-        height += kAppAdaptHeight(232) * ((_contents.count + 1) / 2);
-    }
-    else if (_type == WGHomeFloorItemTypeClassifyList) {
-        height += kAppAdaptHeight(184) * (_contents.count);
-    }
-    else if (_type == WGHomeFloorItemTypeClassifyColumn) {
-        height += kAppAdaptHeight(130);
-    }
-    else if (_type == WGHomeFloorItemTypeClassifyGrid) {
-        height += kAppAdaptHeight(136) * ((_contents.count + 3) / 4);
-    }
-    
-    return height;
-}
-
 - (NSInteger)homeRowCount {
     if (_homeRowCount != 0 && _homeRowCount != 2) {
         return _homeRowCount;
     }
 
     _homeRowCount = 2;
-    /*
-    _homeRowCount += [NSString isNullOrEmpty:_name] ? 0 : 1;
-    _homeRowCount += [NSString isNullOrEmpty:_pictureURL] ? 0 : 1;
-    */
+
     if (_type == WGHomeFloorItemTypeCountry) {
         _homeRowCount += (_contents.count + 3) / 4;
     }
     else if (_type == WGHomeFloorItemTypeGoodList) {
-        _homeRowCount += (_contents.count + 1);
+        _homeRowCount += (_contents.count > 4) ? 5 : _contents.count;
     }
     else if (_type == WGHomeFloorItemTypeGoodColumn) {
         _homeRowCount += 1;
@@ -102,6 +61,10 @@
     return _homeRowCount;
 }
 
+- (BOOL)onlyName {
+    return [NSString isNullOrEmpty:_breifDescription];
+}
+
 - (CGFloat)heightOfContentItemOfRow:(NSInteger)row {
     CGFloat height = 0.0f;
     if (row == 0) {
@@ -111,27 +74,31 @@
         height = self.homePictureHeight;
     }
     else {
-        NSInteger begin = row - 2;
-        if (_type == WGHomeFloorItemTypeCountry) {
-            height = kAppAdaptHeight(120);
+        NSInteger index = row - 2;
+        if (_type == WGHomeFloorItemTypeGoodList) {
+            JHObject *item = _contents[index];
+            height = (_contents.count > index) ? item.contentHeight : kAppAdaptHeight(56);
         }
-        else if (_type == WGHomeFloorItemTypeGoodList) {
-            height = (_contents.count > begin) ? kAppAdaptHeight(124) : kAppAdaptHeight(56);
-        }
-        else if (_type == WGHomeFloorItemTypeGoodColumn) {
-            height = kAppAdaptHeight(232);
-        }
-        else if (_type == WGHomeFloorItemTypeGoodGrid) {
-            height = kAppAdaptHeight(232);
-        }
-        else if (_type == WGHomeFloorItemTypeClassifyList) {
-            height = kAppAdaptHeight(184);
-        }
-        else if (_type == WGHomeFloorItemTypeClassifyColumn) {
-            height = kAppAdaptHeight(130);
-        }
-        else if (_type == WGHomeFloorItemTypeClassifyGrid) {
-            height = kAppAdaptHeight(136);;
+        else {
+            JHObject *item = _contents[0];
+            if (_type == WGHomeFloorItemTypeCountry) {
+                height = item.contentHeight;
+            }
+            else if (_type == WGHomeFloorItemTypeGoodColumn) {
+                height = item.contentHeight;
+            }
+            else if (_type == WGHomeFloorItemTypeGoodGrid) {
+                height = item.contentHeight + (((_contents.count + 1) / 2 == index + 1) ? kAppAdaptHeight(8) : 0);
+            }
+            else if (_type == WGHomeFloorItemTypeClassifyList) {
+                height = item.contentHeight + ((_contents.count == index + 1) ? kAppAdaptHeight(8) : 0);
+            }
+            else if (_type == WGHomeFloorItemTypeClassifyColumn) {
+                height = item.contentHeight;
+            }
+            else if (_type == WGHomeFloorItemTypeClassifyGrid) {
+                height = item.contentHeight;
+            }
         }
     }
     return height;

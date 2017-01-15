@@ -10,7 +10,7 @@
 
 @class WGHomeFloorContentGoodItem;
 
-@interface WGHomeFloorContentGoodListView : JHView
+@interface WGHomeFloorGoodListItemView : JHView
 
 @property (nonatomic, copy) void (^onPurchase)(WGHomeFloorContentGoodItem *object);
 

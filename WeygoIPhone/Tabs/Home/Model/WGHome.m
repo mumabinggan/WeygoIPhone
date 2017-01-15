@@ -11,6 +11,7 @@
 #import "WGTopicItem.h"
 #import "WGNewsItem.h"
 #import "WGHomeFloorItem.h"
+#import "WGNews.h"
 
 @implementation WGHome
 
@@ -20,9 +21,6 @@
     }
     if ([@"topics" isEqualToString:propertyName]) {
         return [WGTopicItem class];
-    }
-    if ([@"news" isEqualToString:propertyName]) {
-        return [WGNewsItem class];
     }
     if ([@"floors" isEqualToString:propertyName]) {
         return [WGHomeFloorItem class];
@@ -48,10 +46,22 @@
 
 - (float)homeNewsHeight {
     float height = 0.0f;
-    if (_news && _news.count > 0) {
+    if (_news && _news.contents && _news.contents.count > 0) {
         height = kAppAdaptHeight(48);
     }
     return height;
+}
+
+- (NSArray *)carouselFiguresPictureArray {
+    if (!_carouselFigures) {
+        return nil;
+    }
+    
+    NSMutableArray *pictureArray = [NSMutableArray array];
+    for (WGCarouselFigureItem *item in _carouselFigures) {
+        [pictureArray addObject:[NSString safeString:item.pictureURL]];
+    }
+    return pictureArray;
 }
 
 @end

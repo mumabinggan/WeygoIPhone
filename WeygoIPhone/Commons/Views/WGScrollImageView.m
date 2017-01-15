@@ -55,10 +55,13 @@
     _scrollView.showsHorizontalScrollIndicator = NO;
     [self addSubview:_scrollView];
 
-    _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, 200, 375, 20)];
+    _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, self.height - 30, self.width, 20)];
     _pageControl.currentPageIndicatorTintColor = [UIColor greenColor];
     _pageControl.pageIndicatorTintColor = [UIColor blackColor];
     _pageControl.hidesForSinglePage = YES;
+//    _pageControl.center = CGPointMake(self.width / 2, _scrollView.height - 20);
+//    _pageControl.bounds = CGRectMake(0, 0, self.width, 20);
+//    _pageControl.numberOfPages = 2;
     _pageControl.enabled = NO;
     [self addSubview:_pageControl];
 }
@@ -85,6 +88,9 @@
     _scrollView.contentSize = CGSizeMake((newImageArray.count) * _scrollView.width, _scrollView.height);
     
     _pageControl.numberOfPages = imageArray.count;
+    frame = _pageControl.frame;
+    frame.size.width = self.width;
+    //_pageControl.frame = frame;
     _pageControl.currentPage = 0;
     
     if (_timer) {

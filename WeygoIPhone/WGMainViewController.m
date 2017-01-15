@@ -40,7 +40,7 @@ static const float kTabBarHeight = 60;
 //    self.tabBar.backgroundColor = kWhiteColor;
     self.selectedIndex = WGTabIndexHome;
     
-    [self setCenterTabBarItem];
+    //[self setCenterTabBarItem];
 }
 
 - (void)resetViewControllersWithIndex:(NSInteger)index {
