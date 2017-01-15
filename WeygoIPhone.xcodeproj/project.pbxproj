@@ -75,6 +75,9 @@
 		BE6CC1CD1E2B5BE5003755FF /* WGHomeFloorClassifyColumnView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6CC1CC1E2B5BE5003755FF /* WGHomeFloorClassifyColumnView.m */; };
 		BE6CC1D01E2B9426003755FF /* WGHomeFloorCountryItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6CC1CF1E2B9426003755FF /* WGHomeFloorCountryItemView.m */; };
 		BE6CC1D31E2B9C63003755FF /* WGHomeFloorClassifyGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6CC1D21E2B9C63003755FF /* WGHomeFloorClassifyGridView.m */; };
+		BE6CC1DD1E2BBA78003755FF /* WGClassifyGoodListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6CC1DC1E2BBA78003755FF /* WGClassifyGoodListViewController.m */; };
+		BE6CC1E01E2BBB4C003755FF /* WGClassifyGoodList.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6CC1DF1E2BBB4C003755FF /* WGClassifyGoodList.m */; };
+		BE6CC1E31E2BBCDF003755FF /* WGClassifyGoodListContentItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6CC1E21E2BBCDF003755FF /* WGClassifyGoodListContentItem.m */; };
 		BE83BB1E1E23E233002F3BCC /* WGHome.m in Sources */ = {isa = PBXBuildFile; fileRef = BE83BB1D1E23E233002F3BCC /* WGHome.m */; };
 		BE83BB211E23E300002F3BCC /* WGCarouselFigureItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BE83BB201E23E300002F3BCC /* WGCarouselFigureItem.m */; };
 		BE83BB2A1E23E46F002F3BCC /* WGNewsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BE83BB291E23E46F002F3BCC /* WGNewsItem.m */; };
@@ -116,6 +119,7 @@
 		BEB2D9851DFE3FF400F2E74B /* WGHomeTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB2D9841DFE3FF400F2E74B /* WGHomeTitleView.m */; };
 		BEB2D98A1DFE4EEA00F2E74B /* WGSidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB2D9891DFE4EE900F2E74B /* WGSidebarViewController.m */; };
 		BEB2D9931DFE77C100F2E74B /* WGScrollAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB2D9921DFE77C000F2E74B /* WGScrollAdView.m */; };
+		BECEBF9F1E2BD104002C4462 /* WGClassifyGoodListViewController+Request.m in Sources */ = {isa = PBXBuildFile; fileRef = BECEBF9E1E2BD104002C4462 /* WGClassifyGoodListViewController+Request.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -287,6 +291,12 @@
 		BE6CC1CF1E2B9426003755FF /* WGHomeFloorCountryItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGHomeFloorCountryItemView.m; sourceTree = "<group>"; };
 		BE6CC1D11E2B9C63003755FF /* WGHomeFloorClassifyGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGHomeFloorClassifyGridView.h; sourceTree = "<group>"; };
 		BE6CC1D21E2B9C63003755FF /* WGHomeFloorClassifyGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGHomeFloorClassifyGridView.m; sourceTree = "<group>"; };
+		BE6CC1DB1E2BBA78003755FF /* WGClassifyGoodListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGClassifyGoodListViewController.h; sourceTree = "<group>"; };
+		BE6CC1DC1E2BBA78003755FF /* WGClassifyGoodListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGClassifyGoodListViewController.m; sourceTree = "<group>"; };
+		BE6CC1DE1E2BBB4C003755FF /* WGClassifyGoodList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGClassifyGoodList.h; sourceTree = "<group>"; };
+		BE6CC1DF1E2BBB4C003755FF /* WGClassifyGoodList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGClassifyGoodList.m; sourceTree = "<group>"; };
+		BE6CC1E11E2BBCDF003755FF /* WGClassifyGoodListContentItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGClassifyGoodListContentItem.h; sourceTree = "<group>"; };
+		BE6CC1E21E2BBCDF003755FF /* WGClassifyGoodListContentItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGClassifyGoodListContentItem.m; sourceTree = "<group>"; };
 		BE83BB1C1E23E233002F3BCC /* WGHome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGHome.h; sourceTree = "<group>"; };
 		BE83BB1D1E23E233002F3BCC /* WGHome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGHome.m; sourceTree = "<group>"; };
 		BE83BB1F1E23E300002F3BCC /* WGCarouselFigureItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGCarouselFigureItem.h; sourceTree = "<group>"; };
@@ -360,6 +370,8 @@
 		BEB2D9891DFE4EE900F2E74B /* WGSidebarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGSidebarViewController.m; sourceTree = "<group>"; };
 		BEB2D9911DFE77C000F2E74B /* WGScrollAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGScrollAdView.h; sourceTree = "<group>"; };
 		BEB2D9921DFE77C000F2E74B /* WGScrollAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGScrollAdView.m; sourceTree = "<group>"; };
+		BECEBF9D1E2BD104002C4462 /* WGClassifyGoodListViewController+Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGClassifyGoodListViewController+Request.h"; sourceTree = "<group>"; };
+		BECEBF9E1E2BD104002C4462 /* WGClassifyGoodListViewController+Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGClassifyGoodListViewController+Request.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -434,7 +446,7 @@
 			path = Oswald;
 			sourceTree = "<group>";
 		};
-		BE52D51C1E1B5F1300D4FFCD /* cell */ = {
+		BE52D51C1E1B5F1300D4FFCD /* Cell */ = {
 			isa = PBXGroup;
 			children = (
 				BE6CC1A11E29219F003755FF /* WGHomeFloorNameHeadCell.h */,
@@ -466,6 +478,7 @@
 				BE6CC1B61E2940DB003755FF /* WGHomeFloorCountryCell.h */,
 				BE6CC1B71E2940DB003755FF /* WGHomeFloorCountryCell.m */,
 			);
+			name = Cell;
 			path = cell;
 			sourceTree = "<group>";
 		};
@@ -648,6 +661,45 @@
 			path = Commons;
 			sourceTree = "<group>";
 		};
+		BE6CC1D71E2BBA78003755FF /* ClassifyGoodList */ = {
+			isa = PBXGroup;
+			children = (
+				BE6CC1D81E2BBA78003755FF /* Model */,
+				BE6CC1DB1E2BBA78003755FF /* WGClassifyGoodListViewController.h */,
+				BE6CC1DC1E2BBA78003755FF /* WGClassifyGoodListViewController.m */,
+				BECEBF9D1E2BD104002C4462 /* WGClassifyGoodListViewController+Request.h */,
+				BECEBF9E1E2BD104002C4462 /* WGClassifyGoodListViewController+Request.m */,
+			);
+			path = ClassifyGoodList;
+			sourceTree = "<group>";
+		};
+		BE6CC1D81E2BBA78003755FF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BE6CC1D91E2BBA78003755FF /* Request */,
+				BE6CC1DA1E2BBA78003755FF /* Response */,
+				BE6CC1DE1E2BBB4C003755FF /* WGClassifyGoodList.h */,
+				BE6CC1DF1E2BBB4C003755FF /* WGClassifyGoodList.m */,
+				BE6CC1E11E2BBCDF003755FF /* WGClassifyGoodListContentItem.h */,
+				BE6CC1E21E2BBCDF003755FF /* WGClassifyGoodListContentItem.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BE6CC1D91E2BBA78003755FF /* Request */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		BE6CC1DA1E2BBA78003755FF /* Response */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
 		BE83BB171E23DEEA002F3BCC /* Layout */ = {
 			isa = PBXGroup;
 			children = (
@@ -709,6 +761,7 @@
 		BEB2D9091DFBDBFB00F2E74B /* List */ = {
 			isa = PBXGroup;
 			children = (
+				BE6CC1D71E2BBA78003755FF /* ClassifyGoodList */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -778,8 +831,8 @@
 			children = (
 				BE83BB171E23DEEA002F3BCC /* Layout */,
 				BE52D5211E1B697A00D4FFCD /* Model */,
-				BE52D51C1E1B5F1300D4FFCD /* cell */,
-				BEB2D9261DFBE2FF00F2E74B /* view */,
+				BE52D51C1E1B5F1300D4FFCD /* Cell */,
+				BEB2D9261DFBE2FF00F2E74B /* View */,
 				BEB2D9191DFBDFE900F2E74B /* WGHomeTabViewController.h */,
 				BEB2D91A1DFBDFE900F2E74B /* WGHomeTabViewController.m */,
 				BEB2D9231DFBE25300F2E74B /* WGHomeTabViewController+NavigationBar.h */,
@@ -809,7 +862,7 @@
 			path = Mine;
 			sourceTree = "<group>";
 		};
-		BEB2D9261DFBE2FF00F2E74B /* view */ = {
+		BEB2D9261DFBE2FF00F2E74B /* View */ = {
 			isa = PBXGroup;
 			children = (
 				BE52D5361E1B9D5A00D4FFCD /* WGHomeTopicItemView.h */,
@@ -831,6 +884,7 @@
 				BE99E7C81E1CB67600210546 /* WGRatingView.h */,
 				BE99E7C91E1CB67600210546 /* WGRatingView.m */,
 			);
+			name = View;
 			path = view;
 			sourceTree = "<group>";
 		};
@@ -1095,6 +1149,7 @@
 				BE52D5381E1B9D5A00D4FFCD /* WGHomeTopicItemView.m in Sources */,
 				BE6CC1BE1E2941AA003755FF /* WGHomeFloorClassifyListItemCell.m in Sources */,
 				BEB2D95A1DFBED1500F2E74B /* WGNavigationController.m in Sources */,
+				BE6CC1E01E2BBB4C003755FF /* WGClassifyGoodList.m in Sources */,
 				BE6CC1961E28B163003755FF /* WGHomeCarouselFiguresCell.m in Sources */,
 				BE6CC1B81E2940DB003755FF /* WGHomeFloorCountryCell.m in Sources */,
 				BEB2D96C1DFC579400F2E74B /* WGHomeTabViewController+Scroll.m in Sources */,
@@ -1113,13 +1168,16 @@
 				BEB2D95B1DFBED1500F2E74B /* WGObject.m in Sources */,
 				BE52D53E1E1BADDA00D4FFCD /* WGHomeFloorContentItem.m in Sources */,
 				BE6CC19A1E28C541003755FF /* WGHomeTopicCell.m in Sources */,
+				BECEBF9F1E2BD104002C4462 /* WGClassifyGoodListViewController+Request.m in Sources */,
 				BE6CC1C71E2A8FA6003755FF /* WGHomeFloorGoodColumnItemView.m in Sources */,
+				BE6CC1E31E2BBCDF003755FF /* WGClassifyGoodListContentItem.m in Sources */,
 				BEB2D9201DFBDFE900F2E74B /* WGForeignTabViewController.m in Sources */,
 				BE62E22E1DF92176004510A5 /* main.m in Sources */,
 				BE99E7A51E1C94C400210546 /* WGHomeFloorContentClassifyItem.m in Sources */,
 				BEB2D9851DFE3FF400F2E74B /* WGHomeTitleView.m in Sources */,
 				BE99E7A81E1C957F00210546 /* WGHomeFloorContentCountryItem.m in Sources */,
 				BEB2D91F1DFBDFE900F2E74B /* WGClassifyTabViewController.m in Sources */,
+				BE6CC1DD1E2BBA78003755FF /* WGClassifyGoodListViewController.m in Sources */,
 				BE6CC1AF1E294036003755FF /* WGHomeFloorGoodColumnCell.m in Sources */,
 				BE6CC1BB1E29412F003755FF /* WGHomeFloorGoodGridItemCell.m in Sources */,
 				BEB2D98A1DFE4EEA00F2E74B /* WGSidebarViewController.m in Sources */,

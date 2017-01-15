@@ -19,6 +19,14 @@
     // Do any additional setup after loading the view.
 }
 
+- (void)initData {
+
+}
+
+- (void)initSubView {
+    
+}
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     self.navigationItem.title = self.title;

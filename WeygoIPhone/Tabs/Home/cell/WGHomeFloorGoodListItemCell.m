@@ -20,17 +20,14 @@
 
 - (void)loadSubviews {
     [super loadSubviews];
-    _itemView = [[WGHomeFloorGoodListItemView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, 1)];
+    _itemView = [[WGHomeFloorGoodListItemView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kAppAdaptHeight(124))];
     [self.contentView addSubview:_itemView];
 }
 
 - (void)showWithData:(JHObject *)data {
     [super showWithData:data];
-    WGHomeFloorContentItem *item = (WGHomeFloorContentItem *)data;
-    [_itemView showWithData:(WGHomeFloorContentGoodItem *)item.contentItem];
-    CGRect frame = _itemView.frame;
-    frame.size.height = item.contentHeight;
-    _itemView.frame = frame;
+    WGHomeFloorContentGoodItem *item = (WGHomeFloorContentGoodItem *)data;
+    [_itemView showWithData:item];
 }
 
 @end

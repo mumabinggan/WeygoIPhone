@@ -17,6 +17,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self initData];
+    
+    [self initSubView];
+    
+    [self initNotification];
+}
+
+- (void)initData {
+    
+}
+
+- (void)initSubView {
+    
+}
+
+- (void)initNotification {
+    
 }
 
 - (void)didReceiveMemoryWarning {

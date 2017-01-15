@@ -36,10 +36,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    [self initData];
-    
-    [self initSubView];
 }
 
 - (void)initData {

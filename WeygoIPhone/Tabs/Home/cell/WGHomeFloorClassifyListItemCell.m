@@ -8,6 +8,7 @@
 
 #import "WGHomeFloorClassifyListItemCell.h"
 #import "WGHomeFloorContentItem.h"
+#import "WGHomeFloorContentClassifyItem.h"
 
 @interface WGHomeFloorClassifyListItemCell ()
 {
@@ -35,7 +36,7 @@
 }
 
 - (void)showWithData:(JHObject *)data {
-    WGHomeFloorContentItem *item = (WGHomeFloorContentItem *)data;
+    WGHomeFloorContentClassifyItem *item = (WGHomeFloorContentClassifyItem *)data;
     [_imageView setImageWithURL:[NSURL URLWithString:item.pictureURL] placeholderImage:kHomeClassifyListPlaceholderImage options:JHWebImageOptionsRefreshCached];
     _nameLabel.text = item.name;
 }

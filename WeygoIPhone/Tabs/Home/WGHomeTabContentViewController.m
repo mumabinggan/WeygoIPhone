@@ -23,6 +23,7 @@
 #import "WGHomeFloorGoodColumnCell.h"
 #import "WGHomeFloorGoodListMoreCell.h"
 #import "WGHomeFloorGoodListItemCell.h"
+#import "WGClassifyGoodListViewController.h"
 
 //can delete
 #import "WGCarouselFigureItem.h"
@@ -44,8 +45,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self initData];
-    [self.view addSubview:[self tableView]];
+    //[self initData];
+    //[self.view addSubview:[self tableView]];
 }
 
 - (void)initData {
@@ -263,6 +264,10 @@
     _homeData.floors = @[floor, floor1, floor2, floor3, floor4, floor5, floor6];
 }
 
+- (void)initSubView {
+    [self.view addSubview:[self tableView]];
+}
+
 - (TWRefreshTableView *)tableView {
     if (!_tableView) {
         _tableView = [[TWRefreshTableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped refreshType:TWRefreshTypeTop];
@@ -454,7 +459,8 @@
             if (item.type == WGHomeFloorItemTypeGoodList ||
                 item.type == WGHomeFloorItemTypeClassifyList) {
                 if (contentCount > contentIndex) {
-                    [cell showWithData:item.contents[contentIndex]];
+                    WGHomeFloorContentItem *content = item.contents[contentIndex];
+                    [cell showWithData:content.contentItem];
                 }
             }
             else {
@@ -482,7 +488,9 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    WGClassifyGoodListViewController *vc = [[WGClassifyGoodListViewController alloc] init];
+    vc.classifyName = @"Fruit";
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)beginRefreshHeader:(TWRefreshTableView*) tableView {

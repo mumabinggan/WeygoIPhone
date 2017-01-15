@@ -10,6 +10,7 @@
 #define WGAppConstants_h
 
 #define WGAppBaseColor  kRGB(233, 122, 60)
+#define WGAppNameLabelColor  kRGBA(0, 0, 0, 0.87)
 #define WGAppTitleColor  kRGBA(0, 0, 0, 0.54)
 #define WGAppSeparateLineColor kHRGB(0x999999);
 
@@ -54,5 +55,7 @@
 #define kHomeClassifyColumnPlaceholderImage [UIImage imageNamed:@""]
 #define kHomeClassifyListPlaceholderImage [UIImage imageNamed:@""]
 #define kHomeCountryPlaceholderImage [UIImage imageNamed:@""]
+
+#define kClassifyGoodListClassifyPlaceholderImage [UIImage imageNamed:@""]
 
 #endif /* WGAppConstants_h */
