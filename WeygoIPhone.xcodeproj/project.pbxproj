@@ -27,6 +27,13 @@
 		BE52D5381E1B9D5A00D4FFCD /* WGHomeTopicItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE52D5371E1B9D5A00D4FFCD /* WGHomeTopicItemView.m */; };
 		BE52D53B1E1BAA5500D4FFCD /* WGHomeFloorNameAndBriefInfoHeadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE52D53A1E1BAA5500D4FFCD /* WGHomeFloorNameAndBriefInfoHeadCell.m */; };
 		BE52D53E1E1BADDA00D4FFCD /* WGHomeFloorContentItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BE52D53D1E1BADDA00D4FFCD /* WGHomeFloorContentItem.m */; };
+		BE52ED291E2C64860022EF5B /* WGEditReceiptViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE52ED281E2C64860022EF5B /* WGEditReceiptViewController.m */; };
+		BE52ED2D1E2C66100022EF5B /* WGEditReceiptCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE52ED2C1E2C66100022EF5B /* WGEditReceiptCell.m */; };
+		BE52ED301E2C6C560022EF5B /* WGEditReceiptViewController+Request.m in Sources */ = {isa = PBXBuildFile; fileRef = BE52ED2F1E2C6C560022EF5B /* WGEditReceiptViewController+Request.m */; };
+		BE52ED331E2C71630022EF5B /* WGReceipt.m in Sources */ = {isa = PBXBuildFile; fileRef = BE52ED321E2C71630022EF5B /* WGReceipt.m */; };
+		BE52ED361E2C75570022EF5B /* WGReceiptListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE52ED351E2C75570022EF5B /* WGReceiptListViewController.m */; };
+		BE52ED391E2C75720022EF5B /* WGReceiptListViewController+Request.m in Sources */ = {isa = PBXBuildFile; fileRef = BE52ED381E2C75720022EF5B /* WGReceiptListViewController+Request.m */; };
+		BE52ED3C1E2C75A10022EF5B /* WGReceiptListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE52ED3B1E2C75A10022EF5B /* WGReceiptListCell.m */; };
 		BE5E4C181E249ADB00ACA48F /* WGHomeTabContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5E4C171E249ADB00ACA48F /* WGHomeTabContentViewController.m */; };
 		BE5E4C441E24F9E200ACA48F /* WGHomeTabBaseContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5E4C431E24F9E200ACA48F /* WGHomeTabBaseContentViewController.m */; };
 		BE5E4C471E2526D900ACA48F /* WGHomeTabViewController+Contents.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5E4C461E2526D900ACA48F /* WGHomeTabViewController+Contents.m */; };
@@ -205,6 +212,20 @@
 		BE52D53A1E1BAA5500D4FFCD /* WGHomeFloorNameAndBriefInfoHeadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGHomeFloorNameAndBriefInfoHeadCell.m; sourceTree = "<group>"; };
 		BE52D53C1E1BADDA00D4FFCD /* WGHomeFloorContentItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGHomeFloorContentItem.h; sourceTree = "<group>"; };
 		BE52D53D1E1BADDA00D4FFCD /* WGHomeFloorContentItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGHomeFloorContentItem.m; sourceTree = "<group>"; };
+		BE52ED271E2C64860022EF5B /* WGEditReceiptViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGEditReceiptViewController.h; sourceTree = "<group>"; };
+		BE52ED281E2C64860022EF5B /* WGEditReceiptViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGEditReceiptViewController.m; sourceTree = "<group>"; };
+		BE52ED2B1E2C66100022EF5B /* WGEditReceiptCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGEditReceiptCell.h; sourceTree = "<group>"; };
+		BE52ED2C1E2C66100022EF5B /* WGEditReceiptCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGEditReceiptCell.m; sourceTree = "<group>"; };
+		BE52ED2E1E2C6C560022EF5B /* WGEditReceiptViewController+Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGEditReceiptViewController+Request.h"; sourceTree = "<group>"; };
+		BE52ED2F1E2C6C560022EF5B /* WGEditReceiptViewController+Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGEditReceiptViewController+Request.m"; sourceTree = "<group>"; };
+		BE52ED311E2C71630022EF5B /* WGReceipt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGReceipt.h; sourceTree = "<group>"; };
+		BE52ED321E2C71630022EF5B /* WGReceipt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGReceipt.m; sourceTree = "<group>"; };
+		BE52ED341E2C75570022EF5B /* WGReceiptListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGReceiptListViewController.h; sourceTree = "<group>"; };
+		BE52ED351E2C75570022EF5B /* WGReceiptListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGReceiptListViewController.m; sourceTree = "<group>"; };
+		BE52ED371E2C75720022EF5B /* WGReceiptListViewController+Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGReceiptListViewController+Request.h"; sourceTree = "<group>"; };
+		BE52ED381E2C75720022EF5B /* WGReceiptListViewController+Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGReceiptListViewController+Request.m"; sourceTree = "<group>"; };
+		BE52ED3A1E2C75A10022EF5B /* WGReceiptListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGReceiptListCell.h; sourceTree = "<group>"; };
+		BE52ED3B1E2C75A10022EF5B /* WGReceiptListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGReceiptListCell.m; sourceTree = "<group>"; };
 		BE5E4C161E249ADB00ACA48F /* WGHomeTabContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGHomeTabContentViewController.h; sourceTree = "<group>"; };
 		BE5E4C171E249ADB00ACA48F /* WGHomeTabContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGHomeTabContentViewController.m; sourceTree = "<group>"; };
 		BE5E4C421E24F9E200ACA48F /* WGHomeTabBaseContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGHomeTabBaseContentViewController.h; sourceTree = "<group>"; };
@@ -531,6 +552,59 @@
 			path = Response;
 			sourceTree = "<group>";
 		};
+		BE52ED221E2C645F0022EF5B /* Receipt */ = {
+			isa = PBXGroup;
+			children = (
+				BE52ED2A1E2C65F40022EF5B /* Cell */,
+				BE52ED231E2C645F0022EF5B /* Model */,
+				BE52ED271E2C64860022EF5B /* WGEditReceiptViewController.h */,
+				BE52ED281E2C64860022EF5B /* WGEditReceiptViewController.m */,
+				BE52ED2E1E2C6C560022EF5B /* WGEditReceiptViewController+Request.h */,
+				BE52ED2F1E2C6C560022EF5B /* WGEditReceiptViewController+Request.m */,
+				BE52ED341E2C75570022EF5B /* WGReceiptListViewController.h */,
+				BE52ED351E2C75570022EF5B /* WGReceiptListViewController.m */,
+				BE52ED371E2C75720022EF5B /* WGReceiptListViewController+Request.h */,
+				BE52ED381E2C75720022EF5B /* WGReceiptListViewController+Request.m */,
+			);
+			path = Receipt;
+			sourceTree = "<group>";
+		};
+		BE52ED231E2C645F0022EF5B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BE52ED241E2C645F0022EF5B /* Request */,
+				BE52ED251E2C645F0022EF5B /* Response */,
+				BE52ED311E2C71630022EF5B /* WGReceipt.h */,
+				BE52ED321E2C71630022EF5B /* WGReceipt.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BE52ED241E2C645F0022EF5B /* Request */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		BE52ED251E2C645F0022EF5B /* Response */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		BE52ED2A1E2C65F40022EF5B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				BE52ED2B1E2C66100022EF5B /* WGEditReceiptCell.h */,
+				BE52ED2C1E2C66100022EF5B /* WGEditReceiptCell.m */,
+				BE52ED3A1E2C75A10022EF5B /* WGReceiptListCell.h */,
+				BE52ED3B1E2C75A10022EF5B /* WGReceiptListCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		BE62E2201DF92176004510A5 = {
 			isa = PBXGroup;
 			children = (
@@ -747,6 +821,7 @@
 		BEB2D9071DFBDBFB00F2E74B /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				BE52ED221E2C645F0022EF5B /* Receipt */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -1124,6 +1199,7 @@
 				BE6CC1A91E293BB9003755FF /* WGHomeFloorGoodListMoreCell.m in Sources */,
 				BE83BB2A1E23E46F002F3BCC /* WGNewsItem.m in Sources */,
 				BE5E4C181E249ADB00ACA48F /* WGHomeTabContentViewController.m in Sources */,
+				BE52ED391E2C75720022EF5B /* WGReceiptListViewController+Request.m in Sources */,
 				BEB2D9751DFD933600F2E74B /* WGScrollImageView.m in Sources */,
 				BE83BB331E23EB68002F3BCC /* WGHomeTabContentResponse.m in Sources */,
 				BEB2D9211DFBDFE900F2E74B /* WGHomeTabViewController.m in Sources */,
@@ -1135,9 +1211,11 @@
 				BEB2D91E1DFBDFE900F2E74B /* WGBenefitTabViewController.m in Sources */,
 				BE5E4C4A1E252E2000ACA48F /* WGHomeTabContentViewController+Request.m in Sources */,
 				BEB2D95D1DFBED1500F2E74B /* WGResponse.m in Sources */,
+				BE52ED361E2C75570022EF5B /* WGReceiptListViewController.m in Sources */,
 				BE6CC1B51E294098003755FF /* WGHomeFloorClassifyColumnCell.m in Sources */,
 				BE5E4C471E2526D900ACA48F /* WGHomeTabViewController+Contents.m in Sources */,
 				BE52D53B1E1BAA5500D4FFCD /* WGHomeFloorNameAndBriefInfoHeadCell.m in Sources */,
+				BE52ED3C1E2C75A10022EF5B /* WGReceiptListCell.m in Sources */,
 				BE5E4C441E24F9E200ACA48F /* WGHomeTabBaseContentViewController.m in Sources */,
 				BE6CC19D1E28D532003755FF /* WGHomeNewsCell.m in Sources */,
 				BE6CC1AC1E293FE5003755FF /* WGHomeFloorGoodListItemCell.m in Sources */,
@@ -1157,6 +1235,7 @@
 				BE83BB2D1E23E60D002F3BCC /* WGHomeFloorItem.m in Sources */,
 				BEB2D9691DFC054B00F2E74B /* WGHomeTabViewController+Segment.m in Sources */,
 				BEB2D95C1DFBED1500F2E74B /* WGRequest.m in Sources */,
+				BE52ED291E2C64860022EF5B /* WGEditReceiptViewController.m in Sources */,
 				BE83BB211E23E300002F3BCC /* WGCarouselFigureItem.m in Sources */,
 				BE62E2311DF92176004510A5 /* AppDelegate.m in Sources */,
 				BE52D5261E1B699100D4FFCD /* WGTopicItem.m in Sources */,
@@ -1172,12 +1251,15 @@
 				BE6CC1C71E2A8FA6003755FF /* WGHomeFloorGoodColumnItemView.m in Sources */,
 				BE6CC1E31E2BBCDF003755FF /* WGClassifyGoodListContentItem.m in Sources */,
 				BEB2D9201DFBDFE900F2E74B /* WGForeignTabViewController.m in Sources */,
+				BE52ED301E2C6C560022EF5B /* WGEditReceiptViewController+Request.m in Sources */,
 				BE62E22E1DF92176004510A5 /* main.m in Sources */,
+				BE52ED331E2C71630022EF5B /* WGReceipt.m in Sources */,
 				BE99E7A51E1C94C400210546 /* WGHomeFloorContentClassifyItem.m in Sources */,
 				BEB2D9851DFE3FF400F2E74B /* WGHomeTitleView.m in Sources */,
 				BE99E7A81E1C957F00210546 /* WGHomeFloorContentCountryItem.m in Sources */,
 				BEB2D91F1DFBDFE900F2E74B /* WGClassifyTabViewController.m in Sources */,
 				BE6CC1DD1E2BBA78003755FF /* WGClassifyGoodListViewController.m in Sources */,
+				BE52ED2D1E2C66100022EF5B /* WGEditReceiptCell.m in Sources */,
 				BE6CC1AF1E294036003755FF /* WGHomeFloorGoodColumnCell.m in Sources */,
 				BE6CC1BB1E29412F003755FF /* WGHomeFloorGoodGridItemCell.m in Sources */,
 				BEB2D98A1DFE4EEA00F2E74B /* WGSidebarViewController.m in Sources */,

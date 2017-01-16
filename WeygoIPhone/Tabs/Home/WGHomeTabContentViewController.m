@@ -23,7 +23,10 @@
 #import "WGHomeFloorGoodColumnCell.h"
 #import "WGHomeFloorGoodListMoreCell.h"
 #import "WGHomeFloorGoodListItemCell.h"
+
+//for test
 #import "WGClassifyGoodListViewController.h"
+#import "WGReceiptListViewController.h"
 
 //can delete
 #import "WGCarouselFigureItem.h"
@@ -488,9 +491,13 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    WGReceiptListViewController *vc = [[WGReceiptListViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+    /*
     WGClassifyGoodListViewController *vc = [[WGClassifyGoodListViewController alloc] init];
     vc.classifyName = @"Fruit";
     [self.navigationController pushViewController:vc animated:YES];
+     */
 }
 
 - (void)beginRefreshHeader:(TWRefreshTableView*) tableView {
