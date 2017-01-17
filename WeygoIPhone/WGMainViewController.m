@@ -8,10 +8,10 @@
 
 #import "WGMainViewController.h"
 #import "WGHomeTabViewController.h"
-#import "WGClassifyTabViewController.h"
-#import "WGBenefitTabViewController.h"
-#import "WGForeignTabViewController.h"
-#import "WGMineTabViewController.h"
+#import "WGTabClassifyViewController.h"
+#import "WGTabBenefitViewController.h"
+#import "WGTabShopCartViewController.h"
+#import "WGTabMineViewController.h"
 #import "WGSidebarViewController.h"
 
 static const float kTabBarHeight = 60;
@@ -30,10 +30,10 @@ static const float kTabBarHeight = 60;
     // Do any additional setup after loading the view.
     self.viewControllers = [NSArray arrayWithObjects:
                             [[WGHomeTabViewController alloc] init],
-                            [[WGClassifyTabViewController alloc] init],
-                            [[WGBenefitTabViewController alloc] init],
-                            [[WGForeignTabViewController alloc] init],
-                            [[WGMineTabViewController alloc] init],
+                            [[WGTabClassifyViewController alloc] init],
+                            [[WGTabBenefitViewController alloc] init],
+                            [[WGTabShopCartViewController alloc] init],
+                            [[WGTabMineViewController alloc] init],
                             nil];
 //    self.tabBar.tintColor = kRedColor;
 //    self.tabBar.barStyle = UIBarStyleDefault;

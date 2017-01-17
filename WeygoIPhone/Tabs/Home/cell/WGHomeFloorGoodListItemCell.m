@@ -20,6 +20,7 @@
 
 - (void)loadSubviews {
     [super loadSubviews];
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
     _itemView = [[WGHomeFloorGoodListItemView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kAppAdaptHeight(124))];
     [self.contentView addSubview:_itemView];
 }

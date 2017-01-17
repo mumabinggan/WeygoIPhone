@@ -1,5 +1,5 @@
 //
-//  WGClassifyTabViewController.h
+//  WGBenefitTabViewController.h
 //  WeygoIPhone
 //
 //  Created by muma on 2016/12/8.
@@ -8,6 +8,6 @@
 
 #import "WGTabViewController.h"
 
-@interface WGClassifyTabViewController : WGTabViewController
+@interface WGTabBenefitViewController : WGTabViewController
 
 @end

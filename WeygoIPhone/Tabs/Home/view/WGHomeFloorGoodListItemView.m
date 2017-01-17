@@ -80,7 +80,7 @@
     [self addSubview:_reduceLabel];
     
     _purchaseBtn = [[JHButton alloc] initWithFrame:CGRectMake(kDeviceWidth - kAppAdaptWidth(16 + 24), kAppAdaptHeight(84), kAppAdaptWidth(24), kAppAdaptHeight(24))];
-    [_purchaseBtn setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
+    [_purchaseBtn setImage:[UIImage imageNamed:@"add_cart"] forState:UIControlStateNormal];
     [_purchaseBtn addTarget:self action:@selector(touchPurchase:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_purchaseBtn];
 }
@@ -120,10 +120,10 @@
     _priceLabel.frame = frame;
     
     NSString *reduce = [NSString stringWithFormat:kStr(@"Price With Unit"), _data.currentPrice - _data.price];
-    size = [currentPrice returnSize:_currentPriceLabel.font];
+    size = [reduce returnSize:_reduceLabel.font];
     frame = _reduceLabel.frame;
     frame.origin.x = _priceLabel.maxX + kAppAdaptWidth(8);
-    frame.size.width = size.width;
+    frame.size.width = size.width + kAppAdaptWidth(4);
     _reduceLabel.frame = frame;
     _reduceLabel.text = reduce;
 }

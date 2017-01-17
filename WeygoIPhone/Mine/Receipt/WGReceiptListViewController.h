@@ -6,19 +6,10 @@
 //  Copyright © 2017年 weygo.com. All rights reserved.
 //
 
-#import "WGViewController.h"
+#import "WGBaseAddressAndReceiptListViewController.h"
 
 @class WGReceipt;
 
-@interface WGReceiptListViewController : WGViewController
-{
-    NSArray *_dataArray;
-}
-
-@property (nonatomic, copy) void (^onUse)(WGReceipt *receipt);
-
-@property (nonatomic, copy) void (^onClear)();
-
-- (void)refreshTableView;
+@interface WGReceiptListViewController : WGBaseAddressAndReceiptListViewController
 
 @end

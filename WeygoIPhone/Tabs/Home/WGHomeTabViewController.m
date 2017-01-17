@@ -27,8 +27,8 @@
         // Custom initialization
         self.tabBarIndex = WGTabIndexHome;
         self.tabBarItem.title = kStr(@"TabHome");
-        self.tabBarItem.image = [UIImage imageNamed:@"tab-mine"];
-        self.tabBarItem.selectedImage = [UIImage imageNamed:@"tab-mine-highlight"];
+        self.tabBarItem.image = [UIImage imageNamed:@"tab_home_icon"];
+        //self.tabBarItem.selectedImage = [UIImage imageNamed:@"tab-mine-highlight"];
     }
     return self;
 }

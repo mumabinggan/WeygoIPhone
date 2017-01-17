@@ -27,6 +27,7 @@
 //for test
 #import "WGClassifyGoodListViewController.h"
 #import "WGReceiptListViewController.h"
+#import "WGAddressListViewController.h"
 
 //can delete
 #import "WGCarouselFigureItem.h"
@@ -397,7 +398,7 @@
                 cell = [[WGHomeTopicCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
             }
             else {
-                cell = [[WGHomeNewsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+                cell = [[JHTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
             }
         }
         else {
@@ -438,6 +439,7 @@
         if (!cell) {
             cell = [[JHTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
         }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.clipsToBounds = YES;
     }
     if (indexPath.section == 0) {
@@ -491,9 +493,13 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+//    WGAddressListViewController *vc = [[WGAddressListViewController alloc] init];
+//    [self.navigationController pushViewController:vc animated:YES];
+    
     WGReceiptListViewController *vc = [[WGReceiptListViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
-    /*
+    
+     /*
     WGClassifyGoodListViewController *vc = [[WGClassifyGoodListViewController alloc] init];
     vc.classifyName = @"Fruit";
     [self.navigationController pushViewController:vc animated:YES];

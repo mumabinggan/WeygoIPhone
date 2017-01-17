@@ -8,6 +8,6 @@
 
 #import "WGTabViewController.h"
 
-@interface WGMineTabViewController : WGTabViewController
+@interface WGTabMineViewController : WGTabViewController
 
 @end

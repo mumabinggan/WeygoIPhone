@@ -12,9 +12,7 @@
 #import "WGEditReceiptViewController.h"
 
 @interface WGReceiptListViewController ()
-{
-    TWRefreshTableView  *_tableView;
-}
+
 @end
 
 @interface WGReceiptListViewController (TableViewDelegate) <UITableViewDelegate, UITableViewDataSource, TWTableViewRefreshingDelegate>
@@ -32,35 +30,23 @@
     WGReceipt *receipt = [[WGReceipt alloc] init];
     receipt.taxCode = @"123";
     receipt.companyName = @"TaiYuanLiGong";
-    receipt.cap = @"FSDFASD";
+    receipt.address = @"FSDFASD";
     
     WGReceipt *receipt2 = [[WGReceipt alloc] init];
     receipt2.taxCode = @"3FADDAS";
     receipt2.companyName = @"TaiYuanLiGong";
-    receipt2.cap = @"WKZFSFSDFASD";
+    receipt2.address = @"WKZFSFSDFASD";
     
     WGReceipt *receipt3 = [[WGReceipt alloc] init];
     receipt3.taxCode = @"943SKDFA";
     receipt3.companyName = @"DalIfasdf TaiYuanLiGong";
-    receipt3.cap = @"FASD WKZFSFSDFASD";
+    receipt3.address = @"FASD WKZFSFSDFASD";
     
-    _dataArray = @[receipt, receipt2, receipt3];
+    _dataMArray = [NSMutableArray arrayWithArray:@[receipt, receipt2, receipt3]];
 }
 
-- (void)initSubView {
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:kStr(@"") style:UIBarButtonItemStylePlain target:self action:@selector(touchClearBtn:)];
-    
-    _tableView = [[TWRefreshTableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
-    _tableView.dataSource = self;
-    _tableView.delegate = self;
-    _tableView.refreshDelegate = self;
-    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    [self.view addSubview:_tableView];
-    
-    JHButton *addBtn = [[JHButton alloc] initWithFrame:CGRectMake(kDeviceWidth - kAppAdaptWidth(56 + 16), kDeviceHeight - kAppAdaptHeight(56 + 16), kAppAdaptWidth(56), kAppAdaptHeight(56))];
-    [addBtn setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
-    [addBtn addTarget:self action:@selector(touchAddBtn:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:addBtn];
+- (Class)cellClass {
+    return [WGReceiptListCell class];
 }
 
 - (void)touchAddBtn:(JHButton *)sender {
@@ -75,92 +61,37 @@
     //request list
 }
 
-- (void)touchClearBtn:(id)sender {
-    //after request complete
-    if (self.onClear) {
-        self.onClear();
-    }
-}
-
-- (void)refreshTableView {
-    [_tableView reloadData];
-}
-
-- (void)handleDefault:(WGReceipt *)receipt {
+- (void)handleDefault:(WGObject *)object {
     
 }
 
-- (void)handleUse:(WGReceipt *)receipt {
+- (void)handleUse:(WGObject *)object {
     if (self.onUse) {
-        self.onUse(receipt);
+        self.onUse(object);
     }
 }
 
-- (void)handleModify:(WGReceipt *)receipt {
+- (void)handleModify:(WGObject *)object {
     WGEditReceiptViewController *editReceiptViewController = [[WGEditReceiptViewController alloc] init];
-    editReceiptViewController.receipt = receipt;
+    editReceiptViewController.receipt = (WGReceipt *)object;
+    __weak id weakSelf = self;
     editReceiptViewController.onApply = ^() {
-        [self handleEditReceiptCompletion];
+        [weakSelf handleEditReceiptCompletion];
     };
     [self.navigationController pushViewController:editReceiptViewController animated:YES];
+}
+
+- (void)beginRefreshHeader {
+    
+}
+
+- (void)beginRefreshFooter {
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-@end
-
-@implementation WGReceiptListViewController (TableViewDelegate)
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return _dataArray.count;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return (section == 0) ? 0 : kAppAdaptHeight(8);
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return 0.01;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return kAppAdaptHeight(136);
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *cellId = @"cellId";
-    JHTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
-    if (!cell) {
-        WGReceiptListCell *receiptCell = [[WGReceiptListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
-        __weak id weakSelf = self;
-        receiptCell.onDefault = ^(WGReceipt *receipt) {
-            [weakSelf handleDefault:receipt];
-        };
-        receiptCell.onUse = ^(WGReceipt *receipt) {
-            [weakSelf handleUse:receipt];
-        };
-        receiptCell.onModify = ^(WGReceipt *receipt) {
-            [weakSelf handleModify:receipt];
-        };
-        cell = receiptCell;
-    }
-    [cell showWithData:_dataArray[indexPath.section]];
-    return cell;
-}
-
-- (void)beginRefreshHeader:(TWRefreshTableView *)tableView {
-    
-}
-
-- (void)beginRefreshFooter:(TWRefreshTableView *)tableView {
-
 }
 
 @end

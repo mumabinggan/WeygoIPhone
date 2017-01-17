@@ -7,7 +7,13 @@
 //
 
 #import "WGTabViewController.h"
+#import "WGShopCart.h"
 
-@interface WGForeignTabViewController : WGTabViewController
+@interface WGTabShopCartViewController : WGTabViewController
+{
+    WGShopCart *_data;
+}
+
+- (void)refreshTableView;
 
 @end

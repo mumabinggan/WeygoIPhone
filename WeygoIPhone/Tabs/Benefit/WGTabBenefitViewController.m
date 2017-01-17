@@ -1,27 +1,26 @@
 //
-//  WGForeignTabViewController.m
+//  WGBenefitTabViewController.m
 //  WeygoIPhone
 //
 //  Created by muma on 2016/12/8.
 //  Copyright © 2016年 weygo.com. All rights reserved.
 //
 
-#import "WGForeignTabViewController.h"
+#import "WGTabBenefitViewController.h"
 
-@interface WGForeignTabViewController ()
+@interface WGTabBenefitViewController ()
 
 @end
 
-@implementation WGForeignTabViewController
+@implementation WGTabBenefitViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        self.tabBarIndex = WGTabIndexForeign;
-        self.tabBarItem.title = kStr(@"TabForeign");
-        self.tabBarItem.image = [UIImage imageNamed:@"tab-mine"];
-        self.tabBarItem.selectedImage = [UIImage imageNamed:@"tab-mine-highlight"];
+        self.tabBarIndex = WGTabIndexBenefit;
+        self.tabBarItem.title = kStr(@"TabBenefit");
+        self.tabBarItem.image = [UIImage imageNamed:@"tab_benefit_icon"];
     }
     return self;
 }

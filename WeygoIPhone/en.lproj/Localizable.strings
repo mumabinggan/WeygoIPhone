@@ -13,6 +13,7 @@
 "Price With Unit" = "€%.1f";
 "More" = "查看更多";
 "Add to Cart" = "加入购物车";
+//fax
 "Raginone sociale" = "Raginone sociale";
 "Italia" = "Italia";
 "Recapito telefonico" = "Recapito telefonico";
@@ -25,3 +26,20 @@
 "Default" = "Difetto";
 "Use" = "Uso";
 "Modify" = "Modifica";
+"Fax" = "发票";
+//address
+"Cognome" = "Cognome";
+"Nome" = "Nome";
+"Italia" = "Italia";
+"Telefono/Cellulare" = "Telefono/Cellulare";
+"Citta" = "Città";
+"CAP" = "CAP";
+"Indirizzo" = "Indirizzo";
+"Numero civico" = "Numero civico";
+"Citofono" = "Citofono";
+"Scala" = "Scala";
+"Ascensore" = "Ascensore";
+"Piano" = "Piano";
+//购物车
+"Totale:Price With Unit" = "Totale:€%.2f";
+"Confirm" = "conferma";
