@@ -9,5 +9,8 @@
 #import "WGTabViewController.h"
 
 @interface WGTabClassifyViewController : WGTabViewController
+{
+    NSArray *_data;
+}
 
 @end

@@ -61,4 +61,6 @@
 
 #define kClassifyGoodListClassifyPlaceholderImage [UIImage imageNamed:@""]
 
+#define kClassifyClassifyPlaceholderImage [UIImage imageNamed:@""]
+
 #endif /* WGAppConstants_h */
