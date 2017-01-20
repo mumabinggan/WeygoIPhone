@@ -19,6 +19,7 @@ typedef NS_ENUM(NSInteger, WGCarouselFigureItemType) {
 @property (nonatomic, strong) NSString *pictureURL;
 
 @property (nonatomic, assign) WGCarouselFigureItemType type;
+
 //for dif skip
 @property (nonatomic, assign) int requestParameter;
 

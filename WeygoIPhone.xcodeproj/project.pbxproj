@@ -43,11 +43,16 @@
 		BE52EDB71E2DBF010022EF5B /* WGAddressListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE52EDB61E2DBF010022EF5B /* WGAddressListCell.m */; };
 		BE52EDBA1E2DBF9D0022EF5B /* WGEditAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE52EDB91E2DBF9D0022EF5B /* WGEditAddressViewController.m */; };
 		BE52EDBD1E2DC26D0022EF5B /* WGAddressListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE52EDBC1E2DC26D0022EF5B /* WGAddressListViewController.m */; };
-		BE52EDD01E2DCC6C0022EF5B /* WGTabShopCartViewController+Request.m in Sources */ = {isa = PBXBuildFile; fileRef = BE52EDCD1E2DCC6C0022EF5B /* WGTabShopCartViewController+Request.m */; };
 		BE52EDD11E2DCC6C0022EF5B /* WGTabShopCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE52EDCF1E2DCC6C0022EF5B /* WGTabShopCartViewController.m */; };
 		BE52EDD41E2DCE790022EF5B /* WGShopCartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE52EDD31E2DCE790022EF5B /* WGShopCartCell.m */; };
 		BE52EDD71E2DD61D0022EF5B /* WGShopCartGoodItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BE52EDD61E2DD61D0022EF5B /* WGShopCartGoodItem.m */; };
 		BE52EDDA1E2DDD160022EF5B /* WGShopCart.m in Sources */ = {isa = PBXBuildFile; fileRef = BE52EDD91E2DDD160022EF5B /* WGShopCart.m */; };
+		BE52EFB51E2F38C50022EF5B /* WGCoupon.m in Sources */ = {isa = PBXBuildFile; fileRef = BE52EFB41E2F38C50022EF5B /* WGCoupon.m */; };
+		BE52EFB81E2F3BDE0022EF5B /* WGCouponCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE52EFB71E2F3BDE0022EF5B /* WGCouponCell.m */; };
+		BE52EFBB1E2F44970022EF5B /* WGCouponListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE52EFBA1E2F44970022EF5B /* WGCouponListViewController.m */; };
+		BE52EFBE1E2F4A570022EF5B /* WGCouponCode.m in Sources */ = {isa = PBXBuildFile; fileRef = BE52EFBD1E2F4A570022EF5B /* WGCouponCode.m */; };
+		BE52EFC91E2F64E90022EF5B /* WGCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE52EFC81E2F64E90022EF5B /* WGCollectionViewController.m */; };
+		BE52EFCC1E2F691B0022EF5B /* WGCollectionViewController+Request.m in Sources */ = {isa = PBXBuildFile; fileRef = BE52EFCB1E2F691B0022EF5B /* WGCollectionViewController+Request.m */; };
 		BE5E4C181E249ADB00ACA48F /* WGHomeTabContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5E4C171E249ADB00ACA48F /* WGHomeTabContentViewController.m */; };
 		BE5E4C441E24F9E200ACA48F /* WGHomeTabBaseContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5E4C431E24F9E200ACA48F /* WGHomeTabBaseContentViewController.m */; };
 		BE5E4C471E2526D900ACA48F /* WGHomeTabViewController+Contents.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5E4C461E2526D900ACA48F /* WGHomeTabViewController+Contents.m */; };
@@ -140,6 +145,10 @@
 		BEB2D98A1DFE4EEA00F2E74B /* WGSidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB2D9891DFE4EE900F2E74B /* WGSidebarViewController.m */; };
 		BEB2D9931DFE77C100F2E74B /* WGScrollAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB2D9921DFE77C000F2E74B /* WGScrollAdView.m */; };
 		BECEBF9F1E2BD104002C4462 /* WGClassifyGoodListViewController+Request.m in Sources */ = {isa = PBXBuildFile; fileRef = BECEBF9E1E2BD104002C4462 /* WGClassifyGoodListViewController+Request.m */; };
+		BEF6851F1E31AC84003B745B /* WGBaseFootPrintAndCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF6851E1E31AC84003B745B /* WGBaseFootPrintAndCollectionViewController.m */; };
+		BEF685231E31ADD9003B745B /* WGFootPrintViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF685221E31ADD9003B745B /* WGFootPrintViewController.m */; };
+		BEF685271E31AFC6003B745B /* WGSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF685261E31AFC6003B745B /* WGSettingViewController.m */; };
+		BEF6854E1E31DFB5003B745B /* WGShopCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF6854D1E31DFB5003B745B /* WGShopCartViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -257,8 +266,6 @@
 		BE52EDB91E2DBF9D0022EF5B /* WGEditAddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGEditAddressViewController.m; sourceTree = "<group>"; };
 		BE52EDBB1E2DC26D0022EF5B /* WGAddressListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGAddressListViewController.h; sourceTree = "<group>"; };
 		BE52EDBC1E2DC26D0022EF5B /* WGAddressListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGAddressListViewController.m; sourceTree = "<group>"; };
-		BE52EDCC1E2DCC6C0022EF5B /* WGTabShopCartViewController+Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGTabShopCartViewController+Request.h"; sourceTree = "<group>"; };
-		BE52EDCD1E2DCC6C0022EF5B /* WGTabShopCartViewController+Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGTabShopCartViewController+Request.m"; sourceTree = "<group>"; };
 		BE52EDCE1E2DCC6C0022EF5B /* WGTabShopCartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGTabShopCartViewController.h; sourceTree = "<group>"; };
 		BE52EDCF1E2DCC6C0022EF5B /* WGTabShopCartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGTabShopCartViewController.m; sourceTree = "<group>"; };
 		BE52EDD21E2DCE790022EF5B /* WGShopCartCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGShopCartCell.h; sourceTree = "<group>"; };
@@ -267,6 +274,18 @@
 		BE52EDD61E2DD61D0022EF5B /* WGShopCartGoodItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGShopCartGoodItem.m; sourceTree = "<group>"; };
 		BE52EDD81E2DDD160022EF5B /* WGShopCart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGShopCart.h; sourceTree = "<group>"; };
 		BE52EDD91E2DDD160022EF5B /* WGShopCart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGShopCart.m; sourceTree = "<group>"; };
+		BE52EFB31E2F38C50022EF5B /* WGCoupon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGCoupon.h; sourceTree = "<group>"; };
+		BE52EFB41E2F38C50022EF5B /* WGCoupon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGCoupon.m; sourceTree = "<group>"; };
+		BE52EFB61E2F3BDE0022EF5B /* WGCouponCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGCouponCell.h; sourceTree = "<group>"; };
+		BE52EFB71E2F3BDE0022EF5B /* WGCouponCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGCouponCell.m; sourceTree = "<group>"; };
+		BE52EFB91E2F44970022EF5B /* WGCouponListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGCouponListViewController.h; sourceTree = "<group>"; };
+		BE52EFBA1E2F44970022EF5B /* WGCouponListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGCouponListViewController.m; sourceTree = "<group>"; };
+		BE52EFBC1E2F4A570022EF5B /* WGCouponCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WGCouponCode.h; path = ../WGCouponCode.h; sourceTree = "<group>"; };
+		BE52EFBD1E2F4A570022EF5B /* WGCouponCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WGCouponCode.m; path = ../WGCouponCode.m; sourceTree = "<group>"; };
+		BE52EFC71E2F64E90022EF5B /* WGCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGCollectionViewController.h; sourceTree = "<group>"; };
+		BE52EFC81E2F64E90022EF5B /* WGCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGCollectionViewController.m; sourceTree = "<group>"; };
+		BE52EFCA1E2F691B0022EF5B /* WGCollectionViewController+Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGCollectionViewController+Request.h"; sourceTree = "<group>"; };
+		BE52EFCB1E2F691B0022EF5B /* WGCollectionViewController+Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGCollectionViewController+Request.m"; sourceTree = "<group>"; };
 		BE5E4C161E249ADB00ACA48F /* WGHomeTabContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGHomeTabContentViewController.h; sourceTree = "<group>"; };
 		BE5E4C171E249ADB00ACA48F /* WGHomeTabContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGHomeTabContentViewController.m; sourceTree = "<group>"; };
 		BE5E4C421E24F9E200ACA48F /* WGHomeTabBaseContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGHomeTabBaseContentViewController.h; sourceTree = "<group>"; };
@@ -432,6 +451,14 @@
 		BEB2D9921DFE77C000F2E74B /* WGScrollAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGScrollAdView.m; sourceTree = "<group>"; };
 		BECEBF9D1E2BD104002C4462 /* WGClassifyGoodListViewController+Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGClassifyGoodListViewController+Request.h"; sourceTree = "<group>"; };
 		BECEBF9E1E2BD104002C4462 /* WGClassifyGoodListViewController+Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGClassifyGoodListViewController+Request.m"; sourceTree = "<group>"; };
+		BEF6851D1E31AC84003B745B /* WGBaseFootPrintAndCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGBaseFootPrintAndCollectionViewController.h; sourceTree = "<group>"; };
+		BEF6851E1E31AC84003B745B /* WGBaseFootPrintAndCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGBaseFootPrintAndCollectionViewController.m; sourceTree = "<group>"; };
+		BEF685211E31ADD9003B745B /* WGFootPrintViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGFootPrintViewController.h; sourceTree = "<group>"; };
+		BEF685221E31ADD9003B745B /* WGFootPrintViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGFootPrintViewController.m; sourceTree = "<group>"; };
+		BEF685251E31AFC6003B745B /* WGSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGSettingViewController.h; sourceTree = "<group>"; };
+		BEF685261E31AFC6003B745B /* WGSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGSettingViewController.m; sourceTree = "<group>"; };
+		BEF6854C1E31DFB5003B745B /* WGShopCartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGShopCartViewController.h; sourceTree = "<group>"; };
+		BEF6854D1E31DFB5003B745B /* WGShopCartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGShopCartViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -466,6 +493,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE445DC51E31135D00CE2D16 /* Footprint */ = {
+			isa = PBXGroup;
+			children = (
+				BE445DC61E31135D00CE2D16 /* Model */,
+				BEF685211E31ADD9003B745B /* WGFootPrintViewController.h */,
+				BEF685221E31ADD9003B745B /* WGFootPrintViewController.m */,
+			);
+			path = Footprint;
+			sourceTree = "<group>";
+		};
+		BE445DC61E31135D00CE2D16 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		BE5256EE1DFFB6DA00AB5CB9 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -704,8 +748,8 @@
 				BE52EDC91E2DCC6C0022EF5B /* Model */,
 				BE52EDCE1E2DCC6C0022EF5B /* WGTabShopCartViewController.h */,
 				BE52EDCF1E2DCC6C0022EF5B /* WGTabShopCartViewController.m */,
-				BE52EDCC1E2DCC6C0022EF5B /* WGTabShopCartViewController+Request.h */,
-				BE52EDCD1E2DCC6C0022EF5B /* WGTabShopCartViewController+Request.m */,
+				BEF6854C1E31DFB5003B745B /* WGShopCartViewController.h */,
+				BEF6854D1E31DFB5003B745B /* WGShopCartViewController.m */,
 			);
 			path = ShopCart;
 			sourceTree = "<group>";
@@ -744,6 +788,72 @@
 			children = (
 			);
 			path = Response;
+			sourceTree = "<group>";
+		};
+		BE52EDDB1E2E13210022EF5B /* Coupon */ = {
+			isa = PBXGroup;
+			children = (
+				BE52EFAE1E2F389D0022EF5B /* Cell */,
+				BE52EFAF1E2F389D0022EF5B /* Model */,
+				BE52EFB91E2F44970022EF5B /* WGCouponListViewController.h */,
+				BE52EFBA1E2F44970022EF5B /* WGCouponListViewController.m */,
+			);
+			path = Coupon;
+			sourceTree = "<group>";
+		};
+		BE52EFAE1E2F389D0022EF5B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				BE52EFB61E2F3BDE0022EF5B /* WGCouponCell.h */,
+				BE52EFB71E2F3BDE0022EF5B /* WGCouponCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		BE52EFAF1E2F389D0022EF5B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BE52EFB01E2F389D0022EF5B /* Request */,
+				BE52EFB11E2F389D0022EF5B /* Response */,
+				BE52EFB31E2F38C50022EF5B /* WGCoupon.h */,
+				BE52EFB41E2F38C50022EF5B /* WGCoupon.m */,
+				BE52EFBC1E2F4A570022EF5B /* WGCouponCode.h */,
+				BE52EFBD1E2F4A570022EF5B /* WGCouponCode.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BE52EFB01E2F389D0022EF5B /* Request */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		BE52EFB11E2F389D0022EF5B /* Response */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		BE52EFC51E2F64B10022EF5B /* Collect */ = {
+			isa = PBXGroup;
+			children = (
+				BE52EFC61E2F64B10022EF5B /* Model */,
+				BE52EFC71E2F64E90022EF5B /* WGCollectionViewController.h */,
+				BE52EFC81E2F64E90022EF5B /* WGCollectionViewController.m */,
+				BE52EFCA1E2F691B0022EF5B /* WGCollectionViewController+Request.h */,
+				BE52EFCB1E2F691B0022EF5B /* WGCollectionViewController+Request.m */,
+			);
+			path = Collect;
+			sourceTree = "<group>";
+		};
+		BE52EFC61E2F64B10022EF5B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		BE62E2201DF92176004510A5 = {
@@ -961,6 +1071,12 @@
 		BEB2D9071DFBDBFB00F2E74B /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				BEF685241E31AF6C003B745B /* Setting */,
+				BEF6851D1E31AC84003B745B /* WGBaseFootPrintAndCollectionViewController.h */,
+				BEF6851E1E31AC84003B745B /* WGBaseFootPrintAndCollectionViewController.m */,
+				BE445DC51E31135D00CE2D16 /* Footprint */,
+				BE52EFC51E2F64B10022EF5B /* Collect */,
+				BE52EDDB1E2E13210022EF5B /* Coupon */,
 				BE52ED8E1E2CCBBF0022EF5B /* WGBaseEditAddressAndReceiptViewController.h */,
 				BE52ED8F1E2CCBBF0022EF5B /* WGBaseEditAddressAndReceiptViewController.m */,
 				BE52ED911E2CDDC50022EF5B /* WGBaseAddressAndReceiptListViewController.h */,
@@ -1133,6 +1249,15 @@
 				BEB2D9891DFE4EE900F2E74B /* WGSidebarViewController.m */,
 			);
 			path = Sidebar;
+			sourceTree = "<group>";
+		};
+		BEF685241E31AF6C003B745B /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				BEF685251E31AFC6003B745B /* WGSettingViewController.h */,
+				BEF685261E31AFC6003B745B /* WGSettingViewController.m */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1323,6 +1448,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE52EFCC1E2F691B0022EF5B /* WGCollectionViewController+Request.m in Sources */,
 				BE6CC1D31E2B9C63003755FF /* WGHomeFloorClassifyGridView.m in Sources */,
 				BE62E2341DF92176004510A5 /* ViewController.m in Sources */,
 				BE52EDD71E2DD61D0022EF5B /* WGShopCartGoodItem.m in Sources */,
@@ -1354,14 +1480,17 @@
 				BE52EDB71E2DBF010022EF5B /* WGAddressListCell.m in Sources */,
 				BE83BB301E23EB54002F3BCC /* WGHomeTabContentRequest.m in Sources */,
 				BE52EDD11E2DCC6C0022EF5B /* WGTabShopCartViewController.m in Sources */,
+				BE52EFB81E2F3BDE0022EF5B /* WGCouponCell.m in Sources */,
 				BE99E79E1E1C928200210546 /* WGHomeFloorBaseContentItem.m in Sources */,
 				BEB2D9621DFBED4100F2E74B /* WGSegmentView.m in Sources */,
+				BE52EFBE1E2F4A570022EF5B /* WGCouponCode.m in Sources */,
 				BE52EDDA1E2DDD160022EF5B /* WGShopCart.m in Sources */,
 				BE99E7CA1E1CB67600210546 /* WGRatingView.m in Sources */,
 				BE52EDD41E2DCE790022EF5B /* WGShopCartCell.m in Sources */,
 				BEB2D95F1DFBED1500F2E74B /* WGViewController.m in Sources */,
 				BE52D5381E1B9D5A00D4FFCD /* WGHomeTopicItemView.m in Sources */,
 				BE6CC1BE1E2941AA003755FF /* WGHomeFloorClassifyListItemCell.m in Sources */,
+				BEF6854E1E31DFB5003B745B /* WGShopCartViewController.m in Sources */,
 				BEB2D95A1DFBED1500F2E74B /* WGNavigationController.m in Sources */,
 				BE6CC1E01E2BBB4C003755FF /* WGClassifyGoodList.m in Sources */,
 				BE52ED931E2CDDC50022EF5B /* WGBaseAddressAndReceiptListViewController.m in Sources */,
@@ -1370,18 +1499,21 @@
 				BE6CC1B81E2940DB003755FF /* WGHomeFloorCountryCell.m in Sources */,
 				BEB2D96C1DFC579400F2E74B /* WGHomeTabViewController+Scroll.m in Sources */,
 				BE6CC1CA1E2AA397003755FF /* WGHomeFloorGoodGridItemView.m in Sources */,
+				BEF6851F1E31AC84003B745B /* WGBaseFootPrintAndCollectionViewController.m in Sources */,
 				BE83BB2D1E23E60D002F3BCC /* WGHomeFloorItem.m in Sources */,
 				BEB2D9691DFC054B00F2E74B /* WGHomeTabViewController+Segment.m in Sources */,
 				BEB2D95C1DFBED1500F2E74B /* WGRequest.m in Sources */,
 				BE52ED291E2C64860022EF5B /* WGEditReceiptViewController.m in Sources */,
 				BE83BB211E23E300002F3BCC /* WGCarouselFigureItem.m in Sources */,
+				BEF685231E31ADD9003B745B /* WGFootPrintViewController.m in Sources */,
+				BEF685271E31AFC6003B745B /* WGSettingViewController.m in Sources */,
 				BE62E2311DF92176004510A5 /* AppDelegate.m in Sources */,
 				BE52D5261E1B699100D4FFCD /* WGTopicItem.m in Sources */,
 				BE99E7A21E1C947F00210546 /* WGHomeFloorContentGoodItem.m in Sources */,
 				BE6CC1D01E2B9426003755FF /* WGHomeFloorCountryItemView.m in Sources */,
-				BE52EDD01E2DCC6C0022EF5B /* WGTabShopCartViewController+Request.m in Sources */,
 				BE99E7C71E1CA14800210546 /* WGHomeFloorGoodListItemView.m in Sources */,
 				BE6CC1A01E28DC05003755FF /* WGNews.m in Sources */,
+				BE52EFB51E2F38C50022EF5B /* WGCoupon.m in Sources */,
 				BE6CC1CD1E2B5BE5003755FF /* WGHomeFloorClassifyColumnView.m in Sources */,
 				BE52ED901E2CCBBF0022EF5B /* WGBaseEditAddressAndReceiptViewController.m in Sources */,
 				BEB2D95B1DFBED1500F2E74B /* WGObject.m in Sources */,
@@ -1406,9 +1538,11 @@
 				BEB2D98A1DFE4EEA00F2E74B /* WGSidebarViewController.m in Sources */,
 				BEB2D9591DFBED1500F2E74B /* WGApplication.m in Sources */,
 				BE52EDB01E2DBB770022EF5B /* WGAddress.m in Sources */,
+				BE52EFBB1E2F44970022EF5B /* WGCouponListViewController.m in Sources */,
 				BE83BB1E1E23E233002F3BCC /* WGHome.m in Sources */,
 				BE62E4631DF937F8004510A5 /* AppDelegate+UI.m in Sources */,
 				BEB2D9221DFBDFE900F2E74B /* WGTabMineViewController.m in Sources */,
+				BE52EFC91E2F64E90022EF5B /* WGCollectionViewController.m in Sources */,
 				BE6CC1A31E29219F003755FF /* WGHomeFloorNameHeadCell.m in Sources */,
 				BEB2D9251DFBE25300F2E74B /* WGHomeTabViewController+NavigationBar.m in Sources */,
 			);

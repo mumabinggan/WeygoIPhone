@@ -28,6 +28,11 @@
 #import "WGClassifyGoodListViewController.h"
 #import "WGReceiptListViewController.h"
 #import "WGAddressListViewController.h"
+#import "WGCouponListViewController.h"
+#import "WGCollectionViewController.h"
+#import "WGFootPrintViewController.h"
+#import "WGSettingViewController.h"
+#import "WGShopCartViewController.h"
 
 //can delete
 #import "WGCarouselFigureItem.h"
@@ -493,12 +498,18 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    WGShopCartViewController *vc = [[WGShopCartViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+    /*
+    WGCouponListViewController *vc = [[WGCouponListViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+     */
 //    WGAddressListViewController *vc = [[WGAddressListViewController alloc] init];
 //    [self.navigationController pushViewController:vc animated:YES];
-    
+    /*
     WGReceiptListViewController *vc = [[WGReceiptListViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
-    
+    */
      /*
     WGClassifyGoodListViewController *vc = [[WGClassifyGoodListViewController alloc] init];
     vc.classifyName = @"Fruit";

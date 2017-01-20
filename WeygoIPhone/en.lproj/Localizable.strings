@@ -43,3 +43,23 @@
 //购物车
 "Totale:Price With Unit" = "Totale:€%.2f";
 "Confirm" = "conferma";
+"Carrello" = "Carrello";
+//优惠卷
+"Input Placeholder" = "Input Placeholder";
+"Activate" = "Activate";
+"Inactivate" = "Inactivate";
+//收藏
+"Collection" = "Collection";
+//足迹
+"FootPrint" = "FootPrint";
+//设置
+"Setting" = "Setting";
+"Informazioni" = "Informazioni";
+"System" = "System";
+"Inserisci CAP" = "Inserisci CAP";
+"Versione" = "Versione";
+"Svuota cache" = "Svuota cache";
+"Seleziona lingua" = "Seleziona lingua";
+"Italiano" = "Italiano";
+"China" = "China";
+"Log out" = "Log out";

@@ -10,10 +10,5 @@
 #import "WGShopCart.h"
 
 @interface WGTabShopCartViewController : WGTabViewController
-{
-    WGShopCart *_data;
-}
-
-- (void)refreshTableView;
 
 @end
