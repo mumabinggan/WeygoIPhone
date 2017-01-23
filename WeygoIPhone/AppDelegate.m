@@ -18,6 +18,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     DLog(@"--%@", [UIFont familyNames]);
+    DLog(@"----%f---",[[UIScreen mainScreen] bounds].size.height);
     [self launchUIApplicatioin:application withOptions:launchOptions];
     
     return YES;

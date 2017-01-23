@@ -23,16 +23,18 @@
 
 - (void)loadSubviews {
     [super loadSubviews];
-    
+    self.backgroundColor = kRGB(246, 248, 249);
     JHView *contentView = [[JHView alloc] initWithFrame:CGRectMake(kAppAdaptWidth(8), 0, kAppAdaptWidth(199), kAppAdaptHeight(204)) radius:kAppAdaptWidth(6)];
     contentView.clipsToBounds = YES;
+    contentView.backgroundColor = kWhiteColor;
     [self.contentView addSubview:contentView];
     
     _imageView = [[JHImageView alloc] initWithFrame:CGRectMake(0, 0, kAppAdaptWidth(199), kAppAdaptHeight(128))];
-    _imageView.contentMode = UIViewContentModeScaleAspectFit;
+    _imageView.contentMode = UIViewContentModeScaleToFill;
+    _imageView.backgroundColor = kGreenColor;
     [contentView addSubview:_imageView];
     
-    _hotNumberImageView = [[JHImageView alloc] initWithFrame:CGRectMake(0, 0, kAppAdaptWidth(96), kAppAdaptWidth(96))];
+    _hotNumberImageView = [[JHImageView alloc] initWithFrame:CGRectMake(0, 0, kAppAdaptWidth(48), kAppAdaptWidth(48))];
     _hotNumberImageView.contentMode = UIViewContentModeScaleAspectFit;
     [_imageView addSubview:_hotNumberImageView];
     

@@ -33,6 +33,7 @@
 #import "WGFootPrintViewController.h"
 #import "WGSettingViewController.h"
 #import "WGShopCartViewController.h"
+#import "WGClassifyDetailViewController.h"
 
 //can delete
 #import "WGCarouselFigureItem.h"
@@ -54,8 +55,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    //[self initData];
-    //[self.view addSubview:[self tableView]];
+    DLog(@"--homeTabContent---%f----", self.view.height);
 }
 
 - (void)initData {
@@ -498,8 +498,16 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    WGHomeTabContentViewController *vc = [[WGHomeTabContentViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+    /*
+    WGClassifyDetailViewController *vc = [[WGClassifyDetailViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+    */
+     /*
     WGShopCartViewController *vc = [[WGShopCartViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
+     */
     /*
     WGCouponListViewController *vc = [[WGCouponListViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];

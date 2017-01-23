@@ -9,11 +9,13 @@
 #ifndef WGAppConstants_h
 #define WGAppConstants_h
 
-#define WGAppBaseColor  kRGB(233, 122, 60)
+#define WGAppBaseColor  kHRGB(0XEE7A3C)
 #define WGAppNameLabelColor  kRGBA(0, 0, 0, 0.87)
 #define WGAppTitleColor  kRGBA(0, 0, 0, 0.54)
 #define WGAppLightNameLabelColor  kRGBA(0, 0, 0, 0.38)
-#define WGAppSeparateLineColor kHRGB(0x999999);
+#define WGAppSeparateLineColor kHRGB(0x999999)
+
+#define WGAppBlueButtonColor kHRGB(0x5677FC)
 
 #define WGAppFooterButtonColor kRGB(86, 119, 252)
 

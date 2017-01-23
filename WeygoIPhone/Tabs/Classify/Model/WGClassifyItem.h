@@ -20,4 +20,7 @@
 
 @property (nonatomic, strong) NSArray *goodArray;
 
+//use for filter classify
+@property (nonatomic, assign) BOOL isSelected;
+
 @end

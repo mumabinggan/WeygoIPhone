@@ -22,7 +22,7 @@
     if (self) {
         // Custom initialization
         self.tabBarIndex = WGTabIndexForeign;
-        self.tabBarItem.title = kStr(@"TabForeign");
+        self.tabBarItem.title = kStr(@"TabShopCart");
         self.tabBarItem.image = [UIImage imageNamed:@"tab_cart_icon"];
     }
     return self;
@@ -34,9 +34,9 @@
 }
 
 - (void)initSubView {
+    self.title = kStr(@"TabShopCart");
     _shopCartViewController = [[WGShopCartViewController alloc] init];
     _shopCartViewController.view.frame = CGRectMake(0, 0, kDeviceWidth, kDeviceHeight - kAppTabBarHeight);
-    _shopCartViewController.view.backgroundColor = kRedColor;
     [self.view addSubview:_shopCartViewController.view];
     [self addChildViewController:_shopCartViewController];
 }

@@ -92,7 +92,7 @@
     _tableView.refreshDelegate = self;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.contentInset = UIEdgeInsetsMake(-35, 0, -35, 0);
-    _tableView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
+    _tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
     [contentView addSubview:_tableView];
     
     UIBlurEffect *effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];

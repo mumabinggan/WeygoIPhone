@@ -8,7 +8,7 @@
 "TabHome" = "首页";
 "TabClassify" = "分类";
 "TabBenefit" = "优惠";
-"TabForeign" = "外国馆";
+"TabShopCart" = "购物车";
 "TabMine" = "我的";
 "Price With Unit" = "€%.1f";
 "More" = "查看更多";
@@ -63,3 +63,17 @@
 "Italiano" = "Italiano";
 "China" = "China";
 "Log out" = "Log out";
+//分类 Tab
+"Hot Sale" = "PIÙ VENDUTI";
+//分类详情
+"Default Sort" = "Default";
+"Filtro" = "Filtro";
+"Vista" = "Vista";
+"Brand Sort" = "Brand";
+"Price Sort" = "Price";
+"Cancel Sort" = "Cancel";
+"Confirm Sort" = "Confirm";
+"Brand" = "Marchi";
+"Classify Filter" = "Filter";
+//环球
+"Asia" = "Asia";

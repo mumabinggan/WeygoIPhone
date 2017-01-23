@@ -116,25 +116,24 @@
 }
 
 - (void)initSubView {
+    self.title = kStr(@"TabClassify");
     JHView *contentView = [[JHView alloc] initWithFrame:self.view.bounds];
     contentView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:contentView];
     
-    _firstTableView = [[TWRefreshTableView alloc] initWithFrame:CGRectMake(0, kAppNavigationBarHeight + kAppStateHeight, kAppAdaptWidth(160), self.view.height) style:UITableViewStyleGrouped refreshType:TWRefreshTypeTop];
+    _firstTableView = [[JHTableView alloc] initWithFrame:CGRectMake(0, 0, kAppAdaptWidth(160), self.view.height) style:UITableViewStyleGrouped];
     _firstTableView.dataSource = self;
     _firstTableView.delegate = self;
     _firstTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    //_firstTableView.contentInset = UIEdgeInsetsMake(0, 0, kAppTabBarHeight, 0);
-    _firstTableView.backgroundColor = kRedColor;
+    _firstTableView.contentInset = UIEdgeInsetsMake(0, 0, kAppTabBarHeight, 0);
     _firstTableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [contentView addSubview:_firstTableView];
     
-    _secondTableView = [[TWRefreshTableView alloc] initWithFrame:CGRectMake(_firstTableView.maxX, kAppNavigationBarHeight + kAppStateHeight, kAppAdaptWidth(215), self.view.height) style:UITableViewStyleGrouped refreshType:TWRefreshTypeTop];
+    _secondTableView = [[JHTableView alloc] initWithFrame:CGRectMake(_firstTableView.maxX, 0, kAppAdaptWidth(215), self.view.height)];
     _secondTableView.dataSource = self;
     _secondTableView.delegate = self;
     _secondTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    //_secondTableView.contentInset = UIEdgeInsetsMake(0, 0, kAppTabBarHeight, 0);
-    _secondTableView.backgroundColor = kGreenColor;
+    _secondTableView.contentInset = UIEdgeInsetsMake(kAppNavigationBarHeight + kAppStateHeight, 0, kAppTabBarHeight, 0);
     _secondTableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [contentView addSubview:_secondTableView];
 }
@@ -206,7 +205,7 @@
     if (!cell) {
         if ([tableView isEqual:_firstTableView]) {
             cell = [[WGImageClassifyCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
-            cell.backgroundColor = kRedColor;
+            cell.clipsToBounds = YES;
         }
         else {
             if (indexPath.section == 0) {
@@ -218,7 +217,7 @@
             }
             else if (indexPath.section == 1) {
                 cell = [[JHTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
-                cell.textLabel.text = kStr(@"");
+                cell.textLabel.text = kStr(@"Hot Sale");
                 cell.textLabel.font = kAppAdaptFontBold(14);
                 cell.backgroundColor = kHRGB(0xf8fafa);
                 cell.textLabel.textAlignment = NSTextAlignmentCenter;

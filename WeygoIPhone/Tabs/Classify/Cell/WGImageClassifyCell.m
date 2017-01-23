@@ -20,15 +20,16 @@
 
 - (void)loadSubviews {
     [super loadSubviews];
+    self.contentView.backgroundColor = kWhiteColor;
     _imageView = [[JHImageView alloc] initWithFrame:CGRectMake(0, kAppAdaptHeight(2), kAppAdaptWidth(160), kAppAdaptHeight(96))];
-    _imageView.contentMode = UIViewContentModeScaleAspectFill;
+    _imageView.contentMode = UIViewContentModeScaleToFill;
     [self.contentView addSubview:_imageView];
     
     _nameLabel = [[JHLabel alloc] initWithFrame:_imageView.bounds];
     _nameLabel.font = kAppAdaptFont(14);
     _nameLabel.textAlignment = NSTextAlignmentCenter;
     _nameLabel.textColor = kWhiteColor;
-    [self.contentView addSubview:_nameLabel];
+    [_imageView addSubview:_nameLabel];
 }
 
 - (void)showWithData:(JHObject *)data {
