@@ -7,9 +7,17 @@
 //
 
 #import "JHObject.h"
+#import "WGSessionRequest.h"
+#import "WGSessionResponse.h"
 
 @interface WGApplication : JHObject
 
+@property (nonatomic, strong) WGSessionResponse *sessionResponse;
+
 + (WGApplication *)sharedApplication;
+
+- (void)loadSessionOnCompletion:(void (^)(WGSessionResponse *))completion;
+
+- (void)loadClassifyOnCompletion:(void (^)(WGSessionResponse *))completion;
 
 @end

@@ -24,7 +24,6 @@
 
 @property (nonatomic, strong) NSString *time;
 
-
 //for self use
 @property (nonatomic, assign) BOOL isSelected;
 

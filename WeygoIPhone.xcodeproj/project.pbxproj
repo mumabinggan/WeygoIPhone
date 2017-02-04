@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE49E3B41E45BA4200ECDEE5 /* WGSessionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE49E3B31E45BA4200ECDEE5 /* WGSessionRequest.m */; };
+		BE49E3B71E45BAA100ECDEE5 /* WGCallBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE49E3B61E45BAA100ECDEE5 /* WGCallBaseRequest.m */; };
+		BE49E3BA1E45BAB100ECDEE5 /* WGLoginBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE49E3B91E45BAB100ECDEE5 /* WGLoginBaseRequest.m */; };
+		BE49E3BD1E45BD4200ECDEE5 /* WGSessionResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BE49E3BC1E45BD4200ECDEE5 /* WGSessionResponse.m */; };
+		BE49E3C61E45CF6900ECDEE5 /* WGClassifyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE49E3C51E45CF6900ECDEE5 /* WGClassifyRequest.m */; };
+		BE49E3C81E45E73600ECDEE5 /* File.xml in Resources */ = {isa = PBXBuildFile; fileRef = BE49E3C71E45E73600ECDEE5 /* File.xml */; };
+		BE49E3CA1E45EA9000ECDEE5 /* File1.xml in Resources */ = {isa = PBXBuildFile; fileRef = BE49E3C91E45EA9000ECDEE5 /* File1.xml */; };
+		BE49E3CC1E4611B000ECDEE5 /* File2.xml in Resources */ = {isa = PBXBuildFile; fileRef = BE49E3CB1E4611B000ECDEE5 /* File2.xml */; };
+		BE49E3CE1E4617DD00ECDEE5 /* File3.xml in Resources */ = {isa = PBXBuildFile; fileRef = BE49E3CD1E4617DD00ECDEE5 /* File3.xml */; };
 		BE5257231DFFB6FE00AB5CB9 /* Oswald-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE5257131DFFB6FE00AB5CB9 /* Oswald-Bold.ttf */; };
 		BE5257241DFFB6FE00AB5CB9 /* Oswald-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE5257141DFFB6FE00AB5CB9 /* Oswald-BoldItalic.ttf */; };
 		BE5257251DFFB6FE00AB5CB9 /* Oswald-Demi-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE5257151DFFB6FE00AB5CB9 /* Oswald-Demi-BoldItalic.ttf */; };
@@ -231,6 +240,20 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BE49E3B21E45BA4200ECDEE5 /* WGSessionRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGSessionRequest.h; sourceTree = "<group>"; };
+		BE49E3B31E45BA4200ECDEE5 /* WGSessionRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGSessionRequest.m; sourceTree = "<group>"; };
+		BE49E3B51E45BAA100ECDEE5 /* WGCallBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGCallBaseRequest.h; sourceTree = "<group>"; };
+		BE49E3B61E45BAA100ECDEE5 /* WGCallBaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGCallBaseRequest.m; sourceTree = "<group>"; };
+		BE49E3B81E45BAB100ECDEE5 /* WGLoginBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGLoginBaseRequest.h; sourceTree = "<group>"; };
+		BE49E3B91E45BAB100ECDEE5 /* WGLoginBaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGLoginBaseRequest.m; sourceTree = "<group>"; };
+		BE49E3BB1E45BD4200ECDEE5 /* WGSessionResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGSessionResponse.h; sourceTree = "<group>"; };
+		BE49E3BC1E45BD4200ECDEE5 /* WGSessionResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGSessionResponse.m; sourceTree = "<group>"; };
+		BE49E3C41E45CF6900ECDEE5 /* WGClassifyRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGClassifyRequest.h; sourceTree = "<group>"; };
+		BE49E3C51E45CF6900ECDEE5 /* WGClassifyRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGClassifyRequest.m; sourceTree = "<group>"; };
+		BE49E3C71E45E73600ECDEE5 /* File.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = File.xml; sourceTree = "<group>"; };
+		BE49E3C91E45EA9000ECDEE5 /* File1.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = File1.xml; sourceTree = "<group>"; };
+		BE49E3CB1E4611B000ECDEE5 /* File2.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = File2.xml; sourceTree = "<group>"; };
+		BE49E3CD1E4617DD00ECDEE5 /* File3.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = File3.xml; sourceTree = "<group>"; };
 		BE5257131DFFB6FE00AB5CB9 /* Oswald-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Bold.ttf"; sourceTree = "<group>"; };
 		BE5257141DFFB6FE00AB5CB9 /* Oswald-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-BoldItalic.ttf"; sourceTree = "<group>"; };
 		BE5257151DFFB6FE00AB5CB9 /* Oswald-Demi-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Demi-BoldItalic.ttf"; sourceTree = "<group>"; };
@@ -571,6 +594,41 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		BE49E3AA1E45BA2000ECDEE5 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				BE49E3AB1E45BA2000ECDEE5 /* Model */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
+		BE49E3AB1E45BA2000ECDEE5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BE49E3AC1E45BA2000ECDEE5 /* Request */,
+				BE49E3AD1E45BA2000ECDEE5 /* Response */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BE49E3AC1E45BA2000ECDEE5 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				BE49E3B21E45BA4200ECDEE5 /* WGSessionRequest.h */,
+				BE49E3B31E45BA4200ECDEE5 /* WGSessionRequest.m */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		BE49E3AD1E45BA2000ECDEE5 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				BE49E3BB1E45BD4200ECDEE5 /* WGSessionResponse.h */,
+				BE49E3BC1E45BD4200ECDEE5 /* WGSessionResponse.m */,
+			);
+			path = Response;
 			sourceTree = "<group>";
 		};
 		BE5256EE1DFFB6DA00AB5CB9 /* Resource */ = {
@@ -954,7 +1012,6 @@
 				BEB2D9071DFBDBFB00F2E74B /* Mine */,
 				BEB2D9081DFBDBFB00F2E74B /* Login */,
 				BEB2D9091DFBDBFB00F2E74B /* List */,
-				BEB2D90A1DFBDBFB00F2E74B /* Foreign */,
 				BEB2D90B1DFBDBFB00F2E74B /* Detail */,
 				BE62E22F1DF92176004510A5 /* AppDelegate.h */,
 				BE62E2301DF92176004510A5 /* AppDelegate.m */,
@@ -971,6 +1028,10 @@
 				BE62E23D1DF92176004510A5 /* Info.plist */,
 				BE62E22C1DF92176004510A5 /* Supporting Files */,
 				BE62E3361DF92584004510A5 /* WeygoIPhone-Prefix.pch */,
+				BE49E3CD1E4617DD00ECDEE5 /* File3.xml */,
+				BE49E3CB1E4611B000ECDEE5 /* File2.xml */,
+				BE49E3C71E45E73600ECDEE5 /* File.xml */,
+				BE49E3C91E45EA9000ECDEE5 /* File1.xml */,
 			);
 			path = WeygoIPhone;
 			sourceTree = "<group>";
@@ -1204,6 +1265,7 @@
 		BEB2D9071DFBDBFB00F2E74B /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				BE49E3AA1E45BA2000ECDEE5 /* Session */,
 				BEF685241E31AF6C003B745B /* Setting */,
 				BEF6851D1E31AC84003B745B /* WGBaseFootPrintAndCollectionViewController.h */,
 				BEF6851E1E31AC84003B745B /* WGBaseFootPrintAndCollectionViewController.m */,
@@ -1234,13 +1296,6 @@
 				BE6CC1D71E2BBA78003755FF /* ClassifyGoodList */,
 			);
 			path = List;
-			sourceTree = "<group>";
-		};
-		BEB2D90A1DFBDBFB00F2E74B /* Foreign */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Foreign;
 			sourceTree = "<group>";
 		};
 		BEB2D90B1DFBDBFB00F2E74B /* Detail */ = {
@@ -1380,6 +1435,10 @@
 				BEB2D9561DFBED1500F2E74B /* WGTabViewController.m */,
 				BEB2D9571DFBED1500F2E74B /* WGViewController.h */,
 				BEB2D9581DFBED1500F2E74B /* WGViewController.m */,
+				BE49E3B51E45BAA100ECDEE5 /* WGCallBaseRequest.h */,
+				BE49E3B61E45BAA100ECDEE5 /* WGCallBaseRequest.m */,
+				BE49E3B81E45BAB100ECDEE5 /* WGLoginBaseRequest.h */,
+				BE49E3B91E45BAB100ECDEE5 /* WGLoginBaseRequest.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1445,6 +1504,8 @@
 		BEF685501E31F685003B745B /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				BE49E3C41E45CF6900ECDEE5 /* WGClassifyRequest.h */,
+				BE49E3C51E45CF6900ECDEE5 /* WGClassifyRequest.m */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -1613,18 +1674,22 @@
 				BE62E4D21DF94EB4004510A5 /* Localizable.strings in Resources */,
 				BE52572F1DFFB6FE00AB5CB9 /* Oswald-Regular.ttf in Resources */,
 				BE99E7D51E1CEA0C00210546 /* SF-UI-Display-Black.otf in Resources */,
+				BE49E3CA1E45EA9000ECDEE5 /* File1.xml in Resources */,
 				BE99E7DD1E1CEA0C00210546 /* SF-UI-Display-Ultralight.otf in Resources */,
 				BE5257251DFFB6FE00AB5CB9 /* Oswald-Demi-BoldItalic.ttf in Resources */,
 				BE62E2391DF92176004510A5 /* Assets.xcassets in Resources */,
 				BE5257291DFFB6FE00AB5CB9 /* Oswald-Heavy.ttf in Resources */,
 				BE99E7D91E1CEA0C00210546 /* SF-UI-Display-Medium.otf in Resources */,
+				BE49E3C81E45E73600ECDEE5 /* File.xml in Resources */,
 				BE62E2371DF92176004510A5 /* Main.storyboard in Resources */,
 				BE5257281DFFB6FE00AB5CB9 /* Oswald-ExtraLight.ttf in Resources */,
 				BE5257321DFFB6FE00AB5CB9 /* SIL Open Font License.txt in Resources */,
 				BE5257311DFFB6FE00AB5CB9 /* Oswald-Stencil.ttf in Resources */,
 				BE5257261DFFB6FE00AB5CB9 /* Oswald-DemiBold.ttf in Resources */,
 				BE5257241DFFB6FE00AB5CB9 /* Oswald-BoldItalic.ttf in Resources */,
+				BE49E3CE1E4617DD00ECDEE5 /* File3.xml in Resources */,
 				BE99E7D61E1CEA0C00210546 /* SF-UI-Display-Bold.otf in Resources */,
+				BE49E3CC1E4611B000ECDEE5 /* File2.xml in Resources */,
 				BE99E7DA1E1CEA0C00210546 /* SF-UI-Display-Regular.otf in Resources */,
 				BE5257271DFFB6FE00AB5CB9 /* Oswald-Extra-LightItalic.ttf in Resources */,
 				BE52572D1DFFB6FE00AB5CB9 /* Oswald-Medium.ttf in Resources */,
@@ -1670,6 +1735,7 @@
 				BEA374B21E3491770054B8E6 /* WGClassifySortView.m in Sources */,
 				BEA374FD1E34F83A0054B8E6 /* WGClassifyDetailViewController+Request.m in Sources */,
 				BEB2D9211DFBDFE900F2E74B /* WGHomeTabViewController.m in Sources */,
+				BE49E3BD1E45BD4200ECDEE5 /* WGSessionResponse.m in Sources */,
 				BEB2D95E1DFBED1500F2E74B /* WGTabViewController.m in Sources */,
 				BE6CC1A61E292BA8003755FF /* WGHomeFloorPictureHeadCell.m in Sources */,
 				BEB2D9931DFE77C100F2E74B /* WGScrollAdView.m in Sources */,
@@ -1684,6 +1750,7 @@
 				BE6CC1B51E294098003755FF /* WGHomeFloorClassifyColumnCell.m in Sources */,
 				BE5E4C471E2526D900ACA48F /* WGHomeTabViewController+Contents.m in Sources */,
 				BE52EDBA1E2DBF9D0022EF5B /* WGEditAddressViewController.m in Sources */,
+				BE49E3C61E45CF6900ECDEE5 /* WGClassifyRequest.m in Sources */,
 				BE52D53B1E1BAA5500D4FFCD /* WGHomeFloorNameAndBriefInfoHeadCell.m in Sources */,
 				BE52ED3C1E2C75A10022EF5B /* WGReceiptListCell.m in Sources */,
 				BE5E4C441E24F9E200ACA48F /* WGHomeTabBaseContentViewController.m in Sources */,
@@ -1722,9 +1789,11 @@
 				BEF6851F1E31AC84003B745B /* WGBaseFootPrintAndCollectionViewController.m in Sources */,
 				BE83BB2D1E23E60D002F3BCC /* WGHomeFloorItem.m in Sources */,
 				BEA374AE1E3484A50054B8E6 /* WGClassifyFilter.m in Sources */,
+				BE49E3B41E45BA4200ECDEE5 /* WGSessionRequest.m in Sources */,
 				BEA3751F1E3501D20054B8E6 /* WGClassifyKeyword.m in Sources */,
 				BEA3749D1E347C500054B8E6 /* WGGoodDetailViewController.m in Sources */,
 				BEB2D9691DFC054B00F2E74B /* WGHomeTabViewController+Segment.m in Sources */,
+				BE49E3B71E45BAA100ECDEE5 /* WGCallBaseRequest.m in Sources */,
 				BEB2D95C1DFBED1500F2E74B /* WGRequest.m in Sources */,
 				BE52ED291E2C64860022EF5B /* WGEditReceiptViewController.m in Sources */,
 				BE83BB211E23E300002F3BCC /* WGCarouselFigureItem.m in Sources */,
@@ -1736,6 +1805,7 @@
 				BE52D5261E1B699100D4FFCD /* WGTopicItem.m in Sources */,
 				BE99E7A21E1C947F00210546 /* WGHomeFloorContentGoodItem.m in Sources */,
 				BE6CC1D01E2B9426003755FF /* WGHomeFloorCountryItemView.m in Sources */,
+				BE49E3BA1E45BAB100ECDEE5 /* WGLoginBaseRequest.m in Sources */,
 				BE99E7C71E1CA14800210546 /* WGHomeFloorGoodListItemView.m in Sources */,
 				BEF286BD1E35F4F300274FCA /* WGUniversalViewController.m in Sources */,
 				BE6CC1A01E28DC05003755FF /* WGNews.m in Sources */,

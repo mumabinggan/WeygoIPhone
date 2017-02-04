@@ -8,8 +8,9 @@
 
 #import "AppDelegate.h"
 #import "AppDelegate+UI.h"
+#import "JHNetworkManager.h"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<NSXMLParserDelegate>
 
 @end
 
@@ -21,7 +22,40 @@
     DLog(@"----%f---",[[UIScreen mainScreen] bounds].size.height);
     [self launchUIApplicatioin:application withOptions:launchOptions];
     
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"File3" ofType:@"xml"];
+    NSFileHandle *file = [NSFileHandle fileHandleForReadingAtPath:path];
+    NSData *data = [file readDataToEndOfFile];
+    NSXMLParser *m_parser = [[NSXMLParser alloc] initWithData:data];
+    //设置该类本身为代理类，即该类在声明时要实现NSXMLParserDelegate委托协议
+    [m_parser setDelegate:self];  //设置代理为本地
+//    [[WGApplication sharedApplication] loadSessionOnCompletion:^(WGSessionResponse *response) {
+//        
+//    }];
+    
+    //BOOL flag = [m_parser parse]; //开始解析
+    [[WGApplication sharedApplication] loadClassifyOnCompletion:^(WGSessionResponse *response) {
+                    NSLog(@"-----%@-----", response);
+                }];
+    
+//        [[WGApplication sharedApplication] loadSessionOnCompletion:^(WGSessionResponse *response) {
+////        [[WGApplication sharedApplication] loadClassifyOnCompletion:^(WGSessionResponse *response) {
+////            NSLog(@"-----%@-----", response);
+////        }];
+//    }];
+    //[[JHNetworkManager sharedManager] sss];
+    
     return YES;
+}
+
+- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
+    //记录所取得的文字列
+    NSLog(@"---string---%@", string);
+}
+
+- (void)parser:(NSXMLParser *)parser foundCDATA:(NSData *)CDATABlock{
+    //NSLog(@"cData:%@",[NSString stringWithUTF8String:[CDATABlock bytes]]);
+    NSString *str = [[NSString alloc] initWithData:CDATABlock encoding:NSUTF8StringEncoding];
+    NSLog(@"---cdata--%@", str);
 }
 
 
