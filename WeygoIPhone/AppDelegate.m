@@ -33,9 +33,9 @@
 //    }];
     
     //BOOL flag = [m_parser parse]; //开始解析
-    [[WGApplication sharedApplication] loadClassifyOnCompletion:^(WGSessionResponse *response) {
-                    NSLog(@"-----%@-----", response);
-                }];
+//    [[WGApplication sharedApplication] loadClassifyOnCompletion:^(WGSessionResponse *response) {
+//                    NSLog(@"-----%@-----", response);
+//                }];
     
 //        [[WGApplication sharedApplication] loadSessionOnCompletion:^(WGSessionResponse *response) {
 ////        [[WGApplication sharedApplication] loadClassifyOnCompletion:^(WGSessionResponse *response) {

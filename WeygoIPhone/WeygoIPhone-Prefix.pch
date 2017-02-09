@@ -17,7 +17,7 @@
 #import "JHKit.h"
 #import "WGAppEnum.h"
 #import "WGAppConstants.h"
-#import "WGApplication.h"
+#import "WGApplication_Header.h"
 #import "WGObject.h"
 
 #endif /* WeygoIPhone_Prefix_pch */

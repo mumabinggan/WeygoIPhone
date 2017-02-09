@@ -34,6 +34,8 @@
 #import "WGSettingViewController.h"
 #import "WGShopCartViewController.h"
 #import "WGClassifyDetailViewController.h"
+#import "WGLoginViewController.h"
+#import "WGBindThirdPartyViewController.h"
 
 //can delete
 #import "WGCarouselFigureItem.h"
@@ -498,8 +500,14 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    WGHomeTabContentViewController *vc = [[WGHomeTabContentViewController alloc] init];
+    WGBindThirdPartyViewController *vc = [[WGBindThirdPartyViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
+    /*
+    WGLoginViewController *vc = [[WGLoginViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+     */
+//    WGHomeTabContentViewController *vc = [[WGHomeTabContentViewController alloc] init];
+//    [self.navigationController pushViewController:vc animated:YES];
     /*
     WGClassifyDetailViewController *vc = [[WGClassifyDetailViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];

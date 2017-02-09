@@ -8,6 +8,6 @@
 
 #import "JHNavigationController.h"
 
-@interface WGNavigationController : JHNavigationController
+@interface WGNavigationController : JHNavigationController<UINavigationControllerDelegate, UIGestureRecognizerDelegate>
 
 @end

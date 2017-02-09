@@ -33,9 +33,10 @@
 
 - (void)initAppearance {
     [UINavigationBar appearance].barTintColor = WGAppBaseColor;
+    //[UINavigationBar appearance].tintColor = kWhiteColor;
 //    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navbar-white"] forBarMetrics:UIBarMetricsDefault];
     //[[UINavigationBar appearance] setShadowImage:[UIImage imageNamed:@"nav-shadowImage"]];
-    [[UINavigationBar appearance] setShadowImage:[[UIImage alloc] init]];
+    //[[UINavigationBar appearance] setShadowImage:[[UIImage alloc] init]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:kWhiteColor, NSFontAttributeName:kWGOswaldRegularFont(18)}];
     
     [[UITabBar appearance] setTintColor:WGAppBaseColor];

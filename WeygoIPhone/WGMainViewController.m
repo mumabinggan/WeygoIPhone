@@ -12,14 +12,14 @@
 #import "WGTabBenefitViewController.h"
 #import "WGTabShopCartViewController.h"
 #import "WGTabMineViewController.h"
-#import "WGSidebarViewController.h"
+#import "WGHomeSliderViewController.h"
 
 static const float kTabBarHeight = 60;
 
 @interface WGMainViewController ()
 {
     JHView *_maskView;
-    WGSidebarViewController *_sideBarController;
+    WGHomeSliderViewController *_sliderController;
 }
 @end
 
@@ -86,14 +86,14 @@ static const float kTabBarHeight = 60;
         _maskView.alpha = 0;
         [window addSubview:_maskView];
     }
-    if (!_sideBarController) {
-        _sideBarController = [[WGSidebarViewController alloc] init];
-        _sideBarController.view.frame = CGRectMake(-kDeviceWidth, 0, kDeviceWidth, kDeviceHeight);
+    if (!_sliderController) {
+        _sliderController = [[WGHomeSliderViewController alloc] init];
+        _sliderController.view.frame = CGRectMake(-kDeviceWidth, 0, kDeviceWidth, kDeviceHeight);
         __weak typeof (self) weakSelf = self;
-        _sideBarController.onTouchBlankArea = ^(void) {
+        _sliderController.onTouchBlankArea = ^(void) {
             [weakSelf touchSideBarBlankArea];
         };
-        [window addSubview:_sideBarController.view];
+        [window addSubview:_sliderController.view];
     }
     [self setSideBarhidden:NO];
 }
@@ -105,7 +105,7 @@ static const float kTabBarHeight = 60;
 - (void)setSideBarhidden:(BOOL)hidden {
     _maskView.hidden = NO;
     [UIView animateWithDuration:0.2 animations:^(void) {
-        _sideBarController.view.frame = CGRectMake(hidden ? -kDeviceWidth : 0, 0, kDeviceWidth, kDeviceHeight);
+        _sliderController.view.frame = CGRectMake(hidden ? -kDeviceWidth : 0, 0, kDeviceWidth, kDeviceHeight);
         _maskView.alpha = hidden ? 0 : 0.3;
     } completion:^(BOOL finish) {
         if (finish) {

@@ -77,3 +77,67 @@
 "Classify Filter" = "Filter";
 //环球
 "Asia" = "Asia";
+
+
+//Tab Mine（完成）
+"Mine_Order" = "I tuoi ordini";
+"Mine_Delivery" = "In consegna";
+"Mine_Points" = "Punti Spesa";
+"Mine_Coupon" = "Coupon";
+"Mine_FootPrint" = "Cronologia";
+"Mine_Collection" = "Preferiti";
+"Mine_Address" = "Rubrica";
+"Mine_Customer" = "Servizio Clienti";
+"Mine_Info" = "Profilo";
+"Mine_Setting" = "Impostazioni";
+"Mine_Logout" = "Esci";
+
+//Person Info(完成)
+"PersonInfo_Header" = "La tua icona";
+"PersonInfo_Name" = "Nome";
+"PersonInfo_SurName" = "Cognome";
+"PersonInfo_Number" = "Codice Cliente";
+"PersonInfo_Mobile" = "Telefono / Cellulare";
+"PersonInfo_Email" = "E-mail";
+"PersonInfo_Sex" = "Sesso";
+"PersonInfo_Birth" = "Data di nascita";
+"PersonInfo_tax" = "P. IVA / Codice fiscale";
+"PersonInfo_ChangePW" = "Modifica password";
+
+//登录页面(完成)
+"Login_Title" = "Accedi";
+"Login_Register" = "Registrati";
+"Login_UserName" = "E-mail / Cellulare";
+"Login_PW" = "Inserisci password";
+"Login_ValidCode" = "Codice di controllo";
+"Login_ForgetPW" = "Password dimenticata?";
+"Login_WeChat" = "WeChat";
+"Login_FaceBook" = "Facebook";
+
+//注册页面(完成)
+"Register_Title" = "Accedi";
+"Register_Login" = "Entra";
+"Register_Mobile" = "Cellulare";
+"Register_Code" = "Richiedi codice di verifica";
+"Register_Get_Code" = "Invia codice";
+"Register_Cognome" = "Cognome";
+"Register_Name" = "Nome";
+"Register_Password" = "Password";
+"Register_Confirm_Password" = "Conferma password";
+
+//找回密码(完成)
+"ForgetPW_Title" = "Password dimenticata";
+"Register_Mobile" = "Cellulare";
+"Register_Code" = "Richiedi codice di verifica";
+"Register_Get_Code" = "Invia codice";
+"Register_Password" = "Password";
+"Register_Confirm_Password" = "Conferma password";
+"ForgetPW_FindPW" = "Ripristino password";
+
+//第三方绑定（完成）
+"ThirdPartyBing_HadRegister" = "Registrato";
+"ThirdPartyBing_UnRegister" = "Non registrato";
+"ThirdPartyBing_Mobile" = "Cellulare";
+"ThirdPartyBing_Password" = "Inserisci password";
+"ThirdPartyBing_Code" = "Codice di controllo";
+"ThirdPartyBing_Ok" = "Collega il mio account";

@@ -77,3 +77,66 @@
 "Classify Filter" = "Filter";
 //环球
 "Asia" = "Asia";
+
+//Tab Mine（完成）
+"Mine_Order" = "您的订单";
+"Mine_Delivery" = "送货中";
+"Mine_Points" = "积分点数";
+"Mine_Coupon" = "优惠卷";
+"Mine_FootPrint" = "我的足迹";
+"Mine_Collection" = "我的收藏";
+"Mine_Address" = "送货地址簿";
+"Mine_Customer" = "客服中心";
+"Mine_Info" = "个人信息";
+"Mine_Setting" = "设置";
+"Mine_Logout" = "登出";
+
+//Person Info(完成)
+"PersonInfo_Header" = "个人头像";
+"PersonInfo_Name" = "名";
+"PersonInfo_SurName" = "姓";
+"PersonInfo_Number" = "客户编号";
+"PersonInfo_Mobile" = "电话/手机号";
+"PersonInfo_Email" = "E-mail";
+"PersonInfo_Sex" = "性别";
+"PersonInfo_Birth" = "出生日期";
+"PersonInfo_tax" = "增值税/税号";
+"PersonInfo_ChangePW" = "更改密码";
+
+//登录页面（完成）
+"Login_Title" = "登录";
+"Login_Register" = "注册";
+"Login_UserName" = "E-mail / 手机";
+"Login_PW" = "密码";
+"Login_ValidCode" = "验证码";
+"Login_ForgetPW" = "忘记密码?";
+"Login_WeChat" = "微信";
+"Login_FaceBook" = "Facebook";
+
+//注册页面(完成)
+"Register_Title" = "注册";
+"Register_Login" = "登录";
+"Register_Mobile" = "手机号";
+"Register_Code" = "验证码";
+"Register_Get_Code" = "获取验证码";
+"Register_Cognome" = "姓";
+"Register_Name" = "名";
+"Register_Password" = "密码";
+"Register_Confirm_Password" = "确认密码";
+
+//找回密码(完成)
+"ForgetPW_Title" = "忘记密码";
+"ForgetPW_Mobile" = "手机号";
+"ForgetPW_Code" = "验证码";
+"ForgetPW_Get_Code" = "获取验证码";
+"ForgetPW_Password" = "密码";
+"ForgetPW_Confirm_Password" = "确认密码";
+"ForgetPW_FindPW" = "找回密码";
+
+//第三方绑定（完成）
+"ThirdPartyBing_HadRegister" = "注册";
+"ThirdPartyBing_UnRegister" = "未注册";
+"ThirdPartyBing_Mobile" = "手机";
+"ThirdPartyBing_Password" = "密码";
+"ThirdPartyBing_Code" = "验证码";
+"ThirdPartyBing_Ok" = "确认";

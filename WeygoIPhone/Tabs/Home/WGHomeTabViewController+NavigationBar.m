@@ -8,7 +8,7 @@
 
 #import "WGHomeTabViewController+NavigationBar.h"
 #import "WGHomeTitleView.h"
-#import "WGSidebarViewController.h"
+#import "WGHomeSliderViewController.h"
 #import "WGMainViewController.h"
 
 @implementation WGHomeTabViewController (NavigationBar)

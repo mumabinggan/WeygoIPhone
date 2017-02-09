@@ -13,7 +13,7 @@
 #define WGAppNameLabelColor  kRGBA(0, 0, 0, 0.87)
 #define WGAppTitleColor  kRGBA(0, 0, 0, 0.54)
 #define WGAppLightNameLabelColor  kRGBA(0, 0, 0, 0.38)
-#define WGAppSeparateLineColor kHRGB(0x999999)
+#define WGAppSeparateLineColor kRGBA(0, 0, 0, 0.12)
 
 #define WGAppBlueButtonColor kHRGB(0x5677FC)
 
@@ -43,11 +43,15 @@
 
 
 
-
-
+//Local Setting
+#define kLocalSettingsKeyUser   @"kLocalSettingsKeyUser"
 
 
 //Placeholder UIImage
+
+#define kLoginVerificationCodePlaceholderImage [UIImage imageNamed:@""]
+#define kMineHeaderPlaceholderImage [UIImage imageNamed:@""]
+#define kPersonInfoHeaderPlaceholderImage [UIImage imageNamed:@""]
 
 #define kHomeTopicPlaceholderImage [UIImage imageNamed:@""]
 

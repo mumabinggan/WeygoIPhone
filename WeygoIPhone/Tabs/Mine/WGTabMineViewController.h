@@ -7,7 +7,13 @@
 //
 
 #import "WGTabViewController.h"
+#import "WGMine.h"
 
 @interface WGTabMineViewController : WGTabViewController
+{
+    WGMine *_data;
+}
+
+- (void)refresh;
 
 @end
