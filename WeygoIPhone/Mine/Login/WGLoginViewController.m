@@ -143,7 +143,9 @@
 
 - (void)touchReturnBtn:(JHButton *)sender {
     //返回
-    [self.navigationController popViewControllerAnimated:YES];
+    if (self.cancelBlock) {
+        self.cancelBlock(self);
+    }
 }
 
 - (void)openRegisterViewController {
@@ -195,6 +197,13 @@
 
 - (void)refreshkVerificationCode {
     [_verificationCodeBtn setBackgroundImageWithURL:[NSURL URLWithString:_verificationCodeResponse.data] forState:UIControlStateNormal placeholderImage:kLoginVerificationCodePlaceholderImage options:JHWebImageOptionsLowPriority];
+}
+
++ (void)pushInNavigationController:(UINavigationController *)navigationController sucess:(WGLoginSuccessBlock)successBlock cancel:(WGLoginCancelBlock)cancelBlock {
+    WGLoginViewController *loginVC = [[WGLoginViewController alloc] init];
+    loginVC.cancelBlock = cancelBlock;
+    loginVC.successBlock = successBlock;
+    [navigationController pushViewController:loginVC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

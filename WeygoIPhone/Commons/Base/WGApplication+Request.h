@@ -12,6 +12,8 @@
 #import "WGBaseServiceRequest.h"
 #import "WGBaseServiceResponse.h"
 #import "WGImageVerificationCodeResponse.h"
+#import "WGAddGoodToCartRequest.h"
+#import "WGAddGoodToCartResponse.h"
 
 @interface WGApplication (Request)
 
@@ -24,5 +26,8 @@
 
 - (void)loadImageVerificationCodeOnCompletion:(void (^)(WGImageVerificationCodeResponse *))completion;
 
+- (void)loadAddGoodToCart:(long long)goodId
+                    count:(NSInteger)count
+             onCompletion:(void (^)(WGAddGoodToCartResponse *))completion;
 
 @end

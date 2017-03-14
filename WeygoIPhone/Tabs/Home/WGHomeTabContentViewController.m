@@ -36,6 +36,8 @@
 #import "WGClassifyDetailViewController.h"
 #import "WGLoginViewController.h"
 #import "WGBindThirdPartyViewController.h"
+#import "WGClientServiceCenterViewController.h"
+#import "WGGoodDetailViewController.h"
 
 //can delete
 #import "WGCarouselFigureItem.h"
@@ -43,6 +45,7 @@
 #import "WGNewsItem.h"
 #import "WGHomeFloorItem.h"
 #import "WGHomeFloorContentItem.h"
+#import "WGHomeTabContentViewController+Request.h"
 
 @interface WGHomeTabContentViewController ()
 
@@ -58,6 +61,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     DLog(@"--homeTabContent---%f----", self.view.height);
+    [self loadHomeTabTitles];
 }
 
 - (void)initData {
@@ -330,7 +334,7 @@
     CGFloat height = 0.0f;
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
-            height = _homeData.homeCarouselFiguresHeight;
+            height = [WGHomeCarouselFiguresCell heightWithData:_homeData.carouselFigures];
         }
         else if (indexPath.row == 1) {
             height = _homeData.homeTopicsHeight;
@@ -500,8 +504,16 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    WGGoodDetailViewController *vc = [[WGGoodDetailViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+    /*
+    WGClientServiceCenterViewController *vc = [[WGClientServiceCenterViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+     */
+    /*
     WGBindThirdPartyViewController *vc = [[WGBindThirdPartyViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
+     */
     /*
     WGLoginViewController *vc = [[WGLoginViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];

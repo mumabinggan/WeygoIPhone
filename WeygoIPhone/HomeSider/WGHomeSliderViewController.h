@@ -19,4 +19,6 @@
 
 //@property (nonatomic, copy) void (^onApplyClassifyItem)(WGClassifyItem *item);
 
+- (void)refresh;
+
 @end

@@ -7,7 +7,16 @@
 //
 
 #import "WGViewController.h"
+#import "WGGoodDetail.h"
 
 @interface WGGoodDetailViewController : WGViewController
+{
+    JHTableView *_tableView;
+    WGGoodDetail *_goodDetail;
+}
+
+- (void)refreshUI;
+
+- (void)refreshBottomView;
 
 @end

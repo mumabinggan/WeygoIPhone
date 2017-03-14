@@ -84,4 +84,13 @@
     }
 }
 
++ (CGFloat)heightWithArray:(NSArray *)data {
+    if (data == nil || data.count == 0) {
+        return 0.0f;
+    }
+    else {
+        return kAppAdaptHeight(232);
+    }
+}
+
 @end

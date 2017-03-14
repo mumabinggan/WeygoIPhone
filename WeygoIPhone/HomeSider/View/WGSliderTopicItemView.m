@@ -23,13 +23,14 @@
     [super loadSubviews];
     
     self.backgroundColor = kRGB(247, 249, 250);
-    float width = kAppAdaptWidth(128);
-    float height = kAppAdaptWidth(64);
-    _imageView = [[JHImageView alloc] initWithFrame:CGRectMake(kAppAdaptWidth(8), kAppAdaptHeight(12), width, height)];
+    self.backgroundColor = kHRGB(0xf8fafa);
+    float width = kAppAdaptWidth(30);
+    float height = kAppAdaptWidth(30);
+    _imageView = [[JHImageView alloc] initWithFrame:CGRectMake(kAppAdaptWidth(13), kAppAdaptHeight(17), width, height)];
     _imageView.contentMode = UIViewContentModeScaleAspectFit;
     [self addSubview:_imageView];
     
-    _nameLabel = [[JHLabel alloc] initWithFrame:CGRectMake(kAppAdaptWidth(4), 0, kAppAdaptWidth(72), _imageView.height)];
+    _nameLabel = [[JHLabel alloc] initWithFrame:CGRectMake(_imageView.maxX + kAppAdaptWidth(10), 0, kAppAdaptWidth(72), self.height)];
     _nameLabel.font = kAppAdaptFont(12);
     _nameLabel.numberOfLines = 0;
     _nameLabel.textColor = kRGBA(0, 0, 0, 0.87);
@@ -49,7 +50,6 @@
     NSString *url = _item.pictureURL;
     NSString *name = _item.name;
     UIImage *placeholderImage = [UIImage imageNamed:@""];
-    
     [_imageView setImageWithURL:[NSURL URLWithString:url] placeholderImage:placeholderImage options:JHWebImageOptionsRefreshCached];
     
     _nameLabel.text = name;

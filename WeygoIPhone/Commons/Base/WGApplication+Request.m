@@ -91,4 +91,19 @@
     
 }
 
+- (void)loadAddGoodToCart:(long long)goodId
+                    count:(NSInteger)count
+             onCompletion:(void (^)(WGAddGoodToCartResponse *))completion {
+    WGAddGoodToCartRequest *request = [[WGAddGoodToCartRequest alloc] init];
+    [[JHNetworkManager sharedManager] post:request forResponseClass:[WGSessionResponse class] success:^(JHResponse *response) {
+        if (completion) {
+            completion((WGAddGoodToCartResponse *)response);
+        }
+    } failure:^(NSError *error) {
+        if (completion) {
+            completion(nil);
+        }
+    }];
+}
+
 @end

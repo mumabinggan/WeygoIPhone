@@ -17,4 +17,9 @@ typedef NS_ENUM(NSInteger, WGTabIndex) {
     WGTabIndexMine,
 };
 
+typedef NS_ENUM(NSInteger, WGLoginType) {
+    WGLoginTypeNormal,
+    WGLoginTypeGoodDetailFavorite,
+};
+
 #endif /* WGAppEnum_h */

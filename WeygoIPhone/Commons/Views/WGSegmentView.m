@@ -15,7 +15,7 @@
     NSMutableArray *_titleBtnArray;
     JHView *_lineView;
     
-    NSInteger _selectedIndex;
+    //NSInteger _selectedIndex;
 }
 @end
 

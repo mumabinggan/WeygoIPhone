@@ -10,4 +10,10 @@
 
 @interface WGRequest : JHRequest
 
+//@property (nonatomic, strong) NSString *sign;
+//
+//@property (nonatomic, strong) NSString *___store;
+
+- (NSString *)apiSuffix;
+
 @end

@@ -17,6 +17,8 @@
 
 @property (nonatomic, assign) BOOL bounces;
 
+@property (nonatomic, assign) NSInteger selectedIndex;
+
 @property (nonatomic, copy) void (^onSelect)(NSInteger oldIndex, NSInteger newIndex);
 
 - (void)setTitleArray:(NSArray *)titleArray;

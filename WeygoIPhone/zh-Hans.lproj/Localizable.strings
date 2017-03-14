@@ -140,3 +140,58 @@
 "ThirdPartyBing_Password" = "密码";
 "ThirdPartyBing_Code" = "验证码";
 "ThirdPartyBing_Ok" = "确认";
+
+//侧边栏(完成)
+"Slider_Mine_Order" = "我的订单";
+"Slider_Mine_FootPrint" = "我的足迹";
+"Slider_Mine_Coupon" = "优惠卷";
+"Slider_Mine_Message" = "消息";
+"Slider_Mine_Scan" = "扫一扫";
+"Slider_Mine_MessageCenter" = "消息中心";
+"Slider_Mine_UnRegister" = "未登录";
+"Slider_Hello" = "您好，%@";
+
+//客服中心(未完成)
+"Live Chat" = "Live Chat";
+"Chi siamo" = "Chi siamo";
+"Come funziona" = "Come funziona";
+"Contatti" = "Contatti";
+"FAQ" = "FAQ";
+"Aiutaci a migliorare" = "Aiutaci a migliorare";
+"Condizioni generali di vendita" = "Condizioni generali di vendita";
+"Garanzia legale di" = "Garanzia legale di conformità";
+"Privacy e cookies" = "Privacy e cookies";
+"Suggerimenti" = "Suggerimenti";
+"Servizio clienti"= "客服中心";
+
+//订单详情
+"Order Detail" = "订单详情";
+"Order Number" = "订单编号: %@";
+"Order Comfirm" = "订单确认";
+"Order Transport" = "运送途中";
+"Order Finish" = "订单完成";
+"Order Deliver Goods Info" = "送货信息";
+"Order Client Name" = "客户姓名: %@";
+"Order Address" = "送货地址: %@";
+"Order Phone" = "电话 / 手机: %@";
+"Order Importo Spesa" = "消费金额: %@";
+"Order Total Money" = "Nome e cognome: %@";
+"Order Deliver Time" = "Dati di consegna: %@";
+"Order Goods List" = "Elenco prodotti";
+"Order Item Elenco prodotti" = "Elenco prodotti: ";
+"Order Fattura" = "Fattura";
+"Order Tax Number" = "P. IVA / Codice fiscale: %@";
+"Order Company" = "Ragione sociale: %@";
+"Order CAP" = "CAP: %@";
+"Order Pay Detail" = "Dettagli pagamento";
+"Order Pay Total" = "Subtotale: %@";
+"Order Pay Benefit Detail" = "Spedizione: %@";
+"Order Pay Totale" = "Totale: %@";
+
+//商品详情(完成)
+"Good Detail Price With .2 Unit" = "€%.2f";
+"Good Detail Des" = "产品描述";
+"Good Detail Info" = "产品信息";
+"Good Detail Consegna" = "送货信息";
+"Good Detail CommodityInfo" = "商品描述";
+"Good Detail Add" = "加入购物车";

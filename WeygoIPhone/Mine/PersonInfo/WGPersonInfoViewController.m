@@ -173,10 +173,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 6) {
-        
+        //性别
     }
     if (indexPath.row == 7) {
-        //
+        //日期
     }
     if (indexPath.row == 9) {
         //忘记密码

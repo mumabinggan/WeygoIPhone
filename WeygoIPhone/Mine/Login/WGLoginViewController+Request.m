@@ -18,6 +18,9 @@
 - (void)handleVerificationCodeResponse:(WGImageVerificationCodeResponse *)response {
     if (response.success) {
         [self refreshkVerificationCode];
+//        if (self.successBlock) {
+//            self.successBlock(self);
+//        }
     }
 }
 

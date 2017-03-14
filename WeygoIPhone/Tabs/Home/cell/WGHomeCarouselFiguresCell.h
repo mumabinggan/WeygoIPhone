@@ -14,4 +14,6 @@
 
 - (void)showWithArray:(NSArray *)array;
 
++ (CGFloat)heightWithData:(NSArray *)array;
+
 @end

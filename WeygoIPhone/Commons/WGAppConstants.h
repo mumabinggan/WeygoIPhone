@@ -9,6 +9,11 @@
 #ifndef WGAppConstants_h
 #define WGAppConstants_h
 
+#define WGAppIdKey      @"appid"
+#define WGAppIdValue    @"MOBILE_APPS"
+#define WGAppkeyKey     @"appkey"
+#define WGAppkeyValue   @"JXEENBJCB8A3SEBZA"
+
 #define WGAppBaseColor  kHRGB(0XEE7A3C)
 #define WGAppNameLabelColor  kRGBA(0, 0, 0, 0.87)
 #define WGAppTitleColor  kRGBA(0, 0, 0, 0.54)
@@ -19,7 +24,7 @@
 
 #define WGAppFooterButtonColor kRGB(86, 119, 252)
 
-#define kWGSideBarWidth  (kDeviceWidth * 2.0/3.0)
+#define kWGSideBarWidth  kAppAdaptWidth(280)
 
 #define kWGOswaldMediumFont(fsize)    kFont(fsize, @"Oswald-Medium");
 #define kWGOswaldMediumAdaptFont(fsize)    kWGOswaldMediumFont(fsize * kDeviceWidthScaleTo47Inch)
@@ -45,6 +50,8 @@
 
 //Local Setting
 #define kLocalSettingsKeyUser   @"kLocalSettingsKeyUser"
+
+#define kLocalSettingsLocalCartGoods    @"kLocalSettingsLocalCartGoods"
 
 
 //Placeholder UIImage

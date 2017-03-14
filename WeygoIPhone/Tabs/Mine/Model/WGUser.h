@@ -26,7 +26,7 @@
 
 @property (nonatomic, strong) NSString *email;
 
-@property (nonatomic, assign) int sex;
+@property (nonatomic, assign) int sex;  //1 : 男; 2 : 女
 
 @property (nonatomic, assign) double birth;
 

@@ -141,3 +141,59 @@
 "ThirdPartyBing_Password" = "Inserisci password";
 "ThirdPartyBing_Code" = "Codice di controllo";
 "ThirdPartyBing_Ok" = "Collega il mio account";
+
+//侧边栏(完成)
+"Slider_Mine_Order" = "I miei ordini";
+"Slider_Mine_FootPrint" = "Cronologia";
+"Slider_Mine_Coupon" = "Coupon";
+"Slider_Mine_Message" = "Messaggi";
+"Slider_Mine_Scan" = "Scansione";
+"Slider_Mine_MessageCenter" = "Live chat";
+"Slider_Mine_UnRegister" = "Nome utente";
+"Slider_Hello" = "Ciao，%@";
+
+//客服中心(未完成)
+"Live Chat" = "Live Chat";
+"Chi siamo" = "Chi siamo";
+"Come funziona" = "Come funziona";
+"Contatti" = "Contatti";
+"FAQ" = "FAQ";
+"Aiutaci a migliorare" = "Aiutaci a migliorare";
+"Condizioni generali di vendita" = "Condizioni generali di vendita";
+"Garanzia legale di" = "Garanzia legale di conformità";
+"Privacy e cookies" = "Privacy e cookies";
+"Suggerimenti" = "Suggerimenti";
+"Servizio clienti"= "Servizio clienti";
+
+//订单详情
+"Order Detail" = "Elenco ordini";
+"Order Number" = "Numero ordine: %@";
+"Order Comfirm" = "Spesa in arrivo";
+"Order Transport" = "Spesa consegnata";
+"Order Finish" = "Ordine completato";
+"Order Deliver Goods Info" = "Consegna";
+"Order Client Name" = "Nome e cognome: %@";
+"Order Address" = "Indirizzo";
+"Order Phone" = "Telefono / Cellulare: %@";
+"Order Address" = "Importo spesa: %@";
+"Order Total Money" = "Nome e cognome: %@";
+"Order Deliver Time" = "Dati di consegna: %@";
+"Order Goods List" = "Elenco prodotti";
+"Order Item Elenco prodotti" = "Elenco prodotti: ";
+"Order Fattura" = "Fattura";
+"Order Tax Number" = "P. IVA / Codice fiscale: %@";
+"Order Company" = "Ragione sociale: %@";
+"Order CAP" = "CAP: %@";
+"Order Pay Detail" = "Dettagli pagamento";
+"Order Pay Total" = "Subtotale: %@";
+"Order Pay Benefit Detail" = "Spedizione: %@";
+"Order Pay Totale" = "Totale: %@";
+
+//商品详情(完成)
+"Good Detail Price With .2 Unit" = "€%.2f";
+"Good Detail Des" = "Descrizione";
+"Good Detail Info" = "Info";
+"Good Detail Consegna" = "Consegna";
+"Good Detail CommodityInfo" = "Descrizione";
+"Good Detail Add" = "Aggiungi";
+

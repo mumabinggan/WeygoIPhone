@@ -20,14 +20,14 @@
 @implementation WGSliderTopicCell
 
 - (void)loadSubviews {
-    self.backgroundColor = kRGB(247, 250, 250);
+    self.backgroundColor = kWhiteColor;
     _firstItemView = [[WGSliderTopicItemView alloc] initWithFrame:CGRectMake(kAppAdaptWidth(8), kAppAdaptWidth(8), kAppAdaptWidth(128), kAppAdaptHeight(64)) radius:kAppAdaptWidth(6)];
-    _firstItemView.backgroundColor = kWhiteColor;
+    _firstItemView.backgroundColor = kHRGB(0xF8FAFA);
     [self.contentView addSubview:_firstItemView];
     [_firstItemView addSingleTapGestureRecognizerWithTarget:self action:@selector(handleClick:)];
     
-    _secondItemView = [[WGSliderTopicItemView alloc] initWithFrame:CGRectMake(kAppAdaptWidth(8 + 128), kAppAdaptWidth(8), kAppAdaptWidth(128), kAppAdaptHeight(64)) radius:kAppAdaptWidth(6)];
-    _secondItemView.backgroundColor = kWhiteColor;
+    _secondItemView = [[WGSliderTopicItemView alloc] initWithFrame:CGRectMake(_firstItemView.maxX + kAppAdaptWidth(8), _firstItemView.y, _firstItemView.width, _firstItemView.height) radius:_firstItemView.radius];
+    _secondItemView.backgroundColor = kHRGB(0xF8FAFA);
     [self.contentView addSubview:_secondItemView];
     [_secondItemView addSingleTapGestureRecognizerWithTarget:self action:@selector(handleClick:)];
 }

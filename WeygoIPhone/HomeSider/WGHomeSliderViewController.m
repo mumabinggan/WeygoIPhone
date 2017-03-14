@@ -11,11 +11,16 @@
 #import "WGClassifyItem.h"
 #import "WGHomeSliderClassifyHeaderView.h"
 #import "WGHomeSliderClassifyItem.h"
+#import "WGSliderClassifyItemCell.h"
+#import "WGHomeSliderUserHeaderView.h"
+#import "WGHomeSliderViewController+Request.h"
 
 @interface WGHomeSliderViewController ()
 {
     JHTableView *_tableView;
     NSInteger _selectedSection;    //default = -1;
+    
+    NSArray *_itemArray;
 }
 @end
 
@@ -28,9 +33,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    //[self requestHomeSlider];
 }
 
 - (void)initData {
+    _itemArray = @[[NSString safeString:[WGApplication sharedApplication].currentPostCode], kStr(@"Slider_Mine_Order"), kStr(@"Slider_Mine_FootPrint"), kStr(@"Slider_Mine_Coupon"), kStr(@"Slider_Mine_Message")];
     _data = [[WGHomeSlider alloc] init];
     //WGTopicItem
     WGTopicItem *topicItem = [[WGTopicItem alloc] init];
@@ -98,6 +105,7 @@
     _tableView = [[JHTableView alloc] initWithFrame:CGRectMake(0, 0, kWGSideBarWidth, kDeviceHeight)];
     _tableView.delegate = self;
     _tableView.dataSource = self;
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     [self.view addSubview:_tableView];
 }
@@ -108,8 +116,36 @@
     }
 }
 
+- (void)handleOnLogin {
+    if ([WGApplication sharedApplication].isLogined) {
+        //进入用户信息
+    }
+    else {
+        //进入登录界面
+    }
+}
+
+- (void)handleOnScan {
+    //进入扫一扫界面
+}
+
+- (void)handleOnMessageCenter {
+    //进入消息中心
+}
+
 - (void)handleOnApplyHeaderView:(WGClassifyItem *)classify section:(NSInteger)section {
+    for (WGClassifyItem *item in _data.classifys) {
+        item.isSelected = NO;
+    }
     _selectedSection = (section == _selectedSection) ? -1 : section;
+    if (_selectedSection != -1) {
+        WGClassifyItem *item = _data.classifys[_selectedSection - 2];
+        item.isSelected = YES;
+    }
+    [_tableView reloadData];
+}
+
+- (void)refresh {
     [_tableView reloadData];
 }
 
@@ -123,7 +159,9 @@
 @implementation WGHomeSliderViewController (TableViewDelegate)
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return ((_data == nil) ? 0 : _data.classifys.count) + 2;
+    NSInteger classifyCount = (_data && _data.classifys) ? _data.classifys.count : 0;
+    NSInteger topicCount = (_data && _data.topics) ? 1 : 0;
+    return classifyCount + topicCount + 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -135,17 +173,20 @@
     }
     else {
         WGClassifyItem *item = _data.classifys[section - 2];
-        return (_selectedSection > 1) ? item.subArray.count : 0;
+        NSInteger ss = (_selectedSection == section) ? item.subArray.count : 0;
+        DLog(@"---SS = %ld--%ld", ss, section);
+        return ss;
     }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    if (section == 1 || section == 2) {
-        return 0.0;
+    if (section == 0) {
+        return kAppAdaptHeight(112);
     }
-    else {
+    if (section == 2) {
         return kAppAdaptHeight(48);
     }
+    return 0.0f;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
@@ -158,40 +199,63 @@
         height = kAppAdaptHeight(48);
     }
     else if (indexPath.section == 1) {
-        height = kAppAdaptHeight(72);
+        height = kAppAdaptHeight(74) + (((_data.topics.count + 1)/2 == indexPath.row + 1) ? kAppAdaptHeight(8) : 0.0f);
     }
-    else if (indexPath.section == 2) {
+    else {
         height = kAppAdaptHeight(40);
     }
     return height;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    if (section < 2) {
+    if (section == 1) {
         return nil;
     }
-    static NSString *headerId = @"headerId";
+    static NSString *headerId = nil;
+    headerId = [NSString stringWithFormat:@"headerId_%ld", section];
     JHTableViewHeaderFooterView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:headerId];
     if (!headerView) {
         __weak id weakSelf = self;
-        WGHomeSliderClassifyHeaderView *view = [[WGHomeSliderClassifyHeaderView alloc] initWithReuseIdentifier:headerId];
-        view.onApply = ^(WGClassifyItem *item) {
-            [weakSelf handleOnApplyHeaderView:item section:section];
-        };
-        headerView = view;
+        if (section == 0) {
+            WGHomeSliderUserHeaderView *view = [[WGHomeSliderUserHeaderView alloc] initWithReuseIdentifier:headerId];
+            view.backgroundColor = kWhiteColor;
+            view.onLogin = ^() {
+                [weakSelf handleOnLogin];
+            };
+            view.onScan = ^() {
+                [weakSelf handleOnScan];
+            };
+            view.onMessageCenter = ^() {
+                [weakSelf handleOnMessageCenter];
+            };
+            headerView = view;
+        }
+        if (section >= 2) {
+            WGHomeSliderClassifyHeaderView *view = [[WGHomeSliderClassifyHeaderView alloc] initWithReuseIdentifier:headerId];
+            view.backgroundColor = kWhiteColor;
+            view.onApply = ^(WGClassifyItem *item) {
+                [weakSelf handleOnApplyHeaderView:item section:section];
+            };
+            headerView = view;
+        }
     }
-    WGHomeSliderClassifyItem *item = (_data.classifys[section - 2]);
-    //item.selected = (_selectedSection == section);
-    [headerView showWithData:item];
+    if (section == 0) {
+        [headerView showWithData:nil];
+    }
+    if (section >= 2) {
+        WGObject *item = (_data.classifys[section - 2]);
+        [headerView showWithData:item];
+    }
+    
     return headerView;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellId = @"cellId";
-    cellId = [NSString stringWithFormat:@"cellId_%ld", indexPath.section];
+    cellId = [NSString stringWithFormat:@"cellId_%ld", (indexPath.row == 0 && indexPath.section == 0) ? -1 : indexPath.section];
     JHTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
     if (!cell) {
-        if (indexPath.section == 1) {
+        if (indexPath.section == 0) {
             cell = [[JHTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
             cell.textLabel.textColor = WGAppNameLabelColor;
         }
@@ -199,29 +263,31 @@
             cell = [[WGSliderTopicCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
         }
         else {
-            cell = [[JHTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+            cell = [[WGSliderClassifyItemCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
             cell.textLabel.textColor = WGAppTitleColor;
         }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
-    
-    if (indexPath.section != 0) {
-        if (indexPath.section == 0) {
-            
+    if (indexPath.section == 0) {
+        if (indexPath.row == 0) {
+            cell.imageView.image = [UIImage imageNamed:@"mine_local"];
         }
-        else if (indexPath.section == 1) {
-            NSInteger index = indexPath.row * 2;
-            NSMutableArray *array = [NSMutableArray arrayWithObjects:_data.topics[index], nil];
-            if (index + 1 < _data.topics.count) {
-                [array addObject:_data.topics[index + 1]];
-            }
-            [cell showWithArray:array];
+        cell.textLabel.text = _itemArray[indexPath.row];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
+    else if (indexPath.section == 1) {
+        NSInteger index = indexPath.row * 2;
+        NSMutableArray *array = [NSMutableArray arrayWithObjects:_data.topics[index], nil];
+        if (index + 1 < _data.topics.count) {
+            [array addObject:_data.topics[index + 1]];
         }
-        else {
-            NSInteger index = indexPath.section - 2;
-            WGClassifyItem *item = _data.classifys[index];
-            NSArray *subArray = item.subArray;
-            [cell showWithData:subArray[indexPath.row]];
-        }
+        [cell showWithArray:array];
+    }
+    else {
+        NSInteger index = indexPath.section - 2;
+        WGClassifyItem *item = _data.classifys[index];
+        WGClassifyItem *subItem = item.subArray[indexPath.row];
+        [cell showWithData:subItem];
     }
     return cell;
 }
@@ -229,23 +295,23 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
-            
+            //弹出输入邮编
         }
         else if (indexPath.row == 1) {
-        
+            //弹出订单
         }
         else if (indexPath.row == 2) {
-            
+            //足迹
         }
         else if (indexPath.row == 3) {
-            
+            //优惠卷
         }
         else if (indexPath.row == 4) {
-            
+            //消息
         }
     }
     if (indexPath.section == 2) {
-        
+        //分类详情
     }
 }
 
