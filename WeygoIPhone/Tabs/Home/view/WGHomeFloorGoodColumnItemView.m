@@ -20,6 +20,7 @@
 
 - (void)loadSubviews {
     [super loadSubviews];
+    self.backgroundColor = kWhiteColor;
     _imageView = [[JHImageView alloc] initWithFrame:CGRectMake(0, 0, self.width, self.width)];
     _imageView.contentMode = UIViewContentModeScaleAspectFit;
     [self addSubview:_imageView];

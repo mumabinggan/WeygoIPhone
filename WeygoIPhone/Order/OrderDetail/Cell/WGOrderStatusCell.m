@@ -15,28 +15,7 @@
     NSArray *_statusArray;
 }
 @end
-////订单详情
-//"Order Detail" = "订单详情";
-//"Order Number" = "订单编号: %@";
-//"Order Comfirm" = "订单确认";
-//"Order Transport" = "运送途中";
-//"Order Finish" = "订单完成";
-//"Order Deliver Goods Info" = "送货信息";
-//"Order Client Name" = "客户姓名: %@";
-//"Order Address" = "送货地址: %@";
-//"Order Phone" = "电话 / 手机: %@";
-//"Order Importo Spesa" = "消费金额: %@";
-//"Order Deliver Time" = "送货时间: %@";
-//"Order Goods List" = "商品列表";
-//"Order Good Look More" = "查看所有";
-//"Order Fattura" = "发票";
-//"Order Tax Number" = "增值税/税号: %@";
-//"Order Company" = "公司名称: %@";
-//"Order CAP" = "邮编: %@";
-//"Order Pay Detail" = "付款详情";
-//"Order Pay Total" = "总计: %@";
-//"Order Pay Benefit Detail" = "优惠: %@";
-//"Order Pay Totale" = "总价: %@";
+
 @implementation WGOrderStatusCell
 
 - (void)showWithData:(JHObject *)data {

@@ -15,6 +15,8 @@
     WGOrderDetail *_orderDetail;
 }
 
+@property (nonatomic, assign) long long orderId;
+
 - (void)refreshUI;
 
 @end

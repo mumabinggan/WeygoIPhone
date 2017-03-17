@@ -15,6 +15,8 @@
     WGGoodDetail *_goodDetail;
 }
 
+@property (nonatomic, assign) long long goodId;
+
 - (void)refreshUI;
 
 - (void)refreshBottomView;

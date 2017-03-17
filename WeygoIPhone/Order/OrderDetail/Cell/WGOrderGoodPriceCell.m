@@ -9,10 +9,11 @@
 #import "WGOrderGoodPriceCell.h"
 #import "WGHomeFloorGoodListItemView.h"
 #import "WGOrderGoodItem.h"
+#import "WGOrderCountView.h"
 
 @interface WGOrderGoodPriceCell ()
 {
-    JHLabel *_countLabel;
+    WGOrderCountView *_countView;
     WGHomeFloorGoodListItemView *_itemView;
     JHLabel *_totalLabel;
     JHLabel *_reduceLabel;
@@ -28,14 +29,9 @@
     _itemView = [[WGHomeFloorGoodListItemView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kAppAdaptHeight(124))];
     [self.contentView addSubview:_itemView];
     
-    _countLabel = [[JHLabel alloc] initWithFrame:CGRectMake(kAppAdaptWidth(8), kAppAdaptHeight(8), kAppAdaptWidth(24), kAppAdaptWidth(24))];
-    _countLabel.font = kAppAdaptFont(10);
-    _countLabel.layer.cornerRadius = kAppAdaptHeight(12);
-    _countLabel.layer.masksToBounds = YES;
-    _countLabel.textAlignment = NSTextAlignmentCenter;
-    _countLabel.backgroundColor = WGAppBlueButtonColor;
-    _countLabel.textColor = kWhiteColor;
-    [_itemView addSubview:_countLabel];
+    _countView = [[WGOrderCountView alloc] initWithFrame:CGRectMake(kAppAdaptWidth(8), kAppAdaptHeight(8), kAppAdaptWidth(24), kAppAdaptWidth(24))];
+    _countView.backgroundColor = kClearColor;
+    [_itemView addSubview:_countView];
     
     JHView *frontView = [[JHView alloc] initWithFrame:CGRectMake(0, _itemView.maxY, kDeviceWidth/2, kAppAdaptHeight(40))];
     frontView.backgroundColor = kHRGB(0xF8FAFA);
@@ -76,7 +72,7 @@
     WGOrderGoodItem *item = (WGOrderGoodItem *)data;
     if (item) {
         [_itemView showWithData:item];
-        _countLabel.text = [NSString stringWithFormat:kStr(@"Order Good Number"), item.number];
+        _countView.value = [NSString stringWithFormat:kStr(@"Order Good Number"), item.number];
         NSString *currentPrice = [NSString stringWithFormat:@"€%.2f", item.orderCurrentPrice];
         _totalLabel.text = [NSString stringWithFormat:kStr(@"Order Pay Totale"), item.orderCurrentPrice];
         [_totalLabel setPartString:currentPrice attributes:@{NSForegroundColorAttributeName : WGAppBaseColor}];

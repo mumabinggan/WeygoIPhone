@@ -37,6 +37,7 @@
 
 - (void)initSubView {
     [super initSubView];
+    self.title = kStr(@"Order Detail");
     JHView *contentView = [[JHView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:contentView];
     
@@ -55,7 +56,7 @@
     
     JHButton *addBtn = [[JHButton alloc] initWithFrame:CGRectMake(kAppAdaptWidth(16), kAppAdaptHeight(16), kDeviceWidth - kAppAdaptWidth(32), kAppAdaptHeight(40)) difRadius:JHRadiusMake(kAppAdaptHeight(20), kAppAdaptHeight(20), kAppAdaptHeight(20), kAppAdaptHeight(20)) backgroundColor:WGAppBlueButtonColor];
     [addBtn addTarget:self action:@selector(touchReBuyBtn:) forControlEvents:UIControlEventTouchUpInside];
-    [addBtn setTitle:kStr(@"Order Good Look More") forState:UIControlStateNormal];
+    [addBtn setTitle:kStr(@"Order Rebuy") forState:UIControlStateNormal];
     [addBtn setTitleColor:kWhiteColor forState:UIControlStateNormal];
     addBtn.titleLabel.font = kAppAdaptFont(14);
     [bottomView addSubview:addBtn];
@@ -179,7 +180,6 @@
 @implementation WGOrderDetailViewController (TableViewDelegate)
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    //return 3;
     return (_orderDetail) ? 5 : 0;
 }
 

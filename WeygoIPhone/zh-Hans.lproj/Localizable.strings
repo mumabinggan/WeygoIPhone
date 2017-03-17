@@ -11,6 +11,7 @@
 "TabShopCart" = "购物车";
 "TabMine" = "我的";
 "Price With Unit" = "€%.1f";
+"Price With 2 Unit" = "€%.2f";
 "More" = "GUARDALI TUTTI";
 "Add to Cart" = "加入购物车";
 "Raginone sociale" = "公司名称";
@@ -187,6 +188,7 @@
 "Order Pay Benefit Detail" = "优惠: €%.2f";
 "Order Pay Totale" = "总价: €%.2f";
 "Order Good Number" = "x%d";
+"Order Rebuy" = "重新下单";
 
 //商品详情(完成)
 "Good Detail Price With .2 Unit" = "€%.2f";
@@ -195,3 +197,7 @@
 "Good Detail Consegna" = "送货信息";
 "Good Detail CommodityInfo" = "商品描述";
 "Good Detail Add" = "加入购物车";
+
+//订单列表
+"Order List How Many Good" = "总共 %d 件商品";
+"Order List Title" = "订单列表";
