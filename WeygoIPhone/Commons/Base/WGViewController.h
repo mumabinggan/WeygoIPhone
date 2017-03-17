@@ -13,6 +13,13 @@
 {
     WGLoginType _loginType;
 }
+
+- (void)initData;
+
+- (void)initSubView;
+
+- (void)initNotification;
+
 @end
 
 @interface WGViewController (Login)

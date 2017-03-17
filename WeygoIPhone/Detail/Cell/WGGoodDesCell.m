@@ -30,8 +30,15 @@
     _titleSegmentView.onSelect = ^(NSInteger oldIndex, NSInteger newIndex) {
         [weakSelf setContentsScrollViewOffsetWithIndex:newIndex];
     };
+    _titleSegmentView.layer.shadowColor = kBlackColor.CGColor;
+    _titleSegmentView.layer.shadowOffset = CGSizeMake(0, 1);
+    _titleSegmentView.layer.shadowRadius = 1;
+    _titleSegmentView.layer.shadowOpacity = 0.15;
     [self.contentView addSubview:_titleSegmentView];
     
+    JHView *lineView = [[JHView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kAppSepratorLineHeight)];
+    lineView.backgroundColor = kHRGBA(0x000000, 0.12);
+    [_titleSegmentView addSubview:lineView];
     //[self setContentsScrollViewOffsetWithIndex:0];
 }
 
@@ -57,6 +64,7 @@
     WGGoodDetail *good = (WGGoodDetail *)data;
     if (!_desView) {
         _desView = [[JHView alloc] initWithFrame:CGRectMake(0, _titleSegmentView.maxY, kDeviceWidth, 1)];
+        _desView.backgroundColor = kHRGB(0xF8FAFA);
         [self.contentView addSubview:_desView];
         CGFloat height = kAppAdaptHeight(48);
         for (int num = 0; num < good.productDes.count; ++num) {
@@ -87,6 +95,7 @@
     }
     if (!_infoView) {
         _infoView = [[JHView alloc] initWithFrame:CGRectMake(0, _titleSegmentView.maxY, kDeviceWidth, 1)];
+        _infoView.backgroundColor = kHRGB(0xF8FAFA);
         [self.contentView addSubview:_infoView];
         
         CGFloat width = kDeviceWidth - kAppAdaptWidth(30);
@@ -105,6 +114,7 @@
     if (!_deliverView) {
         UIFont *font = kAppAdaptFont(14);
         _deliverView = [[JHView alloc] initWithFrame:CGRectMake(0, _titleSegmentView.maxY, kDeviceWidth, 1)];
+        _deliverView.backgroundColor = kHRGB(0xF8FAFA);
         [self.contentView addSubview:_deliverView];
         
         CGFloat width = kDeviceWidth - kAppAdaptWidth(30);

@@ -22,7 +22,7 @@
     if ([@"recommendProduce" isEqualToString:propertyName]) {
         return [WGHomeFloorContentGoodItem class];
     }
-    return nil;
+    return [super classForArray:propertyName];
 }
 
 - (NSArray *)carouselFiguresPictureArray {

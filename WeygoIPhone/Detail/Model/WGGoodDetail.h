@@ -20,6 +20,8 @@
 
 @property (nonatomic, assign) float price;
 
+@property (nonatomic, assign) int inStock;//	int	有无货(1,有货;0,无货) ;
+
 @property (nonatomic, strong) NSArray *productDes;
 
 @property (nonatomic, strong) NSString *productInfo;

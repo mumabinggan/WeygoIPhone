@@ -38,6 +38,7 @@
 #import "WGBindThirdPartyViewController.h"
 #import "WGClientServiceCenterViewController.h"
 #import "WGGoodDetailViewController.h"
+#import "WGOrderDetailViewController.h"
 
 //can delete
 #import "WGCarouselFigureItem.h"
@@ -504,8 +505,12 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    WGOrderDetailViewController *vc = [[WGOrderDetailViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+    /*
     WGGoodDetailViewController *vc = [[WGGoodDetailViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
+     */
     /*
     WGClientServiceCenterViewController *vc = [[WGClientServiceCenterViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];

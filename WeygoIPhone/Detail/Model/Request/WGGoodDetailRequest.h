@@ -10,6 +10,6 @@
 
 @interface WGGoodDetailRequest : WGRequest
 
-@property (nonatomic, assign) int goodId;
+@property (nonatomic, assign) long long id;
 
 @end

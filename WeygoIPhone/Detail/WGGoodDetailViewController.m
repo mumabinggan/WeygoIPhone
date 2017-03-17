@@ -37,6 +37,7 @@
 }
 
 - (void)initSubView {
+    [super initSubView];
     JHView *contentView = [[JHView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:contentView];
     
@@ -158,6 +159,7 @@
         }
         else if (2 == indexPath.row) {
             cell = [[WGGoodDesCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+            cell.backgroundColor = kHRGB(0xF8FAFA);
         }
         else if (3 == indexPath.row) {
             cell = [[WGCommodityDesCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];

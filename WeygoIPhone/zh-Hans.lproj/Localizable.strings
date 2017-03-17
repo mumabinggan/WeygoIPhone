@@ -164,7 +164,7 @@
 "Suggerimenti" = "Suggerimenti";
 "Servizio clienti"= "客服中心";
 
-//订单详情
+//订单详情(完成)
 "Order Detail" = "订单详情";
 "Order Number" = "订单编号: %@";
 "Order Comfirm" = "订单确认";
@@ -174,19 +174,19 @@
 "Order Client Name" = "客户姓名: %@";
 "Order Address" = "送货地址: %@";
 "Order Phone" = "电话 / 手机: %@";
-"Order Importo Spesa" = "消费金额: %@";
-"Order Total Money" = "Nome e cognome: %@";
-"Order Deliver Time" = "Dati di consegna: %@";
-"Order Goods List" = "Elenco prodotti";
-"Order Item Elenco prodotti" = "Elenco prodotti: ";
-"Order Fattura" = "Fattura";
-"Order Tax Number" = "P. IVA / Codice fiscale: %@";
-"Order Company" = "Ragione sociale: %@";
-"Order CAP" = "CAP: %@";
-"Order Pay Detail" = "Dettagli pagamento";
-"Order Pay Total" = "Subtotale: %@";
-"Order Pay Benefit Detail" = "Spedizione: %@";
-"Order Pay Totale" = "Totale: %@";
+"Order Importo Spesa" = "消费金额: €%.2f";
+"Order Deliver Time" = "送货时间: %@";
+"Order Goods List" = "商品列表";
+"Order Good Look More" = "查看所有";
+"Order Fattura" = "发票";
+"Order Tax Number" = "增值税/税号: %@";
+"Order Company" = "公司名称: %@";
+"Order CAP" = "邮编: %@";
+"Order Pay Detail" = "付款详情";
+"Order Pay Total" = "总计: €%.2f";
+"Order Pay Benefit Detail" = "优惠: €%.2f";
+"Order Pay Totale" = "总价: €%.2f";
+"Order Good Number" = "x%d";
 
 //商品详情(完成)
 "Good Detail Price With .2 Unit" = "€%.2f";
