@@ -1,3 +1,6 @@
 [submodule "Submodules/JHKit"]
 	path = Submodules/JHKit
 	url = https://github.com/mumabinggan/JHKit.git
+[submodule "Submodules/TTTAttributeLabel"]
+	path = Submodules/TTTAttributeLabel
+	url = https://github.com/mumabinggan/TTTAttributedLabel.git

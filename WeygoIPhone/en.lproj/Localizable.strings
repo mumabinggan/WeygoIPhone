@@ -199,6 +199,13 @@
 "Good Detail CommodityInfo" = "Descrizione";
 "Good Detail Add" = "Aggiungi";
 
-//订单列表
+//订单列表(完成)
 "Order List How Many Good" = "Totale %d prodotti";
 "Order List Title" = "Elenco ordini";
+
+//消息中心（完成）
+"MessageCenter Title" = "Messaggi";
+"MessageCenter All" = "Tutto";
+"MessageCenter New Message" = "Novità";
+"MessageCenter Deliver" = "Consegna";
+"MessageCenter More" = "più";

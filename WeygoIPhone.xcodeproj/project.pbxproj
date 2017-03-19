@@ -69,6 +69,17 @@
 		BE52EFBE1E2F4A570022EF5B /* WGCouponCode.m in Sources */ = {isa = PBXBuildFile; fileRef = BE52EFBD1E2F4A570022EF5B /* WGCouponCode.m */; };
 		BE52EFC91E2F64E90022EF5B /* WGCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE52EFC81E2F64E90022EF5B /* WGCollectionViewController.m */; };
 		BE52EFCC1E2F691B0022EF5B /* WGCollectionViewController+Request.m in Sources */ = {isa = PBXBuildFile; fileRef = BE52EFCB1E2F691B0022EF5B /* WGCollectionViewController+Request.m */; };
+		BE57D1401E7DAB5300149738 /* WGMessageCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE57D13F1E7DAB5300149738 /* WGMessageCenterViewController.m */; };
+		BE57D1461E7DAB8100149738 /* WGMessageCenterViewController+Request.m in Sources */ = {isa = PBXBuildFile; fileRef = BE57D1451E7DAB8100149738 /* WGMessageCenterViewController+Request.m */; };
+		BE57D1491E7DABEF00149738 /* WGMessageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE57D1481E7DABEF00149738 /* WGMessageRequest.m */; };
+		BE57D14C1E7DAC1900149738 /* WGMessageResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BE57D14B1E7DAC1900149738 /* WGMessageResponse.m */; };
+		BE57D14F1E7DAC3200149738 /* WGMessageItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BE57D14E1E7DAC3200149738 /* WGMessageItem.m */; };
+		BE57D1591E7DB77900149738 /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE57D1581E7DB77800149738 /* TTTAttributedLabel.m */; };
+		BE57D15C1E7DBD0300149738 /* WGMessageReadRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE57D15B1E7DBD0300149738 /* WGMessageReadRequest.m */; };
+		BE57D15F1E7DBD1200149738 /* WGMessageReadResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BE57D15E1E7DBD1200149738 /* WGMessageReadResponse.m */; };
+		BE57D1621E7DBD4200149738 /* WGMessageItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE57D1611E7DBD4200149738 /* WGMessageItemCell.m */; };
+		BE57D1651E7E35CC00149738 /* WGDeleteMessageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE57D1641E7E35CC00149738 /* WGDeleteMessageRequest.m */; };
+		BE57D1681E7E35EC00149738 /* WGDeleteMessageResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BE57D1671E7E35EC00149738 /* WGDeleteMessageResponse.m */; };
 		BE58BC801E49C62F00B4D2E1 /* WGBindThirdPartyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE58BC7F1E49C62F00B4D2E1 /* WGBindThirdPartyViewController.m */; };
 		BE5E4C181E249ADB00ACA48F /* WGHomeTabContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5E4C171E249ADB00ACA48F /* WGHomeTabContentViewController.m */; };
 		BE5E4C441E24F9E200ACA48F /* WGHomeTabBaseContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5E4C431E24F9E200ACA48F /* WGHomeTabBaseContentViewController.m */; };
@@ -418,6 +429,28 @@
 		BE52EFC81E2F64E90022EF5B /* WGCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGCollectionViewController.m; sourceTree = "<group>"; };
 		BE52EFCA1E2F691B0022EF5B /* WGCollectionViewController+Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGCollectionViewController+Request.h"; sourceTree = "<group>"; };
 		BE52EFCB1E2F691B0022EF5B /* WGCollectionViewController+Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGCollectionViewController+Request.m"; sourceTree = "<group>"; };
+		BE57D13E1E7DAB5300149738 /* WGMessageCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGMessageCenterViewController.h; sourceTree = "<group>"; };
+		BE57D13F1E7DAB5300149738 /* WGMessageCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGMessageCenterViewController.m; sourceTree = "<group>"; };
+		BE57D1441E7DAB8100149738 /* WGMessageCenterViewController+Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGMessageCenterViewController+Request.h"; sourceTree = "<group>"; };
+		BE57D1451E7DAB8100149738 /* WGMessageCenterViewController+Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGMessageCenterViewController+Request.m"; sourceTree = "<group>"; };
+		BE57D1471E7DABEF00149738 /* WGMessageRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGMessageRequest.h; sourceTree = "<group>"; };
+		BE57D1481E7DABEF00149738 /* WGMessageRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGMessageRequest.m; sourceTree = "<group>"; };
+		BE57D14A1E7DAC1900149738 /* WGMessageResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGMessageResponse.h; sourceTree = "<group>"; };
+		BE57D14B1E7DAC1900149738 /* WGMessageResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGMessageResponse.m; sourceTree = "<group>"; };
+		BE57D14D1E7DAC3200149738 /* WGMessageItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGMessageItem.h; sourceTree = "<group>"; };
+		BE57D14E1E7DAC3200149738 /* WGMessageItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGMessageItem.m; sourceTree = "<group>"; };
+		BE57D1571E7DB77800149738 /* TTTAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTAttributedLabel.h; sourceTree = "<group>"; };
+		BE57D1581E7DB77800149738 /* TTTAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTAttributedLabel.m; sourceTree = "<group>"; };
+		BE57D15A1E7DBD0300149738 /* WGMessageReadRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGMessageReadRequest.h; sourceTree = "<group>"; };
+		BE57D15B1E7DBD0300149738 /* WGMessageReadRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGMessageReadRequest.m; sourceTree = "<group>"; };
+		BE57D15D1E7DBD1200149738 /* WGMessageReadResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGMessageReadResponse.h; sourceTree = "<group>"; };
+		BE57D15E1E7DBD1200149738 /* WGMessageReadResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGMessageReadResponse.m; sourceTree = "<group>"; };
+		BE57D1601E7DBD4200149738 /* WGMessageItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGMessageItemCell.h; sourceTree = "<group>"; };
+		BE57D1611E7DBD4200149738 /* WGMessageItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGMessageItemCell.m; sourceTree = "<group>"; };
+		BE57D1631E7E35CC00149738 /* WGDeleteMessageRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGDeleteMessageRequest.h; sourceTree = "<group>"; };
+		BE57D1641E7E35CC00149738 /* WGDeleteMessageRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGDeleteMessageRequest.m; sourceTree = "<group>"; };
+		BE57D1661E7E35EC00149738 /* WGDeleteMessageResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGDeleteMessageResponse.h; sourceTree = "<group>"; };
+		BE57D1671E7E35EC00149738 /* WGDeleteMessageResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGDeleteMessageResponse.m; sourceTree = "<group>"; };
 		BE58BC7E1E49C62F00B4D2E1 /* WGBindThirdPartyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGBindThirdPartyViewController.h; sourceTree = "<group>"; };
 		BE58BC7F1E49C62F00B4D2E1 /* WGBindThirdPartyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGBindThirdPartyViewController.m; sourceTree = "<group>"; };
 		BE5E4C161E249ADB00ACA48F /* WGHomeTabContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGHomeTabContentViewController.h; sourceTree = "<group>"; };
@@ -1275,6 +1308,75 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		BE57D1321E7DAB1E00149738 /* MessageCenter */ = {
+			isa = PBXGroup;
+			children = (
+				BE57D1331E7DAB1E00149738 /* Cell */,
+				BE57D1381E7DAB1E00149738 /* Model */,
+				BE57D13E1E7DAB5300149738 /* WGMessageCenterViewController.h */,
+				BE57D13F1E7DAB5300149738 /* WGMessageCenterViewController.m */,
+				BE57D1441E7DAB8100149738 /* WGMessageCenterViewController+Request.h */,
+				BE57D1451E7DAB8100149738 /* WGMessageCenterViewController+Request.m */,
+			);
+			path = MessageCenter;
+			sourceTree = "<group>";
+		};
+		BE57D1331E7DAB1E00149738 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				BE57D1601E7DBD4200149738 /* WGMessageItemCell.h */,
+				BE57D1611E7DBD4200149738 /* WGMessageItemCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		BE57D1381E7DAB1E00149738 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BE57D1391E7DAB1E00149738 /* Request */,
+				BE57D13A1E7DAB1E00149738 /* Response */,
+				BE57D14D1E7DAC3200149738 /* WGMessageItem.h */,
+				BE57D14E1E7DAC3200149738 /* WGMessageItem.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BE57D1391E7DAB1E00149738 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				BE57D1471E7DABEF00149738 /* WGMessageRequest.h */,
+				BE57D1481E7DABEF00149738 /* WGMessageRequest.m */,
+				BE57D15A1E7DBD0300149738 /* WGMessageReadRequest.h */,
+				BE57D15B1E7DBD0300149738 /* WGMessageReadRequest.m */,
+				BE57D1631E7E35CC00149738 /* WGDeleteMessageRequest.h */,
+				BE57D1641E7E35CC00149738 /* WGDeleteMessageRequest.m */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		BE57D13A1E7DAB1E00149738 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				BE57D14A1E7DAC1900149738 /* WGMessageResponse.h */,
+				BE57D14B1E7DAC1900149738 /* WGMessageResponse.m */,
+				BE57D15D1E7DBD1200149738 /* WGMessageReadResponse.h */,
+				BE57D15E1E7DBD1200149738 /* WGMessageReadResponse.m */,
+				BE57D1661E7E35EC00149738 /* WGDeleteMessageResponse.h */,
+				BE57D1671E7E35EC00149738 /* WGDeleteMessageResponse.m */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		BE57D1561E7DB77800149738 /* TTTAttributedLabel */ = {
+			isa = PBXGroup;
+			children = (
+				BE57D1571E7DB77800149738 /* TTTAttributedLabel.h */,
+				BE57D1581E7DB77800149738 /* TTTAttributedLabel.m */,
+			);
+			name = TTTAttributedLabel;
+			path = TTTAttributeLabel/TTTAttributedLabel;
+			sourceTree = "<group>";
+		};
 		BE6229E61E765BD2002BFEDB /* Request */ = {
 			isa = PBXGroup;
 			children = (
@@ -1400,6 +1502,7 @@
 		BE62E3461DF927AE004510A5 /* Submodules */ = {
 			isa = PBXGroup;
 			children = (
+				BE57D1561E7DB77800149738 /* TTTAttributedLabel */,
 				BE62E40C1DF927BC004510A5 /* JHKit.xcodeproj */,
 			);
 			path = Submodules;
@@ -1794,6 +1897,7 @@
 		BEB2D9071DFBDBFB00F2E74B /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				BE57D1321E7DAB1E00149738 /* MessageCenter */,
 				BE9F93241E6B1C780051B054 /* ClientServiceCenter */,
 				BEB8D1611E49C1D200BB9BA3 /* ThirdPartyBing */,
 				BEB8D1541E49A10800BB9BA3 /* ForgetPW */,
@@ -2506,6 +2610,7 @@
 				BE63A6D41E7BBC0B00F77282 /* WGOrderGoodPriceCell.m in Sources */,
 				BE52EFCC1E2F691B0022EF5B /* WGCollectionViewController+Request.m in Sources */,
 				BE1BBA4F1E4B2D4D0008BD68 /* WGSliderTopicCell.m in Sources */,
+				BE57D14F1E7DAC3200149738 /* WGMessageItem.m in Sources */,
 				BE6CC1D31E2B9C63003755FF /* WGHomeFloorClassifyGridView.m in Sources */,
 				BEB8D0BD1E47092700BB9BA3 /* WGMine.m in Sources */,
 				BE62E2341DF92176004510A5 /* ViewController.m in Sources */,
@@ -2514,6 +2619,7 @@
 				BEB8D0FB1E48637400BB9BA3 /* WGLoginRequest.m in Sources */,
 				BE6CC1A91E293BB9003755FF /* WGHomeFloorGoodListMoreCell.m in Sources */,
 				BE9F93631E6B27C30051B054 /* WGBaseWebViewController.m in Sources */,
+				BE57D15C1E7DBD0300149738 /* WGMessageReadRequest.m in Sources */,
 				BE63A6D71E7BBC0B00F77282 /* WGOrderStatusCell.m in Sources */,
 				BE83BB2A1E23E46F002F3BCC /* WGNewsItem.m in Sources */,
 				BE63A6F41E7BC5A200F77282 /* WGOrderListRequest.m in Sources */,
@@ -2525,6 +2631,7 @@
 				BEA374B21E3491770054B8E6 /* WGClassifySortView.m in Sources */,
 				BEB8D0F51E48581D00BB9BA3 /* WGLoginViewController+Request.m in Sources */,
 				BEA374FD1E34F83A0054B8E6 /* WGClassifyDetailViewController+Request.m in Sources */,
+				BE57D1591E7DB77900149738 /* TTTAttributedLabel.m in Sources */,
 				BEB2D9211DFBDFE900F2E74B /* WGHomeTabViewController.m in Sources */,
 				BE63A6DB1E7BBC0B00F77282 /* WGOrderGoodItem.m in Sources */,
 				BE63A6D91E7BBC0B00F77282 /* WGOrderDetailResponse.m in Sources */,
@@ -2556,6 +2663,7 @@
 				BEB8D0B71E4708E300BB9BA3 /* WGMineRequest.m in Sources */,
 				BEA375011E34FA160054B8E6 /* JHClassifyDetailFilterLayout.m in Sources */,
 				BEB8D0E51E47F8AE00BB9BA3 /* WGPersonHeaderCell.m in Sources */,
+				BE57D1681E7E35EC00149738 /* WGDeleteMessageResponse.m in Sources */,
 				BE52EDB31E2DBE3B0022EF5B /* WGEditAddressCell.m in Sources */,
 				BE6CC19D1E28D532003755FF /* WGHomeNewsCell.m in Sources */,
 				BE9F93371E6B24B80051B054 /* WGCSCCommonItemRequest.m in Sources */,
@@ -2589,12 +2697,16 @@
 				BE52D5381E1B9D5A00D4FFCD /* WGHomeTopicItemView.m in Sources */,
 				BE6CC1BE1E2941AA003755FF /* WGHomeFloorClassifyListItemCell.m in Sources */,
 				BEF6854E1E31DFB5003B745B /* WGShopCartViewController.m in Sources */,
+				BE57D1651E7E35CC00149738 /* WGDeleteMessageRequest.m in Sources */,
+				BE57D1621E7DBD4200149738 /* WGMessageItemCell.m in Sources */,
 				BEA374B51E34A0F20054B8E6 /* WGSubClassifyView.m in Sources */,
 				BEB2D95A1DFBED1500F2E74B /* WGNavigationController.m in Sources */,
 				BE6CC1E01E2BBB4C003755FF /* WGClassifyGoodList.m in Sources */,
 				BE52ED931E2CDDC50022EF5B /* WGBaseAddressAndReceiptListViewController.m in Sources */,
+				BE57D1461E7DAB8100149738 /* WGMessageCenterViewController+Request.m in Sources */,
 				BE63A6D61E7BBC0B00F77282 /* WGOrderPayCell.m in Sources */,
 				BEA375041E34FA3B0054B8E6 /* WGClassifyDetailFilterViewController.m in Sources */,
+				BE57D1401E7DAB5300149738 /* WGMessageCenterViewController.m in Sources */,
 				BE63A6E51E7BBE4A00F77282 /* WGOrderListViewController.m in Sources */,
 				BEA374A81E347FE60054B8E6 /* WGClassifyDetailViewController.m in Sources */,
 				BE52ED8A1E2CC7400022EF5B /* WGBaseAddressAndReceiveEditCell.m in Sources */,
@@ -2614,6 +2726,7 @@
 				BEA3749D1E347C500054B8E6 /* WGGoodDetailViewController.m in Sources */,
 				BE63A7001E7BC7BF00F77282 /* WGOrderListRebuyCell.m in Sources */,
 				BEB2D9691DFC054B00F2E74B /* WGHomeTabViewController+Segment.m in Sources */,
+				BE57D14C1E7DAC1900149738 /* WGMessageResponse.m in Sources */,
 				BE6229E01E765969002BFEDB /* WGGoodDetail.m in Sources */,
 				BE6229ED1E765BF6002BFEDB /* WGGoodDetailResponse.m in Sources */,
 				BE49E3B71E45BAA100ECDEE5 /* WGCallBaseRequest.m in Sources */,
@@ -2629,6 +2742,7 @@
 				BE62E2311DF92176004510A5 /* AppDelegate.m in Sources */,
 				BE52D5261E1B699100D4FFCD /* WGTopicItem.m in Sources */,
 				BE99E7A21E1C947F00210546 /* WGHomeFloorContentGoodItem.m in Sources */,
+				BE57D15F1E7DBD1200149738 /* WGMessageReadResponse.m in Sources */,
 				BEB8D09A1E46D5B300BB9BA3 /* WGApplication+Operation.m in Sources */,
 				BE6CC1D01E2B9426003755FF /* WGHomeFloorCountryItemView.m in Sources */,
 				BE63A6E81E7BBE5D00F77282 /* WGOrderListViewController+Request.m in Sources */,
@@ -2655,6 +2769,7 @@
 				BE622A0F1E77C627002BFEDB /* WGAddGoodToCartResponse.m in Sources */,
 				BE6CC1C71E2A8FA6003755FF /* WGHomeFloorGoodColumnItemView.m in Sources */,
 				BE6CC1E31E2BBCDF003755FF /* WGClassifyGoodListContentItem.m in Sources */,
+				BE57D1491E7DABEF00149738 /* WGMessageRequest.m in Sources */,
 				BE6229F91E7684D4002BFEDB /* WGGoodDesCell.m in Sources */,
 				BE52ED301E2C6C560022EF5B /* WGEditReceiptViewController+Request.m in Sources */,
 				BE6229FC1E768544002BFEDB /* WGCommodityDesCell.m in Sources */,

@@ -198,6 +198,13 @@
 "Good Detail CommodityInfo" = "商品描述";
 "Good Detail Add" = "加入购物车";
 
-//订单列表
+//订单列表（完成）
 "Order List How Many Good" = "总共 %d 件商品";
 "Order List Title" = "订单列表";
+
+//消息中心（完成）
+"MessageCenter Title" = "消息中心";
+"MessageCenter All" = "全部";
+"MessageCenter New Message" = "新消息";
+"MessageCenter Deliver" = "运输";
+"MessageCenter More" = "更多";

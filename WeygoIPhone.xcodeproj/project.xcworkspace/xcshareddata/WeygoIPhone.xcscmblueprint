@@ -8,6 +8,7 @@
     "E28E36D423EC87798E52E2BF482E9F7A1E6479D6" : 9223372036854775807,
     "DD20A1A48C66B5213E0FEBB87A95EF51D6C6F3E8" : 9223372036854775807,
     "4182765C525509B305166AB949D5935FD5C85212" : 9223372036854775807,
+    "A43B3F8F1FFE63510EF5D0CFDB1DB558C0C67BF9" : 9223372036854775807,
     "DF461CAADB13706454B17F2BB50F488BBAD743E5" : 9223372036854775807,
     "C5244C7413585559EBD675C89F7DA84BA14A2EBF" : 9223372036854775807,
     "04101981B66E318109934C9516F88D824BB96459" : 9223372036854775807,
@@ -23,6 +24,7 @@
     "E28E36D423EC87798E52E2BF482E9F7A1E6479D6" : "WeygoIPhone\/Submodules\/JHKit\/Submodules\/SDWebImage\/",
     "DD20A1A48C66B5213E0FEBB87A95EF51D6C6F3E8" : "WeygoIPhone\/Submodules\/JHKit\/Submodules\/AFNetworking\/",
     "4182765C525509B305166AB949D5935FD5C85212" : "WeygoIPhone\/Submodules\/JHKit\/Submodules\/MBProgressHUD\/",
+    "A43B3F8F1FFE63510EF5D0CFDB1DB558C0C67BF9" : "WeygoIPhone\/Submodules\/TTTAttributeLabel\/",
     "DF461CAADB13706454B17F2BB50F488BBAD743E5" : "WeygoIPhone\/Submodules\/JHKit\/Submodules\/IQKeyboardManager\/",
     "C5244C7413585559EBD675C89F7DA84BA14A2EBF" : "WeygoIPhone\/",
     "04101981B66E318109934C9516F88D824BB96459" : "WeygoIPhone\/Submodules\/JHKit\/Submodules\/FMDB\/",
@@ -60,6 +62,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/mumabinggan\/MBProgressHUD.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "4182765C525509B305166AB949D5935FD5C85212"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/mumabinggan\/TTTAttributedLabel.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A43B3F8F1FFE63510EF5D0CFDB1DB558C0C67BF9"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/mumabinggan\/JHKit.git",

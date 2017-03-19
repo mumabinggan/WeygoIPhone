@@ -25,10 +25,17 @@
 - (void)handleOrderListResponse:(WGOrderListResponse *)response refresh:(BOOL)refresh pulling:(BOOL)pulling {
     [self stopRefreshing:_tableView refresh:refresh pulling:pulling];
     if (response.success) {
-        
+        if (!_orderMArray) {
+            _orderMArray = [[NSMutableArray alloc] init];
+        }
+        if (refresh) {
+            [_orderMArray removeAllObjects];
+        }
+        [_orderMArray addObjectsFromArray:response.data];
+        [self refreshUI];
     }
     else {
-        
+        [self showWarningMessage:response.message];
     }
 }
 
