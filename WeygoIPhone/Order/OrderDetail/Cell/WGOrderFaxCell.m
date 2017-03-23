@@ -9,15 +9,6 @@
 #import "WGOrderFaxCell.h"
 #import "WGOrderDetail.h"
 
-//"Order Fattura" = "发票";
-//"Order Tax Number" = "增值税/税号: %@";
-//"Order Company" = "公司名称: %@";
-//"Order CAP" = "邮编: %@";
-//"Order Pay Detail" = "付款详情";
-//"Order Pay Total" = "总计: %@";
-//"Order Pay Benefit Detail" = "优惠: %@";
-//"Order Pay Totale" = "总价: %@";
-
 @interface WGOrderFaxCell ()
 {
     JHLabel *_taxLabel;

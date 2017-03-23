@@ -27,6 +27,7 @@
 }
 
 - (void)initSubView {
+    [super initSubView];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:kStr(@"") style:UIBarButtonItemStylePlain target:self action:@selector(touchClearBtn:)];
     
     _tableView = [[TWRefreshTableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];

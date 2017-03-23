@@ -18,6 +18,8 @@
 
 @property (nonatomic, assign) BOOL isSelect;
 
+@property (nonatomic, strong) WGCoupon *coupon;
+
 @property (nonatomic, copy) void (^onUse)(WGObject *object);
 
 @end

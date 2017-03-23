@@ -76,4 +76,6 @@
 
 #define kClassifyClassifyPlaceholderImage [UIImage imageNamed:@""]
 
+#define kInvitationPlaceholderImage [UIImage imageNamed:@""]
+
 #endif /* WGAppConstants_h */

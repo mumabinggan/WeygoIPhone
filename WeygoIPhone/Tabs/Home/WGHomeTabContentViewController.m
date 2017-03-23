@@ -41,6 +41,8 @@
 #import "WGOrderDetailViewController.h"
 #import "WGOrderListViewController.h"
 #import "WGMessageCenterViewController.h"
+#import "WGCommitOrderViewController.h"
+#import "WGInvitationViewController.h"
 
 //can delete
 #import "WGCarouselFigureItem.h"
@@ -507,8 +509,13 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    WGMessageCenterViewController *vc = [[WGMessageCenterViewController alloc] init];
+    WGInvitationViewController *vc = [[WGInvitationViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
+//    WGCommitOrderViewController *vc = [[WGCommitOrderViewController alloc] init];
+//    [self.navigationController pushViewController:vc animated:YES];
+    
+//    WGMessageCenterViewController *vc = [[WGMessageCenterViewController alloc] init];
+//    [self.navigationController pushViewController:vc animated:YES];
 //    WGOrderListViewController *vc = [[WGOrderListViewController alloc] init];
 //    [self.navigationController pushViewController:vc animated:YES];
 //    WGOrderDetailViewController *vc = [[WGOrderDetailViewController alloc] init];
@@ -539,10 +546,11 @@
     WGShopCartViewController *vc = [[WGShopCartViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
      */
-    /*
-    WGCouponListViewController *vc = [[WGCouponListViewController alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
-     */
+    
+//    WGCouponListViewController *vc = [[WGCouponListViewController alloc] init];
+//    vc.isSelect = YES;
+//    [self.navigationController pushViewController:vc animated:YES];
+    
 //    WGAddressListViewController *vc = [[WGAddressListViewController alloc] init];
 //    [self.navigationController pushViewController:vc animated:YES];
     /*

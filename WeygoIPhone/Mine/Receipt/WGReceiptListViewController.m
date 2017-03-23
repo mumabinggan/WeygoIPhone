@@ -24,6 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.title = kStr(@"ReceiptList_Title");
 }
 
 - (void)initData {
@@ -69,6 +70,7 @@
     if (self.onUse) {
         self.onUse(object);
     }
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)handleModify:(WGObject *)object {

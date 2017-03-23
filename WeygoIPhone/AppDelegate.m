@@ -17,7 +17,12 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+    NSString *sss = [NSString stringWithFormat:@"%@", @"ss"];
+    NSMutableArray *array = [[NSMutableArray alloc] init];
+    [array addObject:sss];
+    NSLog(@"---%@", array);
+    sss = @"fs";
+    NSLog(@"---%@", array);
     [self launchUIApplicatioin:application withOptions:launchOptions];
     
     return YES;

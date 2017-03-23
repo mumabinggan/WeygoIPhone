@@ -14,6 +14,7 @@
 @interface WGCouponListViewController ()
 {
     JHTableView *_tableView;
+    JHButton *_activateBtn;
 }
 @end
 
@@ -26,6 +27,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.title = kStr(@"CouponList_Selected_Title");
 }
 
 - (void)initData {
@@ -57,7 +59,7 @@
 }
 
 - (void)initSubView {
-    
+    [super initSubView];
     JHView *contentView = [[JHView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:contentView];
     
@@ -73,20 +75,6 @@
         _tableView.contentInset = UIEdgeInsetsMake(-35, 0, 0, 0);
     }
     [contentView addSubview:_tableView];
-    
-    JHButton *useBtn = [[JHButton alloc] initWithFrame:CGRectMake(kDeviceWidth - kAppAdaptWidth(80), kDeviceHeight - kAppAdaptHeight(80), kAppAdaptWidth(56), kAppAdaptWidth(56))];
-    [useBtn setBackgroundImage:[UIImage imageNamed:@"use_coupon"] forState:UIControlStateNormal];
-    [useBtn addTarget:self action:@selector(touchUseBtn:) forControlEvents:UIControlEventTouchUpInside];
-    [contentView addSubview:useBtn];
-}
-
-- (void)touchUseBtn:(JHButton *)sender {
-    NSIndexPath *indexPath = _tableView.indexPathForSelectedRow;
-    if (indexPath) {
-        if (self.onUse) {
-            self.onUse(_dataArray[indexPath.row]);
-        }
-    }
 }
 
 - (JHView *)tableViewHeaderView {
@@ -98,20 +86,28 @@
     inputTextField.font = kAppAdaptFont(12);
     inputTextField.placeholder = kStr(@"Input Placeholder");
     [headerView addSubview:inputTextField];
+    if (_coupon && _coupon.id == 0) {
+        inputTextField.text = _coupon.name;
+    }
     
-    JHButton *activateBtn = [[JHButton alloc] initWithFrame:CGRectMake(inputTextField.maxX + kAppAdaptWidth(8), inputTextField.y + kAppAdaptHeight(2), kAppAdaptWidth(88), kAppAdaptHeight(24)) difRadius:JHRadiusMake(kAppAdaptWidth(12), kAppAdaptWidth(12), kAppAdaptWidth(12), kAppAdaptWidth(12)) borderWidth:kAppAdaptWidth(1) borderColor:kHRGB(0x5677fc)];
-    [activateBtn setTitle:kStr(@"Activate") forState:UIControlStateNormal];
-    [activateBtn setTitle:kStr(@"Inactivate") forState:UIControlStateSelected];
-    activateBtn.titleLabel.font = kAppAdaptFont(12);
-    [activateBtn setTitleColor:kHRGB(0x5677fc) forState:UIControlStateNormal];
-    [activateBtn addTarget:self action:@selector(touchActivateBtn:) forControlEvents:UIControlEventTouchUpInside];
-    [headerView addSubview:activateBtn];
+    _activateBtn = [[JHButton alloc] initWithFrame:CGRectMake(inputTextField.maxX + kAppAdaptWidth(8), inputTextField.y + kAppAdaptHeight(2), kAppAdaptWidth(88), kAppAdaptHeight(24)) difRadius:JHRadiusMake(kAppAdaptWidth(12), kAppAdaptWidth(12), kAppAdaptWidth(12), kAppAdaptWidth(12)) borderWidth:kAppAdaptWidth(1) borderColor:kHRGB(0x5677fc)];
+    [_activateBtn setTitle:kStr(@"Activate") forState:UIControlStateNormal];
+    [_activateBtn setTitle:kStr(@"Inactivate") forState:UIControlStateSelected];
+    _activateBtn.titleLabel.font = kAppAdaptFont(12);
+    [_activateBtn setTitleColor:kHRGB(0x5677fc) forState:UIControlStateNormal];
+    [_activateBtn addTarget:self action:@selector(touchActivateBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [headerView addSubview:_activateBtn];
     
     return headerView;
 }
 
 - (void)touchActivateBtn:(JHButton *)sender {
+    if (sender.selected) {
+        
+    }
+    else {
     
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -138,6 +134,12 @@
         cell = [[WGCouponCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
+    WGCoupon *coupon = _dataArray[indexPath.row];
+    if (_coupon) {
+        if (_coupon.id == coupon.id) {
+            coupon.isSelected = YES;
+        }
+    }
     [cell showWithData:_dataArray[indexPath.row]];
     return cell;
 }
@@ -148,6 +150,7 @@
         coupon.isSelected = (num == indexPath.row);
     }
     [_tableView reloadData];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

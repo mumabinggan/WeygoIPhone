@@ -72,7 +72,7 @@
     
     JHView *lineView = [[JHView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kAppSepratorLineHeight)];
     lineView.backgroundColor = WGAppSeparateLineColor;
-    [_collectionView addSubview:lineView];
+    [self.contentView addSubview:lineView];
 }
 
 - (void)showWithData:(JHObject *)object {
@@ -80,6 +80,27 @@
     if (item) {
         _dataArray = item.goods;
         [_collectionView reloadData];
+    }
+}
+
+- (void)showWithArray:(NSArray *)array {
+    if (array) {
+        _dataArray = array;
+        [_collectionView reloadData];
+    }
+}
+
++ (CGFloat)heightWithData:(JHObject *)data {
+    WGOrderListItem *item = (WGOrderListItem *)data;
+    return [self heightWithArray:item.goods];
+}
+
++ (CGFloat)heightWithArray:(NSArray *)data {
+    if (data.count == 0) {
+        return 0;
+    }
+    else {
+        return kAppAdaptHeight(232);
     }
 }
 

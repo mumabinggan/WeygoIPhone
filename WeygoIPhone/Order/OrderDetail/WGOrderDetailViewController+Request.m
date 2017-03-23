@@ -19,7 +19,6 @@
         [weakSelf handleOrderDetailResponse:(WGOrderDetailResponse *)response];
     } failure:^(NSError *error) {
         [weakSelf showWarningMessage:kStr(@"Request Failed")];
-        [weakSelf initData];
     }];
 }
 

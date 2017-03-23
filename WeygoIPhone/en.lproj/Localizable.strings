@@ -46,6 +46,8 @@
 "Confirm" = "conferma";
 "Carrello" = "Carrello";
 //优惠卷
+"CouponList_Title" = "Coupon spesa";
+"CouponList_Selected_Title" = "Coupon spesa";
 "Input Placeholder" = "Input Placeholder";
 "Activate" = "Activate";
 "Inactivate" = "Inactivate";
@@ -209,3 +211,38 @@
 "MessageCenter New Message" = "Novità";
 "MessageCenter Deliver" = "Consegna";
 "MessageCenter More" = "più";
+
+//生成订单
+"CommitOrder Title" = "Invia ordine";
+"CommitOrder Address" = "填写派送地址";
+"CommitOrder Fax" = "Fattura";
+"CommitOrder Deliver" = "Orario di consegna";
+"CommitOrder Deliver Date" = "Data di consegna";
+"CommitOrder Deliver Time" = "Ora di consegna";
+"CommitOrder Pay" = "METODI DI PAGAMENTO";
+"CommitOrder Pay Mode" = "Metodi di pagamento";
+"CommitOrder Pay Online" = "在线支付";
+"CommitOrder Pay Offline" = "货到付款";
+"CommitOrder No Coupon Title" = "Buono sconto";
+"CommitOrder No Coupon SubTitle" = "Non scordarti del tuo coupon";
+"CommitOrder Consume" = "IL TUO ACQUISTO";
+"CommitOrder Total" = "Totale :";
+"CommitOrder DeliverPrice" = "Spedizione :";
+"CommitOrder CouponPrice" = "Coupon :";
+"CommitOrder Consume List" = "IL TUO CARRELLO";
+"CommitOrder Remark" = "Commenti";
+"CommitOrder Look More" = "Vedi perché";
+"CommitOrder Total Pay" = "mporto da pagare : %.2f";
+"CommitOrder Confirm" = "Conferma";
+
+//地址列表（完成）
+"Address_Title" = "Rubrica";
+
+//发票列表(完成)
+"ReceiptList_Title" = "Fattura";
+
+//邀请界面
+"Invitation_Title" = "邀请好友";
+"Invitation_Commit" = "邀请";
+"Invitation_Input_HolderPlace" = "请输入您好友的邮箱";
+"Invitation_Input_EmptyTip" = "邮箱不能为空";

@@ -82,7 +82,6 @@
         [weakSelf handleGoodDetailResponse:(WGGoodDetailResponse *)response];
     } failure:^(NSError *error) {
         [weakSelf showWarningMessage:kStr(@"Request Failed")];
-        [weakSelf initData];
     }];
 }
 
@@ -103,7 +102,6 @@
         [weakSelf handleCollectGoodResponse:(WGCollectGoodResponse *)response];
     } failure:^(NSError *error) {
         [weakSelf showWarningMessage:kStr(@"Request Failed")];
-        [weakSelf initData];
     }];
 }
 

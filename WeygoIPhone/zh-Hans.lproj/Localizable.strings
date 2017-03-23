@@ -45,7 +45,9 @@
 "Totale:Price With Unit" = "Totale:€%.2f";
 "Confirm" = "确定";
 "Carrello" = "Carrello";
-//优惠卷
+//优惠卷列表
+"CouponList_Title" = "我的优惠卷";
+"CouponList_Selected_Title" = "选择优惠卷";
 "Input Placeholder" = "Input Placeholder";
 "Activate" = "Activate";
 "Inactivate" = "Inactivate";
@@ -208,3 +210,38 @@
 "MessageCenter New Message" = "新消息";
 "MessageCenter Deliver" = "运输";
 "MessageCenter More" = "更多";
+
+//生成订单
+"CommitOrder Title" = "提交订单";
+"CommitOrder Address" = "填写派送地址";
+"CommitOrder Fax" = "发票信息";
+"CommitOrder Deliver" = "派送时间";
+"CommitOrder Deliver Date" = "派送日期";
+"CommitOrder Deliver Time" = "派送时间";
+"CommitOrder Pay" = "付款方式";
+"CommitOrder Pay Mode" = "支付方式";
+"CommitOrder Pay Online" = "在线支付";
+"CommitOrder Pay Offline" = "货到付款";
+"CommitOrder No Coupon Title" = "现金抵用卷";
+"CommitOrder No Coupon SubTitle" = "亲爱的顾客，别忘了使用现金抵用卷哦！";
+"CommitOrder Consume" = "消费清单";
+"CommitOrder Total" = "总价 :";
+"CommitOrder DeliverPrice" = "运费：";
+"CommitOrder CouponPrice" = "抵用：";
+"CommitOrder Consume List" = "消费清单";
+"CommitOrder Remark" = "备助留言";
+"CommitOrder Look More" = "查看详情";
+"CommitOrder Total Pay" = "最终支付金额：%.2f";
+"CommitOrder Confirm" = "确认购买";
+
+//地址列表（完成）
+"Address_Title" = "派送地址";
+
+//发票列表(完成)
+"ReceiptList_Title" = "发票列表";
+
+//邀请界面(完成)
+"Invitation_Title" = "邀请好友";
+"Invitation_Commit" = "邀请";
+"Invitation_Input_HolderPlace" = "请输入您好友的邮箱";
+"Invitation_Input_EmptyTip" = "邮箱不能为空";

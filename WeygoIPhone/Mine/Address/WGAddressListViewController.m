@@ -20,6 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.title = kStr(@"Address_Title");
 }
 
 - (void)initData {
@@ -47,8 +48,9 @@
 
 - (void)touchAddBtn:(JHButton *)sender {
     WGEditAddressViewController *editAddressViewController = [[WGEditAddressViewController alloc] init];
+    __weak id weakSelf = self;
     editAddressViewController.onApply = ^() {
-        [self handleEditAddressCompletion];
+        [weakSelf handleEditAddressCompletion];
     };
     [self.navigationController pushViewController:editAddressViewController animated:YES];
 }
@@ -65,6 +67,7 @@
     if (self.onUse) {
         self.onUse(object);
     }
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)handleModify:(WGObject *)object {

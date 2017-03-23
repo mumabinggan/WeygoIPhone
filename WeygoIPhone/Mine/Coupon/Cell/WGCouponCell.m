@@ -57,7 +57,7 @@
 - (void)showWithData:(JHObject *)data {
     [super showWithData:data];
     _data = (WGCoupon *)data;
-    _imageView.image = _data.isSelected ? [UIImage imageNamed:@"coupon_bg"] : [UIImage imageNamed:@"coupon_bg"];
+    _imageView.image = _data.isSelected ? [UIImage imageNamed:@"coupon_selected_bg"] : [UIImage imageNamed:@"coupon_bg"];
     _nameLabel.text = _data.name;
     _breifDestrictionLabel.text = _data.briefDescription;
     _countLabel.text = [NSString stringWithFormat:@"%ld/%ld", _data.residueCount, _data.totalCount];
