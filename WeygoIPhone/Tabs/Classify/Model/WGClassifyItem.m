@@ -18,7 +18,7 @@
     if ([@"goodArray" isEqualToString:propertyName]) {
         return [WGHomeFloorContentGoodItem class];
     }
-    return nil;
+    return [super classForArray:propertyName];
 }
 
 @end

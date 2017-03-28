@@ -10,12 +10,12 @@
 
 @implementation WGClassifyRequest
 
-- (NSString *)pathName {
-    return @"mobile_category.categoryPage";
+- (NSString *)api {
+    return @"catalogSearch/getCategories?";
 }
 
-- (NSArray *)parameterValueArray {
-    return @[@"f1db8542447477960c3336b0fe4bb78f", self.pathName];
+- (NSString *)url {
+    return @"http://delong6688.develop.weygo.com/appservice/catalogSearch/getCategories?sign=77091032144e63276d0448ad0c3cb8dd";
 }
 
 @end

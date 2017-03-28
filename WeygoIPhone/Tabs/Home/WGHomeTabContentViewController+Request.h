@@ -10,6 +10,6 @@
 
 @interface WGHomeTabContentViewController (Request)
 
-- (void)loadHomeTabTitles;
+- (void)loadData;
 
 @end

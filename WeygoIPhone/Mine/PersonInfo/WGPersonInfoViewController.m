@@ -145,7 +145,7 @@
             [cell showWithData:(JHObject *)([_user isMan] ? @"" : @"")];
         }
         else if (indexPath.row == 3) {
-            cell.detailTextLabel.text = [NSString stringWithFormat:@"%lld", _user.number];
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%lld", _user.userId];
         }
         else if (indexPath.row == 6) {
             cell.detailTextLabel.text = [NSString stringWithFormat:@"%lld", _user.sex];

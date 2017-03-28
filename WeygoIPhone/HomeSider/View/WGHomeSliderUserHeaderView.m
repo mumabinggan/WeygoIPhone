@@ -36,7 +36,7 @@
     
     _nameLabel = [[JHLabel alloc] initWithFrame:CGRectMake(_imageView.maxX + kAppAdaptWidth(10), _imageView.y, kAppAdaptWidth(170), _imageView.height)];
     _nameLabel.font = kAppAdaptFont(14);
-    _nameLabel.textColor = WGAppNameLabelColor;
+    _nameLabel.textColor = kWhiteColor;
     [self addSubview:_nameLabel];
     [_nameLabel addSingleTapGestureRecognizerWithTarget:self action:@selector(handleLogin:)];
     

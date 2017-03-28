@@ -17,7 +17,7 @@
     if ([@"classifyIds" isEqualToString:propertyName]) {
         return [NSNumber class];
     }
-    return nil;
+    return [super classForArray:propertyName];
 }
 
 @end

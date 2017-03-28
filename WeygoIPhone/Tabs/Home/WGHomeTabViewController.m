@@ -10,9 +10,12 @@
 #import "WGHomeTabViewController+Segment.h"
 #import "WGHomeTabViewController+Scroll.h"
 #import "WGHomeTabViewController+Contents.h"
+#import "WGCommonViewController.h"
 
 @interface WGHomeTabViewController ()
-
+{
+    WGCommonViewController *_contentVC;
+}
 @end
 
 @interface WGHomeTabViewController (CollectionDelegate) <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
@@ -40,17 +43,21 @@
 }
 
 - (void)initData {
-    _tabContentMDictionary = [[NSMutableDictionary alloc] init];
+    //_tabContentMDictionary = [[NSMutableDictionary alloc] init];
 }
 
 - (void)initSubView {
+    _contentVC = [[WGCommonViewController alloc] init];
+    _contentVC.type = WGConfigContentTypeHome;
+    [self.view addSubview:_contentVC.view];
+    [self addChildViewController:_contentVC];
     //JHView *contentView = [[JHView alloc] initWithFrame:self.view.bounds];
     //[self.view addSubview:contentView];
-    [self addTitleSegmentView];
+//    [self addTitleSegmentView];
+////    
+//    [self addContentsScrollView];
 //    
-    [self addContentsScrollView];
-    
-    [self addContentsWithIndex:0];
+//    [self addContentsWithIndex:0];
     //[_contentsScrollView addSubview:[self collectionView]];
 }
 

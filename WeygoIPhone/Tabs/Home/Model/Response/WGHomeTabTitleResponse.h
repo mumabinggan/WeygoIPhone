@@ -10,4 +10,6 @@
 
 @interface WGHomeTabTitleResponse : WGResponse
 
+@property (nonatomic, strong) NSArray *data;
+
 @end

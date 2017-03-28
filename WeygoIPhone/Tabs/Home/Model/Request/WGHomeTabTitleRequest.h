@@ -14,4 +14,6 @@
 //@property (nonatomic, assign) int wh;
 //@property (nonatomic, assign) int ah;
 
+//@property (nonatomic, strong) NSString *sign;
+
 @end

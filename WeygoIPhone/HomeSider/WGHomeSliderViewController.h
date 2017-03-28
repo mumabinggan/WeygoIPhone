@@ -21,4 +21,8 @@
 
 - (void)refresh;
 
+- (void)refreshUI;
+
+- (NSArray *)getSubArray:(NSInteger)count;
+
 @end

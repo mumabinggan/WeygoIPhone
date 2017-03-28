@@ -41,6 +41,10 @@
     [self addChildViewController:_shopCartViewController];
 }
 
+- (BOOL)prefersNavigationBarHiddenAnimated {
+    return NO;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

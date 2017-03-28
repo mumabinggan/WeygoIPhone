@@ -37,7 +37,7 @@
         [self addSubview:_titleLabel];
     }
     if (!_imageView) {
-        _imageView = [[JHImageView alloc] initWithImage:[UIImage imageNamed:@"test"]];
+        _imageView = [[JHImageView alloc] initWithImage:[UIImage imageNamed:@"arr_white"]];
         _imageView.frame = CGRectMake(0, (kAppNavigationBarHeight - _imageView.height) / 2, _imageView.width, _imageView.height);
         [self addSubview:_imageView];
     }

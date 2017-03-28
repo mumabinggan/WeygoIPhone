@@ -7,9 +7,13 @@
 //
 
 #import "WGTabBenefitViewController.h"
+#import "WGTabBenefitViewController+NavigationBar.h"
+#import "WGCommonViewController.h"
 
 @interface WGTabBenefitViewController ()
-
+{
+    WGCommonViewController *_contentVC;
+}
 @end
 
 @implementation WGTabBenefitViewController
@@ -28,6 +32,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.title = kStr(@"TabBenefit");
+
+}
+
+- (void)initSubView {
+    _contentVC = [[WGCommonViewController alloc] init];
+    _contentVC.type = WGConfigContentTypeBenefit;
+    [self.view addSubview:_contentVC.view];
+    [self.navigationController addChildViewController:_contentVC];
+}
+
+- (BOOL)prefersNavigationBarHiddenAnimated {
+    return NO;
 }
 
 - (void)didReceiveMemoryWarning {

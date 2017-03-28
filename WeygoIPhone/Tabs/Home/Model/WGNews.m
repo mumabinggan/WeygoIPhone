@@ -15,7 +15,7 @@
     if ([@"contents" isEqualToString:propertyName]) {
         return [WGNewsItem class];
     }
-    return nil;
+    return [super classForArray:propertyName];
 }
 
 @end

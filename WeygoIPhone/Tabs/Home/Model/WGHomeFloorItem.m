@@ -14,7 +14,7 @@
     if ([@"contents" isEqualToString:propertyName]) {
         return [WGHomeFloorContentItem class];
     }
-    return nil;
+    return [super classForArray:propertyName];
 }
 
 - (float)homeNameHeight {

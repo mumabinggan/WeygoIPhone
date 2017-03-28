@@ -12,15 +12,11 @@
 
 @property (nonatomic, assign) long long userId;
 
-@property (nonatomic, strong) NSString *token;
+@property (nonatomic, strong) NSString *sectionKey;
 
 @property (nonatomic, strong) NSString *name;
 
 @property (nonatomic, strong) NSString *surname;
-
-@property (nonatomic, strong) NSString *headerUrl;
-
-@property (nonatomic, assign) long long number;
 
 @property (nonatomic, strong) NSString *mobile;
 
@@ -32,7 +28,7 @@
 
 @property (nonatomic, strong) NSString *tax;
 
-@property (nonatomic, strong) NSString *postCode;
+@property (nonatomic, strong) NSString *cap;
 
 - (BOOL)isMan;
 

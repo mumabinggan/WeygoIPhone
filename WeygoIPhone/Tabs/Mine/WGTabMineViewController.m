@@ -54,7 +54,7 @@
     _data.deliveryCount = 5;
     WGUser *user = [[WGUser alloc] init];
     user.name = @"ZhengYuan";
-    user.postCode = @"983223";
+    user.cap = @"983223";
     _data.user = user;
 }
 
@@ -91,7 +91,7 @@
 
 - (JHView *)createHeaderView {
     _headerView = [[WGMineHeaderView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kAppAdaptHeight(244))];
-    _headerView.backgroundColor = kRedColor;
+    _headerView.backgroundColor = kWhiteColor;
     return _headerView;
 }
 

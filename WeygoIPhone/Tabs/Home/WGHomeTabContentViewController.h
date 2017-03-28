@@ -10,9 +10,21 @@
 #import "TWRefreshCollectionView.h"
 #import "WGHome.h"
 
+typedef NS_ENUM(NSInteger, WGConfigContentType) {
+    WGConfigContentTypeHome,
+    WGConfigContentTypeBenefit,
+    WGConfigContentTypeAsia,
+};
+
 @interface WGHomeTabContentViewController : WGHomeTabBaseContentViewController
 {
-    WGHome *_homeData;
+    //WGHome *_homeData;
 }
+
+@property (nonatomic, copy) void (^onTopRefresh)();
+
+@property (nonatomic, assign) WGConfigContentType type;
+
+@property (nonatomic, strong) WGHome *homeData;
 
 @end

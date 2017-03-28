@@ -15,7 +15,7 @@
     if ([@"contents" isEqualToString:propertyName]) {
         return [WGClassifyGoodListContentItem class];
     }
-    return nil;
+    return [super classForArray:propertyName];
 }
 
 @end

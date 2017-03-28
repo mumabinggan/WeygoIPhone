@@ -7,18 +7,22 @@
 //
 
 #import "JHObject.h"
-#import "WGSessionResponse.h"
 #import "WGBaseServiceResponse.h"
 #import "WGUser.h"
+#import "MBProgressHUD.h"
 
 @interface WGApplication : JHObject
 {
-    WGBaseServiceResponse *_baseServiceResponse;
+    //Request
     
-    BOOL _loadingSessionResponse;
-    WGSessionResponse *_sessionResponse;
     
+    //Operation
     WGUser *_user;
+    WGBaseServiceInfo *_baseServiceInfo;
+    
+    //ShowView
+    MBProgressHUD *HUD;
+    JHView *_messageView;
 }
 
 + (WGApplication *)sharedApplication;

@@ -11,20 +11,12 @@
 
 @implementation WGApplication (Operation)
 
-- (NSString *)sessionId {
-    return _sessionResponse.data;
-}
-
-- (NSArray *)postCodes {
-    return _baseServiceResponse.data.postcodes;
+- (NSString *)sessionKey {
+    return [self user].sectionKey;
 }
 
 - (NSString *)currentPostCode {
-    return _baseServiceResponse.data.currentPostCode;
-}
-
-- (void)setCurrentPostCode:(NSString *)currentPostCode {
-    _baseServiceResponse.data.currentPostCode = currentPostCode;
+    return self.user.cap;
 }
 
 - (BOOL)isLogined {
@@ -32,15 +24,15 @@
 }
 
 - (BOOL)isBoy {
-    if (_user) {
-        return (_user.sex == 1);
+    if ([self user]) {
+        return ([self user].sex == 1);
     }
     return NO;
 }
 
 - (BOOL)isGirl {
-    if (_user) {
-        return (_user.sex == 2);
+    if (self.user) {
+        return (self.user.sex == 2);
     }
     return NO;
 }
@@ -58,8 +50,8 @@
 }
 
 - (NSString *)userName {
-    if (_user) {
-        return _user.name;
+    if ([self user]) {
+        return [self user].name;
     }
     return nil;
 }
@@ -117,6 +109,34 @@
 
 - (void)cleanLocalCart {
     [[JHLocalSettings sharedSettings] removeSettingsForKey:kLocalSettingsLocalCartGoods];
+}
+
+@end
+
+@implementation WGApplication (OperationBaseService)
+
+//Base Service
+- (void)handleBaseService:(WGBaseServiceInfo *)baseServiceInfo {
+    _baseServiceInfo = baseServiceInfo;
+}
+
+- (NSArray *)postcodes {
+    if (_baseServiceInfo) {
+        return _baseServiceInfo.postcodes;
+    }
+    return nil;
+}
+
+- (BOOL)supportCurrentPostCode {
+    return [self supportPostcode:self.currentPostCode];
+}
+
+- (BOOL)supportPostcode:(NSString *)postCode {
+    NSArray *postCodes = self.postcodes;
+    if (postCodes) {
+        return [postCodes containsObject:postCode];
+    }
+    return NO;
 }
 
 @end

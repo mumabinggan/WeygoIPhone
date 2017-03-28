@@ -245,3 +245,6 @@
 "Invitation_Commit" = "邀请";
 "Invitation_Input_HolderPlace" = "请输入您好友的邮箱";
 "Invitation_Input_EmptyTip" = "邮箱不能为空";
+
+//首页
+"Home_Title" = "米兰";

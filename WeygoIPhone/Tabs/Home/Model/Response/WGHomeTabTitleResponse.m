@@ -7,7 +7,15 @@
 //
 
 #import "WGHomeTabTitleResponse.h"
+#import "WGTitleItem.h"
 
 @implementation WGHomeTabTitleResponse
+
++ (Class)classForArray:(NSString *)propertyName {
+    if ([@"data" isEqualToString:propertyName]) {
+        return [WGTitleItem class];
+    }
+    return [super classForArray:propertyName];
+}
 
 @end

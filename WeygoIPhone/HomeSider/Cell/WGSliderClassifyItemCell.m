@@ -19,9 +19,8 @@
 
 - (void)loadSubviews {
     self.backgroundColor = kWhiteColor;
-    _nameLabel = [[JHLabel alloc] initWithFrame:CGRectMake(kAppAdaptWidth(40), 0, kAppAdaptWidth(240), kAppAdaptHeight(40))];
+    _nameLabel = [[JHLabel alloc] initWithFrame:CGRectMake(kAppAdaptWidth(28), 0, kAppAdaptWidth(240), kAppAdaptHeight(40))];
     _nameLabel.font = kAppAdaptFont(14);
-    _nameLabel.textAlignment = NSTextAlignmentCenter;
     _nameLabel.textColor = WGAppTitleColor;
     [self.contentView addSubview:_nameLabel];
 }

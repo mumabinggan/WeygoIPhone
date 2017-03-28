@@ -12,9 +12,7 @@
 
 @interface WGApplication (Operation)
 
-@property (nonatomic, strong, readonly) NSString *sessionId;
-
-@property (nonatomic, strong, readonly) NSArray *postCodes;
+@property (nonatomic, strong, readonly) NSString *sessionKey;
 
 @property (nonatomic, strong) NSString *currentPostCode;
 
@@ -31,12 +29,21 @@
 
 - (NSString *)userName;
 
-
 //Local Shop Cart
 - (void)addGoodToLocalCart:(WGGoodInLocalCart *)good;
 
 - (NSArray *)getGoodsInLocalCart;
 
 - (void)cleanLocalCart;
+
+@end
+
+@interface WGApplication (OperationBaseService)
+
+@property (nonatomic, strong, readonly) NSArray *postcodes;
+
+- (BOOL)supportCurrentPostCode;
+
+- (BOOL)supportPostcode:(NSString *)postCode;
 
 @end

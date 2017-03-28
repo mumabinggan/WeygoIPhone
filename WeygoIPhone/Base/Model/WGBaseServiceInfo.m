@@ -13,9 +13,9 @@
 
 + (Class)classForArray:(NSString *)propertyName {
     if ([@"postcodes" isEqualToString:propertyName]) {
-        return [WGPostCodeItem class];
+        return [NSString class];
     }
-    return nil;
+    return [super classForArray:propertyName];
 }
 
 @end

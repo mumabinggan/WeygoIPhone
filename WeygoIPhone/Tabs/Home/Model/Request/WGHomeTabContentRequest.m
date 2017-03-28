@@ -10,4 +10,12 @@
 
 @implementation WGHomeTabContentRequest
 
+- (NSString *)api {
+    return @"pages/content?";
+}
+
+- (NSString *)url {
+    return @"http://delong6688.develop.weygo.com/appservice/pages/content?sign=943419793cfeef22139a9e64936ace24";
+}
+
 @end

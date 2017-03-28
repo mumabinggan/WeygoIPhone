@@ -19,7 +19,7 @@
     if ([@"subClassifyArray" isEqualToString:propertyName]) {
         return [WGClassifyItem class];
     }
-    return nil;
+    return [super classForArray:propertyName];
 }
 
 @end

@@ -10,4 +10,6 @@
 
 @interface WGHomeTabContentRequest : WGRequest
 
+@property (nonatomic, assign) long long menuId;
+
 @end

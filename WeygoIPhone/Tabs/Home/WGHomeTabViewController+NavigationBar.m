@@ -10,29 +10,19 @@
 #import "WGHomeTitleView.h"
 #import "WGHomeSliderViewController.h"
 #import "WGMainViewController.h"
+#import "WGTabViewController+Slider.h"
 
 @implementation WGHomeTabViewController (NavigationBar)
 
 - (void)initNavigationItems {
     //set titleView
     WGHomeTitleView *titleView = [[WGHomeTitleView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth / 2, kAppNavigationBarHeight)];
-    NSString *title = @"米兰米兰米兰米兰米兰米兰米兰米兰米兰米兰";
+    NSString *title = kStr(@"Home_Title");
     [titleView setTitle:title];
     self.navigationItem.titleView = titleView;
     
     //set leftView
-    UIButton *leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [leftBtn setImage:[UIImage imageNamed:@"test"] forState:UIControlStateNormal];
-    leftBtn.frame = CGRectMake(0, 0, 60, 40);
-    [leftBtn addTarget:self action:@selector(touchLeftButton:) forControlEvents:UIControlEventTouchUpInside];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftBtn];
-}
-
-- (void)touchLeftButton:(id)sender {
-    WGMainViewController *mainViewController = (WGMainViewController *)self.parentViewController;
-    if ([mainViewController respondsToSelector:@selector(openSideBarViewController)]) {
-        [mainViewController openSideBarViewController];
-    }
+    self.navigationItem.leftBarButtonItem = [self createSliderItem];
 }
 
 @end

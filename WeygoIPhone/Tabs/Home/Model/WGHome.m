@@ -25,7 +25,7 @@
     if ([@"floors" isEqualToString:propertyName]) {
         return [WGHomeFloorItem class];
     }
-    return nil;
+    return [super classForArray:propertyName];
 }
 
 - (float)homeCarouselFiguresHeight {

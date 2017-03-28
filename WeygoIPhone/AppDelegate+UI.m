@@ -14,6 +14,9 @@
 
 - (void)launchUIApplicatioin:(UIApplication *)application withOptions:(NSDictionary *)launchOptions {
     
+    //[[JHNetworkManager sharedManager] networkingGetMethod:nil urlName:nil];
+    //[[JHNetworkManager sharedManager] testPost];
+    
     //set NavigationController
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     _rootVC = [[WGNavigationController alloc] init];

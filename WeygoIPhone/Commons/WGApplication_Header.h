@@ -12,5 +12,7 @@
 #import "WGApplication.h"
 #import "WGApplication+Request.h"
 #import "WGApplication+Operation.h"
+#import "WGApplication+Controller.h"
+#import "WGApplication+ShowView.h"
 
 #endif /* WGApplication_Header_h */

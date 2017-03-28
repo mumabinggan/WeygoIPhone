@@ -47,9 +47,9 @@
 }
 
 - (void)showWithData:(WGUser *)user {
-    [_imageView setImageWithURL:[NSURL URLWithString:user.headerUrl] placeholderImage:kMineHeaderPlaceholderImage options:JHWebImageOptionsRefreshCached];
+    //[_imageView setImageWithURL:[NSURL URLWithString:user.headerUrl] placeholderImage:kMineHeaderPlaceholderImage options:JHWebImageOptionsRefreshCached];
     _nameLabel.text = user.name;
-    _postCodeLabel.text = user.postCode;
+    _postCodeLabel.text = user.cap;
 }
 
 @end

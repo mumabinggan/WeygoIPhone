@@ -12,4 +12,6 @@
 
 - (void)openSideBarViewController;
 
+- (void)closeSideBarViewController;
+
 @end

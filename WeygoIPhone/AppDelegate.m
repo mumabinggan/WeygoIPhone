@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "AppDelegate+UI.h"
+#import "AppDelegate+Init.h"
+
 #import "JHNetworkManager.h"
 
 @interface AppDelegate ()<NSXMLParserDelegate>
@@ -23,6 +25,7 @@
     NSLog(@"---%@", array);
     sss = @"fs";
     NSLog(@"---%@", array);
+    [self launchInitApplicatioin:application withOptions:launchOptions];
     [self launchUIApplicatioin:application withOptions:launchOptions];
     
     return YES;

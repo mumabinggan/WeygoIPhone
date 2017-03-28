@@ -31,10 +31,17 @@ static const float kTabBarHeight = 60;
     self.viewControllers = [NSArray arrayWithObjects:
                             [[WGHomeTabViewController alloc] init],
                             [[WGTabClassifyViewController alloc] init],
-                            [[WGTabBenefitViewController alloc] init],
                             [[WGTabShopCartViewController alloc] init],
+                            [[WGTabBenefitViewController alloc] init],
                             [[WGTabMineViewController alloc] init],
                             nil];
+//    self.viewControllers = [NSArray arrayWithObjects:
+//                            [[WGTabViewController alloc] init],
+//                            [[WGTabViewController alloc] init],
+//                            [[WGTabViewController alloc] init],
+//                            [[WGTabViewController alloc] init],
+//                            [[WGTabMineViewController alloc] init],
+//                            nil];
 //    self.tabBar.tintColor = kRedColor;
 //    self.tabBar.barStyle = UIBarStyleDefault;
 //    self.tabBar.backgroundColor = kWhiteColor;
@@ -95,7 +102,14 @@ static const float kTabBarHeight = 60;
         };
         [window addSubview:_sliderController.view];
     }
+    else {
+        [_sliderController refresh];
+    }
     [self setSideBarhidden:NO];
+}
+
+- (void)closeSideBarViewController {
+    [self setSideBarhidden:YES];
 }
 
 - (void)touchSideBarBlankArea {

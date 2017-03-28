@@ -23,6 +23,15 @@
 		BE49E3CA1E45EA9000ECDEE5 /* File1.xml in Resources */ = {isa = PBXBuildFile; fileRef = BE49E3C91E45EA9000ECDEE5 /* File1.xml */; };
 		BE49E3CC1E4611B000ECDEE5 /* File2.xml in Resources */ = {isa = PBXBuildFile; fileRef = BE49E3CB1E4611B000ECDEE5 /* File2.xml */; };
 		BE49E3CE1E4617DD00ECDEE5 /* File3.xml in Resources */ = {isa = PBXBuildFile; fileRef = BE49E3CD1E4617DD00ECDEE5 /* File3.xml */; };
+		BE520FDA1E87EB17004BD34E /* WGApplication+Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = BE520FD91E87EB17004BD34E /* WGApplication+Controller.m */; };
+		BE520FEA1E880431004BD34E /* WGTabViewController+Slider.m in Sources */ = {isa = PBXBuildFile; fileRef = BE520FE91E880431004BD34E /* WGTabViewController+Slider.m */; };
+		BE520FED1E88079F004BD34E /* WGTabShopCartViewController+NavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BE520FEC1E88079F004BD34E /* WGTabShopCartViewController+NavigationBar.m */; };
+		BE520FF01E88094B004BD34E /* WGTabClassifyViewController+NavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BE520FEF1E88094B004BD34E /* WGTabClassifyViewController+NavigationBar.m */; };
+		BE520FF91E88FE35004BD34E /* WGClassifyResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BE520FF81E88FE34004BD34E /* WGClassifyResponse.m */; };
+		BE5210031E89102C004BD34E /* AppDelegate+Init.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5210021E89102C004BD34E /* AppDelegate+Init.m */; };
+		BE5210201E8912C5004BD34E /* WGApplication+ShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE52101F1E8912C5004BD34E /* WGApplication+ShowView.m */; };
+		BE5210251E8926B4004BD34E /* WGGetUserInfoRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5210241E8926B4004BD34E /* WGGetUserInfoRequest.m */; };
+		BE5210281E8926CD004BD34E /* WGGetUserInfoResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5210271E8926CD004BD34E /* WGGetUserInfoResponse.m */; };
 		BE5257231DFFB6FE00AB5CB9 /* Oswald-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE5257131DFFB6FE00AB5CB9 /* Oswald-Bold.ttf */; };
 		BE5257241DFFB6FE00AB5CB9 /* Oswald-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE5257141DFFB6FE00AB5CB9 /* Oswald-BoldItalic.ttf */; };
 		BE5257251DFFB6FE00AB5CB9 /* Oswald-Demi-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE5257151DFFB6FE00AB5CB9 /* Oswald-Demi-BoldItalic.ttf */; };
@@ -273,6 +282,17 @@
 		BEB8D1501E48CC4700BB9BA3 /* WGRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB8D14F1E48CC4700BB9BA3 /* WGRegisterViewController.m */; };
 		BEB8D1531E48CD0400BB9BA3 /* WGRegisterViewController+Request.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB8D1521E48CD0400BB9BA3 /* WGRegisterViewController+Request.m */; };
 		BEB8D1581E49A12800BB9BA3 /* WGForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB8D1571E49A12800BB9BA3 /* WGForgetPasswordViewController.m */; };
+		BEC772051E83AD1C00678D0B /* WGSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC772041E83AD1B00678D0B /* WGSearchViewController.m */; };
+		BEC772081E83AD3400678D0B /* WGSearchViewController+Request.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC772071E83AD3400678D0B /* WGSearchViewController+Request.m */; };
+		BECBE2F31E87B60100ADAD6C /* WGTabBenefitViewController+NavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BECBE2F21E87B60100ADAD6C /* WGTabBenefitViewController+NavigationBar.m */; };
+		BECBE3001E87BB6D00ADAD6C /* WGCommonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BECBE2FF1E87BB6D00ADAD6C /* WGCommonViewController.m */; };
+		BECBE3061E87BB9300ADAD6C /* WGCommonViewController+Segment.m in Sources */ = {isa = PBXBuildFile; fileRef = BECBE3051E87BB9300ADAD6C /* WGCommonViewController+Segment.m */; };
+		BECBE3091E87BB9D00ADAD6C /* WGCommonViewController+Scroll.m in Sources */ = {isa = PBXBuildFile; fileRef = BECBE3081E87BB9D00ADAD6C /* WGCommonViewController+Scroll.m */; };
+		BECBE30C1E87BBA800ADAD6C /* WGCommonViewController+Contents.m in Sources */ = {isa = PBXBuildFile; fileRef = BECBE30B1E87BBA800ADAD6C /* WGCommonViewController+Contents.m */; };
+		BECBE3101E87C43800ADAD6C /* WGAsiaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BECBE30F1E87C43800ADAD6C /* WGAsiaViewController.m */; };
+		BECBE3131E87C54400ADAD6C /* WGCommonViewController+Request.m in Sources */ = {isa = PBXBuildFile; fileRef = BECBE3121E87C54400ADAD6C /* WGCommonViewController+Request.m */; };
+		BECBE3161E87C68E00ADAD6C /* WGTitleItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BECBE3151E87C68E00ADAD6C /* WGTitleItem.m */; };
+		BECBE3191E87D13100ADAD6C /* WGCommonViewController+Data.m in Sources */ = {isa = PBXBuildFile; fileRef = BECBE3181E87D13100ADAD6C /* WGCommonViewController+Data.m */; };
 		BECEBF9F1E2BD104002C4462 /* WGClassifyGoodListViewController+Request.m in Sources */ = {isa = PBXBuildFile; fileRef = BECEBF9E1E2BD104002C4462 /* WGClassifyGoodListViewController+Request.m */; };
 		BEDCA7EB1E627BC500BCDED6 /* WGSliderClassifyItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDCA7EA1E627BC500BCDED6 /* WGSliderClassifyItemCell.m */; };
 		BEDCA7EF1E627E8000BCDED6 /* WGHomeSliderUserHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDCA7EE1E627E8000BCDED6 /* WGHomeSliderUserHeaderView.m */; };
@@ -384,6 +404,24 @@
 		BE49E3C91E45EA9000ECDEE5 /* File1.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = File1.xml; sourceTree = "<group>"; };
 		BE49E3CB1E4611B000ECDEE5 /* File2.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = File2.xml; sourceTree = "<group>"; };
 		BE49E3CD1E4617DD00ECDEE5 /* File3.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = File3.xml; sourceTree = "<group>"; };
+		BE520FD81E87EB17004BD34E /* WGApplication+Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGApplication+Controller.h"; sourceTree = "<group>"; };
+		BE520FD91E87EB17004BD34E /* WGApplication+Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGApplication+Controller.m"; sourceTree = "<group>"; };
+		BE520FE81E880431004BD34E /* WGTabViewController+Slider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGTabViewController+Slider.h"; sourceTree = "<group>"; };
+		BE520FE91E880431004BD34E /* WGTabViewController+Slider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGTabViewController+Slider.m"; sourceTree = "<group>"; };
+		BE520FEB1E88079F004BD34E /* WGTabShopCartViewController+NavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGTabShopCartViewController+NavigationBar.h"; sourceTree = "<group>"; };
+		BE520FEC1E88079F004BD34E /* WGTabShopCartViewController+NavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGTabShopCartViewController+NavigationBar.m"; sourceTree = "<group>"; };
+		BE520FEE1E88094B004BD34E /* WGTabClassifyViewController+NavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGTabClassifyViewController+NavigationBar.h"; sourceTree = "<group>"; };
+		BE520FEF1E88094B004BD34E /* WGTabClassifyViewController+NavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGTabClassifyViewController+NavigationBar.m"; sourceTree = "<group>"; };
+		BE520FF71E88FE34004BD34E /* WGClassifyResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGClassifyResponse.h; sourceTree = "<group>"; };
+		BE520FF81E88FE34004BD34E /* WGClassifyResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGClassifyResponse.m; sourceTree = "<group>"; };
+		BE5210011E89102C004BD34E /* AppDelegate+Init.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Init.h"; sourceTree = "<group>"; };
+		BE5210021E89102C004BD34E /* AppDelegate+Init.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Init.m"; sourceTree = "<group>"; };
+		BE52101E1E8912C5004BD34E /* WGApplication+ShowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGApplication+ShowView.h"; sourceTree = "<group>"; };
+		BE52101F1E8912C5004BD34E /* WGApplication+ShowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGApplication+ShowView.m"; sourceTree = "<group>"; };
+		BE5210231E8926B4004BD34E /* WGGetUserInfoRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGGetUserInfoRequest.h; sourceTree = "<group>"; };
+		BE5210241E8926B4004BD34E /* WGGetUserInfoRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGGetUserInfoRequest.m; sourceTree = "<group>"; };
+		BE5210261E8926CD004BD34E /* WGGetUserInfoResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGGetUserInfoResponse.h; sourceTree = "<group>"; };
+		BE5210271E8926CD004BD34E /* WGGetUserInfoResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGGetUserInfoResponse.m; sourceTree = "<group>"; };
 		BE5257131DFFB6FE00AB5CB9 /* Oswald-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Bold.ttf"; sourceTree = "<group>"; };
 		BE5257141DFFB6FE00AB5CB9 /* Oswald-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-BoldItalic.ttf"; sourceTree = "<group>"; };
 		BE5257151DFFB6FE00AB5CB9 /* Oswald-Demi-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Demi-BoldItalic.ttf"; sourceTree = "<group>"; };
@@ -850,6 +888,28 @@
 		BEB8D1521E48CD0400BB9BA3 /* WGRegisterViewController+Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGRegisterViewController+Request.m"; sourceTree = "<group>"; };
 		BEB8D1561E49A12800BB9BA3 /* WGForgetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGForgetPasswordViewController.h; sourceTree = "<group>"; };
 		BEB8D1571E49A12800BB9BA3 /* WGForgetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGForgetPasswordViewController.m; sourceTree = "<group>"; };
+		BEC772031E83AD1B00678D0B /* WGSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGSearchViewController.h; sourceTree = "<group>"; };
+		BEC772041E83AD1B00678D0B /* WGSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGSearchViewController.m; sourceTree = "<group>"; };
+		BEC772061E83AD3400678D0B /* WGSearchViewController+Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGSearchViewController+Request.h"; sourceTree = "<group>"; };
+		BEC772071E83AD3400678D0B /* WGSearchViewController+Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGSearchViewController+Request.m"; sourceTree = "<group>"; };
+		BECBE2F11E87B60100ADAD6C /* WGTabBenefitViewController+NavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGTabBenefitViewController+NavigationBar.h"; sourceTree = "<group>"; };
+		BECBE2F21E87B60100ADAD6C /* WGTabBenefitViewController+NavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGTabBenefitViewController+NavigationBar.m"; sourceTree = "<group>"; };
+		BECBE2FE1E87BB6D00ADAD6C /* WGCommonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGCommonViewController.h; sourceTree = "<group>"; };
+		BECBE2FF1E87BB6D00ADAD6C /* WGCommonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGCommonViewController.m; sourceTree = "<group>"; };
+		BECBE3041E87BB9300ADAD6C /* WGCommonViewController+Segment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGCommonViewController+Segment.h"; sourceTree = "<group>"; };
+		BECBE3051E87BB9300ADAD6C /* WGCommonViewController+Segment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGCommonViewController+Segment.m"; sourceTree = "<group>"; };
+		BECBE3071E87BB9D00ADAD6C /* WGCommonViewController+Scroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGCommonViewController+Scroll.h"; sourceTree = "<group>"; };
+		BECBE3081E87BB9D00ADAD6C /* WGCommonViewController+Scroll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGCommonViewController+Scroll.m"; sourceTree = "<group>"; };
+		BECBE30A1E87BBA800ADAD6C /* WGCommonViewController+Contents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGCommonViewController+Contents.h"; sourceTree = "<group>"; };
+		BECBE30B1E87BBA800ADAD6C /* WGCommonViewController+Contents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGCommonViewController+Contents.m"; sourceTree = "<group>"; };
+		BECBE30E1E87C43800ADAD6C /* WGAsiaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGAsiaViewController.h; sourceTree = "<group>"; };
+		BECBE30F1E87C43800ADAD6C /* WGAsiaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGAsiaViewController.m; sourceTree = "<group>"; };
+		BECBE3111E87C54400ADAD6C /* WGCommonViewController+Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGCommonViewController+Request.h"; sourceTree = "<group>"; };
+		BECBE3121E87C54400ADAD6C /* WGCommonViewController+Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGCommonViewController+Request.m"; sourceTree = "<group>"; };
+		BECBE3141E87C68E00ADAD6C /* WGTitleItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGTitleItem.h; sourceTree = "<group>"; };
+		BECBE3151E87C68E00ADAD6C /* WGTitleItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGTitleItem.m; sourceTree = "<group>"; };
+		BECBE3171E87D13100ADAD6C /* WGCommonViewController+Data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGCommonViewController+Data.h"; sourceTree = "<group>"; };
+		BECBE3181E87D13100ADAD6C /* WGCommonViewController+Data.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGCommonViewController+Data.m"; sourceTree = "<group>"; };
 		BECEBF9D1E2BD104002C4462 /* WGClassifyGoodListViewController+Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGClassifyGoodListViewController+Request.h"; sourceTree = "<group>"; };
 		BECEBF9E1E2BD104002C4462 /* WGClassifyGoodListViewController+Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGClassifyGoodListViewController+Request.m"; sourceTree = "<group>"; };
 		BEDCA7E91E627BC500BCDED6 /* WGSliderClassifyItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGSliderClassifyItemCell.h; sourceTree = "<group>"; };
@@ -1049,6 +1109,24 @@
 			path = Response;
 			sourceTree = "<group>";
 		};
+		BE5210211E89268E004BD34E /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				BE5210231E8926B4004BD34E /* WGGetUserInfoRequest.h */,
+				BE5210241E8926B4004BD34E /* WGGetUserInfoRequest.m */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		BE5210221E89268E004BD34E /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				BE5210261E8926CD004BD34E /* WGGetUserInfoResponse.h */,
+				BE5210271E8926CD004BD34E /* WGGetUserInfoResponse.m */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
 		BE5256EE1DFFB6DA00AB5CB9 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -1152,6 +1230,8 @@
 				BE99E7A41E1C94C400210546 /* WGHomeFloorContentClassifyItem.m */,
 				BE99E7A61E1C957F00210546 /* WGHomeFloorContentCountryItem.h */,
 				BE99E7A71E1C957F00210546 /* WGHomeFloorContentCountryItem.m */,
+				BECBE3141E87C68E00ADAD6C /* WGTitleItem.h */,
+				BECBE3151E87C68E00ADAD6C /* WGTitleItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1293,6 +1373,8 @@
 				BE52EDC91E2DCC6C0022EF5B /* Model */,
 				BE52EDCE1E2DCC6C0022EF5B /* WGTabShopCartViewController.h */,
 				BE52EDCF1E2DCC6C0022EF5B /* WGTabShopCartViewController.m */,
+				BE520FEB1E88079F004BD34E /* WGTabShopCartViewController+NavigationBar.h */,
+				BE520FEC1E88079F004BD34E /* WGTabShopCartViewController+NavigationBar.m */,
 				BEF6854C1E31DFB5003B745B /* WGShopCartViewController.h */,
 				BEF6854D1E31DFB5003B745B /* WGShopCartViewController.m */,
 			);
@@ -1623,6 +1705,7 @@
 		BE62E22B1DF92176004510A5 /* WeygoIPhone */ = {
 			isa = PBXGroup;
 			children = (
+				BECBE30D1E87C41900ADAD6C /* Asia */,
 				BEB8D0841E46CD1E00BB9BA3 /* Base */,
 				BE62E49C1DF93E8D004510A5 /* Commons */,
 				BEF286B71E35DCC500274FCA /* Universal */,
@@ -1637,6 +1720,8 @@
 				BEB2D90B1DFBDBFB00F2E74B /* Detail */,
 				BE62E22F1DF92176004510A5 /* AppDelegate.h */,
 				BE62E2301DF92176004510A5 /* AppDelegate.m */,
+				BE5210011E89102C004BD34E /* AppDelegate+Init.h */,
+				BE5210021E89102C004BD34E /* AppDelegate+Init.m */,
 				BE62E4611DF937F8004510A5 /* AppDelegate+UI.h */,
 				BE62E4621DF937F8004510A5 /* AppDelegate+UI.m */,
 				BE62E2321DF92176004510A5 /* ViewController.h */,
@@ -2052,6 +2137,13 @@
 		BEB2D9041DFBDBFB00F2E74B /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				BEC771FD1E83AD0C00678D0B /* Cell */,
+				BEC771FE1E83AD0C00678D0B /* Model */,
+				BEC772011E83AD0C00678D0B /* View */,
+				BEC772031E83AD1B00678D0B /* WGSearchViewController.h */,
+				BEC772041E83AD1B00678D0B /* WGSearchViewController.m */,
+				BEC772061E83AD3400678D0B /* WGSearchViewController+Request.h */,
+				BEC772071E83AD3400678D0B /* WGSearchViewController+Request.m */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -2148,6 +2240,8 @@
 			children = (
 				BEB2D9101DFBDFE900F2E74B /* WGTabBenefitViewController.h */,
 				BEB2D9111DFBDFE900F2E74B /* WGTabBenefitViewController.m */,
+				BECBE2F11E87B60100ADAD6C /* WGTabBenefitViewController+NavigationBar.h */,
+				BECBE2F21E87B60100ADAD6C /* WGTabBenefitViewController+NavigationBar.m */,
 			);
 			path = Benefit;
 			sourceTree = "<group>";
@@ -2159,6 +2253,8 @@
 				BEF6854F1E31F685003B745B /* Model */,
 				BEB2D9131DFBDFE900F2E74B /* WGTabClassifyViewController.h */,
 				BEB2D9141DFBDFE900F2E74B /* WGTabClassifyViewController.m */,
+				BE520FEE1E88094B004BD34E /* WGTabClassifyViewController+NavigationBar.h */,
+				BE520FEF1E88094B004BD34E /* WGTabClassifyViewController+NavigationBar.m */,
 			);
 			path = Classify;
 			sourceTree = "<group>";
@@ -2186,6 +2282,18 @@
 				BE5E4C171E249ADB00ACA48F /* WGHomeTabContentViewController.m */,
 				BE5E4C481E252E2000ACA48F /* WGHomeTabContentViewController+Request.h */,
 				BE5E4C491E252E2000ACA48F /* WGHomeTabContentViewController+Request.m */,
+				BECBE2FE1E87BB6D00ADAD6C /* WGCommonViewController.h */,
+				BECBE2FF1E87BB6D00ADAD6C /* WGCommonViewController.m */,
+				BECBE3171E87D13100ADAD6C /* WGCommonViewController+Data.h */,
+				BECBE3181E87D13100ADAD6C /* WGCommonViewController+Data.m */,
+				BECBE3041E87BB9300ADAD6C /* WGCommonViewController+Segment.h */,
+				BECBE3051E87BB9300ADAD6C /* WGCommonViewController+Segment.m */,
+				BECBE3071E87BB9D00ADAD6C /* WGCommonViewController+Scroll.h */,
+				BECBE3081E87BB9D00ADAD6C /* WGCommonViewController+Scroll.m */,
+				BECBE30A1E87BBA800ADAD6C /* WGCommonViewController+Contents.h */,
+				BECBE30B1E87BBA800ADAD6C /* WGCommonViewController+Contents.m */,
+				BECBE3111E87C54400ADAD6C /* WGCommonViewController+Request.h */,
+				BECBE3121E87C54400ADAD6C /* WGCommonViewController+Request.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -2252,6 +2360,10 @@
 				BEB8D0961E46D46600BB9BA3 /* WGApplication+Request.m */,
 				BEB8D0981E46D5B300BB9BA3 /* WGApplication+Operation.h */,
 				BEB8D0991E46D5B300BB9BA3 /* WGApplication+Operation.m */,
+				BE520FD81E87EB17004BD34E /* WGApplication+Controller.h */,
+				BE520FD91E87EB17004BD34E /* WGApplication+Controller.m */,
+				BE52101E1E8912C5004BD34E /* WGApplication+ShowView.h */,
+				BE52101F1E8912C5004BD34E /* WGApplication+ShowView.m */,
 				BEB2D94D1DFBED1500F2E74B /* WGNavigationController.h */,
 				BEB2D94E1DFBED1500F2E74B /* WGNavigationController.m */,
 				BEB2D94F1DFBED1500F2E74B /* WGObject.h */,
@@ -2262,6 +2374,8 @@
 				BEB2D9541DFBED1500F2E74B /* WGResponse.m */,
 				BEB2D9551DFBED1500F2E74B /* WGTabViewController.h */,
 				BEB2D9561DFBED1500F2E74B /* WGTabViewController.m */,
+				BE520FE81E880431004BD34E /* WGTabViewController+Slider.h */,
+				BE520FE91E880431004BD34E /* WGTabViewController+Slider.m */,
 				BEB2D9571DFBED1500F2E74B /* WGViewController.h */,
 				BEB2D9581DFBED1500F2E74B /* WGViewController.m */,
 				BE9F93611E6B27C30051B054 /* WGBaseWebViewController.h */,
@@ -2380,6 +2494,8 @@
 		BEB8D0DC1E47F4D700BB9BA3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BE5210211E89268E004BD34E /* Request */,
+				BE5210221E89268E004BD34E /* Response */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2518,6 +2634,52 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		BEC771FD1E83AD0C00678D0B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		BEC771FE1E83AD0C00678D0B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BEC771FF1E83AD0C00678D0B /* Request */,
+				BEC772001E83AD0C00678D0B /* Response */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BEC771FF1E83AD0C00678D0B /* Request */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		BEC772001E83AD0C00678D0B /* Response */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		BEC772011E83AD0C00678D0B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BECBE30D1E87C41900ADAD6C /* Asia */ = {
+			isa = PBXGroup;
+			children = (
+				BECBE30E1E87C43800ADAD6C /* WGAsiaViewController.h */,
+				BECBE30F1E87C43800ADAD6C /* WGAsiaViewController.m */,
+			);
+			path = Asia;
+			sourceTree = "<group>";
+		};
 		BEE937B01E825B5300875131 /* Invite */ = {
 			isa = PBXGroup;
 			children = (
@@ -2624,6 +2786,8 @@
 		BEF685511E31F685003B745B /* Response */ = {
 			isa = PBXGroup;
 			children = (
+				BE520FF71E88FE34004BD34E /* WGClassifyResponse.h */,
+				BE520FF81E88FE34004BD34E /* WGClassifyResponse.m */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -2844,6 +3008,7 @@
 				BE6CC1D31E2B9C63003755FF /* WGHomeFloorClassifyGridView.m in Sources */,
 				BEB8D0BD1E47092700BB9BA3 /* WGMine.m in Sources */,
 				BE62E2341DF92176004510A5 /* ViewController.m in Sources */,
+				BE520FED1E88079F004BD34E /* WGTabShopCartViewController+NavigationBar.m in Sources */,
 				BE52EDD71E2DD61D0022EF5B /* WGShopCartGoodItem.m in Sources */,
 				BE1BBA261E4AFE6F0008BD68 /* WGHomeSliderViewController.m in Sources */,
 				BEB8D0FB1E48637400BB9BA3 /* WGLoginRequest.m in Sources */,
@@ -2859,6 +3024,7 @@
 				BE5E4C181E249ADB00ACA48F /* WGHomeTabContentViewController.m in Sources */,
 				BE6BE9151E7FA84400A081BA /* WGCommitOrderResponse.m in Sources */,
 				BE63A6F71E7BC5BF00F77282 /* WGOrderListResponse.m in Sources */,
+				BE520FEA1E880431004BD34E /* WGTabViewController+Slider.m in Sources */,
 				BE52ED391E2C75720022EF5B /* WGReceiptListViewController+Request.m in Sources */,
 				BEB2D9751DFD933600F2E74B /* WGScrollImageView.m in Sources */,
 				BE83BB331E23EB68002F3BCC /* WGHomeTabContentResponse.m in Sources */,
@@ -2918,6 +3084,7 @@
 				BE6BE8F41E7F913600A081BA /* WGCommitOrderViewController+Request.m in Sources */,
 				BE52EDD11E2DCC6C0022EF5B /* WGTabShopCartViewController.m in Sources */,
 				BEA734291E8126F400C74ED2 /* WGCouponListRequest.m in Sources */,
+				BECBE2F31E87B60100ADAD6C /* WGTabBenefitViewController+NavigationBar.m in Sources */,
 				BEE937C31E825CB200875131 /* WGInvitationResponse.m in Sources */,
 				BE52EFB81E2F3BDE0022EF5B /* WGCouponCell.m in Sources */,
 				BEB8D0BA1E4708F800BB9BA3 /* WGMineResponse.m in Sources */,
@@ -2929,18 +3096,23 @@
 				BE52EDDA1E2DDD160022EF5B /* WGShopCart.m in Sources */,
 				BE63A6DD1E7BBC0B00F77282 /* WGOrderDetailViewController.m in Sources */,
 				BE622A061E77C55E002BFEDB /* WGCollectGoodRequest.m in Sources */,
+				BECBE3161E87C68E00ADAD6C /* WGTitleItem.m in Sources */,
 				BEB8D1531E48CD0400BB9BA3 /* WGRegisterViewController+Request.m in Sources */,
 				BE74CDAC1E626B3700600A28 /* WGHomeSliderViewController+Request.m in Sources */,
 				BE99E7CA1E1CB67600210546 /* WGRatingView.m in Sources */,
 				BE6BE91B1E7FAF1400A081BA /* WGSettlementResult.m in Sources */,
+				BECBE30C1E87BBA800ADAD6C /* WGCommonViewController+Contents.m in Sources */,
 				BE52EDD41E2DCE790022EF5B /* WGShopCartCell.m in Sources */,
+				BECBE3001E87BB6D00ADAD6C /* WGCommonViewController.m in Sources */,
 				BE63A6DC1E7BBC0B00F77282 /* WGOrderDetailViewController+Request.m in Sources */,
 				BEB2D95F1DFBED1500F2E74B /* WGViewController.m in Sources */,
+				BEC772051E83AD1C00678D0B /* WGSearchViewController.m in Sources */,
 				BE622A0C1E77C613002BFEDB /* WGAddGoodToCartRequest.m in Sources */,
 				BE52D5381E1B9D5A00D4FFCD /* WGHomeTopicItemView.m in Sources */,
 				BE6CC1BE1E2941AA003755FF /* WGHomeFloorClassifyListItemCell.m in Sources */,
 				BEF6854E1E31DFB5003B745B /* WGShopCartViewController.m in Sources */,
 				BE57D1651E7E35CC00149738 /* WGDeleteMessageRequest.m in Sources */,
+				BE520FF01E88094B004BD34E /* WGTabClassifyViewController+NavigationBar.m in Sources */,
 				BE57D1621E7DBD4200149738 /* WGMessageItemCell.m in Sources */,
 				BEA374B51E34A0F20054B8E6 /* WGSubClassifyView.m in Sources */,
 				BEB2D95A1DFBED1500F2E74B /* WGNavigationController.m in Sources */,
@@ -2956,7 +3128,9 @@
 				BE6CC1961E28B163003755FF /* WGHomeCarouselFiguresCell.m in Sources */,
 				BE6CC1B81E2940DB003755FF /* WGHomeFloorCountryCell.m in Sources */,
 				BEB2D96C1DFC579400F2E74B /* WGHomeTabViewController+Scroll.m in Sources */,
+				BECBE3191E87D13100ADAD6C /* WGCommonViewController+Data.m in Sources */,
 				BE74CDB31E626B8E00600A28 /* WGHomeSliderResponse.m in Sources */,
+				BECBE3091E87BB9D00ADAD6C /* WGCommonViewController+Scroll.m in Sources */,
 				BE6CC1CA1E2AA397003755FF /* WGHomeFloorGoodGridItemView.m in Sources */,
 				BEF6851F1E31AC84003B745B /* WGBaseFootPrintAndCollectionViewController.m in Sources */,
 				BE83BB2D1E23E60D002F3BCC /* WGHomeFloorItem.m in Sources */,
@@ -2983,6 +3157,7 @@
 				BEB8D08E1E46CDCC00BB9BA3 /* WGBaseServiceResponse.m in Sources */,
 				BEDCA7EB1E627BC500BCDED6 /* WGSliderClassifyItemCell.m in Sources */,
 				BE52ED291E2C64860022EF5B /* WGEditReceiptViewController.m in Sources */,
+				BE5210251E8926B4004BD34E /* WGGetUserInfoRequest.m in Sources */,
 				BE83BB211E23E300002F3BCC /* WGCarouselFigureItem.m in Sources */,
 				BEA3751C1E3501000054B8E6 /* WGClassifyFilterCondition.m in Sources */,
 				BEF685231E31ADD9003B745B /* WGFootPrintViewController.m in Sources */,
@@ -2991,9 +3166,12 @@
 				BEF685541E31F6A2003B745B /* WGClassify.m in Sources */,
 				BE62E2311DF92176004510A5 /* AppDelegate.m in Sources */,
 				BE52D5261E1B699100D4FFCD /* WGTopicItem.m in Sources */,
+				BE5210281E8926CD004BD34E /* WGGetUserInfoResponse.m in Sources */,
 				BE99E7A21E1C947F00210546 /* WGHomeFloorContentGoodItem.m in Sources */,
+				BE5210031E89102C004BD34E /* AppDelegate+Init.m in Sources */,
 				BE57D15F1E7DBD1200149738 /* WGMessageReadResponse.m in Sources */,
 				BEB8D09A1E46D5B300BB9BA3 /* WGApplication+Operation.m in Sources */,
+				BEC772081E83AD3400678D0B /* WGSearchViewController+Request.m in Sources */,
 				BE6CC1D01E2B9426003755FF /* WGHomeFloorCountryItemView.m in Sources */,
 				BE63A6E81E7BBE5D00F77282 /* WGOrderListViewController+Request.m in Sources */,
 				BEE937C91E825EF400875131 /* WGInvitationViewController.m in Sources */,
@@ -3015,6 +3193,8 @@
 				BE6CC1CD1E2B5BE5003755FF /* WGHomeFloorClassifyColumnView.m in Sources */,
 				BE52ED901E2CCBBF0022EF5B /* WGBaseEditAddressAndReceiptViewController.m in Sources */,
 				BEB2D95B1DFBED1500F2E74B /* WGObject.m in Sources */,
+				BE5210201E8912C5004BD34E /* WGApplication+ShowView.m in Sources */,
+				BE520FF91E88FE35004BD34E /* WGClassifyResponse.m in Sources */,
 				BE52D53E1E1BADDA00D4FFCD /* WGHomeFloorContentItem.m in Sources */,
 				BEB8D0DF1E47F4F600BB9BA3 /* WGPersonInfoViewController.m in Sources */,
 				BE6CC19A1E28C541003755FF /* WGHomeTopicCell.m in Sources */,
@@ -3029,6 +3209,7 @@
 				BE6229F91E7684D4002BFEDB /* WGGoodDesCell.m in Sources */,
 				BE52ED301E2C6C560022EF5B /* WGEditReceiptViewController+Request.m in Sources */,
 				BE6229FC1E768544002BFEDB /* WGCommodityDesCell.m in Sources */,
+				BE520FDA1E87EB17004BD34E /* WGApplication+Controller.m in Sources */,
 				BE62E22E1DF92176004510A5 /* main.m in Sources */,
 				BEB8D0AE1E46F27400BB9BA3 /* WGUser.m in Sources */,
 				BEB8D0D91E470FDF00BB9BA3 /* WGMineHeaderView.m in Sources */,
@@ -3038,6 +3219,7 @@
 				BE63A6D51E7BBC0B00F77282 /* WGOrderLookAllGoodCell.m in Sources */,
 				BE1BBA291E4AFEB20008BD68 /* WGHomeSlider.m in Sources */,
 				BE99E7A51E1C94C400210546 /* WGHomeFloorContentClassifyItem.m in Sources */,
+				BECBE3131E87C54400ADAD6C /* WGCommonViewController+Request.m in Sources */,
 				BE52EDBD1E2DC26D0022EF5B /* WGAddressListViewController.m in Sources */,
 				BEB2D9851DFE3FF400F2E74B /* WGHomeTitleView.m in Sources */,
 				BE99E7A81E1C957F00210546 /* WGHomeFloorContentCountryItem.m in Sources */,
@@ -3051,6 +3233,7 @@
 				BE6CC1AF1E294036003755FF /* WGHomeFloorGoodColumnCell.m in Sources */,
 				BE6CC1BB1E29412F003755FF /* WGHomeFloorGoodGridItemCell.m in Sources */,
 				BEA374AB1E3481690054B8E6 /* WGClassifyDetail.m in Sources */,
+				BECBE3101E87C43800ADAD6C /* WGAsiaViewController.m in Sources */,
 				BEB2D9591DFBED1500F2E74B /* WGApplication.m in Sources */,
 				BE63A6EB1E7BBE8000F77282 /* WGOrderListItem.m in Sources */,
 				BE6BE8F01E7F912300A081BA /* WGCommitOrderViewController.m in Sources */,
@@ -3064,6 +3247,7 @@
 				BE9F93191E6AED4A0051B054 /* WGHomeTabTitleRequest.m in Sources */,
 				BE58BC801E49C62F00B4D2E1 /* WGBindThirdPartyViewController.m in Sources */,
 				BE83BB1E1E23E233002F3BCC /* WGHome.m in Sources */,
+				BECBE3061E87BB9300ADAD6C /* WGCommonViewController+Segment.m in Sources */,
 				BE6229EA1E765BE6002BFEDB /* WGGoodDetailRequest.m in Sources */,
 				BE62E4631DF937F8004510A5 /* AppDelegate+UI.m in Sources */,
 				BE6BE90F1E7FA80300A081BA /* WGCommitOrderLookMoreCell.m in Sources */,

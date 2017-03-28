@@ -19,7 +19,7 @@
 @implementation WGHomeSliderClassifyHeaderView
 
 - (void)loadSubviews {
-    _imageView = [[JHImageView alloc] initWithFrame:CGRectMake(kAppAdaptWidth(16), kAppAdaptWidth(12), kAppAdaptWidth(24), kAppAdaptWidth(24))];
+    _imageView = [[JHImageView alloc] initWithFrame:CGRectMake(kAppAdaptWidth(12), kAppAdaptWidth(22), kAppAdaptWidth(8), kAppAdaptWidth(4))];
     _imageView.image = [UIImage imageNamed:@"slider_arr"];
     _imageView.transform = CGAffineTransformMakeRotation(-M_PI/2);
     [self.contentView addSubview:_imageView];

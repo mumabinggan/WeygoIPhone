@@ -15,7 +15,7 @@
     if ([@"goods" isEqualToString:propertyName]) {
         return [WGShopCartGoodItem class];
     }
-    return nil;
+    return [super classForArray:propertyName];
 }
 
 @end

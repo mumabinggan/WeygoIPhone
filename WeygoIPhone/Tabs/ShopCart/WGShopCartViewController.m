@@ -82,6 +82,7 @@
 }
 
 - (void)initSubView {
+    [super initSubView];
     JHView *contentView = [[JHView alloc] initWithFrame:self.view.bounds];
     contentView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:contentView];
@@ -91,7 +92,7 @@
     _tableView.delegate = self;
     _tableView.refreshDelegate = self;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    _tableView.contentInset = UIEdgeInsetsMake(-35, 0, -35, 0);
+    //_tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
     _tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
     [contentView addSubview:_tableView];
     
@@ -157,6 +158,14 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return kAppAdaptHeight(124);
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 0.5;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 0.5;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

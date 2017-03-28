@@ -32,6 +32,7 @@
     self.navigationItem.title = self.title;
     
     // Clear all navigation item properties
+    self.navigationItem.backBarButtonItem = nil;
     self.navigationItem.titleView = nil;
     self.navigationItem.leftBarButtonItem = nil;
     self.navigationItem.leftBarButtonItems = nil;

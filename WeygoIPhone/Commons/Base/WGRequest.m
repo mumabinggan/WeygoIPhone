@@ -18,12 +18,20 @@
     return self;
 }
 
+- (NSDictionary *)headers {
+    return nil;
+}
+
+- (NSSet *)acceptContentTypes {
+    return [NSSet setWithObjects:@"text/html",@"text/plain", nil];
+}
+
 - (NSString *)url {
     return [NSString stringWithFormat:@"%@://%@/%@/%@%@", [self scheme], [self host], [self userPath], [self api], [self apiSuffix]];
 }
 
 - (NSString *)host {
-    return @"weygo3.cloudhy.com";
+    return @"delong6688.develop.weygo.com";
 }
 
 - (NSString *)userPath {
@@ -50,7 +58,8 @@
             [returnString appendString:dictionary[key]];
         }
     }
-    return [NSString stringWithFormat:@"sign=%@&___store=%@", [returnString md5], @"mobileitaly"];;
+    return [NSString stringWithFormat:@"sign=%@", [returnString md5]];
+    //return [NSString stringWithFormat:@"sign=%@&___store=%@", [returnString md5], @"italy"];
 }
 
 @end

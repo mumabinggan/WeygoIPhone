@@ -6,8 +6,8 @@
 //  Copyright © 2017年 weygo.com. All rights reserved.
 //
 
-#import "WGCallBaseRequest.h"
+#import "WGRequest.h"
 
-@interface WGBaseServiceRequest : WGCallBaseRequest
+@interface WGBaseServiceRequest : WGRequest
 
 @end

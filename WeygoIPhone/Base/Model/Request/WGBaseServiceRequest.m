@@ -10,12 +10,8 @@
 
 @implementation WGBaseServiceRequest
 
-- (NSString *)pathName {
-    return @"base";
-}
-
-- (NSArray *)parameterValueArray {
-    return @[@"f1db8542447477960c3336b0fe4bb78f", self.pathName, [NSNull null]];
+- (NSString *)api {
+    return @"app/baseService?";
 }
 
 @end

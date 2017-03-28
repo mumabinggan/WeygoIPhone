@@ -6,8 +6,10 @@
 //  Copyright © 2017年 weygo.com. All rights reserved.
 //
 
-#import "WGCallBaseRequest.h"
+#import "WGRequest.h"
 
-@interface WGClassifyRequest : WGCallBaseRequest
+@interface WGClassifyRequest : WGRequest
+
+@property (nonatomic, assign) int is_hot;
 
 @end

@@ -13,8 +13,16 @@
 
 @implementation WGHomeTabContentViewController (Request)
 
-- (void)loadData:(JHObject *)object {
-
+- (void)loadData {
+    if (self.type == WGConfigContentTypeHome) {
+        [self loadHomeTabTitles];
+    }
+    else if (self.type == WGConfigContentTypeBenefit) {
+        [self loadBenefitTabTitles];
+    }
+    else if (self.type == WGConfigContentTypeAsia) {
+        [self loadAsiaTabTitles];
+    }
 }
 
 - (void)handleLoadData:(WGResponse *)response refresh:(BOOL)refresh {
@@ -22,10 +30,9 @@
 }
 
 - (void)loadHomeTabTitles {
-    return;
     WGHomeTabTitleRequest *request = [[WGHomeTabTitleRequest alloc] init];
     __weak typeof(self) weakSelf = self;
-    [self get:request forResponseClass:[WGHomeTabTitleResponse class] success:^(JHResponse *response) {
+    [self post:request forResponseClass:[WGHomeTabTitleResponse class] success:^(JHResponse *response) {
         [weakSelf handleHomeTabTitles:(WGHomeTabTitleResponse *)response];
     } failure:^(NSError *error) {
         [weakSelf showWarningMessage:kStr(@"Request Failed")];
@@ -39,6 +46,14 @@
     else {
         [self showWarningMessage:response.message];
     }
+}
+
+- (void)loadBenefitTabTitles {
+
+}
+
+- (void)loadAsiaTabTitles {
+
 }
 
 //- (void)requestArticleDetail {

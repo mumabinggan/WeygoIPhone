@@ -19,7 +19,7 @@
     if ([@"classifyArray" isEqualToString:propertyName]) {
         return [WGClassifyItem class];
     }
-    return nil;
+    return [super classForArray:propertyName];
 }
 
 - (BOOL)hasSelected {

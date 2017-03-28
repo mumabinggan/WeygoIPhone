@@ -7,7 +7,15 @@
 //
 
 #import "WGTabViewController.h"
+#import "WGSegmentView.h"
 
 @interface WGTabBenefitViewController : WGTabViewController
+{
+    WGSegmentView *_titleSegmentView;
+    JHScrollView *_contentsScrollView;
+    
+    NSMutableDictionary *_tabContentMDictionary;
+    //TWRefreshCollectionView *_collectionView;
+}
 
 @end
