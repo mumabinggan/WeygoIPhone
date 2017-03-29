@@ -19,10 +19,7 @@
 
 - (void)loadBaseServiceOnCompletion:(void (^)(WGBaseServiceResponse *))completion;
 
-- (void)loadSessionOnCompletion:(void (^)(WGSessionResponse *))completion;
-
-//for test
-//- (void)loadClassifyOnCompletion:(void (^)(WGSessionResponse *))completion;
+- (void)loadSliderResponseOnCompletion:(void (^)(WGHomeSliderResponse *))completion;
 
 - (void)loadImageVerificationCodeOnCompletion:(void (^)(WGImageVerificationCodeResponse *))completion;
 

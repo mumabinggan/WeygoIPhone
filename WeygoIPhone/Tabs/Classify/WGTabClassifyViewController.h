@@ -13,4 +13,6 @@
     NSArray *_data;
 }
 
+- (void)refreshUI;
+
 @end

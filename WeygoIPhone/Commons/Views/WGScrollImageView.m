@@ -7,6 +7,7 @@
 //
 
 #import "WGScrollImageView.h"
+#import "WGPageControl.h"
 
 @interface WGScrollImageView ()
 {
@@ -55,9 +56,9 @@
     _scrollView.showsHorizontalScrollIndicator = NO;
     [self addSubview:_scrollView];
 
-    _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, self.height - 30, self.width, 20)];
-    _pageControl.currentPageIndicatorTintColor = [UIColor greenColor];
-    _pageControl.pageIndicatorTintColor = [UIColor blackColor];
+    _pageControl = [[WGPageControl alloc] initWithFrame:CGRectMake(0, self.height - 30, 320, 20)];
+    _pageControl.currentPageIndicatorTintColor = kHRGBA(0xFFFFFF, 0.5);
+    _pageControl.pageIndicatorTintColor = kHRGBA(0xFFFFFF, 0.5);
     _pageControl.hidesForSinglePage = YES;
 //    _pageControl.center = CGPointMake(self.width / 2, _scrollView.height - 20);
 //    _pageControl.bounds = CGRectMake(0, 0, self.width, 20);
@@ -88,6 +89,7 @@
     _scrollView.contentSize = CGSizeMake((newImageArray.count) * _scrollView.width, _scrollView.height);
     
     _pageControl.numberOfPages = imageArray.count;
+    [_pageControl setNumberOfPages:imageArray.count];
     frame = _pageControl.frame;
     frame.size.width = self.width;
     //_pageControl.frame = frame;

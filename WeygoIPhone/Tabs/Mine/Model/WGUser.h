@@ -24,7 +24,7 @@
 
 @property (nonatomic, assign) int sex;  //1 : 男; 2 : 女
 
-@property (nonatomic, assign) double birth;
+@property (nonatomic, strong) NSString *birth;
 
 @property (nonatomic, strong) NSString *tax;
 

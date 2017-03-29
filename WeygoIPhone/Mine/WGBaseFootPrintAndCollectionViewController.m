@@ -9,11 +9,10 @@
 #import "WGBaseFootPrintAndCollectionViewController.h"
 #import "WGHomeFloorContentGoodItem.h"
 #import "WGHomeFloorGoodListItemCell.h"
+#import "WGGoodDetailViewController.h"
 
 @interface WGBaseFootPrintAndCollectionViewController ()
-{
-    TWRefreshTableView *_tableView;
-}
+
 @end
 
 @interface WGBaseFootPrintAndCollectionViewController (TableViewDelegate) <UITableViewDelegate, UITableViewDataSource, TWTableViewRefreshingDelegate>
@@ -25,37 +24,40 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self loadListResponse:YES pulling:NO];
 }
 
 - (void)initData {
+    _dataMArray = [[NSMutableArray alloc] init];
     WGHomeFloorContentGoodItem *item = [[WGHomeFloorContentGoodItem alloc] init];
     item.name = @"fasdfasdfasdfasdf";
     item.pictureURL = @"";
     item.chineseName = @"郑渊谦";
     item.briefDescription = @"asdfasdfasdfasdfasdfas";
-    item.price = 932.32;
-    item.currentPrice = 322.23;
+    item.price = @"932.32";
+    item.currentPrice = @"322.23";
     
     WGHomeFloorContentGoodItem *item1 = [[WGHomeFloorContentGoodItem alloc] init];
     item1.name = @"sadfas";
     item1.pictureURL = @"";
     item1.chineseName = @"郑渊谦";
     item1.briefDescription = @"asdfasdfasdfasdfasdfas";
-    item1.price = 932.32;
-    item1.currentPrice = 322.23;
+    item1.price = @"932.32";
+    item1.currentPrice = @"322.23";
     
     WGHomeFloorContentGoodItem *item2 = [[WGHomeFloorContentGoodItem alloc] init];
     item2.name = @"zhengasdfl";
     item2.pictureURL = @"";
     item2.chineseName = @"郑渊谦";
     item2.briefDescription = @"asdfasdfasdfasdfasdfas";
-    item2.price = 932.32;
-    item2.currentPrice = 122.23;
+    item2.price = @"932.32";
+    item2.currentPrice = @"122.23";
     
     _dataMArray = [NSMutableArray arrayWithArray:@[item, item1, item2]];
 }
 
 - (void)initSubView {
+    [super initSubView];
     JHView *contentView = [[JHView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:contentView];
     
@@ -72,12 +74,20 @@
     [contentView addSubview:_tableView];
 }
 
+- (void)refreshUI {
+    [_tableView reloadData];
+}
+
 - (void)touchShopCartBtn:(id)sender {
     
 }
 
 - (void)handleDeleteIndexPath:(NSIndexPath *)indexPath {
 
+}
+
+- (void)loadListResponse:(BOOL)refresh pulling:(BOOL)pulling {
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -113,7 +123,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     WGHomeFloorContentGoodItem *item = _dataMArray[indexPath.row];
-    
+    WGGoodDetailViewController *vc = [[WGGoodDetailViewController alloc] init];
+    vc.goodId = item.id;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -129,11 +141,11 @@
 }
 
 - (void)beginRefreshHeader:(TWRefreshTableView *)tableView {
-    
+    [self loadListResponse:YES pulling:YES];
 }
 
 - (void)beginRefreshFooter:(TWRefreshTableView *)tableView {
-    
+    [self loadListResponse:NO pulling:YES];
 }
 
 @end

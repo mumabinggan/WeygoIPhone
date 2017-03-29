@@ -10,4 +10,6 @@
 
 @interface WGCollectGoodResponse : WGResponse
 
+@property (nonatomic, strong) NSString *data;
+
 @end

@@ -95,39 +95,39 @@
     
     WGOrderGoodItem *goodItem = [[WGOrderGoodItem alloc] init];
     goodItem.number = 12;
-    goodItem.orderPrice = 123.32;
-    goodItem.orderCurrentPrice = 54.23;
-    goodItem.orderReducePrice = 43.23;
+    goodItem.orderPrice = @"123.32";
+    goodItem.orderCurrentPrice = @"54.23";
+    goodItem.orderReducePrice = @"43.23";
     goodItem.name = @"fasdfasdfasdfasdf";
     goodItem.pictureURL = @"";
     goodItem.chineseName = @"郑渊谦";
     goodItem.briefDescription = @"asdfasdfasdfasdfasdfas";
-    goodItem.price = 932.32;
-    goodItem.currentPrice = 322.23;
+    goodItem.price = @"932.32";
+    goodItem.currentPrice = @"322.23";
     
     WGOrderGoodItem *goodItem1 = [[WGOrderGoodItem alloc] init];
     goodItem1.number = 1;
-    goodItem1.orderPrice = 123.32;
-    goodItem1.orderCurrentPrice = 54.23;
-    goodItem1.orderReducePrice = 43.23;
+    goodItem1.orderPrice = @"123.32";
+    goodItem1.orderCurrentPrice = @"54.23";
+    goodItem1.orderReducePrice = @"43.23";
     goodItem1.name = @"sadfas";
     goodItem1.pictureURL = @"";
     goodItem1.chineseName = @"郑渊谦";
     goodItem1.briefDescription = @"asdfasdfasdfasdfasdfas";
-    goodItem1.price = 932.32;
-    goodItem1.currentPrice = 322.23;
+    goodItem1.price = @"932.32";
+    goodItem1.currentPrice = @"322.23";
     
     WGOrderGoodItem *goodItem2 = [[WGOrderGoodItem alloc] init];
     goodItem1.number = 4;
-    goodItem2.orderPrice = 123.32;
-    goodItem2.orderCurrentPrice = 54.23;
-    goodItem2.orderReducePrice = 43.23;
+    goodItem2.orderPrice = @"123.32";
+    goodItem2.orderCurrentPrice = @"54.23";
+    goodItem2.orderReducePrice = @"43.23";
     goodItem2.name = @"zhengasdfl";
     goodItem2.pictureURL = @"";
     goodItem2.chineseName = @"郑渊谦";
     goodItem2.briefDescription = @"asdfasdfasdfasdfasdfas";
-    goodItem2.price = 932.32;
-    goodItem2.currentPrice = 122.23;
+    goodItem2.price = @"932.32";
+    goodItem2.currentPrice = @"122.23";
     
     _orderDetail.goods = @[goodItem, goodItem1, goodItem2];
     

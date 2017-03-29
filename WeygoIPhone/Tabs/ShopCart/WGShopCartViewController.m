@@ -42,41 +42,41 @@
     goodItem.name = @"香蕉";
     goodItem.briefDescription = @"导航条可以看做是self.navigationController导航控制器的一个属";
     goodItem.pictureURL = @"http://www.pp3.cn/uploads/201609/2016091606.jpg";
-    goodItem.price = 9844.99;
-    goodItem.reducePrice = 244.99;
-    goodItem.price = 8939.99;
+    goodItem.price = @"9844.99";
+    goodItem.reducePrice = @"244.99";
+    goodItem.price = @"8939.99";
     
     WGShopCartGoodItem *goodItem2 = [[WGShopCartGoodItem alloc] init];
     goodItem2.name = @"苹果";
     goodItem2.briefDescription = @"导航条可以看做是self.navigationController导航控制器的一个属";
     goodItem2.pictureURL = @"http://www.pp3.cn/uploads/201609/2016091606.jpg";
-    goodItem2.price = 1844.99;
-    goodItem2.reducePrice = 544.99;
-    goodItem2.price = 6939.99;
+    goodItem2.price = @"1844.99";
+    goodItem2.reducePrice = @"544.99";
+    goodItem2.price = @"6939.99";
     
     WGShopCartGoodItem *goodItem3 = [[WGShopCartGoodItem alloc] init];
     goodItem3.name = @"梨";
     goodItem3.briefDescription = @"导航条可以看做是self.navigationController导航控制器的一个属";
     goodItem3.pictureURL = @"http://www.pp3.cn/uploads/201609/2016091606.jpg";
-    goodItem3.price = 1844.99;
-    goodItem3.reducePrice = 544.99;
-    goodItem3.price = 6939.99;
+    goodItem3.price = @"1844.99";
+    goodItem3.reducePrice = @"544.99";
+    goodItem3.price = @"6939.99";
     
     WGShopCartGoodItem *goodItem4 = [[WGShopCartGoodItem alloc] init];
     goodItem4.name = @"桔子";
     goodItem4.briefDescription = @"导航条可以看做是self.navigationController导航控制器的一个属";
     goodItem4.pictureURL = @"http://www.pp3.cn/uploads/201609/2016091606.jpg";
-    goodItem4.price = 1844.99;
-    goodItem4.reducePrice = 544.99;
-    goodItem4.price = 6939.99;
+    goodItem4.price = @"1844.99";
+    goodItem4.reducePrice = @"544.99";
+    goodItem4.price = @"6939.99";
     
     WGShopCartGoodItem *goodItem5 = [[WGShopCartGoodItem alloc] init];
     goodItem5.name = @"西瓜";
     goodItem5.briefDescription = @"导航条可以看做是self.navigationController导航控制器的一个属";
     goodItem5.pictureURL = @"http://www.pp3.cn/uploads/201609/2016091606.jpg";
-    goodItem5.price = 1844.99;
-    goodItem5.reducePrice = 544.99;
-    goodItem5.price = 6939.99;
+    goodItem5.price = @"1844.99";
+    goodItem5.reducePrice = @"544.99";
+    goodItem5.price = @"6939.99";
     
     _data.goods = @[goodItem, goodItem2, goodItem3, goodItem4, goodItem5];
 }

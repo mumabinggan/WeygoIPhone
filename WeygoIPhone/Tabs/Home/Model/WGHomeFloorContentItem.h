@@ -39,11 +39,11 @@ typedef NS_ENUM(NSInteger, WGHomeFloorItemType) {
 
 @property (nonatomic, assign) float rating;
 
-@property (nonatomic, assign) float price;
+@property (nonatomic, strong) NSString *price;
 
-@property (nonatomic, assign) float reducePrice;
+@property (nonatomic, strong) NSString *reducePrice;
 
-@property (nonatomic, assign) float currentPrice;
+@property (nonatomic, strong) NSString *currentPrice;
 
 @property (nonatomic, assign) float discount;
 

@@ -47,7 +47,7 @@
 - (void)showWithData:(WGHomeFloorContentGoodItem *)object {
     [_imageView setImageWithURL:[NSURL URLWithString:object.pictureURL] placeholderImage:kHomeGoodColumnPlaceholderImage options:JHWebImageOptionsRefreshCached];
     _nameLabel.text = object.name;
-    _currentPriceLabel.text = [NSString stringWithFormat:kStr(@"Price With Unit"), object.currentPrice];
+    _currentPriceLabel.text = object.currentPrice;
 }
 
 @end

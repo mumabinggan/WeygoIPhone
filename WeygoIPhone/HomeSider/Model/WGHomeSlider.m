@@ -22,4 +22,8 @@
     return [super classForArray:propertyName];
 }
 
++ (NSDictionary *)convertKeyMapper {
+    return @{@"classifys" : @"classify"};
+}
+
 @end

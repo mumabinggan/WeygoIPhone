@@ -14,10 +14,6 @@
 
 @property (nonatomic, strong, readonly) NSString *sessionKey;
 
-@property (nonatomic, strong) NSString *currentPostCode;
-
-@property (nonatomic, strong) WGUser *user;
-
 //User Info
 - (BOOL)isLogined;
 
@@ -28,6 +24,14 @@
 - (NSString *)userAvatar;
 
 - (NSString *)userName;
+
+- (void)setName:(NSString *)name;        //名
+- (void)setSurname:(NSString *)surname;
+- (void)setSex:(int)sex;
+- (void)setTax:(NSString *)tax;
+- (void)setEmail:(NSString *)email;
+- (void)setMobile:(NSString *)mobile;
+- (void)setBirth:(NSString *)birth;
 
 //Local Shop Cart
 - (void)addGoodToLocalCart:(WGGoodInLocalCart *)good;

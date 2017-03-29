@@ -10,4 +10,8 @@
 
 @implementation WGGoodDetailRequest
 
+- (NSString *)api {
+    return @"products/detail?";
+}
+
 @end

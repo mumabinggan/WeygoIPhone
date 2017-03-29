@@ -84,7 +84,7 @@
 
 - (void)touchLikeBtn:(JHButton *)sender {
     if ([WGApplication sharedApplication].isLogined) {
-        [self requestCollectGood:!_goodDetail.hasFavorited];
+        [self requestCollectGood:(_goodDetail.hasFavorited == 0)];
     }
     else {
         _loginType = WGLoginTypeGoodDetailFavorite;

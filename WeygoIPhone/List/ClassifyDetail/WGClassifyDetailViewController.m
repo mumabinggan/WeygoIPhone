@@ -91,14 +91,15 @@
         WGHomeFloorContentGoodItem *subItem = [[WGHomeFloorContentGoodItem alloc] init];
         subItem.name = [NSString stringWithFormat:@"name_%d", num];
         subItem.pictureURL = @"http://img1.touxiang.cn/uploads/20131203/03-073442_102.jpg";
-        subItem.price = 98.32;
-        subItem.currentPrice = 43.32;
+        subItem.price = @"98.32";
+        subItem.currentPrice = @"43.32";
         [subMArray addObject:subItem];
     }
     return subMArray;
 }
 
 - (void)initSubView {
+    [super initSubView];
     JHView *contentView = [[JHView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:contentView];
     

@@ -73,11 +73,11 @@
     if (item) {
         [_itemView showWithData:item];
         _countView.value = [NSString stringWithFormat:kStr(@"Order Good Number"), item.number];
-        NSString *currentPrice = [NSString stringWithFormat:@"€%.2f", item.orderCurrentPrice];
+        NSString *currentPrice = item.orderCurrentPrice;
         _totalLabel.text = [NSString stringWithFormat:kStr(@"Order Pay Totale"), item.orderCurrentPrice];
         [_totalLabel setPartString:currentPrice attributes:@{NSForegroundColorAttributeName : WGAppBaseColor}];
-        _reduceLabel.text = [NSString stringWithFormat:@"€%.2f", item.orderReducePrice];
-        _priceLabel.attributedText = [[NSString stringWithFormat:@"€%.2f", item.orderPrice] addMidline];
+        _reduceLabel.text = item.orderReducePrice;
+        _priceLabel.attributedText = [item.orderPrice addMidline];
     }
     
 }

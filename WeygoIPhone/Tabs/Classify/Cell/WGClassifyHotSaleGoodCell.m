@@ -31,7 +31,6 @@
     
     _imageView = [[JHImageView alloc] initWithFrame:CGRectMake(0, 0, kAppAdaptWidth(199), kAppAdaptHeight(128))];
     _imageView.contentMode = UIViewContentModeScaleToFill;
-    _imageView.backgroundColor = kGreenColor;
     [contentView addSubview:_imageView];
     
     _hotNumberImageView = [[JHImageView alloc] initWithFrame:CGRectMake(0, 0, kAppAdaptWidth(48), kAppAdaptWidth(48))];
@@ -62,8 +61,8 @@
     [_imageView setImageWithURL:[NSURL URLWithString:object.pictureURL] placeholderImage:kHomeGoodColumnPlaceholderImage options:JHWebImageOptionsRefreshCached];
     _hotNumberImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"hotsale_icon_%ld", object.number]];
     _nameLabel.text = object.name;
-    _currentPriceLabel.text = [NSString stringWithFormat:kStr(@"Price With Unit"), object.currentPrice];
-    _reducePriceLabel.attributedText = [[NSString stringWithFormat:kStr(@"Price With Unit"), object.reducePrice] addMidline];
+    _currentPriceLabel.text = object.currentPrice;
+    _reducePriceLabel.attributedText = [object.reducePrice addMidline];
 }
 
 @end

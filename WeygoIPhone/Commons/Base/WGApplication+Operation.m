@@ -15,10 +15,6 @@
     return [self user].sectionKey;
 }
 
-- (NSString *)currentPostCode {
-    return self.user.cap;
-}
-
 - (BOOL)isLogined {
     return ([self user] != nil);
 }
@@ -50,8 +46,9 @@
 }
 
 - (NSString *)userName {
-    if ([self user]) {
-        return [self user].name;
+    WGUser *user = [self user];
+    if (user) {
+        return [NSString stringWithFormat:@"%@%@", user.surname, user.name];
     }
     return nil;
 }
@@ -73,8 +70,80 @@
     }
 }
 
+- (void)setCurrentPostCode:(NSString *)currentPostCode {
+    if ([self isLogined]) {
+        _user.cap = currentPostCode;
+        [[JHLocalSettings sharedSettings] setSettings:_user forKey:kLocalSettingsKeyUser];
+    }
+    else {
+        [[JHLocalSettings sharedSettings] setSettings:currentPostCode forKey:kLocalSettingsKeyUnLoginCap];
+    }
+    _currentPostCode = currentPostCode;
+}
+
+- (NSString *)currentPostCode {
+    if ([NSString isNullOrEmpty:_currentPostCode]) {
+        if ([self isLogined]) {
+            _currentPostCode = self.user.cap;
+        }
+        else {
+            _currentPostCode = [[JHLocalSettings sharedSettings] getSettingsForKey:kLocalSettingsKeyUnLoginCap];
+        }
+    }
+    return _currentPostCode;
+}
+
+- (void)setName:(NSString *)name {
+    if ([self isLogined]) {
+        _user.name = name;
+    }
+    [[JHLocalSettings sharedSettings] setSettings:_user forKey:kLocalSettingsKeyUser];
+}
+
+- (void)setSurname:(NSString *)surname {
+    if ([self isLogined]) {
+        _user.surname = surname;
+    }
+    [[JHLocalSettings sharedSettings] setSettings:_user forKey:kLocalSettingsKeyUser];
+}
+
+- (void)setSex:(int)sex {
+    if ([self isLogined]) {
+        _user.sex = sex;
+    }
+    [[JHLocalSettings sharedSettings] setSettings:_user forKey:kLocalSettingsKeyUser];
+}
+
+- (void)setTax:(NSString *)tax {
+    if ([self isLogined]) {
+        _user.tax = tax;
+    }
+    [[JHLocalSettings sharedSettings] setSettings:_user forKey:kLocalSettingsKeyUser];
+}
+
+- (void)setEmail:(NSString *)email {
+    if ([self isLogined]) {
+        _user.email = email;
+    }
+    [[JHLocalSettings sharedSettings] setSettings:_user forKey:kLocalSettingsKeyUser];
+}
+
+- (void)setMobile:(NSString *)mobile {
+    if ([self isLogined]) {
+        _user.mobile = mobile;
+    }
+    [[JHLocalSettings sharedSettings] setSettings:_user forKey:kLocalSettingsKeyUser];
+}
+
+- (void)setBirth:(NSString *)birth {
+    if ([self isLogined]) {
+        _user.birth = birth;
+    }
+    [[JHLocalSettings sharedSettings] setSettings:_user forKey:kLocalSettingsKeyUser];
+}
+
 - (void)reset {
-    _user = nil;
+    self.user = nil;
     self.currentPostCode = nil;
 }
 

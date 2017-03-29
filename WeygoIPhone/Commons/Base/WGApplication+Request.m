@@ -8,7 +8,7 @@
 
 #import "WGApplication+Request.h"
 #import "JHNetworkManager.h"
-#import "WGClassifyRequest.h"
+#import "WGHomeSliderRequest.h"
 
 @implementation WGApplication (Request)
 
@@ -33,32 +33,37 @@
     }
 }
 
-//- (void)loadClassifyOnCompletion:(void (^)(WGSessionResponse *))completion {
-//    if (_loadingSessionResponse) {
-//        return;
-//    }
-//    _loadingSessionResponse = YES;
-//    __weak id weakSelf = self;
-//    WGClassifyRequest *request = [[WGClassifyRequest alloc] init];
-//    [[JHNetworkManager sharedManager] get:request forResponseClass:[WGSessionResponse class] success:^(JHResponse *response) {
-//        _loadingSessionResponse = NO;
-//        [weakSelf handleClassifyResponse:(WGSessionResponse *)response];
-//        if (completion) {
-//            completion((WGSessionResponse *)response);
-//        }
-//    } failure:^(NSError *error) {
-//        _loadingSessionResponse = NO;
-//        if (completion) {
-//            completion(nil);
-//        }
-//    }];
-//}
-//
-//- (void)handleClassifyResponse:(WGSessionResponse *)response {
-//    if ([response success]) {
-//        _sessionResponse = response;
-//    }
-//}
+- (void)loadSliderResponseOnCompletion:(void (^)(WGHomeSliderResponse *))completion {
+    if (_sliderResponse) {
+        if (completion) {
+            completion(_sliderResponse);
+        }
+    }
+    if (_loadingSliderResponse) {
+        return;
+    }
+    _loadingSliderResponse = YES;
+    __weak id weakSelf = self;
+    WGHomeSliderRequest *request = [[WGHomeSliderRequest alloc] init];
+    [[JHNetworkManager sharedManager] get:request forResponseClass:[WGHomeSliderResponse class] success:^(JHResponse *response) {
+        _loadingSliderResponse = NO;
+        [weakSelf handleSliderResponse:(WGHomeSliderResponse *)response];
+        if (completion) {
+            completion((WGHomeSliderResponse *)response);
+        }
+    } failure:^(NSError *error) {
+        _loadingSliderResponse = NO;
+        if (completion) {
+            completion(nil);
+        }
+    }];
+}
+
+- (void)handleSliderResponse:(WGHomeSliderResponse *)response {
+    if ([response success]) {
+        _sliderResponse = response;
+    }
+}
 
 - (void)loadImageVerificationCodeOnCompletion:(void (^)(WGImageVerificationCodeResponse *))completion {
     

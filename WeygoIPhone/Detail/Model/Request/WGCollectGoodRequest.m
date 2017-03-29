@@ -10,4 +10,8 @@
 
 @implementation WGCollectGoodRequest
 
+- (NSString *)api {
+    return @"wishlist/add?";
+}
+
 @end

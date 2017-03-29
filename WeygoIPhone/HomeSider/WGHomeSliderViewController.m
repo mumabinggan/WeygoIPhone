@@ -17,6 +17,15 @@
 #import "WGMessageCenterViewController.h"
 #import "WGApplication+Controller.h"
 #import "WGNavigationController.h"
+#import "WGMessageCenterViewController.h"
+#import "WGCouponListViewController.h"
+#import "WGOrderListViewController.h"
+#import "WGFootPrintViewController.h"
+#import "WGClassifyDetailViewController.h"
+
+//for test
+#import "WGGoodDetailViewController.h"
+#import "WGCollectionViewController.h"
 
 @interface WGHomeSliderViewController ()
 {
@@ -90,11 +99,16 @@
 
 - (void)handleOnMessageCenter {
     [[WGApplication sharedApplication] closeSideBarViewController];
-    //进入消息中心
-    WGMessageCenterViewController *vc = [[WGMessageCenterViewController alloc] init];
+    WGCollectionViewController *vcc = [[WGCollectionViewController alloc] init];
+    //vcc.goodId = 1591;
     UINavigationController *navc = [WGApplication sharedApplication].navigationController;
-    [navc pushViewController:vc animated:YES];
-    //[[WGApplication sharedApplication].navigationController pushViewController:vc animated:YES];
+    [navc pushViewController:vcc animated:YES];
+    return;
+//    [[WGApplication sharedApplication] closeSideBarViewController];
+//    //进入消息中心
+//    WGMessageCenterViewController *vc = [[WGMessageCenterViewController alloc] init];
+//    UINavigationController *navc = [WGApplication sharedApplication].navigationController;
+//    [navc pushViewController:vc animated:YES];
 }
 
 - (void)handleOnApplyHeaderView:(WGClassifyItem *)classify section:(NSInteger)section {
@@ -116,6 +130,15 @@
 
 - (void)refreshUI {
     [_tableView reloadData];
+}
+
+- (WGClassifyItem *)classifyWithSection:(NSInteger)section {
+    return _data.classifys[section - 2];
+}
+
+- (WGClassifyItem *)subClassifyWithIndexPath:(NSIndexPath *)indexPath {
+    WGClassifyItem *item = [self classifyWithSection:indexPath.section];
+    return item.allArray[indexPath.row];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -141,10 +164,8 @@
         return (_data.topics.count + 1)/2;
     }
     else {
-        WGClassifyItem *item = _data.classifys[section - 2];
-        NSInteger ss = (_selectedSection == section) ? item.subArray.count : 0;
-        DLog(@"---SS = %ld--%ld", ss, section);
-        return ss;
+        WGClassifyItem *item = [self classifyWithSection:section];
+        return (_selectedSection == section) ? item.allArray.count : 0;;
     }
 }
 
@@ -152,7 +173,7 @@
     if (section == 0) {
         return kAppAdaptHeight(112);
     }
-    if (section == 2) {
+    else if (section >= 2) {
         return kAppAdaptHeight(48);
     }
     return 0.0f;
@@ -212,7 +233,7 @@
         [headerView showWithData:nil];
     }
     if (section >= 2) {
-        WGObject *item = (_data.classifys[section - 2]);
+        WGObject *item = [self classifyWithSection:section];
         [headerView showWithData:item];
     }
     
@@ -253,35 +274,46 @@
         [cell showWithArray:array];
     }
     else {
-        NSInteger index = indexPath.section - 2;
-        WGClassifyItem *item = _data.classifys[index];
-        WGClassifyItem *subItem = item.subArray[indexPath.row];
+        WGClassifyItem *subItem = [self subClassifyWithIndexPath:indexPath];
         [cell showWithData:subItem];
     }
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [[WGApplication sharedApplication] closeSideBarViewController];
+    WGViewController *vc = nil;
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
             //弹出输入邮编
+            return;
         }
         else if (indexPath.row == 1) {
             //弹出订单
+            vc = [[WGOrderListViewController alloc] init];
         }
         else if (indexPath.row == 2) {
             //足迹
+            vc = [[WGFootPrintViewController alloc] init];
         }
         else if (indexPath.row == 3) {
             //优惠卷
+            vc = [[WGCouponListViewController alloc] init];
         }
         else if (indexPath.row == 4) {
             //消息
+            vc = [[WGMessageCenterViewController alloc] init];
         }
     }
-    if (indexPath.section == 2) {
+    if (indexPath.section >= 2) {
         //分类详情
+        WGClassifyDetailViewController *classifyDetailViewController = [[WGClassifyDetailViewController alloc] init];
+        classifyDetailViewController.classifyId = [self subClassifyWithIndexPath:indexPath].id;
+        vc = classifyDetailViewController;
     }
+    //进入消息中心
+    UINavigationController *navc = [WGApplication sharedApplication].navigationController;
+    [navc pushViewController:vc animated:YES];
 }
 
 @end

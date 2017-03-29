@@ -12,4 +12,6 @@
 
 - (void)requestHomeSlider;
 
+- (void)setData;
+
 @end

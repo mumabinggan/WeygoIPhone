@@ -10,4 +10,8 @@
 
 @implementation WGHomeSliderRequest
 
+- (NSString *)api {
+    return @"customer/leftMenus?";
+}
+
 @end

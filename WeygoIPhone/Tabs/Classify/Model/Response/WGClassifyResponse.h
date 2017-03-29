@@ -10,4 +10,6 @@
 
 @interface WGClassifyResponse : WGResponse
 
+@property (nonatomic, strong) NSArray *data;
+
 @end

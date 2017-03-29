@@ -7,7 +7,15 @@
 //
 
 #import "WGClassifyResponse.h"
+#import "WGClassifyItem.h"
 
 @implementation WGClassifyResponse
+
++ (Class)classForArray:(NSString *)propertyName {
+    if ([@"data" isEqualToString:propertyName]) {
+        return [WGClassifyItem class];
+    }
+    return [super classForArray:propertyName];
+}
 
 @end

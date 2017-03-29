@@ -37,6 +37,10 @@
     return pictureArray;
 }
 
+- (long long)favoritedId {
+    return _hasFavorited;
+}
+
 @end
 
 @implementation WGGoodDetailDesItem

@@ -50,7 +50,7 @@
 
 //Local Setting
 #define kLocalSettingsKeyUser   @"kLocalSettingsKeyUser"
-
+#define kLocalSettingsKeyUnLoginCap   @"kLocalSettingsKeyUnLoginCap"
 #define kLocalSettingsLocalCartGoods    @"kLocalSettingsLocalCartGoods"
 
 

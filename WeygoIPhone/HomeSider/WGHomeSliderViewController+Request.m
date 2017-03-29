@@ -14,15 +14,9 @@
 @implementation WGHomeSliderViewController (Request)
 
 - (void)requestHomeSlider {
-    [self setData];
-    return;
-    WGHomeSliderRequest *request = [[WGHomeSliderRequest alloc] init];
-    __weak id weakSelf = self;
-    [self post:request forResponseClass:[WGHomeSliderResponse class] success:^(JHResponse *response) {
-        [weakSelf handleHomeSliderResponse:(WGHomeSliderResponse *)response];
-    } failure:^(NSError *error) {
-        [weakSelf showWarningMessage:@""];
-        
+    WeakSelf;
+    [[WGApplication sharedApplication] loadSliderResponseOnCompletion:^(WGHomeSliderResponse *response) {
+        [weakSelf handleHomeSliderResponse:response];
     }];
 }
 
@@ -79,10 +73,14 @@
     response.code = @"1";
     response.data = data;
     [self handleHomeSliderResponse:response];
+    _data = response.data;
 }
 
 
 - (void)handleHomeSliderResponse:(WGHomeSliderResponse *)response {
+    if (!response) {
+        return;
+    }
     if (response.success) {
         _data = response.data;
         [self refreshUI];

@@ -42,13 +42,13 @@
     _nameLabel.text = good.name;
     CGSize size = [good.name returnSize:_nameLabel.font maxWidth:_nameLabel.width];
     _nameLabel.height = size.height;
-    NSString *currentPriceStr = [NSString stringWithFormat:kStr(@"Good Detail Price With .2 Unit"), good.currentPrice];
+    NSString *currentPriceStr = good.currentPrice;
     _currentLabel.text = currentPriceStr;
     _currentLabel.y = _nameLabel.maxY + kAppAdaptHeight(8);
     size = [currentPriceStr returnSize:_currentLabel.font maxWidth:200];
     _currentLabel.width = size.width + kAppAdaptWidth(5);
     
-    NSString *priceStr = [NSString stringWithFormat:kStr(@"Good Detail Price With .2 Unit"), good.price];
+    NSString *priceStr = good.price;
     _priceLabel.attributedText = [priceStr addMidline];
     _priceLabel.x = _currentLabel.maxX + kAppAdaptWidth(10);
     _priceLabel.y = _currentLabel.y;
@@ -60,7 +60,7 @@
     height += kAppAdaptHeight(16);
     height += [good.name returnSize:kAppAdaptFontBold(16) maxWidth:kDeviceWidth - kAppAdaptWidth(30)].height;
     height += kAppAdaptHeight(8);
-    NSString *currentPriceStr = [NSString stringWithFormat:kStr(@"Good Detail Price With .2 Unit"), good.currentPrice];
+    NSString *currentPriceStr = good.currentPrice;
     height += [currentPriceStr returnSize:kAppAdaptFont(14) maxWidth:200].height;
     height += kAppAdaptHeight(16);
     return height;

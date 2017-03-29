@@ -6,8 +6,10 @@
 //  Copyright © 2017年 weygo.com. All rights reserved.
 //
 
-#import "WGRequest.h"
+#import "WGGuestRequest.h"
 
-@interface WGCollectGoodRequest : WGRequest
+@interface WGCollectGoodRequest : WGGuestRequest
+
+@property (nonatomic, assign) long long productId;
 
 @end

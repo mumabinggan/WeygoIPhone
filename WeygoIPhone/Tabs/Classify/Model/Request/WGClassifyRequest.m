@@ -14,8 +14,4 @@
     return @"catalogSearch/getCategories?";
 }
 
-- (NSString *)url {
-    return @"http://delong6688.develop.weygo.com/appservice/catalogSearch/getCategories?sign=77091032144e63276d0448ad0c3cb8dd";
-}
-
 @end

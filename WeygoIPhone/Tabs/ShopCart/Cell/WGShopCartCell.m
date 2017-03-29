@@ -77,14 +77,14 @@
     
     _briefDescribeLabel.text = _data.briefDescription;
     
-    NSString *currentPrice = [NSString stringWithFormat:kStr(@"Price With Unit"), _data.currentPrice];
+    NSString *currentPrice = _data.currentPrice;
     CGSize size = [currentPrice returnSize:_currentPriceLabel.font];
     _currentPriceLabel.text = currentPrice;
     CGRect frame = _currentPriceLabel.frame;
     frame.size.width = size.width;
     _currentPriceLabel.frame = frame;
     
-    NSString *price = [[NSString stringWithFormat:kStr(@"Price With Unit"), _data.price] addMidline].string;
+    NSString *price = [_data.price addMidline].string;
     size = [price returnSize:_priceLabel.font];
     _priceLabel.attributedText = [price addMidline];
     frame = _priceLabel.frame;
@@ -92,7 +92,7 @@
     frame.size.width = size.width;
     _priceLabel.frame = frame;
     
-    NSString *reduce = [NSString stringWithFormat:kStr(@"Price With Unit"), _data.currentPrice - _data.price];
+    NSString *reduce = _data.reducePrice;
     size = [reduce returnSize:_reduceLabel.font];
     frame = _reduceLabel.frame;
     frame.origin.x = _priceLabel.maxX + kAppAdaptWidth(8);

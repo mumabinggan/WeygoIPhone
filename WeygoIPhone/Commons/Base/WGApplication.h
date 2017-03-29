@@ -10,20 +10,27 @@
 #import "WGBaseServiceResponse.h"
 #import "WGUser.h"
 #import "MBProgressHUD.h"
+#import "WGHomeSliderResponse.h"
 
 @interface WGApplication : JHObject
 {
-    //Request
-    
-    
     //Operation
     WGUser *_user;
+    NSString *_currentPostCode;
+    
     WGBaseServiceInfo *_baseServiceInfo;
+    
+    BOOL _loadingSliderResponse;
+    WGHomeSliderResponse *_sliderResponse;
     
     //ShowView
     MBProgressHUD *HUD;
     JHView *_messageView;
 }
+
+@property (nonatomic, strong) WGUser *user;
+
+@property (nonatomic, strong) NSString *currentPostCode;
 
 + (WGApplication *)sharedApplication;
 

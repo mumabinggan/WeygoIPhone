@@ -12,10 +12,10 @@
 
 @property (nonatomic, assign) NSInteger number; //购买数量
 
-@property (nonatomic, assign) float orderCurrentPrice;
+@property (nonatomic, strong) NSString *orderCurrentPrice;
 
-@property (nonatomic, assign) float orderPrice;
+@property (nonatomic, strong) NSString *orderPrice;
 
-@property (nonatomic, assign) float orderReducePrice;
+@property (nonatomic, strong) NSString *orderReducePrice;
 
 @end

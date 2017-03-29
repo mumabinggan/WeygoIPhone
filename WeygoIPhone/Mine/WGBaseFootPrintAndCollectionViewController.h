@@ -11,6 +11,9 @@
 @interface WGBaseFootPrintAndCollectionViewController : WGViewController
 {
     NSMutableArray *_dataMArray;
+    TWRefreshTableView *_tableView;
 }
+
+- (void)refreshUI;
 
 @end

@@ -11,6 +11,9 @@
 #import "WGClassifyHotSaleGoodCell.h"
 #import "WGImageClassifyCell.h"
 #import "WGTextClassifyCell.h"
+#import "WGClassifyDetailViewController.h"
+#import "WGGoodDetailViewController.h"
+#import "WGTabClassifyViewController+Request.h"
 
 //for test
 #import "WGClassifyItem.h"
@@ -47,11 +50,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self loadClassify];
+    //[self setData];
 }
 
 - (void)initData {
     _currentSelectedIndex = 0;
-    
+}
+
+- (void)setData {
     WGClassifyItem *item = [[WGClassifyItem alloc] init];
     item.name = @"zhenguasdf";
     item.pictureURL = @"http://www.pp3.cn/uploads/201609/2016091012.jpg";
@@ -89,7 +96,8 @@
     
     _data = @[item, item2, item3, item4, item5, item6];
     
-    _subArray = ((WGClassifyItem *)_data[_currentSelectedIndex]).subArray;
+    //_subArray = ((WGClassifyItem *)_data[_currentSelectedIndex]).allArray;
+    [self refreshUI];
 }
 
 - (NSArray *)getGoodArray:(NSInteger)count {
@@ -98,8 +106,8 @@
         WGClassifyHotGoodItem *subItem = [[WGClassifyHotGoodItem alloc] init];
         subItem.name = [NSString stringWithFormat:@"name_%d", num];
         subItem.pictureURL = @"http://img1.touxiang.cn/uploads/20131203/03-073442_102.jpg";
-        subItem.price = 98.32;
-        subItem.currentPrice = 43.32;
+        subItem.price = @"98.32";
+        subItem.currentPrice = @"43.32";
         [subMArray addObject:subItem];
     }
     return subMArray;
@@ -113,6 +121,33 @@
         [subMArray addObject:subItem];
     }
     return subMArray;
+}
+
+- (void)refreshUI {
+    [self setSubArray];
+    [self setGoodArray];
+    [_firstTableView reloadData];
+    [_secondTableView reloadData];
+}
+
+- (void)setSubArray {
+    if (_data.count > _currentSelectedIndex) {
+        WGClassifyItem *item = _data[_currentSelectedIndex];
+        _subArray = item.allArray;
+    }
+    else {
+        _subArray = nil;
+    }
+}
+
+- (void)setGoodArray {
+    if (_data.count > _currentSelectedIndex) {
+        WGClassifyItem *item = _data[_currentSelectedIndex];
+        _goodsArray = item.goodArray;
+    }
+    else {
+        _goodsArray = nil;
+    }
 }
 
 - (void)initSubView {
@@ -252,18 +287,22 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if ([tableView isEqual:_firstTableView]) {
         _currentSelectedIndex = indexPath.row;
-        WGClassifyItem *item = _data[indexPath.row];
-        _subArray = item.subArray;
-        _goodsArray = item.goodArray;
-        [_secondTableView reloadData];
+        [self refreshUI];
     }
     else {
         if (indexPath.section == 0) {
-            
+            WGClassifyItem *item = _subArray[indexPath.row];
+            WGClassifyDetailViewController *vc = [[WGClassifyDetailViewController alloc] init];
+            vc.classifyId = item.id;
+            [self.navigationController pushViewController:vc animated:YES];
         }
-        else if (indexPath.section == 2) {
-            
+        else {
+            WGHomeFloorContentGoodItem *item = _goodsArray[indexPath.row];
+            WGGoodDetailViewController *vc = [[WGGoodDetailViewController alloc] init];
+            vc.goodId = item.id;
+            [self.navigationController pushViewController:vc animated:YES];
         }
+        
     }
 }
 

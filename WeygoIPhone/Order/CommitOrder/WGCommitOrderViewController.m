@@ -81,11 +81,11 @@
     result.payMethods = @[payMethod, payMethod2];
     
     WGSettlementConsumePrice *price = [[WGSettlementConsumePrice alloc] init];
-    price.totalPrice = 34.23;
-    price.currentTotalPrice = 5634.32;
-    price.reducePrice = 23.23;
-    price.deliverPrice = 3.23;
-    price.couponPrice = 23.323;
+    price.totalPrice = @"34.23";
+    price.currentTotalPrice = @"5634.32";
+    price.reducePrice = @"23.23";
+    price.deliverPrice = @"3.23";
+    price.couponPrice = @"23.323";
     
     result.price = price;
     
@@ -98,51 +98,51 @@
     
     WGOrderGoodItem *goodItem = [[WGOrderGoodItem alloc] init];
     goodItem.number = 12;
-    goodItem.orderPrice = 123.32;
-    goodItem.orderCurrentPrice = 54.23;
-    goodItem.orderReducePrice = 43.23;
+    goodItem.orderPrice = @"123.32";
+    goodItem.orderCurrentPrice = @"54.23";
+    goodItem.orderReducePrice = @"43.23";
     goodItem.name = @"fasdfasdfasdfasdf";
     goodItem.pictureURL = @"https://imgwater-test.oss.aliyuncs.com/b9831974f70a4108b2bdfcde5c241a22";
     goodItem.chineseName = @"郑渊谦";
     goodItem.briefDescription = @"asdfasdfasdfasdfasdfas";
-    goodItem.price = 932.32;
-    goodItem.currentPrice = 322.23;
+    goodItem.price = @"932.32";
+    goodItem.currentPrice = @"322.23";
     
     WGOrderGoodItem *goodItem1 = [[WGOrderGoodItem alloc] init];
     goodItem1.number = 1;
-    goodItem1.orderPrice = 123.32;
-    goodItem1.orderCurrentPrice = 54.23;
-    goodItem1.orderReducePrice = 43.23;
+    goodItem1.orderPrice = @"123.32";
+    goodItem1.orderCurrentPrice = @"54.23";
+    goodItem1.orderReducePrice = @"43.23";
     goodItem1.name = @"sadfas";
     goodItem1.pictureURL = @"https://imgwater-test.oss.aliyuncs.com/b9831974f70a4108b2bdfcde5c241a22";
     goodItem1.chineseName = @"郑渊谦";
     goodItem1.briefDescription = @"asdfasdfasdfasdfasdfas";
-    goodItem1.price = 932.32;
-    goodItem1.currentPrice = 322.23;
+    goodItem1.price = @"932.32";
+    goodItem1.currentPrice = @"322.23";
     
     WGOrderGoodItem *goodItem2 = [[WGOrderGoodItem alloc] init];
     goodItem2.number = 4;
-    goodItem2.orderPrice = 123.32;
-    goodItem2.orderCurrentPrice = 54.23;
-    goodItem2.orderReducePrice = 43.23;
+    goodItem2.orderPrice = @"123.32";
+    goodItem2.orderCurrentPrice = @"54.23";
+    goodItem2.orderReducePrice = @"43.23";
     goodItem2.name = @"zhengasdfl";
     goodItem2.pictureURL = @"https://imgwater-test.oss.aliyuncs.com/b9831974f70a4108b2bdfcde5c241a22";
     goodItem2.chineseName = @"郑渊谦";
     goodItem2.briefDescription = @"asdfasdfasdfasdfasdfas";
-    goodItem2.price = 932.32;
-    goodItem2.currentPrice = 122.23;
+    goodItem2.price = @"932.32";
+    goodItem2.currentPrice = @"122.23";
     
     WGOrderGoodItem *goodItem3 = [[WGOrderGoodItem alloc] init];
     goodItem3.number = 8;
-    goodItem3.orderPrice = 123.32;
-    goodItem3.orderCurrentPrice = 54.23;
-    goodItem3.orderReducePrice = 43.23;
+    goodItem3.orderPrice = @"123.32";
+    goodItem3.orderCurrentPrice = @"54.23";
+    goodItem3.orderReducePrice = @"43.23";
     goodItem3.name = @"zhengasdfl";
     goodItem3.pictureURL = @"https://imgwater-test.oss.aliyuncs.com/b9831974f70a4108b2bdfcde5c241a22";
     goodItem3.chineseName = @"郑渊谦";
     goodItem3.briefDescription = @"asdfasdfasdfasdfasdfas";
-    goodItem3.price = 932.32;
-    goodItem3.currentPrice = 122.23;
+    goodItem3.price = @"932.32";
+    goodItem3.currentPrice = @"122.23";
     
     result.goods = @[goodItem, goodItem1, goodItem2, goodItem3];
     

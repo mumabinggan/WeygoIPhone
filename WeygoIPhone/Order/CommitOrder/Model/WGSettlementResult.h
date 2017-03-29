@@ -56,15 +56,15 @@
 
 @interface WGSettlementConsumePrice : WGObject
 
-@property (nonatomic, assign) float totalPrice;
+@property (nonatomic, strong) NSString *totalPrice;
 
-@property (nonatomic, assign) float deliverPrice;
+@property (nonatomic, strong) NSString *deliverPrice;
 
-@property (nonatomic, assign) float couponPrice;
+@property (nonatomic, strong) NSString *couponPrice;
 
-@property (nonatomic, assign) float currentTotalPrice;
+@property (nonatomic, strong) NSString *currentTotalPrice;
 
-@property (nonatomic, assign) float reducePrice;
+@property (nonatomic, strong) NSString *reducePrice;
 
 @end
 

@@ -23,4 +23,7 @@
 //use for filter classify
 @property (nonatomic, assign) BOOL isSelected;
 
+//use for self
+@property (nonatomic, strong) NSArray *allArray;
+
 @end

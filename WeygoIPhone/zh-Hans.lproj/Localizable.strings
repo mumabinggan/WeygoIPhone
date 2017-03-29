@@ -153,6 +153,7 @@
 "Slider_Mine_MessageCenter" = "消息中心";
 "Slider_Mine_UnRegister" = "未登录";
 "Slider_Hello" = "您好，%@";
+"Slider_All" = "全部";
 
 //客服中心(未完成)
 "Live Chat" = "Live Chat";

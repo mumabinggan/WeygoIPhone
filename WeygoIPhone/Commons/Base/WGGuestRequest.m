@@ -13,7 +13,7 @@
 - (id)init {
     self = [super init];
     if (self) {
-        
+        _sessionKey = [WGApplication sharedApplication].user.sectionKey;
     }
     return self;
 }

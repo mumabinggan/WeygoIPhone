@@ -16,9 +16,9 @@
 
 @property (nonatomic, strong) NSString *name;
 
-@property (nonatomic, assign) float currentPrice;
+@property (nonatomic, strong) NSString *currentPrice;
 
-@property (nonatomic, assign) float price;
+@property (nonatomic, strong) NSString *price;
 
 @property (nonatomic, assign) int inStock;//	int	有无货(1,有货;0,无货) ;
 
@@ -32,10 +32,13 @@
 
 @property (nonatomic, strong) NSArray *recommendProduce;
 
-@property (nonatomic, assign) BOOL hasFavorited;
+@property (nonatomic, assign) long long hasFavorited; //0为没有收藏，>0为收藏并且为收藏 id
 
 //for self use
 @property (nonatomic, strong, readonly) NSArray *carouselFiguresPictureArray;
+
+//for self use
+@property (nonatomic, assign, readonly) long long favoritedId;
 
 @end
 

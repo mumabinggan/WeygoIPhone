@@ -7,7 +7,7 @@
 //
 
 #import "WGClassifyItem.h"
-#import "WGHomeFloorContentGoodItem.h"
+#import "WGClassifyHotGoodItem.h"
 
 @implementation WGClassifyItem
 
@@ -16,9 +16,22 @@
         return [WGClassifyItem class];
     }
     if ([@"goodArray" isEqualToString:propertyName]) {
-        return [WGHomeFloorContentGoodItem class];
+        return [WGClassifyHotGoodItem class];
     }
     return [super classForArray:propertyName];
+}
+
+- (NSArray *)allArray {
+    if (_allArray) {
+        return _allArray;
+    }
+    WGClassifyItem *totalItem = [[WGClassifyItem alloc] init];
+    totalItem.id = _id;
+    totalItem.name = kStr(@"Slider_All");
+    NSMutableArray *array = [[NSMutableArray alloc] init];
+    [array addObject:totalItem];
+    [array addObjectsFromArray:_subArray];
+    return array;
 }
 
 @end

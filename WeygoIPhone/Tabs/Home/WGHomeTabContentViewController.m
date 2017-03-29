@@ -300,8 +300,11 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    WGShopCartViewController *vc = [[WGShopCartViewController alloc] init];
+    WGGoodDetailViewController *vc = [[WGGoodDetailViewController alloc] init];
+    vc.goodId = 1591;
     [self.navigationController pushViewController:vc animated:YES];
+//    WGShopCartViewController *vc = [[WGShopCartViewController alloc] init];
+//    [self.navigationController pushViewController:vc animated:YES];
 //    WGSearchViewController *vc = [[WGSearchViewController alloc] init];
 //    [self.navigationController pushViewController:vc animated:YES];
 //    WGInvitationViewController *vc = [[WGInvitationViewController alloc] init];
