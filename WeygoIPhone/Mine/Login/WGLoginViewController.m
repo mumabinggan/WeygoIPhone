@@ -10,6 +10,7 @@
 #import "WGLoginViewController+Request.h"
 #import "WGRegisterViewController.h"
 #import "WGForgetPasswordViewController.h"
+#import "PooCodeView.h"
 
 @interface WGLoginViewController ()
 {
@@ -18,7 +19,7 @@
     JHTextField *_usernameTextField;
     JHTextField *_passwordTextField;
     JHTextField *_codeTextField;
-    JHButton *_verificationCodeBtn;
+    PooCodeView *_verificationView;
 }
 @end
 
@@ -41,7 +42,6 @@
 - (void)initSubView {
     _scrollView = [[JHScrollView alloc] initWithFrame:self.view.bounds];
     _scrollView.alwaysBounceVertical = YES;
-    _scrollView.backgroundColor = kRedColor;
     [self.view addSubview:_scrollView];
     
     JHLabel *titleLabel = [[JHLabel alloc] initWithFrame:CGRectMake(0, kAppAdaptHeight(30), kDeviceWidth, kAppAdaptHeight(24))];
@@ -67,7 +67,6 @@
     
     JHImageView *headerImageView = [[JHImageView alloc] initWithFrame:CGRectMake(0, -20, kDeviceWidth, kAppAdaptHeight(264))];
     headerImageView.image = [UIImage imageNamed:@""];
-    headerImageView.backgroundColor = kGreenColor;
     [_scrollView addSubview:headerImageView];
     
     _usernameTextField = [[JHTextField alloc] initWithFrame:CGRectMake(kAppAdaptWidth(32), headerImageView.maxY + kAppAdaptHeight(16), kDeviceWidth - kAppAdaptWidth(64), kAppAdaptHeight(48))];
@@ -96,11 +95,10 @@
     _codeTextField.placeholder = kStr(@"Login_ValidCode");
     _codeTextField.textColor = WGAppNameLabelColor;
     [_scrollView addSubview:_codeTextField];
-    
-    _verificationCodeBtn = [[JHButton alloc] initWithFrame:CGRectMake(kAppAdaptWidth(231), kAppAdaptHeight(12), kAppAdaptWidth(80), kAppAdaptHeight(24))];
-    [_verificationCodeBtn addTarget:self action:@selector(touchVerificationCodeBtn:) forControlEvents:UIControlEventTouchUpInside];
-    [_verificationCodeBtn setBackgroundColor:kGreenColor];
-    [_codeTextField addSubview:_verificationCodeBtn];
+    //_pooCodeView = [[PooCodeView alloc] initWithFrame:CGRectMake(50, 100, 82, 32)];
+    _verificationView = [[PooCodeView alloc] initWithFrame:CGRectMake(kAppAdaptWidth(231), kAppAdaptHeight(8), kAppAdaptWidth(82), kAppAdaptHeight(32))];
+    [_codeTextField addSubview:_verificationView];
+    [_verificationView addSingleTapGestureRecognizerWithTarget:self action:@selector(touchVerificationCodeView:)];
     
     JHView *codeLineView = [[JHView alloc] initWithFrame:CGRectMake(0, lineY, _usernameTextField.width, kAppSepratorLineHeight)];
     codeLineView.backgroundColor = WGAppSeparateLineColor;
@@ -154,31 +152,37 @@
     [self.navigationController pushViewController:registerViewController animated:YES];
 }
 
-- (void)touchVerificationCodeBtn:(JHButton *)sender {
-    //请求验证码
-    [self requestVerificationCode];
+- (void)touchVerificationCodeView:(UIGestureRecognizer *)recognizer {
+    [_verificationView changeCode];
 }
 
 - (void)touchLoginBtn:(JHButton *)sender {
     NSString *username = _usernameTextField.text;
     if ([NSString isNullOrEmpty:username]) {
-        [self showWarningMessage:kStr(@"")];
+        [self showWarningMessage:kStr(@"Login_Tip_Email")];
         return;
     }
     NSString *password = _passwordTextField.text;
     if ([NSString isNullOrEmpty:password]) {
-        [self showWarningMessage:kStr(@"")];
+        [self showWarningMessage:kStr(@"Login_Tip_PW")];
         return;
     }
     NSString *code = _codeTextField.text;
     if ([NSString isNullOrEmpty:code]) {
-        [self showWarningMessage:kStr(@"")];
+        [self showWarningMessage:kStr(@"Login_Tip_ValidCode")];
+        return;
+    }
+    if (![_verificationView.changeString isEqualToString:_codeTextField.text]) {
+        [self showWarningMessage:kStr(@"Login_Tip_ValidCode2")];
         return;
     }
     WGLoginRequest *loginRequest = [[WGLoginRequest alloc] init];
     loginRequest.username = username;
     loginRequest.password = password;
-    loginRequest.verificationcode = code;
+    if (_from == WGLoginFromShopCart) {
+//        loginRequest.cap = [WGApplication sharedApplication].currentPostCode;
+//        loginRequest.shopCarts = [WGApplication sharedApplication].getGoodsInLocalCart;
+    }
     [self requestLogin:loginRequest];
 }
 
@@ -196,11 +200,12 @@
 }
 
 - (void)refreshkVerificationCode {
-    [_verificationCodeBtn setBackgroundImageWithURL:[NSURL URLWithString:_verificationCodeResponse.data] forState:UIControlStateNormal placeholderImage:kLoginVerificationCodePlaceholderImage options:JHWebImageOptionsLowPriority];
+
 }
 
-+ (void)pushInNavigationController:(UINavigationController *)navigationController sucess:(WGLoginSuccessBlock)successBlock cancel:(WGLoginCancelBlock)cancelBlock {
++ (void)pushInNavigationController:(UINavigationController *)navigationController loginFrom :(WGLoginFrom)loginFrom sucess:(WGLoginSuccessBlock)successBlock cancel:(WGLoginCancelBlock)cancelBlock {
     WGLoginViewController *loginVC = [[WGLoginViewController alloc] init];
+    loginVC.from = loginFrom;
     loginVC.cancelBlock = cancelBlock;
     loginVC.successBlock = successBlock;
     [navigationController pushViewController:loginVC animated:YES];

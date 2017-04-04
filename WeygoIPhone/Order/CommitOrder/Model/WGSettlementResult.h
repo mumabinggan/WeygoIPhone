@@ -21,6 +21,8 @@
 
 @property (nonatomic, strong) WGSettlementConsumePrice *price;
 
+@property (nonatomic, strong) NSString *integralDescription;
+
 @property (nonatomic, strong) NSArray *goods;
 
 @property (nonatomic, strong) WGSettlementTips *tip;
@@ -29,7 +31,7 @@
 
 @interface WGSettlementPayMethod : WGObject
 
-@property (nonatomic, assign) NSInteger id;
+@property (nonatomic, strong) NSString *id;
 
 @property (nonatomic, strong) NSString *name;
 
@@ -37,7 +39,7 @@
 
 @interface WGSettlementDate : WGObject
 
-@property (nonatomic, assign) NSInteger id;
+@property (nonatomic, strong) NSString *id;
 
 @property (nonatomic, strong) NSString *date;
 
@@ -61,6 +63,8 @@
 @property (nonatomic, strong) NSString *deliverPrice;
 
 @property (nonatomic, strong) NSString *couponPrice;
+
+@property (nonatomic, strong) NSString *integralPrice;
 
 @property (nonatomic, strong) NSString *currentTotalPrice;
 

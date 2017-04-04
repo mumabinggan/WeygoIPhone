@@ -18,4 +18,17 @@
     return [super classForArray:propertyName];
 }
 
+- (BOOL)hasInvalidGood {
+    for (WGShopCartGoodItem *item in _goods) {
+        if (!item.inStock) {
+            return YES;
+        }
+    }
+    return NO;
+}
+
+@end
+
+@implementation WGShopCartPrice
+
 @end

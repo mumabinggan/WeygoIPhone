@@ -50,7 +50,7 @@
     result.id = 12122;
     
     WGSettlementDate *date = [[WGSettlementDate alloc] init];
-    date.id = 2323;
+    date.id = @"2323";
     date.date = @"20170321";
     WGSettlementTime *time = [[WGSettlementTime alloc] init];
     time.id = 23;
@@ -64,18 +64,18 @@
     date.times = @[time, time2, time3];
     
     WGSettlementDate *date2 = [[WGSettlementDate alloc] init];
-    date2.id = 2323;
+    date2.id = @"2323";
     date2.date = @"20170319";
     date2.times = @[time3, time];
     
     result.deliverTimes = @[date, date2];
     
     WGSettlementPayMethod *payMethod = [[WGSettlementPayMethod alloc] init];
-    payMethod.id = 2;
+    payMethod.id = @"2";
     payMethod.name = @"在线";
     
     WGSettlementPayMethod *payMethod2 = [[WGSettlementPayMethod alloc] init];
-    payMethod2.id = 3;
+    payMethod2.id = @"3";
     payMethod2.name = @"支付宝";
     
     result.payMethods = @[payMethod, payMethod2];

@@ -8,12 +8,16 @@
 
 #import "WGCallBaseRequest.h"
 
-@interface WGLoginRequest : WGCallBaseRequest
+@interface WGLoginRequest : WGRequest
 
 @property (nonatomic, strong) NSString *username;
 
 @property (nonatomic, strong) NSString *password;
 
-@property (nonatomic, strong) NSString *verificationcode;
+//from 购物车
+//@property (nonatomic, strong) NSString *cap;
+
+//from 购物车
+//@property (nonatomic, strong) NSArray *shopCarts;
 
 @end

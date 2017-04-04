@@ -13,8 +13,13 @@
 @interface WGShopCartViewController : WGViewController
 {
     WGShopCart *_data;
+    TWRefreshTableView *_tableView;
 }
 
+- (void)refreshUI;
+
 - (void)refreshTableView;
+
+- (void)intoCommitOrderViewController;
 
 @end

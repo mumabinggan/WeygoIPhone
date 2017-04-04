@@ -7,7 +7,7 @@
 //
 
 #import "WGGoodDetailViewController.h"
-#import "WGHomeCarouselFiguresCell.h"
+#import "WGGoodDetailCarouselFiguresCell.h"
 #import "WGGoodDesCell.h"
 #import "WGGoodConfigInfoCell.h"
 #import "WGCommodityDesCell.h"
@@ -15,11 +15,13 @@
 #import "WGGoodDetailViewController+Request.h"
 #import "WGGoodAddView.h"
 #import "WGGoodInLocalCart.h"
+#import "WGPostCodePopoverView.h"
 
 @interface WGGoodDetailViewController ()
 {
     WGGoodAddView *_addView;
     JHButton *_likeBtn;
+    JHView *_bottomView;
 }
 @end
 
@@ -50,32 +52,42 @@
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     //_tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, 1)];
     [contentView addSubview:_tableView];
+    _tableView.layer.opacity = 0.0;
     
-    JHView *bottomView = [[JHView alloc] initWithFrame:CGRectMake(0, kDeviceHeight - bottomHeight, kDeviceWidth, bottomHeight)];
-    bottomView.backgroundColor = kWhiteColor;
+    _bottomView = [[JHView alloc] initWithFrame:CGRectMake(0, kDeviceHeight - bottomHeight, kDeviceWidth, bottomHeight)];
+    _bottomView.backgroundColor = kWhiteColor;
+    _bottomView.layer.opacity = 0.0;
+    JHView *lineView = [[JHView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kAppSepratorLineHeight)];
+    lineView.backgroundColor = WGAppSeparateLineColor;
+    [_bottomView addSubview:lineView];
     
     _addView = [[WGGoodAddView alloc] initWithFrame:CGRectMake(kAppAdaptWidth(15), kAppAdaptHeight(10), kAppAdaptWidth(80), kAppAdaptHeight(24))];
     _addView.fromType = WGGoodAddViewFromGoodDetail;
-    [bottomView addSubview:_addView];
+    _addView.count = 1;
+    [_bottomView addSubview:_addView];
     
     JHButton *addBtn = [[JHButton alloc] initWithFrame:CGRectMake(_addView.maxX + kAppAdaptWidth(16), kAppAdaptHeight(8), kAppAdaptWidth(210), kAppAdaptHeight(28)) difRadius:JHRadiusMake(kAppAdaptHeight(14), kAppAdaptHeight(14), kAppAdaptHeight(14), kAppAdaptHeight(14)) backgroundColor:WGAppBlueButtonColor];
     [addBtn addTarget:self action:@selector(touchAddBtn:) forControlEvents:UIControlEventTouchUpInside];
     [addBtn setTitle:kStr(@"Good Detail Add") forState:UIControlStateNormal];
     [addBtn setTitleColor:kWhiteColor forState:UIControlStateNormal];
     addBtn.titleLabel.font = kAppAdaptFont(14);
-    [bottomView addSubview:addBtn];
+    [_bottomView addSubview:addBtn];
     
     _likeBtn = [[JHButton alloc] initWithFrame:CGRectMake(addBtn.maxX + kAppAdaptWidth(16), _addView.y + kAppAdaptHeight(3), kAppAdaptWidth(20), kAppAdaptHeight(18))];
     [_likeBtn addTarget:self action:@selector(touchLikeBtn:) forControlEvents:UIControlEventTouchUpInside];
     [_likeBtn setImage:[UIImage imageNamed:@"good-like-normal"] forState:UIControlStateNormal];
-    [bottomView addSubview:_likeBtn];
+    [_bottomView addSubview:_likeBtn];
     
-    [contentView addSubview:bottomView];
+    [contentView addSubview:_bottomView];
 }
 
 - (void)refreshUI {
     [self refreshBottomView];
     [_tableView reloadData];
+    [UIView animateWithDuration:0.3 animations:^() {
+        _tableView.layer.opacity = 1.0;
+        _bottomView.layer.opacity = 1.0;
+    }];
 }
 
 - (void)refreshBottomView {
@@ -101,17 +113,14 @@
 }
 
 - (void)touchAddBtn:(JHButton *)sender {
-    if ([WGApplication sharedApplication].isLogined) {
-        [[WGApplication sharedApplication] loadAddGoodToCart:_goodDetail.id count:_addView.count onCompletion:^(WGAddGoodToCartResponse *response) {
-            [self showWarningMessage:response.message];
-        }];
+    if ([NSString isNullOrEmpty:[WGApplication sharedApplication].currentPostCode]) {
+        WGPostCodePopoverView *view = [[WGPostCodePopoverView alloc] initWithFrame:self.view.bounds];
+        [view showInView:self.view];
+        return;
     }
-    else {
-        WGGoodInLocalCart *good = [[WGGoodInLocalCart alloc] init];
-        good.id = _goodDetail.id;
-        good.count = _addView.count;
-        [[WGApplication sharedApplication] addGoodToLocalCart:good];
-    }
+    [[WGApplication sharedApplication] loadAddGoodToCart:_goodDetail.id count:_addView.count onCompletion:^(WGAddGoodToCartResponse *response) {
+        [self showWarningMessage:response.message];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -129,7 +138,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     CGFloat height = 0.0f;
     if (0 == indexPath.row) {
-        height = [WGHomeCarouselFiguresCell heightWithData:_goodDetail.carouselFigures];
+        height = [WGGoodDetailCarouselFiguresCell heightWithData:_goodDetail.carouselFigures];
     }
     else if (1 == indexPath.row) {
         height = [WGGoodConfigInfoCell heightWithData:_goodDetail];
@@ -152,7 +161,7 @@
     JHTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
     if (!cell) {
         if (0 == indexPath.row) {
-            cell = [[WGHomeCarouselFiguresCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+            cell = [[WGGoodDetailCarouselFiguresCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
         }
         else if (1 == indexPath.row) {
             cell = [[WGGoodConfigInfoCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
@@ -168,6 +177,8 @@
             cell = [[WGHomeFloorGoodColumnCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
         }
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.contentView.clipsToBounds = YES;
+        cell.clipsToBounds = YES;
     }
     if (indexPath.row == 0) {
         [cell showWithArray:_goodDetail.carouselFiguresPictureArray];

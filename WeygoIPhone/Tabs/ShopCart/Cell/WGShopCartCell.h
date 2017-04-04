@@ -7,7 +7,10 @@
 //
 
 #import "JHTableViewCell.h"
+#import "WGShopCartGoodItem.h"
 
 @interface WGShopCartCell : JHTableViewCell
+
+@property (nonatomic, copy) void (^onApply)(WGShopCartGoodItem *item);
 
 @end

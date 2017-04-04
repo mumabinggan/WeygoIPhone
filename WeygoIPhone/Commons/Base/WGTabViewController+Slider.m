@@ -41,7 +41,21 @@ static const NSString *WGSliderButtonKey = @"WGSliderButtonKey";
 }
 
 - (void)touchSliderButton:(JHButton *)sender {
-    [[WGApplication sharedApplication] openSideBarViewController];
+    if ([WGApplication sharedApplication].isLogined) {
+        [[WGApplication sharedApplication] openSideBarViewController];
+    }
+    else {
+        _loginType = WGLoginTypeOpenSlider;
+        [self openLoginViewController];
+    }
+}
+
+- (void)handleLoginSuccess:(id)customData {
+    [super handleLoginSuccess:customData];
+    if (_loginType == WGLoginTypeOpenSlider) {
+        _loginType = WGLoginTypeNormal;
+        [[WGApplication sharedApplication] openSideBarViewController];
+    }
 }
 
 @end

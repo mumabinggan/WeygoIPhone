@@ -32,6 +32,8 @@
 
 - (void)openLoginViewController;
 
+- (void)openCartLoginViewController;
+
 - (void)openLoginViewControllerWithData:(id)data;
 
 - (void)pushViewControllerAfterLogin:(UIViewController *)viewController;

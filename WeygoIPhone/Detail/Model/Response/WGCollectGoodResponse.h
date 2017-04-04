@@ -8,8 +8,16 @@
 
 #import "WGResponse.h"
 
+@class WGCollectData;
+
 @interface WGCollectGoodResponse : WGResponse
 
-@property (nonatomic, strong) NSString *data;
+@property (nonatomic, strong) WGCollectData *data;
+
+@end
+
+@interface WGCollectData : WGObject
+
+@property (nonatomic, assign) long long favoriteId;
 
 @end

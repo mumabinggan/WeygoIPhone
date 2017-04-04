@@ -14,6 +14,8 @@
 
 @property (nonatomic, strong) NSString *sectionKey;
 
+@property (nonatomic, strong) NSString *fullName;
+
 @property (nonatomic, strong) NSString *name;
 
 @property (nonatomic, strong) NSString *surname;

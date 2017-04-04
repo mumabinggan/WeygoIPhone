@@ -45,7 +45,7 @@
                       [NSString safeString:_address.streetNumber],
                       [NSString safeString:_address.citofono],
                       [NSString safeString:_address.scala],
-                      [NSString safeString:_address.ascensore],
+                      @(_address.ascensore).stringValue,
                       [NSString safeString:_address.piano],
                       nil];
 }

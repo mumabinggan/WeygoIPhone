@@ -54,6 +54,7 @@
 
 + (CGFloat)heightWithData:(NSArray *)array {
     float height = 0.0f;
+    //height = kAppAdaptHeight(176);
     if (array && array.count > 0) {
         height = kAppAdaptHeight(176);
     }

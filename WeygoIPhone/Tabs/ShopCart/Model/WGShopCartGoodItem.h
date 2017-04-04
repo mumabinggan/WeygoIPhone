@@ -26,6 +26,8 @@
 
 @property (nonatomic, assign) NSInteger goodCount;
 
-@property (nonatomic, assign) BOOL isInvalid;
+@property (nonatomic, assign) BOOL inStock;         //1 : 有货，0 : 无货
+
+@property (nonatomic, assign) long long shopCartId;
 
 @end

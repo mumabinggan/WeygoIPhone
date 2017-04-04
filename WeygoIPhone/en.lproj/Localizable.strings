@@ -96,6 +96,7 @@
 "Mine_Logout" = "Esci";
 
 //Person Info(完成)
+"PersonInfo_Title" = "Profilo Account";
 "PersonInfo_Header" = "La tua icona";
 "PersonInfo_Name" = "Nome";
 "PersonInfo_SurName" = "Cognome";
@@ -116,6 +117,10 @@
 "Login_ForgetPW" = "Password dimenticata?";
 "Login_WeChat" = "WeChat";
 "Login_FaceBook" = "Facebook";
+"Login_Tip_Email" = "用户名不能为空";
+"Login_Tip_PW" = "密码不能为空";
+"Login_Tip_ValidCode" = "验证码不能为空";
+"Login_Tip_ValidCode2" = "验证码错误";
 
 //注册页面(完成)
 "Register_Title" = "Accedi";
@@ -250,3 +255,8 @@
 
 //首页
 "Home_Title" = "Milano";
+
+//定位
+"Insert_Cap_Des" = "Indicaci la tua posizione attuale";
+"Insert_Cap" = "Inserisci CAP";
+"Insert_Cap_Error" = "Il tuo CAP non è servito al momento, torna a trovarci!";

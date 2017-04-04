@@ -95,6 +95,7 @@
 "Mine_Logout" = "登出";
 
 //Person Info(完成)
+"PersonInfo_Title" = "个人信息";
 "PersonInfo_Header" = "个人头像";
 "PersonInfo_Name" = "名";
 "PersonInfo_SurName" = "姓";
@@ -115,6 +116,10 @@
 "Login_ForgetPW" = "忘记密码?";
 "Login_WeChat" = "微信";
 "Login_FaceBook" = "Facebook";
+"Login_Tip_Email" = "用户名不能为空";
+"Login_Tip_PW" = "密码不能为空";
+"Login_Tip_ValidCode" = "验证码不能为空";
+"Login_Tip_ValidCode2" = "验证码错误";
 
 //注册页面(完成)
 "Register_Title" = "注册";
@@ -249,3 +254,8 @@
 
 //首页
 "Home_Title" = "米兰";
+
+//定位
+"Insert_Cap_Des" = "输入您的邮编\n 以确认您的位置";
+"Insert_Cap" = "请输入邮编";
+"Insert_Cap_Error" = "您的当前邮编不在我们的\n服务范围，请重新填写";

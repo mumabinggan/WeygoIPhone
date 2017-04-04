@@ -7,7 +7,19 @@
 //
 
 #import "WGLoginRequest.h"
+#import "WGGoodInLocalCart.h"
 
 @implementation WGLoginRequest
+
++ (Class)classForArray:(NSString *)propertyName {
+    if ([@"shopCarts" isEqualToString:propertyName]) {
+        return [WGGoodInLocalCart class];
+    }
+    return [super classForArray:propertyName];
+}
+
+- (NSString *)api {
+    return @"customer/login?";
+}
 
 @end

@@ -45,7 +45,7 @@
     
     WGHomeTabTitleRequest *request = [[WGHomeTabTitleRequest alloc] init];
     __weak typeof(self) weakSelf = self;
-    [self post:request forResponseClass:[WGHomeTabTitleResponse class] success:^(JHResponse *response) {
+    [self get:request forResponseClass:[WGHomeTabTitleResponse class] success:^(JHResponse *response) {
         [weakSelf handleHomeTabTitles:(WGHomeTabTitleResponse *)response];
     } failure:^(NSError *error) {
         [weakSelf showWarningMessage:kStr(@"Request Failed")];

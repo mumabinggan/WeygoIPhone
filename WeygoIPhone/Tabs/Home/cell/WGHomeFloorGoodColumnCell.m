@@ -60,12 +60,20 @@
     
     NSMutableArray *itemViewArray = [[NSMutableArray alloc] init];
     for (int num = 0; num < _dataArray.count; ++num) {
-        WGHomeFloorContentItem *item = _dataArray[num];
         WGHomeFloorGoodColumnItemView *itemView = [[WGHomeFloorGoodColumnItemView alloc] initWithFrame:CGRectMake(kAppAdaptWidth(8) + kAppAdaptWidth(128 + 8)*num, kAppAdaptHeight(8), kAppAdaptWidth(128), kAppAdaptHeight(216)) radius:kAppAdaptWidth(6)];
         itemView.tag = num;
         [itemView addSingleTapGestureRecognizerWithTarget:self action:@selector(handleClick:)];
         itemView.backgroundColor = kWhiteColor;
-        [itemView showWithData:item.contentItem];
+        id item = _dataArray[num];
+        if ([item isKindOfClass:[WGHomeFloorContentItem class]]) {
+            item = (WGHomeFloorContentItem *)item;
+            [itemView showWithData:(WGHomeFloorContentGoodItem *)(((WGHomeFloorContentItem *)item).contentItem)];
+        }
+        else if ([item isKindOfClass:[WGHomeFloorContentGoodItem class]]) {
+            item = (WGHomeFloorContentGoodItem *)item;
+            [itemView showWithData:item];
+        }
+        
         [[self scrollView] addSubview:itemView];
         [itemViewArray addObject:itemView];
     }

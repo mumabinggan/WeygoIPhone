@@ -6,8 +6,14 @@
 //  Copyright © 2017年 weygo.com. All rights reserved.
 //
 
-#import "WGRequest.h"
+#import "WGGuestRequest.h"
 
-@interface WGAddGoodToCartRequest : WGRequest
+@interface WGAddGoodToCartRequest : WGGuestRequest
+
+@property (nonatomic, strong) NSString *goodIds;
+
+@property (nonatomic, strong) NSString *counts;
+
+@property (nonatomic, strong) NSString *cap;
 
 @end

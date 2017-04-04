@@ -73,7 +73,9 @@
                     count:(NSInteger)count
              onCompletion:(void (^)(WGAddGoodToCartResponse *))completion {
     WGAddGoodToCartRequest *request = [[WGAddGoodToCartRequest alloc] init];
-    [[JHNetworkManager sharedManager] post:request forResponseClass:[WGSessionResponse class] success:^(JHResponse *response) {
+    request.goodIds = @(goodId).stringValue;
+    request.counts = @(count).stringValue;
+    [[JHNetworkManager sharedManager] get:request forResponseClass:[WGAddGoodToCartResponse class] success:^(JHResponse *response) {
         if (completion) {
             completion((WGAddGoodToCartResponse *)response);
         }

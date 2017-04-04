@@ -23,6 +23,7 @@
 @implementation WGHomeSliderUserHeaderView
 
 - (void)loadSubviews {
+    [super loadSubviews];
     _bgImageView = [[JHImageView alloc] initWithFrame:CGRectMake(0, 0, kAppAdaptWidth(280), [WGHomeSliderUserHeaderView height])];
     _bgImageView.image = [UIImage imageNamed:@"home_slider_header"];
     [self addSubview:_bgImageView];
@@ -37,6 +38,7 @@
     _nameLabel = [[JHLabel alloc] initWithFrame:CGRectMake(_imageView.maxX + kAppAdaptWidth(10), _imageView.y, kAppAdaptWidth(170), _imageView.height)];
     _nameLabel.font = kAppAdaptFont(14);
     _nameLabel.textColor = kWhiteColor;
+    _nameLabel.userInteractionEnabled = YES;
     [self addSubview:_nameLabel];
     [_nameLabel addSingleTapGestureRecognizerWithTarget:self action:@selector(handleLogin:)];
     
@@ -80,11 +82,11 @@
 - (void)showWithData:(JHObject *)data {
     _imageView.image = [UIImage imageNamed:[WGApplication sharedApplication].userAvatar];
     if ([WGApplication sharedApplication].isLogined) {
-        _nameLabel.text = [NSString stringWithFormat:kStr(@""), [WGApplication sharedApplication].userName];
+        _nameLabel.text = [WGApplication sharedApplication].userName;
     }
-    else {
-        _nameLabel.text = kStr(@"Slider_Mine_UnRegister");
-    }
+//    else {
+//        _nameLabel.text = kStr(@"Slider_Mine_UnRegister");
+//    }
 }
 
 + (CGFloat)height {

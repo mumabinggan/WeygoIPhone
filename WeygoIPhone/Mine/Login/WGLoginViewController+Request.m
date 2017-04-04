@@ -8,6 +8,8 @@
 
 #import "WGLoginViewController+Request.h"
 #import "WGImageVerificationCodeResponse.h"
+#import "WGLoginRequest.h"
+#import "WGLoginResponse.h"
 
 @implementation WGLoginViewController (Request)
 
@@ -25,7 +27,25 @@
 }
 
 - (void)requestLogin:(WGLoginRequest *)request {
-    
+    __weak typeof(self) weakSelf = self;
+    [self post:request forResponseClass:[WGLoginResponse class] success:^(JHResponse *response) {
+        [weakSelf handleLoginResponse:(WGLoginResponse *)response];
+    } failure:^(NSError *error) {
+        [weakSelf showWarningMessage:kStr(@"Request Failed")];
+    }];
+}
+
+- (void)handleLoginResponse:(WGLoginResponse *)response {
+    if (response.success) {
+        [WGApplication sharedApplication].user = response.data;
+        [self sendNotification:WGRefreshNotificationTypeLogin];
+        if (self.successBlock) {
+            self.successBlock(self);
+        }
+    }
+    else {
+        [self showWarningMessage:response.message];
+    }
 }
 
 @end

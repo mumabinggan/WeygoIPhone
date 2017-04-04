@@ -19,6 +19,7 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    //[[JHNetworkManager sharedManager] postWithUrl:nil body:nil showLoading:YES success:nil failure:nil];
     NSString *sss = [NSString stringWithFormat:@"%@", @"ss"];
     NSMutableArray *array = [[NSMutableArray alloc] init];
     [array addObject:sss];

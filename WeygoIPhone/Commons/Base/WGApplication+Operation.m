@@ -48,14 +48,20 @@
 - (NSString *)userName {
     WGUser *user = [self user];
     if (user) {
-        return [NSString stringWithFormat:@"%@%@", user.surname, user.name];
+        if ([NSString isNullOrEmpty:user.fullName]) {
+            return [NSString stringWithFormat:@"%@%@", user.surname, user.name];
+        }
+        return user.fullName;
     }
     return nil;
 }
 
 - (WGUser *)user {
     if (!_user) {
-        _user = [[JHLocalSettings sharedSettings] getSettingsForKey:kLocalSettingsKeyUser];
+        NSDictionary *dic = [[JHLocalSettings sharedSettings] getSettingsForKey:kLocalSettingsKeyUser];
+        if (dic) {
+            _user = [[WGUser alloc] initWithDictionary:dic error:nil];
+        }
     }
     return _user;
 }
@@ -63,7 +69,7 @@
 - (void)setUser:(WGUser *)user {
     _user = user;
     if (user) {
-        [[JHLocalSettings sharedSettings] setSettings:user forKey:kLocalSettingsKeyUser];
+        [[JHLocalSettings sharedSettings] setSettings:user.toDictionary forKey:kLocalSettingsKeyUser];
     }
     else {
         [[JHLocalSettings sharedSettings] removeSettingsForKey:kLocalSettingsKeyUser];
@@ -73,7 +79,7 @@
 - (void)setCurrentPostCode:(NSString *)currentPostCode {
     if ([self isLogined]) {
         _user.cap = currentPostCode;
-        [[JHLocalSettings sharedSettings] setSettings:_user forKey:kLocalSettingsKeyUser];
+        [[JHLocalSettings sharedSettings] setSettings:_user.toDictionary forKey:kLocalSettingsKeyUser];
     }
     else {
         [[JHLocalSettings sharedSettings] setSettings:currentPostCode forKey:kLocalSettingsKeyUnLoginCap];
@@ -97,49 +103,49 @@
     if ([self isLogined]) {
         _user.name = name;
     }
-    [[JHLocalSettings sharedSettings] setSettings:_user forKey:kLocalSettingsKeyUser];
+    [[JHLocalSettings sharedSettings] setSettings:_user.toDictionary forKey:kLocalSettingsKeyUser];
 }
 
 - (void)setSurname:(NSString *)surname {
     if ([self isLogined]) {
         _user.surname = surname;
     }
-    [[JHLocalSettings sharedSettings] setSettings:_user forKey:kLocalSettingsKeyUser];
+    [[JHLocalSettings sharedSettings] setSettings:_user.toDictionary forKey:kLocalSettingsKeyUser];
 }
 
 - (void)setSex:(int)sex {
     if ([self isLogined]) {
         _user.sex = sex;
     }
-    [[JHLocalSettings sharedSettings] setSettings:_user forKey:kLocalSettingsKeyUser];
+    [[JHLocalSettings sharedSettings] setSettings:_user.toDictionary forKey:kLocalSettingsKeyUser];
 }
 
 - (void)setTax:(NSString *)tax {
     if ([self isLogined]) {
         _user.tax = tax;
     }
-    [[JHLocalSettings sharedSettings] setSettings:_user forKey:kLocalSettingsKeyUser];
+    [[JHLocalSettings sharedSettings] setSettings:_user.toDictionary forKey:kLocalSettingsKeyUser];
 }
 
 - (void)setEmail:(NSString *)email {
     if ([self isLogined]) {
         _user.email = email;
     }
-    [[JHLocalSettings sharedSettings] setSettings:_user forKey:kLocalSettingsKeyUser];
+    [[JHLocalSettings sharedSettings] setSettings:_user.toDictionary forKey:kLocalSettingsKeyUser];
 }
 
 - (void)setMobile:(NSString *)mobile {
     if ([self isLogined]) {
         _user.mobile = mobile;
     }
-    [[JHLocalSettings sharedSettings] setSettings:_user forKey:kLocalSettingsKeyUser];
+    [[JHLocalSettings sharedSettings] setSettings:_user.toDictionary forKey:kLocalSettingsKeyUser];
 }
 
 - (void)setBirth:(NSString *)birth {
     if ([self isLogined]) {
         _user.birth = birth;
     }
-    [[JHLocalSettings sharedSettings] setSettings:_user forKey:kLocalSettingsKeyUser];
+    [[JHLocalSettings sharedSettings] setSettings:_user.toDictionary forKey:kLocalSettingsKeyUser];
 }
 
 - (void)reset {

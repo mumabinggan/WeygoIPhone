@@ -146,15 +146,29 @@ static const NSString *WGLoginCustomDataKey = @"";
 - (void)openLoginViewControllerWithData:(id)data {
     __weak typeof(self) weakSelf = self;
     [self setLoginCustomData:data];
-    [self openLoginViewController:^(WGLoginViewController *viewController) {
+    [self openLoginViewController:WGLoginFromDefault success:^(WGLoginViewController *viewController) {
         [weakSelf handleLoginSuccess];
     } cancel:^(WGLoginViewController *viewController) {
         [weakSelf handleLoginCancel];
     }];
 }
 
-- (void)openLoginViewController:(WGLoginSuccessBlock)successBlock cancel:(WGLoginCancelBlock)cancelBlock {
-    [WGLoginViewController pushInNavigationController:self.navigationController sucess:successBlock cancel:cancelBlock];
+- (void)openCartLoginViewController {
+    [self openCartLoginViewControllerWithData:nil];
+}
+
+- (void)openCartLoginViewControllerWithData:(id)data {
+    __weak typeof(self) weakSelf = self;
+    [self setLoginCustomData:data];
+    [self openLoginViewController:WGLoginFromShopCart success:^(WGLoginViewController *viewController) {
+        [weakSelf handleLoginSuccess];
+    } cancel:^(WGLoginViewController *viewController) {
+        [weakSelf handleLoginCancel];
+    }];
+}
+
+- (void)openLoginViewController:(WGLoginFrom)from success:(WGLoginSuccessBlock)successBlock cancel:(WGLoginCancelBlock)cancelBlock {
+    [WGLoginViewController pushInNavigationController:self.navigationController loginFrom:from sucess:successBlock cancel:cancelBlock];
 }
 
 - (void)handleLoginSuccess {

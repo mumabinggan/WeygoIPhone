@@ -20,7 +20,7 @@
 
 @property (nonatomic, strong) NSString *address;
 
-@property (nonatomic, strong) NSString *civico;
+@property (nonatomic, strong) NSString *civico; //街道号
 
 @property (nonatomic, strong) NSString *city;
 

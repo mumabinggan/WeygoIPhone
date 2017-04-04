@@ -22,10 +22,14 @@
 #import "WGOrderListViewController.h"
 #import "WGFootPrintViewController.h"
 #import "WGClassifyDetailViewController.h"
+#import "WGPostCodePopoverView.h"
+#import "WGMainViewController.h"
+#import "WGPersonInfoViewController.h"
 
 //for test
 #import "WGGoodDetailViewController.h"
 #import "WGCollectionViewController.h"
+#import "WGLoginViewController.h"
 
 @interface WGHomeSliderViewController ()
 {
@@ -49,7 +53,7 @@
 }
 
 - (void)initData {
-    _itemArray = @[[NSString safeString:[WGApplication sharedApplication].currentPostCode], kStr(@"Slider_Mine_Order"), kStr(@"Slider_Mine_FootPrint"), kStr(@"Slider_Mine_Coupon"), kStr(@"Slider_Mine_Message")];
+    [self initItemArray];
 }
 
 - (NSArray *)getSubArray:(NSInteger)count {
@@ -85,6 +89,9 @@
     if ([WGApplication sharedApplication].isLogined) {
         //进入用户信息
         [[WGApplication sharedApplication] closeSideBarViewController];
+        WGPersonInfoViewController *vc = [[WGPersonInfoViewController alloc] init];
+        WGMainViewController *mainVC = [WGApplication sharedApplication].mainViewController;
+        [mainVC.navigationController pushViewController:vc animated:YES];
     }
     else {
         //进入登录界面
@@ -99,7 +106,7 @@
 
 - (void)handleOnMessageCenter {
     [[WGApplication sharedApplication] closeSideBarViewController];
-    WGCollectionViewController *vcc = [[WGCollectionViewController alloc] init];
+    WGLoginViewController *vcc = [[WGLoginViewController alloc] init];
     //vcc.goodId = 1591;
     UINavigationController *navc = [WGApplication sharedApplication].navigationController;
     [navc pushViewController:vcc animated:YES];
@@ -132,6 +139,15 @@
     [_tableView reloadData];
 }
 
+- (void)initItemArray {
+    _itemArray = @[[NSString safeString:[WGApplication sharedApplication].currentPostCode], kStr(@"Slider_Mine_Order"), kStr(@"Slider_Mine_FootPrint"), kStr(@"Slider_Mine_Coupon"), kStr(@"Slider_Mine_Message")];
+}
+
+- (void)handleSetPostCode {
+    [self initItemArray];
+    [self refreshUI];
+}
+
 - (WGClassifyItem *)classifyWithSection:(NSInteger)section {
     return _data.classifys[section - 2];
 }
@@ -139,6 +155,10 @@
 - (WGClassifyItem *)subClassifyWithIndexPath:(NSIndexPath *)indexPath {
     WGClassifyItem *item = [self classifyWithSection:indexPath.section];
     return item.allArray[indexPath.row];
+}
+
+- (BOOL)cannotEditPostCode {
+    return ([WGApplication sharedApplication].isLogined && ![NSString isNullOrEmpty:[WGApplication sharedApplication].currentPostCode]);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -247,7 +267,6 @@
     if (!cell) {
         if (indexPath.section == 0) {
             cell = [[JHTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
-            cell.textLabel.textColor = WGAppNameLabelColor;
         }
         else if (indexPath.section == 1) {
             cell = [[WGSliderTopicCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
@@ -259,11 +278,16 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     if (indexPath.section == 0) {
-        if (indexPath.row == 0) {
-            cell.imageView.image = [UIImage imageNamed:@"mine_local"];
-        }
         cell.textLabel.text = _itemArray[indexPath.row];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.textLabel.textColor = WGAppNameLabelColor;
+        cell.contentView.backgroundColor = kWhiteColor;
+        if (indexPath.row == 0) {
+            cell.imageView.image = [UIImage imageNamed:@"mine_local"];
+            cell.accessoryType = [self cannotEditPostCode] ?  UITableViewCellAccessoryNone: UITableViewCellAccessoryDisclosureIndicator;
+            cell.textLabel.textColor = WGAppBaseColor;
+            cell.contentView.backgroundColor = kHRGB(0xF8FAFA);
+        }
     }
     else if (indexPath.section == 1) {
         NSInteger index = indexPath.row * 2;
@@ -283,8 +307,17 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [[WGApplication sharedApplication] closeSideBarViewController];
     WGViewController *vc = nil;
+    WeakSelf;
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
+            if ([self cannotEditPostCode]) {
+                return;
+            }
+            WGPostCodePopoverView *view = [[WGPostCodePopoverView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kDeviceHeight)];
+            view.onApply = ^(NSString *postCode) {
+                [weakSelf handleSetPostCode];
+            };
+            [view show];
             //弹出输入邮编
             return;
         }

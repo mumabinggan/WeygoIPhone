@@ -20,6 +20,14 @@ typedef NS_ENUM(NSInteger, WGTabIndex) {
 typedef NS_ENUM(NSInteger, WGLoginType) {
     WGLoginTypeNormal,
     WGLoginTypeGoodDetailFavorite,
+    WGLoginTypeShopCart,
+    WGLoginTypeOpenSlider,
+};
+
+typedef NS_ENUM(NSInteger, WGRefreshNotificationType) {
+    WGRefreshNotificationTypeNone,
+    WGRefreshNotificationTypeLogin,
+    WGRefreshNotificationTypeLogout,
 };
 
 #endif /* WGAppEnum_h */

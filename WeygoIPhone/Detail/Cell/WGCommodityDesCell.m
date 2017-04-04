@@ -46,6 +46,9 @@
 + (CGFloat)heightWithData:(JHObject *)data {
     CGFloat height = 0.0f;
     WGGoodDetail *good = (WGGoodDetail *)data;
+    if ([NSString isNullOrEmpty:good.commodityInfo]) {
+        return height;
+    }
     height += kAppAdaptHeight(40);
     height += kAppAdaptHeight(15);
     CGSize size = [good.commodityInfo returnSize:kAppAdaptFont(14) maxWidth:kDeviceWidth - kAppAdaptWidth(30)];

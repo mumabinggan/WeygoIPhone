@@ -11,7 +11,7 @@
 @implementation WGBaseServiceRequest
 
 - (NSString *)api {
-    return @"app/baseService?";
+    return @"apps/baseService?";
 }
 
 @end

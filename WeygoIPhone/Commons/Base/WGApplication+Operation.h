@@ -40,6 +40,8 @@
 
 - (void)cleanLocalCart;
 
+- (void)setCurrentPostCode:(NSString *)currentPostCode;
+
 @end
 
 @interface WGApplication (OperationBaseService)

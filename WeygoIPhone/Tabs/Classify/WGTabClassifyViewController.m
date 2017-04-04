@@ -23,6 +23,7 @@
 {
     JHTableView *_firstTableView;
     JHTableView *_secondTableView;
+    JHImageView *_arrImageView;
     
     NSInteger _currentSelectedIndex;
     NSArray *_subArray;
@@ -128,6 +129,13 @@
     [self setGoodArray];
     [_firstTableView reloadData];
     [_secondTableView reloadData];
+    [UIView animateWithDuration:0.3 animations:^() {
+        _firstTableView.layer.opacity = 1.0;
+        _secondTableView.layer.opacity = 1.0;
+    }];
+    [UIView animateWithDuration:0.3 animations:^() {
+        _arrImageView.y = _currentSelectedIndex * kAppAdaptHeight(98) + kAppAdaptHeight(49 - 3);
+    }];
 }
 
 - (void)setSubArray {
@@ -171,6 +179,13 @@
     _secondTableView.contentInset = UIEdgeInsetsMake(kAppNavigationBarHeight + kAppStateHeight, 0, kAppTabBarHeight, 0);
     _secondTableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [contentView addSubview:_secondTableView];
+    
+    _arrImageView = [[JHImageView alloc] initWithFrame:CGRectMake(_firstTableView.width - kAppAdaptWidth(6), _currentSelectedIndex * kAppAdaptHeight(98) + kAppAdaptHeight(49 - 3), kAppAdaptWidth(6), kAppAdaptHeight(12))];
+    _arrImageView.image = [UIImage imageNamed:@"tab_classify_arr"];
+    [_firstTableView addSubview:_arrImageView];
+    
+    _firstTableView.layer.opacity = 0.0;
+    _secondTableView.layer.opacity = 0.0;
 }
 
 - (BOOL)prefersNavigationBarHiddenAnimated {

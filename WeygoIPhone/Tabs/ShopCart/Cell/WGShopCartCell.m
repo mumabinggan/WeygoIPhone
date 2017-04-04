@@ -69,7 +69,7 @@
 - (void)showWithData:(WGShopCartGoodItem *)object {
     _data = object;
     
-    self.backgroundColor = (_data && _data.isInvalid) ? kHRGB(0XF8FAFA) : kWhiteColor;
+    self.backgroundColor = (_data && !_data.inStock) ? kHRGB(0XF8FAFA) : kWhiteColor;
     
     [_imageView setImageWithURL:[NSURL URLWithString:_data.pictureURL] placeholderImage:kHomeGoodListPlaceholderImage options:JHWebImageOptionsRefreshCached];
     

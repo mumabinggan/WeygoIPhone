@@ -16,6 +16,10 @@
 
 @property (nonatomic, strong) NSString *name;
 
+@property (nonatomic, strong) NSString *firstName;  //姓
+
+@property (nonatomic, strong) NSString *lastName;   //名
+
 @property (nonatomic, strong) NSString *country;
 
 @property (nonatomic, strong) NSString *phone;
@@ -32,7 +36,7 @@
 
 @property (nonatomic, strong) NSString *scala;
 
-@property (nonatomic, strong) NSString *ascensore;
+@property (nonatomic, assign) int ascensore;   //是否有电梯, 1：有， 0：没有
 
 @property (nonatomic, strong) NSString *piano;
 

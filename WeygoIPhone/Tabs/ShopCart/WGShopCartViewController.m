@@ -10,11 +10,11 @@
 #import "WGShopCart.h"
 #import "WGShopCartGoodItem.h"
 #import "WGShopCartCell.h"
+#import "WGShopCartViewController+Request.h"
+#import "WGCommitOrderViewController.h"
 
 @interface WGShopCartViewController ()
 {
-    TWRefreshTableView *_tableView;
-    
     UIVisualEffectView *_footView;
     JHLabel *_deliveryPriceLabel;
     JHLabel *_totalePriceLabel;
@@ -31,12 +31,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = kStr(@"Carrello");
+    [self loadShopCartList:YES pulling:NO];
 }
 
 - (void)initData {
     _data = [[WGShopCart alloc] init];
-    _data.deliveryPrice = 99.00;
-    _data.totalePrice = 8999.99;
+    
+    WGShopCartPrice *price = [[WGShopCartPrice alloc] init];
+    price.deliveryPrice = @"99.00";
+    price.totalePrice = @"8999.99";
+    _data.shopCartPrice = price;
     
     WGShopCartGoodItem *goodItem = [[WGShopCartGoodItem alloc] init];
     goodItem.name = @"香蕉";
@@ -124,23 +128,47 @@
     [confirmBtn setTitleColor:kWhiteColor forState:UIControlStateNormal];
     [confirmBtn addTarget:self action:@selector(touchConfirmBtnBtn:) forControlEvents:UIControlEventTouchUpInside];
     [_footView addSubview:confirmBtn];
-    
-    [self refreshTableView];
+    //[self refreshTableView];
 }
 
 - (void)touchConfirmBtnBtn:(UIButton *)sender {
-    
+    if ([WGApplication sharedApplication].isLogined) {
+        //1, 判断有没有失效产品(服务端)， 如果有失效产品，提示删除
+    }
+    else {
+        
+    }
+}
+
+- (void)refreshUI {
+    [self refreshTableView];
+    _footView.hidden = !(_data && _data.goods && _data.goods.count);
+    NSString *deliveryPrice = _data.shopCartPrice.deliveryPrice;
+    _deliveryPriceLabel.text = deliveryPrice;
+    NSString *totalePrice = _data.shopCartPrice.totalePrice;
+    _totalePriceLabel.text = totalePrice;
 }
 
 - (void)refreshTableView {
     [_tableView reloadData];
+}
+
+- (void)didReceiveNotification:(NSInteger)notification {
+    if (notification == WGRefreshNotificationTypeLogin) {
+        [self loadShopCartList:YES pulling:NO];
+    }
+    else if (notification == WGRefreshNotificationTypeLogout) {
+        //[self loadShopCart];
+    }
+}
+
+- (void)handleUpdateGood:(WGShopCartGoodItem *)item {
     
-    _footView.hidden = !(_data && _data.goods && _data.goods.count);
-    
-    NSString *deliveryPrice = [NSString stringWithFormat:kStr(@"Price With Unit"), _data.deliveryPrice];
-    _deliveryPriceLabel.text = deliveryPrice;
-    NSString *totalePrice = [NSString stringWithFormat:kStr(@"Totale:Price With Unit"), _data.totalePrice];
-    _totalePriceLabel.text = totalePrice;
+}
+
+- (void)intoCommitOrderViewController {
+    WGCommitOrderViewController *vc = [[WGCommitOrderViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -170,24 +198,29 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellId = @"cellId";
-    JHTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    WGShopCartCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
     if (!cell) {
         cell = [[WGShopCartCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
         JHView *line = [[JHView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kAppSepratorLineHeight)];
         line.backgroundColor = WGAppSeparateLineColor;
         [cell.contentView addSubview:line];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.onApply = ^(WGShopCartGoodItem *item) {
+        
+        };
     }
     [cell showWithData:_data.goods[indexPath.row]];
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
 }
 
-- (void)beginRefreshFooter:(TWRefreshTableView*) tableView {
-    
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self handleDeleteIndexPath:indexPath];
+    }
 }
 
 @end
