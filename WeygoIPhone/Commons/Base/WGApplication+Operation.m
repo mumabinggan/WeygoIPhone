@@ -215,3 +215,7 @@
 }
 
 @end
+
+@implementation WGApplication (SwitchTab)
+
+@end

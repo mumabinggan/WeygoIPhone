@@ -18,6 +18,9 @@
     [[WGApplication sharedApplication] loadBaseServiceOnCompletion:^(WGBaseServiceResponse *response) {
         [weakSelf handleBaseServiceResponse:application withOptions:launchOptions withResponse:(WGBaseServiceResponse *)response];
     }];
+    if ([WGApplication sharedApplication].isLogined) {
+        [[WGApplication sharedApplication] loadUserInfoOnCompletion:nil];
+    }
 }
 
 - (void)handleBaseServiceResponse:(UIApplication *)application withOptions:(NSDictionary *)launchOptions withResponse:(WGBaseServiceResponse *)response {

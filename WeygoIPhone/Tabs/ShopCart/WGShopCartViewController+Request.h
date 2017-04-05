@@ -10,7 +10,7 @@
 
 @interface WGShopCartViewController (Request)
 
-- (void)handleDeleteIndexPath:(NSIndexPath *)indexPath;
+- (void)loadDeleteIndexPath:(NSIndexPath *)indexPath;
 
 - (void)loadShopCartList:(BOOL)refresh pulling:(BOOL)pulling;
 

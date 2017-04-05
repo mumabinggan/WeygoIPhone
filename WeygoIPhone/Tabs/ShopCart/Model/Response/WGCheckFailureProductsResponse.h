@@ -8,6 +8,16 @@
 
 #import "WGResponse.h"
 
+@class WGCheckFailureProductsData;
+
 @interface WGCheckFailureProductsResponse : WGResponse
+
+@property (nonatomic, strong) WGCheckFailureProductsData *data;
+
+@end
+
+@interface WGCheckFailureProductsData : JHObject
+
+@property (nonatomic, strong) NSString *tip;
 
 @end

@@ -30,6 +30,9 @@
 #import "WGGoodDetailViewController.h"
 #import "WGCollectionViewController.h"
 #import "WGLoginViewController.h"
+#import "WGDealFailGoodView.h"
+#import "WGDealShopCartGiftGoodView.h"
+#import "WGDeliverPriceView.h"
 
 @interface WGHomeSliderViewController ()
 {
@@ -310,13 +313,34 @@
     WeakSelf;
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
-            if ([self cannotEditPostCode]) {
-                return;
-            }
-            WGPostCodePopoverView *view = [[WGPostCodePopoverView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kDeviceHeight)];
-            view.onApply = ^(NSString *postCode) {
-                [weakSelf handleSetPostCode];
-            };
+//            if ([self cannotEditPostCode]) {
+//                return;
+//            }
+//            WGHomeFloorContentGoodItem *item = [[WGHomeFloorContentGoodItem alloc] init];
+//            item.name = @"fasdfasdfasdfasdf";
+//            item.pictureURL = @"";
+//            item.chineseName = @"郑渊谦";
+//            item.briefDescription = @"要想两行文字大小不同，颜色不同，那加一个UILabel作为UIButton的subview了应该是最方便的实现方式了";
+//            item.price = @"932.32";
+//            item.currentPrice = @"322.23";
+//            
+//            WGHomeFloorContentGoodItem *item1 = [[WGHomeFloorContentGoodItem alloc] init];
+//            item1.name = @"sadfas";
+//            item1.pictureURL = @"";
+//            item1.chineseName = @"郑渊谦";
+//            item1.briefDescription = @"要想两行文字大小不同，颜色不同，那加一个UILabel作为UIButton的subview了应该是最方便的实现方式了要想两行文字大小不同，颜色不同，那加一个UILabel作为UIButton的subview了应该是最方便的实现方式了";
+//            item1.price = @"932.32";
+//            item1.currentPrice = @"322.23";
+//            WGDealShopCartGiftGoodView *view = [[WGDealShopCartGiftGoodView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kDeviceHeight)];
+//            view.goods = @[item, item1];
+            WGDeliverPriceView *view = [[WGDeliverPriceView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kDeviceHeight)];
+            view.tip = @"要想两行文字大小不同，颜色不同，那加一个UILabel作为UIButton的subview了应该是最方便的实现方式了要想两行文字大小不同，颜色不同，那加一个UILabel作为UIButton的subview了应该是最方便的实现方式了";
+//            WGDealFailGoodView *view = [[WGDealFailGoodView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kDeviceHeight)];
+            //view.tip = @"如果两行文字大小相同，颜色相同，可以直接设置Line Break为Word Wrap，然后在Title中按option+enter就可以增加行数。";
+//            WGPostCodePopoverView *view = [[WGPostCodePopoverView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kDeviceHeight)];
+//            view.onApply = ^(NSString *postCode) {
+//                [weakSelf handleSetPostCode];
+//            };
             [view show];
             //弹出输入邮编
             return;

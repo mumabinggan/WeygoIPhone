@@ -21,7 +21,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        self.tabBarIndex = WGTabIndexForeign;
+        self.tabBarIndex = WGTabIndexShopCart;
         self.tabBarItem.title = kStr(@"TabShopCart");
         self.tabBarItem.image = [UIImage imageNamed:@"tab_cart_icon"];
     }

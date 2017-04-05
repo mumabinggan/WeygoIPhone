@@ -11,6 +11,7 @@
 #import "WGCommonViewController+Segment.h"
 #import "WGCommonViewController+Contents.h"
 #import "WGCommonViewController+Request.h"
+#import "WGTitleItem.h"
 
 @interface WGCommonViewController ()
 
@@ -40,6 +41,16 @@
 //    //[self addContentsWithIndex:0];
 //    //[_contentsScrollView addSubview:[self collectionView]];
 //}
+
+- (void)setCurrentId:(long long)currentId {
+    for (int num = 0; num < _titleArray.count; ++num) {
+        WGTitleItem *item = _titleArray[num];
+        if (item.id == currentId) {
+            [self setContentsScrollViewOffsetWithIndex:currentId];
+            return;
+        }
+    }
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

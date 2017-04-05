@@ -78,4 +78,6 @@
 
 #define kInvitationPlaceholderImage [UIImage imageNamed:@""]
 
+#define kShopCartGiftPlaceholderImage [UIImage imageNamed:@""]
+
 #endif /* WGAppConstants_h */

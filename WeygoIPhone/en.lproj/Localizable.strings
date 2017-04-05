@@ -260,3 +260,12 @@
 "Insert_Cap_Des" = "Indicaci la tua posizione attuale";
 "Insert_Cap" = "Inserisci CAP";
 "Insert_Cap_Error" = "Il tuo CAP non è servito al momento, torna a trovarci!";
+
+//购物车
+"ShopCart_DeleteFailGood" = "ELIMINA I PRODOTTI";
+"ShopCart_ChangeFailGood" = "PROCEDI CON LE QUANTITA' DISPONIBILI";
+"ShopCart_GiftGoodOne" = "Sì, desidero l'omaggio";
+"ShopCart_GiftGoodTwo" = "No, non desidero l'omaggio";
+"ShopCart_GiftGoodThree" = "INVITO ALL'ASSAGGIO:PER OGNI SPESA EFFETTUATAWEYGO REGALA";
+"ShopCart_DeliverPrice_Title" = "Informazioni per la consegna";
+"ShopCart_DeliverPrice_Ok" = "Chiudi";

@@ -27,6 +27,7 @@ static const float kTabBarHeight = 60;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.delegate = self;
     // Do any additional setup after loading the view.
     self.viewControllers = [NSArray arrayWithObjects:
                             [[WGHomeTabViewController alloc] init],

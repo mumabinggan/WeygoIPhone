@@ -37,10 +37,11 @@
 }
 
 - (void)initSubView {
+    [super initSubView];
     _contentVC = [[WGCommonViewController alloc] init];
     _contentVC.type = WGConfigContentTypeBenefit;
     [self.view addSubview:_contentVC.view];
-    [self.navigationController addChildViewController:_contentVC];
+    [self addChildViewController:_contentVC];
 }
 
 - (BOOL)prefersNavigationBarHiddenAnimated {

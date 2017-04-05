@@ -9,6 +9,8 @@
 #import "WGApplication+Request.h"
 #import "JHNetworkManager.h"
 #import "WGHomeSliderRequest.h"
+#import "WGUserInfoRequest.h"
+#import "WGUserInfoResponse.h"
 
 @implementation WGApplication (Request)
 
@@ -73,8 +75,8 @@
                     count:(NSInteger)count
              onCompletion:(void (^)(WGAddGoodToCartResponse *))completion {
     WGAddGoodToCartRequest *request = [[WGAddGoodToCartRequest alloc] init];
-    request.goodIds = @(goodId).stringValue;
-    request.counts = @(count).stringValue;
+    request.goodId = @(goodId).stringValue;
+    request.count = @(count).stringValue;
     [[JHNetworkManager sharedManager] get:request forResponseClass:[WGAddGoodToCartResponse class] success:^(JHResponse *response) {
         if (completion) {
             completion((WGAddGoodToCartResponse *)response);
@@ -84,6 +86,27 @@
             completion(nil);
         }
     }];
+}
+
+- (void)loadUserInfoOnCompletion:(void (^)(WGUserInfoResponse *))completion {
+    WGUserInfoRequest *request = [[WGUserInfoRequest alloc] init];
+    WeakSelf;
+    [[JHNetworkManager sharedManager] get:request forResponseClass:[WGAddGoodToCartResponse class] success:^(JHResponse *response) {
+        [weakSelf handleUserInfoResponse:(WGUserInfoResponse *)response];
+        if (completion) {
+            completion((WGUserInfoResponse *)response);
+        }
+    } failure:^(NSError *error) {
+        if (completion) {
+            completion(nil);
+        }
+    }];
+}
+
+- (void)handleUserInfoResponse:(WGUserInfoResponse *)response {
+    if (response.success) {
+        [self setUser:response.data];
+    }
 }
 
 @end

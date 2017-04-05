@@ -10,9 +10,9 @@
 
 @interface WGAddGoodToCartRequest : WGGuestRequest
 
-@property (nonatomic, strong) NSString *goodIds;
+@property (nonatomic, strong) NSString *goodId;
 
-@property (nonatomic, strong) NSString *counts;
+@property (nonatomic, strong) NSString *count;
 
 @property (nonatomic, strong) NSString *cap;
 

@@ -14,6 +14,7 @@
 #import "WGImageVerificationCodeResponse.h"
 #import "WGAddGoodToCartRequest.h"
 #import "WGAddGoodToCartResponse.h"
+#import "WGUserInfoResponse.h"
 
 @interface WGApplication (Request)
 
@@ -26,5 +27,7 @@
 - (void)loadAddGoodToCart:(long long)goodId
                     count:(NSInteger)count
              onCompletion:(void (^)(WGAddGoodToCartResponse *))completion;
+
+- (void)loadUserInfoOnCompletion:(void (^)(WGUserInfoResponse *))completion;
 
 @end

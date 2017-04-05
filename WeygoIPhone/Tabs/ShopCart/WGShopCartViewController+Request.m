@@ -24,6 +24,8 @@
 #import "WGShopCartGiftRequest.h"
 #import "WGShopCartGiftResponse.h"
 #import "WGCommitOrderViewController.h"
+#import "WGDealFailGoodView.h"
+#import "WGDealShopCartGiftGoodView.h"
 
 @implementation WGShopCartViewController (Request)
 
@@ -83,6 +85,13 @@
 - (void)handleCheckFailureGoodResponse:(WGCheckFailureProductsResponse *)response {
     if (response.code == 100) {
         //有失效产品
+        WGDealFailGoodView *view = [[WGDealFailGoodView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kDeviceHeight)];
+        WeakSelf;
+        view.onApply = ^(NSInteger index) {
+            [weakSelf handleDealFailGoodView:index];
+        };
+        view.tip = response.data.tip;
+        [view show];
     }
     else if (response.code == 101) {
         //无失效产品
@@ -91,6 +100,10 @@
     else {
         [self showWarningMessage:response.message];
     }
+}
+
+- (void)handleDealFailGoodView:(NSInteger)index {
+    [self loadDealFailureGood:(int)index];
 }
 
 - (void)loadDealFailureGood:(int)type {
@@ -127,7 +140,12 @@
     if (response.success) {
         if (response.data && response.data.count > 0) {
             //弹出列表
-            
+            WGDealShopCartGiftGoodView *view = [[WGDealShopCartGiftGoodView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kDeviceHeight)];
+            WeakSelf;
+            view.onApply = ^(int index) {
+                [weakSelf loadDealGiftGood:index];
+            };
+            [view showInView:self.view];
         }
         else {
             [self intoCommitOrderViewController];

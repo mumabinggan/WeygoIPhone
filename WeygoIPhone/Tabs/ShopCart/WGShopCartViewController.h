@@ -7,8 +7,7 @@
 //
 
 #import "WGViewController.h"
-
-@class WGShopCart;
+#import "WGShopCart.h"
 
 @interface WGShopCartViewController : WGViewController
 {

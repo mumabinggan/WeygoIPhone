@@ -16,6 +16,8 @@
 
 @property (nonatomic, assign) NSInteger residueCount;
 
+@property (nonatomic, strong) NSString *price;
+
 @property (nonatomic, strong) NSString *name;
 
 @property (nonatomic, strong) NSString *briefDescription;

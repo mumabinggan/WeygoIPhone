@@ -18,11 +18,11 @@
     self.navigationItem.leftBarButtonItem = [self createSliderItem];
 }
 
-- (void)touchSliderButton:(id)sender {
-    WGMainViewController *mainViewController = (WGMainViewController *)self.parentViewController;
-    if ([mainViewController respondsToSelector:@selector(openSideBarViewController)]) {
-        [mainViewController openSideBarViewController];
-    }
-}
+//- (void)touchSliderButton:(id)sender {
+//    WGMainViewController *mainViewController = (WGMainViewController *)self.parentViewController;
+//    if ([mainViewController respondsToSelector:@selector(openSideBarViewController)]) {
+//        [mainViewController openSideBarViewController];
+//    }
+//}
 
 @end

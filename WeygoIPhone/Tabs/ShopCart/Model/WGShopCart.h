@@ -16,6 +16,8 @@
 
 @property (nonatomic, strong) NSArray *goods;
 
+@property (nonatomic, strong) NSString *deliverPriceDescription;
+
 //for self use
 @property (nonatomic, assign, readonly) BOOL hasInvalidGood;
 

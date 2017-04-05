@@ -12,6 +12,7 @@
 #import "WGShopCartCell.h"
 #import "WGShopCartViewController+Request.h"
 #import "WGCommitOrderViewController.h"
+#import "WGDeliverPriceView.h"
 
 @interface WGShopCartViewController ()
 {
@@ -108,7 +109,7 @@
     _footView.hidden = YES;
     
     JHImageView *deliveryImageView = [[JHImageView alloc] initWithFrame:CGRectMake(kAppAdaptWidth(16), kAppAdaptHeight(20), kAppAdaptWidth(20), kAppAdaptHeight(14))];
-    deliveryImageView.image = [UIImage imageNamed:@""];
+    deliveryImageView.image = [UIImage imageNamed:@"deliver_car"];
     [_footView addSubview:deliveryImageView];
     
     _deliveryPriceLabel = [[JHLabel alloc] initWithFrame:CGRectMake(_deliveryPriceLabel.maxY + kAppAdaptWidth(5), kAppAdaptHeight(18), kDeviceWidth/2 - kAppAdaptWidth(16 + 20 + 5), kAppAdaptHeight(20))];
@@ -132,11 +133,30 @@
 }
 
 - (void)touchConfirmBtnBtn:(UIButton *)sender {
+    WGDeliverPriceView *view = [[WGDeliverPriceView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kDeviceHeight)];
+    view.tip = _data.deliverPriceDescription;
+    WeakSelf;
+    view.onApply = ^(NSInteger index) {
+        [weakSelf handleClose];
+    };
+    [view showInView:self.view];
+}
+
+- (void)handleClose {
     if ([WGApplication sharedApplication].isLogined) {
         //1, 判断有没有失效产品(服务端)， 如果有失效产品，提示删除
     }
     else {
-        
+        _loginType = WGLoginTypeShopCart;
+        [self openCartLoginViewController];
+    }
+}
+
+- (void)handleLoginSuccess:(id)customData {
+    [super handleLoginSuccess:customData];
+    if (_loginType == WGLoginTypeShopCart) {
+        _loginType = WGLoginTypeNormal;
+        [self loadShopCartList:YES pulling:YES];
     }
 }
 
@@ -219,7 +239,7 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [self handleDeleteIndexPath:indexPath];
+        [self loadDeleteIndexPath:indexPath];
     }
 }
 

@@ -12,8 +12,8 @@
 typedef NS_ENUM(NSInteger, WGTabIndex) {
     WGTabIndexHome = 0,
     WGTabIndexClassify,
+    WGTabIndexShopCart,
     WGTabIndexBenefit,
-    WGTabIndexForeign,
     WGTabIndexMine,
 };
 
