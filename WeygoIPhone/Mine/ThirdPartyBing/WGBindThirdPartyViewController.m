@@ -8,6 +8,8 @@
 
 #import "WGBindThirdPartyViewController.h"
 #import "WGSegmentView.h"
+#import "WGVerificationCodeView.h"
+#import "PooCodeView.h"
 
 @interface WGBindThirdPartyViewController ()
 {
@@ -18,7 +20,7 @@
     JHTextField *_usernameTextField;
     JHTextField *_passwordTextField;
     JHTextField *_codeTextField;
-    JHButton *_verificationCodeBtn;
+    PooCodeView *_verificationCodeBtn;
     
     JHView *_unRegisterView;
     JHTextField *_mobileTextField;
@@ -28,7 +30,7 @@
     JHTextField *_unRegisterPasswordTextField;
     JHTextField *_confirmPasswordTextField;
     
-    JHButton *_unRegisterVerificationCodeBtn;
+    WGVerificationCodeView *_unRegisterVerificationCodeBtn;
 }
 @end
 
@@ -44,6 +46,7 @@
 }
 
 - (void)initSubView {
+    [super initSubView];
     _titleSegmentView = [[WGSegmentView alloc] initWithFrame:CGRectMake(0, kAppNavigationVCY, kDeviceWidth, kAppAdaptHeight(44))];
     [_titleSegmentView setTitleArray:@[kStr(@"ThirdPartyBing_HadRegister"), kStr(@"ThirdPartyBing_UnRegister")]];
     _titleSegmentView.backgroundColor = kWhiteColor;
@@ -60,6 +63,8 @@
     _contentsScrollView.pagingEnabled = YES;
     _contentsScrollView.bounces = NO;
     [self.view addSubview:_contentsScrollView];
+    
+    [self setContentsScrollViewOffsetWithIndex:0];
 }
 
 - (void)createRegisterView {
@@ -94,8 +99,8 @@
         _codeTextField.textColor = WGAppNameLabelColor;
         [_registerView addSubview:_codeTextField];
         
-        _verificationCodeBtn = [[JHButton alloc] initWithFrame:CGRectMake(kAppAdaptWidth(231), kAppAdaptHeight(12), kAppAdaptWidth(80), kAppAdaptHeight(24))];
-        [_verificationCodeBtn addTarget:self action:@selector(touchVerificationCodeBtn:) forControlEvents:UIControlEventTouchUpInside];
+        _verificationCodeBtn = [[PooCodeView alloc] initWithFrame:CGRectMake(kAppAdaptWidth(231), kAppAdaptHeight(8), kAppAdaptWidth(82), kAppAdaptHeight(32))];
+        [_verificationCodeBtn addSingleTapGestureRecognizerWithTarget:self action:@selector(changeVerificationCode)];
         [_verificationCodeBtn setBackgroundColor:kGreenColor];
         [_codeTextField addSubview:_verificationCodeBtn];
         
@@ -126,8 +131,8 @@
         _unRegisterView = [[JHView alloc] initWithFrame:CGRectMake(kDeviceWidth, 0, kDeviceWidth, kAppAdaptHeight(560))];
         [_contentsScrollView addSubview:_unRegisterView];
         
-        JHImageView *countryImageView = [[JHImageView alloc] initWithFrame:CGRectMake(kAppAdaptWidth(32), kAppAdaptHeight(27), kAppAdaptWidth(24), kAppAdaptHeight(24))];
-        countryImageView.backgroundColor = kBlueColor;
+        JHImageView *countryImageView = [[JHImageView alloc] initWithFrame:CGRectMake(kAppAdaptWidth(32), kAppAdaptHeight(33), kAppAdaptWidth(18), kAppAdaptHeight(12))];
+        countryImageView.image = [UIImage imageNamed:@"Italiana_image"];
         [_unRegisterView addSubview:countryImageView];
         
         JHLabel *areaCodeLabel = [[JHLabel alloc] initWithFrame:CGRectMake(kAppAdaptWidth(64), kAppAdaptHeight(27), kAppAdaptWidth(60), kAppAdaptHeight(24))];
@@ -145,14 +150,14 @@
         float textFieldHeight = kAppAdaptHeight(48);
         float textFieldWidth = kDeviceWidth - kAppAdaptWidth(64);
         float textFieldX = kAppAdaptWidth(32);
-        _mobileTextField = [[JHTextField alloc] initWithFrame:CGRectMake(kAppAdaptWidth(32 + 105), kAppAdaptHeight(15), kDeviceWidth - kAppAdaptWidth(64 - 105), textFieldHeight)];
+        _mobileTextField = [[JHTextField alloc] initWithFrame:CGRectMake(kAppAdaptWidth(32 + 105), kAppAdaptHeight(15), kDeviceWidth - kAppAdaptWidth(64 + 105), textFieldHeight)];
         _mobileTextField.font = kAppAdaptFont(14);
         _mobileTextField.placeholder = kStr(@"Register_Mobile");
         _mobileTextField.textColor = WGAppNameLabelColor;
         [_unRegisterView addSubview:_mobileTextField];
         
         float lineY = _mobileTextField.height - kAppSepratorLineHeight;
-        JHView *mobileLineView = [[JHView alloc] initWithFrame:CGRectMake(0, lineY, kDeviceWidth - kAppAdaptWidth(64), kAppSepratorLineHeight)];
+        JHView *mobileLineView = [[JHView alloc] initWithFrame:CGRectMake(0, lineY, _mobileTextField.width, kAppSepratorLineHeight)];
         mobileLineView.backgroundColor = WGAppSeparateLineColor;
         [_mobileTextField addSubview:mobileLineView];
         
@@ -162,13 +167,13 @@
         _unRegisterCodeTextField.textColor = WGAppNameLabelColor;
         [_unRegisterView addSubview:_unRegisterCodeTextField];
         
+        WeakSelf;
         float radius = kAppAdaptHeight(12);
-        _verificationCodeBtn = [[JHButton alloc] initWithFrame:CGRectMake(kAppAdaptWidth(191), kAppAdaptHeight(12), kAppAdaptWidth(120), kAppAdaptHeight(24)) difRadius:JHRadiusMake(radius, radius, radius, radius) borderWidth:kAppAdaptWidth(1) borderColor:WGAppBlueButtonColor backgroundColor:kWhiteColor];
-        [_verificationCodeBtn setTitle:kStr(@"Register_Get_Code") forState:UIControlStateNormal];
-        [_verificationCodeBtn setTitleColor:WGAppBlueButtonColor forState:UIControlStateNormal];
-        _verificationCodeBtn.titleLabel.font = kAppAdaptFont(12);
-        [_verificationCodeBtn addTarget:self action:@selector(touchVerificationCodeBtn:) forControlEvents:UIControlEventTouchUpInside];
-        [_unRegisterCodeTextField addSubview:_verificationCodeBtn];
+        _unRegisterVerificationCodeBtn = [[WGVerificationCodeView alloc] initWithFrame:CGRectMake(kAppAdaptWidth(191), kAppAdaptHeight(12), kAppAdaptWidth(120), kAppAdaptHeight(24))];
+        _unRegisterVerificationCodeBtn.onApply = ^(void) {
+            [weakSelf touchVerificationCodeBtn:nil];
+        };
+        [_unRegisterCodeTextField addSubview:_unRegisterVerificationCodeBtn];
         
         JHView *codeLineView = [[JHView alloc] initWithFrame:CGRectMake(0, lineY, textFieldWidth, kAppSepratorLineHeight)];
         codeLineView.backgroundColor = WGAppSeparateLineColor;
@@ -224,8 +229,12 @@
     }
 }
 
+- (void)changeVerificationCode {
+    [_verificationCodeBtn changeCode];
+}
+
 - (void)refreshkVerificationCode {
-    [_verificationCodeBtn setBackgroundImageWithURL:[NSURL URLWithString:_verificationCodeResponse.data] forState:UIControlStateNormal placeholderImage:kLoginVerificationCodePlaceholderImage options:JHWebImageOptionsLowPriority];
+    //[_verificationCodeBtn setBackgroundImageWithURL:[NSURL URLWithString:_verificationCodeResponse.data] forState:UIControlStateNormal placeholderImage:kLoginVerificationCodePlaceholderImage options:JHWebImageOptionsLowPriority];
 }
 
 - (void)addContentsWithIndex:(NSInteger)selectedIndex {

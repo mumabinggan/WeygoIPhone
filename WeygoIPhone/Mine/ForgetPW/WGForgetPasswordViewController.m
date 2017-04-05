@@ -7,17 +7,14 @@
 //
 
 #import "WGForgetPasswordViewController.h"
+#import "WGForgetPasswordViewController+Request.h"
+#import "WGVerificationCodeView.h"
 
 @interface WGForgetPasswordViewController ()
 {
     JHScrollView *_scrollView;
     
-    JHTextField *_mobileTextField;
-    JHTextField *_codeTextField;
-    JHTextField *_passwordTextField;
-    JHTextField *_confirmPasswordTextField;
-    
-    JHButton *_verificationCodeBtn;
+    WGVerificationCodeView *_verificationCodeBtn;
 }
 @end
 
@@ -39,7 +36,6 @@
 - (void)initSubView {
     _scrollView = [[JHScrollView alloc] initWithFrame:self.view.bounds];
     _scrollView.alwaysBounceVertical = YES;
-    _scrollView.backgroundColor = kRedColor;
     [self.view addSubview:_scrollView];
     
     JHLabel *titleLabel = [[JHLabel alloc] initWithFrame:CGRectMake(0, kAppAdaptHeight(30), kDeviceWidth, kAppAdaptHeight(24))];
@@ -49,18 +45,18 @@
     titleLabel.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:titleLabel];
     
-    JHButton *returnBtn = [[JHButton alloc] initWithFrame:CGRectMake(kAppAdaptWidth(16), kAppAdaptHeight(30), kAppAdaptWidth(24), kAppAdaptHeight(24))];
+    JHButton *returnBtn = [[JHButton alloc] initWithFrame:CGRectMake(kAppAdaptWidth(16), kAppAdaptHeight(37), kAppAdaptWidth(20), kAppAdaptHeight(11))];
     [returnBtn setBackgroundImage:[UIImage imageNamed:@"app_return"] forState:UIControlStateNormal];
     [returnBtn addTarget:self action:@selector(touchReturnBtn:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:returnBtn];
     
     JHImageView *headerImageView = [[JHImageView alloc] initWithFrame:CGRectMake(0, -20, kDeviceWidth, kAppAdaptHeight(164))];
-    headerImageView.image = [UIImage imageNamed:@""];
-    headerImageView.backgroundColor = kGreenColor;
+    headerImageView.image = [UIImage imageNamed:@"forget_passwordHeadImage"];
     [_scrollView addSubview:headerImageView];
     
-    JHImageView *countryImageView = [[JHImageView alloc] initWithFrame:CGRectMake(kAppAdaptWidth(32), headerImageView.maxY + kAppAdaptHeight(27), kAppAdaptWidth(24), kAppAdaptHeight(24))];
-    countryImageView.backgroundColor = kBlueColor;
+    JHImageView *countryImageView = [[JHImageView alloc] initWithFrame:CGRectMake(kAppAdaptWidth(32), headerImageView.maxY + kAppAdaptHeight(33), kAppAdaptWidth(18), kAppAdaptHeight(12))];
+    countryImageView.image = [UIImage imageNamed:@"Italiana_image"];
+    countryImageView.contentMode = UIViewContentModeScaleAspectFill;
     [_scrollView addSubview:countryImageView];
     
     JHLabel *areaCodeLabel = [[JHLabel alloc] initWithFrame:CGRectMake(kAppAdaptWidth(64), headerImageView.maxY + kAppAdaptHeight(27), kAppAdaptWidth(60), kAppAdaptHeight(24))];
@@ -95,12 +91,12 @@
     _codeTextField.textColor = WGAppNameLabelColor;
     [_scrollView addSubview:_codeTextField];
     
+    WeakSelf;
     float radius = kAppAdaptHeight(12);
-    _verificationCodeBtn = [[JHButton alloc] initWithFrame:CGRectMake(kAppAdaptWidth(191), kAppAdaptHeight(12), kAppAdaptWidth(120), kAppAdaptHeight(24)) difRadius:JHRadiusMake(radius, radius, radius, radius) borderWidth:kAppAdaptWidth(1) borderColor:WGAppBlueButtonColor backgroundColor:kWhiteColor];
-    [_verificationCodeBtn setTitle:kStr(@"ForgetPW_Get_Code") forState:UIControlStateNormal];
-    [_verificationCodeBtn setTitleColor:WGAppBlueButtonColor forState:UIControlStateNormal];
-    _verificationCodeBtn.titleLabel.font = kAppAdaptFont(12);
-    [_verificationCodeBtn addTarget:self action:@selector(touchVerificationCodeBtn:) forControlEvents:UIControlEventTouchUpInside];
+    _verificationCodeBtn = [[WGVerificationCodeView alloc] initWithFrame:CGRectMake(kAppAdaptWidth(191), kAppAdaptHeight(12), kAppAdaptWidth(120), kAppAdaptHeight(24))];
+    _verificationCodeBtn.onApply = ^() {
+        [weakSelf touchVerificationCodeBtn:nil];
+    };
     [_codeTextField addSubview:_verificationCodeBtn];
     
     JHView *codeLineView = [[JHView alloc] initWithFrame:CGRectMake(0, lineY, textFieldWidth, kAppSepratorLineHeight)];
@@ -143,11 +139,11 @@
 }
 
 - (void)touchVerificationCodeBtn:(JHButton *)sender {
-    //[self requestVerificationCode];
+    [self loadGetVerificationCode];
 }
 
 - (void)touchFindPasswordBtn:(JHButton *)sender {
-    
+    [self loadChangePassword];
 }
 
 - (void)didReceiveMemoryWarning {

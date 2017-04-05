@@ -32,4 +32,9 @@
     [mainViewController openSideBarViewController];
 }
 
+- (void)switchTab:(WGTabIndex)index {
+    [self.navigationController popToRootViewControllerAnimated:NO];
+    self.mainViewController.selectedIndex = index;
+}
+
 @end

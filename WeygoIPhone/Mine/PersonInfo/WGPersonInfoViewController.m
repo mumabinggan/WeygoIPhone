@@ -9,16 +9,26 @@
 #import "WGPersonInfoViewController.h"
 #import "WGEditPersonInfoCell.h"
 #import "WGPersonHeaderCell.h"
+#import "WGPersonInfoViewController+Request.h"
+#import "WGForgetPasswordViewController.h"
+
+//for test
+#import "WGBindThirdPartyViewController.h"
 
 @interface WGPersonInfoViewController ()
 
 @end
 
+@interface WGPersonInfoViewController (PickerView) <UIPickerViewDelegate, UIPickerViewDataSource>
+
+@end
+
 @interface WGPersonInfoViewController ()
 {
-    JHTableView *_tableView;
     NSArray *_titleMArray;
     //NSMutableArray  *_contentMArray;
+
+    UIView *_pickerView;
 }
 @end
 
@@ -32,11 +42,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = kStr(@"PersonInfo_Title");
+    //[self loadPersonInfo];
 }
 
 - (void)initData {
     _titleMArray = [NSArray arrayWithObjects:kStr(@"PersonInfo_Header"), kStr(@"PersonInfo_Name"), kStr(@"PersonInfo_SurName"), kStr(@"PersonInfo_Number"), kStr(@"PersonInfo_Mobile"), kStr(@"PersonInfo_Email"), kStr(@"PersonInfo_Sex"), kStr(@"PersonInfo_Birth"), kStr(@"PersonInfo_tax"), kStr(@"PersonInfo_ChangePW"), nil];
-    _user = [WGApplication sharedApplication].user;
+    _user = [[WGApplication sharedApplication].user copy];
 }
 
 - (void)initSubView {
@@ -47,12 +58,13 @@
     _tableView = [[TWRefreshTableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
     _tableView.dataSource = self;
     _tableView.delegate = self;
+    _tableView.backgroundColor = kWhiteColor;
     _tableView.contentInset = UIEdgeInsetsMake(-35, 0, 0, 0);
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [contentView addSubview:_tableView];
     
     JHButton *addBtn = [[JHButton alloc] initWithFrame:CGRectMake(kAppAdaptWidth(16), kDeviceHeight - kAppAdaptHeight(56), kDeviceWidth - kAppAdaptWidth(32), kAppAdaptHeight(40)) difRadius:JHRadiusMake(kAppAdaptWidth(20), kAppAdaptWidth(20), kAppAdaptWidth(20), kAppAdaptWidth(20)) backgroundColor:WGAppFooterButtonColor];
-    [addBtn setTitle:kStr(@"Save") forState:UIControlStateNormal];
+    [addBtn setTitle:kStr(@"PersonInfo_Save") forState:UIControlStateNormal];
     addBtn.titleLabel.font = kAppAdaptFont(14);
     [addBtn setTitleColor:kWhiteColor forState:UIControlStateNormal];
     [addBtn addTarget:self action:@selector(touchAddBtn:) forControlEvents:UIControlEventTouchUpInside];
@@ -60,8 +72,7 @@
 }
 
 - (void)touchAddBtn:(UIButton *)sender {
-    //contentArray to add
-    //DLog(@"---content = %@", _contentMArray);
+    [self loadCommitPersonInfo];
 }
 
 - (void)handleEndEdit:(JHTableViewCell *)cell {
@@ -81,6 +92,67 @@
     else if (indexPath.row == 8) {
         _user.tax = ((WGEditPersonInfoCell *)cell).textField.text;
     }
+}
+
+- (void)initSexPickerView {
+    if (_pickerView) {
+        [_pickerView removeFromSuperview];
+        _pickerView = nil;
+    }
+    
+    JHButton *closeBtn = [[JHButton alloc] initWithFrame:self.view.bounds];
+    [closeBtn addTarget:self action:@selector(touchCloseBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:closeBtn];
+    
+    UIPickerView *sexPickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, kDeviceHeight - kAppAdaptHeight(130), kDeviceWidth, kAppAdaptHeight(130))];
+    sexPickerView.backgroundColor = kRGB(244, 244, 244);
+    sexPickerView.delegate = self;
+    sexPickerView.dataSource = self;
+    sexPickerView.showsSelectionIndicator = YES;
+    [self.view addSubview:sexPickerView];
+    _pickerView = sexPickerView;
+}
+
+- (void)touchCloseBtn:(JHButton *)sender {
+    [UIView animateWithDuration:0.3 animations:^() {
+        _pickerView.layer.opacity = 0.0f;
+    } completion:^(BOOL finished) {
+        if (finished) {
+            [_pickerView removeFromSuperview];
+            _pickerView = nil;
+        }
+    }];
+    [sender removeFromSuperview];
+    sender = nil;
+}
+
+- (void)initDatePickerView {
+    if (_pickerView) {
+        [_pickerView removeFromSuperview];
+        _pickerView = nil;
+    }
+    
+    JHButton *closeBtn = [[JHButton alloc] initWithFrame:self.view.bounds];
+    [closeBtn addTarget:self action:@selector(touchCloseBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:closeBtn];
+    
+    UIDatePicker *datePickerView = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, kDeviceHeight - kAppAdaptHeight(160), kDeviceWidth, kAppAdaptHeight(160))];
+    datePickerView.datePickerMode = UIDatePickerModeDate;
+    datePickerView.backgroundColor = kGrayColor;
+    [datePickerView addTarget:self action:@selector(handleDateChange:) forControlEvents:UIControlEventValueChanged];
+    [self.view addSubview:datePickerView];
+    _pickerView = datePickerView;
+}
+
+- (void)handleDateChange:(id)sender {
+    UIDatePicker *datePicker = (UIDatePicker *)_pickerView;
+    NSString *date = [datePicker.date stringWithFormat:@"yyyy-MM-dd"];
+    _user.birth = date;
+    [_tableView reloadData];
+}
+
+- (void)refreshUI {
+    [_tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -144,16 +216,16 @@
     cell.textLabel.text = _titleMArray[indexPath.row];
     if (indexPath.row != 9) {
         if (indexPath.row == 0) {
-            [cell showWithData:(JHObject *)([_user isMan] ? @"" : @"")];
+            ((WGPersonHeaderCell *)cell).headerImageView.image = [UIImage imageNamed:_user.userAvatar];
         }
         else if (indexPath.row == 3) {
             cell.detailTextLabel.text = [NSString stringWithFormat:@"%lld", _user.userId];
         }
         else if (indexPath.row == 6) {
-            cell.detailTextLabel.text = [NSString stringWithFormat:@"%lld", _user.sex];
+            cell.detailTextLabel.text = _user.sexString;
         }
         else if (indexPath.row == 7) {
-            cell.detailTextLabel.text = [NSString stringWithFormat:@"%lld", _user.birth];
+            cell.detailTextLabel.text = _user.birth;
         }
         else {
             NSArray *array = [NSMutableArray arrayWithObjects:
@@ -167,6 +239,12 @@
                               [NSNull null],
                               [NSString safeString:_user.tax], nil];
             ((WGEditPersonInfoCell *)cell).textField.text = array[indexPath.row];
+            if (4 == indexPath.row) {
+                ((WGEditPersonInfoCell *)cell).textField.enabled = [NSString isNullOrEmpty:_user.mobile];
+            }
+            else if (5 == indexPath.row) {
+                ((WGEditPersonInfoCell *)cell).textField.enabled = [NSString isNullOrEmpty:_user.email];
+            }
         }
     }
 
@@ -176,13 +254,41 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 6) {
         //性别
+        [self initSexPickerView];
     }
     if (indexPath.row == 7) {
         //日期
+        [self initDatePickerView];
     }
     if (indexPath.row == 9) {
+        WGBindThirdPartyViewController *vc = [[WGBindThirdPartyViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+        return;
         //忘记密码
+//        WGForgetPasswordViewController *vc = [[WGForgetPasswordViewController alloc] init];
+//        [self.navigationController pushViewController:vc animated:YES];
     }
+}
+
+@end
+
+@implementation WGPersonInfoViewController (PickerView)
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    return 3;
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    return _user.sexs[row];
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    _user.sex = (int)row;
+    [_tableView reloadData];
 }
 
 @end

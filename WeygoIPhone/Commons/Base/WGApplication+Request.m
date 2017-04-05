@@ -91,7 +91,7 @@
 - (void)loadUserInfoOnCompletion:(void (^)(WGUserInfoResponse *))completion {
     WGUserInfoRequest *request = [[WGUserInfoRequest alloc] init];
     WeakSelf;
-    [[JHNetworkManager sharedManager] get:request forResponseClass:[WGAddGoodToCartResponse class] success:^(JHResponse *response) {
+    [[JHNetworkManager sharedManager] get:request forResponseClass:[WGUserInfoResponse class] success:^(JHResponse *response) {
         [weakSelf handleUserInfoResponse:(WGUserInfoResponse *)response];
         if (completion) {
             completion((WGUserInfoResponse *)response);
@@ -107,6 +107,21 @@
     if (response.success) {
         [self setUser:response.data];
     }
+}
+
+- (void)loadVerificationCodeUserName:(NSString *)username countryCode:(NSString *)countryCode onCompletion:(void (^)(WGGetVerifyCodeResponse *))completion {
+    WGGetVerifyCodeRequest *request = [[WGGetVerifyCodeRequest alloc] init];
+    request.username = username;
+    request.countryCode = countryCode;
+    [[JHNetworkManager sharedManager] get:request forResponseClass:[WGGetVerifyCodeResponse class] success:^(JHResponse *response) {
+        if (completion) {
+            completion((WGGetVerifyCodeResponse *)response);
+        }
+    } failure:^(NSError *error) {
+        if (completion) {
+            completion(nil);
+        }
+    }];
 }
 
 @end

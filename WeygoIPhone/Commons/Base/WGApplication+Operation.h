@@ -53,7 +53,3 @@
 - (BOOL)supportPostcode:(NSString *)postCode;
 
 @end
-
-@interface WGApplication (SwitchTab)
-
-@end

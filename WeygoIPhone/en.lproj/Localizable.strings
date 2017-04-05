@@ -269,3 +269,9 @@
 "ShopCart_GiftGoodThree" = "INVITO ALL'ASSAGGIO:PER OGNI SPESA EFFETTUATAWEYGO REGALA";
 "ShopCart_DeliverPrice_Title" = "Informazioni per la consegna";
 "ShopCart_DeliverPrice_Ok" = "Chiudi";
+
+//个人信息
+"PersonInfo_Sex_Select" = "Seleziona";
+"PersonInfo_Sex_Man" = "Maschile";
+"PersonInfo_Sex_Woman" = "Femminile";
+"PersonInfo_Save" = "Salva";

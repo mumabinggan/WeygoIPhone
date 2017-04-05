@@ -15,6 +15,8 @@
 #import "WGAddGoodToCartRequest.h"
 #import "WGAddGoodToCartResponse.h"
 #import "WGUserInfoResponse.h"
+#import "WGGetVerifyCodeRequest.h"
+#import "WGGetVerifyCodeResponse.h"
 
 @interface WGApplication (Request)
 
@@ -29,5 +31,9 @@
              onCompletion:(void (^)(WGAddGoodToCartResponse *))completion;
 
 - (void)loadUserInfoOnCompletion:(void (^)(WGUserInfoResponse *))completion;
+
+- (void)loadVerificationCodeUserName:(NSString *)username
+                         countryCode:(NSString *)countryCode
+                        onCompletion:(void (^)(WGGetVerifyCodeResponse *))completion;
 
 @end

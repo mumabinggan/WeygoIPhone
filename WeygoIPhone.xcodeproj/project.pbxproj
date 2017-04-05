@@ -38,8 +38,6 @@
 		BE520FF91E88FE35004BD34E /* WGClassifyResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BE520FF81E88FE34004BD34E /* WGClassifyResponse.m */; };
 		BE5210031E89102C004BD34E /* AppDelegate+Init.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5210021E89102C004BD34E /* AppDelegate+Init.m */; };
 		BE5210201E8912C5004BD34E /* WGApplication+ShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE52101F1E8912C5004BD34E /* WGApplication+ShowView.m */; };
-		BE5210251E8926B4004BD34E /* WGGetUserInfoRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5210241E8926B4004BD34E /* WGGetUserInfoRequest.m */; };
-		BE5210281E8926CD004BD34E /* WGGetUserInfoResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5210271E8926CD004BD34E /* WGGetUserInfoResponse.m */; };
 		BE5257231DFFB6FE00AB5CB9 /* Oswald-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE5257131DFFB6FE00AB5CB9 /* Oswald-Bold.ttf */; };
 		BE5257241DFFB6FE00AB5CB9 /* Oswald-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE5257141DFFB6FE00AB5CB9 /* Oswald-BoldItalic.ttf */; };
 		BE5257251DFFB6FE00AB5CB9 /* Oswald-Demi-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE5257151DFFB6FE00AB5CB9 /* Oswald-Demi-BoldItalic.ttf */; };
@@ -102,6 +100,16 @@
 		BE5E4C441E24F9E200ACA48F /* WGHomeTabBaseContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5E4C431E24F9E200ACA48F /* WGHomeTabBaseContentViewController.m */; };
 		BE5E4C471E2526D900ACA48F /* WGHomeTabViewController+Contents.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5E4C461E2526D900ACA48F /* WGHomeTabViewController+Contents.m */; };
 		BE5E4C4A1E252E2000ACA48F /* WGHomeTabContentViewController+Request.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5E4C491E252E2000ACA48F /* WGHomeTabContentViewController+Request.m */; };
+		BE5F618E1E94C78200FBA32A /* WGPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5F618D1E94C78200FBA32A /* WGPickerView.m */; };
+		BE5F61921E94D3EE00FBA32A /* WGPersonInfoViewController+Request.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5F61911E94D3EE00FBA32A /* WGPersonInfoViewController+Request.m */; };
+		BE5F61951E94D44200FBA32A /* WGCommitUserInfoRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5F61941E94D44200FBA32A /* WGCommitUserInfoRequest.m */; };
+		BE5F61981E94D45200FBA32A /* WGCommitUserInfoResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5F61971E94D45200FBA32A /* WGCommitUserInfoResponse.m */; };
+		BE5F61A31E94E7A900FBA32A /* WGGetVerifyCodeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5F61A21E94E7A900FBA32A /* WGGetVerifyCodeRequest.m */; };
+		BE5F61A61E94E7B800FBA32A /* WGGetVerifyCodeResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5F61A51E94E7B800FBA32A /* WGGetVerifyCodeResponse.m */; };
+		BE5F61A91E94E7D300FBA32A /* WGChangePasswordRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5F61A81E94E7D300FBA32A /* WGChangePasswordRequest.m */; };
+		BE5F61AC1E94E7E100FBA32A /* WGChangePasswordResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5F61AB1E94E7E100FBA32A /* WGChangePasswordResponse.m */; };
+		BE5F61AF1E94EA8800FBA32A /* WGForgetPasswordViewController+Request.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5F61AE1E94EA8800FBA32A /* WGForgetPasswordViewController+Request.m */; };
+		BE5F61B21E94F4AE00FBA32A /* WGVerificationCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5F61B11E94F4AE00FBA32A /* WGVerificationCodeView.m */; };
 		BE6229E01E765969002BFEDB /* WGGoodDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6229DF1E765969002BFEDB /* WGGoodDetail.m */; };
 		BE6229E41E765BA5002BFEDB /* WGGoodDetailViewController+Request.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6229E31E765BA5002BFEDB /* WGGoodDetailViewController+Request.m */; };
 		BE6229EA1E765BE6002BFEDB /* WGGoodDetailRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6229E91E765BE6002BFEDB /* WGGoodDetailRequest.m */; };
@@ -469,10 +477,6 @@
 		BE5210021E89102C004BD34E /* AppDelegate+Init.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Init.m"; sourceTree = "<group>"; };
 		BE52101E1E8912C5004BD34E /* WGApplication+ShowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGApplication+ShowView.h"; sourceTree = "<group>"; };
 		BE52101F1E8912C5004BD34E /* WGApplication+ShowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGApplication+ShowView.m"; sourceTree = "<group>"; };
-		BE5210231E8926B4004BD34E /* WGGetUserInfoRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGGetUserInfoRequest.h; sourceTree = "<group>"; };
-		BE5210241E8926B4004BD34E /* WGGetUserInfoRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGGetUserInfoRequest.m; sourceTree = "<group>"; };
-		BE5210261E8926CD004BD34E /* WGGetUserInfoResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGGetUserInfoResponse.h; sourceTree = "<group>"; };
-		BE5210271E8926CD004BD34E /* WGGetUserInfoResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGGetUserInfoResponse.m; sourceTree = "<group>"; };
 		BE5257131DFFB6FE00AB5CB9 /* Oswald-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Bold.ttf"; sourceTree = "<group>"; };
 		BE5257141DFFB6FE00AB5CB9 /* Oswald-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-BoldItalic.ttf"; sourceTree = "<group>"; };
 		BE5257151DFFB6FE00AB5CB9 /* Oswald-Demi-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Demi-BoldItalic.ttf"; sourceTree = "<group>"; };
@@ -581,6 +585,26 @@
 		BE5E4C461E2526D900ACA48F /* WGHomeTabViewController+Contents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGHomeTabViewController+Contents.m"; sourceTree = "<group>"; };
 		BE5E4C481E252E2000ACA48F /* WGHomeTabContentViewController+Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGHomeTabContentViewController+Request.h"; sourceTree = "<group>"; };
 		BE5E4C491E252E2000ACA48F /* WGHomeTabContentViewController+Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGHomeTabContentViewController+Request.m"; sourceTree = "<group>"; };
+		BE5F618C1E94C78200FBA32A /* WGPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGPickerView.h; sourceTree = "<group>"; };
+		BE5F618D1E94C78200FBA32A /* WGPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGPickerView.m; sourceTree = "<group>"; };
+		BE5F61901E94D3EE00FBA32A /* WGPersonInfoViewController+Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGPersonInfoViewController+Request.h"; sourceTree = "<group>"; };
+		BE5F61911E94D3EE00FBA32A /* WGPersonInfoViewController+Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGPersonInfoViewController+Request.m"; sourceTree = "<group>"; };
+		BE5F61931E94D44200FBA32A /* WGCommitUserInfoRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGCommitUserInfoRequest.h; sourceTree = "<group>"; };
+		BE5F61941E94D44200FBA32A /* WGCommitUserInfoRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGCommitUserInfoRequest.m; sourceTree = "<group>"; };
+		BE5F61961E94D45200FBA32A /* WGCommitUserInfoResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGCommitUserInfoResponse.h; sourceTree = "<group>"; };
+		BE5F61971E94D45200FBA32A /* WGCommitUserInfoResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGCommitUserInfoResponse.m; sourceTree = "<group>"; };
+		BE5F61A11E94E7A900FBA32A /* WGGetVerifyCodeRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGGetVerifyCodeRequest.h; sourceTree = "<group>"; };
+		BE5F61A21E94E7A900FBA32A /* WGGetVerifyCodeRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGGetVerifyCodeRequest.m; sourceTree = "<group>"; };
+		BE5F61A41E94E7B800FBA32A /* WGGetVerifyCodeResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGGetVerifyCodeResponse.h; sourceTree = "<group>"; };
+		BE5F61A51E94E7B800FBA32A /* WGGetVerifyCodeResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGGetVerifyCodeResponse.m; sourceTree = "<group>"; };
+		BE5F61A71E94E7D300FBA32A /* WGChangePasswordRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGChangePasswordRequest.h; sourceTree = "<group>"; };
+		BE5F61A81E94E7D300FBA32A /* WGChangePasswordRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGChangePasswordRequest.m; sourceTree = "<group>"; };
+		BE5F61AA1E94E7E100FBA32A /* WGChangePasswordResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGChangePasswordResponse.h; sourceTree = "<group>"; };
+		BE5F61AB1E94E7E100FBA32A /* WGChangePasswordResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGChangePasswordResponse.m; sourceTree = "<group>"; };
+		BE5F61AD1E94EA8800FBA32A /* WGForgetPasswordViewController+Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGForgetPasswordViewController+Request.h"; sourceTree = "<group>"; };
+		BE5F61AE1E94EA8800FBA32A /* WGForgetPasswordViewController+Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGForgetPasswordViewController+Request.m"; sourceTree = "<group>"; };
+		BE5F61B01E94F4AE00FBA32A /* WGVerificationCodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGVerificationCodeView.h; sourceTree = "<group>"; };
+		BE5F61B11E94F4AE00FBA32A /* WGVerificationCodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGVerificationCodeView.m; sourceTree = "<group>"; };
 		BE6229DE1E765969002BFEDB /* WGGoodDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGGoodDetail.h; sourceTree = "<group>"; };
 		BE6229DF1E765969002BFEDB /* WGGoodDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGGoodDetail.m; sourceTree = "<group>"; };
 		BE6229E21E765BA5002BFEDB /* WGGoodDetailViewController+Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGGoodDetailViewController+Request.h"; sourceTree = "<group>"; };
@@ -1236,8 +1260,8 @@
 		BE5210211E89268E004BD34E /* Request */ = {
 			isa = PBXGroup;
 			children = (
-				BE5210231E8926B4004BD34E /* WGGetUserInfoRequest.h */,
-				BE5210241E8926B4004BD34E /* WGGetUserInfoRequest.m */,
+				BE5F61931E94D44200FBA32A /* WGCommitUserInfoRequest.h */,
+				BE5F61941E94D44200FBA32A /* WGCommitUserInfoRequest.m */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -1245,8 +1269,8 @@
 		BE5210221E89268E004BD34E /* Response */ = {
 			isa = PBXGroup;
 			children = (
-				BE5210261E8926CD004BD34E /* WGGetUserInfoResponse.h */,
-				BE5210271E8926CD004BD34E /* WGGetUserInfoResponse.m */,
+				BE5F61961E94D45200FBA32A /* WGCommitUserInfoResponse.h */,
+				BE5F61971E94D45200FBA32A /* WGCommitUserInfoResponse.m */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -1799,6 +1823,28 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		BE5F619F1E94E6B200FBA32A /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				BE5F61A11E94E7A900FBA32A /* WGGetVerifyCodeRequest.h */,
+				BE5F61A21E94E7A900FBA32A /* WGGetVerifyCodeRequest.m */,
+				BE5F61A71E94E7D300FBA32A /* WGChangePasswordRequest.h */,
+				BE5F61A81E94E7D300FBA32A /* WGChangePasswordRequest.m */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		BE5F61A01E94E6B200FBA32A /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				BE5F61A41E94E7B800FBA32A /* WGGetVerifyCodeResponse.h */,
+				BE5F61A51E94E7B800FBA32A /* WGGetVerifyCodeResponse.m */,
+				BE5F61AA1E94E7E100FBA32A /* WGChangePasswordResponse.h */,
+				BE5F61AB1E94E7E100FBA32A /* WGChangePasswordResponse.m */,
+			);
+			path = Response;
 			sourceTree = "<group>";
 		};
 		BE6229E61E765BD2002BFEDB /* Request */ = {
@@ -2523,6 +2569,10 @@
 				BE6753C51E93D1A700250BA8 /* WGDealShopCartGiftGoodView.m */,
 				BE6753C71E94673F00250BA8 /* WGDeliverPriceView.h */,
 				BE6753C81E94673F00250BA8 /* WGDeliverPriceView.m */,
+				BE5F618C1E94C78200FBA32A /* WGPickerView.h */,
+				BE5F618D1E94C78200FBA32A /* WGPickerView.m */,
+				BE5F61B01E94F4AE00FBA32A /* WGVerificationCodeView.h */,
+				BE5F61B11E94F4AE00FBA32A /* WGVerificationCodeView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2657,6 +2707,8 @@
 				BEB8D0DC1E47F4D700BB9BA3 /* Model */,
 				BEB8D0DD1E47F4F600BB9BA3 /* WGPersonInfoViewController.h */,
 				BEB8D0DE1E47F4F600BB9BA3 /* WGPersonInfoViewController.m */,
+				BE5F61901E94D3EE00FBA32A /* WGPersonInfoViewController+Request.h */,
+				BE5F61911E94D3EE00FBA32A /* WGPersonInfoViewController+Request.m */,
 			);
 			path = PersonInfo;
 			sourceTree = "<group>";
@@ -2765,6 +2817,8 @@
 				BEB8D1551E49A10800BB9BA3 /* Model */,
 				BEB8D1561E49A12800BB9BA3 /* WGForgetPasswordViewController.h */,
 				BEB8D1571E49A12800BB9BA3 /* WGForgetPasswordViewController.m */,
+				BE5F61AD1E94EA8800FBA32A /* WGForgetPasswordViewController+Request.h */,
+				BE5F61AE1E94EA8800FBA32A /* WGForgetPasswordViewController+Request.m */,
 			);
 			path = ForgetPW;
 			sourceTree = "<group>";
@@ -2772,6 +2826,8 @@
 		BEB8D1551E49A10800BB9BA3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BE5F619F1E94E6B200FBA32A /* Request */,
+				BE5F61A01E94E6B200FBA32A /* Response */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -3239,6 +3295,7 @@
 			files = (
 				BEA7342C1E81271400C74ED2 /* WGCouponListResponse.m in Sources */,
 				BE9F93301E6B21720051B054 /* WGCSCStyle1ViewController.m in Sources */,
+				BE5F61951E94D44200FBA32A /* WGCommitUserInfoRequest.m in Sources */,
 				BEA734251E8126CC00C74ED2 /* WGCouponListViewController+Request.m in Sources */,
 				BE63A6D41E7BBC0B00F77282 /* WGOrderGoodPriceCell.m in Sources */,
 				BE52EFCC1E2F691B0022EF5B /* WGCollectionViewController+Request.m in Sources */,
@@ -3279,6 +3336,7 @@
 				BE63A6DB1E7BBC0B00F77282 /* WGOrderGoodItem.m in Sources */,
 				BE63A6D91E7BBC0B00F77282 /* WGOrderDetailResponse.m in Sources */,
 				BE6753AE1E93331500250BA8 /* WGDealShopCartGiftResponse.m in Sources */,
+				BE5F61AC1E94E7E100FBA32A /* WGChangePasswordResponse.m in Sources */,
 				BE2B42D41E8BA2400010BCB7 /* WGShopCartResponse.m in Sources */,
 				BE49E3BD1E45BD4200ECDEE5 /* WGSessionResponse.m in Sources */,
 				BE6753891E92A1A400250BA8 /* WGGoodDetailCarouselFiguresCell.m in Sources */,
@@ -3387,6 +3445,7 @@
 				BE74CDB31E626B8E00600A28 /* WGHomeSliderResponse.m in Sources */,
 				BECBE3091E87BB9D00ADAD6C /* WGCommonViewController+Scroll.m in Sources */,
 				BE6CC1CA1E2AA397003755FF /* WGHomeFloorGoodGridItemView.m in Sources */,
+				BE5F61A61E94E7B800FBA32A /* WGGetVerifyCodeResponse.m in Sources */,
 				BEF6851F1E31AC84003B745B /* WGBaseFootPrintAndCollectionViewController.m in Sources */,
 				BE83BB2D1E23E60D002F3BCC /* WGHomeFloorItem.m in Sources */,
 				BE6753C01E93C84500250BA8 /* WGUserInfoResponse.m in Sources */,
@@ -3405,6 +3464,7 @@
 				BEB2D9691DFC054B00F2E74B /* WGHomeTabViewController+Segment.m in Sources */,
 				BE6BE9241E7FB6F900A081BA /* WGUpdateOrderCouponRequest.m in Sources */,
 				BE57D14C1E7DAC1900149738 /* WGMessageResponse.m in Sources */,
+				BE5F61A31E94E7A900FBA32A /* WGGetVerifyCodeRequest.m in Sources */,
 				BE6BE90C1E7FA7C100A081BA /* WGCommitOrderRemarkCell.m in Sources */,
 				BE6229E01E765969002BFEDB /* WGGoodDetail.m in Sources */,
 				BEE937B71E825BC800875131 /* WGInvitationDescription.m in Sources */,
@@ -3417,7 +3477,6 @@
 				BEDCA7EB1E627BC500BCDED6 /* WGSliderClassifyItemCell.m in Sources */,
 				BE52ED291E2C64860022EF5B /* WGEditReceiptViewController.m in Sources */,
 				BE6753A51E93327D00250BA8 /* WGShopCartGiftRequest.m in Sources */,
-				BE5210251E8926B4004BD34E /* WGGetUserInfoRequest.m in Sources */,
 				BE83BB211E23E300002F3BCC /* WGCarouselFigureItem.m in Sources */,
 				BE6753AB1E93330400250BA8 /* WGDealShopCartGiftRequest.m in Sources */,
 				BEA3751C1E3501000054B8E6 /* WGClassifyFilterCondition.m in Sources */,
@@ -3428,7 +3487,7 @@
 				BEF685541E31F6A2003B745B /* WGClassify.m in Sources */,
 				BE62E2311DF92176004510A5 /* AppDelegate.m in Sources */,
 				BE52D5261E1B699100D4FFCD /* WGTopicItem.m in Sources */,
-				BE5210281E8926CD004BD34E /* WGGetUserInfoResponse.m in Sources */,
+				BE5F618E1E94C78200FBA32A /* WGPickerView.m in Sources */,
 				BE2B42D71E8BA29E0010BCB7 /* WGDeleteGoodFromShopCartRequest.m in Sources */,
 				BE99E7A21E1C947F00210546 /* WGHomeFloorContentGoodItem.m in Sources */,
 				BE5210031E89102C004BD34E /* AppDelegate+Init.m in Sources */,
@@ -3477,6 +3536,7 @@
 				BE6229F91E7684D4002BFEDB /* WGGoodDesCell.m in Sources */,
 				BE6753C31E93CD0E00250BA8 /* WGDealFailGoodView.m in Sources */,
 				BE52ED301E2C6C560022EF5B /* WGEditReceiptViewController+Request.m in Sources */,
+				BE5F61AF1E94EA8800FBA32A /* WGForgetPasswordViewController+Request.m in Sources */,
 				BE6229FC1E768544002BFEDB /* WGCommodityDesCell.m in Sources */,
 				BE520FDA1E87EB17004BD34E /* WGApplication+Controller.m in Sources */,
 				BE62E22E1DF92176004510A5 /* main.m in Sources */,
@@ -3487,6 +3547,7 @@
 				BEB8D0F21E4849F100BB9BA3 /* WGLoginViewController.m in Sources */,
 				BE63A6D51E7BBC0B00F77282 /* WGOrderLookAllGoodCell.m in Sources */,
 				BE1BBA291E4AFEB20008BD68 /* WGHomeSlider.m in Sources */,
+				BE5F61A91E94E7D300FBA32A /* WGChangePasswordRequest.m in Sources */,
 				BE99E7A51E1C94C400210546 /* WGHomeFloorContentClassifyItem.m in Sources */,
 				BECBE3131E87C54400ADAD6C /* WGCommonViewController+Request.m in Sources */,
 				BE67539F1E932F7400250BA8 /* WGUpdateProductsRequest.m in Sources */,
@@ -3503,13 +3564,16 @@
 				BE1BBA521E4B2D7A0008BD68 /* WGHomeSliderClassifyHeaderView.m in Sources */,
 				BE6CC1AF1E294036003755FF /* WGHomeFloorGoodColumnCell.m in Sources */,
 				BE6CC1BB1E29412F003755FF /* WGHomeFloorGoodGridItemCell.m in Sources */,
+				BE5F61921E94D3EE00FBA32A /* WGPersonInfoViewController+Request.m in Sources */,
 				BEA374AB1E3481690054B8E6 /* WGClassifyDetail.m in Sources */,
+				BE5F61981E94D45200FBA32A /* WGCommitUserInfoResponse.m in Sources */,
 				BECBE3101E87C43800ADAD6C /* WGAsiaViewController.m in Sources */,
 				BEB2D9591DFBED1500F2E74B /* WGApplication.m in Sources */,
 				BE63A6EB1E7BBE8000F77282 /* WGOrderListItem.m in Sources */,
 				BE6BE8F01E7F912300A081BA /* WGCommitOrderViewController.m in Sources */,
 				BE1BBA2F1E4B0DE10008BD68 /* WGSliderTopicItemView.m in Sources */,
 				BE6BE9211E7FB6B300A081BA /* WGSettlementResultResponse.m in Sources */,
+				BE5F61B21E94F4AE00FBA32A /* WGVerificationCodeView.m in Sources */,
 				BEF8ED901E8B527C00E15C8F /* WGFootPrintListResponse.m in Sources */,
 				BE52EDB01E2DBB770022EF5B /* WGAddress.m in Sources */,
 				BE622A001E779D79002BFEDB /* WGGoodAddView.m in Sources */,

@@ -12,6 +12,9 @@
 @interface WGPersonInfoViewController : WGViewController
 {
     WGUser *_user;
+    JHTableView *_tableView;
 }
+
+- (void)refreshUI;
 
 @end

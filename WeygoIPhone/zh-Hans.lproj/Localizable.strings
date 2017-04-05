@@ -268,3 +268,9 @@
 "ShopCart_GiftGoodThree" = "邀您品尝：\n 我们将随单附赠以下产品";
 "ShopCart_DeliverPrice_Title" = "运费说明";
 "ShopCart_DeliverPrice_Ok" = "关闭";
+
+//个人信息
+"PersonInfo_Sex_Select" = "选择";
+"PersonInfo_Sex_Man" = "男";
+"PersonInfo_Sex_Woman" = "女";
+"PersonInfo_Save" = "保存";

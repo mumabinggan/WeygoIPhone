@@ -17,7 +17,7 @@
 - (void)loadSubviews {
     [super loadSubviews];
     self.selectionStyle = UITableViewCellSelectionStyleNone;
-    _textField = [[JHTextField alloc] initWithFrame:CGRectMake(kAppAdaptWidth(150), 0, kDeviceWidth - kAppAdaptWidth(150 + 40), kAppAdaptHeight(48))];
+    _textField = [[JHTextField alloc] initWithFrame:CGRectMake(kAppAdaptWidth(175), 0, kDeviceWidth - kAppAdaptWidth(150 + 40), kAppAdaptHeight(48))];
     _textField.font = kAppAdaptFont(14);
     _textField.textColor = WGAppNameLabelColor;
     _textField.textAlignment = NSTextAlignmentRight;

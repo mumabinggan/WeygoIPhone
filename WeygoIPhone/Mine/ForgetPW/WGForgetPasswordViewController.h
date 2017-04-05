@@ -9,5 +9,11 @@
 #import "WGViewController.h"
 
 @interface WGForgetPasswordViewController : WGViewController
+{
+    JHTextField *_mobileTextField;
+    JHTextField *_codeTextField;
+    JHTextField *_passwordTextField;
+    JHTextField *_confirmPasswordTextField;
+}
 
 @end

@@ -72,7 +72,7 @@
     
     JHButton *sliderBtn = [[JHButton alloc] initWithFrame:CGRectMake(kAppAdaptWidth(16), kAppAdaptHeight(30), kAppAdaptWidth(24), kAppAdaptHeight(24))];
     [sliderBtn setBackgroundImage:[UIImage imageNamed:@"mine_slider"] forState:UIControlStateNormal];
-    [sliderBtn addTarget:self action:@selector(touchSliderBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [sliderBtn addTarget:self action:@selector(touchSliderButton:) forControlEvents:UIControlEventTouchUpInside];
     [contentView addSubview:sliderBtn];
     
     JHLabel *titleLabel = [[JHLabel alloc] initWithFrame:CGRectMake(0, kAppAdaptHeight(30), kDeviceWidth, kAppAdaptHeight(24))];
@@ -160,10 +160,6 @@
         _orderLabel.text = [NSString stringWithFormat:@"%lld", _data.orderCount];
         _deliveryLabel.text = [NSString stringWithFormat:@"%lld", _data.deliveryCount];
     }
-}
-
-- (void)touchSliderBtn:(id)sender {
-    
 }
 
 - (void)touchMessageBtn:(id)sender {

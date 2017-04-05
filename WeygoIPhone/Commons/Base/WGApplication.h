@@ -12,6 +12,11 @@
 #import "MBProgressHUD.h"
 #import "WGHomeSliderResponse.h"
 
+typedef NS_ENUM(NSInteger, WGAppLanguage) {
+    WGAppLanguageItalia,
+    WGAppLanguageChina,
+};
+
 @interface WGApplication : JHObject
 {
     //Operation
@@ -31,6 +36,9 @@
 @property (nonatomic, strong) WGUser *user;
 
 @property (nonatomic, strong) NSString *currentPostCode;
+
+//Language
+@property (nonatomic, assign) WGAppLanguage currentAppLanguage;
 
 + (WGApplication *)sharedApplication;
 

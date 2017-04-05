@@ -8,6 +8,7 @@
 
 #import "WGRegisterViewController.h"
 #import "WGRegisterViewController+Request.h"
+#import "WGVerificationCodeView.h"
 
 @interface WGRegisterViewController ()
 {
@@ -20,7 +21,7 @@
     JHTextField *_passwordTextField;
     JHTextField *_confirmPasswordTextField;
     
-    JHButton *_verificationCodeBtn;
+    WGVerificationCodeView *_verificationCodeBtn;
 }
 @end
 
@@ -52,7 +53,7 @@
     titleLabel.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:titleLabel];
     
-    JHButton *returnBtn = [[JHButton alloc] initWithFrame:CGRectMake(kAppAdaptWidth(16), kAppAdaptHeight(30), kAppAdaptWidth(24), kAppAdaptHeight(24))];
+    JHButton *returnBtn = [[JHButton alloc] initWithFrame:CGRectMake(kAppAdaptWidth(16), kAppAdaptHeight(37), kAppAdaptWidth(20), kAppAdaptHeight(11))];
     [returnBtn setBackgroundImage:[UIImage imageNamed:@"app_return"] forState:UIControlStateNormal];
     [returnBtn addTarget:self action:@selector(touchReturnBtn:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:returnBtn];
@@ -87,8 +88,8 @@
     [facebookBtn addTarget:self action:@selector(touchFacebookBtn:) forControlEvents:UIControlEventTouchUpInside];
     [_scrollView addSubview:facebookBtn];
     
-    JHImageView *countryImageView = [[JHImageView alloc] initWithFrame:CGRectMake(kAppAdaptWidth(32), facebookBtn.maxY + kAppAdaptHeight(27), kAppAdaptWidth(24), kAppAdaptHeight(24))];
-    countryImageView.backgroundColor = kBlueColor;
+    JHImageView *countryImageView = [[JHImageView alloc] initWithFrame:CGRectMake(kAppAdaptWidth(32), facebookBtn.maxY + kAppAdaptHeight(33), kAppAdaptWidth(18), kAppAdaptHeight(12))];
+    countryImageView.image = [UIImage imageNamed:@"Italiana_image"];
     [_scrollView addSubview:countryImageView];
     
     JHLabel *areaCodeLabel = [[JHLabel alloc] initWithFrame:CGRectMake(kAppAdaptWidth(64), facebookBtn.maxY + kAppAdaptHeight(27), kAppAdaptWidth(60), kAppAdaptHeight(24))];
@@ -106,7 +107,7 @@
     float textFieldHeight = kAppAdaptHeight(48);
     float textFieldWidth = kDeviceWidth - kAppAdaptWidth(64);
     float textFieldX = kAppAdaptWidth(32);
-    _mobileTextField = [[JHTextField alloc] initWithFrame:CGRectMake(kAppAdaptWidth(32 + 105), facebookBtn.maxY + kAppAdaptHeight(15), kDeviceWidth - kAppAdaptWidth(64 - 105), textFieldHeight)];
+    _mobileTextField = [[JHTextField alloc] initWithFrame:CGRectMake(kAppAdaptWidth(32 + 105), facebookBtn.maxY + kAppAdaptHeight(15), kDeviceWidth - kAppAdaptWidth(64 + 105), textFieldHeight)];
     _mobileTextField.font = kAppAdaptFont(14);
     _mobileTextField.placeholder = kStr(@"Register_Mobile");
     _mobileTextField.textColor = WGAppNameLabelColor;
@@ -123,12 +124,12 @@
     _codeTextField.textColor = WGAppNameLabelColor;
     [_scrollView addSubview:_codeTextField];
     
+    WeakSelf;
     radius = kAppAdaptHeight(12);
-    _verificationCodeBtn = [[JHButton alloc] initWithFrame:CGRectMake(kAppAdaptWidth(191), kAppAdaptHeight(12), kAppAdaptWidth(120), kAppAdaptHeight(24)) difRadius:JHRadiusMake(radius, radius, radius, radius) borderWidth:kAppAdaptWidth(1) borderColor:WGAppBlueButtonColor backgroundColor:kWhiteColor];
-    [_verificationCodeBtn setTitle:kStr(@"Register_Get_Code") forState:UIControlStateNormal];
-    [_verificationCodeBtn setTitleColor:WGAppBlueButtonColor forState:UIControlStateNormal];
-    _verificationCodeBtn.titleLabel.font = kAppAdaptFont(12);
-    [_verificationCodeBtn addTarget:self action:@selector(touchVerificationCodeBtn:) forControlEvents:UIControlEventTouchUpInside];
+    _verificationCodeBtn = [[WGVerificationCodeView alloc] initWithFrame:CGRectMake(kAppAdaptWidth(191), kAppAdaptHeight(12), kAppAdaptWidth(120), kAppAdaptHeight(24))];
+    _verificationCodeBtn.onApply = ^(void) {
+        [weakSelf touchVerificationCodeBtn:nil];
+    };
     [_codeTextField addSubview:_verificationCodeBtn];
     
     JHView *codeLineView = [[JHView alloc] initWithFrame:CGRectMake(0, lineY, textFieldWidth, kAppSepratorLineHeight)];

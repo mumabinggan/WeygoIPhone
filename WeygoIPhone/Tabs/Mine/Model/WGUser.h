@@ -32,6 +32,15 @@
 
 @property (nonatomic, strong) NSString *cap;
 
+//for self use
+@property (nonatomic, strong) NSString *sexString;
+
+//for self use
+@property (nonatomic, strong) NSArray *sexs;
+
+//for self use
+@property (nonatomic, strong) NSString *userAvatar;
+
 - (BOOL)isMan;
 
 @end
