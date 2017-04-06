@@ -14,13 +14,6 @@
 {
     JHScrollView *_scrollView;
     
-    JHTextField *_mobileTextField;
-    JHTextField *_codeTextField;
-    JHTextField *_surnameTextField;
-    JHTextField *_nameTextField;
-    JHTextField *_passwordTextField;
-    JHTextField *_confirmPasswordTextField;
-    
     WGVerificationCodeView *_verificationCodeBtn;
 }
 @end
@@ -43,7 +36,6 @@
 - (void)initSubView {
     _scrollView = [[JHScrollView alloc] initWithFrame:self.view.bounds];
     _scrollView.alwaysBounceVertical = YES;
-    _scrollView.backgroundColor = kRedColor;
     [self.view addSubview:_scrollView];
     
     JHLabel *titleLabel = [[JHLabel alloc] initWithFrame:CGRectMake(0, kAppAdaptHeight(30), kDeviceWidth, kAppAdaptHeight(24))];
@@ -58,17 +50,18 @@
     [returnBtn addTarget:self action:@selector(touchReturnBtn:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:returnBtn];
     
-    JHLabel *loginLabel = [[JHLabel alloc] initWithFrame:CGRectMake(kDeviceWidth - kAppAdaptWidth(86), kAppAdaptHeight(30), kAppAdaptWidth(70), kAppAdaptHeight(24))];
+    JHView *loginBgView = [[JHView alloc] initWithFrame:CGRectMake(kDeviceWidth - kAppAdaptWidth(86), kAppAdaptHeight(30), kAppAdaptWidth(70), kAppAdaptHeight(24))];
+    [loginBgView addSingleTapGestureRecognizerWithTarget:self action:@selector(intoLoginViewController:)];
+    [self.view addSubview:loginBgView];
+    JHLabel *loginLabel = [[JHLabel alloc] initWithFrame:loginBgView.bounds];
     loginLabel.text = kStr(@"Register_Login");
     loginLabel.font = kAppAdaptFont(16);
     loginLabel.textColor = kWhiteColor;
     loginLabel.textAlignment = NSTextAlignmentRight;
-    [self.view addSubview:loginLabel];
-    [loginLabel addSingleTapGestureRecognizerWithTarget:self action:@selector(openLoginViewController:)];
+    [loginBgView addSubview:loginLabel];
     
     JHImageView *headerImageView = [[JHImageView alloc] initWithFrame:CGRectMake(0, -20, kDeviceWidth, kAppAdaptHeight(230))];
-    headerImageView.image = [UIImage imageNamed:@""];
-    headerImageView.backgroundColor = kGreenColor;
+    headerImageView.image = [UIImage imageNamed:@"register_headImage"];
     [_scrollView addSubview:headerImageView];
     
     float radius = kAppAdaptWidth(20);
@@ -192,11 +185,16 @@
 }
 
 - (void)touchVerificationCodeBtn:(JHButton *)sender {
-    [self requestVerificationCode];
+    
 }
 
-- (void)openLoginViewController:(UIGestureRecognizer *)recognizer {
-    
+- (void)intoLoginViewController:(UIGestureRecognizer *)recognizer {
+    [self openLoginViewController];
+}
+
+- (void)handleLoginSuccess:(id)customData {
+    [self sendNotification:WGRefreshNotificationTypeLogin];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 - (void)touchWeChatBtn:(JHButton *)sender {
@@ -208,7 +206,7 @@
 }
 
 - (void)touchRegisterBtn:(JHButton *)sender {
-    
+    [self loadRegister];
 }
 
 - (void)didReceiveMemoryWarning {

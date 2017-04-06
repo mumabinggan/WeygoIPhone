@@ -12,7 +12,7 @@
 
 @property (nonatomic, assign) long long userId;
 
-@property (nonatomic, strong) NSString *sectionKey;
+@property (nonatomic, strong) NSString *sessionKey;
 
 @property (nonatomic, strong) NSString *fullName;
 

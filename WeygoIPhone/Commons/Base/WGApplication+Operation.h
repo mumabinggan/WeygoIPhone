@@ -42,6 +42,8 @@
 
 - (void)setCurrentPostCode:(NSString *)currentPostCode;
 
+- (void)reset;
+
 @end
 
 @interface WGApplication (OperationBaseService)

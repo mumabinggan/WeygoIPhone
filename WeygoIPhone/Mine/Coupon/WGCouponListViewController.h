@@ -14,6 +14,7 @@
 @interface WGCouponListViewController : WGViewController
 {
     NSArray *_dataArray;
+    TWRefreshTableView *_tableView;
 }
 
 @property (nonatomic, assign) BOOL isSelect;
@@ -21,5 +22,7 @@
 @property (nonatomic, strong) WGCoupon *coupon;
 
 @property (nonatomic, copy) void (^onUse)(WGObject *object);
+
+- (void)refreshUI;
 
 @end

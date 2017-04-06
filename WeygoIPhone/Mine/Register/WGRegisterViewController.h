@@ -9,5 +9,13 @@
 #import "WGViewController.h"
 
 @interface WGRegisterViewController : WGViewController
+{
+    JHTextField *_mobileTextField;
+    JHTextField *_codeTextField;
+    JHTextField *_surnameTextField;
+    JHTextField *_nameTextField;
+    JHTextField *_passwordTextField;
+    JHTextField *_confirmPasswordTextField;
+}
 
 @end

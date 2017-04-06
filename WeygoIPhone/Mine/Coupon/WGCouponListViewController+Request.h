@@ -10,4 +10,6 @@
 
 @interface WGCouponListViewController (Request)
 
+- (void)loadListResponse:(BOOL)refresh pulling:(BOOL)pulling;
+
 @end

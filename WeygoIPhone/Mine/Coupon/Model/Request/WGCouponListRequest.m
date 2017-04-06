@@ -10,4 +10,8 @@
 
 @implementation WGCouponListRequest
 
+- (NSString *)api {
+    return @"customer/getCoupons?";
+}
+
 @end

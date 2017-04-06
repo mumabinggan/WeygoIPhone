@@ -26,7 +26,7 @@
     if (_dataMArray.count > indexPath.row) {
         WGHomeFloorContentGoodItem *item = _dataMArray[indexPath.row];
         WGCancelCollectGoodRequest *request = [[WGCancelCollectGoodRequest alloc] init];
-        request.goodId = item.id;
+        request.id = item.favoriteId;
         __weak typeof(self) weakSelf = self;
         [self post:request forResponseClass:[WGCancelCollectGoodResponse class] success:^(JHResponse *response) {
             [weakSelf handleCancelCollectGoodResponse:(WGCancelCollectGoodResponse *)response goodId:item.id];

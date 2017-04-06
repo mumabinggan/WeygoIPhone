@@ -22,7 +22,6 @@
     request.sex = _user.sex;
     request.birth = _user.birth;
     request.tax = _user.tax;
-    request.showsLoadingView = YES;
     __weak typeof(self) weakSelf = self;
     [self post:request forResponseClass:[WGCommitUserInfoResponse class] success:^(JHResponse *response) {
         [weakSelf handleCommitUserInfo:(WGCommitUserInfoResponse *)response];

@@ -25,7 +25,6 @@
     request.verifyCode = _codeTextField.text;
     request.password = _passwordTextField.text;
     request.confirmPassword = _confirmPasswordTextField.text;
-    request.showsLoadingView = YES;
     __weak typeof(self) weakSelf = self;
     [self post:request forResponseClass:[WGChangePasswordResponse class] success:^(JHResponse *response) {
         [weakSelf handleChangePasswordResponse:(WGChangePasswordResponse *)response];

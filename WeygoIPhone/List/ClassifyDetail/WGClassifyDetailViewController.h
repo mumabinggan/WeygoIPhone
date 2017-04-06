@@ -26,4 +26,6 @@ typedef NS_ENUM(NSInteger, LFClassifySortType) {
 
 @property (nonatomic, assign) long long classifyId;
 
+- (void)refreshUI;
+
 @end

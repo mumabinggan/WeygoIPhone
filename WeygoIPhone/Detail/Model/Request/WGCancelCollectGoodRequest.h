@@ -10,6 +10,6 @@
 
 @interface WGCancelCollectGoodRequest : WGGuestRequest
 
-@property (nonatomic, assign) long long goodId;
+@property (nonatomic, assign) long long id;
 
 @end

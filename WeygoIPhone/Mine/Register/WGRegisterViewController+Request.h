@@ -10,6 +10,6 @@
 
 @interface WGRegisterViewController (Request)
 
-- (void)requestVerificationCode;
+- (void)loadRegister;
 
 @end

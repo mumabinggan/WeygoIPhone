@@ -66,7 +66,7 @@
     [registerLabel addSingleTapGestureRecognizerWithTarget:self action:@selector(openRegisterViewController)];
     
     JHImageView *headerImageView = [[JHImageView alloc] initWithFrame:CGRectMake(0, -20, kDeviceWidth, kAppAdaptHeight(264))];
-    headerImageView.image = [UIImage imageNamed:@""];
+    headerImageView.image = [UIImage imageNamed:@"register_headImage"];
     [_scrollView addSubview:headerImageView];
     
     _usernameTextField = [[JHTextField alloc] initWithFrame:CGRectMake(kAppAdaptWidth(32), headerImageView.maxY + kAppAdaptHeight(16), kDeviceWidth - kAppAdaptWidth(64), kAppAdaptHeight(48))];

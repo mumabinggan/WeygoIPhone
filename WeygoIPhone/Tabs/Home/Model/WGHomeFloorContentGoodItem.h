@@ -24,4 +24,6 @@
 
 @property (nonatomic, assign) float discount;
 
+@property (nonatomic, assign) long long favoriteId;
+
 @end

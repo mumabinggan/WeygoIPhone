@@ -12,7 +12,7 @@
 @implementation WGApplication (Operation)
 
 - (NSString *)sessionKey {
-    return [self user].sectionKey;
+    return [self user].sessionKey;
 }
 
 - (BOOL)isLogined {
@@ -67,6 +67,7 @@
 }
 
 - (void)setUser:(WGUser *)user {
+    [self reset];
     _user = user;
     if (user) {
         [[JHLocalSettings sharedSettings] setSettings:user.toDictionary forKey:kLocalSettingsKeyUser];
@@ -151,6 +152,8 @@
 - (void)reset {
     self.user = nil;
     self.currentPostCode = nil;
+    [[JHLocalSettings sharedSettings] removeSettingsForKey:kLocalSettingsKeyUser];
+    [[JHLocalSettings sharedSettings] removeSettingsForKey:kLocalSettingsKeyUnLoginCap];
 }
 
 - (void)addGoodToLocalCart:(WGGoodInLocalCart *)good {

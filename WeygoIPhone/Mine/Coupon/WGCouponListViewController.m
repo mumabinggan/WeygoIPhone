@@ -13,12 +13,11 @@
 
 @interface WGCouponListViewController ()
 {
-    JHTableView *_tableView;
     JHButton *_activateBtn;
 }
 @end
 
-@interface WGCouponListViewController (TableViewDelegate) <UITableViewDelegate, UITableViewDataSource>
+@interface WGCouponListViewController (TableViewDelegate) <UITableViewDelegate, UITableViewDataSource, TWTableViewRefreshingDelegate>
 
 @end
 
@@ -63,9 +62,10 @@
     JHView *contentView = [[JHView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:contentView];
     
-    _tableView = [[JHTableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
+    _tableView = [[TWRefreshTableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped refreshType:TWRefreshTypeBottom];
     _tableView.dataSource = self;
     _tableView.delegate = self;
+    _tableView.refreshDelegate = self;
     _tableView.backgroundColor = kRGB(234, 238, 240);
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     if (_isSelect) {
@@ -99,6 +99,10 @@
     [headerView addSubview:_activateBtn];
     
     return headerView;
+}
+
+- (void)refreshUI {
+    
 }
 
 - (void)touchActivateBtn:(JHButton *)sender {

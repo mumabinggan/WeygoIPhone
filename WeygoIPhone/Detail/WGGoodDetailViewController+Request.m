@@ -80,8 +80,6 @@
 - (void)loadGoodDetail {
     WGGoodDetailRequest *request = [[WGGoodDetailRequest alloc] init];
     request.id = self.goodId;
-    request.id = 10117;
-    request.showsLoadingView = YES;
     __weak typeof(self) weakSelf = self;
     [self get:request forResponseClass:[WGGoodDetailResponse class] success:^(JHResponse *response) {
         [weakSelf handleGoodDetailResponse:(WGGoodDetailResponse *)response];
@@ -113,7 +111,7 @@
     }
     else {
         WGCancelCollectGoodRequest *request = [[WGCancelCollectGoodRequest alloc] init];
-        request.goodId = self.goodId;
+        request.id = _goodDetail.favoritedId;
         __weak typeof(self) weakSelf = self;
         [self post:request forResponseClass:[WGCancelCollectGoodResponse class] success:^(JHResponse *response) {
             [weakSelf handleCancelCollectGoodResponse:(WGCancelCollectGoodResponse *)response];
@@ -121,7 +119,6 @@
             [weakSelf showWarningMessage:kStr(@"Request Failed")];
         }];
     }
-    
 }
 
 - (void)handleCollectGoodResponse:(WGCollectGoodResponse *)response {

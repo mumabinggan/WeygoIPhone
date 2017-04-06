@@ -112,29 +112,39 @@
     _tableView.contentInset = UIEdgeInsetsMake(0, 0, -35, 0);
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [contentView addSubview:_tableView];
+    _tableView.layer.opacity = 0.0f;
     
     //request return rent it
-    [self createHeaderView];
+    //[self createHeaderView];
 }
 
 - (void)createHeaderView {
-    JHView *headerView = [[JHView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kAppAdaptHeight(176 + 44))];
-    
-    WGScrollImageView *scrollImageView = [[WGScrollImageView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kAppAdaptHeight(176)) imageArray:@[_data.carouselFigureItem.pictureURL]];
-    __weak id weakSelf = self;
-    scrollImageView.onClick = ^(NSInteger index) {
-        [weakSelf handleClick:index];
-    };
-    [headerView addSubview:scrollImageView];
-    
-    _sortView = [[WGClassifySortView alloc] initWithFrame:CGRectMake(0, scrollImageView.maxY, kDeviceWidth, kAppAdaptHeight(44))];
-    _sortView.backgroundColor = kWhiteColor;
-    _sortView.onApply = ^(NSInteger index) {
-        [weakSelf handleSortApply:index];
-    };
-    [headerView addSubview:_sortView];
-    
-    _tableView.tableHeaderView = headerView;
+    if (!_tableView.tableHeaderView) {
+        JHView *headerView = [[JHView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kAppAdaptHeight(176 + 44))];
+        WGScrollImageView *scrollImageView = [[WGScrollImageView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kAppAdaptHeight(176)) imageArray:@[_data.carouselFigureItem.pictureURL]];
+        __weak id weakSelf = self;
+        scrollImageView.onClick = ^(NSInteger index) {
+            [weakSelf handleClick:index];
+        };
+        [headerView addSubview:scrollImageView];
+        
+        _sortView = [[WGClassifySortView alloc] initWithFrame:CGRectMake(0, scrollImageView.maxY, kDeviceWidth, kAppAdaptHeight(44))];
+        _sortView.backgroundColor = kWhiteColor;
+        _sortView.onApply = ^(NSInteger index) {
+            [weakSelf handleSortApply:index];
+        };
+        [headerView addSubview:_sortView];
+        
+        _tableView.tableHeaderView = headerView;
+    }
+}
+
+- (void)refreshUI {
+    [self initNavigationItem];
+    [self createHeaderView];
+    [UIView animateWithDuration:0.25 animations:^() {
+        _tableView.layer.opacity = 1.0f;
+    }];
 }
 
 - (void)handleClick:(NSInteger)index {
@@ -153,6 +163,7 @@
         //to another page
         WGClassifyDetailFilterViewController *classifyDetailFilterViewController = [[WGClassifyDetailFilterViewController alloc] init];
         if (_filter) {
+            classifyDetailFilterViewController.classifyId = _classifyId;
             classifyDetailFilterViewController.currentFilterCondition = _filter;
         }
         else {
@@ -227,6 +238,7 @@
 - (void)handleFilterApply:(WGClassifyFilterCondition *)filter {
     _filter = filter;
     [_sortView setItemSelected:[_filter hasSelected] index:1];
+    //[self ]
 }
 
 - (void)initNavigationItem {

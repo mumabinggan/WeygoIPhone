@@ -12,6 +12,7 @@
 #import "WGClassifyKeyword.h"
 #import "WGClassifyItem.h"
 #import "WGClassifyFitlerClassifyView.h"
+#import "WGClassifyDetailFilterViewController+Request.h"
 
 @interface WGClassifyDetailFilterViewController ()
 {
@@ -26,60 +27,68 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-}
-
-- (void)initData {
-    _data = [[WGClassifyFilterCondition alloc] init];
-    
-    WGClassifyKeyword *keyword = [[WGClassifyKeyword alloc] init];
-    keyword.id = 2233;
-    keyword.name = @"zheng1";
-    
-    WGClassifyKeyword *keyword2 = [[WGClassifyKeyword alloc] init];
-    keyword2.id = 2233;
-    keyword2.name = @"zheng02";
-    
-    WGClassifyKeyword *keyword3 = [[WGClassifyKeyword alloc] init];
-    keyword3.id = 2233;
-    keyword3.name = @"zheng003";
-    
-    _data.keyWordArray = @[keyword, keyword2, keyword3];
-    
-    WGClassifyItem *item = [[WGClassifyItem alloc] init];
-    item.name = @"zhenguasdf";
-    item.pictureURL = @"http://www.pp3.cn/uploads/201609/2016091012.jpg";
-    
-    WGClassifyItem *item2 = [[WGClassifyItem alloc] init];
-    item2.name = @"uasdf";
-    item2.pictureURL = @"http://img1.touxiang.cn/uploads/20131203/03-073408_255.jpg";
-    
-    WGClassifyItem *item3 = [[WGClassifyItem alloc] init];
-    item3.name = @"fsuasdf";
-    item3.pictureURL = @"http://img1.touxiang.cn/uploads/20131203/03-073436_260.jpg";
-    
-    WGClassifyItem *item4 = [[WGClassifyItem alloc] init];
-    item4.name = @"asfsdazhenguasdf";
-    item4.pictureURL = @"http://img1.touxiang.cn/uploads/20131203/03-073440_93.jpg";
-    
-    WGClassifyItem *item5 = [[WGClassifyItem alloc] init];
-    item5.name = @"zfjdhenguasdf";
-    item5.pictureURL = @"http://img1.touxiang.cn/uploads/20131203/03-073442_102.jpg";
-    
-    _data.classifyArray = @[item, item2, item3, item4, item5];
-    
     if (_currentFilterCondition) {
         _data = _currentFilterCondition;
     }
     else {
-        //request 
+        [self loadClassifyDetailFilter];
     }
 }
+
+//- (void)initData {
+//    _data = [[WGClassifyFilterCondition alloc] init];
+//    
+//    WGClassifyKeyword *keyword = [[WGClassifyKeyword alloc] init];
+//    keyword.id = 2233;
+//    keyword.name = @"zheng1";
+//    
+//    WGClassifyKeyword *keyword2 = [[WGClassifyKeyword alloc] init];
+//    keyword2.id = 2233;
+//    keyword2.name = @"zheng02";
+//    
+//    WGClassifyKeyword *keyword3 = [[WGClassifyKeyword alloc] init];
+//    keyword3.id = 2233;
+//    keyword3.name = @"zheng003";
+//    
+//    _data.keyWordArray = @[keyword, keyword2, keyword3];
+//    
+//    WGClassifyItem *item = [[WGClassifyItem alloc] init];
+//    item.name = @"zhenguasdf";
+//    item.pictureURL = @"http://www.pp3.cn/uploads/201609/2016091012.jpg";
+//    
+//    WGClassifyItem *item2 = [[WGClassifyItem alloc] init];
+//    item2.name = @"uasdf";
+//    item2.pictureURL = @"http://img1.touxiang.cn/uploads/20131203/03-073408_255.jpg";
+//    
+//    WGClassifyItem *item3 = [[WGClassifyItem alloc] init];
+//    item3.name = @"fsuasdf";
+//    item3.pictureURL = @"http://img1.touxiang.cn/uploads/20131203/03-073436_260.jpg";
+//    
+//    WGClassifyItem *item4 = [[WGClassifyItem alloc] init];
+//    item4.name = @"asfsdazhenguasdf";
+//    item4.pictureURL = @"http://img1.touxiang.cn/uploads/20131203/03-073440_93.jpg";
+//    
+//    WGClassifyItem *item5 = [[WGClassifyItem alloc] init];
+//    item5.name = @"zfjdhenguasdf";
+//    item5.pictureURL = @"http://img1.touxiang.cn/uploads/20131203/03-073442_102.jpg";
+//    
+//    _data.classifyArray = @[item, item2, item3, item4, item5];
+//    
+//    if (_currentFilterCondition) {
+//        _data = _currentFilterCondition;
+//    }
+//    else {
+//        //request 
+//    }
+//}
 
 - (void)initSubView {
     self.title = kStr(@"Classify Filter");
     _contentView = [[JHView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:_contentView];
-    [self refreshView];
+    if (_currentFilterCondition) {
+        [self refreshView];
+    }
 }
 
 - (void)initNavigationItem {
