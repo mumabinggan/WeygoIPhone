@@ -10,4 +10,8 @@
 
 @implementation WGUpdateProductsRequest
 
+- (NSString *)api {
+    return @"cart/update?";
+}
+
 @end

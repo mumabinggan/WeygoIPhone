@@ -45,7 +45,7 @@
 #define kWGOswaldRegularAdaptFont(fsize)    kWGOswaldRegularFont(fsize * kDeviceWidthScaleTo47Inch)
 
 //Notification
-
+#define kNotificationReLoginRequired    @"kNotificationReLoginRequired"
 
 
 //Local Setting

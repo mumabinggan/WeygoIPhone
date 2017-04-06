@@ -13,6 +13,7 @@
 {
     WGShopCart *_data;
     TWRefreshTableView *_tableView;
+    BOOL _loadingUpdateGood;
 }
 
 - (void)refreshUI;

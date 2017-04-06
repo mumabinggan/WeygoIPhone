@@ -20,8 +20,9 @@ static WGApplication* _sharedInstance = nil;
 
 + (WGApplication *)sharedApplication {
     @synchronized([WGApplication class]) {
-        if(!_sharedInstance)
+        if(!_sharedInstance) {
             _sharedInstance = [[self alloc] init];
+        }
         return _sharedInstance;
     }
     return nil;

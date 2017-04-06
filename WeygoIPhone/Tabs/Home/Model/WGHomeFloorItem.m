@@ -17,6 +17,10 @@
     return [super classForArray:propertyName];
 }
 
+//+ (NSDictionary *)convertKeyMapper {
+//    return @{@"contents" : @"content"};
+//}
+
 - (float)homeNameHeight {
     if (_homeNameHeight >= 0.001) {
         return _homeNameHeight;

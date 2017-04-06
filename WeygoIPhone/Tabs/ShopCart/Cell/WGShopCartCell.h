@@ -13,4 +13,8 @@
 
 @property (nonatomic, copy) void (^onApply)(WGShopCartGoodItem *item);
 
+@property (nonatomic, copy) void (^onAdd)(WGShopCartGoodItem *item);
+
+@property (nonatomic, copy) void (^onSub)(WGShopCartGoodItem *item);
+
 @end

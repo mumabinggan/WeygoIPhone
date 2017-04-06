@@ -80,6 +80,8 @@
 - (void)loadGoodDetail {
     WGGoodDetailRequest *request = [[WGGoodDetailRequest alloc] init];
     request.id = self.goodId;
+    request.id = 10117;
+    request.showsLoadingView = YES;
     __weak typeof(self) weakSelf = self;
     [self get:request forResponseClass:[WGGoodDetailResponse class] success:^(JHResponse *response) {
         [weakSelf handleGoodDetailResponse:(WGGoodDetailResponse *)response];

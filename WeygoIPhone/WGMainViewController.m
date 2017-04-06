@@ -48,7 +48,31 @@ static const float kTabBarHeight = 60;
 //    self.tabBar.backgroundColor = kWhiteColor;
     self.selectedIndex = WGTabIndexHome;
     
+    [self initNotification];
     //[self setCenterTabBarItem];
+}
+
+- (void)initNotification {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleLoginFail:) name:kNotificationReLoginRequired object:nil];
+}
+
+- (void)handleLoginFail:(NSNotification *)notification {
+    return;
+//    if (notification.object && [notification.object isKindOfClass:[NSDictionary class]]) {
+//        NSString *message = nil;
+//        if (![NSString isNullOrEmpty:[notification.object objectForKey:@"message"]]) {
+//            message = [notification.object objectForKey:@"message"];
+//        }
+//        WeakSelf;
+//        [[JHAlert sharedAlert] showConfirmMessage:message withTitle:nil cancelButtonTitle:kStr(@"Cancel") okButtonTitle:kStr(@"Ok") onCompletion:^(NSInteger buttonIndex, UIAlertView *alertView) {
+//            if (buttonIndex == 0) {
+//                [weakSelf loadRootViewController:nil withOptions:nil];
+//            }
+//            else if (buttonIndex == 1) {
+//                [weakSelf openLoginViewController];
+//            }
+//        }];
+//    }
 }
 
 - (void)resetViewControllersWithIndex:(NSInteger)index {

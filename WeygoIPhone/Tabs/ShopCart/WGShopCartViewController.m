@@ -13,6 +13,7 @@
 #import "WGShopCartViewController+Request.h"
 #import "WGCommitOrderViewController.h"
 #import "WGDeliverPriceView.h"
+#import "WGGoodDetailViewController.h"
 
 @interface WGShopCartViewController ()
 {
@@ -32,7 +33,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = kStr(@"Carrello");
-    [self loadShopCartList:YES pulling:NO];
+    //[self loadShopCartList:YES pulling:NO];
 }
 
 - (void)initData {
@@ -191,6 +192,22 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+- (void)openGoodDetailViewController:(WGShopCartGoodItem *)item {
+    WGGoodDetailViewController *vc = [[WGGoodDetailViewController alloc] init];
+    vc.goodId = item.id;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)handleAdd:(WGShopCartGoodItem *)item  {
+    [self loadUpdateGood:item count:item.goodCount + 1];
+}
+
+- (void)handleSub:(WGShopCartGoodItem *)item {
+    if (item.goodCount - 1 > 0) {
+        [self loadUpdateGood:item count:item.goodCount - 1];
+    }
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -224,9 +241,16 @@
         JHView *line = [[JHView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kAppSepratorLineHeight)];
         line.backgroundColor = WGAppSeparateLineColor;
         [cell.contentView addSubview:line];
+        WeakSelf;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.onApply = ^(WGShopCartGoodItem *item) {
-        
+            [weakSelf openGoodDetailViewController:item];
+        };
+        cell.onAdd = ^(WGShopCartGoodItem *item) {
+            [weakSelf handleAdd:item];
+        };
+        cell.onSub = ^(WGShopCartGoodItem *item) {
+            [weakSelf handleSub:item];
         };
     }
     [cell showWithData:_data.goods[indexPath.row]];

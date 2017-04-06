@@ -18,7 +18,7 @@
 }
 
 - (NSString *)api {
-    return @"customer/sendVerify?";
+    return @"customer/sendVerifyCode?";
 }
 
 @end

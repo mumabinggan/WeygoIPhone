@@ -52,18 +52,28 @@
     }
 }
 
-- (void)loadUpdateGood:(WGShopCartGoodItem *)item {
+- (void)loadUpdateGood:(WGShopCartGoodItem *)item count:(NSInteger)count {
+    if (_loadingUpdateGood) {
+        return;
+    }
     WGUpdateProductsRequest *request = [[WGUpdateProductsRequest alloc] init];
     request.id = item.shopCartId;
+    request.count = count;
     __weak typeof(self) weakSelf = self;
     [self post:request forResponseClass:[WGUpdateProductsResponse class] success:^(JHResponse *response) {
         [weakSelf handleUpdateGoodResponse:(WGUpdateProductsResponse *)response goodId:item.id];
     } failure:^(NSError *error) {
-        [weakSelf showWarningMessage:kStr(@"Request Failed")];
+        [weakSelf handleFailUpdateGoodResponse];
     }];
 }
 
+- (void)handleFailUpdateGoodResponse {
+    _loadingUpdateGood = NO;
+    [self showWarningMessage:kStr(@"Request Failed")];
+}
+
 - (void)handleUpdateGoodResponse:(WGUpdateProductsResponse *)response goodId:(long long)goodId {
+    _loadingUpdateGood = NO;
     if (response.success) {
         [self loadShopCartList:YES pulling:NO];
     }

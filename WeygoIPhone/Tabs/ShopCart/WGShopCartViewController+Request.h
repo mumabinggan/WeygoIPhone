@@ -7,11 +7,14 @@
 //
 
 #import "WGShopCartViewController.h"
+#import "WGShopCartGoodItem.h"
 
 @interface WGShopCartViewController (Request)
 
 - (void)loadDeleteIndexPath:(NSIndexPath *)indexPath;
 
 - (void)loadShopCartList:(BOOL)refresh pulling:(BOOL)pulling;
+
+- (void)loadUpdateGood:(WGShopCartGoodItem *)item count:(NSInteger)count;
 
 @end
