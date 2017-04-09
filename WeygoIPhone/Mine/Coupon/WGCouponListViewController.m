@@ -10,6 +10,7 @@
 #import "WGCouponCell.h"
 #import "WGCouponCode.h"
 #import "WGCoupon.h"
+#import "WGCouponListViewController+Request.h"
 
 @interface WGCouponListViewController ()
 {
@@ -27,34 +28,35 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = kStr(@"CouponList_Selected_Title");
+    [self loadListResponse:YES pulling:NO];
 }
 
 - (void)initData {
-    WGCoupon *coupon = [[WGCoupon alloc] init];
-    coupon.name = @"kdfasdfas";
-    coupon.briefDescription = @"南非世界杯夺";
-    coupon.totalCount = 5;
-    coupon.residueCount = 3;
-    coupon.time = @"21-12-2017";
-    coupon.couponCode = @"ZDQFADSFASD";
-    
-    WGCoupon *coupon1 = [[WGCoupon alloc] init];
-    coupon1.name = @"kdfasdfas";
-    coupon1.briefDescription = @"南非世界杯夺";
-    coupon1.totalCount = 5;
-    coupon1.residueCount = 1;
-    coupon1.time = @"21-12-2017";
-    coupon1.couponCode = @"ZDQFADSFASD";
-    
-    WGCoupon *coupon2 = [[WGCoupon alloc] init];
-    coupon2.name = @"kdfasdfas";
-    coupon2.briefDescription = @"南非世界杯夺";
-    coupon2.totalCount = 5;
-    coupon2.residueCount = 3;
-    coupon2.time = @"21-12-2017";
-    coupon2.couponCode = @"ZDQFADSFASD";
-    
-    _dataArray = @[coupon, coupon1, coupon2];
+//    WGCoupon *coupon = [[WGCoupon alloc] init];
+//    coupon.name = @"kdfasdfas";
+//    coupon.briefDescription = @"南非世界杯夺";
+//    coupon.totalCount = 5;
+//    coupon.residueCount = 3;
+//    coupon.time = @"21-12-2017";
+//    coupon.couponCode = @"ZDQFADSFASD";
+//    
+//    WGCoupon *coupon1 = [[WGCoupon alloc] init];
+//    coupon1.name = @"kdfasdfas";
+//    coupon1.briefDescription = @"南非世界杯夺";
+//    coupon1.totalCount = 5;
+//    coupon1.residueCount = 1;
+//    coupon1.time = @"21-12-2017";
+//    coupon1.couponCode = @"ZDQFADSFASD";
+//    
+//    WGCoupon *coupon2 = [[WGCoupon alloc] init];
+//    coupon2.name = @"kdfasdfas";
+//    coupon2.briefDescription = @"南非世界杯夺";
+//    coupon2.totalCount = 5;
+//    coupon2.residueCount = 3;
+//    coupon2.time = @"21-12-2017";
+//    coupon2.couponCode = @"ZDQFADSFASD";
+//    
+//    _dataArray = @[coupon, coupon1, coupon2];
 }
 
 - (void)initSubView {
@@ -73,6 +75,7 @@
     }
     else {
         _tableView.contentInset = UIEdgeInsetsMake(-35, 0, 0, 0);
+        _tableView.layer.opacity = 0.0f;
     }
     [contentView addSubview:_tableView];
 }
@@ -102,7 +105,10 @@
 }
 
 - (void)refreshUI {
-    
+    [_tableView reloadData];
+    [UIView animateWithDuration:0.25 animations:^() {
+        _tableView.layer.opacity = 1.0f;
+    }];
 }
 
 - (void)touchActivateBtn:(JHButton *)sender {
@@ -155,6 +161,14 @@
     }
     [_tableView reloadData];
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)beginRefreshFooter:(TWRefreshTableView *)tableView {
+    [self loadListResponse:NO pulling:YES];
+}
+
+- (void)beginRefreshHeader:(TWRefreshTableView *)tableView {
+    [self loadListResponse:YES pulling:YES];
 }
 
 @end

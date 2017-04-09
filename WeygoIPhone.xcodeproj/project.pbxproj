@@ -60,10 +60,7 @@
 		BE52D53E1E1BADDA00D4FFCD /* WGHomeFloorContentItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BE52D53D1E1BADDA00D4FFCD /* WGHomeFloorContentItem.m */; };
 		BE52ED291E2C64860022EF5B /* WGEditReceiptViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE52ED281E2C64860022EF5B /* WGEditReceiptViewController.m */; };
 		BE52ED2D1E2C66100022EF5B /* WGEditReceiptCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE52ED2C1E2C66100022EF5B /* WGEditReceiptCell.m */; };
-		BE52ED301E2C6C560022EF5B /* WGEditReceiptViewController+Request.m in Sources */ = {isa = PBXBuildFile; fileRef = BE52ED2F1E2C6C560022EF5B /* WGEditReceiptViewController+Request.m */; };
 		BE52ED331E2C71630022EF5B /* WGReceipt.m in Sources */ = {isa = PBXBuildFile; fileRef = BE52ED321E2C71630022EF5B /* WGReceipt.m */; };
-		BE52ED361E2C75570022EF5B /* WGReceiptListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE52ED351E2C75570022EF5B /* WGReceiptListViewController.m */; };
-		BE52ED391E2C75720022EF5B /* WGReceiptListViewController+Request.m in Sources */ = {isa = PBXBuildFile; fileRef = BE52ED381E2C75720022EF5B /* WGReceiptListViewController+Request.m */; };
 		BE52ED3C1E2C75A10022EF5B /* WGReceiptListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE52ED3B1E2C75A10022EF5B /* WGReceiptListCell.m */; };
 		BE52ED8A1E2CC7400022EF5B /* WGBaseAddressAndReceiveEditCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE52ED891E2CC7400022EF5B /* WGBaseAddressAndReceiveEditCell.m */; };
 		BE52ED8D1E2CC78A0022EF5B /* WGBaseAddressAndReceiptListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE52ED8C1E2CC78A0022EF5B /* WGBaseAddressAndReceiptListCell.m */; };
@@ -83,7 +80,6 @@
 		BE52EFBB1E2F44970022EF5B /* WGCouponListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE52EFBA1E2F44970022EF5B /* WGCouponListViewController.m */; };
 		BE52EFBE1E2F4A570022EF5B /* WGCouponCode.m in Sources */ = {isa = PBXBuildFile; fileRef = BE52EFBD1E2F4A570022EF5B /* WGCouponCode.m */; };
 		BE52EFC91E2F64E90022EF5B /* WGCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE52EFC81E2F64E90022EF5B /* WGCollectionViewController.m */; };
-		BE52EFCC1E2F691B0022EF5B /* WGCollectionViewController+Request.m in Sources */ = {isa = PBXBuildFile; fileRef = BE52EFCB1E2F691B0022EF5B /* WGCollectionViewController+Request.m */; };
 		BE57D1401E7DAB5300149738 /* WGMessageCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE57D13F1E7DAB5300149738 /* WGMessageCenterViewController.m */; };
 		BE57D1461E7DAB8100149738 /* WGMessageCenterViewController+Request.m in Sources */ = {isa = PBXBuildFile; fileRef = BE57D1451E7DAB8100149738 /* WGMessageCenterViewController+Request.m */; };
 		BE57D1491E7DABEF00149738 /* WGMessageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE57D1481E7DABEF00149738 /* WGMessageRequest.m */; };
@@ -336,6 +332,23 @@
 		BEE937C61E825D6E00875131 /* WGGuestRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE937C51E825D6E00875131 /* WGGuestRequest.m */; };
 		BEE937C91E825EF400875131 /* WGInvitationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE937C81E825EF400875131 /* WGInvitationViewController.m */; };
 		BEE937CC1E825F8300875131 /* WGInvitationViewController+Request.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE937CB1E825F8300875131 /* WGInvitationViewController+Request.m */; };
+		BEEC20D01E9920380065DE90 /* WGAddressListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEC20CF1E9920380065DE90 /* WGAddressListRequest.m */; };
+		BEEC20D41E9923CD0065DE90 /* WGAddressListResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEC20D31E9923CD0065DE90 /* WGAddressListResponse.m */; };
+		BEEC20D71E9923F80065DE90 /* WGAddAddressRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEC20D61E9923F80065DE90 /* WGAddAddressRequest.m */; };
+		BEEC20DA1E99241A0065DE90 /* WGDeleteAddressRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEC20D91E99241A0065DE90 /* WGDeleteAddressRequest.m */; };
+		BEEC20DD1E9924310065DE90 /* WGSetDefaultAddressRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEC20DC1E9924310065DE90 /* WGSetDefaultAddressRequest.m */; };
+		BEEC20E01E9924610065DE90 /* WGAddAddressResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEC20DF1E9924610065DE90 /* WGAddAddressResponse.m */; };
+		BEEC20E31E99246E0065DE90 /* WGDeleteAddressResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEC20E21E99246E0065DE90 /* WGDeleteAddressResponse.m */; };
+		BEEC20E61E9924A00065DE90 /* WGSetDefaultAddressResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEC20E51E9924A00065DE90 /* WGSetDefaultAddressResponse.m */; };
+		BEEC20E91E99D7D50065DE90 /* WGAddressListViewController+Request.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEC20E81E99D7D50065DE90 /* WGAddressListViewController+Request.m */; };
+		BEEC20EC1E9A39B90065DE90 /* WGReceiptCountryListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEC20EB1E9A39B90065DE90 /* WGReceiptCountryListRequest.m */; };
+		BEEC20EF1E9A3A130065DE90 /* WGReceiptCountryListResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEC20EE1E9A3A130065DE90 /* WGReceiptCountryListResponse.m */; };
+		BEEC20F21E9A3DBE0065DE90 /* WGAddressCityListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEC20F11E9A3DBE0065DE90 /* WGAddressCityListRequest.m */; };
+		BEEC20F51E9A3DCD0065DE90 /* WGAddressCityListResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEC20F41E9A3DCD0065DE90 /* WGAddressCityListResponse.m */; };
+		BEEC20FB1E9A41560065DE90 /* WGAddressDetailRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEC20FA1E9A41560065DE90 /* WGAddressDetailRequest.m */; };
+		BEEC20FE1E9A41B70065DE90 /* WGAddressDetailResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEC20FD1E9A41B70065DE90 /* WGAddressDetailResponse.m */; };
+		BEEC21041E9A5D700065DE90 /* WGEditAddressViewController+Request.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEC21031E9A5D700065DE90 /* WGEditAddressViewController+Request.m */; };
+		BEEC21071E9A83040065DE90 /* WGEditReceiptViewController+Request.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEC21061E9A83040065DE90 /* WGEditReceiptViewController+Request.m */; };
 		BEF286BD1E35F4F300274FCA /* WGUniversalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF286BC1E35F4F300274FCA /* WGUniversalViewController.m */; };
 		BEF6851F1E31AC84003B745B /* WGBaseFootPrintAndCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF6851E1E31AC84003B745B /* WGBaseFootPrintAndCollectionViewController.m */; };
 		BEF685231E31ADD9003B745B /* WGFootPrintViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF685221E31ADD9003B745B /* WGFootPrintViewController.m */; };
@@ -512,14 +525,8 @@
 		BE52ED281E2C64860022EF5B /* WGEditReceiptViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGEditReceiptViewController.m; sourceTree = "<group>"; };
 		BE52ED2B1E2C66100022EF5B /* WGEditReceiptCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGEditReceiptCell.h; sourceTree = "<group>"; };
 		BE52ED2C1E2C66100022EF5B /* WGEditReceiptCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGEditReceiptCell.m; sourceTree = "<group>"; };
-		BE52ED2E1E2C6C560022EF5B /* WGEditReceiptViewController+Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGEditReceiptViewController+Request.h"; sourceTree = "<group>"; };
-		BE52ED2F1E2C6C560022EF5B /* WGEditReceiptViewController+Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGEditReceiptViewController+Request.m"; sourceTree = "<group>"; };
 		BE52ED311E2C71630022EF5B /* WGReceipt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGReceipt.h; sourceTree = "<group>"; };
 		BE52ED321E2C71630022EF5B /* WGReceipt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGReceipt.m; sourceTree = "<group>"; };
-		BE52ED341E2C75570022EF5B /* WGReceiptListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGReceiptListViewController.h; sourceTree = "<group>"; };
-		BE52ED351E2C75570022EF5B /* WGReceiptListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGReceiptListViewController.m; sourceTree = "<group>"; };
-		BE52ED371E2C75720022EF5B /* WGReceiptListViewController+Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGReceiptListViewController+Request.h"; sourceTree = "<group>"; };
-		BE52ED381E2C75720022EF5B /* WGReceiptListViewController+Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGReceiptListViewController+Request.m"; sourceTree = "<group>"; };
 		BE52ED3A1E2C75A10022EF5B /* WGReceiptListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGReceiptListCell.h; sourceTree = "<group>"; };
 		BE52ED3B1E2C75A10022EF5B /* WGReceiptListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGReceiptListCell.m; sourceTree = "<group>"; };
 		BE52ED881E2CC7400022EF5B /* WGBaseAddressAndReceiveEditCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGBaseAddressAndReceiveEditCell.h; sourceTree = "<group>"; };
@@ -558,8 +565,6 @@
 		BE52EFBD1E2F4A570022EF5B /* WGCouponCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WGCouponCode.m; path = ../WGCouponCode.m; sourceTree = "<group>"; };
 		BE52EFC71E2F64E90022EF5B /* WGCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGCollectionViewController.h; sourceTree = "<group>"; };
 		BE52EFC81E2F64E90022EF5B /* WGCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGCollectionViewController.m; sourceTree = "<group>"; };
-		BE52EFCA1E2F691B0022EF5B /* WGCollectionViewController+Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGCollectionViewController+Request.h"; sourceTree = "<group>"; };
-		BE52EFCB1E2F691B0022EF5B /* WGCollectionViewController+Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGCollectionViewController+Request.m"; sourceTree = "<group>"; };
 		BE57D13E1E7DAB5300149738 /* WGMessageCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGMessageCenterViewController.h; sourceTree = "<group>"; };
 		BE57D13F1E7DAB5300149738 /* WGMessageCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGMessageCenterViewController.m; sourceTree = "<group>"; };
 		BE57D1441E7DAB8100149738 /* WGMessageCenterViewController+Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGMessageCenterViewController+Request.h"; sourceTree = "<group>"; };
@@ -1046,6 +1051,40 @@
 		BEE937C81E825EF400875131 /* WGInvitationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGInvitationViewController.m; sourceTree = "<group>"; };
 		BEE937CA1E825F8300875131 /* WGInvitationViewController+Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGInvitationViewController+Request.h"; sourceTree = "<group>"; };
 		BEE937CB1E825F8300875131 /* WGInvitationViewController+Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGInvitationViewController+Request.m"; sourceTree = "<group>"; };
+		BEEC20CE1E9920380065DE90 /* WGAddressListRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGAddressListRequest.h; sourceTree = "<group>"; };
+		BEEC20CF1E9920380065DE90 /* WGAddressListRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGAddressListRequest.m; sourceTree = "<group>"; };
+		BEEC20D21E9923CD0065DE90 /* WGAddressListResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGAddressListResponse.h; sourceTree = "<group>"; };
+		BEEC20D31E9923CD0065DE90 /* WGAddressListResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGAddressListResponse.m; sourceTree = "<group>"; };
+		BEEC20D51E9923F80065DE90 /* WGAddAddressRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGAddAddressRequest.h; sourceTree = "<group>"; };
+		BEEC20D61E9923F80065DE90 /* WGAddAddressRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGAddAddressRequest.m; sourceTree = "<group>"; };
+		BEEC20D81E99241A0065DE90 /* WGDeleteAddressRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGDeleteAddressRequest.h; sourceTree = "<group>"; };
+		BEEC20D91E99241A0065DE90 /* WGDeleteAddressRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGDeleteAddressRequest.m; sourceTree = "<group>"; };
+		BEEC20DB1E9924310065DE90 /* WGSetDefaultAddressRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGSetDefaultAddressRequest.h; sourceTree = "<group>"; };
+		BEEC20DC1E9924310065DE90 /* WGSetDefaultAddressRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGSetDefaultAddressRequest.m; sourceTree = "<group>"; };
+		BEEC20DE1E9924610065DE90 /* WGAddAddressResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGAddAddressResponse.h; sourceTree = "<group>"; };
+		BEEC20DF1E9924610065DE90 /* WGAddAddressResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGAddAddressResponse.m; sourceTree = "<group>"; };
+		BEEC20E11E99246E0065DE90 /* WGDeleteAddressResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGDeleteAddressResponse.h; sourceTree = "<group>"; };
+		BEEC20E21E99246E0065DE90 /* WGDeleteAddressResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGDeleteAddressResponse.m; sourceTree = "<group>"; };
+		BEEC20E41E9924A00065DE90 /* WGSetDefaultAddressResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGSetDefaultAddressResponse.h; sourceTree = "<group>"; };
+		BEEC20E51E9924A00065DE90 /* WGSetDefaultAddressResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGSetDefaultAddressResponse.m; sourceTree = "<group>"; };
+		BEEC20E71E99D7D50065DE90 /* WGAddressListViewController+Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGAddressListViewController+Request.h"; sourceTree = "<group>"; };
+		BEEC20E81E99D7D50065DE90 /* WGAddressListViewController+Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGAddressListViewController+Request.m"; sourceTree = "<group>"; };
+		BEEC20EA1E9A39B90065DE90 /* WGReceiptCountryListRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGReceiptCountryListRequest.h; sourceTree = "<group>"; };
+		BEEC20EB1E9A39B90065DE90 /* WGReceiptCountryListRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGReceiptCountryListRequest.m; sourceTree = "<group>"; };
+		BEEC20ED1E9A3A130065DE90 /* WGReceiptCountryListResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGReceiptCountryListResponse.h; sourceTree = "<group>"; };
+		BEEC20EE1E9A3A130065DE90 /* WGReceiptCountryListResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGReceiptCountryListResponse.m; sourceTree = "<group>"; };
+		BEEC20F01E9A3DBE0065DE90 /* WGAddressCityListRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGAddressCityListRequest.h; sourceTree = "<group>"; };
+		BEEC20F11E9A3DBE0065DE90 /* WGAddressCityListRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGAddressCityListRequest.m; sourceTree = "<group>"; };
+		BEEC20F31E9A3DCD0065DE90 /* WGAddressCityListResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGAddressCityListResponse.h; sourceTree = "<group>"; };
+		BEEC20F41E9A3DCD0065DE90 /* WGAddressCityListResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGAddressCityListResponse.m; sourceTree = "<group>"; };
+		BEEC20F91E9A41560065DE90 /* WGAddressDetailRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGAddressDetailRequest.h; sourceTree = "<group>"; };
+		BEEC20FA1E9A41560065DE90 /* WGAddressDetailRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGAddressDetailRequest.m; sourceTree = "<group>"; };
+		BEEC20FC1E9A41B70065DE90 /* WGAddressDetailResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGAddressDetailResponse.h; sourceTree = "<group>"; };
+		BEEC20FD1E9A41B70065DE90 /* WGAddressDetailResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGAddressDetailResponse.m; sourceTree = "<group>"; };
+		BEEC21021E9A5D700065DE90 /* WGEditAddressViewController+Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGEditAddressViewController+Request.h"; sourceTree = "<group>"; };
+		BEEC21031E9A5D700065DE90 /* WGEditAddressViewController+Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGEditAddressViewController+Request.m"; sourceTree = "<group>"; };
+		BEEC21051E9A83040065DE90 /* WGEditReceiptViewController+Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGEditReceiptViewController+Request.h"; sourceTree = "<group>"; };
+		BEEC21061E9A83040065DE90 /* WGEditReceiptViewController+Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGEditReceiptViewController+Request.m"; sourceTree = "<group>"; };
 		BEF286BB1E35F4F300274FCA /* WGUniversalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGUniversalViewController.h; sourceTree = "<group>"; };
 		BEF286BC1E35F4F300274FCA /* WGUniversalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGUniversalViewController.m; sourceTree = "<group>"; };
 		BEF6851D1E31AC84003B745B /* WGBaseFootPrintAndCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGBaseFootPrintAndCollectionViewController.h; sourceTree = "<group>"; };
@@ -1434,12 +1473,8 @@
 				BE52ED231E2C645F0022EF5B /* Model */,
 				BE52ED271E2C64860022EF5B /* WGEditReceiptViewController.h */,
 				BE52ED281E2C64860022EF5B /* WGEditReceiptViewController.m */,
-				BE52ED2E1E2C6C560022EF5B /* WGEditReceiptViewController+Request.h */,
-				BE52ED2F1E2C6C560022EF5B /* WGEditReceiptViewController+Request.m */,
-				BE52ED341E2C75570022EF5B /* WGReceiptListViewController.h */,
-				BE52ED351E2C75570022EF5B /* WGReceiptListViewController.m */,
-				BE52ED371E2C75720022EF5B /* WGReceiptListViewController+Request.h */,
-				BE52ED381E2C75720022EF5B /* WGReceiptListViewController+Request.m */,
+				BEEC21051E9A83040065DE90 /* WGEditReceiptViewController+Request.h */,
+				BEEC21061E9A83040065DE90 /* WGEditReceiptViewController+Request.m */,
 			);
 			path = Receipt;
 			sourceTree = "<group>";
@@ -1493,8 +1528,12 @@
 				BE52EDA41E2DBAF80022EF5B /* Model */,
 				BE52EDB81E2DBF9D0022EF5B /* WGEditAddressViewController.h */,
 				BE52EDB91E2DBF9D0022EF5B /* WGEditAddressViewController.m */,
+				BEEC21021E9A5D700065DE90 /* WGEditAddressViewController+Request.h */,
+				BEEC21031E9A5D700065DE90 /* WGEditAddressViewController+Request.m */,
 				BE52EDBB1E2DC26D0022EF5B /* WGAddressListViewController.h */,
 				BE52EDBC1E2DC26D0022EF5B /* WGAddressListViewController.m */,
+				BEEC20E71E99D7D50065DE90 /* WGAddressListViewController+Request.h */,
+				BEEC20E81E99D7D50065DE90 /* WGAddressListViewController+Request.m */,
 			);
 			path = Address;
 			sourceTree = "<group>";
@@ -1524,6 +1563,20 @@
 		BE52EDA51E2DBAF80022EF5B /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				BEEC20CE1E9920380065DE90 /* WGAddressListRequest.h */,
+				BEEC20CF1E9920380065DE90 /* WGAddressListRequest.m */,
+				BEEC20D51E9923F80065DE90 /* WGAddAddressRequest.h */,
+				BEEC20D61E9923F80065DE90 /* WGAddAddressRequest.m */,
+				BEEC20D81E99241A0065DE90 /* WGDeleteAddressRequest.h */,
+				BEEC20D91E99241A0065DE90 /* WGDeleteAddressRequest.m */,
+				BEEC20DB1E9924310065DE90 /* WGSetDefaultAddressRequest.h */,
+				BEEC20DC1E9924310065DE90 /* WGSetDefaultAddressRequest.m */,
+				BEEC20EA1E9A39B90065DE90 /* WGReceiptCountryListRequest.h */,
+				BEEC20EB1E9A39B90065DE90 /* WGReceiptCountryListRequest.m */,
+				BEEC20F01E9A3DBE0065DE90 /* WGAddressCityListRequest.h */,
+				BEEC20F11E9A3DBE0065DE90 /* WGAddressCityListRequest.m */,
+				BEEC20F91E9A41560065DE90 /* WGAddressDetailRequest.h */,
+				BEEC20FA1E9A41560065DE90 /* WGAddressDetailRequest.m */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -1531,6 +1584,20 @@
 		BE52EDA61E2DBAF80022EF5B /* Response */ = {
 			isa = PBXGroup;
 			children = (
+				BEEC20D21E9923CD0065DE90 /* WGAddressListResponse.h */,
+				BEEC20D31E9923CD0065DE90 /* WGAddressListResponse.m */,
+				BEEC20DE1E9924610065DE90 /* WGAddAddressResponse.h */,
+				BEEC20DF1E9924610065DE90 /* WGAddAddressResponse.m */,
+				BEEC20E11E99246E0065DE90 /* WGDeleteAddressResponse.h */,
+				BEEC20E21E99246E0065DE90 /* WGDeleteAddressResponse.m */,
+				BEEC20E41E9924A00065DE90 /* WGSetDefaultAddressResponse.h */,
+				BEEC20E51E9924A00065DE90 /* WGSetDefaultAddressResponse.m */,
+				BEEC20ED1E9A3A130065DE90 /* WGReceiptCountryListResponse.h */,
+				BEEC20EE1E9A3A130065DE90 /* WGReceiptCountryListResponse.m */,
+				BEEC20F31E9A3DCD0065DE90 /* WGAddressCityListResponse.h */,
+				BEEC20F41E9A3DCD0065DE90 /* WGAddressCityListResponse.m */,
+				BEEC20FC1E9A41B70065DE90 /* WGAddressDetailResponse.h */,
+				BEEC20FD1E9A41B70065DE90 /* WGAddressDetailResponse.m */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -1681,8 +1748,6 @@
 				BE52EFC61E2F64B10022EF5B /* Model */,
 				BE52EFC71E2F64E90022EF5B /* WGCollectionViewController.h */,
 				BE52EFC81E2F64E90022EF5B /* WGCollectionViewController.m */,
-				BE52EFCA1E2F691B0022EF5B /* WGCollectionViewController+Request.h */,
-				BE52EFCB1E2F691B0022EF5B /* WGCollectionViewController+Request.m */,
 			);
 			path = Collect;
 			sourceTree = "<group>";
@@ -3333,7 +3398,6 @@
 				BE5F61951E94D44200FBA32A /* WGCommitUserInfoRequest.m in Sources */,
 				BEA734251E8126CC00C74ED2 /* WGCouponListViewController+Request.m in Sources */,
 				BE63A6D41E7BBC0B00F77282 /* WGOrderGoodPriceCell.m in Sources */,
-				BE52EFCC1E2F691B0022EF5B /* WGCollectionViewController+Request.m in Sources */,
 				BE6753931E9320AF00250BA8 /* WGCheckFailureProductsRequest.m in Sources */,
 				BE1BBA4F1E4B2D4D0008BD68 /* WGSliderTopicCell.m in Sources */,
 				BE57D14F1E7DAC3200149738 /* WGMessageItem.m in Sources */,
@@ -3357,9 +3421,9 @@
 				BE63A6F41E7BC5A200F77282 /* WGOrderListRequest.m in Sources */,
 				BE5E4C181E249ADB00ACA48F /* WGHomeTabContentViewController.m in Sources */,
 				BE6BE9151E7FA84400A081BA /* WGCommitOrderResponse.m in Sources */,
+				BEEC20DD1E9924310065DE90 /* WGSetDefaultAddressRequest.m in Sources */,
 				BE63A6F71E7BC5BF00F77282 /* WGOrderListResponse.m in Sources */,
 				BE520FEA1E880431004BD34E /* WGTabViewController+Slider.m in Sources */,
-				BE52ED391E2C75720022EF5B /* WGReceiptListViewController+Request.m in Sources */,
 				BEB2D9751DFD933600F2E74B /* WGScrollImageView.m in Sources */,
 				BE83BB331E23EB68002F3BCC /* WGHomeTabContentResponse.m in Sources */,
 				BE6BE9271E7FB70800A081BA /* WGUpdateOrderCouponResponse.m in Sources */,
@@ -3390,9 +3454,9 @@
 				BE63A6D81E7BBC0B00F77282 /* WGOrderDetailRequest.m in Sources */,
 				BEF8ED931E8B52AD00E15C8F /* WGDeleteFootPrintRequest.m in Sources */,
 				BE5E4C4A1E252E2000ACA48F /* WGHomeTabContentViewController+Request.m in Sources */,
+				BEEC20D41E9923CD0065DE90 /* WGAddressListResponse.m in Sources */,
 				BEB2D95D1DFBED1500F2E74B /* WGResponse.m in Sources */,
 				BE6BE92A1E7FD7A600A081BA /* WGCommitOrderDeliverTipCell.m in Sources */,
-				BE52ED361E2C75570022EF5B /* WGReceiptListViewController.m in Sources */,
 				BE9F933A1E6B24CA0051B054 /* WGCSCCommonItemResponse.m in Sources */,
 				BE6CC1B51E294098003755FF /* WGHomeFloorClassifyColumnCell.m in Sources */,
 				BE5E4C471E2526D900ACA48F /* WGHomeTabViewController+Contents.m in Sources */,
@@ -3420,7 +3484,9 @@
 				BE6CC1AC1E293FE5003755FF /* WGHomeFloorGoodListItemCell.m in Sources */,
 				BEE937C61E825D6E00875131 /* WGGuestRequest.m in Sources */,
 				BEF685641E3205D9003B745B /* WGTextClassifyCell.m in Sources */,
+				BEEC20E01E9924610065DE90 /* WGAddAddressResponse.m in Sources */,
 				BE52EDB71E2DBF010022EF5B /* WGAddressListCell.m in Sources */,
+				BEEC20E91E99D7D50065DE90 /* WGAddressListViewController+Request.m in Sources */,
 				BE83BB301E23EB54002F3BCC /* WGHomeTabContentRequest.m in Sources */,
 				BE74CDB01E626B7400600A28 /* WGHomeSliderRequest.m in Sources */,
 				BE6753A21E932FAA00250BA8 /* WGUpdateProductsResponse.m in Sources */,
@@ -3440,9 +3506,11 @@
 				BE52EDDA1E2DDD160022EF5B /* WGShopCart.m in Sources */,
 				BE63A6DD1E7BBC0B00F77282 /* WGOrderDetailViewController.m in Sources */,
 				BE622A061E77C55E002BFEDB /* WGCollectGoodRequest.m in Sources */,
+				BEEC20FB1E9A41560065DE90 /* WGAddressDetailRequest.m in Sources */,
 				BECBE3161E87C68E00ADAD6C /* WGTitleItem.m in Sources */,
 				BEB8D1531E48CD0400BB9BA3 /* WGRegisterViewController+Request.m in Sources */,
 				BEFEC3421E964CCF002FCF1F /* WGRegisterRequest.m in Sources */,
+				BEEC20E31E99246E0065DE90 /* WGDeleteAddressResponse.m in Sources */,
 				BE74CDAC1E626B3700600A28 /* WGHomeSliderViewController+Request.m in Sources */,
 				BE99E7CA1E1CB67600210546 /* WGRatingView.m in Sources */,
 				BE6BE91B1E7FAF1400A081BA /* WGSettlementResult.m in Sources */,
@@ -3482,6 +3550,7 @@
 				BECBE3191E87D13100ADAD6C /* WGCommonViewController+Data.m in Sources */,
 				BE74CDB31E626B8E00600A28 /* WGHomeSliderResponse.m in Sources */,
 				BECBE3091E87BB9D00ADAD6C /* WGCommonViewController+Scroll.m in Sources */,
+				BEEC21071E9A83040065DE90 /* WGEditReceiptViewController+Request.m in Sources */,
 				BE6CC1CA1E2AA397003755FF /* WGHomeFloorGoodGridItemView.m in Sources */,
 				BE5F61A61E94E7B800FBA32A /* WGGetVerifyCodeResponse.m in Sources */,
 				BEF6851F1E31AC84003B745B /* WGBaseFootPrintAndCollectionViewController.m in Sources */,
@@ -3543,6 +3612,7 @@
 				BE6BE9031E7FA73800A081BA /* WGCommitOrderCouponCell.m in Sources */,
 				BE63A6D31E7BBC0B00F77282 /* WGOrderFaxCell.m in Sources */,
 				BEB8D0971E46D46600BB9BA3 /* WGApplication+Request.m in Sources */,
+				BEEC20F51E9A3DCD0065DE90 /* WGAddressCityListResponse.m in Sources */,
 				BEB8D1581E49A12800BB9BA3 /* WGForgetPasswordViewController.m in Sources */,
 				BEF286BD1E35F4F300274FCA /* WGUniversalViewController.m in Sources */,
 				BE622A091E77C5AD002BFEDB /* WGCollectGoodResponse.m in Sources */,
@@ -3552,12 +3622,14 @@
 				BE52EFB51E2F38C50022EF5B /* WGCoupon.m in Sources */,
 				BEF685611E320216003B745B /* WGClassifyHotGoodItem.m in Sources */,
 				BEF8ED881E8AB01E00E15C8F /* WGPageControl.m in Sources */,
+				BEEC20DA1E99241A0065DE90 /* WGDeleteAddressRequest.m in Sources */,
 				BE2B42C21E8B86240010BCB7 /* WGLoginResponse.m in Sources */,
 				BE1BBA6E1E4C19400008BD68 /* WGHomeSliderClassifyItem.m in Sources */,
 				BEE937BD1E825C4D00875131 /* WGInvitationDescriptionResponse.m in Sources */,
 				BE6CC1CD1E2B5BE5003755FF /* WGHomeFloorClassifyColumnView.m in Sources */,
 				BE52ED901E2CCBBF0022EF5B /* WGBaseEditAddressAndReceiptViewController.m in Sources */,
 				BEB2D95B1DFBED1500F2E74B /* WGObject.m in Sources */,
+				BEEC20EC1E9A39B90065DE90 /* WGReceiptCountryListRequest.m in Sources */,
 				BE5210201E8912C5004BD34E /* WGApplication+ShowView.m in Sources */,
 				BE520FF91E88FE35004BD34E /* WGClassifyResponse.m in Sources */,
 				BE52D53E1E1BADDA00D4FFCD /* WGHomeFloorContentItem.m in Sources */,
@@ -3575,7 +3647,6 @@
 				BEFEC3391E964264002FCF1F /* WGClassifyDetailFilterRequest.m in Sources */,
 				BE6229F91E7684D4002BFEDB /* WGGoodDesCell.m in Sources */,
 				BE6753C31E93CD0E00250BA8 /* WGDealFailGoodView.m in Sources */,
-				BE52ED301E2C6C560022EF5B /* WGEditReceiptViewController+Request.m in Sources */,
 				BE5F61AF1E94EA8800FBA32A /* WGForgetPasswordViewController+Request.m in Sources */,
 				BE6229FC1E768544002BFEDB /* WGCommodityDesCell.m in Sources */,
 				BE520FDA1E87EB17004BD34E /* WGApplication+Controller.m in Sources */,
@@ -3597,6 +3668,7 @@
 				BEF6855B1E31FD06003B745B /* WGImageClassifyCell.m in Sources */,
 				BEB2D91F1DFBDFE900F2E74B /* WGTabClassifyViewController.m in Sources */,
 				BE6CC1DD1E2BBA78003755FF /* WGClassifyGoodListViewController.m in Sources */,
+				BEEC20E61E9924A00065DE90 /* WGSetDefaultAddressResponse.m in Sources */,
 				BE52ED2D1E2C66100022EF5B /* WGEditReceiptCell.m in Sources */,
 				BE52ED8D1E2CC78A0022EF5B /* WGBaseAddressAndReceiptListCell.m in Sources */,
 				BE9F932D1E6B1C960051B054 /* WGClientServiceCenterViewController.m in Sources */,
@@ -3610,6 +3682,7 @@
 				BE5F61981E94D45200FBA32A /* WGCommitUserInfoResponse.m in Sources */,
 				BECBE3101E87C43800ADAD6C /* WGAsiaViewController.m in Sources */,
 				BEB2D9591DFBED1500F2E74B /* WGApplication.m in Sources */,
+				BEEC20D01E9920380065DE90 /* WGAddressListRequest.m in Sources */,
 				BE63A6EB1E7BBE8000F77282 /* WGOrderListItem.m in Sources */,
 				BE6BE8F01E7F912300A081BA /* WGCommitOrderViewController.m in Sources */,
 				BE1BBA2F1E4B0DE10008BD68 /* WGSliderTopicItemView.m in Sources */,
@@ -3618,17 +3691,22 @@
 				BEF8ED901E8B527C00E15C8F /* WGFootPrintListResponse.m in Sources */,
 				BE52EDB01E2DBB770022EF5B /* WGAddress.m in Sources */,
 				BE622A001E779D79002BFEDB /* WGGoodAddView.m in Sources */,
+				BEEC20EF1E9A3A130065DE90 /* WGReceiptCountryListResponse.m in Sources */,
 				BEF8ED661E8A742C00E15C8F /* WGCollectionListRequest.m in Sources */,
 				BEFEC3321E963FA2002FCF1F /* WGClassifyDetailRequest.m in Sources */,
+				BEEC20D71E9923F80065DE90 /* WGAddAddressRequest.m in Sources */,
 				BE622A121E77CEDC002BFEDB /* WGGoodInLocalCart.m in Sources */,
 				BE52EFBB1E2F44970022EF5B /* WGCouponListViewController.m in Sources */,
 				BE63A7031E7BDA1700F77282 /* WGOrderCountView.m in Sources */,
 				BE9F93191E6AED4A0051B054 /* WGHomeTabTitleRequest.m in Sources */,
 				BE58BC801E49C62F00B4D2E1 /* WGBindThirdPartyViewController.m in Sources */,
+				BEEC20FE1E9A41B70065DE90 /* WGAddressDetailResponse.m in Sources */,
 				BE83BB1E1E23E233002F3BCC /* WGHome.m in Sources */,
 				BEF8ED8D1E8B525F00E15C8F /* WGFootPrintListRequest.m in Sources */,
 				BECBE3061E87BB9300ADAD6C /* WGCommonViewController+Segment.m in Sources */,
+				BEEC21041E9A5D700065DE90 /* WGEditAddressViewController+Request.m in Sources */,
 				BE6229EA1E765BE6002BFEDB /* WGGoodDetailRequest.m in Sources */,
+				BEEC20F21E9A3DBE0065DE90 /* WGAddressCityListRequest.m in Sources */,
 				BE62E4631DF937F8004510A5 /* AppDelegate+UI.m in Sources */,
 				BE6BE90F1E7FA80300A081BA /* WGCommitOrderLookMoreCell.m in Sources */,
 				BE63A6DA1E7BBC0B00F77282 /* WGOrderDetail.m in Sources */,

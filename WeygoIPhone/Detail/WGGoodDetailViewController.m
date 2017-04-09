@@ -123,6 +123,12 @@
     }];
 }
 
+- (void)handleRecommendGood:(WGHomeFloorContentItem *)item {
+    WGGoodDetailViewController *vc = [[WGGoodDetailViewController alloc] init];
+    vc.goodId = item.id;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
@@ -174,7 +180,12 @@
             cell = [[WGCommodityDesCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
         }
         else if (4 == indexPath.row) {
-            cell = [[WGHomeFloorGoodColumnCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+            WeakSelf;
+            WGHomeFloorGoodColumnCell *goodCell = [[WGHomeFloorGoodColumnCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+            goodCell.onApply = ^(WGHomeFloorContentItem *item) {
+                [weakSelf handleRecommendGood:item];
+            };
+            cell = goodCell;
         }
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.contentView.clipsToBounds = YES;

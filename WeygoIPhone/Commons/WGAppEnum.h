@@ -28,6 +28,7 @@ typedef NS_ENUM(NSInteger, WGRefreshNotificationType) {
     WGRefreshNotificationTypeNone,
     WGRefreshNotificationTypeLogin,
     WGRefreshNotificationTypeLogout,
+    WGRefreshNotificationTypeChangeAddress,
 };
 
 #endif /* WGAppEnum_h */

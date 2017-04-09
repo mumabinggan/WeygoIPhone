@@ -8,10 +8,17 @@
 
 #import "WGViewController.h"
 
+typedef NS_ENUM(NSInteger, WGAddressListType) {
+    WGAddressListTypeNormal,
+    WGAddressListTypeCanUse,
+};
+
 @interface WGBaseAddressAndReceiptListViewController : WGViewController
 {
     NSMutableArray *_dataMArray;
 }
+
+@property (nonatomic, assign) WGAddressListType type;
 
 @property (nonatomic, copy) void (^onUse)(WGObject *object);
 

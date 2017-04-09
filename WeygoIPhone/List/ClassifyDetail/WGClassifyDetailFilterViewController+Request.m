@@ -16,7 +16,7 @@
     WGClassifyDetailFilterRequest *request = [[WGClassifyDetailFilterRequest alloc] init];
     request.classifyId = self.classifyId;
     __weak typeof(self) weakSelf = self;
-    [self get:request forResponseClass:[WGClassifyDetailFilterResponse class] success:^(JHResponse *response) {
+    [self post:request forResponseClass:[WGClassifyDetailFilterResponse class] success:^(JHResponse *response) {
         [weakSelf handleClassifyDetailFilterResponse:(WGClassifyDetailFilterResponse *)response];
     } failure:^(NSError *error) {
         [weakSelf showWarningMessage:kStr(@"Request Failed")];

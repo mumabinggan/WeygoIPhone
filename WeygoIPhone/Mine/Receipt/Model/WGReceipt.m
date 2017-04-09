@@ -10,4 +10,12 @@
 
 @implementation WGReceipt
 
+- (id)init {
+    self = [super init];
+    if (self) {
+        _countryId = @"IT";
+    }
+    return self;
+}
+
 @end

@@ -10,4 +10,8 @@
 
 @implementation WGDealShopCartGiftRequest
 
+- (NSString *)api {
+    return @"cart/cartGratiProductConfirmation?";
+}
+
 @end

@@ -18,6 +18,8 @@
     JHButton *_defaultBtn;
 }
 
+@property (nonatomic, assign) BOOL hasUse;
+
 @property (nonatomic, copy) void (^onDefault)(WGObject *receipt);
 
 @property (nonatomic, copy) void (^onUse)(WGObject *receipt);

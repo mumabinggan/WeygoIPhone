@@ -24,6 +24,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.title = kStr(@"Address_Add_Title");
+}
+
+- (void)initData {
+    [super initData];
+    _dataMArray = [NSMutableArray array];
 }
 
 - (void)initSubView {
@@ -39,7 +45,7 @@
     [self.view addSubview:_tableView];
     
     JHButton *addBtn = [[JHButton alloc] initWithFrame:CGRectMake(kDeviceWidth - kAppAdaptWidth(56 + 16), kDeviceHeight - kAppAdaptHeight(56 + 16), kAppAdaptWidth(56), kAppAdaptHeight(56))];
-    [addBtn setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
+    [addBtn setImage:[UIImage imageNamed:@"address_add"] forState:UIControlStateNormal];
     [addBtn addTarget:self action:@selector(touchAddBtn:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:addBtn];
 }
@@ -87,6 +93,10 @@
     return nil;
 }
 
+- (void)handleDeleteIndexPath:(NSIndexPath *)indexPath {
+    
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -132,6 +142,7 @@
         receiptCell.onModify = ^(WGObject *object) {
             [weakSelf handleModify:object];
         };
+        receiptCell.hasUse = (_type == WGAddressListTypeCanUse);
         cell = receiptCell;
     }
     [cell showWithData:_dataMArray[indexPath.section]];
@@ -144,8 +155,7 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [_dataMArray removeObjectAtIndex:indexPath.section];
-        [tableView deleteSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationFade];
+        [self handleDeleteIndexPath:indexPath];
     }
 }
 

@@ -19,7 +19,6 @@
 
 - (void)loadSettlementResultDetail {
     WGSettlementResultRequest *request = [[WGSettlementResultRequest alloc] init];
-    request.settlementId = self.settlementId;
     __weak typeof(self) weakSelf = self;
     [self post:request forResponseClass:[WGSettlementResultResponse class] success:^(JHResponse *response) {
         [weakSelf handleSettlementResultResponse:(WGSettlementResultResponse *)response];

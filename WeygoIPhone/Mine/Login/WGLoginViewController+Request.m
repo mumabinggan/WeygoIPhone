@@ -37,6 +37,7 @@
 
 - (void)handleLoginResponse:(WGLoginResponse *)response {
     if (response.success) {
+        [[WGApplication sharedApplication] reset];
         [WGApplication sharedApplication].user = response.data;
         [self sendNotification:WGRefreshNotificationTypeLogin];
         if (self.successBlock) {

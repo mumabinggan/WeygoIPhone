@@ -11,7 +11,7 @@
 @implementation WGDealFailureProductsRequest
 
 - (NSString *)api {
-    return @"cart/delete?";
+    return @"cart/updateProducts?";
 }
 
 @end

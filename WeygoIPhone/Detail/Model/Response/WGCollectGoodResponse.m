@@ -11,3 +11,7 @@
 @implementation WGCollectGoodResponse
 
 @end
+
+@implementation WGCollectData
+
+@end

@@ -7,6 +7,7 @@
 //
 
 #import "WGBaseAddressAndReceiptListCell.h"
+#import "WGAddress.h"
 
 @interface WGBaseAddressAndReceiptListCell ()
 {
@@ -71,8 +72,9 @@
     _defaultBtn.titleLabel.font = kAppAdaptFont(12);
     _defaultBtn.layer.masksToBounds = YES;
     _defaultBtn.layer.cornerRadius = kAppAdaptHeight(12);
-    [_defaultBtn setTitleColor:kWhiteColor forState:UIControlStateNormal];
+    //[_defaultBtn setTitleColor:kWhiteColor forState:UIControlStateNormal];
     [_defaultBtn addTarget:self action:@selector(touchDefaultBtn:) forControlEvents:UIControlEventTouchUpInside];
+    //[_defaultBtn setBackgroundColor:kHRGB(0xF8FAFA)];
     [self.contentView addSubview:_defaultBtn];
     
     _useBtn = [[JHButton alloc] initWithFrame:CGRectMake(kAppAdaptWidth(223), _defaultBtn.y, kAppAdaptWidth(64), kAppAdaptHeight(24)) difRadius:JHRadiusMake(kAppAdaptHeight(12), kAppAdaptHeight(12), kAppAdaptHeight(12), kAppAdaptHeight(12)) borderWidth:kAppAdaptWidth(1) borderColor:WGAppFooterButtonColor];
@@ -88,6 +90,10 @@
     [_modifyBtn setTitleColor:WGAppFooterButtonColor forState:UIControlStateNormal];
     [_modifyBtn addTarget:self action:@selector(touchMotifyBtn:) forControlEvents:UIControlEventTouchUpInside];
     [self.contentView addSubview:_modifyBtn];
+}
+
+- (void)setHasUse:(BOOL)hasUse {
+    _useBtn.hidden = !hasUse;
 }
 
 - (void)touchDefaultBtn:(UIButton *)sender {
@@ -111,6 +117,17 @@
 - (void)showWithData:(JHObject *)data {
     [super showWithData:data];
     _data = (WGObject *)data;
+    if ([_data isKindOfClass:[WGAddress class]]) {
+        WGAddress *address = (WGAddress *)_data;
+        if (address.isDefault) {
+            [_defaultBtn setBackgroundColor:WGAppBaseColor];
+            [_defaultBtn setTitleColor:kWhiteColor forState:UIControlStateNormal];
+        }
+        else {
+            [_defaultBtn setBackgroundColor:kHRGB(0xF8FAFA)];
+            [_defaultBtn setTitleColor:kBlackColor forState:UIControlStateNormal];
+        }
+    }
 }
 
 @end

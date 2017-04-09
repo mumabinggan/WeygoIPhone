@@ -13,10 +13,9 @@
 - (id)init {
     self = [super init];
     if (self) {
-//        if (([WGApplication sharedApplication].isLogined && ![NSString isNullOrEmpty:[WGApplication sharedApplication].currentPostCode])) {
-//            
-//        }
-        _cap = [WGApplication sharedApplication].currentPostCode;
+        if (([WGApplication sharedApplication].isLogined && [NSString isNullOrEmpty:[WGApplication sharedApplication].currentPostCode])) {
+            _cap = [WGApplication sharedApplication].currentPostCode;
+        }
     }
     return self;
 }

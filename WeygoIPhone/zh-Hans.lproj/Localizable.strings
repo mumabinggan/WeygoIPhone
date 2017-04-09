@@ -17,9 +17,9 @@
 "Raginone sociale" = "公司名称";
 //fax
 "Italia" = "Italia";
-"Recapito telefonico" = "Recapito telefonico";
+"Recapito telefonico" = "电话号码";
 "Indirizzo" = "Indirizzo";
-"N civico" = "N. civico";
+"N civico" = "街号";
 "Citta" = "Città";
 "CAP" = "CAP";
 "Stato" = "Stato/Provincia";
@@ -29,20 +29,21 @@
 "Modify" = "修改";
 "Fax" = "发票";
 //address
-"Cognome" = "Cognome";
-"Nome" = "Nome";
-"Italia" = "Italia";
-"Telefono/Cellulare" = "Telefono/Cellulare";
-"Citta" = "Città";
-"CAP" = "CAP";
-"Indirizzo" = "Indirizzo";
-"Numero civico" = "Numero civico";
-"Citofono" = "Citofono";
-"Scala" = "Scala";
-"Ascensore" = "Ascensore";
-"Piano" = "Piano";
+"Cognome" = "姓";
+"Nome" = "名";
+"Italia" = "意大利";
+"Telefono/Cellulare" = "电话/手机";
+"Citta" = "城市";
+"CAP" = "邮编";
+"Indirizzo" = "地址";
+"Numero civico" = "街号";
+"Citofono" = "门铃";
+"Scala" = "楼座";
+"Ascensore" = "是否有电梯";
+"Piano" = "楼层";
 //购物车
 "Totale:Price With Unit" = "Totale:€%.2f";
+"Totale:Price With String Unit" = "总价:%@";
 "Confirm" = "确定";
 "Carrello" = "Carrello";
 //优惠卷列表
@@ -237,14 +238,21 @@
 "CommitOrder Consume List" = "消费清单";
 "CommitOrder Remark" = "备助留言";
 "CommitOrder Look More" = "查看详情";
-"CommitOrder Total Pay" = "最终支付金额：%.2f";
+"CommitOrder Total Pay" = "最终支付金额：%@";
 "CommitOrder Confirm" = "确认购买";
+"CommitOrder Score" = "积分：";
+"CommitOrder Use Score" = "使用积分";
 
 //地址列表（完成）
 "Address_Title" = "派送地址";
+"Address_Add_Title" = "新增地址";
+"Address_HaveLift" = "是";
+"Address_NoLift" = "否";
+"Address_Italia" = "意大利";
 
 //发票列表(完成)
 "ReceiptList_Title" = "发票列表";
+"AddReceipt_Title" = "新增发票";
 
 //邀请界面(完成)
 "Invitation_Title" = "邀请好友";

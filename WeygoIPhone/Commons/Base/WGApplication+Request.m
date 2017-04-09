@@ -75,8 +75,8 @@
                     count:(NSInteger)count
              onCompletion:(void (^)(WGAddGoodToCartResponse *))completion {
     WGAddGoodToCartRequest *request = [[WGAddGoodToCartRequest alloc] init];
-    request.goodId = @(goodId).stringValue;
-    request.count = @(count).stringValue;
+    request.goodId = goodId;
+    request.count = count;
     [[JHNetworkManager sharedManager] get:request forResponseClass:[WGAddGoodToCartResponse class] success:^(JHResponse *response) {
         if (completion) {
             completion((WGAddGoodToCartResponse *)response);
@@ -122,6 +122,39 @@
             completion(nil);
         }
     }];
+}
+
+- (void)loadReceiptCountryListOnCompletion:(void (^)(WGReceiptCountryListResponse *))completion {
+    if (_loadingReceiptCountryListResponse) {
+        return;
+    }
+    if (_receiptCountryResponse) {
+        if (completion) {
+            completion(_receiptCountryResponse);
+        }
+        return;
+    }
+    WeakSelf;
+    _loadingReceiptCountryListResponse = YES;
+    WGReceiptCountryListRequest *request = [[WGReceiptCountryListRequest alloc] init];
+    [[JHNetworkManager sharedManager] post:request forResponseClass:[WGReceiptCountryListResponse class] success:^(JHResponse *response) {
+        _loadingReceiptCountryListResponse = NO;
+        [weakSelf handleReceiptCountryListResponse:(WGReceiptCountryListResponse *)response];
+        if (completion) {
+            completion((WGReceiptCountryListResponse *)response);
+        }
+    } failure:^(NSError *error) {
+        _loadingReceiptCountryListResponse = NO;
+        if (completion) {
+            completion(nil);
+        }
+    }];
+}
+
+- (void)handleReceiptCountryListResponse:(WGReceiptCountryListResponse *)response {
+    if (response.success) {
+        _receiptCountryResponse = response;
+    }
 }
 
 @end

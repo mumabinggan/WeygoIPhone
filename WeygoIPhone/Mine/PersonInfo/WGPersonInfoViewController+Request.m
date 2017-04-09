@@ -33,6 +33,7 @@
 - (void)handleCommitUserInfo:(WGCommitUserInfoResponse *)response {
     [self stopRefreshing:_tableView refresh:YES pulling:NO];
     if (response.success) {
+        [[WGApplication sharedApplication] reset];
         [WGApplication sharedApplication].user = response.data;
         [self refreshUI];
     }

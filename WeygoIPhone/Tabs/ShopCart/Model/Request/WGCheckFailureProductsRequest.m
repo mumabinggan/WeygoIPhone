@@ -11,7 +11,7 @@
 @implementation WGCheckFailureProductsRequest
 
 - (NSString *)api {
-    return @"cart/delete?";
+    return @"cart/checkProducts?";
 }
 
 @end

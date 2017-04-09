@@ -11,6 +11,8 @@
 
 @interface WGShopCartViewController (Request)
 
+- (void)loadCheckFailureGood;
+
 - (void)loadDeleteIndexPath:(NSIndexPath *)indexPath;
 
 - (void)loadShopCartList:(BOOL)refresh pulling:(BOOL)pulling;

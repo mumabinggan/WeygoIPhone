@@ -49,9 +49,9 @@
 @interface WGCommitOrderDeliverTime : WGObject
 
 //@property (nonatomic, strong) NSString *currentDate;
-@property (nonatomic, assign) NSInteger currentDateId;
+@property (nonatomic, strong) NSString *currentDateId;
 
-@property (nonatomic, assign) NSInteger currentTimeId;
+@property (nonatomic, strong) NSString *currentTimeId;
 
 //from settlement
 @property (nonatomic, strong) NSArray *deliverTimes;
@@ -64,7 +64,7 @@
 
 @interface WGCommitOrderPay : WGObject
 
-@property (nonatomic, assign) NSInteger currentPayId;
+@property (nonatomic, strong) NSString *currentPayId;
 
 //from settlement
 @property (nonatomic, strong) NSArray *payMethods;

@@ -51,7 +51,7 @@
 
 - (NSString *)currentDate {
     for (WGSettlementDate *item in _deliverTimes) {
-        if (item.id == _currentDateId) {
+        if ([item.id isEqualToString:_currentDateId]) {
             _currentDate = item.date;
             break;
         }
@@ -63,7 +63,7 @@
     for (WGSettlementDate *date in _deliverTimes) {
         if (date.id == _currentDateId) {
             for (WGSettlementTime *time in date.times) {
-                if (time.id == _currentTimeId) {
+                if ([time.id isEqualToString:_currentTimeId]) {
                     _currentTime = time.time;
                     break;
                 }
@@ -87,7 +87,7 @@
 
 - (NSString *)payName {
     for (WGSettlementPayMethod *item in _payMethods) {
-        if (item.id == _currentPayId) {
+        if ([item.id isEqualToString:_currentPayId]) {
             return item.name;
         }
     }

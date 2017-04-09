@@ -11,6 +11,7 @@
 #import "WGCouponListResponse.h"
 #import "WGActiveCouponRequest.h"
 #import "WGActiveCouponResponse.h"
+#import "WGReceipt.h"
 
 @implementation WGCouponListViewController (Request)
 
@@ -37,6 +38,30 @@
     }
     if (response.success) {
         _dataArray = response.data;
+        [self refreshUI];
+    }
+    else {
+        [self showWarningMessage:response.message];
+    }
+}
+
+- (void)loadUseCoupon:(NSString *)code indexPath:(NSIndexPath *)indexPath remove:(BOOL)remove {
+    WGReceipt *receipt = _dataArray[indexPath.section];
+    WGActiveCouponRequest *request = [[WGActiveCouponRequest alloc] init];
+    request.couponCode = code;
+    request.couponId = receipt.receiptId;
+    request.remove = remove;
+    __weak typeof(self) weakSelf = self;
+    [self post:request forResponseClass:[WGActiveCouponResponse class] success:^(JHResponse *response) {
+        [weakSelf handleActiveCouponListResponse:(WGActiveCouponResponse *)response couponCode:code indexPath:indexPath remove:remove];
+    } failure:^(NSError *error) {
+        [weakSelf showWarningMessage:kStr(@"Request Failed")];
+    }];
+}
+
+- (void)handleActiveCouponListResponse:(WGActiveCouponResponse *)response couponCode:(NSString *)code indexPath:(NSIndexPath *)indexPath remove:(BOOL)remove {
+    if (response.success) {
+        //_dataArray = response.data;
         [self refreshUI];
     }
     else {

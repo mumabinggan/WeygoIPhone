@@ -17,6 +17,8 @@
 #import "WGUserInfoResponse.h"
 #import "WGGetVerifyCodeRequest.h"
 #import "WGGetVerifyCodeResponse.h"
+#import "WGReceiptCountryListRequest.h"
+#import "WGReceiptCountryListResponse.h"
 
 @interface WGApplication (Request)
 
@@ -35,5 +37,7 @@
 - (void)loadVerificationCodeUserName:(NSString *)username
                          countryCode:(NSString *)countryCode
                         onCompletion:(void (^)(WGGetVerifyCodeResponse *))completion;
+
+- (void)loadReceiptCountryListOnCompletion:(void (^)(WGReceiptCountryListResponse *))completion;
 
 @end

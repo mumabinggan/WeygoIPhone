@@ -68,8 +68,8 @@
         JHLabel *titleLabel = [[JHLabel alloc] initWithFrame:CGRectMake(imageView.maxX + kAppAdaptWidth(10), imageView.y, _contentView.width - imageView.width - kAppAdaptWidth(70), kAppAdaptHeight(60))];
         titleLabel.font = kAppAdaptFont(12);
         titleLabel.numberOfLines = 0;
-        titleLabel.textColor = WGAppNameLabelColor;
-        titleLabel.text = item.briefDescription;
+        titleLabel.textColor = WGAppBaseColor;
+        titleLabel.text = [NSString stringWithFormat:@"%@\n%@", item.name, item.briefDescription];
         [_scrollView addSubview:titleLabel];
     }
     CGSize size = _scrollView.contentSize;

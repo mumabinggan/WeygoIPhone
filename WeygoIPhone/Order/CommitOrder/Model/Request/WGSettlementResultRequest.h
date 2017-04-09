@@ -6,10 +6,8 @@
 //  Copyright © 2017年 weygo.com. All rights reserved.
 //
 
-#import "WGRequest.h"
+#import "WGGuestRequest.h"
 
-@interface WGSettlementResultRequest : WGRequest
-
-@property (nonatomic, assign) NSInteger settlementId;
+@interface WGSettlementResultRequest : WGGuestRequest
 
 @end

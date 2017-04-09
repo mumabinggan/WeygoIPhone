@@ -10,4 +10,8 @@
 
 @implementation WGSettlementResultRequest
 
+- (NSString *)api {
+    return @"checkout/index?";
+}
+
 @end

@@ -67,7 +67,6 @@
 }
 
 - (void)setUser:(WGUser *)user {
-    [self reset];
     _user = user;
     if (user) {
         [[JHLocalSettings sharedSettings] setSettings:user.toDictionary forKey:kLocalSettingsKeyUser];

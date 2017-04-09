@@ -34,6 +34,8 @@
 #import "WGDealShopCartGiftGoodView.h"
 #import "WGDeliverPriceView.h"
 #import "WGRegisterViewController.h"
+#import "WGAddressListViewController.h"
+#import "WGCommitOrderViewController.h"
 
 @interface WGHomeSliderViewController ()
 {
@@ -110,7 +112,7 @@
 
 - (void)handleOnMessageCenter {
     [[WGApplication sharedApplication] closeSideBarViewController];
-    WGRegisterViewController *vcc = [[WGRegisterViewController alloc] init];
+    WGCommitOrderViewController *vcc = [[WGCommitOrderViewController alloc] init];
     //vcc.goodId = 1591;
     UINavigationController *navc = [WGApplication sharedApplication].navigationController;
     [navc pushViewController:vcc animated:YES];

@@ -10,4 +10,8 @@
 
 @implementation WGShopCartGiftRequest
 
+- (NSString *)api {
+    return @"cart/giftslist?";
+}
+
 @end

@@ -10,4 +10,8 @@
 
 @implementation WGFootPrintListRequest
 
+- (NSString *)api {
+    return @"customer/viewedlist?";
+}
+
 @end

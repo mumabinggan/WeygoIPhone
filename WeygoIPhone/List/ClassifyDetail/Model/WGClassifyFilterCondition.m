@@ -22,6 +22,11 @@
     return [super classForArray:propertyName];
 }
 
++ (NSDictionary *)convertKeyMapper {
+    return @{@"keyWordArray" : @"brands",
+             @"classifyArray" : @"classifys"};
+}
+
 - (BOOL)hasSelected {
     for (WGClassifyKeyword *keyword in _keyWordArray) {
         if (keyword.isSelected) {

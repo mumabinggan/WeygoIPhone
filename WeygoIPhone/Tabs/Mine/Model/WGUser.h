@@ -32,6 +32,10 @@
 
 @property (nonatomic, strong) NSString *cap;
 
+@property (nonatomic, assign) int orderCount;
+
+@property (nonatomic, assign) int deliveringCount;
+
 //for self use
 @property (nonatomic, strong) NSString *sexString;
 

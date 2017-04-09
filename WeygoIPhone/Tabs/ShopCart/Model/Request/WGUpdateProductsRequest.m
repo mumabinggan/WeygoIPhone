@@ -11,7 +11,7 @@
 @implementation WGUpdateProductsRequest
 
 - (NSString *)api {
-    return @"cart/update?";
+    return @"cart/updateQty?";
 }
 
 @end

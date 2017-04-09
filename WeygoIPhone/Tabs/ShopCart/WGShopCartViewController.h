@@ -12,7 +12,7 @@
 @interface WGShopCartViewController : WGViewController
 {
     WGShopCart *_data;
-    TWRefreshTableView *_tableView;
+    JHTableView *_tableView;
     BOOL _loadingUpdateGood;
 }
 

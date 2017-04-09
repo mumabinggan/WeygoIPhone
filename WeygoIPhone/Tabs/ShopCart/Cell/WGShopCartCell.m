@@ -46,19 +46,19 @@
     _briefDescribeLabel.textColor = kRGBA(0, 0, 0, 0.54);
     [self.contentView addSubview:_briefDescribeLabel];
     
-    _currentPriceLabel = [[JHLabel alloc] initWithFrame:CGRectMake(_nameLabel.x, _briefDescribeLabel.maxY + kAppAdaptHeight(12), 100, kAppAdaptHeight(24))];
+    _currentPriceLabel = [[JHLabel alloc] initWithFrame:CGRectMake(_nameLabel.x, _briefDescribeLabel.maxY + kAppAdaptHeight(7), 100, kAppAdaptHeight(24))];
     _currentPriceLabel.font = kWGOswaldRegularFont(16);
     _currentPriceLabel.font = kAppAdaptFont(17);
     _currentPriceLabel.textColor = kRGB(238, 122, 60);
     [self.contentView addSubview:_currentPriceLabel];
     
-    _priceLabel = [[JHLabel alloc] initWithFrame:CGRectMake(_nameLabel.x, _briefDescribeLabel.maxY + kAppAdaptHeight(16), 100, kAppAdaptHeight(16))];
+    _priceLabel = [[JHLabel alloc] initWithFrame:CGRectMake(_nameLabel.x, _briefDescribeLabel.maxY + kAppAdaptHeight(11), 100, kAppAdaptHeight(16))];
     _priceLabel.font = kWGOswaldRegularFont(12);
     _priceLabel.font = kAppAdaptFont(14);
     _priceLabel.textColor = kRGBA(0, 0, 0, 0.38);
     [self.contentView addSubview:_priceLabel];
     
-    _reduceLabel = [[JHLabel alloc] initWithFrame:CGRectMake(_nameLabel.x, _briefDescribeLabel.maxY + kAppAdaptHeight(16), 100, kAppAdaptHeight(16))];
+    _reduceLabel = [[JHLabel alloc] initWithFrame:CGRectMake(_nameLabel.x, _briefDescribeLabel.maxY + kAppAdaptHeight(11), 100, kAppAdaptHeight(16))];
     _reduceLabel.font = kWGOswaldRegularFont(12);
     _reduceLabel.font = kAppAdaptFont(14);
     _reduceLabel.textColor = kWhiteColor;

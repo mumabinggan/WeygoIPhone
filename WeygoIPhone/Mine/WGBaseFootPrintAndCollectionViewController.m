@@ -29,31 +29,31 @@
 
 - (void)initData {
     _dataMArray = [[NSMutableArray alloc] init];
-    WGHomeFloorContentGoodItem *item = [[WGHomeFloorContentGoodItem alloc] init];
-    item.name = @"fasdfasdfasdfasdf";
-    item.pictureURL = @"";
-    item.chineseName = @"郑渊谦";
-    item.briefDescription = @"asdfasdfasdfasdfasdfas";
-    item.price = @"932.32";
-    item.currentPrice = @"322.23";
-    
-    WGHomeFloorContentGoodItem *item1 = [[WGHomeFloorContentGoodItem alloc] init];
-    item1.name = @"sadfas";
-    item1.pictureURL = @"";
-    item1.chineseName = @"郑渊谦";
-    item1.briefDescription = @"asdfasdfasdfasdfasdfas";
-    item1.price = @"932.32";
-    item1.currentPrice = @"322.23";
-    
-    WGHomeFloorContentGoodItem *item2 = [[WGHomeFloorContentGoodItem alloc] init];
-    item2.name = @"zhengasdfl";
-    item2.pictureURL = @"";
-    item2.chineseName = @"郑渊谦";
-    item2.briefDescription = @"asdfasdfasdfasdfasdfas";
-    item2.price = @"932.32";
-    item2.currentPrice = @"122.23";
-    
-    _dataMArray = [NSMutableArray arrayWithArray:@[item, item1, item2]];
+//    WGHomeFloorContentGoodItem *item = [[WGHomeFloorContentGoodItem alloc] init];
+//    item.name = @"fasdfasdfasdfasdf";
+//    item.pictureURL = @"";
+//    item.chineseName = @"郑渊谦";
+//    item.briefDescription = @"asdfasdfasdfasdfasdfas";
+//    item.price = @"932.32";
+//    item.currentPrice = @"322.23";
+//    
+//    WGHomeFloorContentGoodItem *item1 = [[WGHomeFloorContentGoodItem alloc] init];
+//    item1.name = @"sadfas";
+//    item1.pictureURL = @"";
+//    item1.chineseName = @"郑渊谦";
+//    item1.briefDescription = @"asdfasdfasdfasdfasdfas";
+//    item1.price = @"932.32";
+//    item1.currentPrice = @"322.23";
+//    
+//    WGHomeFloorContentGoodItem *item2 = [[WGHomeFloorContentGoodItem alloc] init];
+//    item2.name = @"zhengasdfl";
+//    item2.pictureURL = @"";
+//    item2.chineseName = @"郑渊谦";
+//    item2.briefDescription = @"asdfasdfasdfasdfasdfas";
+//    item2.price = @"932.32";
+//    item2.currentPrice = @"122.23";
+//    
+//    _dataMArray = [NSMutableArray arrayWithArray:@[item, item1, item2]];
 }
 
 - (void)initSubView {
@@ -66,16 +66,21 @@
     [cartBtn addTarget:self action:@selector(touchShopCartBtn:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:cartBtn];
     
-    _tableView = [[TWRefreshTableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
+    _tableView = [[TWRefreshTableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped refreshType:TWRefreshTypeTop | TWRefreshTypeBottom];
     _tableView.dataSource = self;
     _tableView.delegate = self;
-    _tableView.contentInset = UIEdgeInsetsMake(-35, 0, 0, 0);
+    _tableView.refreshDelegate = self;
+    //_tableView.contentInset = UIEdgeInsetsMake(-35, 0, 0, 0);
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [contentView addSubview:_tableView];
+    _tableView.layer.opacity = 0.0f;
 }
 
 - (void)refreshUI {
     [_tableView reloadData];
+    [UIView animateWithDuration:0.25 animations:^() {
+        _tableView.layer.opacity = 1.0f;
+    }];
 }
 
 - (void)touchShopCartBtn:(id)sender {
@@ -101,6 +106,14 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return _dataMArray.count;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 0.1;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 0.1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

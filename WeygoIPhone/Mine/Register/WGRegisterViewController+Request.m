@@ -30,6 +30,7 @@
 
 - (void)handleRegisterResponse:(WGRegisterResponse *)response {
     if (response.success) {
+        [[WGApplication sharedApplication] reset];
         [WGApplication sharedApplication].user = response.data;
         [self sendNotification:WGRefreshNotificationTypeLogin];
         [self.navigationController popToRootViewControllerAnimated:YES];

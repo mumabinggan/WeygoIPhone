@@ -9,6 +9,12 @@
 #import "WGTabMineViewController.h"
 #import "WGMineHeaderView.h"
 #import "WGPersonInfoViewController.h"
+#import "WGCouponListViewController.h"
+#import "WGFootPrintViewController.h"
+#import "WGCollectionViewController.h"
+#import "WGAddressListViewController.h"
+#import "WGPersonInfoViewController.h"
+#import "WGSettingViewController.h"
 
 @interface WGTabMineViewController ()
 {
@@ -42,21 +48,29 @@
     return NO;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    WeakSelf;
+    [[WGApplication sharedApplication] loadUserInfoOnCompletion:^(WGUserInfoResponse *userResponse) {
+        [weakSelf refresh];
+    }];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
 
-- (void)initData {
-    _data = [[WGMine alloc] init];
-    _data.messageCount = 12;
-    _data.orderCount = 43;
-    _data.deliveryCount = 5;
-    WGUser *user = [[WGUser alloc] init];
-    user.name = @"ZhengYuan";
-    user.cap = @"983223";
-    _data.user = user;
-}
+//- (void)initData {
+//    _data = [[WGMine alloc] init];
+//    _data.messageCount = 12;
+//    _data.orderCount = 43;
+//    _data.deliveryCount = 5;
+//    WGUser *user = [[WGUser alloc] init];
+//    user.name = @"ZhengYuan";
+//    user.cap = @"983223";
+//    _data.user = user;
+//}
 
 - (void)initSubView {
     JHView *contentView = [[JHView alloc] initWithFrame:self.view.bounds];
@@ -64,7 +78,7 @@
     [self.view addSubview:contentView];
     _tableView = [[JHTableView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, self.view.height) style:UITableViewStylePlain];
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    _tableView.contentInset = UIEdgeInsetsMake(0, 0, kAppTabBarHeight, 0);
+    _tableView.contentInset = UIEdgeInsetsMake(-kAppStateHeight, 0, kAppTabBarHeight, 0);
     _tableView.tableHeaderView = [self createHeaderView];
     _tableView.tableFooterView = [self createFooterView];
     _tableView.showsVerticalScrollIndicator = NO;
@@ -77,7 +91,7 @@
     
     JHLabel *titleLabel = [[JHLabel alloc] initWithFrame:CGRectMake(0, kAppAdaptHeight(30), kDeviceWidth, kAppAdaptHeight(24))];
     titleLabel.text = self.tabBarItem.title;
-    titleLabel.font = kAppAdaptFont(16);
+    titleLabel.font = kAppAdaptFont(17);
     titleLabel.textColor = kWhiteColor;
     titleLabel.textAlignment = NSTextAlignmentCenter;
     [contentView addSubview:titleLabel];
@@ -91,7 +105,6 @@
 
 - (JHView *)createHeaderView {
     _headerView = [[WGMineHeaderView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kAppAdaptHeight(244))];
-    _headerView.backgroundColor = kWhiteColor;
     return _headerView;
 }
 
@@ -155,10 +168,9 @@
 
 - (void)refresh {
     if (_data) {
-        [_headerView showWithData:_data.user];
-        [_messageBtn showBadge:(_data.messageCount > 0) text:[NSString stringWithFormat:@"%lld", _data.messageCount]];
-        _orderLabel.text = [NSString stringWithFormat:@"%lld", _data.orderCount];
-        _deliveryLabel.text = [NSString stringWithFormat:@"%lld", _data.deliveryCount];
+        [_headerView showWithData:_data];
+        _orderLabel.text = [NSString stringWithFormat:@"%d", _data.orderCount];
+        _deliveryLabel.text = [NSString stringWithFormat:@"%d", _data.deliveringCount];
     }
 }
 
@@ -182,19 +194,23 @@
     }
     else if (sender.tag == 1) {
         //优惠卷页面
-    
+        WGCouponListViewController *vc = [[WGCouponListViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
     }
     else if (sender.tag == 2) {
         //足迹页面
-        
+        WGFootPrintViewController *vc = [[WGFootPrintViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
     }
     else if (sender.tag == 3) {
         //收藏页面
-        
+        WGCollectionViewController *vc = [[WGCollectionViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
     }
     else if (sender.tag == 4) {
         //地址页面
-        
+        WGAddressListViewController *vc = [[WGAddressListViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
     }
     else if (sender.tag == 5) {
         //客服页面
@@ -207,7 +223,8 @@
     }
     else if (sender.tag == 7) {
         //设置页面
-        
+        WGSettingViewController *vc = [[WGSettingViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
     }
     else if (sender.tag == 8) {
         //退出页面

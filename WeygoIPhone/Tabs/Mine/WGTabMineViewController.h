@@ -7,11 +7,11 @@
 //
 
 #import "WGTabViewController.h"
-#import "WGMine.h"
+#import "WGUser.h"
 
 @interface WGTabMineViewController : WGTabViewController
 {
-    WGMine *_data;
+    WGUser *_data;
 }
 
 - (void)refresh;

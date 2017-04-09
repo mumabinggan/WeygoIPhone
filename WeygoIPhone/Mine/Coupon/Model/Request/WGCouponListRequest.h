@@ -6,9 +6,9 @@
 //  Copyright © 2017年 weygo.com. All rights reserved.
 //
 
-#import "WGRequest.h"
+#import "WGGuestRequest.h"
 
-@interface WGCouponListRequest : WGRequest
+@interface WGCouponListRequest : WGGuestRequest
 
 @property (nonatomic, assign) long long pageId;
 

@@ -26,6 +26,7 @@
 #import "WGCommitOrderViewController.h"
 #import "WGDealFailGoodView.h"
 #import "WGDealShopCartGiftGoodView.h"
+#import "WGShopCartGiftResponse.h"
 
 @implementation WGShopCartViewController (Request)
 
@@ -45,6 +46,8 @@
 
 - (void)handleDeleteGoodResponse:(WGDeleteGoodFromShopCartResponse *)response goodId:(long long)goodId {
     if (response.success) {
+        _data.shopCartPrice = response.data;
+        [self refreshUI];
         [self loadShopCartList:YES pulling:NO];
     }
     else {
@@ -148,13 +151,14 @@
 
 - (void)handleGiftGoodResponse:(WGShopCartGiftResponse *)response {
     if (response.success) {
-        if (response.data && response.data.count > 0) {
+        if (response.data && response.data.goods && response.data.goods.count > 0) {
             //弹出列表
             WGDealShopCartGiftGoodView *view = [[WGDealShopCartGiftGoodView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kDeviceHeight)];
             WeakSelf;
             view.onApply = ^(int index) {
                 [weakSelf loadDealGiftGood:index];
             };
+            view.goods = response.data.goods;
             [view showInView:self.view];
         }
         else {
@@ -188,7 +192,7 @@
 
 - (void)loadShopCartList:(BOOL)refresh pulling:(BOOL)pulling {
     WGShopCartRequest *request = [[WGShopCartRequest alloc] init];
-    if (pulling) {
+    if (pulling || _data) {
         request.showsLoadingView = NO;
     }
     __weak typeof(self) weakSelf = self;

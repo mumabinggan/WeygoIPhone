@@ -25,6 +25,10 @@
     self.title = kStr(@"FootPrint");
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return NO;
+}
+
 - (void)handleDeleteIndexPath:(NSIndexPath *)indexPath {
     if (_dataMArray.count > indexPath.row) {
         WGHomeFloorContentGoodItem *item = _dataMArray[indexPath.row];

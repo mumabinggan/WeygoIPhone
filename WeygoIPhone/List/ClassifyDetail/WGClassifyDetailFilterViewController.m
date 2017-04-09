@@ -83,6 +83,7 @@
 //}
 
 - (void)initSubView {
+    [super initSubView];
     self.title = kStr(@"Classify Filter");
     _contentView = [[JHView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:_contentView];
@@ -112,8 +113,8 @@
     
     _scrollView = [[JHScrollView alloc] initWithFrame:self.view.bounds];
     _scrollView.alwaysBounceVertical = YES;
+    _scrollView.contentInset = UIEdgeInsetsMake(kAppNavigationVCY, 0, 0, 0);
     [_contentView addSubview:_scrollView];
-    
     JHView *sectionView = [[JHView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kAppAdaptHeight(40))];
     sectionView.backgroundColor = kRGBA(0, 0, 0, 0.12);
     [_scrollView addSubview:sectionView];
@@ -135,6 +136,7 @@
     NSInteger count = _data.classifyArray.count;
     for (int num = 0; num < count; ++num) {
         WGClassifyFitlerClassifyView *itemView = [[WGClassifyFitlerClassifyView alloc] initWithFrame:CGRectMake(kAppAdaptWidth(8) + kAppAdaptWidth(122) * (num%3), keyworkView.maxY + kAppAdaptHeight(122) * (num/3), kAppAdaptHeight(114), kAppAdaptHeight(114))];
+        itemView.backgroundColor = kHRGB(0xF8FAFA);
         [itemView showWithData:_data.classifyArray[num]];
         [_scrollView addSubview:itemView];
         [classifyViewMArray addObject:itemView];

@@ -8,8 +8,18 @@
 
 #import "WGResponse.h"
 
+@class WGShopCartGiftData;
+
 @interface WGShopCartGiftResponse : WGResponse
 
-@property (nonatomic, strong) NSArray *data;
+@property (nonatomic, strong) WGShopCartGiftData *data;
+
+@end
+
+@interface WGShopCartGiftData : JHObject
+
+@property (nonatomic, strong) NSString *tip;
+
+@property (nonatomic, strong) NSArray *goods;
 
 @end

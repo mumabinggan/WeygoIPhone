@@ -6,11 +6,22 @@
 //  Copyright © 2017年 weygo.com. All rights reserved.
 //
 
-#import "WGBaseEditAddressAndReceiptViewController.h"
+#import "WGViewController.h"
 #import "WGAddress.h"
 
-@interface WGEditAddressViewController : WGBaseEditAddressAndReceiptViewController
+@interface WGEditAddressViewController : WGViewController
+{
+    JHTableView *_tableView;
+    NSArray     *_placeholderArray;
+    WGAddress *_address;
+    
+    NSArray *_cityArray;
+}
 
-@property (nonatomic, strong) WGAddress *address;
+@property (nonatomic, assign) long long addressId;
+
+@property (nonatomic, strong) void (^onApply)();
+
+- (void)refreshUI;
 
 @end

@@ -22,11 +22,13 @@
 
 - (void)loadSubviews {
     _imageView = [[JHImageView alloc] initWithFrame:CGRectMake((kDeviceWidth - kAppAdaptWidth(80))/2, kAppAdaptHeight(62), kAppAdaptWidth(80), kAppAdaptHeight(80))];
-    _imageView.contentMode = UIViewContentModeScaleAspectFit;
-    _imageView.clipsToBounds = YES;
-    _imageView.layer.cornerRadius = kAppAdaptWidth(40);
-    _imageView.layer.borderWidth = kAppAdaptWidth(3);
-    _imageView.layer.borderColor = kWhiteColor.CGColor;
+    _imageView.frame = CGRectMake(0, 0, self.width, self.height);
+    _imageView.contentMode = UIViewContentModeScaleAspectFill;
+//    _imageView.clipsToBounds = YES;
+//    _imageView.layer.cornerRadius = kAppAdaptWidth(40);
+//    _imageView.layer.borderWidth = kAppAdaptWidth(3);
+//    _imageView.layer.borderColor = kWhiteColor.CGColor;
+    _imageView.image = [UIImage imageNamed:@"personCenter_bg"];
     [self addSubview:_imageView];
     
     _nameLabel = [[JHLabel alloc] initWithFrame:CGRectMake(0, _imageView.maxY + kAppAdaptHeight(6), kDeviceWidth, kAppAdaptHeight(24))];

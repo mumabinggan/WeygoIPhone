@@ -11,6 +11,7 @@
 #import "WGUser.h"
 #import "MBProgressHUD.h"
 #import "WGHomeSliderResponse.h"
+#import "WGReceiptCountryListResponse.h"
 
 typedef NS_ENUM(NSInteger, WGAppLanguage) {
     WGAppLanguageItalia,
@@ -27,6 +28,9 @@ typedef NS_ENUM(NSInteger, WGAppLanguage) {
     
     BOOL _loadingSliderResponse;
     WGHomeSliderResponse *_sliderResponse;
+    
+    BOOL _loadingReceiptCountryListResponse;
+    WGReceiptCountryListResponse *_receiptCountryResponse;
     
     //ShowView
     MBProgressHUD *HUD;

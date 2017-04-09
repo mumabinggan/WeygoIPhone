@@ -14,7 +14,8 @@
 
 @property (nonatomic, strong) NSString *companyName;
 
-@property (nonatomic, strong) NSString *italia;
+@property (nonatomic, strong) NSString *country;
+@property (nonatomic, strong) NSString *countryId;
 
 @property (nonatomic, strong) NSString *phone;
 

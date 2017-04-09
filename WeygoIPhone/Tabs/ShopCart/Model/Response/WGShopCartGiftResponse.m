@@ -11,8 +11,12 @@
 
 @implementation WGShopCartGiftResponse
 
+@end
+
+@implementation WGShopCartGiftData
+
 + (Class)classForArray:(NSString *)propertyName {
-    if ([@"data" isEqualToString:propertyName]) {
+    if ([@"goods" isEqualToString:propertyName]) {
         return [WGShopCartGoodItem class];
     }
     return [super classForArray:propertyName];

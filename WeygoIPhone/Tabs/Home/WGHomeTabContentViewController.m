@@ -26,7 +26,6 @@
 
 //for test
 #import "WGClassifyGoodListViewController.h"
-#import "WGReceiptListViewController.h"
 #import "WGAddressListViewController.h"
 #import "WGCouponListViewController.h"
 #import "WGCollectionViewController.h"

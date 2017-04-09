@@ -21,6 +21,7 @@
     if ([WGApplication sharedApplication].isLogined) {
         [[WGApplication sharedApplication] loadUserInfoOnCompletion:nil];
     }
+    [[WGApplication sharedApplication] loadReceiptCountryListOnCompletion:nil];
 }
 
 - (void)handleBaseServiceResponse:(UIApplication *)application withOptions:(NSDictionary *)launchOptions withResponse:(WGBaseServiceResponse *)response {

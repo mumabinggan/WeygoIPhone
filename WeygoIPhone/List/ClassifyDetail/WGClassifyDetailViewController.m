@@ -112,10 +112,10 @@
     _tableView.contentInset = UIEdgeInsetsMake(0, 0, -35, 0);
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [contentView addSubview:_tableView];
-    _tableView.layer.opacity = 0.0f;
+    //_tableView.layer.opacity = 0.0f;
     
     //request return rent it
-    //[self createHeaderView];
+    [self createHeaderView];
 }
 
 - (void)createHeaderView {

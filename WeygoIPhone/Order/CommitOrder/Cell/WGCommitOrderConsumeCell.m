@@ -14,6 +14,7 @@
     JHLabel *_totalValueLabel;
     JHLabel *_deliverValueLabel;
     JHLabel *_couponValueLabel;
+    JHLabel *_scoreValueLabel;
 }
 @end
 
@@ -55,19 +56,32 @@
     _couponValueLabel.textColor = WGAppNameLabelColor;
     _couponValueLabel.textAlignment = NSTextAlignmentRight;
     [self.contentView addSubview:_couponValueLabel];
+    
+    JHLabel *scoreLabel = [[JHLabel alloc] initWithFrame:CGRectMake(kAppAdaptWidth(15), couponLabel.maxY, kDeviceWidth - kAppAdaptWidth(30), kAppAdaptHeight(20))];
+    scoreLabel.font = kAppAdaptFont(14);
+    scoreLabel.textColor = WGAppTitleColor;
+    scoreLabel.text = kStr(@"CommitOrder Score");
+    [self.contentView addSubview:scoreLabel];
+    
+    _scoreValueLabel = [[JHLabel alloc] initWithFrame:scoreLabel.frame];
+    _scoreValueLabel.font = kAppAdaptFont(14);
+    _scoreValueLabel.textColor = WGAppNameLabelColor;
+    _scoreValueLabel.textAlignment = NSTextAlignmentRight;
+    [self.contentView addSubview:_scoreValueLabel];
 }
 
 - (void)showWithData:(JHObject *)data {
     WGSettlementConsumePrice *price = (WGSettlementConsumePrice *)data;
     if (price) {
-        _totalValueLabel.text = [NSString stringWithFormat:kStr(@"Price With 2 Unit"), price.totalPrice];
-        _deliverValueLabel.text = [NSString stringWithFormat:kStr(@"Price With 2 Unit"), price.deliverPrice];
-        _couponValueLabel.text = [NSString stringWithFormat:@"-%@", [NSString stringWithFormat:kStr(@"Price With 2 Unit"), price.couponPrice]];
+        _totalValueLabel.text = price.totalPrice;
+        _deliverValueLabel.text = price.deliverPrice;
+        _couponValueLabel.text = price.couponPrice;
+        _scoreValueLabel.text = price.integralPrice;
     }
 }
 
 + (CGFloat)heightWithData:(JHObject *)data {
-    return kAppAdaptHeight(90);
+    return kAppAdaptHeight(110);
 }
 
 @end

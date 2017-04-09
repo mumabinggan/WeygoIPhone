@@ -102,6 +102,7 @@
     if (collect) {
         WGCollectGoodRequest *request = [[WGCollectGoodRequest alloc] init];
         request.productId = self.goodId;
+        request.showsLoadingView = NO;
         __weak typeof(self) weakSelf = self;
         [self post:request forResponseClass:[WGCollectGoodResponse class] success:^(JHResponse *response) {
             [weakSelf handleCollectGoodResponse:(WGCollectGoodResponse *)response];
@@ -112,6 +113,7 @@
     else {
         WGCancelCollectGoodRequest *request = [[WGCancelCollectGoodRequest alloc] init];
         request.id = _goodDetail.favoritedId;
+        request.showsLoadingView = NO;
         __weak typeof(self) weakSelf = self;
         [self post:request forResponseClass:[WGCancelCollectGoodResponse class] success:^(JHResponse *response) {
             [weakSelf handleCancelCollectGoodResponse:(WGCancelCollectGoodResponse *)response];

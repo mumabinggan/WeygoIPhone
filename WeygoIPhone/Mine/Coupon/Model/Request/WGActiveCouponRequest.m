@@ -10,4 +10,8 @@
 
 @implementation WGActiveCouponRequest
 
+- (NSString *)api {
+    return @"checkout/discount?";
+}
+
 @end

@@ -50,7 +50,7 @@
 
 @interface WGSettlementTime : WGObject
 
-@property (nonatomic, assign) NSInteger id;
+@property (nonatomic, strong) NSString *id;
 
 @property (nonatomic, strong) NSString *time;
 
