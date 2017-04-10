@@ -230,7 +230,7 @@
 - (void)handleCoupon:(WGCoupon *)coupon {
     _commitOrderDetail.coupon = coupon;
     [self refreshUI];
-    //[self loadUpdateOrderCoupon];
+    [self loadUpdateOrderCoupon];
 }
 
 - (void)handleGood:(WGOrderGoodItem *)good {
