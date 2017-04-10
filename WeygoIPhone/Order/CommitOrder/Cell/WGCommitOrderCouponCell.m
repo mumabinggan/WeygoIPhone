@@ -38,7 +38,7 @@
     [_bgImageView addSubview:_detailLabel];
     _detailLabel.text = kStr(@"CommitOrder No Coupon SubTitle");
     
-    _nameLabel = [[JHLabel alloc] initWithFrame:CGRectMake(_nameLabel.x, 0, _titleLabel.width, _bgImageView.height)];
+    _nameLabel = [[JHLabel alloc] initWithFrame:CGRectMake(_titleLabel.x, 0, _titleLabel.width, _bgImageView.height)];
     _nameLabel.font = kAppAdaptFont(14);
     _nameLabel.textColor = WGAppNameLabelColor;
     [_bgImageView addSubview:_nameLabel];

@@ -11,13 +11,13 @@
 #import "WGCouponListResponse.h"
 #import "WGActiveCouponRequest.h"
 #import "WGActiveCouponResponse.h"
-#import "WGReceipt.h"
+#import "WGCoupon.h"
 
 @implementation WGCouponListViewController (Request)
 
 - (void)loadListResponse:(BOOL)refresh pulling:(BOOL)pulling {
     WGCouponListRequest *request = [[WGCouponListRequest alloc] init];
-    request.pageId = (refresh) ? 0 : _dataArray.count;
+    request.pageId = (refresh) ? 0 : _dataMArray.count;
     request.pageSize = 15;
     if (pulling) {
         request.showsLoadingView = NO;
@@ -37,7 +37,10 @@
         return;
     }
     if (response.success) {
-        _dataArray = response.data;
+        if (refresh) {
+            [_dataMArray removeAllObjects];
+        }
+        [_dataMArray addObjectsFromArray:response.data];
         [self refreshUI];
     }
     else {
@@ -45,23 +48,52 @@
     }
 }
 
-- (void)loadUseCoupon:(NSString *)code indexPath:(NSIndexPath *)indexPath remove:(BOOL)remove {
-    WGReceipt *receipt = _dataArray[indexPath.section];
+- (void)loadUseCoupon:(WGCoupon *)coupon remove:(BOOL)remove {
     WGActiveCouponRequest *request = [[WGActiveCouponRequest alloc] init];
-    request.couponCode = code;
-    request.couponId = receipt.receiptId;
+    request.couponCode = (coupon.isCouponCode) ? coupon.couponCode : nil;
+    request.couponId = coupon.id;
     request.remove = remove;
     __weak typeof(self) weakSelf = self;
     [self post:request forResponseClass:[WGActiveCouponResponse class] success:^(JHResponse *response) {
-        [weakSelf handleActiveCouponListResponse:(WGActiveCouponResponse *)response couponCode:code indexPath:indexPath remove:remove];
+        [weakSelf handleActiveCouponListResponse:(WGActiveCouponResponse *)response coupon:coupon remove:remove];
     } failure:^(NSError *error) {
         [weakSelf showWarningMessage:kStr(@"Request Failed")];
     }];
 }
 
-- (void)handleActiveCouponListResponse:(WGActiveCouponResponse *)response couponCode:(NSString *)code indexPath:(NSIndexPath *)indexPath remove:(BOOL)remove {
+- (void)handleActiveCouponListResponse:(WGActiveCouponResponse *)response coupon:(WGCoupon *)coupon remove:(BOOL)remove {
     if (response.success) {
-        //_dataArray = response.data;
+        if (coupon.isCouponCode) {
+            for (WGCoupon *item in _dataMArray) {
+                item.isSelected = NO;
+            }
+            _activateBtn.selected = !remove;
+            if (!remove) {
+                if (self.onUse) {
+                    self.onUse(coupon);
+                }
+                [self showWarningMessage:response.message onCompletion:^() {
+                    [self.navigationController popViewControllerAnimated:YES];
+                }];
+            }
+        }
+        else {
+            for (WGCoupon *item in _dataMArray) {
+                if (item.id == coupon.id) {
+                    item.isSelected = !item.isSelected;
+                    break;
+                }
+            }
+            if (!remove) {
+                if (self.onUse) {
+                    self.onUse(coupon);
+                }
+                _activateBtn.selected = NO;
+                [self showWarningMessage:response.message onCompletion:^() {
+                    [self.navigationController popViewControllerAnimated:YES];
+                }];
+            }
+        }
         [self refreshUI];
     }
     else {

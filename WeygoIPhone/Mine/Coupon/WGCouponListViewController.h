@@ -13,8 +13,9 @@
 
 @interface WGCouponListViewController : WGViewController
 {
-    NSArray *_dataArray;
+    NSMutableArray *_dataMArray;
     TWRefreshTableView *_tableView;
+    JHButton *_activateBtn;
 }
 
 @property (nonatomic, assign) BOOL isSelect;

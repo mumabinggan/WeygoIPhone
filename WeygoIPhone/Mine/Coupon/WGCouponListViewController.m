@@ -14,7 +14,7 @@
 
 @interface WGCouponListViewController ()
 {
-    JHButton *_activateBtn;
+    JHTextField *_inputTextField;
 }
 @end
 
@@ -32,29 +32,33 @@
 }
 
 - (void)initData {
+    _dataMArray = [NSMutableArray array];
 //    WGCoupon *coupon = [[WGCoupon alloc] init];
+//    coupon.id = 2323;
 //    coupon.name = @"kdfasdfas";
 //    coupon.briefDescription = @"南非世界杯夺";
 //    coupon.totalCount = 5;
 //    coupon.residueCount = 3;
 //    coupon.time = @"21-12-2017";
-//    coupon.couponCode = @"ZDQFADSFASD";
+//    coupon.couponCode = @"ZDQFADSFSSFASD";
 //    
 //    WGCoupon *coupon1 = [[WGCoupon alloc] init];
+//    coupon1.id = 24323;
 //    coupon1.name = @"kdfasdfas";
 //    coupon1.briefDescription = @"南非世界杯夺";
 //    coupon1.totalCount = 5;
 //    coupon1.residueCount = 1;
 //    coupon1.time = @"21-12-2017";
-//    coupon1.couponCode = @"ZDQFADSFASD";
+//    coupon1.couponCode = @"ZDQFSFSADSFASD";
 //    
 //    WGCoupon *coupon2 = [[WGCoupon alloc] init];
+//    coupon2.id = 243263;
 //    coupon2.name = @"kdfasdfas";
 //    coupon2.briefDescription = @"南非世界杯夺";
 //    coupon2.totalCount = 5;
 //    coupon2.residueCount = 3;
 //    coupon2.time = @"21-12-2017";
-//    coupon2.couponCode = @"ZDQFADSFASD";
+//    coupon2.couponCode = @"ZDQFFFADSFASD";
 //    
 //    _dataArray = @[coupon, coupon1, coupon2];
 }
@@ -84,16 +88,16 @@
     JHView *headerView = [[JHView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kAppAdaptHeight(44))];
     headerView.backgroundColor = kWhiteColor;
     
-    JHTextField *inputTextField = [[JHTextField alloc] initWithFrame:CGRectMake(kAppAdaptWidth(8), kAppAdaptHeight(8), kAppAdaptWidth(263), kAppAdaptHeight(28))];
-    inputTextField.backgroundColor = kHRGB(0XF8FAFA);
-    inputTextField.font = kAppAdaptFont(12);
-    inputTextField.placeholder = kStr(@"Input Placeholder");
-    [headerView addSubview:inputTextField];
+    _inputTextField = [[JHTextField alloc] initWithFrame:CGRectMake(kAppAdaptWidth(8), kAppAdaptHeight(8), kAppAdaptWidth(263), kAppAdaptHeight(28))];
+    _inputTextField.backgroundColor = kHRGB(0XF8FAFA);
+    _inputTextField.font = kAppAdaptFont(12);
+    _inputTextField.placeholder = kStr(@"Input Placeholder");
+    [headerView addSubview:_inputTextField];
     if (_coupon && _coupon.id == 0) {
-        inputTextField.text = _coupon.name;
+        _inputTextField.text = _coupon.couponCode;
     }
     
-    _activateBtn = [[JHButton alloc] initWithFrame:CGRectMake(inputTextField.maxX + kAppAdaptWidth(8), inputTextField.y + kAppAdaptHeight(2), kAppAdaptWidth(88), kAppAdaptHeight(24)) difRadius:JHRadiusMake(kAppAdaptWidth(12), kAppAdaptWidth(12), kAppAdaptWidth(12), kAppAdaptWidth(12)) borderWidth:kAppAdaptWidth(1) borderColor:kHRGB(0x5677fc)];
+    _activateBtn = [[JHButton alloc] initWithFrame:CGRectMake(_inputTextField.maxX + kAppAdaptWidth(8), _inputTextField.y + kAppAdaptHeight(2), kAppAdaptWidth(88), kAppAdaptHeight(24)) difRadius:JHRadiusMake(kAppAdaptWidth(12), kAppAdaptWidth(12), kAppAdaptWidth(12), kAppAdaptWidth(12)) borderWidth:kAppAdaptWidth(1) borderColor:kHRGB(0x5677fc)];
     [_activateBtn setTitle:kStr(@"Activate") forState:UIControlStateNormal];
     [_activateBtn setTitle:kStr(@"Inactivate") forState:UIControlStateSelected];
     _activateBtn.titleLabel.font = kAppAdaptFont(12);
@@ -112,12 +116,11 @@
 }
 
 - (void)touchActivateBtn:(JHButton *)sender {
-    if (sender.selected) {
-        
-    }
-    else {
-    
-    }
+    [_inputTextField resignFirstResponder];
+    WGCoupon *coupon = [[WGCoupon alloc] init];
+    coupon.couponCode = _inputTextField.text;
+    coupon.isSelected = sender.selected;
+    [self loadUseCoupon:coupon remove:(sender.selected)];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -130,7 +133,7 @@
 @implementation WGCouponListViewController (TableViewDelegate)
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _dataArray.count;
+    return _dataMArray.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -144,23 +147,19 @@
         cell = [[WGCouponCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
-    WGCoupon *coupon = _dataArray[indexPath.row];
+    WGCoupon *coupon = _dataMArray[indexPath.row];
     if (_coupon) {
         if (_coupon.id == coupon.id) {
             coupon.isSelected = YES;
         }
     }
-    [cell showWithData:_dataArray[indexPath.row]];
+    [cell showWithData:_dataMArray[indexPath.row]];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    for (int num = 0; num < _dataArray.count; ++num) {
-        WGCoupon *coupon = _dataArray[num];
-        coupon.isSelected = (num == indexPath.row);
-    }
-    [_tableView reloadData];
-    [self.navigationController popViewControllerAnimated:YES];
+    WGCoupon *coupon = _dataMArray[indexPath.row];
+    [self loadUseCoupon:coupon remove:coupon.isSelected];
 }
 
 - (void)beginRefreshFooter:(TWRefreshTableView *)tableView {

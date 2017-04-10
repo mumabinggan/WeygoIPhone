@@ -31,7 +31,7 @@
     _imageView.image = [UIImage imageNamed:@"coupon_bg"];
     [self addSubview:_imageView];
     
-    _nameLabel = [[JHLabel alloc] initWithFrame:CGRectMake(kAppAdaptWidth(88), kAppAdaptHeight(16), kAppAdaptWidth(56 + 150), kAppAdaptHeight(24))];
+    _nameLabel = [[JHLabel alloc] initWithFrame:CGRectMake(kAppAdaptWidth(88), kAppAdaptHeight(16), kAppAdaptWidth(56 + 170), kAppAdaptHeight(24))];
     _nameLabel.font = kAppAdaptFont(15);
     _nameLabel.textColor = kRGBA(0, 0, 0, 0.87);
     [_imageView addSubview:_nameLabel];
@@ -58,7 +58,8 @@
     [super showWithData:data];
     _data = (WGCoupon *)data;
     _imageView.image = _data.isSelected ? [UIImage imageNamed:@"coupon_selected_bg"] : [UIImage imageNamed:@"coupon_bg"];
-    _nameLabel.text = _data.name;
+    _nameLabel.text = [NSString stringWithFormat:@"%@  %@", _data.price, _data.name];
+    [_nameLabel setPartString:_data.price attributes:@{NSForegroundColorAttributeName : WGAppBaseColor, NSFontAttributeName : kAppAdaptFont(16)}];
     _breifDestrictionLabel.text = _data.briefDescription;
     _countLabel.text = [NSString stringWithFormat:@"%ld/%ld", _data.residueCount, _data.totalCount];
     _codeAndTimeLabel.text = [NSString stringWithFormat:@"%@ %@", _data.couponCode, _data.time];

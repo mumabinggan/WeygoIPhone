@@ -230,7 +230,7 @@
 - (void)handleCoupon:(WGCoupon *)coupon {
     _commitOrderDetail.coupon = coupon;
     [self refreshUI];
-    [self loadUpdateOrderCoupon];
+    //[self loadUpdateOrderCoupon];
 }
 
 - (void)handleGood:(WGOrderGoodItem *)good {
@@ -558,6 +558,7 @@
         else if (row == 3) {
             WGCouponListViewController *vc = [[WGCouponListViewController alloc] init];
             vc.isSelect = YES;
+            vc.coupon = _commitOrderDetail.coupon;
             vc.onUse = ^(JHObject *object) {
                 [weakSelf handleCoupon:(WGCoupon *)object];
             };

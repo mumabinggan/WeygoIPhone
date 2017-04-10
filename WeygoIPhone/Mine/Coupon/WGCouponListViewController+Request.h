@@ -12,4 +12,6 @@
 
 - (void)loadListResponse:(BOOL)refresh pulling:(BOOL)pulling;
 
+- (void)loadUseCoupon:(WGCoupon *)coupon remove:(BOOL)remove;
+
 @end

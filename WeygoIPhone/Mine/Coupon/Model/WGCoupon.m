@@ -10,4 +10,8 @@
 
 @implementation WGCoupon
 
+- (BOOL)isCouponCode {
+    return (_id == 0);
+}
+
 @end

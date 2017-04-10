@@ -63,11 +63,9 @@
 - (void)handleAddAddressResponse:(WGAddAddressResponse *)response {
     if (response.success) {
         [self sendNotification:WGRefreshNotificationTypeChangeAddress];
-        WeakSelf;
-        [self.navigationController popViewControllerAnimated:YES];
-//        [self showWarningMessage:response.message onCompletion:^() {
-//            [weakSelf.navigationController popViewControllerAnimated:YES];
-//        }];
+        [self showWarningMessage:response.message onCompletion:^() {
+            [self.navigationController popViewControllerAnimated:YES];
+        }];
     }
     else {
         [self showWarningMessage:response.message];
