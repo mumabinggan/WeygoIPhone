@@ -10,4 +10,8 @@
 
 @implementation WGCommitOrderRequest
 
+- (NSString *)api {
+    return @"checkout/saveOrder?";
+}
+
 @end

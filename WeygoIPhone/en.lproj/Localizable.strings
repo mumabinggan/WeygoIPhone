@@ -243,6 +243,8 @@
 "CommitOrder Confirm" = "Conferma";
 "CommitOrder Score" = "Punti spesa :";
 "CommitOrder Use Score" = "Utilizza i punti spesa";
+"CommitOrder_Use_Score" = "Si";
+"CommitOrder_No_Use_Score" = "No";
 
 //地址列表（完成）
 "Address_Title" = "Rubrica";
@@ -283,3 +285,29 @@
 "PersonInfo_Sex_Man" = "Maschile";
 "PersonInfo_Sex_Woman" = "Femminile";
 "PersonInfo_Save" = "Salva";
+
+//积分
+"Integration_Title" = "I miei Punti Spesa";
+"Integration_Reduce_Count" = "Saldo punti: %ld";
+"Integration_Use_History" = "History";
+"Integration_Help_Title" = "CODICE CLIENTE E PUNTI SPESA";
+"Integration_Help_Button" = "Si";
+
+//使用积分
+"UseIntegration_Title" = "Utilizza i punti spesa";
+"UseIntegration_Use" = "UTILIZZA PUNTI";
+"UseIntegration_Cancel_Use" = "Cancella";
+"UseIntegration_Tip" = "%ld punti spesa disponibili \n puoi utilizzare %ld punti = %@";
+
+//支付成功
+"PaySuccess_Title" = "Pagamento effettuato con successo";
+"PaySuccess_SubTitle" = "TI RINGRAZIAMO PER IL \n TUO ACQUISTO!";
+"PaySuccess_SubTitle1" = "IL TUO ORDINE È STATO RICEVUTO.";
+"PaySuccess_SubTitle2" = "IL TUO ORDINE : %lld";
+"PaySuccess_SubTitle3" = "Riceverai una conferma dell’ordine via email con \n i dettagli e il link per seguirne i progressi.";
+"PaySuccess_Button" = "Continua l'acquisto";
+
+//我的页面退出登录
+"Mine_Logout_Tip" = "";
+"Mine_Logout_Cancel" = "";
+"Mine_Logout_Ok" = "";

@@ -34,7 +34,7 @@
     WGOrderGoodItem *item = (WGOrderGoodItem *)data;
     if (item) {
         [_itemView showWithData:item];
-        _countView.value = [NSString stringWithFormat:kStr(@"Order Good Number"), item.number];
+        _countView.value = [NSString stringWithFormat:kStr(@"Order Good Number"), item.goodCount];
     }
 }
 

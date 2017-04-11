@@ -7,6 +7,7 @@
 //
 
 #import "WGObject.h"
+#import "WGAddress.h"
 
 @class WGSettlementTips;
 @class WGSettlementConsumePrice;
@@ -15,12 +16,18 @@
 
 @property (nonatomic, assign) NSInteger id;
 
+@property (nonatomic, strong) WGAddress *address;
+
+@property (nonatomic, strong) NSString *couponCode;
+
 @property (nonatomic, strong) NSArray *deliverTimes;
 
 @property (nonatomic, strong) NSArray *payMethods;
 
 @property (nonatomic, strong) WGSettlementConsumePrice *price;
 
+@property (nonatomic, assign) int useIntegral;  //1使用：0不使用
+@property (nonatomic, assign) long long integral;
 @property (nonatomic, strong) NSString *integralDescription;
 
 @property (nonatomic, strong) NSArray *goods;
@@ -42,6 +49,8 @@
 @property (nonatomic, strong) NSString *id;
 
 @property (nonatomic, strong) NSString *date;
+
+@property (nonatomic, strong) NSString *week;
 
 @property (nonatomic, strong) NSArray *times;
 

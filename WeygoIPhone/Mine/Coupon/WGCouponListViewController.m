@@ -93,7 +93,7 @@
     _inputTextField.font = kAppAdaptFont(12);
     _inputTextField.placeholder = kStr(@"Input Placeholder");
     [headerView addSubview:_inputTextField];
-    if (_coupon && _coupon.id == 0) {
+    if (_coupon && _coupon.isCouponCode) {
         _inputTextField.text = _coupon.couponCode;
     }
     
@@ -104,6 +104,9 @@
     [_activateBtn setTitleColor:kHRGB(0x5677fc) forState:UIControlStateNormal];
     [_activateBtn addTarget:self action:@selector(touchActivateBtn:) forControlEvents:UIControlEventTouchUpInside];
     [headerView addSubview:_activateBtn];
+    if (_coupon && _coupon.isCouponCode) {
+        _activateBtn.selected = YES;
+    }
     
     return headerView;
 }

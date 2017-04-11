@@ -242,6 +242,8 @@
 "CommitOrder Confirm" = "确认购买";
 "CommitOrder Score" = "积分：";
 "CommitOrder Use Score" = "使用积分";
+"CommitOrder_Use_Score" = "是";
+"CommitOrder_No_Use_Score" = "否";
 
 //地址列表（完成）
 "Address_Title" = "派送地址";
@@ -282,3 +284,29 @@
 "PersonInfo_Sex_Man" = "男";
 "PersonInfo_Sex_Woman" = "女";
 "PersonInfo_Save" = "保存";
+
+//积分
+"Integration_Title" = "我的积分";
+"Integration_Reduce_Count" = "剩余点数: %ld";
+"Integration_Use_History" = "历史纪录";
+"Integration_Help_Title" = "积分规则";
+"Integration_Help_Button" = "关闭";
+
+//使用积分
+"UseIntegration_Title" = "使用积分";
+"UseIntegration_Use" = "使用积分";
+"UseIntegration_Cancel_Use" = "取消使用";
+"UseIntegration_Tip" = "可使用积分点数为 %ld \n 您可以使用 %ld 点积分 = %@";
+
+//支付成功
+"PaySuccess_Title" = "付款成功";
+"PaySuccess_SubTitle" = "感谢您的购买";
+"PaySuccess_SubTitle1" = "我们已经收到了您的订单";
+"PaySuccess_SubTitle2" = "订单号 : %lld";
+"PaySuccess_SubTitle3" = "您将收到封我们的电子邮件来确认订单与详细信息\n并使用链接来咔嚓进度。";
+"PaySuccess_Button" = "继续购物";
+
+//我的页面退出登录
+"Mine_Logout_Tip" = "";
+"Mine_Logout_Cancel" = "";
+"Mine_Logout_Ok" = "";

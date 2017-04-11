@@ -50,7 +50,7 @@
         _titleLabel.hidden = YES;
         _detailLabel.hidden = YES;
         _nameLabel.hidden = NO;
-        _nameLabel.text = coupon.name;
+        _nameLabel.text = [NSString isNullOrEmpty:coupon.name] ? coupon.couponCode : coupon.name;
     }
     else {
         _titleLabel.hidden = NO;

@@ -8,6 +8,16 @@
 
 #import "WGResponse.h"
 
+@class WGCommitOrderData;
+
 @interface WGCommitOrderResponse : WGResponse
+
+@property (nonatomic, strong) WGCommitOrderData *data;
+
+@end
+
+@interface WGCommitOrderData : JHObject
+
+@property (nonatomic, assign) long long orderId;
 
 @end

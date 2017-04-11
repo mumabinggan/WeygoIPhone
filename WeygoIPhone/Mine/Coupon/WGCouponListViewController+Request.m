@@ -68,10 +68,10 @@
                 item.isSelected = NO;
             }
             _activateBtn.selected = !remove;
+            if (self.onUse) {
+                self.onUse(coupon, response.data.price);
+            }
             if (!remove) {
-                if (self.onUse) {
-                    self.onUse(coupon);
-                }
                 [self showWarningMessage:response.message onCompletion:^() {
                     [self.navigationController popViewControllerAnimated:YES];
                 }];
@@ -84,10 +84,10 @@
                     break;
                 }
             }
+            if (self.onUse) {
+                self.onUse(coupon, response.data.price);
+            }
             if (!remove) {
-                if (self.onUse) {
-                    self.onUse(coupon);
-                }
                 _activateBtn.selected = NO;
                 [self showWarningMessage:response.message onCompletion:^() {
                     [self.navigationController popViewControllerAnimated:YES];

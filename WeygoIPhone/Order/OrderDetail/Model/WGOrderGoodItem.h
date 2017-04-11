@@ -10,7 +10,7 @@
 
 @interface WGOrderGoodItem : WGHomeFloorContentGoodItem
 
-@property (nonatomic, assign) NSInteger number; //购买数量
+@property (nonatomic, assign) NSInteger goodCount; //购买数量
 
 @property (nonatomic, strong) NSString *orderCurrentPrice;
 

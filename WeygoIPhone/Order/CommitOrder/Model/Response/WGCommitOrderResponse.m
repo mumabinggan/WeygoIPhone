@@ -11,3 +11,7 @@
 @implementation WGCommitOrderResponse
 
 @end
+
+@implementation WGCommitOrderData
+
+@end

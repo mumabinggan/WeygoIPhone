@@ -27,6 +27,10 @@
 
 @property (nonatomic, strong) NSString *remark;     //备注
 
+@property (nonatomic, assign) int useIntegration;
+
+@property (nonatomic, assign) long long integration;
+
 // some from settlement
 @property (nonatomic, strong) WGCommitOrderDeliverTime *deliverTime;
 
@@ -41,6 +45,10 @@
 
 //from settlement
 @property (nonatomic, strong) NSArray *goods;
+
+
+//for self use
+@property (nonatomic, strong) NSString *useIntegrationString;
 
 - (id)initWithSettlementResult:(WGSettlementResult *)settlement;
 
@@ -59,6 +67,8 @@
 //for self use
 @property (nonatomic, strong) NSString *currentDate;
 @property (nonatomic, strong) NSString *currentTime;
+
+@property (nonatomic, strong) NSArray *currentTimes;
 
 @end
 

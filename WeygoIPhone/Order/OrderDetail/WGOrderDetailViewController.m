@@ -94,7 +94,7 @@
     _orderDetail.deliver = deliver;
     
     WGOrderGoodItem *goodItem = [[WGOrderGoodItem alloc] init];
-    goodItem.number = 12;
+    goodItem.goodCount = 12;
     goodItem.orderPrice = @"123.32";
     goodItem.orderCurrentPrice = @"54.23";
     goodItem.orderReducePrice = @"43.23";
@@ -106,7 +106,7 @@
     goodItem.currentPrice = @"322.23";
     
     WGOrderGoodItem *goodItem1 = [[WGOrderGoodItem alloc] init];
-    goodItem1.number = 1;
+    goodItem1.goodCount = 1;
     goodItem1.orderPrice = @"123.32";
     goodItem1.orderCurrentPrice = @"54.23";
     goodItem1.orderReducePrice = @"43.23";
@@ -118,7 +118,7 @@
     goodItem1.currentPrice = @"322.23";
     
     WGOrderGoodItem *goodItem2 = [[WGOrderGoodItem alloc] init];
-    goodItem1.number = 4;
+    goodItem1.goodCount = 4;
     goodItem2.orderPrice = @"123.32";
     goodItem2.orderCurrentPrice = @"54.23";
     goodItem2.orderReducePrice = @"43.23";

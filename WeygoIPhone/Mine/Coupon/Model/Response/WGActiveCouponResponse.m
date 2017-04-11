@@ -11,3 +11,7 @@
 @implementation WGActiveCouponResponse
 
 @end
+
+@implementation WGActiveCouponData
+
+@end

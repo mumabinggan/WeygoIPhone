@@ -7,6 +7,7 @@
 //
 
 #import "WGViewController.h"
+#import "WGSettlementResult.h"
 
 @class WGCouponCode;
 @class WGCoupon;
@@ -22,7 +23,7 @@
 
 @property (nonatomic, strong) WGCoupon *coupon;
 
-@property (nonatomic, copy) void (^onUse)(WGObject *object);
+@property (nonatomic, copy) void (^onUse)(WGObject *object, WGSettlementConsumePrice *price);
 
 - (void)refreshUI;
 

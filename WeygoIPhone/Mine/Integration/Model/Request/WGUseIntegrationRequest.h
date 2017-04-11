@@ -1,0 +1,15 @@
+//
+//  WGUseIntegrationRequest.h
+//  WeygoIPhone
+//
+//  Created by muma on 2017/4/10.
+//  Copyright © 2017年 weygo.com. All rights reserved.
+//
+
+#import "WGGuestRequest.h"
+
+@interface WGUseIntegrationRequest : WGGuestRequest
+
+@property (nonatomic, assign) int remove;   //1:取消使用；0:使用
+
+@end

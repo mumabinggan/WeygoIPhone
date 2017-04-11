@@ -36,6 +36,9 @@
 #import "WGRegisterViewController.h"
 #import "WGAddressListViewController.h"
 #import "WGCommitOrderViewController.h"
+#import "WGUseIntegrationViewController.h"
+#import "WGIntegrationViewController.h"
+#import "WGPaySuccessViewController.h"
 
 @interface WGHomeSliderViewController ()
 {
@@ -112,8 +115,11 @@
 
 - (void)handleOnMessageCenter {
     [[WGApplication sharedApplication] closeSideBarViewController];
-    WGCommitOrderViewController *vcc = [[WGCommitOrderViewController alloc] init];
-    //vcc.goodId = 1591;
+//    WGIntegrationViewController *vcc = [[WGIntegrationViewController alloc] init];
+    WGPaySuccessViewController *vcc = [[WGPaySuccessViewController alloc] init];
+    vcc.orderId = 34433443;
+    //WGCommitOrderViewController *vcc = [[WGCommitOrderViewController alloc] init];
+//    //vcc.goodId = 1591;
     UINavigationController *navc = [WGApplication sharedApplication].navigationController;
     [navc pushViewController:vcc animated:YES];
     return;

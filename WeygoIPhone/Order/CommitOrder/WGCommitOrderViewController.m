@@ -22,6 +22,8 @@
 #import "WGReceiptCode.h"
 #import "WGGoodDetailViewController.h"
 #import "WGEditReceiptViewController.h"
+#import "WGUseIntegrationViewController.h"
+#import "WGCommitOrderViewController+PickerView.h"
 
 @interface WGCommitOrderViewController ()
 {
@@ -227,10 +229,11 @@
     [self refreshUI];
 }
 
-- (void)handleCoupon:(WGCoupon *)coupon {
+- (void)handleCoupon:(WGCoupon *)coupon price:(WGSettlementConsumePrice *)price {
     _commitOrderDetail.coupon = coupon;
+    _commitOrderDetail.consumePrice = price;
     [self refreshUI];
-    [self loadUpdateOrderCoupon];
+    //[self loadUpdateOrderCoupon];
 }
 
 - (void)handleGood:(WGOrderGoodItem *)good {
@@ -326,7 +329,7 @@
             height = [WGCommitOrderCouponCell heightWithData:_commitOrderDetail.coupon];
         }
         else {
-            height = kAppAdaptHeight(40);
+            height = _commitOrderDetail.integration > 0 ? kAppAdaptHeight(40) : 0;
         }
     }
     else if (4 == section) {
@@ -456,6 +459,8 @@
             }
         }
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.clipsToBounds = YES;
+        cell.contentView.clipsToBounds = YES;
     }
     if (0 == section) {
         [cell showWithData:_commitOrderDetail.address];
@@ -487,7 +492,7 @@
         }
         else if (1 == row) {
             cell.textLabel.text = kStr(@"CommitOrder Use Score");
-            cell.detailTextLabel.text = _commitOrderDetail.payMothod.payName;
+            cell.detailTextLabel.text = _commitOrderDetail.useIntegrationString;
         }
         else if (2 == row) {
             cell.textLabel.text = kStr(@"CommitOrder Pay");
@@ -546,21 +551,28 @@
     else if (section == 2) {
         if (row == 1) {
             //日期
+            [self initPickerView:1000];
         }
         else if (row == 2) {
             //时间
+            [self initPickerView:1001];
         }
     }
     else if (section == 3) {
-        if (row == 2) {
+        if (row == 1) {
+            WGUseIntegrationViewController *vc = [[WGUseIntegrationViewController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+        else if (row == 2) {
             //付款方式
+            [self initPickerView:1002];
         }
         else if (row == 3) {
             WGCouponListViewController *vc = [[WGCouponListViewController alloc] init];
             vc.isSelect = YES;
             vc.coupon = _commitOrderDetail.coupon;
-            vc.onUse = ^(JHObject *object) {
-                [weakSelf handleCoupon:(WGCoupon *)object];
+            vc.onUse = ^(JHObject *object, WGSettlementConsumePrice *price) {
+                [weakSelf handleCoupon:(WGCoupon *)object price:price];
             };
             [self.navigationController pushViewController:vc animated:YES];
         }

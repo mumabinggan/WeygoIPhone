@@ -22,6 +22,7 @@
     request.sex = _user.sex;
     request.birth = _user.birth;
     request.tax = _user.tax;
+    request.email = _user.email;
     __weak typeof(self) weakSelf = self;
     [self post:request forResponseClass:[WGCommitUserInfoResponse class] success:^(JHResponse *response) {
         [weakSelf handleCommitUserInfo:(WGCommitUserInfoResponse *)response];

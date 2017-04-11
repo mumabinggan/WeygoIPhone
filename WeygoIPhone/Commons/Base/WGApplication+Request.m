@@ -157,4 +157,38 @@
     }
 }
 
+- (void)loadLogoutOnCompletion:(void (^)(WGLogoutResponse *))completion {
+    WeakSelf;
+    WGLogoutRequest *request = [[WGLogoutRequest alloc] init];
+    [[JHNetworkManager sharedManager] post:request forResponseClass:[WGLogoutResponse class] success:^(JHResponse *response) {
+        [weakSelf handleLogoutResponse:(WGLogoutResponse *)response];
+        if (completion) {
+            completion((WGLogoutResponse *)response);
+        }
+    } failure:^(NSError *error) {
+        if (completion) {
+            completion(nil);
+        }
+    }];
+}
+
+- (void)handleLogoutResponse:(WGLogoutResponse *)response {
+    if (response.success) {
+        [self reset];
+    }
+}
+
+- (void)loadShopCartCountOnCompletion:(void (^)(WGShopCartCountResponse *))completion {
+    WGShopCartCountRequest *request = [[WGShopCartCountRequest alloc] init];
+    [[JHNetworkManager sharedManager] post:request forResponseClass:[WGShopCartCountResponse class] success:^(JHResponse *response) {
+        if (completion) {
+            completion((WGShopCartCountResponse *)response);
+        }
+    } failure:^(NSError *error) {
+        if (completion) {
+            completion(nil);
+        }
+    }];
+}
+
 @end

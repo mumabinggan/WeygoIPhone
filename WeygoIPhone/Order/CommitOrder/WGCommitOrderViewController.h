@@ -13,6 +13,8 @@
 {
     JHTableView *_tableView;
     WGCommitOrderDetail *_commitOrderDetail;
+    
+    UIPickerView *_pickerView;
 }
 
 @property (nonatomic, assign) NSInteger settlementId;

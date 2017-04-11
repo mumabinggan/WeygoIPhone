@@ -15,11 +15,14 @@
 #import "WGAddressListViewController.h"
 #import "WGPersonInfoViewController.h"
 #import "WGSettingViewController.h"
+#import "WGIntegrationViewController.h"
 
 @interface WGTabMineViewController ()
 {
     JHTableView *_tableView;
     WGMineHeaderView *_headerView;
+    
+    NSMutableArray *_gridMArray;
     
     JHButton *_messageBtn;
     JHLabel *_orderLabel;
@@ -191,6 +194,8 @@
 //    @[kStr(@"Mine_Points"), kStr(@"Mine_Coupon"), kStr(@"Mine_FootPrint"), kStr(@"Mine_Collection"), kStr(@"Mine_Address"), kStr(@"Mine_Customer"), kStr(@"Mine_Info"), kStr(@"Mine_Setting"), kStr(@"Mine_Logout")];
     if (sender.tag == 0) {
         //积分页面
+        WGIntegrationViewController *vc = [[WGIntegrationViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
     }
     else if (sender.tag == 1) {
         //优惠卷页面
@@ -228,8 +233,22 @@
     }
     else if (sender.tag == 8) {
         //退出页面
-        
+        WeakSelf;
+        [self showConfirmMessage:kStr(@"") withTitle:nil cancelButtonTitle:kStr(@"") okButtonTitle:kStr(@"") onCompletion:^(NSInteger index, UIAlertController *alertViewController) {
+            [weakSelf handleLogout];
+        }];
     }
+}
+
+- (void)handleLogout {
+    [[WGApplication sharedApplication] loadLogoutOnCompletion:^(WGLogoutResponse *response) {
+        [self handleLogoutCompletion];
+    }];
+}
+
+- (void)handleLogoutCompletion {
+    [self sendNotification:WGRefreshNotificationTypeLogout];
+    [[WGApplication sharedApplication] switchTab:WGTabIndexHome];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -10,4 +10,8 @@
 
 @implementation WGCommitUserInfoRequest
 
+- (NSString *)api {
+    return @"customer/savecustomerInfo?";
+}
+
 @end

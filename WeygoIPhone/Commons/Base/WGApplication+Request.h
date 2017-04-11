@@ -19,6 +19,10 @@
 #import "WGGetVerifyCodeResponse.h"
 #import "WGReceiptCountryListRequest.h"
 #import "WGReceiptCountryListResponse.h"
+#import "WGLogoutRequest.h"
+#import "WGLogoutResponse.h"
+#import "WGShopCartCountRequest.h"
+#import "WGShopCartCountResponse.h"
 
 @interface WGApplication (Request)
 
@@ -39,5 +43,9 @@
                         onCompletion:(void (^)(WGGetVerifyCodeResponse *))completion;
 
 - (void)loadReceiptCountryListOnCompletion:(void (^)(WGReceiptCountryListResponse *))completion;
+
+- (void)loadLogoutOnCompletion:(void (^)(WGLogoutResponse *))completion;
+
+- (void)loadShopCartCountOnCompletion:(void (^)(WGShopCartCountResponse *))completion;
 
 @end

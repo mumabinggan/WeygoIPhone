@@ -72,7 +72,7 @@
     WGOrderGoodItem *item = (WGOrderGoodItem *)data;
     if (item) {
         [_itemView showWithData:item];
-        _countView.value = [NSString stringWithFormat:kStr(@"Order Good Number"), item.number];
+        _countView.value = [NSString stringWithFormat:kStr(@"Order Good Number"), item.goodCount];
         NSString *currentPrice = item.orderCurrentPrice;
         _totalLabel.text = [NSString stringWithFormat:kStr(@"Order Pay Totale"), item.orderCurrentPrice];
         [_totalLabel setPartString:currentPrice attributes:@{NSForegroundColorAttributeName : WGAppBaseColor}];

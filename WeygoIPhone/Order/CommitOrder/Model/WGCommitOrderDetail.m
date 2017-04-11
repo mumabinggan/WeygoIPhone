@@ -21,6 +21,13 @@
 - (id)initWithSettlementResult:(WGSettlementResult *)settlement {
     self = [super init];
     if (self) {
+        //地址
+        _address = settlement.address;
+        
+        //时间
+        _deliverTime = [[WGCommitOrderDeliverTime alloc] init];
+        _deliverTime.deliverTimes = settlement.deliverTimes;
+        
         //goods
         _goods = settlement.goods;
         
@@ -34,8 +41,23 @@
         
         //tips
         _tip = settlement.tip;
+        
+        if (![NSString isNullOrEmpty:settlement.couponCode]) {
+            WGCoupon *coupon = [[WGCoupon alloc] init];
+            coupon.couponCode = settlement.couponCode;
+            coupon.isSelected = YES;
+            _coupon = coupon;
+        }
+        
+        _integration = settlement.integral;
+        
+        _useIntegration = settlement.useIntegral;
     }
     return self;
+}
+
+- (NSString *)useIntegrationString {
+    return (_useIntegration == YES) ? kStr(@"CommitOrder_Use_Score") : kStr(@"CommitOrder_No_Use_Score");
 }
 
 @end
@@ -72,6 +94,15 @@
         }
     }
     return _currentTime;
+}
+
+- (NSArray *)currentTimes {
+    for (WGSettlementDate *date in _deliverTimes) {
+        if (date.id == _currentDateId) {
+            return date.times;
+        }
+    }
+    return nil;
 }
 
 @end
