@@ -70,11 +70,12 @@
 //分类 Tab
 "Hot Sale" = "PIÙ VENDUTI";
 //分类详情
-"Default Sort" = "Default";
+"Default Sort" = "rilevanza";
 "Filtro" = "Filtro";
 "Vista" = "Vista";
-"Brand Sort" = "Brand";
-"Price Sort" = "Price";
+"Brand Sort" = "marchi";
+"Price Sort Down" = "prezzo crescente";
+"Price Sort Up" = "prezzo decrescente";
 "Cancel Sort" = "Cancel";
 "Confirm Sort" = "Confirm";
 "Brand" = "Marchi";
@@ -303,11 +304,11 @@
 "PaySuccess_Title" = "Pagamento effettuato con successo";
 "PaySuccess_SubTitle" = "TI RINGRAZIAMO PER IL \n TUO ACQUISTO!";
 "PaySuccess_SubTitle1" = "IL TUO ORDINE È STATO RICEVUTO.";
-"PaySuccess_SubTitle2" = "IL TUO ORDINE : %lld";
+"PaySuccess_SubTitle2" = "IL TUO ORDINE : %@";
 "PaySuccess_SubTitle3" = "Riceverai una conferma dell’ordine via email con \n i dettagli e il link per seguirne i progressi.";
 "PaySuccess_Button" = "Continua l'acquisto";
 
 //我的页面退出登录
-"Mine_Logout_Tip" = "";
-"Mine_Logout_Cancel" = "";
-"Mine_Logout_Ok" = "";
+"Mine_Logout_Tip" = "您确认退出登录？";
+"Mine_Logout_Cancel" = "annulla";
+"Mine_Logout_Ok" = "conferma";

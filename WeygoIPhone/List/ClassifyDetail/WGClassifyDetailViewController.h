@@ -10,10 +10,11 @@
 #import "WGClassifyDetail.h"
 #import "WGClassifyFilterCondition.h"
 
-typedef NS_ENUM(NSInteger, LFClassifySortType) {
-    LFClassifySortTypeDefault,
-    LFClassifySortTypeBranch,
-    LFClassifySortTypePrice,
+typedef NS_ENUM(NSInteger, WGClassifySortType) {
+    WGClassifySortTypeDefault,
+    WGClassifySortTypeBranch,
+    WGClassifySortTypePriceDown,
+    WGClassifySortTypePriceUp
 };
 
 @interface WGClassifyDetailViewController : WGViewController
@@ -21,7 +22,7 @@ typedef NS_ENUM(NSInteger, LFClassifySortType) {
     WGClassifyFilterCondition *_filter;
     WGClassifyDetail *_data;
     
-    LFClassifySortType _sortType;
+    WGClassifySortType _sortType;
 }
 
 @property (nonatomic, assign) long long classifyId;

@@ -7,11 +7,14 @@
 //
 
 #import "WGPaySuccessViewController.h"
+#import "WGPaySuccessRequest.h"
+#import "WGPaySuccessResponse.h"
 
 @interface WGPaySuccessViewController ()
 {
     JHTableView *_tableView;
     JHLabel *_orderTitleLabel;
+    WGPaySuccessData *_paySuccessData;
 }
 @end
 
@@ -25,6 +28,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = kStr(@"PaySuccess_Title");
+    if ([NSString isNullOrEmpty:_orderId]) {
+        [self loadPaySuccess];
+    }
 }
 
 - (void)initSubView {
@@ -37,7 +43,10 @@
     _tableView.tableHeaderView = [self createHeaderView];
     _tableView.tableFooterView = [self createFooterView];
     [self.view addSubview:_tableView];
-    //_tableView.layer.opacity = 0.0f;
+    if ([NSString isNullOrEmpty:_orderId]) {
+        _tableView.layer.opacity = 0.0f;
+    }
+    //
 }
 
 - (UIView *)createHeaderView {
@@ -83,12 +92,12 @@
     return headerView;
 }
 
-//- (void)refreshUI {
-//    [UIView animateWithDuration:0.25 animations:^() {
-//        _tableView.layer.opacity = 1.0f;
-//    }];
-//    _orderTitleLabel.text = [NSString stringWithFormat:kStr(@"PaySuccess_SubTitle2"), _orderId];
-//}
+- (void)refreshUI {
+    [UIView animateWithDuration:0.25 animations:^() {
+        _tableView.layer.opacity = 1.0f;
+    }];
+    _orderTitleLabel.text = [NSString stringWithFormat:kStr(@"PaySuccess_SubTitle2"), _paySuccessData.orderId];
+}
 
 - (JHView *)createFooterView {
     JHView *footerView = [[JHView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kDeviceHeight - kAppAdaptHeight(412))];
@@ -105,6 +114,26 @@
 - (void)touchCommitBtn:(id)sender {
     [self.navigationController popToRootViewControllerAnimated:YES];
     [[WGApplication sharedApplication] switchTab:WGTabIndexHome];
+}
+
+- (void)loadPaySuccess {
+    WGPaySuccessRequest *request = [[WGPaySuccessRequest alloc] init];
+    __weak typeof(self) weakSelf = self;
+    [self post:request forResponseClass:[WGPaySuccessResponse class] success:^(JHResponse *response) {
+        [weakSelf handlePaySuccessResponse:(WGPaySuccessResponse *)response];
+    } failure:^(NSError *error) {
+        [weakSelf showWarningMessage:kStr(@"Request Failed")];
+    }];
+}
+
+- (void)handlePaySuccessResponse:(WGPaySuccessResponse *)response {
+    if (response.success) {
+        _paySuccessData = response.data;
+        [self refreshUI];
+    }
+    else {
+        [self showWarningMessage:response.message];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

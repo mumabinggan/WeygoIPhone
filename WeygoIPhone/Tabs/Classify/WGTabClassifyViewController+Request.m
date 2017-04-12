@@ -19,6 +19,9 @@
     }
     WGClassifyRequest *request = [[WGClassifyRequest alloc] init];
     request.is_hot = 1;
+    if (_data) {
+        request.showsLoadingView = NO;
+    }
     WeakSelf;
     [self get:request forResponseClass:[WGClassifyResponse class] success:^(JHResponse *response) {
         [weakSelf handleClassifyResponse:(WGClassifyResponse *)response];

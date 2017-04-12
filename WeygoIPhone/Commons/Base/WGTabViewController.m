@@ -17,6 +17,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    _viewType = 1;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleTabChanged:) name:kNotificationTabChanged object:nil];
+}
+
+- (void) handleTabChanged:(NSNotification *)notification {
+    if (notification.object != self) {
+        _viewType = 1;
+    }
+    [self tabDidChanged:notification];
+}
+
+- (void)tabDidChanged:(NSNotification *)notification {
+    
 }
 
 - (void)initData {
@@ -25,6 +39,11 @@
 
 - (void)initSubView {
     
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    _viewType = 2;
 }
 
 - (void)viewDidAppear:(BOOL)animated {

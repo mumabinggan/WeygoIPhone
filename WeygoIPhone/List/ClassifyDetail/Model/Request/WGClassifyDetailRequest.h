@@ -10,16 +10,16 @@
 
 @interface WGClassifyDetailRequest : WGRequest
 
-@property (nonatomic, assign) long long brandId;
-
 @property (nonatomic, assign) long long classifyId;
+
+@property (nonatomic, strong) NSString *brandIds;
+
+@property (nonatomic, strong) NSString *subClassifyIds;
 
 @property (nonatomic, assign) int pageId;
 
 @property (nonatomic, assign) int pageSize;
 
-@property (nonatomic, strong) NSString *order;
-
-@property (nonatomic, strong) NSString *dir;
+@property (nonatomic, assign) int order;    //0:默认, 1:品牌 2：价格从低到高 3:价格从高到低
 
 @end

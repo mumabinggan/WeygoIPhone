@@ -9,6 +9,9 @@
 #import "WGViewController.h"
 
 @interface WGTabViewController : WGViewController
+{
+    int _viewType;
+}
 
 @property (nonatomic, assign) WGTabIndex tabBarIndex;
 

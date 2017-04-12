@@ -29,33 +29,32 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = kStr(@"Integration_Title");
+    [self loadIntegrationDetailResponse:YES pulling:NO];
 }
 
 - (void)initData {
     [super initData];
     _integrationDetail = [[WGIntegrationDetail alloc] init];
-    WGIntegrationHistoryItem *item = [[WGIntegrationHistoryItem alloc] init];
-    item.integration = @"+4s3";
-    item.des = @"asdfasdfaswww";
-    item.time = @"asdfa";
-    
-    WGIntegrationHistoryItem *item1 = [[WGIntegrationHistoryItem alloc] init];
-    item1.integration = @"+f43";
-    item1.des = @"asdfasdfas";
-    item1.time = @"asdfa";
-    
-    WGIntegrationHistoryItem *item2 = [[WGIntegrationHistoryItem alloc] init];
-    item2.integration = @"+643";
-    item2.des = @"asdfasdfasfada";
-    item2.time = @"asdfa111";
-    
-    _integrationDetail.history = @[item, item1, item2];
+//    WGIntegrationHistoryItem *item = [[WGIntegrationHistoryItem alloc] init];
+//    item.integration = @"+4s3";
+//    item.des = @"asdfasdfaswww";
+//    item.time = @"asdfa";
+//    
+//    WGIntegrationHistoryItem *item1 = [[WGIntegrationHistoryItem alloc] init];
+//    item1.integration = @"+f43";
+//    item1.des = @"asdfasdfas";
+//    item1.time = @"asdfa";
+//    
+//    WGIntegrationHistoryItem *item2 = [[WGIntegrationHistoryItem alloc] init];
+//    item2.integration = @"+643";
+//    item2.des = @"asdfasdfasfada";
+//    item2.time = @"asdfa111";
+//    
+//    _integrationDetail.history = @[item, item1, item2];
 }
 
 - (void)initSubView {
     [super initSubView];
-
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"integration_help"] style:UIBarButtonItemStylePlain target:self action:@selector(touchHelp:)];
     
     _tableView = [[TWRefreshTableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped refreshType:TWRefreshTypeBottom];
     _tableView.dataSource = self;
@@ -65,6 +64,7 @@
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.tableHeaderView = [self createHeaderView];
     [self.view addSubview:_tableView];
+    _tableView.layer.opacity = 0.0f;
 }
 
 - (UIView *)createHeaderView {
@@ -79,7 +79,6 @@
     _titleLabel.textColor = WGAppNameLabelColor;
     _titleLabel.textAlignment = NSTextAlignmentCenter;
     _titleLabel.numberOfLines = 0;
-    _titleLabel.text = @"如说，路径积分是多元函数的积分，积分的";
     [headerView addSubview:_titleLabel];
     
     return headerView;
@@ -87,11 +86,12 @@
 
 - (void)touchHelp:(id)sender {
     WGIntegrationHelpView *view = [[WGIntegrationHelpView alloc] initWithFrame:self.view.bounds];
-    view.tip = @"积分的一个严格的数学定义由波恩哈德·黎曼给出（参见条目“黎曼积分”）。黎曼的定义运用了极限的概念，把曲边梯形设想为一系列矩形组合的极限。从十九世纪起，更高级的积分定义逐渐出现，有了对各种积分域上的各种类型的函数的积分。比如说，路径积分是多元函数的积分，积分的区间不再是一条线段（区间[a,b]），而是一条平面上或空间中的曲线段；在面积积分中，曲线被三维空间中的一个曲面代替。对微分形式的积分是微分几何中的基本概念";
+    view.tip = _integrationDetail.tip;
     [view showInView:self.view];
 }
 
 - (void)refreshUI {
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"integration_help"] style:UIBarButtonItemStylePlain target:self action:@selector(touchHelp:)];
     [_tableView reloadData];
     [UIView animateWithDuration:0.25 animations:^() {
         _tableView.layer.opacity = 1.0f;
@@ -107,10 +107,10 @@
 
 - (void)loadIntegrationDetailResponse:(BOOL)refresh pulling:(BOOL)pulling {
     WGIntegrationDetailRequest *request = [[WGIntegrationDetailRequest alloc] init];
-    request.pageId = (refresh) ? 0 : _integrationDetail.history.count;
-    if (pulling) {
-        request.showsLoadingView = NO;
-    }
+//    request.pageId = (refresh) ? 0 : _integrationDetail.history.count;
+//    if (pulling) {
+//        request.showsLoadingView = NO;
+//    }
     __weak typeof(self) weakSelf = self;
     [self post:request forResponseClass:[WGIntegrationDetailResponse class] success:^(JHResponse *response) {
         [weakSelf handleIntegrationDetailResponse:(WGIntegrationDetailResponse *)response refresh:refresh pulling:pulling];
@@ -147,18 +147,21 @@
 @implementation WGIntegrationViewController (TableViewDelegate)
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (_integrationDetail && _integrationDetail.history) {
+    if (_integrationDetail.hasHistory) {
         return _integrationDetail.history.count;
     }
     return 0;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return kAppAdaptHeight(30);
+    return (_integrationDetail.hasHistory) ? kAppAdaptHeight(30) : 0.1;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return kStr(@"Integration_Use_History");
+    if (_integrationDetail && _integrationDetail.history && _integrationDetail.history.count > 0) {
+        return kStr(@"Integration_Use_History");
+    }
+    return nil;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {

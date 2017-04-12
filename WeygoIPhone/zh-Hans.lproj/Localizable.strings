@@ -70,11 +70,12 @@
 //分类 Tab
 "Hot Sale" = "PIÙ VENDUTI";
 //分类详情
-"Default Sort" = "Default";
+"Default Sort" = "默认";
 "Filtro" = "Filtro";
 "Vista" = "Vista";
-"Brand Sort" = "Brand";
-"Price Sort" = "Price";
+"Brand Sort" = "品牌";
+"Price Sort Down" = "价格从低到高";
+"Price Sort Up" = "价格从高到低";
 "Cancel Sort" = "Cancel";
 "Confirm Sort" = "Confirm";
 "Brand" = "Marchi";
@@ -302,11 +303,11 @@
 "PaySuccess_Title" = "付款成功";
 "PaySuccess_SubTitle" = "感谢您的购买";
 "PaySuccess_SubTitle1" = "我们已经收到了您的订单";
-"PaySuccess_SubTitle2" = "订单号 : %lld";
+"PaySuccess_SubTitle2" = "订单号 : %@";
 "PaySuccess_SubTitle3" = "您将收到封我们的电子邮件来确认订单与详细信息\n并使用链接来咔嚓进度。";
 "PaySuccess_Button" = "继续购物";
 
 //我的页面退出登录
-"Mine_Logout_Tip" = "";
-"Mine_Logout_Cancel" = "";
-"Mine_Logout_Ok" = "";
+"Mine_Logout_Tip" = "您确认退出登录？";
+"Mine_Logout_Cancel" = "取消";
+"Mine_Logout_Ok" = "确认";

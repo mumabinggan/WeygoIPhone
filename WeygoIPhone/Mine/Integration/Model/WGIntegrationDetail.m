@@ -17,6 +17,13 @@
     return [super classForArray:propertyName];
 }
 
+- (BOOL)hasHistory {
+    if (_history && _history.count) {
+        return YES;
+    }
+    return NO;
+}
+
 @end
 
 @implementation WGIntegrationHistoryItem

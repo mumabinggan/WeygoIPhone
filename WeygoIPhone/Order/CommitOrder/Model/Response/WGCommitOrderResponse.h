@@ -18,6 +18,10 @@
 
 @interface WGCommitOrderData : JHObject
 
-@property (nonatomic, assign) long long orderId;
+@property (nonatomic, strong) NSString *action;
+
+@property (nonatomic, strong) NSString *actionSuccess;
+
+@property (nonatomic, strong) NSString *orderId;
 
 @end

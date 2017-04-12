@@ -82,7 +82,7 @@
     
     _data.goodArray = [self getGoodArray:8];
     
-    _sortType = LFClassifySortTypeDefault;
+    _sortType = WGClassifySortTypeDefault;
 }
 
 - (NSArray *)getGoodArray:(NSInteger)count {
@@ -154,7 +154,7 @@
 - (void)handleSortApply:(NSInteger)index {
     if (index == 0) {
         if (!_sortArray) {
-            _sortArray = @[kStr(@"Default Sort"), kStr(@"Brand Sort"), kStr(@"Price Sort")];
+            _sortArray = @[kStr(@"Default Sort"), kStr(@"Brand Sort"), kStr(@"Price Sort Down"), kStr(@"Price Sort Up")];
         }
         [self openPickerView];
     }
@@ -201,14 +201,14 @@
         [_sortPickerBgView addSubview:_sortPickerView];
         
         JHButton *cancelBtn = [[JHButton alloc] initWithFrame:CGRectMake(kAppAdaptWidth(8), 0, kAppAdaptWidth(100), kAppAdaptHeight(30))];
-        [cancelBtn setTitle:kStr(@"Cancel Sort") forState:UIControlStateNormal];
+        [cancelBtn setTitle:kStr(@"Mine_Logout_Cancel") forState:UIControlStateNormal];
         [cancelBtn setTitleColor:kWhiteColor forState:UIControlStateNormal];
         [cancelBtn addTarget:self action:@selector(touchCancelBtn:) forControlEvents:UIControlEventTouchUpInside];
         cancelBtn.titleLabel.font = kAppAdaptFont(14);
         [_sortPickerBgView addSubview:cancelBtn];
         
         JHButton *confirmBtn = [[JHButton alloc] initWithFrame:CGRectMake(kDeviceWidth - kAppAdaptWidth(108), 0, kAppAdaptWidth(100), kAppAdaptHeight(30))];
-        [confirmBtn setTitle:kStr(@"Confirm Sort") forState:UIControlStateNormal];
+        [confirmBtn setTitle:kStr(@"Mine_Logout_Ok") forState:UIControlStateNormal];
         [confirmBtn setTitleColor:kWhiteColor forState:UIControlStateNormal];
         [confirmBtn addTarget:self action:@selector(touchConfirmBtn:) forControlEvents:UIControlEventTouchUpInside];
         confirmBtn.titleLabel.font = kAppAdaptFont(14);

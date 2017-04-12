@@ -32,7 +32,7 @@
 }
 
 - (BOOL)prefersNavigationBarHiddenAnimated {
-    return NO;
+    return YES;
 }
 
 - (void)viewDidLoad {

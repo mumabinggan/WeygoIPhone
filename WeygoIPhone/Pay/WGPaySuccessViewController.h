@@ -10,6 +10,6 @@
 
 @interface WGPaySuccessViewController : WGViewController
 
-@property (nonatomic, assign) long long orderId;
+@property (nonatomic, strong) NSString *orderId;
 
 @end

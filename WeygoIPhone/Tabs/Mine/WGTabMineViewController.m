@@ -48,7 +48,7 @@
 }
 
 - (BOOL)prefersNavigationBarHiddenAnimated {
-    return NO;
+    return _viewType != 1;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -234,8 +234,10 @@
     else if (sender.tag == 8) {
         //退出页面
         WeakSelf;
-        [self showConfirmMessage:kStr(@"") withTitle:nil cancelButtonTitle:kStr(@"") okButtonTitle:kStr(@"") onCompletion:^(NSInteger index, UIAlertController *alertViewController) {
-            [weakSelf handleLogout];
+        [self showConfirmMessage:kStr(@"Mine_Logout_Tip") withTitle:nil cancelButtonTitle:kStr(@"Mine_Logout_Cancel") okButtonTitle:kStr(@"Mine_Logout_Ok") onCompletion:^(NSInteger index, UIAlertController *alertViewController) {
+            if (index == 1) {
+                [weakSelf handleLogout];
+            }
         }];
     }
 }

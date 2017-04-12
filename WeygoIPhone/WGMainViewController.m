@@ -23,6 +23,10 @@ static const float kTabBarHeight = 60;
 }
 @end
 
+@interface WGMainViewController (TabDelegate) <UITabBarControllerDelegate>
+
+@end
+
 @implementation WGMainViewController
 
 - (void)viewDidLoad {

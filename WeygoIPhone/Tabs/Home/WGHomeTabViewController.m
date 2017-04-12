@@ -36,6 +36,10 @@
     return self;
 }
 
+- (BOOL)prefersNavigationBarHiddenAnimated {
+    return _viewType != 1;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.

@@ -116,9 +116,9 @@
 - (void)handleOnMessageCenter {
     [[WGApplication sharedApplication] closeSideBarViewController];
 //    WGIntegrationViewController *vcc = [[WGIntegrationViewController alloc] init];
-    WGPaySuccessViewController *vcc = [[WGPaySuccessViewController alloc] init];
-    vcc.orderId = 34433443;
-    //WGCommitOrderViewController *vcc = [[WGCommitOrderViewController alloc] init];
+    //WGPaySuccessViewController *vcc = [[WGPaySuccessViewController alloc] init];
+    //vcc.orderId = 34433443;
+    WGCommitOrderViewController *vcc = [[WGCommitOrderViewController alloc] init];
 //    //vcc.goodId = 1591;
     UINavigationController *navc = [WGApplication sharedApplication].navigationController;
     [navc pushViewController:vcc animated:YES];

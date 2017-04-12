@@ -327,6 +327,9 @@
 		BECBE3161E87C68E00ADAD6C /* WGTitleItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BECBE3151E87C68E00ADAD6C /* WGTitleItem.m */; };
 		BECBE3191E87D13100ADAD6C /* WGCommonViewController+Data.m in Sources */ = {isa = PBXBuildFile; fileRef = BECBE3181E87D13100ADAD6C /* WGCommonViewController+Data.m */; };
 		BECEBF9F1E2BD104002C4462 /* WGClassifyGoodListViewController+Request.m in Sources */ = {isa = PBXBuildFile; fileRef = BECEBF9E1E2BD104002C4462 /* WGClassifyGoodListViewController+Request.m */; };
+		BED697B31E9E348100163355 /* WGPayWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BED697B21E9E348100163355 /* WGPayWebViewController.m */; };
+		BED697B71E9E38BC00163355 /* WGPaySuccessRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BED697B61E9E38BC00163355 /* WGPaySuccessRequest.m */; };
+		BED697BA1E9E38CE00163355 /* WGPaySuccessResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BED697B91E9E38CE00163355 /* WGPaySuccessResponse.m */; };
 		BEDCA7EB1E627BC500BCDED6 /* WGSliderClassifyItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDCA7EA1E627BC500BCDED6 /* WGSliderClassifyItemCell.m */; };
 		BEDCA7EF1E627E8000BCDED6 /* WGHomeSliderUserHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDCA7EE1E627E8000BCDED6 /* WGHomeSliderUserHeaderView.m */; };
 		BEE937B71E825BC800875131 /* WGInvitationDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE937B61E825BC800875131 /* WGInvitationDescription.m */; };
@@ -1058,6 +1061,12 @@
 		BECBE3181E87D13100ADAD6C /* WGCommonViewController+Data.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGCommonViewController+Data.m"; sourceTree = "<group>"; };
 		BECEBF9D1E2BD104002C4462 /* WGClassifyGoodListViewController+Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGClassifyGoodListViewController+Request.h"; sourceTree = "<group>"; };
 		BECEBF9E1E2BD104002C4462 /* WGClassifyGoodListViewController+Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGClassifyGoodListViewController+Request.m"; sourceTree = "<group>"; };
+		BED697B11E9E348100163355 /* WGPayWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGPayWebViewController.h; sourceTree = "<group>"; };
+		BED697B21E9E348100163355 /* WGPayWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGPayWebViewController.m; sourceTree = "<group>"; };
+		BED697B51E9E38BC00163355 /* WGPaySuccessRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGPaySuccessRequest.h; sourceTree = "<group>"; };
+		BED697B61E9E38BC00163355 /* WGPaySuccessRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGPaySuccessRequest.m; sourceTree = "<group>"; };
+		BED697B81E9E38CE00163355 /* WGPaySuccessResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGPaySuccessResponse.h; sourceTree = "<group>"; };
+		BED697B91E9E38CE00163355 /* WGPaySuccessResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGPaySuccessResponse.m; sourceTree = "<group>"; };
 		BEDCA7E91E627BC500BCDED6 /* WGSliderClassifyItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGSliderClassifyItemCell.h; sourceTree = "<group>"; };
 		BEDCA7EA1E627BC500BCDED6 /* WGSliderClassifyItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGSliderClassifyItemCell.m; sourceTree = "<group>"; };
 		BEDCA7ED1E627E8000BCDED6 /* WGHomeSliderUserHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGHomeSliderUserHeaderView.h; sourceTree = "<group>"; };
@@ -1980,6 +1989,8 @@
 		BE5F04781E9CCEB000A701CB /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				BED697B51E9E38BC00163355 /* WGPaySuccessRequest.h */,
+				BED697B61E9E38BC00163355 /* WGPaySuccessRequest.m */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -1987,6 +1998,8 @@
 		BE5F04791E9CCEB000A701CB /* Response */ = {
 			isa = PBXGroup;
 			children = (
+				BED697B81E9E38CE00163355 /* WGPaySuccessResponse.h */,
+				BED697B91E9E38CE00163355 /* WGPaySuccessResponse.m */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -2232,10 +2245,10 @@
 				BE63A6B41E7BBC0B00F77282 /* Cell */,
 				BE63A6C11E7BBC0B00F77282 /* Model */,
 				BE63A6CC1E7BBC0B00F77282 /* View */,
-				BE63A6CD1E7BBC0B00F77282 /* WGOrderDetailViewController+Request.h */,
-				BE63A6CE1E7BBC0B00F77282 /* WGOrderDetailViewController+Request.m */,
 				BE63A6CF1E7BBC0B00F77282 /* WGOrderDetailViewController.h */,
 				BE63A6D01E7BBC0B00F77282 /* WGOrderDetailViewController.m */,
+				BE63A6CD1E7BBC0B00F77282 /* WGOrderDetailViewController+Request.h */,
+				BE63A6CE1E7BBC0B00F77282 /* WGOrderDetailViewController+Request.m */,
 			);
 			path = OrderDetail;
 			sourceTree = "<group>";
@@ -2568,6 +2581,8 @@
 				BE5F04771E9CCEB000A701CB /* Model */,
 				BE5F047B1E9CD22200A701CB /* WGPaySuccessViewController.h */,
 				BE5F047C1E9CD22200A701CB /* WGPaySuccessViewController.m */,
+				BED697B11E9E348100163355 /* WGPayWebViewController.h */,
+				BED697B21E9E348100163355 /* WGPayWebViewController.m */,
 			);
 			path = Pay;
 			sourceTree = "<group>";
@@ -3590,6 +3605,7 @@
 				BEA7342F1E81273D00C74ED2 /* WGActiveCouponRequest.m in Sources */,
 				BE63A6D71E7BBC0B00F77282 /* WGOrderStatusCell.m in Sources */,
 				BE2B42C61E8B86370010BCB7 /* WGImageVerificationCodeRequest.m in Sources */,
+				BED697B71E9E38BC00163355 /* WGPaySuccessRequest.m in Sources */,
 				BE83BB2A1E23E46F002F3BCC /* WGNewsItem.m in Sources */,
 				BE63A6F41E7BC5A200F77282 /* WGOrderListRequest.m in Sources */,
 				BE5E4C181E249ADB00ACA48F /* WGHomeTabContentViewController.m in Sources */,
@@ -3870,6 +3886,7 @@
 				BEA374AB1E3481690054B8E6 /* WGClassifyDetail.m in Sources */,
 				BE5F048A1E9CFDA800A701CB /* WGShopCartCountRequest.m in Sources */,
 				BE5F61981E94D45200FBA32A /* WGCommitUserInfoResponse.m in Sources */,
+				BED697B31E9E348100163355 /* WGPayWebViewController.m in Sources */,
 				BECBE3101E87C43800ADAD6C /* WGAsiaViewController.m in Sources */,
 				BEB2D9591DFBED1500F2E74B /* WGApplication.m in Sources */,
 				BEEC20D01E9920380065DE90 /* WGAddressListRequest.m in Sources */,
@@ -3885,6 +3902,7 @@
 				BEF8ED661E8A742C00E15C8F /* WGCollectionListRequest.m in Sources */,
 				BEFEC3321E963FA2002FCF1F /* WGClassifyDetailRequest.m in Sources */,
 				BEEC20D71E9923F80065DE90 /* WGAddAddressRequest.m in Sources */,
+				BED697BA1E9E38CE00163355 /* WGPaySuccessResponse.m in Sources */,
 				BE622A121E77CEDC002BFEDB /* WGGoodInLocalCart.m in Sources */,
 				BE52EFBB1E2F44970022EF5B /* WGCouponListViewController.m in Sources */,
 				BE63A7031E7BDA1700F77282 /* WGOrderCountView.m in Sources */,

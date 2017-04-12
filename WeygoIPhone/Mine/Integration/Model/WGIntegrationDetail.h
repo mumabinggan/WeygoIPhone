@@ -12,7 +12,13 @@
 
 @property (nonatomic, assign) long long totalCount;
 
+@property (nonatomic, strong) NSString *tip;	//规则
+
 @property (nonatomic, strong) NSArray *history;
+
+
+//for self use
+@property (nonatomic, assign) BOOL hasHistory;
 
 @end
 

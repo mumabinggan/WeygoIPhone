@@ -20,6 +20,10 @@
     return YES;
 }
 
+- (void) tabBarController:(nonnull UITabBarController *)tabBarController didSelectViewController:(nonnull UIViewController *)viewController {
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationTabChanged object:viewController];
+}
+
 - (void)intoLoginViewController {
     WeakSelf;
     [WGLoginViewController pushInNavigationController:self.navigationController loginFrom:WGLoginFromDefault sucess:^(WGLoginViewController *vc) {

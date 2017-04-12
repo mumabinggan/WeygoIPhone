@@ -14,13 +14,15 @@
 #import "WGUpdateOrderCouponRequest.h"
 #import "WGUpdateOrderCouponResponse.h"
 #import "WGCommitOrderDetail.h"
+#import "WGPaySuccessViewController.h"
+#import "WGPayWebViewController.h"
 
 @implementation WGCommitOrderViewController (Request)
 
 - (void)loadSettlementResultDetail {
     WGSettlementResultRequest *request = [[WGSettlementResultRequest alloc] init];
     __weak typeof(self) weakSelf = self;
-    [self get:request forResponseClass:[WGSettlementResultResponse class] success:^(JHResponse *response) {
+    [self post:request forResponseClass:[WGSettlementResultResponse class] success:^(JHResponse *response) {
         [weakSelf handleSettlementResultResponse:(WGSettlementResultResponse *)response];
     } failure:^(NSError *error) {
         [weakSelf showWarningMessage:kStr(@"Request Failed")];
@@ -94,10 +96,22 @@
 
 - (void)handleCommitOrderResponse:(WGCommitOrderResponse *)response {
     if (response.success) {
-        __weak WGCommitOrderViewController *weakSelf = self;
-        [self showWarningMessage:response.message onCompletion:^(void) {
-            [weakSelf.navigationController popViewControllerAnimated:YES];
-        }];
+        if ([NSString isNullOrEmpty:response.data.orderId]) {
+            WGPaySuccessViewController *vc = [[WGPaySuccessViewController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+        else {
+            if ([NSString isNullOrEmpty:response.data.action]) {
+                __weak WGCommitOrderViewController *weakSelf = self;
+                [self showWarningMessage:response.message onCompletion:^(void) {
+                    [weakSelf.navigationController popToRootViewControllerAnimated:YES];
+                }];
+            }
+            else {
+                WGPayWebViewController *vc = [[WGPayWebViewController alloc] initWithOrderData:response.data];
+                [self.navigationController pushViewController:vc animated:YES];
+            }
+        }
     }
     else {
         [self showWarningMessage:response.message];
