@@ -29,10 +29,12 @@
         _titleArray = titleArray;
         self.clipsToBounds = YES;
         [self initSubView];
-        __weak typeof (self) weakSelf = self;
-        _timer = [NSTimer scheduledTimerWithTimeInterval:0.017 repeats:YES block:^(NSTimer *timer) {
-            [weakSelf handleTimer];
-        }];
+        //__weak typeof (self) weakSelf = self;
+//        + (NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)ti target:(id)aTarget selector:(SEL)aSelector userInfo:(nullable id)userInfo repeats:(BOOL)yesOrNo;
+//        _timer = [NSTimer scheduledTimerWithTimeInterval:0.017 repeats:YES block:^(NSTimer *timer) {
+//            [weakSelf handleTimer];
+//        }];
+        _timer = [NSTimer scheduledTimerWithTimeInterval:0.017 target:self selector:@selector(handleTimer) userInfo:nil repeats:YES];
     }
     return self;
 }

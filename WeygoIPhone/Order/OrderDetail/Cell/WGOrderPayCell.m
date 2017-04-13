@@ -39,9 +39,9 @@
 - (void)showWithData:(JHObject *)data {
     WGOrderPay *pay = ((WGOrderDetail *)data).pay;
     if (pay) {
-        _totalLabel.text = [NSString stringWithFormat:kStr(@"Order Pay Total"), pay.total];
-        _benefitLabel.text = [NSString stringWithFormat:kStr(@"Order Pay Benefit Detail"), pay.benefit];
-        _currentTotalLabel.text = [NSString stringWithFormat:kStr(@"Order Pay Totale"), pay.currentTotal];
+        _totalLabel.text = [NSString stringWithFormat:kStr(@"Order Pay Total"), pay.totalPrice];
+        _benefitLabel.text = [NSString stringWithFormat:kStr(@"Order Pay Benefit Detail"), pay.reducePrice];
+        _currentTotalLabel.text = [NSString stringWithFormat:kStr(@"Order Pay Totale"), pay.currentPrice];
     }
 }
 

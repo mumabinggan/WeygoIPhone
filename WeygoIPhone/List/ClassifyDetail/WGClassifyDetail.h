@@ -7,6 +7,7 @@
 //
 
 #import "WGObject.h"
+#import "WGNews.h"
 
 @class WGCarouselFigureItem;
 
@@ -21,5 +22,11 @@
 @property (nonatomic, strong) NSArray *subClassifyArray;
 
 @property (nonatomic, strong) NSArray *goodArray;
+
+// 促销
+@property (nonatomic, strong) NSArray *recommendedArray;
+
+//消息
+@property (nonatomic, strong) WGNews *news;
 
 @end

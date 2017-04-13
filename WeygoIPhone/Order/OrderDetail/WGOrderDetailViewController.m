@@ -90,7 +90,7 @@
     deliver.userAddress = @"asdfasd";
     deliver.userName = @"asdfasd";
     deliver.phone = @"asdfasd";
-    deliver.total = 3243.232;
+    deliver.totalPrice = @"3243.232";
     _orderDetail.deliver = deliver;
     
     WGOrderGoodItem *goodItem = [[WGOrderGoodItem alloc] init];
@@ -138,9 +138,9 @@
     _orderDetail.fax = fax;
     
     WGOrderPay *pay = [[WGOrderPay alloc] init];
-    pay.total = 3223.12;
-    pay.currentTotal = 3434.32;
-    pay.benefit = 23.3;
+    pay.totalPrice = @"3223.12";
+    pay.currentPrice = @"3434.32";
+    pay.reducePrice = @"23.3";
     _orderDetail.pay = pay;
 }
 
@@ -336,7 +336,7 @@
     }
     if (row == 0) {
         if (section == 0) {
-            cell.textLabel.text = [NSString stringWithFormat:kStr(@"Order Number"), @(_orderDetail.id).stringValue];
+            cell.textLabel.text = [NSString stringWithFormat:kStr(@"Order Number"), _orderDetail.sn];
         }
         else if (section == 1) {
             cell.textLabel.text = kStr(@"Order Deliver Goods Info");

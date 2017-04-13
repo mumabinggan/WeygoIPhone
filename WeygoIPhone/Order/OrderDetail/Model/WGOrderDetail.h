@@ -17,6 +17,8 @@
 
 @property (nonatomic, assign) long long id;
 
+@property (nonatomic, strong) NSString *sn;
+
 @property (nonatomic, strong) WGOrderStatus *status;
 
 @property (nonatomic, strong) WGOrderDeliver *deliver;
@@ -55,7 +57,7 @@
 
 @property (nonatomic, strong) NSString *phone;
 
-@property (nonatomic, assign) float total;
+@property (nonatomic, strong) NSString *totalPrice;
 
 @property (nonatomic, strong) NSString *deliverTime;
 
@@ -73,10 +75,10 @@
 
 @interface WGOrderPay : WGObject
 
-@property (nonatomic, assign) float total;
+@property (nonatomic, strong) NSString *totalPrice;
 
-@property (nonatomic, assign) float benefit;
+@property (nonatomic, strong) NSString *reducePrice;
 
-@property (nonatomic, assign) float currentTotal;
+@property (nonatomic, strong) NSString *currentPrice;
 
 @end

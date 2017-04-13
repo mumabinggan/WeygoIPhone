@@ -186,7 +186,7 @@
 "Order Client Name" = "Nome e cognome: %@";
 "Order Address" = "Indirizzo: %@";
 "Order Phone" = "Telefono / Cellulare: %@";
-"Order Importo Spesa" = "Importo spesa: €%.2f";
+"Order Importo Spesa" = "Importo spesa: %@";
 "Order Deliver Time" = "Dati di consegna: %@";
 "Order Goods List" = "Elenco prodotti";
 "Order Good Look More" = "Guardali tutti";
@@ -195,9 +195,9 @@
 "Order Company" = "Ragione sociale: %@";
 "Order CAP" = "CAP: %@";
 "Order Pay Detail" = "Dettagli pagamento";
-"Order Pay Total" = "Subtotale: €%.2f";
-"Order Pay Benefit Detail" = "Spedizione: €%.2f";
-"Order Pay Totale" = "Totale: €%.2f";
+"Order Pay Total" = "Subtotale: %@";
+"Order Pay Benefit Detail" = "Spedizione: %@";
+"Order Pay Totale" = "Totale: %@";
 "Order Good Number" = "x%d";
 "Order Rebuy" = "Riordina";
 

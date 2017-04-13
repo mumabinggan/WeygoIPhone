@@ -1,24 +1,24 @@
 //
-//  WGClassifyDetailViewController+Request.m
+//  WGCommonClassifyDetailViewController+Request.m
 //  WeygoIPhone
 //
-//  Created by muma on 2017/1/22.
+//  Created by muma on 2017/4/13.
 //  Copyright © 2017年 weygo.com. All rights reserved.
 //
 
-#import "WGClassifyDetailViewController+Request.h"
+#import "WGClassifyDetailContentViewController+Request.h"
 #import "WGClassifyDetailRequest.h"
 #import "WGClassifyDetailResponse.h"
 #import "WGClassifyKeyword.h"
 #import "WGClassifyItem.h"
 
-@implementation WGClassifyDetailViewController (Request)
+@implementation WGClassifyDetailContentViewController (Request)
 
 - (void)loadClassifyDetailFilter:(BOOL)refresh pulling:(BOOL)pulling {
     WGClassifyDetailRequest *request = [[WGClassifyDetailRequest alloc] init];
     request.classifyId = self.classifyId;
     request.order = _sortType;
-    request.pageId = refresh ? 0 :  _data.goodArray.count;
+    request.pageId = refresh ? 0 :  (int)_data.goodArray.count;
     NSMutableArray *keywords = [NSMutableArray array];
     for (WGClassifyKeyword *item in _filter.keyWordArray) {
         if (item.isSelected) {
@@ -55,6 +55,9 @@
             [goods addObjectsFromArray:response.data.goodArray];
             _data = response.data;
             _data.goodArray = goods;
+        }
+        if (self.onResponse) {
+            self.onResponse(_data);
         }
         [self refreshUI];
     }

@@ -10,4 +10,8 @@
 
 @implementation WGPaySuccessRequest
 
+- (NSString *)api {
+    return @"checkout/success?";
+}
+
 @end

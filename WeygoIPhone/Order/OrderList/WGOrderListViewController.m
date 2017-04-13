@@ -34,8 +34,8 @@
     WGOrderListItem *item = [[WGOrderListItem alloc] init];
     item.id = 54434334343;
     item.status = @"发送中";
-    item.deliverPrice = 4334.23;
-    item.totalPrice = 434323.23;
+    item.deliverPrice = @"4334.23";
+    item.totalPrice = @"434323.23";
     
     WGOrderGoodItem *goodItem = [[WGOrderGoodItem alloc] init];
     goodItem.goodCount = 12;
@@ -202,7 +202,7 @@
     }
     WGOrderListItem *item = _orderMArray[section];
     if (row == 0) {
-        cell.textLabel.text = [NSString stringWithFormat:kStr(@"Order Number"), @(item.id).stringValue];
+        cell.textLabel.text = [NSString stringWithFormat:kStr(@"Order Number"), item.sn];
         cell.detailTextLabel.text = item.status;
     }
     else {

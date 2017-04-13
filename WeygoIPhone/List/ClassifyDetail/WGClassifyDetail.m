@@ -19,6 +19,9 @@
     if ([@"subClassifyArray" isEqualToString:propertyName]) {
         return [WGClassifyItem class];
     }
+    if ([@"recommendedArray" isEqualToString:propertyName]) {
+        return [WGHomeFloorContentGoodItem class];
+    }
     return [super classForArray:propertyName];
 }
 

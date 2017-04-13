@@ -13,12 +13,14 @@
 
 @property (nonatomic, assign) long long id;
 
+@property (nonatomic, strong) NSString *sn;
+
 @property (nonatomic, strong) NSArray *goods;
 
 @property (nonatomic, strong) NSString *status;
 
-@property (nonatomic, assign) float deliverPrice;
+@property (nonatomic, strong) NSString *deliverPrice;
 
-@property (nonatomic, assign) float totalPrice;
+@property (nonatomic, strong) NSString *totalPrice;
 
 @end

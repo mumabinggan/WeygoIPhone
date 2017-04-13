@@ -185,7 +185,7 @@
 "Order Client Name" = "客户姓名: %@";
 "Order Address" = "送货地址: %@";
 "Order Phone" = "电话 / 手机: %@";
-"Order Importo Spesa" = "消费金额: €%.2f";
+"Order Importo Spesa" = "消费金额: %@";
 "Order Deliver Time" = "送货时间: %@";
 "Order Goods List" = "商品列表";
 "Order Good Look More" = "查看所有";
@@ -194,9 +194,9 @@
 "Order Company" = "公司名称: %@";
 "Order CAP" = "邮编: %@";
 "Order Pay Detail" = "付款详情";
-"Order Pay Total" = "总计: €%.2f";
-"Order Pay Benefit Detail" = "优惠: €%.2f";
-"Order Pay Totale" = "总价: €%.2f";
+"Order Pay Total" = "总计: %@";
+"Order Pay Benefit Detail" = "优惠: %@";
+"Order Pay Totale" = "总价: %@";
 "Order Good Number" = "x%d";
 "Order Rebuy" = "重新下单";
 
