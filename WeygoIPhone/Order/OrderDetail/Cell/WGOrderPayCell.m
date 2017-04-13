@@ -11,42 +11,31 @@
 
 @interface WGOrderPayCell ()
 {
-    JHLabel *_totalLabel;
-    JHLabel *_benefitLabel;
-    JHLabel *_currentTotalLabel;
+    NSArray *_data;
 }
 @end
 
 @implementation WGOrderPayCell
 
-- (void)loadSubviews {
-    _totalLabel = [[JHLabel alloc] initWithFrame:CGRectMake(kAppAdaptWidth(15), kAppAdaptHeight(16), kDeviceWidth - kAppAdaptWidth(30), kAppAdaptHeight(20))];
-    _totalLabel.font = kAppAdaptFont(14);
-    _totalLabel.textColor = WGAppTitleColor;
-    [self.contentView addSubview:_totalLabel];
-    
-    _benefitLabel = [[JHLabel alloc] initWithFrame:CGRectMake(kAppAdaptWidth(15), _totalLabel.maxY, kDeviceWidth - kAppAdaptWidth(30), kAppAdaptHeight(20))];
-    _benefitLabel.font = kAppAdaptFont(14);
-    _benefitLabel.textColor = WGAppTitleColor;
-    [self.contentView addSubview:_benefitLabel];
-    
-    _currentTotalLabel = [[JHLabel alloc] initWithFrame:CGRectMake(kAppAdaptWidth(15), _benefitLabel.maxY, kDeviceWidth - kAppAdaptWidth(30), kAppAdaptHeight(20))];
-    _currentTotalLabel.font = kAppAdaptFont(14);
-    _currentTotalLabel.textColor = WGAppTitleColor;
-    [self.contentView addSubview:_currentTotalLabel];
-}
-
-- (void)showWithData:(JHObject *)data {
-    WGOrderPay *pay = ((WGOrderDetail *)data).pay;
-    if (pay) {
-        _totalLabel.text = [NSString stringWithFormat:kStr(@"Order Pay Total"), pay.totalPrice];
-        _benefitLabel.text = [NSString stringWithFormat:kStr(@"Order Pay Benefit Detail"), pay.reducePrice];
-        _currentTotalLabel.text = [NSString stringWithFormat:kStr(@"Order Pay Totale"), pay.currentPrice];
+- (void)showWithArray:(NSArray *)array {
+    if (_data) {
+        return;
+    }
+    _data = array;
+    for (int num = 0; num < array.count; ++num) {
+        JHLabel *label = [[JHLabel alloc] initWithFrame:CGRectMake(kAppAdaptWidth(15), num * kAppAdaptHeight(20) + kAppAdaptHeight(16), kDeviceWidth - kAppAdaptWidth(30), kAppAdaptHeight(20))];
+        label.font = kAppAdaptFont(14);
+        label.textColor = WGAppTitleColor;
+        label.text = array[num];
+        [self.contentView addSubview:label];
     }
 }
 
-+ (CGFloat)heightWithData:(JHObject *)data {
-    return kAppAdaptHeight(92);
++ (CGFloat)heightWithArray:(NSArray *)data {
+    if (data) {
+        return kAppAdaptHeight(32) + data.count * kAppAdaptHeight(20);
+    }
+    return 0;
 }
 
 @end

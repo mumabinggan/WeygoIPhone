@@ -31,4 +31,8 @@
     [_itemView showWithData:item];
 }
 
++ (CGFloat)heightWithData:(JHObject *)data {
+    return kAppAdaptHeight(124);
+}
+
 @end

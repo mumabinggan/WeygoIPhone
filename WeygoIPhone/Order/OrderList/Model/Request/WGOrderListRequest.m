@@ -10,4 +10,16 @@
 
 @implementation WGOrderListRequest
 
+- (id)init {
+    self = [super init];
+    if (self) {
+        _pageSize = 15;
+    }
+    return self;
+}
+
+- (NSString *)api {
+    return @"orders/index?";
+}
+
 @end

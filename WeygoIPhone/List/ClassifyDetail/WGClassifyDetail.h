@@ -29,4 +29,10 @@
 //消息
 @property (nonatomic, strong) WGNews *news;
 
+
+//for self use
+@property (nonatomic, assign) BOOL hasCarousel;
+
+@property (nonatomic, assign) BOOL hasNews;
+
 @end

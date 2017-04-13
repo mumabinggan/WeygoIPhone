@@ -67,4 +67,8 @@
     }
 }
 
++ (CGFloat)heightWithData:(JHObject *)data {
+    return kAppAdaptHeight(320);
+}
+
 @end

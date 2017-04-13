@@ -48,6 +48,7 @@
     [_imageView setImageWithURL:[NSURL URLWithString:object.pictureURL] placeholderImage:kHomeGoodColumnPlaceholderImage options:JHWebImageOptionsRefreshCached];
     _nameLabel.text = object.name;
     _currentPriceLabel.text = object.currentPrice;
+    _reducePriceLabel.text = object.price;
 }
 
 @end

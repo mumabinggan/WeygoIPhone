@@ -10,6 +10,6 @@
 
 @interface WGClassifyDetailContentViewController (Request)
 
-- (void)loadClassifyDetailFilter:(BOOL)refresh pulling:(BOOL)pulling;
+- (void)loadData:(BOOL)refresh pulling:(BOOL)pulling;
 
 @end

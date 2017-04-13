@@ -14,6 +14,10 @@
 
 - (void)loadOrderList:(BOOL)refresh pulling:(BOOL)pulling {
     WGOrderListRequest *request = [[WGOrderListRequest alloc] init];
+    request.pageId = (refresh) ? 0 : _orderMArray.count;
+    if (pulling) {
+        request.showsLoadingView = NO;
+    }
     __weak typeof(self) weakSelf = self;
     [self post:request forResponseClass:[WGOrderListResponse class] success:^(JHResponse *response) {
         [weakSelf handleOrderListResponse:(WGOrderListResponse *)response refresh:refresh pulling:pulling];

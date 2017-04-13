@@ -27,7 +27,7 @@
 
 @property (nonatomic, strong) WGOrderFax *fax;
 
-@property (nonatomic, strong) WGOrderPay *pay;
+@property (nonatomic, strong) NSArray *pay;
 
 @end
 
@@ -77,8 +77,8 @@
 
 @property (nonatomic, strong) NSString *totalPrice;
 
-@property (nonatomic, strong) NSString *reducePrice;
+@property (nonatomic, strong) NSString *benefitPrice;
 
-@property (nonatomic, strong) NSString *currentPrice;
+@property (nonatomic, strong) NSString *currentTotalPrice;
 
 @end

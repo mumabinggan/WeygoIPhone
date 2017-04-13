@@ -64,85 +64,88 @@
 
 - (void)touchReBuyBtn:(JHButton *)sender {
     //跳转到购物车
+    [[WGApplication sharedApplication] loadRebuyOrder:_orderId onCompletion:^(WGRebuyOrderResponse *response) {
+        [[WGApplication sharedApplication] switchTab:WGTabIndexShopCart];
+    }];
 }
-
-- (void)initData {
-    _orderDetail = [[WGOrderDetail alloc] init];
-    WGOrderStatus *status = [[WGOrderStatus alloc] init];
-    status.currentStatus = 1;
-    WGOrderStatusItem *statusItem = [[WGOrderStatusItem alloc] init];
-    statusItem.time = @"1234.2323";
-    statusItem.statusText = @"asdf";
-    
-    WGOrderStatusItem *statusItem1 = [[WGOrderStatusItem alloc] init];
-    statusItem1.time = @"4.2323";
-    statusItem1.statusText = @"Faffsdf";
-    
-    WGOrderStatusItem *statusItem2 = [[WGOrderStatusItem alloc] init];
-    statusItem2.time = @"F1234.2323";
-    statusItem2.statusText = @"Wasdf";
-    
-    status.statusArray = @[statusItem, statusItem1, statusItem2];
-    _orderDetail.status = status;
-    
-    WGOrderDeliver *deliver = [[WGOrderDeliver alloc] init];
-    deliver.deliverTime = @"12122121";
-    deliver.userAddress = @"asdfasd";
-    deliver.userName = @"asdfasd";
-    deliver.phone = @"asdfasd";
-    deliver.totalPrice = @"3243.232";
-    _orderDetail.deliver = deliver;
-    
-    WGOrderGoodItem *goodItem = [[WGOrderGoodItem alloc] init];
-    goodItem.goodCount = 12;
-    goodItem.orderPrice = @"123.32";
-    goodItem.orderCurrentPrice = @"54.23";
-    goodItem.orderReducePrice = @"43.23";
-    goodItem.name = @"fasdfasdfasdfasdf";
-    goodItem.pictureURL = @"";
-    goodItem.chineseName = @"郑渊谦";
-    goodItem.briefDescription = @"asdfasdfasdfasdfasdfas";
-    goodItem.price = @"932.32";
-    goodItem.currentPrice = @"322.23";
-    
-    WGOrderGoodItem *goodItem1 = [[WGOrderGoodItem alloc] init];
-    goodItem1.goodCount = 1;
-    goodItem1.orderPrice = @"123.32";
-    goodItem1.orderCurrentPrice = @"54.23";
-    goodItem1.orderReducePrice = @"43.23";
-    goodItem1.name = @"sadfas";
-    goodItem1.pictureURL = @"";
-    goodItem1.chineseName = @"郑渊谦";
-    goodItem1.briefDescription = @"asdfasdfasdfasdfasdfas";
-    goodItem1.price = @"932.32";
-    goodItem1.currentPrice = @"322.23";
-    
-    WGOrderGoodItem *goodItem2 = [[WGOrderGoodItem alloc] init];
-    goodItem1.goodCount = 4;
-    goodItem2.orderPrice = @"123.32";
-    goodItem2.orderCurrentPrice = @"54.23";
-    goodItem2.orderReducePrice = @"43.23";
-    goodItem2.name = @"zhengasdfl";
-    goodItem2.pictureURL = @"";
-    goodItem2.chineseName = @"郑渊谦";
-    goodItem2.briefDescription = @"asdfasdfasdfasdfasdfas";
-    goodItem2.price = @"932.32";
-    goodItem2.currentPrice = @"122.23";
-    
-    _orderDetail.goods = @[goodItem, goodItem1, goodItem2];
-    
-    WGOrderFax *fax = [[WGOrderFax alloc] init];
-    fax.taxCode = @"asdfasd";
-    fax.cap = @"3434343";
-    fax.companyName = @"fdsaasdfasdfsdaf";
-    _orderDetail.fax = fax;
-    
-    WGOrderPay *pay = [[WGOrderPay alloc] init];
-    pay.totalPrice = @"3223.12";
-    pay.currentPrice = @"3434.32";
-    pay.reducePrice = @"23.3";
-    _orderDetail.pay = pay;
-}
+//
+//- (void)initData {
+//    _orderDetail = [[WGOrderDetail alloc] init];
+//    WGOrderStatus *status = [[WGOrderStatus alloc] init];
+//    status.currentStatus = 1;
+//    WGOrderStatusItem *statusItem = [[WGOrderStatusItem alloc] init];
+//    statusItem.time = @"1234.2323";
+//    statusItem.statusText = @"asdf";
+//    
+//    WGOrderStatusItem *statusItem1 = [[WGOrderStatusItem alloc] init];
+//    statusItem1.time = @"4.2323";
+//    statusItem1.statusText = @"Faffsdf";
+//    
+//    WGOrderStatusItem *statusItem2 = [[WGOrderStatusItem alloc] init];
+//    statusItem2.time = @"F1234.2323";
+//    statusItem2.statusText = @"Wasdf";
+//    
+//    status.statusArray = @[statusItem, statusItem1, statusItem2];
+//    _orderDetail.status = status;
+//    
+//    WGOrderDeliver *deliver = [[WGOrderDeliver alloc] init];
+//    deliver.deliverTime = @"12122121";
+//    deliver.userAddress = @"asdfasd";
+//    deliver.userName = @"asdfasd";
+//    deliver.phone = @"asdfasd";
+//    deliver.totalPrice = @"3243.232";
+//    _orderDetail.deliver = deliver;
+//    
+//    WGOrderGoodItem *goodItem = [[WGOrderGoodItem alloc] init];
+//    goodItem.goodCount = 12;
+//    goodItem.orderPrice = @"123.32";
+//    goodItem.orderCurrentPrice = @"54.23";
+//    goodItem.orderReducePrice = @"43.23";
+//    goodItem.name = @"fasdfasdfasdfasdf";
+//    goodItem.pictureURL = @"";
+//    goodItem.chineseName = @"郑渊谦";
+//    goodItem.briefDescription = @"asdfasdfasdfasdfasdfas";
+//    goodItem.price = @"932.32";
+//    goodItem.currentPrice = @"322.23";
+//    
+//    WGOrderGoodItem *goodItem1 = [[WGOrderGoodItem alloc] init];
+//    goodItem1.goodCount = 1;
+//    goodItem1.orderPrice = @"123.32";
+//    goodItem1.orderCurrentPrice = @"54.23";
+//    goodItem1.orderReducePrice = @"43.23";
+//    goodItem1.name = @"sadfas";
+//    goodItem1.pictureURL = @"";
+//    goodItem1.chineseName = @"郑渊谦";
+//    goodItem1.briefDescription = @"asdfasdfasdfasdfasdfas";
+//    goodItem1.price = @"932.32";
+//    goodItem1.currentPrice = @"322.23";
+//    
+//    WGOrderGoodItem *goodItem2 = [[WGOrderGoodItem alloc] init];
+//    goodItem1.goodCount = 4;
+//    goodItem2.orderPrice = @"123.32";
+//    goodItem2.orderCurrentPrice = @"54.23";
+//    goodItem2.orderReducePrice = @"43.23";
+//    goodItem2.name = @"zhengasdfl";
+//    goodItem2.pictureURL = @"";
+//    goodItem2.chineseName = @"郑渊谦";
+//    goodItem2.briefDescription = @"asdfasdfasdfasdfasdfas";
+//    goodItem2.price = @"932.32";
+//    goodItem2.currentPrice = @"122.23";
+//    
+//    _orderDetail.goods = @[goodItem, goodItem1, goodItem2];
+//    
+//    WGOrderFax *fax = [[WGOrderFax alloc] init];
+//    fax.taxCode = @"asdfasd";
+//    fax.cap = @"3434343";
+//    fax.companyName = @"fdsaasdfasdfsdaf";
+//    _orderDetail.fax = fax;
+//    
+//    WGOrderPay *pay = [[WGOrderPay alloc] init];
+//    pay.totalPrice = @"3223.12";
+//    pay.currentPrice = @"3434.32";
+//    pay.reducePrice = @"23.3";
+//    _orderDetail.pay = pay;
+//}
 
 - (void)showhowAllGoods {
     _showAllGoods = YES;
@@ -263,7 +266,7 @@
             height = kAppAdaptHeight(40);
         }
         else {
-            height = [WGOrderPayCell heightWithData:nil];
+            height = [WGOrderPayCell heightWithArray:_orderDetail.pay];
         }
     }
     return height;
@@ -358,6 +361,9 @@
                 WGOrderGoodItem *item = goods[row - 1];
                 [cell showWithData:item];
             }
+        }
+        else if (section == 4) {
+            [cell showWithArray:_orderDetail.pay];
         }
         else {
             [cell showWithData:_orderDetail];

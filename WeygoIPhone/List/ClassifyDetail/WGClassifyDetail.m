@@ -25,4 +25,12 @@
     return [super classForArray:propertyName];
 }
 
+- (BOOL)hasNews {
+    return _news != nil;
+}
+
+- (BOOL)hasCarousel {
+    return _carouselFigureItem != nil;
+}
+
 @end

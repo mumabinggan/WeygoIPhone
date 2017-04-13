@@ -14,7 +14,19 @@
 
 @implementation WGClassifyDetailContentViewController (Request)
 
-- (void)loadClassifyDetailFilter:(BOOL)refresh pulling:(BOOL)pulling {
+- (void)loadData:(BOOL)refresh pulling:(BOOL)pulling {
+    if (self.type == WGClassifyDetailTypeNormal) {
+        [self loadClassifyDetailNormal:refresh pulling:pulling];
+    }
+    else if (self.type == WGClassifyDetailTypeBenefit) {
+        [self loadClassifyDetailBenefit:refresh pulling:pulling];
+    }
+    else if (self.type == WGClassifyDetailTypeCountry) {
+        [self loadClassifyDetailCountry:refresh pulling:pulling];
+    }
+}
+
+- (void)loadClassifyDetailNormal:(BOOL)refresh pulling:(BOOL)pulling {
     WGClassifyDetailRequest *request = [[WGClassifyDetailRequest alloc] init];
     request.classifyId = self.classifyId;
     request.order = _sortType;
@@ -64,6 +76,14 @@
     else {
         [self showWarningMessage:response.message];
     }
+}
+
+- (void)loadClassifyDetailBenefit:(BOOL)refresh pulling:(BOOL)pulling {
+
+}
+
+- (void)loadClassifyDetailCountry:(BOOL)refresh pulling:(BOOL)pulling {
+    
 }
 
 @end

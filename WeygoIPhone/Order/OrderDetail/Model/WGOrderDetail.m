@@ -15,6 +15,9 @@
     if ([@"goods" isEqualToString:propertyName]) {
         return [WGOrderGoodItem class];
     }
+    else if ([@"pay" isEqualToString:propertyName]) {
+        return [NSString class];
+    }
     return [super classForArray:propertyName];
 }
 
@@ -27,6 +30,10 @@
         return [WGOrderStatusItem class];
     }
     return [super classForArray:propertyName];
+}
+
++ (NSDictionary *)convertKeyMapper {
+    return @{@"statusArray" : @"status"};
 }
 
 @end

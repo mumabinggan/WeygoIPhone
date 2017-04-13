@@ -44,8 +44,6 @@
 #define kWGOswaldRegularFont(fsize)    kFont(fsize, @"Oswald-Regular")
 #define kWGOswaldRegularAdaptFont(fsize)    kWGOswaldRegularFont(fsize * kDeviceWidthScaleTo47Inch)
 
-//Notification
-static NSString *kNotificationReLoginRequired = @"kNotificationReLoginRequired";
 static NSString *kNotificationTabChanged = @"kNotificationTabChanged";
 
 //Local Setting

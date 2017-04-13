@@ -17,6 +17,8 @@
 #import "WGClassifyDetailFilterViewController.h"
 #import "WGHomeCarouselFiguresCell.h"
 #import "WGClassifyDetailContentViewController+Request.h"
+#import "WGHomeNewsCell.h"
+#import "WGGoodDetailViewController.h"
 
 //for test
 #import "WGCarouselFigureItem.h"
@@ -121,7 +123,7 @@
     JHView *contentView = [[JHView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:contentView];
     
-    _tableView = [[TWRefreshTableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped refreshType:TWRefreshTypeBottom];
+    _tableView = [[TWRefreshTableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped refreshType:TWRefreshTypeBottom | TWRefreshTypeTop];
     _tableView.dataSource = self;
     _tableView.delegate = self;
     _tableView.refreshDelegate = self;
@@ -129,36 +131,9 @@
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [contentView addSubview:_tableView];
     //_tableView.layer.opacity = 0.0f;
-    
-//    //request return rent it
-//    if (_type == WGClassifyDetailTypeNormal) {
-//        [self createHeaderView];
-//    }
-}
-
-- (void)createHeaderView {
-    if (!_tableView.tableHeaderView) {
-        JHView *headerView = [[JHView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kAppAdaptHeight(176 + 44))];
-        WGScrollImageView *scrollImageView = [[WGScrollImageView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kAppAdaptHeight(176)) imageArray:@[_data.carouselFigureItem.pictureURL]];
-        __weak id weakSelf = self;
-        scrollImageView.onClick = ^(NSInteger index) {
-            [weakSelf handleClick:index];
-        };
-        [headerView addSubview:scrollImageView];
-        
-        _sortView = [[WGClassifySortView alloc] initWithFrame:CGRectMake(0, scrollImageView.maxY, kDeviceWidth, kAppAdaptHeight(44))];
-        _sortView.backgroundColor = kWhiteColor;
-        _sortView.onApply = ^(NSInteger index) {
-            [weakSelf handleSortApply:index];
-        };
-        [headerView addSubview:_sortView];
-        
-        _tableView.tableHeaderView = headerView;
-    }
 }
 
 - (void)refreshUI {
-    [self createHeaderView];
     [UIView animateWithDuration:0.25 animations:^() {
         _tableView.layer.opacity = 1.0f;
     }];
@@ -258,6 +233,12 @@
     //[self ]
 }
 
+- (void)openGoodDetailViewController:(long long)goodId {
+    WGGoodDetailViewController *vc = [[WGGoodDetailViewController alloc] init];
+    vc.goodId = goodId;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -267,57 +248,172 @@
 
 @implementation WGClassifyDetailContentViewController (TableViewDelegate)
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 2;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return (_data && _data.goodArray) ? ((_isGrid) ? (_data.goodArray.count + 1) / 2 : _data.goodArray.count) : 0;
+    if (section == 0) {
+        return 2 + ((_data && _data.recommendedArray) ? _data.recommendedArray.count : 0);   //轮播+消息+推荐
+    }
+    else {
+        return (_data && _data.goodArray) ? ((_isGrid) ? (_data.goodArray.count + 1) / 2 : _data.goodArray.count) : 0;
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    if (section == 1) {
+        return kAppAdaptHeight(44);
+    }
+    return 0.1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return 1;
+    return 0.1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return _isGrid ? kAppAdaptHeight(320) : kAppAdaptHeight(124);
+    if (indexPath.section == 0) {
+        NSInteger row = indexPath.row;
+        if (row == 0) {
+            return _data.hasCarousel ? kAppAdaptHeight(176) : 0;
+        }
+        else if (row == 1) {
+            return _data.hasNews ? kAppAdaptHeight(44) : 0;
+        }
+        else {
+            return [WGHomeFloorGoodListItemCell heightWithData:nil];
+        }
+    }
+    else {
+        return _isGrid ? [WGHomeFloorGoodGridItemCell heightWithData:nil] : [WGHomeFloorGoodListItemCell heightWithData:nil];
+    }
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    if (section == 1) {
+        WeakSelf;
+        if (!_sortView) {
+            _sortView = [[WGClassifySortView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kAppAdaptHeight(44))];
+            _sortView.backgroundColor = kWhiteColor;
+            _sortView.onApply = ^(NSInteger index) {
+                [weakSelf handleSortApply:index];
+            };
+            JHView *line = [[JHView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kAppSepratorLineHeight)];
+            line.backgroundColor = WGAppSeparateLineColor;
+            [_sortView addSubview:line];
+        }
+        return _sortView;
+    }
+    return nil;
+}
+
+- (NSString *)identifier:(NSIndexPath *)indexPath {
+    NSString *identifier = @"";
+    if (indexPath.section == 0) {
+        identifier = [NSString stringWithFormat:@"cellId_%ld_%ld", indexPath.section, ((indexPath.row > 1) ? 2 : indexPath.row)];
+    }
+    else {
+        identifier = [NSString stringWithFormat:@"cellId_%ld_%d", indexPath.section, _isGrid];
+    }
+    return identifier;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellId = nil;
-    cellId = [NSString stringWithFormat:@"cellId_%d", _isGrid];
+    cellId = [self identifier:indexPath];
     JHTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    NSInteger row = indexPath.row;
+    NSInteger section = indexPath.section;
     if (!cell) {
-        if (_isGrid) {
-            cell = [[WGHomeFloorGoodGridItemCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+        if (section == 0) {
+            if (row == 0) {
+                cell = [[WGHomeCarouselFiguresCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+            }
+            else if (row == 1) {
+                cell = [[WGHomeNewsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+            }
+            else {
+                cell = [[WGHomeFloorGoodListItemCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+                JHView *line = [[JHView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kAppSepratorLineHeight)];
+                line.backgroundColor = WGAppSeparateLineColor;
+                [cell.contentView addSubview:line];
+            }
         }
         else {
-            cell = [[WGHomeFloorGoodListItemCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
-            JHView *line = [[JHView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kAppSepratorLineHeight)];
-            line.backgroundColor = WGAppSeparateLineColor;
-            [cell.contentView addSubview:line];
+            if (_isGrid) {
+                WeakSelf;
+                WGHomeFloorGoodGridItemCell *gridCell = [[WGHomeFloorGoodGridItemCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+                gridCell.onApply = ^(WGHomeFloorContentItem *item) {
+                    [weakSelf openGoodDetailViewController:item.id];
+                };
+                cell = gridCell;
+            }
+            else {
+                cell = [[WGHomeFloorGoodListItemCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+                JHView *line = [[JHView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kAppSepratorLineHeight)];
+                line.backgroundColor = WGAppSeparateLineColor;
+                [cell.contentView addSubview:line];
+            }
         }
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
-    if (_isGrid) {
-        NSInteger index = indexPath.row * 2;
-        NSMutableArray *array = [NSMutableArray arrayWithObjects:_data.goodArray[index], nil];
-        if (index + 1 < _data.goodArray.count) {
-            [array addObject:_data.goodArray[index + 1]];
+    if (section == 0) {
+        if (row == 0) {
+            if (_data.hasCarousel) {
+                [cell showWithArray:@[_data.carouselFigureItem.pictureURL]];
+            }
         }
-        [cell showWithArray:array];
+        else if (row == 1) {
+            if (_data.hasNews) {
+                [cell showWithData:_data.news];
+            }
+        }
+        else {
+            WGHomeFloorContentGoodItem *item = _data.recommendedArray[row - 2];
+            [cell showWithData:item];
+        }
     }
     else {
-        WGHomeFloorContentGoodItem *item = _data.goodArray[indexPath.row];
-        [cell showWithData:item];
+        if (_isGrid) {
+            NSInteger index = indexPath.row * 2;
+            NSMutableArray *array = [NSMutableArray arrayWithObjects:_data.goodArray[index], nil];
+            if (index + 1 < _data.goodArray.count) {
+                [array addObject:_data.goodArray[index + 1]];
+            }
+            [cell showWithArray:array];
+        }
+        else {
+            WGHomeFloorContentGoodItem *item = _data.goodArray[indexPath.row];
+            [cell showWithData:item];
+        }
     }
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (!_isGrid) {
-        //打开详情
+    if (indexPath.section == 0) {
+        NSInteger row = indexPath.row;
+        if (row >= 2) {
+            WGHomeFloorContentGoodItem *item = _data.recommendedArray[row - 2];
+            [self openGoodDetailViewController:item.id];
+        }
+    }
+    else {
+        if (!_isGrid) {
+            //打开详情
+            WGHomeFloorContentGoodItem *item = _data.goodArray[indexPath.row];
+            [self openGoodDetailViewController:item.id];
+        }
     }
 }
 
+- (void)beginRefreshHeader:(TWRefreshTableView *)tableView {
+    [self loadData:YES pulling:NO];
+}
+
 - (void)beginRefreshFooter:(TWRefreshTableView *)tableView {
-    
+    [self loadData:NO pulling:YES];
 }
 
 @end

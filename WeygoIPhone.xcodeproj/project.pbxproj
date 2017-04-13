@@ -313,6 +313,8 @@
 		BEB8D1501E48CC4700BB9BA3 /* WGRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB8D14F1E48CC4700BB9BA3 /* WGRegisterViewController.m */; };
 		BEB8D1531E48CD0400BB9BA3 /* WGRegisterViewController+Request.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB8D1521E48CD0400BB9BA3 /* WGRegisterViewController+Request.m */; };
 		BEB8D1581E49A12800BB9BA3 /* WGForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB8D1571E49A12800BB9BA3 /* WGForgetPasswordViewController.m */; };
+		BEB9A6021E9FCC8A0089B1BE /* WGRebuyOrderRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB9A6011E9FCC8A0089B1BE /* WGRebuyOrderRequest.m */; };
+		BEB9A6061E9FCCC20089B1BE /* WGRebuyOrderResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB9A6051E9FCCC20089B1BE /* WGRebuyOrderResponse.m */; };
 		BEC772051E83AD1C00678D0B /* WGSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC772041E83AD1B00678D0B /* WGSearchViewController.m */; };
 		BEC772081E83AD3400678D0B /* WGSearchViewController+Request.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC772071E83AD3400678D0B /* WGSearchViewController+Request.m */; };
 		BECBE2F31E87B60100ADAD6C /* WGTabBenefitViewController+NavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BECBE2F21E87B60100ADAD6C /* WGTabBenefitViewController+NavigationBar.m */; };
@@ -1033,6 +1035,10 @@
 		BEB8D1521E48CD0400BB9BA3 /* WGRegisterViewController+Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGRegisterViewController+Request.m"; sourceTree = "<group>"; };
 		BEB8D1561E49A12800BB9BA3 /* WGForgetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGForgetPasswordViewController.h; sourceTree = "<group>"; };
 		BEB8D1571E49A12800BB9BA3 /* WGForgetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGForgetPasswordViewController.m; sourceTree = "<group>"; };
+		BEB9A6001E9FCC8A0089B1BE /* WGRebuyOrderRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGRebuyOrderRequest.h; sourceTree = "<group>"; };
+		BEB9A6011E9FCC8A0089B1BE /* WGRebuyOrderRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGRebuyOrderRequest.m; sourceTree = "<group>"; };
+		BEB9A6041E9FCCC20089B1BE /* WGRebuyOrderResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGRebuyOrderResponse.h; sourceTree = "<group>"; };
+		BEB9A6051E9FCCC20089B1BE /* WGRebuyOrderResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGRebuyOrderResponse.m; sourceTree = "<group>"; };
 		BEC772031E83AD1B00678D0B /* WGSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGSearchViewController.h; sourceTree = "<group>"; };
 		BEC772041E83AD1B00678D0B /* WGSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGSearchViewController.m; sourceTree = "<group>"; };
 		BEC772061E83AD3400678D0B /* WGSearchViewController+Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGSearchViewController+Request.h"; sourceTree = "<group>"; };
@@ -2290,6 +2296,8 @@
 			children = (
 				BE63A6C31E7BBC0B00F77282 /* WGOrderDetailRequest.h */,
 				BE63A6C41E7BBC0B00F77282 /* WGOrderDetailRequest.m */,
+				BEB9A6001E9FCC8A0089B1BE /* WGRebuyOrderRequest.h */,
+				BEB9A6011E9FCC8A0089B1BE /* WGRebuyOrderRequest.m */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -2299,6 +2307,8 @@
 			children = (
 				BE63A6C61E7BBC0B00F77282 /* WGOrderDetailResponse.h */,
 				BE63A6C71E7BBC0B00F77282 /* WGOrderDetailResponse.m */,
+				BEB9A6041E9FCCC20089B1BE /* WGRebuyOrderResponse.h */,
+				BEB9A6051E9FCCC20089B1BE /* WGRebuyOrderResponse.m */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -3638,6 +3648,7 @@
 				BE6229F01E766074002BFEDB /* WGGoodConfigInfoCell.m in Sources */,
 				BEA375101E34FE170054B8E6 /* WGBorderButton.m in Sources */,
 				BE6BE9121E7FA83600A081BA /* WGCommitOrderRequest.m in Sources */,
+				BEB9A6061E9FCCC20089B1BE /* WGRebuyOrderResponse.m in Sources */,
 				BE6CC1B21E29406C003755FF /* WGHomeFloorClassifyGridItemCell.m in Sources */,
 				BE5F047D1E9CD22200A701CB /* WGPaySuccessViewController.m in Sources */,
 				BE6BE9061E7FA77B00A081BA /* WGCommitOrderConsumeCell.m in Sources */,
@@ -3916,6 +3927,7 @@
 				BE6229EA1E765BE6002BFEDB /* WGGoodDetailRequest.m in Sources */,
 				BEEC20F21E9A3DBE0065DE90 /* WGAddressCityListRequest.m in Sources */,
 				BE62E4631DF937F8004510A5 /* AppDelegate+UI.m in Sources */,
+				BEB9A6021E9FCC8A0089B1BE /* WGRebuyOrderRequest.m in Sources */,
 				BE6BE90F1E7FA80300A081BA /* WGCommitOrderLookMoreCell.m in Sources */,
 				BE63A6DA1E7BBC0B00F77282 /* WGOrderDetail.m in Sources */,
 				BEB2D9221DFBDFE900F2E74B /* WGTabMineViewController.m in Sources */,

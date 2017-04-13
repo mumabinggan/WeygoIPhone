@@ -23,6 +23,8 @@
 #import "WGLogoutResponse.h"
 #import "WGShopCartCountRequest.h"
 #import "WGShopCartCountResponse.h"
+#import "WGRebuyOrderRequest.h"
+#import "WGRebuyOrderResponse.h"
 
 @interface WGApplication (Request)
 
@@ -47,5 +49,7 @@
 - (void)loadLogoutOnCompletion:(void (^)(WGLogoutResponse *))completion;
 
 - (void)loadShopCartCountOnCompletion:(void (^)(WGShopCartCountResponse *))completion;
+
+- (void)loadRebuyOrder:(long long)orderId onCompletion:(void (^)(WGRebuyOrderResponse *))completion;
 
 @end

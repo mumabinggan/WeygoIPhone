@@ -191,4 +191,18 @@
     }];
 }
 
+- (void)loadRebuyOrder:(long long)orderId onCompletion:(void (^)(WGRebuyOrderResponse *))completion {
+    WGRebuyOrderRequest *request = [[WGRebuyOrderRequest alloc] init];
+    request.orderId = orderId;
+    [[JHNetworkManager sharedManager] post:request forResponseClass:[WGShopCartCountResponse class] success:^(JHResponse *response) {
+        if (completion) {
+            completion((WGRebuyOrderResponse *)response);
+        }
+    } failure:^(NSError *error) {
+        if (completion) {
+            completion(nil);
+        }
+    }];
+}
+
 @end

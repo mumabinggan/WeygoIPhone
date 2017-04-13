@@ -39,6 +39,7 @@
 #import "WGUseIntegrationViewController.h"
 #import "WGIntegrationViewController.h"
 #import "WGPaySuccessViewController.h"
+#import "WGOrderDetailViewController.h"
 
 @interface WGHomeSliderViewController ()
 {
@@ -118,7 +119,7 @@
 //    WGIntegrationViewController *vcc = [[WGIntegrationViewController alloc] init];
     //WGPaySuccessViewController *vcc = [[WGPaySuccessViewController alloc] init];
     //vcc.orderId = 34433443;
-    WGCommitOrderViewController *vcc = [[WGCommitOrderViewController alloc] init];
+    WGOrderDetailViewController *vcc = [[WGOrderDetailViewController alloc] init];
 //    //vcc.goodId = 1591;
     UINavigationController *navc = [WGApplication sharedApplication].navigationController;
     [navc pushViewController:vcc animated:YES];

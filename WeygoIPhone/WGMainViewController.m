@@ -13,6 +13,7 @@
 #import "WGTabShopCartViewController.h"
 #import "WGTabMineViewController.h"
 #import "WGHomeSliderViewController.h"
+#import "WGLoginViewController.h"
 
 static const float kTabBarHeight = 60;
 
@@ -61,6 +62,11 @@ static const float kTabBarHeight = 60;
 }
 
 - (void)handleLoginFail:(NSNotification *)notification {
+    [[WGApplication sharedApplication] reset];
+    [[WGApplication sharedApplication] switchTab:WGTabIndexHome];
+    [WGLoginViewController pushInNavigationController:self.navigationController loginFrom:WGLoginFromDefault sucess:^(WGLoginViewController *vc) {
+        [self.navigationController popViewControllerAnimated:YES];
+    } cancel:nil];
     return;
 //    if (notification.object && [notification.object isKindOfClass:[NSDictionary class]]) {
 //        NSString *message = nil;

@@ -14,6 +14,7 @@
 
 - (void)loadOrderDetail {
     WGOrderDetailRequest *request = [[WGOrderDetailRequest alloc] init];
+    request.id = self.orderId;
     __weak typeof(self) weakSelf = self;
     [self post:request forResponseClass:[WGOrderDetailResponse class] success:^(JHResponse *response) {
         [weakSelf handleOrderDetailResponse:(WGOrderDetailResponse *)response];

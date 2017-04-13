@@ -10,4 +10,8 @@
 
 @implementation WGOrderDetailRequest
 
+- (NSString *)api {
+    return @"orders/detail?";
+}
+
 @end
