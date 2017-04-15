@@ -28,14 +28,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self loadInvitationDescription];
 }
 
-- (void)initData {
-    _data = [[WGInvitationDescription alloc] init];
-    _data.imageText = @"asdfasdfasdfasd";
-    _data.detailText = @"https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=0&rsv_idx=1&tn=baidu&wd=dadfasd&rsv_pq=9581a13e0001efcb&rsv_t=1586Hg95MwdLFxpRVv9aKhQz38mdAAghuVvm0EhUCHA7dejZcknovBxfik8&rqlang=cn&rsv_enter=1&rsv_sug3=7&rsv_sug2=0&inputT=804&rsv_sug4=805";
-    _data.imageURL = @"https://imgwater-test.oss.aliyuncs.com/b9831974f70a4108b2bdfcde5c241a22";
-}
+//- (void)initData {
+//    _data = [[WGInvitationDescription alloc] init];
+//    _data.imageText = @"asdfasdfasdfasd";
+//    _data.detailText = @"https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=0&rsv_idx=1&tn=baidu&wd=dadfasd&rsv_pq=9581a13e0001efcb&rsv_t=1586Hg95MwdLFxpRVv9aKhQz38mdAAghuVvm0EhUCHA7dejZcknovBxfik8&rqlang=cn&rsv_enter=1&rsv_sug3=7&rsv_sug2=0&inputT=804&rsv_sug4=805";
+//    _data.imageURL = @"https://imgwater-test.oss.aliyuncs.com/b9831974f70a4108b2bdfcde5c241a22";
+//}
 
 - (void)initSubView {
     [super initSubView];
@@ -46,7 +47,7 @@
     _tableView = [[JHTableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
     _tableView.delegate = self;
     [contentView addSubview:_tableView];
-    
+    _tableView.layer.opacity= 0.0f;
 //    _tableView.tableHeaderView = [self createHeaderView];
 //    _tableView.tableFooterView = [self createFooterView];
 }
@@ -112,6 +113,9 @@
 - (void)refreshUI {
     _tableView.tableHeaderView = [self createHeaderView];
     _tableView.tableFooterView = [self createFooterView];
+    [UIView animateWithDuration:0.25 animations:^() {
+        _tableView.layer.opacity = 1.0f;
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

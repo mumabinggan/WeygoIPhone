@@ -25,7 +25,7 @@ typedef NS_ENUM(NSInteger, WGHomeFloorItemType) {
 
 @interface WGHomeFloorContentItem : WGObject
 
-@property (nonatomic, assign) WGHomeFloorItemType type;
+//@property (nonatomic, assign) WGHomeFloorItemType type;
 
 @property (nonatomic, assign) long long id;
 
@@ -51,6 +51,8 @@ typedef NS_ENUM(NSInteger, WGHomeFloorItemType) {
 @property (nonatomic, assign) int requestParameter;
 
 //for self use
-@property (nonatomic, strong) WGHomeFloorBaseContentItem *contentItem;
+- (WGHomeFloorBaseContentItem *)contentItemWithType:(WGHomeFloorItemType)type;
+
+- (CGFloat)heightWithType:(WGHomeFloorItemType)type;
 
 @end

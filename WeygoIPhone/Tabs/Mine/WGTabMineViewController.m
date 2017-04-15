@@ -16,6 +16,7 @@
 #import "WGPersonInfoViewController.h"
 #import "WGSettingViewController.h"
 #import "WGIntegrationViewController.h"
+#import "WGClientServiceCenterViewController.h"
 
 @interface WGTabMineViewController ()
 {
@@ -219,7 +220,8 @@
     }
     else if (sender.tag == 5) {
         //客服页面
-        
+        WGClientServiceCenterViewController *vc = [[WGClientServiceCenterViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
     }
     else if (sender.tag == 6) {
         //信息页面

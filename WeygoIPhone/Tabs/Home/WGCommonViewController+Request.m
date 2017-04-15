@@ -118,7 +118,7 @@
         WGHomeTabContentRequest *request = [[WGHomeTabContentRequest alloc] init];
         request.menuId = item.id;
         __weak typeof(self) weakSelf = self;
-        [self get:request forResponseClass:[WGHomeTabContentResponse class] success:^(JHResponse *response) {
+        [self post:request forResponseClass:[WGHomeTabContentResponse class] success:^(JHResponse *response) {
             [weakSelf handleHomeContent:(WGHomeTabContentResponse *)response index:index isFirst:isFirst];
         } failure:^(NSError *error) {
             [weakSelf showWarningMessage:kStr(@"Request Failed")];
@@ -209,7 +209,6 @@
     floor.pictureURL = @"http://www.pp3.cn/uploads/201609/2016091606.jpg";
     
     WGHomeFloorContentItem *floorItem = [[WGHomeFloorContentItem alloc] init];
-    floorItem.type = WGHomeFloorItemTypeGoodList;
     floorItem.name = @"zhengyuanqian";
     floorItem.chineseName = @"郑渊谦";
     floorItem.briefDescription = @"fdfasdfasdfasdf asfdaad";
@@ -220,7 +219,6 @@
     floorItem.currentPrice = @"10.1";
     
     WGHomeFloorContentItem *floorItem1 = [[WGHomeFloorContentItem alloc] init];
-    floorItem1.type = WGHomeFloorItemTypeGoodList;
     floorItem1.name = @"zhengyuanqian";
     floorItem1.chineseName = @"渊谦";
     floorItem1.briefDescription = @"fdfasdfasdfasdf";
@@ -231,7 +229,6 @@
     floorItem1.currentPrice = @"10.1";
     
     WGHomeFloorContentItem *floorItem2 = [[WGHomeFloorContentItem alloc] init];
-    floorItem2.type = WGHomeFloorItemTypeGoodList;
     floorItem2.name = @"zhengyuanqian";
     floorItem2.chineseName = @"郑谦";
     floorItem2.briefDescription = @"天生性情温驯，毛色有纯色、";
@@ -249,7 +246,6 @@
     floor1.pictureURL = @"http://www.pp3.cn/uploads/201609/2016091606.jpg";
     
     WGHomeFloorContentItem *floorItem3 = [[WGHomeFloorContentItem alloc] init];
-    floorItem3.type = WGHomeFloorItemTypeGoodColumn;
     floorItem3.name = @"zhengyuanqian";
     floorItem3.chineseName = @"郑渊谦";
     floorItem3.briefDescription = @"天生性情温驯，毛色有纯色、";
@@ -260,7 +256,6 @@
     floorItem3.currentPrice = @"10.1";
     
     WGHomeFloorContentItem *floorItem4 = [[WGHomeFloorContentItem alloc] init];
-    floorItem4.type = WGHomeFloorItemTypeGoodColumn;
     floorItem4.name = @"zhengyuanqian";
     floorItem4.chineseName = @"渊谦";
     floorItem4.briefDescription = @"天生性情温驯，毛色有纯色、";
@@ -271,7 +266,6 @@
     floorItem4.currentPrice = @"10.1";
     
     WGHomeFloorContentItem *floorItem5 = [[WGHomeFloorContentItem alloc] init];
-    floorItem5.type = WGHomeFloorItemTypeGoodColumn;
     floorItem5.name = @"zhengyuanqian";
     floorItem5.chineseName = @"郑谦";
     floorItem5.briefDescription = @"天生性情温驯，毛色有纯色、";
@@ -289,7 +283,6 @@
     floor2.pictureURL = @"http://www.pp3.cn/uploads/201609/2016091606.jpg";
     
     WGHomeFloorContentItem *floorItem6 = [[WGHomeFloorContentItem alloc] init];
-    floorItem6.type = WGHomeFloorItemTypeGoodGrid;
     floorItem6.name = @"zhengyuanqian";
     floorItem6.chineseName = @"郑渊谦";
     floorItem6.briefDescription = @"天生性情温驯，毛色有纯色、";
@@ -300,7 +293,6 @@
     floorItem6.currentPrice = @"10.1";
     
     WGHomeFloorContentItem *floorItem7 = [[WGHomeFloorContentItem alloc] init];
-    floorItem7.type = WGHomeFloorItemTypeGoodGrid;
     floorItem7.name = @"zhengyuanqian";
     floorItem7.chineseName = @"渊谦";
     floorItem7.briefDescription = @"天生性情温驯，毛色有纯色、";
@@ -311,7 +303,6 @@
     floorItem7.currentPrice = @"10.1";
     
     WGHomeFloorContentItem *floorItem8 = [[WGHomeFloorContentItem alloc] init];
-    floorItem8.type = WGHomeFloorItemTypeGoodGrid;
     floorItem8.name = @"zhengyuanqian";
     floorItem8.chineseName = @"郑谦";
     floorItem8.briefDescription = @"天生性情温驯，毛色有纯色、";
@@ -328,7 +319,6 @@
     floor3.breifDescription = @"IOS 开发工程师";
     floor3.pictureURL = @"http://www.pp3.cn/uploads/201609/2016091606.jpg";
     WGHomeFloorContentItem *floorItem9 = [[WGHomeFloorContentItem alloc] init];
-    floorItem9.type = WGHomeFloorItemTypeCountry;
     floorItem9.name = @"zhengyuanqian";
     floorItem9.chineseName = @"郑谦";
     floorItem9.briefDescription = @"天生性情温驯，毛色有纯色、";
@@ -341,7 +331,6 @@
     floor4.breifDescription = @"IOS 开发工程师";
     floor4.pictureURL = @"http://www.pp3.cn/uploads/201609/2016091606.jpg";
     WGHomeFloorContentItem *floorItem10 = [[WGHomeFloorContentItem alloc] init];
-    floorItem10.type = WGHomeFloorItemTypeClassifyList;
     floorItem10.name = @"zhengyuanqian";
     floorItem10.chineseName = @"郑谦";
     floorItem10.briefDescription = @"天生性情温驯，毛色有纯色、";
@@ -354,7 +343,6 @@
     floor5.breifDescription = @"IOS 开发工程师";
     floor5.pictureURL = @"http://www.pp3.cn/uploads/201609/2016091606.jpg";
     WGHomeFloorContentItem *floorItem11 = [[WGHomeFloorContentItem alloc] init];
-    floorItem11.type = WGHomeFloorItemTypeClassifyColumn;
     floorItem11.name = @"zhengyuanqian";
     floorItem11.chineseName = @"郑谦";
     floorItem11.briefDescription = @"天生性情温驯，毛色有纯色、";
@@ -367,7 +355,6 @@
     floor6.breifDescription = @"IOS 开发工程师";
     floor6.pictureURL = @"http://www.pp3.cn/uploads/201609/2016091606.jpg";
     WGHomeFloorContentItem *floorItem12 = [[WGHomeFloorContentItem alloc] init];
-    floorItem12.type = WGHomeFloorItemTypeClassifyGrid;
     floorItem12.name = @"zhengyuanqian";
     floorItem12.chineseName = @"郑谦";
     floorItem12.briefDescription = @"天生性情温驯，毛色有纯色、";

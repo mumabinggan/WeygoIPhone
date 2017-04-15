@@ -12,17 +12,24 @@
 #import "WGHomeFloorContentClassifyItem.h"
 #import "WGHomeFloorContentItem.h"
 
+@interface WGHomeFloorContentItem ()
+{
+    WGHomeFloorBaseContentItem *_contentItem;
+}
+
+@end
+
 @implementation WGHomeFloorContentItem
 
-- (WGHomeFloorBaseContentItem *)contentItem {
+- (WGHomeFloorBaseContentItem *)contentItemWithType:(WGHomeFloorItemType)type {
     if (!_contentItem) {
-        if (_type == WGHomeFloorItemTypeCountry) {
+        if (type == WGHomeFloorItemTypeCountry) {
             WGHomeFloorContentCountryItem *countryItem = [[WGHomeFloorContentCountryItem alloc] init];
             _contentItem = countryItem;
         }
-        else if (_type == WGHomeFloorItemTypeGoodList ||
-                 _type == WGHomeFloorItemTypeGoodColumn ||
-                 _type == WGHomeFloorItemTypeGoodGrid) {
+        else if (type == WGHomeFloorItemTypeGoodList ||
+                 type == WGHomeFloorItemTypeGoodColumn ||
+                 type == WGHomeFloorItemTypeGoodGrid) {
             WGHomeFloorContentGoodItem *goodItem = [[WGHomeFloorContentGoodItem alloc] init];
             goodItem.chineseName = _chineseName;
             goodItem.briefDescription = _briefDescription;
@@ -33,9 +40,9 @@
             goodItem.discount = _discount;
             _contentItem = goodItem;
         }
-        else if (_type == WGHomeFloorItemTypeClassifyList ||
-                 _type == WGHomeFloorItemTypeClassifyColumn ||
-                 _type == WGHomeFloorItemTypeClassifyGrid) {
+        else if (type == WGHomeFloorItemTypeClassifyList ||
+                 type == WGHomeFloorItemTypeClassifyColumn ||
+                 type == WGHomeFloorItemTypeClassifyGrid) {
             WGHomeFloorContentClassifyItem *classifyItem = [[WGHomeFloorContentClassifyItem alloc] init];
             _contentItem = classifyItem;
         }
@@ -47,30 +54,30 @@
     return _contentItem;
 }
 
-- (void)calculateContentHeight {
+- (CGFloat)heightWithType:(WGHomeFloorItemType)type {
     float height = 0.0f;
-    if (_type == WGHomeFloorItemTypeCountry) {
+    if (type == WGHomeFloorItemTypeCountry) {
         height = kAppAdaptHeight(120);
     }
-    else if (_type == WGHomeFloorItemTypeGoodList) {
+    else if (type == WGHomeFloorItemTypeGoodList) {
         height = kAppAdaptHeight(124);
     }
-    else if (_type == WGHomeFloorItemTypeGoodColumn) {
+    else if (type == WGHomeFloorItemTypeGoodColumn) {
         height = kAppAdaptHeight(232);
     }
-    else if (_type == WGHomeFloorItemTypeGoodGrid) {
+    else if (type == WGHomeFloorItemTypeGoodGrid) {
         height = kAppAdaptHeight(320);
     }
-    else if (_type == WGHomeFloorItemTypeClassifyList) {
+    else if (type == WGHomeFloorItemTypeClassifyList) {
         height = kAppAdaptHeight(184);
     }
-    else if (_type == WGHomeFloorItemTypeClassifyColumn) {
+    else if (type == WGHomeFloorItemTypeClassifyColumn) {
         height = kAppAdaptHeight(130);
     }
-    else if (_type == WGHomeFloorItemTypeClassifyGrid) {
+    else if (type == WGHomeFloorItemTypeClassifyGrid) {
         height = kAppAdaptHeight(136);;
     }
-    _contentHeight = height;
+    return height;
 }
 
 @end

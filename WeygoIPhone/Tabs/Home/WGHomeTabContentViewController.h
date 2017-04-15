@@ -17,14 +17,11 @@ typedef NS_ENUM(NSInteger, WGConfigContentType) {
 };
 
 @interface WGHomeTabContentViewController : WGHomeTabBaseContentViewController
-{
-    //WGHome *_homeData;
-}
 
 @property (nonatomic, copy) void (^onTopRefresh)();
 
-@property (nonatomic, assign) WGConfigContentType type;
-
 @property (nonatomic, strong) WGHome *homeData;
+
+@property (nonatomic, assign) TWRefreshType refreshType;
 
 @end

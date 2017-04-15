@@ -123,6 +123,15 @@
 		BE622A0C1E77C613002BFEDB /* WGAddGoodToCartRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE622A0B1E77C613002BFEDB /* WGAddGoodToCartRequest.m */; };
 		BE622A0F1E77C627002BFEDB /* WGAddGoodToCartResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BE622A0E1E77C627002BFEDB /* WGAddGoodToCartResponse.m */; };
 		BE622A121E77CEDC002BFEDB /* WGGoodInLocalCart.m in Sources */ = {isa = PBXBuildFile; fileRef = BE622A111E77CEDC002BFEDB /* WGGoodInLocalCart.m */; };
+		BE62CD6F1EA0BD310076BD69 /* WGScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62CD6E1EA0BD310076BD69 /* WGScanViewController.m */; };
+		BE62CD731EA0BDE80076BD69 /* WGScanCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62CD721EA0BDE80076BD69 /* WGScanCodeView.m */; };
+		BE62CD771EA0BEB10076BD69 /* WGScanJump.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62CD761EA0BEB10076BD69 /* WGScanJump.m */; };
+		BE62CD7A1EA0BF890076BD69 /* WGScanJumpBody.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62CD791EA0BF890076BD69 /* WGScanJumpBody.m */; };
+		BE62CD7D1EA0BFF30076BD69 /* WGScanJumpGood.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62CD7C1EA0BFF30076BD69 /* WGScanJumpGood.m */; };
+		BE62CD801EA0C0080076BD69 /* WGScanJumpClassify.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62CD7F1EA0C0080076BD69 /* WGScanJumpClassify.m */; };
+		BE62CD831EA0C0480076BD69 /* WGScanJumpBussinessContent.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62CD821EA0C0480076BD69 /* WGScanJumpBussinessContent.m */; };
+		BE62CD861EA0C7B60076BD69 /* WGSpecialClassifyGoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62CD851EA0C7B60076BD69 /* WGSpecialClassifyGoodViewController.m */; };
+		BE62CD891EA0DDB70076BD69 /* WGSpecialClassifyViewController+Request.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62CD881EA0DDB70076BD69 /* WGSpecialClassifyViewController+Request.m */; };
 		BE62E22E1DF92176004510A5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62E22D1DF92176004510A5 /* main.m */; };
 		BE62E2311DF92176004510A5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62E2301DF92176004510A5 /* AppDelegate.m */; };
 		BE62E2371DF92176004510A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE62E2351DF92176004510A5 /* Main.storyboard */; };
@@ -322,7 +331,7 @@
 		BECBE3061E87BB9300ADAD6C /* WGCommonViewController+Segment.m in Sources */ = {isa = PBXBuildFile; fileRef = BECBE3051E87BB9300ADAD6C /* WGCommonViewController+Segment.m */; };
 		BECBE3091E87BB9D00ADAD6C /* WGCommonViewController+Scroll.m in Sources */ = {isa = PBXBuildFile; fileRef = BECBE3081E87BB9D00ADAD6C /* WGCommonViewController+Scroll.m */; };
 		BECBE30C1E87BBA800ADAD6C /* WGCommonViewController+Contents.m in Sources */ = {isa = PBXBuildFile; fileRef = BECBE30B1E87BBA800ADAD6C /* WGCommonViewController+Contents.m */; };
-		BECBE3101E87C43800ADAD6C /* WGAsiaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BECBE30F1E87C43800ADAD6C /* WGAsiaViewController.m */; };
+		BECBE3101E87C43800ADAD6C /* WGSpecialClassifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BECBE30F1E87C43800ADAD6C /* WGSpecialClassifyViewController.m */; };
 		BECBE3131E87C54400ADAD6C /* WGCommonViewController+Request.m in Sources */ = {isa = PBXBuildFile; fileRef = BECBE3121E87C54400ADAD6C /* WGCommonViewController+Request.m */; };
 		BECBE3161E87C68E00ADAD6C /* WGTitleItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BECBE3151E87C68E00ADAD6C /* WGTitleItem.m */; };
 		BECBE3191E87D13100ADAD6C /* WGCommonViewController+Data.m in Sources */ = {isa = PBXBuildFile; fileRef = BECBE3181E87D13100ADAD6C /* WGCommonViewController+Data.m */; };
@@ -673,6 +682,24 @@
 		BE622A0E1E77C627002BFEDB /* WGAddGoodToCartResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGAddGoodToCartResponse.m; sourceTree = "<group>"; };
 		BE622A101E77CEDC002BFEDB /* WGGoodInLocalCart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGGoodInLocalCart.h; sourceTree = "<group>"; };
 		BE622A111E77CEDC002BFEDB /* WGGoodInLocalCart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGGoodInLocalCart.m; sourceTree = "<group>"; };
+		BE62CD6D1EA0BD310076BD69 /* WGScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGScanViewController.h; sourceTree = "<group>"; };
+		BE62CD6E1EA0BD310076BD69 /* WGScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGScanViewController.m; sourceTree = "<group>"; };
+		BE62CD711EA0BDE80076BD69 /* WGScanCodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGScanCodeView.h; sourceTree = "<group>"; };
+		BE62CD721EA0BDE80076BD69 /* WGScanCodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGScanCodeView.m; sourceTree = "<group>"; };
+		BE62CD751EA0BEB10076BD69 /* WGScanJump.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGScanJump.h; sourceTree = "<group>"; };
+		BE62CD761EA0BEB10076BD69 /* WGScanJump.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGScanJump.m; sourceTree = "<group>"; };
+		BE62CD781EA0BF890076BD69 /* WGScanJumpBody.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGScanJumpBody.h; sourceTree = "<group>"; };
+		BE62CD791EA0BF890076BD69 /* WGScanJumpBody.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGScanJumpBody.m; sourceTree = "<group>"; };
+		BE62CD7B1EA0BFF30076BD69 /* WGScanJumpGood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGScanJumpGood.h; sourceTree = "<group>"; };
+		BE62CD7C1EA0BFF30076BD69 /* WGScanJumpGood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGScanJumpGood.m; sourceTree = "<group>"; };
+		BE62CD7E1EA0C0080076BD69 /* WGScanJumpClassify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGScanJumpClassify.h; sourceTree = "<group>"; };
+		BE62CD7F1EA0C0080076BD69 /* WGScanJumpClassify.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGScanJumpClassify.m; sourceTree = "<group>"; };
+		BE62CD811EA0C0480076BD69 /* WGScanJumpBussinessContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGScanJumpBussinessContent.h; sourceTree = "<group>"; };
+		BE62CD821EA0C0480076BD69 /* WGScanJumpBussinessContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGScanJumpBussinessContent.m; sourceTree = "<group>"; };
+		BE62CD841EA0C7B60076BD69 /* WGSpecialClassifyGoodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGSpecialClassifyGoodViewController.h; sourceTree = "<group>"; };
+		BE62CD851EA0C7B60076BD69 /* WGSpecialClassifyGoodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGSpecialClassifyGoodViewController.m; sourceTree = "<group>"; };
+		BE62CD871EA0DDB70076BD69 /* WGSpecialClassifyViewController+Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGSpecialClassifyViewController+Request.h"; sourceTree = "<group>"; };
+		BE62CD881EA0DDB70076BD69 /* WGSpecialClassifyViewController+Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGSpecialClassifyViewController+Request.m"; sourceTree = "<group>"; };
 		BE62E2291DF92176004510A5 /* WeygoIPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeygoIPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE62E22D1DF92176004510A5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BE62E22F1DF92176004510A5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -1053,8 +1080,8 @@
 		BECBE3081E87BB9D00ADAD6C /* WGCommonViewController+Scroll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGCommonViewController+Scroll.m"; sourceTree = "<group>"; };
 		BECBE30A1E87BBA800ADAD6C /* WGCommonViewController+Contents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGCommonViewController+Contents.h"; sourceTree = "<group>"; };
 		BECBE30B1E87BBA800ADAD6C /* WGCommonViewController+Contents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGCommonViewController+Contents.m"; sourceTree = "<group>"; };
-		BECBE30E1E87C43800ADAD6C /* WGAsiaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGAsiaViewController.h; sourceTree = "<group>"; };
-		BECBE30F1E87C43800ADAD6C /* WGAsiaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGAsiaViewController.m; sourceTree = "<group>"; };
+		BECBE30E1E87C43800ADAD6C /* WGSpecialClassifyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGSpecialClassifyViewController.h; sourceTree = "<group>"; };
+		BECBE30F1E87C43800ADAD6C /* WGSpecialClassifyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGSpecialClassifyViewController.m; sourceTree = "<group>"; };
 		BECBE3111E87C54400ADAD6C /* WGCommonViewController+Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGCommonViewController+Request.h"; sourceTree = "<group>"; };
 		BECBE3121E87C54400ADAD6C /* WGCommonViewController+Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGCommonViewController+Request.m"; sourceTree = "<group>"; };
 		BECBE3141E87C68E00ADAD6C /* WGTitleItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGTitleItem.h; sourceTree = "<group>"; };
@@ -2106,6 +2133,43 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		BE62CD6B1EA0BD220076BD69 /* Scan */ = {
+			isa = PBXGroup;
+			children = (
+				BE62CD741EA0BE700076BD69 /* Model */,
+				BE62CD701EA0BDBE0076BD69 /* View */,
+				BE62CD6D1EA0BD310076BD69 /* WGScanViewController.h */,
+				BE62CD6E1EA0BD310076BD69 /* WGScanViewController.m */,
+			);
+			path = Scan;
+			sourceTree = "<group>";
+		};
+		BE62CD701EA0BDBE0076BD69 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BE62CD711EA0BDE80076BD69 /* WGScanCodeView.h */,
+				BE62CD721EA0BDE80076BD69 /* WGScanCodeView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BE62CD741EA0BE700076BD69 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BE62CD751EA0BEB10076BD69 /* WGScanJump.h */,
+				BE62CD761EA0BEB10076BD69 /* WGScanJump.m */,
+				BE62CD781EA0BF890076BD69 /* WGScanJumpBody.h */,
+				BE62CD791EA0BF890076BD69 /* WGScanJumpBody.m */,
+				BE62CD7B1EA0BFF30076BD69 /* WGScanJumpGood.h */,
+				BE62CD7C1EA0BFF30076BD69 /* WGScanJumpGood.m */,
+				BE62CD7E1EA0C0080076BD69 /* WGScanJumpClassify.h */,
+				BE62CD7F1EA0C0080076BD69 /* WGScanJumpClassify.m */,
+				BE62CD811EA0C0480076BD69 /* WGScanJumpBussinessContent.h */,
+				BE62CD821EA0C0480076BD69 /* WGScanJumpBussinessContent.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		BE62E2201DF92176004510A5 = {
 			isa = PBXGroup;
 			children = (
@@ -2608,6 +2672,7 @@
 		BEB2D9071DFBDBFB00F2E74B /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				BE62CD6B1EA0BD220076BD69 /* Scan */,
 				BE5F047E1E9CF81600A701CB /* Logout */,
 				BEEC21141E9B5D420065DE90 /* Integration */,
 				BEE937B01E825B5300875131 /* Invite */,
@@ -3154,8 +3219,12 @@
 		BECBE30D1E87C41900ADAD6C /* Asia */ = {
 			isa = PBXGroup;
 			children = (
-				BECBE30E1E87C43800ADAD6C /* WGAsiaViewController.h */,
-				BECBE30F1E87C43800ADAD6C /* WGAsiaViewController.m */,
+				BECBE30E1E87C43800ADAD6C /* WGSpecialClassifyViewController.h */,
+				BECBE30F1E87C43800ADAD6C /* WGSpecialClassifyViewController.m */,
+				BE62CD871EA0DDB70076BD69 /* WGSpecialClassifyViewController+Request.h */,
+				BE62CD881EA0DDB70076BD69 /* WGSpecialClassifyViewController+Request.m */,
+				BE62CD841EA0C7B60076BD69 /* WGSpecialClassifyGoodViewController.h */,
+				BE62CD851EA0C7B60076BD69 /* WGSpecialClassifyGoodViewController.m */,
 			);
 			path = Asia;
 			sourceTree = "<group>";
@@ -3606,6 +3675,7 @@
 				BE520FED1E88079F004BD34E /* WGTabShopCartViewController+NavigationBar.m in Sources */,
 				BE6753BD1E93C82B00250BA8 /* WGUserInfoRequest.m in Sources */,
 				BE52EDD71E2DD61D0022EF5B /* WGShopCartGoodItem.m in Sources */,
+				BE62CD891EA0DDB70076BD69 /* WGSpecialClassifyViewController+Request.m in Sources */,
 				BE1BBA261E4AFE6F0008BD68 /* WGHomeSliderViewController.m in Sources */,
 				BEB8D0FB1E48637400BB9BA3 /* WGLoginRequest.m in Sources */,
 				BE6CC1A91E293BB9003755FF /* WGHomeFloorGoodListMoreCell.m in Sources */,
@@ -3660,6 +3730,7 @@
 				BEB2D95D1DFBED1500F2E74B /* WGResponse.m in Sources */,
 				BE6BE92A1E7FD7A600A081BA /* WGCommitOrderDeliverTipCell.m in Sources */,
 				BE9F933A1E6B24CA0051B054 /* WGCSCCommonItemResponse.m in Sources */,
+				BE62CD861EA0C7B60076BD69 /* WGSpecialClassifyGoodViewController.m in Sources */,
 				BE6CC1B51E294098003755FF /* WGHomeFloorClassifyColumnCell.m in Sources */,
 				BE5E4C471E2526D900ACA48F /* WGHomeTabViewController+Contents.m in Sources */,
 				BE52EDBA1E2DBF9D0022EF5B /* WGEditAddressViewController.m in Sources */,
@@ -3695,6 +3766,7 @@
 				BE6753A21E932FAA00250BA8 /* WGUpdateProductsResponse.m in Sources */,
 				BE6BE8F41E7F913600A081BA /* WGCommitOrderViewController+Request.m in Sources */,
 				BE52EDD11E2DCC6C0022EF5B /* WGTabShopCartViewController.m in Sources */,
+				BE62CD771EA0BEB10076BD69 /* WGScanJump.m in Sources */,
 				BEA734291E8126F400C74ED2 /* WGCouponListRequest.m in Sources */,
 				BEF8ED5E1E8A683A00E15C8F /* WGCancelCollectGoodRequest.m in Sources */,
 				BECBE2F31E87B60100ADAD6C /* WGTabBenefitViewController+NavigationBar.m in Sources */,
@@ -3718,6 +3790,7 @@
 				BE99E7CA1E1CB67600210546 /* WGRatingView.m in Sources */,
 				BEEC21351E9B7F850065DE90 /* WGIntegrationDetail.m in Sources */,
 				BE6BE91B1E7FAF1400A081BA /* WGSettlementResult.m in Sources */,
+				BE62CD6F1EA0BD310076BD69 /* WGScanViewController.m in Sources */,
 				BECBE30C1E87BBA800ADAD6C /* WGCommonViewController+Contents.m in Sources */,
 				BE67539C1E93210400250BA8 /* WGDealFailureProductsResponse.m in Sources */,
 				BE52EDD41E2DCE790022EF5B /* WGShopCartCell.m in Sources */,
@@ -3755,6 +3828,7 @@
 				BEF8ED521E8A549400E15C8F /* WGTabClassifyViewController+Request.m in Sources */,
 				BECBE3191E87D13100ADAD6C /* WGCommonViewController+Data.m in Sources */,
 				BE74CDB31E626B8E00600A28 /* WGHomeSliderResponse.m in Sources */,
+				BE62CD801EA0C0080076BD69 /* WGScanJumpClassify.m in Sources */,
 				BECBE3091E87BB9D00ADAD6C /* WGCommonViewController+Scroll.m in Sources */,
 				BEEC21071E9A83040065DE90 /* WGEditReceiptViewController+Request.m in Sources */,
 				BE6CC1CA1E2AA397003755FF /* WGHomeFloorGoodGridItemView.m in Sources */,
@@ -3763,12 +3837,14 @@
 				BE83BB2D1E23E60D002F3BCC /* WGHomeFloorItem.m in Sources */,
 				BE6753C01E93C84500250BA8 /* WGUserInfoResponse.m in Sources */,
 				BEA374AE1E3484A50054B8E6 /* WGClassifyFilter.m in Sources */,
+				BE62CD831EA0C0480076BD69 /* WGScanJumpBussinessContent.m in Sources */,
 				BE9F931D1E6AEEB40051B054 /* WGHomeTabTitleResponse.m in Sources */,
 				BEB8D0F81E48586700BB9BA3 /* WGImageVerificationCodeResponse.m in Sources */,
 				BE49E3B41E45BA4200ECDEE5 /* WGSessionRequest.m in Sources */,
 				BE6BE91E1E7FB69F00A081BA /* WGSettlementResultRequest.m in Sources */,
 				BEA3751F1E3501D20054B8E6 /* WGClassifyKeyword.m in Sources */,
 				BEB8D0911E46CEEB00BB9BA3 /* WGBaseServiceInfo.m in Sources */,
+				BE62CD7A1EA0BF890076BD69 /* WGScanJumpBody.m in Sources */,
 				BEA3749D1E347C500054B8E6 /* WGGoodDetailViewController.m in Sources */,
 				BE63A7001E7BC7BF00F77282 /* WGOrderListRebuyCell.m in Sources */,
 				BE6753CC1E948DDC00250BA8 /* WGMainViewController+TabBarDelegate.m in Sources */,
@@ -3863,6 +3939,7 @@
 				BE6753C31E93CD0E00250BA8 /* WGDealFailGoodView.m in Sources */,
 				BE5F61AF1E94EA8800FBA32A /* WGForgetPasswordViewController+Request.m in Sources */,
 				BE6229FC1E768544002BFEDB /* WGCommodityDesCell.m in Sources */,
+				BE62CD7D1EA0BFF30076BD69 /* WGScanJumpGood.m in Sources */,
 				BE520FDA1E87EB17004BD34E /* WGApplication+Controller.m in Sources */,
 				BE62E22E1DF92176004510A5 /* main.m in Sources */,
 				BEB8D0AE1E46F27400BB9BA3 /* WGUser.m in Sources */,
@@ -3876,6 +3953,7 @@
 				BE99E7A51E1C94C400210546 /* WGHomeFloorContentClassifyItem.m in Sources */,
 				BECBE3131E87C54400ADAD6C /* WGCommonViewController+Request.m in Sources */,
 				BE67539F1E932F7400250BA8 /* WGUpdateProductsRequest.m in Sources */,
+				BE62CD731EA0BDE80076BD69 /* WGScanCodeView.m in Sources */,
 				BE52EDBD1E2DC26D0022EF5B /* WGAddressListViewController.m in Sources */,
 				BEB2D9851DFE3FF400F2E74B /* WGHomeTitleView.m in Sources */,
 				BE99E7A81E1C957F00210546 /* WGHomeFloorContentCountryItem.m in Sources */,
@@ -3898,7 +3976,7 @@
 				BE5F048A1E9CFDA800A701CB /* WGShopCartCountRequest.m in Sources */,
 				BE5F61981E94D45200FBA32A /* WGCommitUserInfoResponse.m in Sources */,
 				BED697B31E9E348100163355 /* WGPayWebViewController.m in Sources */,
-				BECBE3101E87C43800ADAD6C /* WGAsiaViewController.m in Sources */,
+				BECBE3101E87C43800ADAD6C /* WGSpecialClassifyViewController.m in Sources */,
 				BEB2D9591DFBED1500F2E74B /* WGApplication.m in Sources */,
 				BEEC20D01E9920380065DE90 /* WGAddressListRequest.m in Sources */,
 				BE63A6EB1E7BBE8000F77282 /* WGOrderListItem.m in Sources */,

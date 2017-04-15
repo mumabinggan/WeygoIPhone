@@ -9,11 +9,13 @@
 #import "WGClientServiceCenterViewController.h"
 #import "WGCSCStyle1ViewController.h"
 #import "WGBaseWebViewController.h"
+#import "WGBaseWebViewController.h"
 
 @interface WGClientServiceCenterViewController ()
 {
     JHTableView *_tableView;
     NSArray *_titleArray;
+    NSArray *_urlArray;
 }
 @end
 
@@ -36,9 +38,17 @@
                     kStr(@"Garanzia legale di"),
                     kStr(@"Privacy e cookies"),
                     kStr(@"Suggerimenti")];
+    _urlArray = @[kStr(@"Chi siamo"), kStr(@"Come funziona"),
+                    kStr(@"Contatti"), kStr(@"FAQ"),
+                    kStr(@"Aiutaci a migliorare"),
+                    kStr(@"Condizioni generali di vendita"),
+                    kStr(@"Garanzia legale di"),
+                    kStr(@"Privacy e cookies"),
+                    kStr(@"Suggerimenti")];
 }
 
 - (void)initSubView {
+    [super initSubView];
     self.title = kStr(@"Servizio clienti");
     JHView *contentView = [[JHView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:contentView];
@@ -104,18 +114,20 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == 3) {
-        //FAQ
-        WGBaseWebViewController *vc = [[WGBaseWebViewController alloc] initWithURLAddress:@"http://www.baidu.com"];
-        vc.title = _titleArray[indexPath.row];
-        [self.navigationController pushViewController:vc animated:YES];
-    }
-    else {
-        //Other
-        WGCSCStyle1ViewController *vc = [[WGCSCStyle1ViewController alloc] init];
-        vc.type = indexPath.row;
-        [self.navigationController pushViewController:vc animated:YES];
-    }
+    WGBaseWebViewController *vc = [[WGBaseWebViewController alloc] initWithURLAddress:_urlArray[indexPath.row]];
+    [self.navigationController pushViewController:vc animated:YES];
+//    if (indexPath.row == 3) {
+//        //FAQ
+//        WGBaseWebViewController *vc = [[WGBaseWebViewController alloc] initWithURLAddress:@"http://www.baidu.com"];
+//        vc.title = _titleArray[indexPath.row];
+//        [self.navigationController pushViewController:vc animated:YES];
+//    }
+//    else {
+//        //Other
+//        WGCSCStyle1ViewController *vc = [[WGCSCStyle1ViewController alloc] init];
+//        vc.type = indexPath.row;
+//        [self.navigationController pushViewController:vc animated:YES];
+//    }
 }
 
 @end

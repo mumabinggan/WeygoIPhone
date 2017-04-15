@@ -25,6 +25,7 @@
 #import "WGPostCodePopoverView.h"
 #import "WGMainViewController.h"
 #import "WGPersonInfoViewController.h"
+#import "WGScanViewController.h"
 
 //for test
 #import "WGGoodDetailViewController.h"
@@ -40,6 +41,8 @@
 #import "WGIntegrationViewController.h"
 #import "WGPaySuccessViewController.h"
 #import "WGOrderDetailViewController.h"
+#import "WGSpecialClassifyViewController.h"
+#import "WGInvitationViewController.h"
 
 @interface WGHomeSliderViewController ()
 {
@@ -112,6 +115,9 @@
 - (void)handleOnScan {
     //进入扫一扫界面
     [[WGApplication sharedApplication] closeSideBarViewController];
+    WGScanViewController *vc = [[WGScanViewController alloc] init];
+    UINavigationController *navc = [WGApplication sharedApplication].navigationController;
+    [navc pushViewController:vc animated:YES];
 }
 
 - (void)handleOnMessageCenter {
@@ -119,7 +125,8 @@
 //    WGIntegrationViewController *vcc = [[WGIntegrationViewController alloc] init];
     //WGPaySuccessViewController *vcc = [[WGPaySuccessViewController alloc] init];
     //vcc.orderId = 34433443;
-    WGOrderDetailViewController *vcc = [[WGOrderDetailViewController alloc] init];
+    WGInvitationViewController *vcc = [[WGInvitationViewController alloc] init];
+    //vcc.id = 19;
 //    //vcc.goodId = 1591;
     UINavigationController *navc = [WGApplication sharedApplication].navigationController;
     [navc pushViewController:vcc animated:YES];

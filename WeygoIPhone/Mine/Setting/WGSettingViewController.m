@@ -33,7 +33,9 @@
 }
 
 - (void)initSubView {
+    [super initSubView];
     JHView *contentView = [[JHView alloc] initWithFrame:self.view.bounds];
+    contentView.userInteractionEnabled = YES;
     [self.view addSubview:contentView];
     
     _tableView = [[TWRefreshTableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
@@ -49,18 +51,18 @@
 - (JHView *)createFooterView {
     JHView *footerView = [[JHView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kAppAdaptHeight(88))];
     
-    JHButton *logoutBtn = [[JHButton alloc] initWithFrame:CGRectMake(kAppAdaptWidth(16), kAppAdaptHeight(52), kDeviceWidth - kAppAdaptWidth(32), kAppAdaptHeight(40)) difRadius:JHRadiusMake(kAppAdaptWidth(20), kAppAdaptWidth(20), kAppAdaptWidth(20), kAppAdaptWidth(20)) backgroundColor:WGAppFooterButtonColor];
-    [logoutBtn setTitle:kStr(@"Log out") forState:UIControlStateNormal];
-    logoutBtn.titleLabel.font = kAppAdaptFont(14);
-    [logoutBtn setTitleColor:kWhiteColor forState:UIControlStateNormal];
-    [logoutBtn addTarget:self action:@selector(touchLogoutBtn:) forControlEvents:UIControlEventTouchUpInside];
-    [footerView addSubview:logoutBtn];
+    JHButton *chatBtn = [[JHButton alloc] initWithFrame:CGRectMake(kAppAdaptWidth(16), kAppAdaptHeight(52), kDeviceWidth - kAppAdaptWidth(32), kAppAdaptHeight(40)) difRadius:JHRadiusMake(kAppAdaptWidth(20), kAppAdaptWidth(20), kAppAdaptWidth(20), kAppAdaptWidth(20)) backgroundColor:WGAppFooterButtonColor];
+    [chatBtn setTitle:kStr(@"Log out") forState:UIControlStateNormal];
+    chatBtn.titleLabel.font = kAppAdaptFont(14);
+    [chatBtn setTitleColor:kWhiteColor forState:UIControlStateNormal];
+    [chatBtn addTarget:self action:@selector(touchChatBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [footerView addSubview:chatBtn];
     
     return footerView;
 }
 
-- (void)touchLogoutBtn:(UIButton *)sender {
-    //请求服务退出
+- (void)touchChatBtn:(UIButton *)sender {
+    //聊天
 }
 
 - (void)didReceiveMemoryWarning {
@@ -102,6 +104,7 @@
         else if (indexPath.row == 1) {
             style = UITableViewCellStyleValue1;
             text = kStr(@"Inserisci CAP");
+            detailText = [WGApplication sharedApplication].currentPostCode;
         }
         else if (indexPath.row == 2) {
             textAlignment = NSTextAlignmentCenter;
@@ -118,7 +121,7 @@
             style = UITableViewCellStyleValue1;
             text = kStr(@"Versione");
             accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-            text = kAppVersion;
+            detailText = kAppVersion;
         }
         else if (indexPath.row == 5) {
             style = UITableViewCellStyleValue1;
@@ -147,7 +150,7 @@
         
     }
     else if (indexPath.row == 3) {
-        //
+        //国家切换
     }
     else if (indexPath.row == 4) {
         //关于
@@ -155,7 +158,7 @@
     else if (indexPath.row == 5) {
         JHTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
         if (cell) {
-            UIActivityIndicatorView *animalView = [[UIActivityIndicatorView alloc] init];
+            UIActivityIndicatorView *animalView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
             [animalView startAnimating];
             animalView.hidesWhenStopped = YES;
             cell.accessoryView = animalView;

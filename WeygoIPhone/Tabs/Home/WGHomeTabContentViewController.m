@@ -90,6 +90,15 @@
     [_tableView reloadData];
 }
 
+- (void)setRefreshType:(TWRefreshType)refreshType {
+    if ((refreshType & TWRefreshTypeTop) == TWRefreshTypeTop) {
+        [_tableView setRefreshHeaderEnabled:YES];
+    }
+    if ((refreshType & TWRefreshTypeBottom) == TWRefreshTypeBottom) {
+        [_tableView setRefreshFooterEnabled:YES];
+    }
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -103,6 +112,7 @@
     NSInteger number = 0;
     if (_homeData) {
         number = ((_homeData.floors) ? _homeData.floors.count : 0) + 1;
+        number = 2;
     }
     return number;
 }
@@ -271,11 +281,11 @@
                 item.type == WGHomeFloorItemTypeClassifyList) {
                 if (contentCount > contentIndex) {
                     WGHomeFloorContentItem *content = item.contents[contentIndex];
-                    [cell showWithData:content.contentItem];
+                    [cell showWithData:[content contentItemWithType:item.type]];
                 }
             }
             else {
-                NSRange range;
+                NSRange range = NSMakeRange(0, 0);
                 if (item.type == WGHomeFloorItemTypeCountry ||
                     item.type == WGHomeFloorItemTypeClassifyGrid) {
                     NSUInteger loc = contentIndex * 4;

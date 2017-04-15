@@ -10,4 +10,8 @@
 
 @implementation WGInvitationDescriptionRequest
 
+- (NSString *)api {
+    return @"pages/invite?";
+}
+
 @end

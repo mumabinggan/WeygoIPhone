@@ -6,8 +6,8 @@
 //  Copyright © 2017年 weygo.com. All rights reserved.
 //
 
-#import "WGRequest.h"
+#import "WGGuestRequest.h"
 
-@interface WGInvitationDescriptionRequest : WGRequest
+@interface WGInvitationDescriptionRequest : WGGuestRequest
 
 @end

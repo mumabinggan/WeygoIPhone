@@ -17,9 +17,9 @@
     return [super classForArray:propertyName];
 }
 
-//+ (NSDictionary *)convertKeyMapper {
-//    return @{@"contents" : @"content"};
-//}
++ (NSDictionary *)convertKeyMapper {
+    return @{@"contents" : @"content"};
+}
 
 - (float)homeNameHeight {
     if (_homeNameHeight >= 0.001) {
@@ -84,24 +84,24 @@
             height = (_contents.count > index) ? item.contentHeight : kAppAdaptHeight(56);
         }
         else {
-            JHObject *item = _contents[0];
+            WGHomeFloorContentItem *item = _contents[0];
             if (_type == WGHomeFloorItemTypeCountry) {
-                height = item.contentHeight;
+                height = [item heightWithType:_type];
             }
             else if (_type == WGHomeFloorItemTypeGoodColumn) {
-                height = item.contentHeight;
+                height = [item heightWithType:_type];
             }
             else if (_type == WGHomeFloorItemTypeGoodGrid) {
-                height = item.contentHeight + (((_contents.count + 1) / 2 == index + 1) ? kAppAdaptHeight(8) : 0);
+                height = [item heightWithType:_type] + (((_contents.count + 1) / 2 == index + 1) ? kAppAdaptHeight(8) : 0);
             }
             else if (_type == WGHomeFloorItemTypeClassifyList) {
-                height = item.contentHeight + ((_contents.count == index + 1) ? kAppAdaptHeight(8) : 0);
+                height = [item heightWithType:_type] + ((_contents.count == index + 1) ? kAppAdaptHeight(8) : 0);
             }
             else if (_type == WGHomeFloorItemTypeClassifyColumn) {
-                height = item.contentHeight;
+                height = [item heightWithType:_type];
             }
             else if (_type == WGHomeFloorItemTypeClassifyGrid) {
-                height = item.contentHeight;
+                height = [item heightWithType:_type];
             }
         }
     }

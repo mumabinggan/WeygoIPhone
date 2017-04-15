@@ -67,7 +67,7 @@
         id item = _dataArray[num];
         if ([item isKindOfClass:[WGHomeFloorContentItem class]]) {
             item = (WGHomeFloorContentItem *)item;
-            [itemView showWithData:(WGHomeFloorContentGoodItem *)(((WGHomeFloorContentItem *)item).contentItem)];
+            [itemView showWithData:(WGHomeFloorContentGoodItem *)[((WGHomeFloorContentItem *)item) contentItemWithType:WGHomeFloorItemTypeGoodColumn]];
         }
         else if ([item isKindOfClass:[WGHomeFloorContentGoodItem class]]) {
             item = (WGHomeFloorContentGoodItem *)item;

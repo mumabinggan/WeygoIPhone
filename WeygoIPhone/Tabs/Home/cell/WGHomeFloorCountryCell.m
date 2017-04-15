@@ -63,7 +63,7 @@
         itemView.tag = num;
         [itemView addSingleTapGestureRecognizerWithTarget:self action:@selector(handleClick:)];
         itemView.backgroundColor = kWhiteColor;
-        [itemView showWithData:item.contentItem];
+        [itemView showWithData:[item contentItemWithType:WGHomeFloorItemTypeCountry]];
         [[self scrollView] addSubview:itemView];
         [itemViewArray addObject:itemView];
     }

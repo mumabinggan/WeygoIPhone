@@ -24,6 +24,13 @@ typedef NS_ENUM(NSInteger, WGLoginType) {
     WGLoginTypeOpenSlider,
 };
 
+typedef NS_ENUM(NSInteger, WGClassifyJumpType) {
+    WGClassifyJumpTypeNone,
+    WGClassifyJumpTypeClassifyDetail,
+    WGClassifyJumpTypeSpecailClassify,
+    WGClassifyJumpTypeSpecailClassifyGood,
+};
+
 typedef NS_ENUM(NSInteger, WGRefreshNotificationType) {
     WGRefreshNotificationTypeNone,
     WGRefreshNotificationTypeLogin,

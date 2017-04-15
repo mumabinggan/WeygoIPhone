@@ -7,7 +7,15 @@
 //
 
 #import "WGViewController.h"
+#import "WGHome.h"
 
-@interface WGAsiaViewController : WGViewController
+@interface WGSpecialClassifyViewController : WGViewController
+{
+    WGHome *_data;
+}
+
+@property (nonatomic, assign) long long id;
+
+- (void)refreshUI;
 
 @end
