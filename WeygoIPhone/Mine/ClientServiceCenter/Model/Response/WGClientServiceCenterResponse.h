@@ -10,4 +10,14 @@
 
 @interface WGClientServiceCenterResponse : WGResponse
 
+@property (nonatomic, strong) NSArray *data;
+
+@end
+
+@interface WGClientServiceCenterItem : WGObject
+
+@property (nonatomic, strong) NSString *name;
+
+@property (nonatomic, strong) NSString *url;
+
 @end

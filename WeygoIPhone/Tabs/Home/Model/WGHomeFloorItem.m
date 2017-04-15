@@ -30,7 +30,7 @@
 }
 
 - (float)homePictureHeight {
-    return [NSString isNullOrEmpty:_pictureURL] ? 0 : kAppAdaptHeight(136);
+    return [NSString isNullOrEmpty:_pictureURL] && [NSString isNullOrEmpty:_pictureName] ? 0 : kAppAdaptHeight(136);
 }
 
 - (NSInteger)homeRowCount {
@@ -80,8 +80,8 @@
     else {
         NSInteger index = row - 2;
         if (_type == WGHomeFloorItemTypeGoodList) {
-            JHObject *item = _contents[index];
-            height = (_contents.count > index) ? item.contentHeight : kAppAdaptHeight(56);
+            WGHomeFloorContentItem *item = _contents[index];
+            height = (_contents.count > index) ? [item heightWithType:_type] : kAppAdaptHeight(56);
         }
         else {
             WGHomeFloorContentItem *item = _contents[0];

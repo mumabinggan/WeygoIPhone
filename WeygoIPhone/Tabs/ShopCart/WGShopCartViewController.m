@@ -165,7 +165,7 @@
     _deliveryPriceLabel.text = deliveryPrice;
     NSString *totalePrice = _data.shopCartPrice.totalePrice;
     _totalePriceLabel.text = [NSString stringWithFormat:kStr(@"Totale:Price With String Unit"), totalePrice];
-    [UIView animateWithDuration:0.25 animations:^() {
+    [UIView animateWithDuration:0.5 animations:^() {
         _tableView.layer.opacity = 1.0f;
         _footView.layer.opacity = 1.0f;
     }];
@@ -219,7 +219,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return kAppAdaptHeight(124);
+    return [WGShopCartCell heightWithData:nil];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -235,7 +235,7 @@
     WGShopCartCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
     if (!cell) {
         cell = [[WGShopCartCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
-        JHView *line = [[JHView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kAppSepratorLineHeight)];
+        JHView *line = [[JHView alloc] initWithFrame:CGRectMake(0, [WGShopCartCell heightWithData:nil] - kAppSepratorLineHeight, kDeviceWidth, kAppSepratorLineHeight)];
         line.backgroundColor = WGAppSeparateLineColor;
         [cell.contentView addSubview:line];
         WeakSelf;

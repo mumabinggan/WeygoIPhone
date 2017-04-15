@@ -39,8 +39,9 @@
     [super showWithData:data];
     WGHomeFloorItem *item = (WGHomeFloorItem *)data;
     if (item.onlyName) {
-        self.textLabel.text = item.name;
-        _nameLabel.hidden = YES;
+        //self.textLabel.text = item.name;
+        _nameLabel.hidden = NO;
+        _nameLabel.text = item.name;
         _briefInfoLabel.hidden = YES;
     }
     else {

@@ -24,11 +24,25 @@ typedef NS_ENUM(NSInteger, WGLoginType) {
     WGLoginTypeOpenSlider,
 };
 
+typedef NS_ENUM(NSInteger, WGAppJumpType) {
+    WGAppJumpTypeNone,
+    WGAppJumpTypeRegister,          //注册
+    WGAppJumpTypeGoodDetail,        //商品详情
+    WGAppJumpTypeInvitation,        //邀请
+    WGAppJumpTypeClassifyDetail,    //分类详情
+    WGAppJumpTypeSpecailClassifyHomeTab,    //特殊专题:Home Tab
+    WGAppJumpTypeSpecailClassifyGoodBenefitTab, //特殊专题（只显示商品）：Benefit Tab
+    WGAppJumpTypeSpecailClassifyNoTab,          //没有 Tab 的特殊专题
+    WGAppJumpTypeSpecailClassifyGoodNoTab,      //没有 Tab 的特殊专题（只显示商品）
+};
+
 typedef NS_ENUM(NSInteger, WGClassifyJumpType) {
     WGClassifyJumpTypeNone,
-    WGClassifyJumpTypeClassifyDetail,
-    WGClassifyJumpTypeSpecailClassify,
-    WGClassifyJumpTypeSpecailClassifyGood,
+    WGClassifyJumpTypeClassifyDetail = WGAppJumpTypeClassifyDetail,
+    WGClassifyJumpTypeSpecailClassifyHomeTab = WGAppJumpTypeSpecailClassifyHomeTab,
+    WGClassifyJumpTypeSpecailClassifyGoodBenefitTab = WGAppJumpTypeSpecailClassifyGoodBenefitTab,
+    WGClassifyJumpTypeSpecailClassifyNoTab = WGAppJumpTypeSpecailClassifyNoTab,
+    WGClassifyJumpTypeSpecailClassifyGoodNoTab = WGAppJumpTypeSpecailClassifyGoodNoTab,
 };
 
 typedef NS_ENUM(NSInteger, WGRefreshNotificationType) {

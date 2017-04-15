@@ -81,6 +81,7 @@
         _tableView.delegate = self;
         _tableView.refreshDelegate = self;
         _tableView.separatorStyle = UITableViewCellSelectionStyleNone;
+        _tableView.layer.opacity = 0.0f;
     }
     return _tableView;
 }
@@ -88,6 +89,9 @@
 - (void)setHomeData:(WGHome *)homeData {
     _homeData = homeData;
     [_tableView reloadData];
+    [UIView animateWithDuration:0.5 animations:^() {
+        _tableView.layer.opacity = 1.0f;
+    }];
 }
 
 - (void)setRefreshType:(TWRefreshType)refreshType {
@@ -112,7 +116,6 @@
     NSInteger number = 0;
     if (_homeData) {
         number = ((_homeData.floors) ? _homeData.floors.count : 0) + 1;
-        number = 2;
     }
     return number;
 }

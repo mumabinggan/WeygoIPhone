@@ -46,6 +46,10 @@
     //[self loadHomeTabTitles];
 }
 
+- (void)setCurrentId:(long long)currentId {
+    _contentVC.currentId = currentId;
+}
+
 - (void)initData {
     //_tabContentMDictionary = [[NSMutableDictionary alloc] init];
 }

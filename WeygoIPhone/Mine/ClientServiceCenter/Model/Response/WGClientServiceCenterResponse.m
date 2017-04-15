@@ -10,4 +10,15 @@
 
 @implementation WGClientServiceCenterResponse
 
++ (Class)classForArray:(NSString *)propertyName {
+    if ([@"data" isEqualToString:propertyName]) {
+        return [WGClientServiceCenterItem class];
+    }
+    return [super classForArray:propertyName];
+}
+
+@end
+
+@implementation WGClientServiceCenterItem
+
 @end

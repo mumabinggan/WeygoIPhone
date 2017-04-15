@@ -18,4 +18,6 @@
     //TWRefreshCollectionView *_collectionView;
 }
 
+@property (nonatomic, assign) long long currentId;
+
 @end

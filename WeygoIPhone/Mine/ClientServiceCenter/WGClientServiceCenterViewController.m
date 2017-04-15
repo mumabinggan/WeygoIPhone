@@ -10,16 +10,23 @@
 #import "WGCSCStyle1ViewController.h"
 #import "WGBaseWebViewController.h"
 #import "WGBaseWebViewController.h"
+#import "WGClientServiceCenterRequest.h"
+#import "WGClientServiceCenterResponse.h"
 
 @interface WGClientServiceCenterViewController ()
 {
     JHTableView *_tableView;
-    NSArray *_titleArray;
-    NSArray *_urlArray;
+    NSArray *_dataArray;
 }
 @end
 
 @interface WGClientServiceCenterViewController (TableViewDelegate) <UITableViewDelegate, UITableViewDataSource>
+
+@end
+
+@interface WGClientServiceCenterViewController (Request)
+
+- (void)loadClientServiceCenter;
 
 @end
 
@@ -28,23 +35,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-}
-
-- (void)initData {
-    _titleArray = @[kStr(@"Chi siamo"), kStr(@"Come funziona"),
-                    kStr(@"Contatti"), kStr(@"FAQ"),
-                    kStr(@"Aiutaci a migliorare"),
-                    kStr(@"Condizioni generali di vendita"),
-                    kStr(@"Garanzia legale di"),
-                    kStr(@"Privacy e cookies"),
-                    kStr(@"Suggerimenti")];
-    _urlArray = @[kStr(@"Chi siamo"), kStr(@"Come funziona"),
-                    kStr(@"Contatti"), kStr(@"FAQ"),
-                    kStr(@"Aiutaci a migliorare"),
-                    kStr(@"Condizioni generali di vendita"),
-                    kStr(@"Garanzia legale di"),
-                    kStr(@"Privacy e cookies"),
-                    kStr(@"Suggerimenti")];
+    [self loadClientServiceCenter];
 }
 
 - (void)initSubView {
@@ -56,11 +47,11 @@
     _tableView = [[TWRefreshTableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
     _tableView.dataSource = self;
     _tableView.delegate = self;
-    //_tableView.contentInset = UIEdgeInsetsMake(-35, 0, 0, 0);
     _tableView.backgroundColor = kWhiteColor;
     _tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, 1)];
     _tableView.tableFooterView = [self createFooterView];
     [contentView addSubview:_tableView];
+    _tableView.layer.opacity = 0.0f;
 }
 
 - (JHView *)createFooterView {
@@ -82,6 +73,13 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+- (void)refreshUI {
+    [_tableView reloadData];
+    [UIView animateWithDuration:0.5 animations:^() {
+        _tableView.layer.opacity = 1.0f;
+    }];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -92,7 +90,7 @@
 @implementation WGClientServiceCenterViewController (TableViewDelegate)
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _titleArray.count;
+    return _dataArray.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -109,25 +107,39 @@
         cell.textLabel.font = kAppAdaptFont(14);
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
-    cell.textLabel.text = _titleArray[indexPath.row];
+    WGClientServiceCenterItem *item = _dataArray[indexPath.row];
+    cell.textLabel.text = item.name;
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    WGBaseWebViewController *vc = [[WGBaseWebViewController alloc] initWithURLAddress:_urlArray[indexPath.row]];
+    WGClientServiceCenterItem *item = _dataArray[indexPath.row];
+    WGBaseWebViewController *vc = [[WGBaseWebViewController alloc] initWithURLAddress:item.url];
     [self.navigationController pushViewController:vc animated:YES];
-//    if (indexPath.row == 3) {
-//        //FAQ
-//        WGBaseWebViewController *vc = [[WGBaseWebViewController alloc] initWithURLAddress:@"http://www.baidu.com"];
-//        vc.title = _titleArray[indexPath.row];
-//        [self.navigationController pushViewController:vc animated:YES];
-//    }
-//    else {
-//        //Other
-//        WGCSCStyle1ViewController *vc = [[WGCSCStyle1ViewController alloc] init];
-//        vc.type = indexPath.row;
-//        [self.navigationController pushViewController:vc animated:YES];
-//    }
+}
+
+@end
+
+@implementation WGClientServiceCenterViewController (Request)
+
+- (void)loadClientServiceCenter {
+    WGClientServiceCenterRequest *request = [[WGClientServiceCenterRequest alloc] init];
+    __weak typeof(self) weakSelf = self;
+    [self get:request forResponseClass:[WGClientServiceCenterResponse class] success:^(JHResponse *response) {
+        [weakSelf handleClientServiceCenterResponse:(WGClientServiceCenterResponse *)response];
+    } failure:^(NSError *error) {
+        [weakSelf showWarningMessage:kStr(@"Request Failed")];
+    }];
+}
+
+- (void)handleClientServiceCenterResponse:(WGClientServiceCenterResponse *)response {
+    if (response.success) {
+        _dataArray = response.data;
+        [self refreshUI];
+    }
+    else {
+        [self showWarningMessage:response.message];
+    }
 }
 
 @end

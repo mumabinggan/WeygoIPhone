@@ -7,15 +7,21 @@
 //
 
 #import "WGApplication.h"
+#import "WGMainViewController.h"
 
 @class WGNavigationController;
 @class WGMainViewController;
+@class WGHomeTabViewController;
+@class WGTabBenefitViewController;
 
 @interface WGApplication (Controller)
 
 @property (nonatomic, strong, readonly) WGNavigationController *navigationController;
 
 @property (nonatomic, strong, readonly) WGMainViewController *mainViewController;
+
+@property (nonatomic, strong, readonly) WGHomeTabViewController *homeTabViewController;
+@property (nonatomic, strong, readonly) WGTabBenefitViewController *benefitTabViewController;
 
 - (void)closeSideBarViewController;
 

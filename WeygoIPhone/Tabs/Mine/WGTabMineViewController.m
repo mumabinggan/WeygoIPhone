@@ -17,6 +17,7 @@
 #import "WGSettingViewController.h"
 #import "WGIntegrationViewController.h"
 #import "WGClientServiceCenterViewController.h"
+#import "WGOrderListViewController.h"
 
 @interface WGTabMineViewController ()
 {
@@ -104,7 +105,7 @@
     [_messageBtn setBackgroundImage:[UIImage imageNamed:@"mine_message"] forState:UIControlStateNormal];
     [_messageBtn addTarget:self action:@selector(touchMessageBtn:) forControlEvents:UIControlEventTouchUpInside];
     [_messageBtn addBadge];
-    [contentView addSubview:_messageBtn];
+    //[contentView addSubview:_messageBtn];
 }
 
 - (JHView *)createHeaderView {
@@ -183,12 +184,8 @@
 }
 
 - (void)touchOrderBtn:(JHButton *)sender {
-    if (sender.tag == 0) {
-        //您的订单
-    }
-    else {
-        //送货中
-    }
+    WGOrderListViewController *vc = [[WGOrderListViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)touchFeatureBtn:(JHButton *)sender {

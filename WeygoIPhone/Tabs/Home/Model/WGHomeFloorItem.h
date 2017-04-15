@@ -23,6 +23,8 @@
 
 @property (nonatomic, strong) NSArray *contents;
 
+@property (nonatomic, assign) WGAppJumpType jumpType;
+
 //for dif skip
 @property (nonatomic, assign) int requestParameter;
 

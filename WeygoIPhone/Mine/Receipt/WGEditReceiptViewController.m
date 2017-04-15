@@ -101,7 +101,7 @@
 
 - (void)refreshUI {
     [_tableView reloadData];
-    [UIView animateWithDuration:0.25 animations:^() {
+    [UIView animateWithDuration:0.5 animations:^() {
         _tableView.layer.opacity = 1.0f;
         _addBtn.layer.opacity = 1.0f;
     }];

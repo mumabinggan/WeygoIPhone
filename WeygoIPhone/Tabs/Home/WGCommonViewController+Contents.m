@@ -13,7 +13,9 @@
 @implementation WGCommonViewController (Contents)
 
 - (void)addContentsWithIndex:(NSInteger)index {
-    [self loadContentWithIndex:index isFirst:NO];
+    if ([_tabDataMDictionary objectForKey:@(index)] == nil) {
+        [self loadContentWithIndex:index isFirst:NO];
+    };
     /*
     WGHomeTabContentViewController *contentVC = [_tabContentMDictionary objectForKey:@(index)];
     if (!contentVC) {

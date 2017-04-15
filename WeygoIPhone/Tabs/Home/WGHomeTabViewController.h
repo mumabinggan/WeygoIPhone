@@ -19,4 +19,7 @@
     NSMutableDictionary *_tabContentMDictionary;
     //TWRefreshCollectionView *_collectionView;
 }
+
+@property (nonatomic, assign) long long currentId;
+
 @end

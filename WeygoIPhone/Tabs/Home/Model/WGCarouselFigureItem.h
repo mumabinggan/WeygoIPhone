@@ -8,19 +8,15 @@
 
 #import "WGObject.h"
 
-typedef NS_ENUM(NSInteger, WGCarouselFigureItemType) {
-    WGCarouselFigureItemTypeNone
-};
-
 @interface WGCarouselFigureItem : WGObject
 
 @property (nonatomic, assign) long long id;
 
 @property (nonatomic, strong) NSString *pictureURL;
 
-@property (nonatomic, assign) WGCarouselFigureItemType type;
+@property (nonatomic, assign) WGAppJumpType jumpType;
 
 //for dif skip
-@property (nonatomic, assign) int requestParameter;
+@property (nonatomic, assign) int requestParameter; //暂时没有用到
 
 @end

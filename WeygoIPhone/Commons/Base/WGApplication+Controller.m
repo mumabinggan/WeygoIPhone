@@ -22,6 +22,16 @@
     return (WGMainViewController*)[[navc viewControllers] firstObject];
 }
 
+- (WGHomeTabViewController *)homeTabViewController {
+    WGMainViewController *mainViewController = self.mainViewController;
+    return (WGHomeTabViewController *)[mainViewController.viewControllers objectAtIndex:WGTabIndexHome];
+}
+
+- (WGTabBenefitViewController *)benefitTabViewController {
+    WGMainViewController *mainViewController = self.mainViewController;
+    return (WGTabBenefitViewController *)[mainViewController.viewControllers objectAtIndex:WGTabIndexBenefit];
+}
+
 - (void)closeSideBarViewController {
     WGMainViewController *mainViewController = self.mainViewController;
     [mainViewController closeSideBarViewController];

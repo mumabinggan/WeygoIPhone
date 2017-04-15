@@ -43,6 +43,7 @@
 #import "WGOrderDetailViewController.h"
 #import "WGSpecialClassifyViewController.h"
 #import "WGInvitationViewController.h"
+#import "WGClientServiceCenterViewController.h"
 
 @interface WGHomeSliderViewController ()
 {
@@ -125,7 +126,7 @@
 //    WGIntegrationViewController *vcc = [[WGIntegrationViewController alloc] init];
     //WGPaySuccessViewController *vcc = [[WGPaySuccessViewController alloc] init];
     //vcc.orderId = 34433443;
-    WGInvitationViewController *vcc = [[WGInvitationViewController alloc] init];
+    WGClientServiceCenterViewController *vcc = [[WGClientServiceCenterViewController alloc] init];
     //vcc.id = 19;
 //    //vcc.goodId = 1591;
     UINavigationController *navc = [WGApplication sharedApplication].navigationController;

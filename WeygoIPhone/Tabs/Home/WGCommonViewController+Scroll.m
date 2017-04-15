@@ -51,7 +51,7 @@
 }
 
 - (void)setContentsScrollViewOffsetWithIndex:(NSInteger)selectedIndex {
-    [UIView animateWithDuration:0.20 animations:^(void) {
+    [UIView animateWithDuration:0.25 animations:^(void) {
         _contentsScrollView.contentOffset = CGPointMake(selectedIndex * kDeviceWidth, 0);
     } completion:^(BOOL finished) {
         [self addContentsWithIndex:selectedIndex];

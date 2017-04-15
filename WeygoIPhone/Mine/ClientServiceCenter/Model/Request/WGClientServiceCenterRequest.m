@@ -10,4 +10,8 @@
 
 @implementation WGClientServiceCenterRequest
 
+- (NSString *)api {
+    return @"customer/customerService?";
+}
+
 @end

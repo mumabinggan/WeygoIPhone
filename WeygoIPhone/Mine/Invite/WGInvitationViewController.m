@@ -113,7 +113,7 @@
 - (void)refreshUI {
     _tableView.tableHeaderView = [self createHeaderView];
     _tableView.tableFooterView = [self createFooterView];
-    [UIView animateWithDuration:0.25 animations:^() {
+    [UIView animateWithDuration:0.5 animations:^() {
         _tableView.layer.opacity = 1.0f;
     }];
 }

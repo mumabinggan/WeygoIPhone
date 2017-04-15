@@ -13,6 +13,8 @@
 #import "WGClassifyDetailViewController.h"
 #import "WGSpecialClassifyViewController.h"
 #import "WGSpecialClassifyGoodViewController.h"
+#import "WGHomeTabViewController.h"
+#import "WGTabBenefitViewController.h"
 
 @interface WGScanViewController ()
 
@@ -53,15 +55,27 @@
                 classifyVC.classifyId = item.id;
                 vc = classifyVC;
             }
-            else if (item.jumpType == WGClassifyJumpTypeSpecailClassify) {
+            else if (item.jumpType == WGClassifyJumpTypeSpecailClassifyNoTab) {
                 WGSpecialClassifyViewController *specialVC = [[WGSpecialClassifyViewController alloc] init];
                 specialVC.id = item.id;
                 vc = specialVC;
             }
-            else if (item.jumpType == WGClassifyJumpTypeSpecailClassifyGood) {
+            else if (item.jumpType == WGClassifyJumpTypeSpecailClassifyGoodNoTab) {
                 WGSpecialClassifyGoodViewController *specialGoodVC = [[WGSpecialClassifyGoodViewController alloc] init];
                 specialGoodVC.id = item.id;
                 vc = specialGoodVC;
+            }
+            else if (item.jumpType == WGClassifyJumpTypeSpecailClassifyHomeTab) {
+                WGApplication *application = [WGApplication sharedApplication];
+                WGHomeTabViewController *homeViewController = application.homeTabViewController;
+                homeViewController.currentId = item.id;
+                [application switchTab:WGTabIndexHome];
+            }
+            else if (item.jumpType == WGClassifyJumpTypeSpecailClassifyGoodBenefitTab) {
+                WGApplication *application = [WGApplication sharedApplication];
+                WGTabBenefitViewController *benefitViewController = application.benefitTabViewController;
+                benefitViewController.currentId = item.id;
+                [application switchTab:WGTabIndexHome];
             }
             NSMutableArray *array = [NSMutableArray arrayWithArray:self.navigationController.viewControllers];
             [array removeLastObject];
