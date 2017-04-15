@@ -31,7 +31,7 @@
 }
 
 - (NSString *)host {
-    return @"delong6688.develop.weygo.com";
+    return @"m.delong6688.develop.weygo.com";
 }
 
 - (NSString *)userPath {
@@ -45,6 +45,8 @@
     [returnString appendString:WGAppIdValue];
     [returnString appendString:WGAppkeyKey];
     [returnString appendString:[WGAppkeyValue md5]];
+    [returnString appendString:@"___store"];
+    [returnString appendString:@"mobileitaly"];
     NSComparator cmptr = ^(NSString *obj1, NSString *obj2){
         return [obj1 compare:obj2];
     };
@@ -58,8 +60,8 @@
             [returnString appendString:dictionary[key]];
         }
     }
-    return [NSString stringWithFormat:@"sign=%@", [returnString md5]];
-    //return [NSString stringWithFormat:@"sign=%@&___store=%@", [returnString md5], @"italy"];
+    //return [NSString stringWithFormat:@"sign=%@", [returnString md5]];
+    return [NSString stringWithFormat:@"sign=%@&___store=%@", [returnString md5], @"mobileitaly"];
 }
 
 @end

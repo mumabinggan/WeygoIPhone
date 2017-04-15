@@ -84,24 +84,26 @@
             height = (_contents.count > index) ? [item heightWithType:_type] : kAppAdaptHeight(56);
         }
         else {
-            WGHomeFloorContentItem *item = _contents[0];
-            if (_type == WGHomeFloorItemTypeCountry) {
-                height = [item heightWithType:_type];
-            }
-            else if (_type == WGHomeFloorItemTypeGoodColumn) {
-                height = [item heightWithType:_type];
-            }
-            else if (_type == WGHomeFloorItemTypeGoodGrid) {
-                height = [item heightWithType:_type] + (((_contents.count + 1) / 2 == index + 1) ? kAppAdaptHeight(8) : 0);
-            }
-            else if (_type == WGHomeFloorItemTypeClassifyList) {
-                height = [item heightWithType:_type] + ((_contents.count == index + 1) ? kAppAdaptHeight(8) : 0);
-            }
-            else if (_type == WGHomeFloorItemTypeClassifyColumn) {
-                height = [item heightWithType:_type];
-            }
-            else if (_type == WGHomeFloorItemTypeClassifyGrid) {
-                height = [item heightWithType:_type];
+            if (_contents.count > index) {
+                WGHomeFloorContentItem *item = _contents[index];
+                if (_type == WGHomeFloorItemTypeCountry) {
+                    height = [item heightWithType:_type];
+                }
+                else if (_type == WGHomeFloorItemTypeGoodColumn) {
+                    height = [item heightWithType:_type];
+                }
+                else if (_type == WGHomeFloorItemTypeGoodGrid) {
+                    height = [item heightWithType:_type] + (((_contents.count + 1) / 2 == index + 1) ? kAppAdaptHeight(8) : 0);
+                }
+                else if (_type == WGHomeFloorItemTypeClassifyList) {
+                    height = [item heightWithType:_type] + ((_contents.count == index + 1) ? kAppAdaptHeight(8) : 0);
+                }
+                else if (_type == WGHomeFloorItemTypeClassifyColumn) {
+                    height = [item heightWithType:_type];
+                }
+                else if (_type == WGHomeFloorItemTypeClassifyGrid) {
+                    height = [item heightWithType:_type];
+                }
             }
         }
     }
