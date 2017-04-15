@@ -11,6 +11,7 @@
 
 @interface WGHomeFloorGoodColumnItemView : JHView
 {
+    JHImageView     *_imageView;
     JHLabel         *_nameLabel;
     JHLabel         *_currentPriceLabel;
     JHLabel         *_reducePriceLabel;

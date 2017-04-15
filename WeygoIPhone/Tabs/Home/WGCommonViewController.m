@@ -46,7 +46,8 @@
     for (int num = 0; num < _titleArray.count; ++num) {
         WGTitleItem *item = _titleArray[num];
         if (item.id == currentId) {
-            [self setContentsScrollViewOffsetWithIndex:currentId];
+            [self setSelectedIndex:num];
+            //[self setContentsScrollViewOffsetWithIndex:num];
             return;
         }
     }

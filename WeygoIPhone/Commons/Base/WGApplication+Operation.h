@@ -55,3 +55,9 @@
 - (BOOL)supportPostcode:(NSString *)postCode;
 
 @end
+
+@interface WGApplication (AddShopCartAnimation)
+
+- (void)addShopToCart:(NSString *)imageURL fromPoint:(CGPoint)fromPoint;
+
+@end

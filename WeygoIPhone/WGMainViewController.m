@@ -153,7 +153,7 @@ static const float kTabBarHeight = 60;
 
 - (void)setSideBarhidden:(BOOL)hidden {
     _maskView.hidden = NO;
-    [UIView animateWithDuration:0.5 animations:^(void) {
+    [UIView animateWithDuration:0.25 animations:^(void) {
         _sliderController.view.frame = CGRectMake(hidden ? -kDeviceWidth : 0, 0, kDeviceWidth, kDeviceHeight);
         _maskView.alpha = hidden ? 0 : 0.3;
     } completion:^(BOOL finish) {

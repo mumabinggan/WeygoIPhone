@@ -12,7 +12,7 @@
 
 - (void)loadSubviews {
     [super loadSubviews];
-    
+
     CGRect frame = _nameLabel.frame;
     frame.origin.x = kAppAdaptWidth(10);
     frame.size = CGSizeMake(self.width - kAppAdaptWidth(20), kAppAdaptHeight(40));
@@ -39,7 +39,16 @@
     [self addSubview:_purchaseBtn];
 }
 
+- (void)touchPurchase:(id)sender {
+    if (self.onPurchase) {
+        UIWindow *window = [UIApplication sharedApplication].keyWindow;
+        CGPoint point = [self convertPoint:CGPointMake(_imageView.x + _imageView.width/2, _imageView.y) toView:window];
+        self.onPurchase(_data, point);
+    }
+}
+
 - (void)showWithData:(WGHomeFloorContentGoodItem *)object {
+    _data = object;
     [super showWithData:object];
 }
 

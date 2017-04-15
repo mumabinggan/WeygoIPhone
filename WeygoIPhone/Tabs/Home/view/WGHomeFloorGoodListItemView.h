@@ -12,7 +12,7 @@
 
 @interface WGHomeFloorGoodListItemView : JHView
 
-@property (nonatomic, copy) void (^onPurchase)(WGHomeFloorContentGoodItem *object);
+@property (nonatomic, copy) void (^onPurchase)(WGHomeFloorContentGoodItem *object, CGPoint fromPoint);
 
 - (void)showWithData:(WGHomeFloorContentGoodItem *)object;
 

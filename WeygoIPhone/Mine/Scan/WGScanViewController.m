@@ -75,7 +75,7 @@
                 WGApplication *application = [WGApplication sharedApplication];
                 WGTabBenefitViewController *benefitViewController = application.benefitTabViewController;
                 benefitViewController.currentId = item.id;
-                [application switchTab:WGTabIndexHome];
+                [application switchTab:WGTabIndexBenefit];
             }
             NSMutableArray *array = [NSMutableArray arrayWithArray:self.navigationController.viewControllers];
             [array removeLastObject];

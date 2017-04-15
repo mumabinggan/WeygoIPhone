@@ -11,13 +11,6 @@
 #import "WGClassifyFilterCondition.h"
 #import "WGClassifyDetailContentViewController.h"
 
-//typedef NS_ENUM(NSInteger, WGClassifySortType) {
-//    WGClassifySortTypeDefault,
-//    WGClassifySortTypeBranch,
-//    WGClassifySortTypePriceDown,
-//    WGClassifySortTypePriceUp
-//};
-
 @interface WGClassifyDetailViewController : WGViewController
 
 @property (nonatomic, assign) long long classifyId;

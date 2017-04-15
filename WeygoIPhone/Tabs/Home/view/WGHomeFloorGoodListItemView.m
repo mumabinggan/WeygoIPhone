@@ -87,7 +87,9 @@
 
 - (void)touchPurchase:(JHButton *)sender {
     if (self.onPurchase) {
-        self.onPurchase(_data);
+        UIWindow *window = [UIApplication sharedApplication].keyWindow;
+        CGPoint point = [self convertPoint:CGPointMake(_imageView.x + _imageView.width/2, _imageView.y) toView:window];
+        self.onPurchase(_data, point);
     }
 }
 

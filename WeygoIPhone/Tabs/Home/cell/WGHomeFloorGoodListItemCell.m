@@ -22,6 +22,10 @@
     [super loadSubviews];
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     _itemView = [[WGHomeFloorGoodListItemView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kAppAdaptHeight(124))];
+    WeakSelf;
+    _itemView.onPurchase = ^(WGHomeFloorContentGoodItem *item, CGPoint fromPoint) {
+        [weakSelf handleOnPurchase:item fromPoint:fromPoint];
+    };
     [self.contentView addSubview:_itemView];
 }
 
@@ -29,6 +33,12 @@
     [super showWithData:data];
     WGHomeFloorContentGoodItem *item = (WGHomeFloorContentGoodItem *)data;
     [_itemView showWithData:item];
+}
+
+- (void)handleOnPurchase:(WGHomeFloorContentGoodItem *)item fromPoint:(CGPoint)fromPoint {
+    if (self.onPurchase) {
+        self.onPurchase(item, fromPoint);
+    }
 }
 
 + (CGFloat)heightWithData:(JHObject *)data {

@@ -33,6 +33,10 @@
     }
 }
 
+- (void)setSelectedIndex:(NSInteger)index {
+    _titleSegmentView.selectedIndex = index;
+}
+
 - (void)setTitleSegmentView:(NSArray *)titleArray {
     [_titleSegmentView setTitleArray:titleArray];
 }

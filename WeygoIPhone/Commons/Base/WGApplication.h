@@ -35,6 +35,8 @@ typedef NS_ENUM(NSInteger, WGAppLanguage) {
     //ShowView
     MBProgressHUD *HUD;
     JHView *_messageView;
+    
+    JHImageView *_imageView;
 }
 
 @property (nonatomic, strong) WGUser *user;

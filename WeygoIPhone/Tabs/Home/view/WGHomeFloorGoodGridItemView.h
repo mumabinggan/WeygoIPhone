@@ -10,5 +10,10 @@
 #import "WGHomeFloorGoodColumnItemView.h"
 
 @interface WGHomeFloorGoodGridItemView : WGHomeFloorGoodColumnItemView
+{
+    WGHomeFloorContentGoodItem *_data;
+}
+
+@property (nonatomic, copy) void (^onPurchase)(WGHomeFloorContentGoodItem *item, CGPoint fromPoint);
 
 @end

@@ -7,9 +7,9 @@
 //
 
 #import "WGHomeTabViewController.h"
-#import "WGHomeTabViewController+Segment.h"
-#import "WGHomeTabViewController+Scroll.h"
-#import "WGHomeTabViewController+Contents.h"
+//#import "WGHomeTabViewController+Segment.h"
+//#import "WGHomeTabViewController+Scroll.h"
+//#import "WGHomeTabViewController+Contents.h"
 #import "WGCommonViewController.h"
 
 @interface WGHomeTabViewController ()

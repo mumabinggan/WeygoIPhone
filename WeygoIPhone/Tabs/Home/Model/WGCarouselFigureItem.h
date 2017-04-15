@@ -12,6 +12,8 @@
 
 @property (nonatomic, assign) long long id;
 
+@property (nonatomic, strong) NSString *name;
+
 @property (nonatomic, strong) NSString *pictureURL;
 
 @property (nonatomic, assign) WGAppJumpType jumpType;

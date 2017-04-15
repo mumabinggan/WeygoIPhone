@@ -8,9 +8,12 @@
 
 #import "JHTableViewCell.h"
 #import "WGHomeFloorContentItem.h"
+#import "WGHomeFloorContentGoodItem.h"
 
 @interface WGHomeFloorGoodGridItemCell : JHTableViewCell
 
 @property (nonatomic, copy) void (^onApply)(WGHomeFloorContentItem *item);
+
+@property (nonatomic, copy) void (^onPurchase)(WGHomeFloorContentGoodItem *object, CGPoint fromPoint);
 
 @end

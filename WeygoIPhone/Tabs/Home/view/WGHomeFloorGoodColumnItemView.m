@@ -10,7 +10,6 @@
 
 @interface WGHomeFloorGoodColumnItemView ()
 {
-    JHImageView     *_imageView;
     JHImageView     *_discountImageView;
     JHLabel         *_discountLabel;
 }

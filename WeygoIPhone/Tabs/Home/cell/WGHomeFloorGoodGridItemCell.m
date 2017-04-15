@@ -21,14 +21,21 @@
 
 - (void)loadSubviews {
     self.backgroundColor = kRGB(247, 250, 250);
+    WeakSelf;
     _firstItemView = [[WGHomeFloorGoodGridItemView alloc] initWithFrame:CGRectMake(kAppAdaptWidth(8), kAppAdaptWidth(8), kAppAdaptWidth(175), kAppAdaptHeight(312)) radius:kAppAdaptWidth(6)];
     _firstItemView.backgroundColor = kWhiteColor;
     [self.contentView addSubview:_firstItemView];
+    _firstItemView.onPurchase = ^(WGHomeFloorContentGoodItem *item, CGPoint fromPoint) {
+        [weakSelf handlePurchase:item fromPoint:fromPoint];
+    };
     [_firstItemView addSingleTapGestureRecognizerWithTarget:self action:@selector(handleClick:)];
     
     _secondItemView = [[WGHomeFloorGoodGridItemView alloc] initWithFrame:CGRectMake(kAppAdaptWidth(16 + 175), kAppAdaptWidth(8), kAppAdaptWidth(175), kAppAdaptHeight(312)) radius:kAppAdaptWidth(6)];
     _secondItemView.backgroundColor = kWhiteColor;
     [self.contentView addSubview:_secondItemView];
+    _secondItemView.onPurchase = ^(WGHomeFloorContentGoodItem *item, CGPoint fromPoint) {
+        [weakSelf handlePurchase:item fromPoint:fromPoint];
+    };
     [_secondItemView addSingleTapGestureRecognizerWithTarget:self action:@selector(handleClick:)];
 }
 
@@ -64,6 +71,12 @@
         else {
             self.onApply((WGHomeFloorContentItem *)_dataArray[1]);
         }
+    }
+}
+
+- (void)handlePurchase:(WGHomeFloorContentGoodItem *)item fromPoint:(CGPoint)fromPoint {
+    if (self.onPurchase) {
+        self.onPurchase(item, fromPoint);
     }
 }
 

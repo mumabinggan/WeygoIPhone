@@ -23,6 +23,14 @@
 #import "WGHomeFloorGoodColumnCell.h"
 #import "WGHomeFloorGoodListMoreCell.h"
 #import "WGHomeFloorGoodListItemCell.h"
+#import "WGRegisterViewController.h"
+#import "WGInvitationViewController.h"
+#import "WGSpecialClassifyViewController.h"
+#import "WGSpecialClassifyGoodViewController.h"
+#import "WGSpecialClassifyViewController.h"
+#import "WGGoodDetailViewController.h"
+#import "WGTabBenefitViewController.h"
+#import "WGHomeTabViewController.h"
 
 //for test
 #import "WGClassifyGoodListViewController.h"
@@ -100,6 +108,60 @@
     }
     if ((refreshType & TWRefreshTypeBottom) == TWRefreshTypeBottom) {
         [_tableView setRefreshFooterEnabled:YES];
+    }
+}
+
+- (void)handleFloorContentItem:(long long)id name:(NSString *)name jumpType:(WGAppJumpType)jumpType {
+    if (jumpType == WGAppJumpTypeRegister) {
+        WGRegisterViewController *vc = [[WGRegisterViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    else if (jumpType == WGAppJumpTypeInvitation) {
+        WGInvitationViewController *vc = [[WGInvitationViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    else if (jumpType == WGAppJumpTypeGoodDetail) {
+        WGGoodDetailViewController *vc = [[WGGoodDetailViewController alloc] init];
+        vc.goodId = id;
+        vc.title = name;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    else if (jumpType == WGAppJumpTypeClassifyDetail) {
+        WGClassifyDetailViewController *vc = [[WGClassifyDetailViewController alloc] init];
+        vc.classifyId = id;
+        vc.title = name;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    else if (jumpType == WGAppJumpTypeSpecailClassifyHomeTab) {
+        WGApplication *application = [WGApplication sharedApplication];
+        WGHomeTabViewController *homeViewController = application.homeTabViewController;
+        homeViewController.currentId = id;
+        [application switchTab:WGTabIndexHome];
+    }
+    else if (jumpType == WGAppJumpTypeSpecailClassifyGoodBenefitTab) {
+        WGApplication *application = [WGApplication sharedApplication];
+        WGTabBenefitViewController *benefitViewController = application.benefitTabViewController;
+        benefitViewController.currentId = id;
+        [application switchTab:WGTabIndexBenefit];
+    }
+    else if (jumpType == WGAppJumpTypeSpecailClassifyNoTab) {
+        WGSpecialClassifyViewController *vc = [[WGSpecialClassifyViewController alloc] init];
+        vc.id = id;
+        vc.title = name;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    else if (jumpType == WGAppJumpTypeSpecailClassifyGoodNoTab) {
+        WGSpecialClassifyGoodViewController *vc = [[WGSpecialClassifyGoodViewController alloc] init];
+        vc.id = id;
+        vc.title = name;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+}
+
+- (void)handleCarouselFigures:(NSInteger)index {
+    WGCarouselFigureItem *item = _homeData.carouselFigures[index];
+    if (item) {
+        [self handleFloorContentItem:item.id name:item.name jumpType:item.jumpType];
     }
 }
 
@@ -208,16 +270,26 @@
     static NSString *cellId = nil;
     cellId = [self tableViewCellIdentifier:indexPath];
     JHTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    ;
     if (!cell) {
         if (indexPath.section == 0) {
+            WeakSelf;
             if (indexPath.row == 0) {
-                cell = [[WGHomeCarouselFiguresCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+                WGHomeCarouselFiguresCell *carouselFiguresCell = [[WGHomeCarouselFiguresCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+                carouselFiguresCell.onApply = ^(NSInteger index) {
+                    [weakSelf handleCarouselFigures:index];
+                };
+                cell = carouselFiguresCell;
             }
             else if (indexPath.row == 1) {
-                cell = [[WGHomeTopicCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+                WGHomeTopicCell *topCell = [[WGHomeTopicCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+                topCell.onApply = ^(WGTopicItem *item) {
+                    [weakSelf handleFloorContentItem:item.id name:item.name jumpType:item.jumpType];
+                };
+                cell = topCell;
             }
             else {
-                cell = [[JHTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+                cell = [[WGHomeNewsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
             }
         }
         else {
@@ -229,8 +301,13 @@
                 cell = [[WGHomeFloorPictureHeadCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
             }
             else {
+                WeakSelf;
                 if (item.type == WGHomeFloorItemTypeCountry) {
-                    cell = [[WGHomeFloorCountryCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+                    WGHomeFloorCountryCell *countryCell = [[WGHomeFloorCountryCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+                    countryCell.onApply = ^(WGHomeFloorContentItem *item) {
+                        [weakSelf handleFloorContentItem:item.id name:item.name jumpType:item.jumpType];
+                    };
+                    cell = countryCell;
                 }
                 else if (item.type == WGHomeFloorItemTypeGoodList) {
                     cell = [[WGHomeFloorGoodListItemCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
@@ -239,19 +316,35 @@
                     [cell.contentView addSubview:line];
                 }
                 else if (item.type == WGHomeFloorItemTypeGoodColumn) {
-                    cell = [[WGHomeFloorGoodColumnCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+                    WGHomeFloorGoodColumnCell *goodColumnCell = [[WGHomeFloorGoodColumnCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+                    goodColumnCell.onApply = ^(WGHomeFloorContentItem *item) {
+                        [weakSelf handleFloorContentItem:item.id name:item.name jumpType:item.jumpType];
+                    };
+                    cell = goodColumnCell;
                 }
                 else if (item.type == WGHomeFloorItemTypeGoodGrid) {
-                    cell = [[WGHomeFloorGoodGridItemCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+                    WGHomeFloorGoodGridItemCell *goodGridCell = [[WGHomeFloorGoodGridItemCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+                    goodGridCell.onApply = ^(WGHomeFloorContentItem *item) {
+                        [weakSelf handleFloorContentItem:item.id name:item.name jumpType:item.jumpType];
+                    };
+                    cell = goodGridCell;
                 }
                 else if (item.type == WGHomeFloorItemTypeClassifyList) {
                     cell = [[WGHomeFloorClassifyListItemCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
                 }
                 else if (item.type == WGHomeFloorItemTypeClassifyColumn) {
-                    cell = [[WGHomeFloorClassifyColumnCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+                    WGHomeFloorClassifyColumnCell *classifyColumnCell = [[WGHomeFloorClassifyColumnCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+                    classifyColumnCell.onApply = ^(WGHomeFloorContentItem *item) {
+                        [weakSelf handleFloorContentItem:item.id name:item.name jumpType:item.jumpType];
+                    };
+                    cell = classifyColumnCell;
                 }
                 else if (item.type == WGHomeFloorItemTypeClassifyGrid) {
-                    cell = [[WGHomeFloorClassifyGridItemCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+                    WGHomeFloorClassifyGridItemCell *classifyGridCell = [[WGHomeFloorClassifyGridItemCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+                    classifyGridCell.onApply = ^(WGHomeFloorContentItem *item) {
+                        [weakSelf handleFloorContentItem:item.id name:item.name jumpType:item.jumpType];
+                    };
+                    cell = classifyGridCell;
                 }
             }
         }
@@ -312,9 +405,25 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    WGGoodDetailViewController *vc = [[WGGoodDetailViewController alloc] init];
-    vc.goodId = 1591;
-    [self.navigationController pushViewController:vc animated:YES];
+    NSInteger section = indexPath.section;
+    NSInteger row = indexPath.row;
+    if (section != 0) {
+        NSArray *floors = _homeData.floors;
+        WGHomeFloorItem *item = floors[section - 1];
+        if (row == 0 || row == 1) {
+            [self handleFloorContentItem:item.id name:item.name jumpType:item.jumpType];
+        }
+        else {
+            JHTableViewCell *cell = [_tableView cellForRowAtIndexPath:indexPath];
+            if ([cell isKindOfClass:[WGHomeFloorGoodListItemCell class]] || [cell isKindOfClass:[WGHomeFloorClassifyListItemCell class]]) {
+                WGHomeFloorContentItem *subItem = item.contents[row - 2];
+                [self handleFloorContentItem:subItem.id name:subItem.name jumpType:subItem.jumpType];
+            }
+        }
+    }
+//    WGGoodDetailViewController *vc = [[WGGoodDetailViewController alloc] init];
+//    vc.goodId = 1591;
+//    [self.navigationController pushViewController:vc animated:YES];
 //    WGShopCartViewController *vc = [[WGShopCartViewController alloc] init];
 //    [self.navigationController pushViewController:vc animated:YES];
 //    WGSearchViewController *vc = [[WGSearchViewController alloc] init];

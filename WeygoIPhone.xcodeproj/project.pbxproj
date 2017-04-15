@@ -130,10 +130,10 @@
 		BE62CD7D1EA0BFF30076BD69 /* WGScanJumpGood.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62CD7C1EA0BFF30076BD69 /* WGScanJumpGood.m */; };
 		BE62CD801EA0C0080076BD69 /* WGScanJumpClassify.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62CD7F1EA0C0080076BD69 /* WGScanJumpClassify.m */; };
 		BE62CD831EA0C0480076BD69 /* WGScanJumpBussinessContent.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62CD821EA0C0480076BD69 /* WGScanJumpBussinessContent.m */; };
-		BE62CD861EA0C7B60076BD69 /* WGSpecialClassifyGoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62CD851EA0C7B60076BD69 /* WGSpecialClassifyGoodViewController.m */; };
 		BE62CD891EA0DDB70076BD69 /* WGSpecialClassifyViewController+Request.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62CD881EA0DDB70076BD69 /* WGSpecialClassifyViewController+Request.m */; };
 		BE62CD931EA20E510076BD69 /* WGClientServiceCenterRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62CD921EA20E510076BD69 /* WGClientServiceCenterRequest.m */; };
 		BE62CD971EA20E630076BD69 /* WGClientServiceCenterResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62CD961EA20E630076BD69 /* WGClientServiceCenterResponse.m */; };
+		BE62CDA31EA246DB0076BD69 /* WGSpecialClassifyGoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62CDA21EA246DB0076BD69 /* WGSpecialClassifyGoodViewController.m */; };
 		BE62E22E1DF92176004510A5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62E22D1DF92176004510A5 /* main.m */; };
 		BE62E2311DF92176004510A5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62E2301DF92176004510A5 /* AppDelegate.m */; };
 		BE62E2371DF92176004510A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE62E2351DF92176004510A5 /* Main.storyboard */; };
@@ -698,14 +698,14 @@
 		BE62CD7F1EA0C0080076BD69 /* WGScanJumpClassify.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGScanJumpClassify.m; sourceTree = "<group>"; };
 		BE62CD811EA0C0480076BD69 /* WGScanJumpBussinessContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGScanJumpBussinessContent.h; sourceTree = "<group>"; };
 		BE62CD821EA0C0480076BD69 /* WGScanJumpBussinessContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGScanJumpBussinessContent.m; sourceTree = "<group>"; };
-		BE62CD841EA0C7B60076BD69 /* WGSpecialClassifyGoodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGSpecialClassifyGoodViewController.h; sourceTree = "<group>"; };
-		BE62CD851EA0C7B60076BD69 /* WGSpecialClassifyGoodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGSpecialClassifyGoodViewController.m; sourceTree = "<group>"; };
 		BE62CD871EA0DDB70076BD69 /* WGSpecialClassifyViewController+Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGSpecialClassifyViewController+Request.h"; sourceTree = "<group>"; };
 		BE62CD881EA0DDB70076BD69 /* WGSpecialClassifyViewController+Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGSpecialClassifyViewController+Request.m"; sourceTree = "<group>"; };
 		BE62CD911EA20E510076BD69 /* WGClientServiceCenterRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGClientServiceCenterRequest.h; sourceTree = "<group>"; };
 		BE62CD921EA20E510076BD69 /* WGClientServiceCenterRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGClientServiceCenterRequest.m; sourceTree = "<group>"; };
 		BE62CD951EA20E630076BD69 /* WGClientServiceCenterResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGClientServiceCenterResponse.h; sourceTree = "<group>"; };
 		BE62CD961EA20E630076BD69 /* WGClientServiceCenterResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGClientServiceCenterResponse.m; sourceTree = "<group>"; };
+		BE62CDA11EA246DB0076BD69 /* WGSpecialClassifyGoodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGSpecialClassifyGoodViewController.h; sourceTree = "<group>"; };
+		BE62CDA21EA246DB0076BD69 /* WGSpecialClassifyGoodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGSpecialClassifyGoodViewController.m; sourceTree = "<group>"; };
 		BE62E2291DF92176004510A5 /* WeygoIPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeygoIPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE62E22D1DF92176004510A5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BE62E22F1DF92176004510A5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -2176,6 +2176,31 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		BE62CD9E1EA246DB0076BD69 /* SpecialClassify */ = {
+			isa = PBXGroup;
+			children = (
+				BE62CD9F1EA246DB0076BD69 /* Model */,
+				BE62CDA01EA246DB0076BD69 /* View */,
+				BE62CDA11EA246DB0076BD69 /* WGSpecialClassifyGoodViewController.h */,
+				BE62CDA21EA246DB0076BD69 /* WGSpecialClassifyGoodViewController.m */,
+			);
+			path = SpecialClassify;
+			sourceTree = "<group>";
+		};
+		BE62CD9F1EA246DB0076BD69 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BE62CDA01EA246DB0076BD69 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		BE62E2201DF92176004510A5 = {
 			isa = PBXGroup;
 			children = (
@@ -2201,6 +2226,7 @@
 		BE62E22B1DF92176004510A5 /* WeygoIPhone */ = {
 			isa = PBXGroup;
 			children = (
+				BE62CD9E1EA246DB0076BD69 /* SpecialClassify */,
 				BECBE30D1E87C41900ADAD6C /* Asia */,
 				BEB8D0841E46CD1E00BB9BA3 /* Base */,
 				BE62E49C1DF93E8D004510A5 /* Commons */,
@@ -3233,8 +3259,6 @@
 				BECBE30F1E87C43800ADAD6C /* WGSpecialClassifyViewController.m */,
 				BE62CD871EA0DDB70076BD69 /* WGSpecialClassifyViewController+Request.h */,
 				BE62CD881EA0DDB70076BD69 /* WGSpecialClassifyViewController+Request.m */,
-				BE62CD841EA0C7B60076BD69 /* WGSpecialClassifyGoodViewController.h */,
-				BE62CD851EA0C7B60076BD69 /* WGSpecialClassifyGoodViewController.m */,
 			);
 			path = Asia;
 			sourceTree = "<group>";
@@ -3740,7 +3764,6 @@
 				BEB2D95D1DFBED1500F2E74B /* WGResponse.m in Sources */,
 				BE6BE92A1E7FD7A600A081BA /* WGCommitOrderDeliverTipCell.m in Sources */,
 				BE9F933A1E6B24CA0051B054 /* WGCSCCommonItemResponse.m in Sources */,
-				BE62CD861EA0C7B60076BD69 /* WGSpecialClassifyGoodViewController.m in Sources */,
 				BE6CC1B51E294098003755FF /* WGHomeFloorClassifyColumnCell.m in Sources */,
 				BE5E4C471E2526D900ACA48F /* WGHomeTabViewController+Contents.m in Sources */,
 				BE52EDBA1E2DBF9D0022EF5B /* WGEditAddressViewController.m in Sources */,
@@ -4003,6 +4026,7 @@
 				BEFEC3321E963FA2002FCF1F /* WGClassifyDetailRequest.m in Sources */,
 				BEEC20D71E9923F80065DE90 /* WGAddAddressRequest.m in Sources */,
 				BED697BA1E9E38CE00163355 /* WGPaySuccessResponse.m in Sources */,
+				BE62CDA31EA246DB0076BD69 /* WGSpecialClassifyGoodViewController.m in Sources */,
 				BE622A121E77CEDC002BFEDB /* WGGoodInLocalCart.m in Sources */,
 				BE52EFBB1E2F44970022EF5B /* WGCouponListViewController.m in Sources */,
 				BE63A7031E7BDA1700F77282 /* WGOrderCountView.m in Sources */,

@@ -217,3 +217,42 @@
 }
 
 @end
+
+@implementation WGApplication (AddShopCartAnimation)
+
+- (void)addShopToCart:(NSString *)imageURL fromPoint:(CGPoint)fromPoint {
+    if (!_imageView) {
+        _imageView = [[JHImageView alloc] initWithFrame:CGRectMake(fromPoint.x, fromPoint.y, kAppAdaptWidth(40), kAppAdaptWidth(40))];
+        [_imageView setImageWithURL:[NSURL URLWithString:imageURL] placeholderImage:nil options:JHWebImageOptionsRefreshCached];
+        UIWindow *window = [UIApplication sharedApplication].keyWindow;
+        [window addSubview:_imageView];
+    }
+    
+    CAKeyframeAnimation *anima = [CAKeyframeAnimation animationWithKeyPath:@"position"];
+    
+    CABasicAnimation *theAnimation;
+    theAnimation=[CABasicAnimation animationWithKeyPath:@"transform.scale"];
+    theAnimation.duration = 1;
+    theAnimation.removedOnCompletion = YES;
+    theAnimation.fromValue = [NSNumber numberWithFloat:1];
+    theAnimation.toValue = [NSNumber numberWithFloat:0.1];
+    
+    //创建一条贝塞尔
+    UIBezierPath* aPath = [UIBezierPath bezierPath];
+    
+    aPath.lineWidth = 1.0;//宽度
+    aPath.lineCapStyle = kCGLineCapRound;  //线条拐角
+    aPath.lineJoinStyle = kCGLineJoinRound;  //终点处理
+    //起始点
+    [aPath moveToPoint:CGPointMake(20, 500)];
+    //添加两个控制点
+    [aPath addQuadCurveToPoint:CGPointMake(330, 100) controlPoint:CGPointMake(170, 0)];
+    //划线
+    [aPath stroke];
+    anima.path = aPath.CGPath;
+    anima.duration = 1.0f;
+    [_imageView.layer addAnimation:anima forKey:@"pathAnimation"];
+    [_imageView.layer addAnimation:theAnimation forKey:@"theAnimation"];
+}
+
+@end

@@ -11,6 +11,8 @@
 
 @interface WGHomeFloorItem : WGObject
 
+@property (nonatomic, assign) long long id;
+
 @property (nonatomic, assign) WGHomeFloorItemType type;
 
 @property (nonatomic, strong) NSString *name;

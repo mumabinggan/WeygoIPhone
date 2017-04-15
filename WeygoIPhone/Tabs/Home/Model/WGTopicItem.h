@@ -20,7 +20,7 @@ typedef NS_ENUM(NSInteger, WGTopicType) {
 
 @property (nonatomic, strong) NSString *name;
 
-@property (nonatomic, assign) WGTopicType type;
+@property (nonatomic, assign) WGAppJumpType jumpType;
 //for dif skip
 @property (nonatomic, assign) int requestParameter;
 

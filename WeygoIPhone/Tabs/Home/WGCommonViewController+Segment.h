@@ -12,6 +12,8 @@
 
 - (void)addTitleSegmentView;
 
+- (void)setSelectedIndex:(NSInteger)index;
+
 - (void)setTitleSegmentView:(NSArray *)titleArray;
 
 @end
