@@ -8,7 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSInteger, WGSegmentViewType) {
+    WGSegmentViewTypeWidthImmutabile,
+    WGSegmentViewTypeWidthMutabile,
+};
+
 @interface WGSegmentView : UIView
+
+@property (nonatomic, assign) WGSegmentViewType type;
 
 @property (nonatomic, strong) UIColor *titleColor;
 @property (nonatomic, strong) UIColor *titleSelectedColor;

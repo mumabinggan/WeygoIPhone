@@ -42,6 +42,7 @@
     
     _contentScrollView = [[JHScrollView alloc] initWithFrame:self.bounds];
     //_contentScrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
+    _contentScrollView.showsHorizontalScrollIndicator = NO;
     _contentScrollView.bounces = _bounces;
     [self addSubview:_contentScrollView];
     //[_contentScrollView setBackgroundColor:kGreenColor];
@@ -71,9 +72,9 @@
         [_contentScrollView addSubview:item];
     }
     //set line
-    float width = self.width / _titleBtnArray.count;
     float height = kAppAdaptHeight(4);
-    _lineView.frame = CGRectMake(_selectedIndex * width, self.height - height, width, height);
+    JHView *view = _titleBtnArray[_selectedIndex];
+    _lineView.frame = CGRectMake(view.x, self.height - height, view.width, height);
     [_contentScrollView addSubview:_lineView];
 }
 
@@ -86,8 +87,13 @@
 - (void)setTitleArray:(NSArray *)titleArray {
     [_titleBtnArray removeAllObjects];
     float itemWidth = self.width / titleArray.count;
+    UIFont *font = kAppAdaptFont(14);
+    float totalWidth = 0.0f;
     for (int num = 0; num < titleArray.count; ++num) {
         NSString *title = titleArray[num];
+        if (_type == WGSegmentViewTypeWidthMutabile) {
+            itemWidth = [title returnSize:font].width + 30;
+        }
         JHButton *titleBtn = [JHButton buttonWithType:UIButtonTypeCustom];
         titleBtn.frame = CGRectMake(0, 0, itemWidth, self.height);
         [titleBtn setTitle:title forState:UIControlStateNormal];
@@ -96,7 +102,9 @@
         titleBtn.tag = num;
         [titleBtn addTarget:self action:@selector(touchItemBtn:) forControlEvents:UIControlEventTouchUpInside];
         [_titleBtnArray addObject:titleBtn];
+        totalWidth += itemWidth;
     }
+    _contentScrollView.contentSize = CGSizeMake(totalWidth, _contentScrollView.height);
     [self drawView];
 }
 
@@ -112,10 +120,13 @@
     if (self.onSelect) {
         self.onSelect(preSelectedIndex, _selectedIndex);
     }
+    NSLog(@"---width--%f--%f", sender.x, _contentScrollView.contentOffset.x);
     [UIView animateWithDuration:0.25 animations:^(void) {
-        CGRect frame = _lineView.frame;
-        frame.origin.x = sender.x;
-        _lineView.frame = frame;
+        if (sender.x - _contentScrollView.contentOffset.x < 0) {
+            _contentScrollView.contentOffset = CGPointMake(-sender.x, _contentScrollView.contentOffset.y);
+        }
+        _lineView.width = sender.width;
+        _lineView.x = sender.x;
     }];
 }
 

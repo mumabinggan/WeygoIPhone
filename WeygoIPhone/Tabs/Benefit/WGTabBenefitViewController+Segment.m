@@ -19,6 +19,7 @@
     }
     if (!_titleSegmentView) {
         _titleSegmentView = [[WGSegmentView alloc] initWithFrame:CGRectMake(0, kAppNavigationVCY, kDeviceWidth, kAppAdaptHeight(44))];
+        _titleSegmentView.type = WGSegmentViewTypeWidthMutabile;
         NSMutableArray *titleMArray = [[NSMutableArray alloc] init];
         for (WGTitleItem *item in _titleArray) {
             [titleMArray addObject:item.name];
