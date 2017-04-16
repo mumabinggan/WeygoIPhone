@@ -13,6 +13,7 @@
 #import "WGOrderListViewController+Request.h"
 #import "WGOrderDetailViewController.h"
 #import "WGGoodDetailViewController.h"
+#import "WGViewController+ShopCart.h"
 
 @interface WGOrderListViewController ()
 
@@ -91,6 +92,9 @@
 
 - (void)initSubView {
     [super initSubView];
+    
+    [self initNavigationItem];
+    
     self.title = kStr(@"Order List Title");
     JHView *contentView = [[JHView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:contentView];
@@ -105,6 +109,10 @@
 
 - (void)refreshUI {
     [_tableView reloadData];
+}
+
+- (void)initNavigationItem {
+    self.navigationItem.rightBarButtonItem = [self createShopCartItem];
 }
 
 - (void)handleReBuy:(NSInteger)index {

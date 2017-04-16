@@ -9,6 +9,7 @@
 #import "WGSpecialClassifyViewController.h"
 #import "WGCommonViewController.h"
 #import "WGSpecialClassifyViewController+Request.h"
+#import "WGViewController+ShopCart.h"
 
 @interface WGSpecialClassifyViewController ()
 {
@@ -20,6 +21,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self initNavigationItem];
     // Do any additional setup after loading the view.
     [self loadSpecailClassify];
 }
@@ -37,6 +40,10 @@
         [self addChildViewController:_contentVC];
     }
     _contentVC.homeData = _data;
+}
+
+- (void)initNavigationItem {
+    self.navigationItem.rightBarButtonItem = [self createShopCartItem];
 }
 
 - (void)handleRefresh {

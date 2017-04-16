@@ -37,6 +37,8 @@ typedef NS_ENUM(NSInteger, WGAppLanguage) {
     JHView *_messageView;
     
     JHImageView *_imageView;
+    
+    long long _shopCartGoodCount;
 }
 
 @property (nonatomic, strong) WGUser *user;
@@ -45,6 +47,8 @@ typedef NS_ENUM(NSInteger, WGAppLanguage) {
 
 //Language
 @property (nonatomic, assign) WGAppLanguage currentAppLanguage;
+
+@property (nonatomic, assign) long long shopCartGoodCount;
 
 + (WGApplication *)sharedApplication;
 

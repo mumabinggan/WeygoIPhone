@@ -9,6 +9,7 @@
 #import "WGSpecialClassifyGoodViewController.h"
 #import "WGClassifyDetailContentViewController.h"
 #import "WGShopCartViewController.h"
+#import "WGViewController+ShopCart.h"
 
 @interface WGSpecialClassifyGoodViewController ()
 {
@@ -29,20 +30,13 @@
     [self initNavigationItem];
     
     _contentVC = [[WGClassifyDetailContentViewController alloc] init];
+    _contentVC.classifyId = _id;
     [self.view addSubview:_contentVC.view];
     [self addChildViewController:_contentVC];
 }
 
 - (void)initNavigationItem {
-    JHButton *cartBtn = [[JHButton alloc] initWithFrame:CGRectMake(0, 0, 24, 24)];
-    [cartBtn setBackgroundImage:[UIImage imageNamed:@"right_cart"] forState:UIControlStateNormal];
-    [cartBtn addTarget:self action:@selector(touchShopCartBtn:) forControlEvents:UIControlEventTouchUpInside];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:cartBtn];
-}
-
-- (void)touchShopCartBtn:(id)sender {
-    WGShopCartViewController *vc = [[WGShopCartViewController alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
+    self.navigationItem.rightBarButtonItem = [self createShopCartItem];
 }
 
 - (void)didReceiveMemoryWarning {

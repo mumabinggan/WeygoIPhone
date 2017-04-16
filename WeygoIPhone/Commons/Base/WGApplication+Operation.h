@@ -61,3 +61,11 @@
 - (void)addShopToCart:(NSString *)imageURL fromPoint:(CGPoint)fromPoint;
 
 @end
+
+@interface WGApplication (ShopCart)
+
+- (void)increaseGoodCount:(NSInteger)increaseCount;
+
+- (void)decreaseGoodCount:(NSInteger)decreaseCount;
+
+@end

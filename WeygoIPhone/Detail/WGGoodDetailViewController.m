@@ -16,6 +16,8 @@
 #import "WGGoodAddView.h"
 #import "WGGoodInLocalCart.h"
 #import "WGPostCodePopoverView.h"
+#import "WGViewController+ShopCart.h"
+#import "WGHomeFloorContentGoodItem.h"
 
 @interface WGGoodDetailViewController ()
 {
@@ -40,6 +42,9 @@
 
 - (void)initSubView {
     [super initSubView];
+    
+    [self initNavigationItem];
+    
     JHView *contentView = [[JHView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:contentView];
     
@@ -79,6 +84,10 @@
     [_bottomView addSubview:_likeBtn];
     
     [contentView addSubview:_bottomView];
+}
+
+- (void)initNavigationItem {
+    self.navigationItem.rightBarButtonItem = [self createShopCartItem];
 }
 
 - (void)refreshUI {
@@ -121,12 +130,22 @@
     [[WGApplication sharedApplication] loadAddGoodToCart:_goodDetail.id count:_addView.count onCompletion:^(WGAddGoodToCartResponse *response) {
         [self showWarningMessage:response.message];
     }];
+    [[WGApplication sharedApplication] increaseGoodCount:_addView.count];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationUpdateShopCartCount object:nil];
 }
 
 - (void)handleRecommendGood:(WGHomeFloorContentItem *)item {
     WGGoodDetailViewController *vc = [[WGGoodDetailViewController alloc] init];
     vc.goodId = item.id;
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)handleAddShopCart:(WGHomeFloorContentGoodItem *)item fromPoint:(CGPoint )fromPoint {
+    [[WGApplication sharedApplication] loadAddGoodToCart:item.id count:1 onCompletion:^(WGAddGoodToCartResponse *response) {
+        [WGApplication sharedApplication].shopCartGoodCount = response.data.goodCount;
+        [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationUpdateShopCartCount object:nil];
+    }];
+    [[WGApplication sharedApplication] addShopToCart:item.pictureURL fromPoint:fromPoint];
 }
 
 - (void)didReceiveMemoryWarning {

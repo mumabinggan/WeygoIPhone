@@ -11,3 +11,7 @@
 @implementation WGAddGoodToCartResponse
 
 @end
+
+@implementation WGAddGoodToCartData
+
+@end

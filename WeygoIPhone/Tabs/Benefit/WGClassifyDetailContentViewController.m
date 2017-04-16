@@ -28,7 +28,6 @@
 @interface WGClassifyDetailContentViewController ()
 {
     WGClassifySortView *_sortView;
-    TWRefreshTableView *_tableView;
     
     BOOL _isGrid;
     
@@ -56,54 +55,54 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)initData {
-    _data = [[WGClassifyDetail alloc] init];
-    _data.name = @"AFDSFSA";
-    _data.id = 213121;
-    WGCarouselFigureItem *carouselFigureItem = [[WGCarouselFigureItem alloc] init];
-    carouselFigureItem.pictureURL = @"http://www.pp3.cn/uploads/201610/2016100805.jpg";
-    _data.carouselFigureItem = carouselFigureItem;
-    
-    WGClassifyItem *item = [[WGClassifyItem alloc] init];
-    item.name = @"zhenguasdf";
-    item.pictureURL = @"http://www.pp3.cn/uploads/201609/2016091012.jpg";
-    
-    WGClassifyItem *item2 = [[WGClassifyItem alloc] init];
-    item2.name = @"uasdf";
-    item2.pictureURL = @"http://img1.touxiang.cn/uploads/20131203/03-073408_255.jpg";
-    
-    WGClassifyItem *item3 = [[WGClassifyItem alloc] init];
-    item3.name = @"fsuasdf";
-    item3.pictureURL = @"http://img1.touxiang.cn/uploads/20131203/03-073436_260.jpg";
-    
-    WGClassifyItem *item4 = [[WGClassifyItem alloc] init];
-    item4.name = @"asfsdazhenguasdf";
-    item4.pictureURL = @"http://img1.touxiang.cn/uploads/20131203/03-073440_93.jpg";
-    
-    WGClassifyItem *item5 = [[WGClassifyItem alloc] init];
-    item5.name = @"zfjdhenguasdf";
-    item5.pictureURL = @"http://img1.touxiang.cn/uploads/20131203/03-073442_102.jpg";
-    _data.subClassifyArray = @[item, item2, item3, item4, item5];
-    
-    _data.goodArray = [self getGoodArray:8];
-    
-    _sortType = WGClassifySortTypeDefault;
-    
-    //New
-    WGNewsItem *newItem1 = [[WGNewsItem alloc] init];
-    newItem1.name = @"How do you return a multiline text CGSize from the new iOS 7 method sizeW";
-    WGNewsItem *newItem2 = [[WGNewsItem alloc] init];
-    newItem2.name = @"CGSize textSize = [text sizeWithAttributes:@{ NSFontAttributeName : [UIFon";
-    WGNewsItem *newItem3 = [[WGNewsItem alloc] init];
-    newItem3.name = @"or the first time i see this notation for di";
-    WGNewsItem *newItem4 = [[WGNewsItem alloc] init];
-    newItem4.name = @"Have a look at this: stackoverflow.com/question";
-    WGNews *news = [[WGNews alloc] init];
-    news.name = @"好消息";
-    news.contents = @[newItem1, newItem2, newItem3, newItem4];
-    _data.news = news;
-    _data.recommendedArray = [self getGoodArray:2];
-}
+//- (void)initData {
+//    _data = [[WGClassifyDetail alloc] init];
+//    _data.name = @"AFDSFSA";
+//    _data.id = 213121;
+//    WGCarouselFigureItem *carouselFigureItem = [[WGCarouselFigureItem alloc] init];
+//    carouselFigureItem.pictureURL = @"http://www.pp3.cn/uploads/201610/2016100805.jpg";
+//    _data.carouselFigureItem = carouselFigureItem;
+//    
+//    WGClassifyItem *item = [[WGClassifyItem alloc] init];
+//    item.name = @"zhenguasdf";
+//    item.pictureURL = @"http://www.pp3.cn/uploads/201609/2016091012.jpg";
+//    
+//    WGClassifyItem *item2 = [[WGClassifyItem alloc] init];
+//    item2.name = @"uasdf";
+//    item2.pictureURL = @"http://img1.touxiang.cn/uploads/20131203/03-073408_255.jpg";
+//    
+//    WGClassifyItem *item3 = [[WGClassifyItem alloc] init];
+//    item3.name = @"fsuasdf";
+//    item3.pictureURL = @"http://img1.touxiang.cn/uploads/20131203/03-073436_260.jpg";
+//    
+//    WGClassifyItem *item4 = [[WGClassifyItem alloc] init];
+//    item4.name = @"asfsdazhenguasdf";
+//    item4.pictureURL = @"http://img1.touxiang.cn/uploads/20131203/03-073440_93.jpg";
+//    
+//    WGClassifyItem *item5 = [[WGClassifyItem alloc] init];
+//    item5.name = @"zfjdhenguasdf";
+//    item5.pictureURL = @"http://img1.touxiang.cn/uploads/20131203/03-073442_102.jpg";
+//    _data.subClassifyArray = @[item, item2, item3, item4, item5];
+//    
+//    _data.goodArray = [self getGoodArray:8];
+//    
+//    _sortType = WGClassifySortTypeDefault;
+//    
+//    //New
+//    WGNewsItem *newItem1 = [[WGNewsItem alloc] init];
+//    newItem1.name = @"How do you return a multiline text CGSize from the new iOS 7 method sizeW";
+//    WGNewsItem *newItem2 = [[WGNewsItem alloc] init];
+//    newItem2.name = @"CGSize textSize = [text sizeWithAttributes:@{ NSFontAttributeName : [UIFon";
+//    WGNewsItem *newItem3 = [[WGNewsItem alloc] init];
+//    newItem3.name = @"or the first time i see this notation for di";
+//    WGNewsItem *newItem4 = [[WGNewsItem alloc] init];
+//    newItem4.name = @"Have a look at this: stackoverflow.com/question";
+//    WGNews *news = [[WGNews alloc] init];
+//    news.name = @"好消息";
+//    news.contents = @[newItem1, newItem2, newItem3, newItem4];
+//    _data.news = news;
+//    _data.recommendedArray = [self getGoodArray:2];
+//}
 
 - (NSArray *)getGoodArray:(NSInteger)count {
     NSMutableArray *subMArray = [NSMutableArray array];
@@ -134,6 +133,7 @@
 }
 
 - (void)refreshUI {
+    [_tableView reloadData];
     [UIView animateWithDuration:0.5 animations:^() {
         _tableView.layer.opacity = 1.0f;
     }];
@@ -225,18 +225,28 @@
     [_sortView setItemSelected:NO title:_sortArray[index] index:0];
     [self removePickerView];
     //request data
+    [self loadData:YES pulling:NO];
 }
 
 - (void)handleFilterApply:(WGClassifyFilterCondition *)filter {
     _filter = filter;
     [_sortView setItemSelected:[_filter hasSelected] index:1];
     //[self ]
+    [self loadData:YES pulling:NO];
 }
 
 - (void)openGoodDetailViewController:(long long)goodId {
     WGGoodDetailViewController *vc = [[WGGoodDetailViewController alloc] init];
     vc.goodId = goodId;
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)handleAddShopCart:(WGHomeFloorContentGoodItem *)item fromPoint:(CGPoint )fromPoint {
+    [[WGApplication sharedApplication] loadAddGoodToCart:item.id count:1 onCompletion:^(WGAddGoodToCartResponse *response) {
+        [WGApplication sharedApplication].shopCartGoodCount = response.data.goodCount;
+        [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationUpdateShopCartCount object:nil];
+    }];
+    [[WGApplication sharedApplication] addShopToCart:item.pictureURL fromPoint:fromPoint];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -347,10 +357,18 @@
                 gridCell.onApply = ^(WGHomeFloorContentItem *item) {
                     [weakSelf openGoodDetailViewController:item.id];
                 };
+                gridCell.onPurchase = ^(WGHomeFloorContentGoodItem *item, CGPoint fromPoint) {
+                    [weakSelf handleAddShopCart:item fromPoint:fromPoint];
+                };
                 cell = gridCell;
             }
             else {
-                cell = [[WGHomeFloorGoodListItemCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+                WeakSelf;
+                WGHomeFloorGoodListItemCell *goodListCell = [[WGHomeFloorGoodListItemCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+                goodListCell.onPurchase = ^(WGHomeFloorContentGoodItem *item, CGPoint fromPoint) {
+                    [weakSelf handleAddShopCart:item fromPoint:fromPoint];
+                };
+                cell = goodListCell;
                 JHView *line = [[JHView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kAppSepratorLineHeight)];
                 line.backgroundColor = WGAppSeparateLineColor;
                 [cell.contentView addSubview:line];
@@ -409,7 +427,10 @@
 }
 
 - (void)beginRefreshHeader:(TWRefreshTableView *)tableView {
-    [self loadData:YES pulling:NO];
+    [self loadData:YES pulling:YES];
+    if (self.onTopRefresh) {
+        self.onTopRefresh();
+    }
 }
 
 - (void)beginRefreshFooter:(TWRefreshTableView *)tableView {
@@ -425,7 +446,7 @@
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    return 3;
+    return _sortArray.count;
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
@@ -433,7 +454,7 @@
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    
+    //[self loadData:YES pulling:NO];
 }
 
 @end

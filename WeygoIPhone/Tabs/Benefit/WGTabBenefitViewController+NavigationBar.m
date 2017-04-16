@@ -10,12 +10,16 @@
 #import "WGMainViewController.h"
 #import "WGHomeTitleView.h"
 #import "WGTabViewController+Slider.h"
+#import "WGViewController+ShopCart.h"
 
 @implementation WGTabBenefitViewController (NavigationBar)
 
 - (void)initNavigationItems {    
     //set leftView
     self.navigationItem.leftBarButtonItem = [self createSliderItem];
+    
+    //set rightView
+    self.navigationItem.rightBarButtonItem = [self createShopCartItem];
 }
 
 //- (void)touchSliderButton:(id)sender {

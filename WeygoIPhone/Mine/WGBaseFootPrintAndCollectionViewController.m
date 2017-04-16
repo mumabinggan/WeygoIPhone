@@ -10,6 +10,7 @@
 #import "WGHomeFloorContentGoodItem.h"
 #import "WGHomeFloorGoodListItemCell.h"
 #import "WGGoodDetailViewController.h"
+#import "WGViewController+ShopCart.h"
 
 @interface WGBaseFootPrintAndCollectionViewController ()
 
@@ -61,10 +62,7 @@
     JHView *contentView = [[JHView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:contentView];
     
-    JHButton *cartBtn = [[JHButton alloc] initWithFrame:CGRectMake(0, 0, 24, 24)];
-    [cartBtn setBackgroundImage:[UIImage imageNamed:@"right_cart"] forState:UIControlStateNormal];
-    [cartBtn addTarget:self action:@selector(touchShopCartBtn:) forControlEvents:UIControlEventTouchUpInside];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:cartBtn];
+    [self initNavigationItem];
     
     _tableView = [[TWRefreshTableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped refreshType:TWRefreshTypeTop | TWRefreshTypeBottom];
     _tableView.dataSource = self;
@@ -83,8 +81,16 @@
     }];
 }
 
-- (void)touchShopCartBtn:(id)sender {
-    
+- (void)initNavigationItem {
+    self.navigationItem.rightBarButtonItem = [self createShopCartItem];
+}
+
+- (void)handleAddShopCart:(WGHomeFloorContentGoodItem *)item fromPoint:(CGPoint )fromPoint {
+    [[WGApplication sharedApplication] loadAddGoodToCart:item.id count:1 onCompletion:^(WGAddGoodToCartResponse *response) {
+        [WGApplication sharedApplication].shopCartGoodCount = response.data.goodCount;
+        [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationUpdateShopCartCount object:nil];
+    }];
+    [[WGApplication sharedApplication] addShopToCart:item.pictureURL fromPoint:fromPoint];
 }
 
 - (void)handleDeleteIndexPath:(NSIndexPath *)indexPath {
@@ -123,9 +129,13 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellId = @"cellId";
     WGHomeFloorGoodListItemCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    WeakSelf;
     if (!cell) {
         cell = [[WGHomeFloorGoodListItemCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.onPurchase = ^(WGHomeFloorContentGoodItem *item, CGPoint fromPoint) {
+            [weakSelf handleAddShopCart:item fromPoint:fromPoint];
+        };
         JHView *line = [[JHView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kAppSepratorLineHeight)];
         line.backgroundColor = WGAppSeparateLineColor;
         [cell.contentView addSubview:line];

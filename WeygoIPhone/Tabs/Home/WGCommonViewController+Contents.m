@@ -53,7 +53,8 @@
 }
 
 - (void)handleRefresh {
-    [self loadData];
+    [self loadContentWithIndex:_titleSegmentView.selectedIndex isFirst:NO];
+    //[self loadData];
 }
 
 - (void)refreshContent:(NSInteger)index {

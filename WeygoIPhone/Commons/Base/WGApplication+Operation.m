@@ -221,21 +221,22 @@
 @implementation WGApplication (AddShopCartAnimation)
 
 - (void)addShopToCart:(NSString *)imageURL fromPoint:(CGPoint)fromPoint {
+    [_imageView removeFromSuperview];
+    _imageView = nil;
     if (!_imageView) {
-        _imageView = [[JHImageView alloc] initWithFrame:CGRectMake(fromPoint.x, fromPoint.y, kAppAdaptWidth(40), kAppAdaptWidth(40))];
+        _imageView = [[JHImageView alloc] initWithFrame:CGRectMake(fromPoint.x, fromPoint.y, kAppAdaptWidth(60), kAppAdaptWidth(60))];
         [_imageView setImageWithURL:[NSURL URLWithString:imageURL] placeholderImage:nil options:JHWebImageOptionsRefreshCached];
         UIWindow *window = [UIApplication sharedApplication].keyWindow;
         [window addSubview:_imageView];
     }
     
-    CAKeyframeAnimation *anima = [CAKeyframeAnimation animationWithKeyPath:@"position"];
-    
     CABasicAnimation *theAnimation;
-    theAnimation=[CABasicAnimation animationWithKeyPath:@"transform.scale"];
-    theAnimation.duration = 1;
-    theAnimation.removedOnCompletion = YES;
+    theAnimation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+    theAnimation.duration = 0.5;
+    theAnimation.removedOnCompletion = NO;
     theAnimation.fromValue = [NSNumber numberWithFloat:1];
-    theAnimation.toValue = [NSNumber numberWithFloat:0.1];
+    theAnimation.toValue = [NSNumber numberWithFloat:0];
+    theAnimation.fillMode = kCAFillModeForwards;
     
     //创建一条贝塞尔
     UIBezierPath* aPath = [UIBezierPath bezierPath];
@@ -244,15 +245,41 @@
     aPath.lineCapStyle = kCGLineCapRound;  //线条拐角
     aPath.lineJoinStyle = kCGLineJoinRound;  //终点处理
     //起始点
-    [aPath moveToPoint:CGPointMake(20, 500)];
+    [aPath moveToPoint:fromPoint];
     //添加两个控制点
-    [aPath addQuadCurveToPoint:CGPointMake(330, 100) controlPoint:CGPointMake(170, 0)];
+    [aPath addQuadCurveToPoint:CGPointMake(kDeviceWidth - 20, 40) controlPoint:CGPointMake(kDeviceWidth/2, 0)];
     //划线
     [aPath stroke];
+    
+    CAKeyframeAnimation *anima = [CAKeyframeAnimation animationWithKeyPath:@"position"];
     anima.path = aPath.CGPath;
-    anima.duration = 1.0f;
+    anima.duration = 0.5f;
+    anima.fillMode = kCAFillModeForwards;
+    anima.removedOnCompletion = NO;
     [_imageView.layer addAnimation:anima forKey:@"pathAnimation"];
     [_imageView.layer addAnimation:theAnimation forKey:@"theAnimation"];
+}
+
+@end
+
+@implementation WGApplication (ShopCart)
+
+- (void)setShopCartGoodCount:(long long)shopCartGoodCount {
+    _shopCartGoodCount = shopCartGoodCount;
+}
+
+- (long long)shopCartGoodCount {
+    return _shopCartGoodCount;
+}
+
+- (void)increaseGoodCount:(NSInteger)increaseCount {
+    _shopCartGoodCount += increaseCount;
+}
+
+- (void)decreaseGoodCount:(NSInteger)decreaseCount {
+    if (_shopCartGoodCount >= decreaseCount) {
+        _shopCartGoodCount -= decreaseCount;
+    }
 }
 
 @end

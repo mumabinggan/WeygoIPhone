@@ -66,6 +66,7 @@
 //#define kWGOswaldRegularAdaptFont(fsize)    kWGOswaldRegularFont(fsize * kDeviceWidthScaleTo47Inch)
 
 static NSString *kNotificationTabChanged = @"kNotificationTabChanged";
+static NSString *kNotificationUpdateShopCartCount = @"kNotificationUpdateShopCartCount";
 
 //Local Setting
 #define kLocalSettingsKeyUser   @"kLocalSettingsKeyUser"

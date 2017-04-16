@@ -15,7 +15,7 @@
     JHScrollView *_contentsScrollView;
     
     NSMutableDictionary *_tabContentMDictionary;
-    //TWRefreshCollectionView *_collectionView;
+    NSArray *_titleArray;
 }
 
 @property (nonatomic, assign) long long currentId;

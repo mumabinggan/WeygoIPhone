@@ -11,7 +11,7 @@
 @implementation WGRebuyOrderRequest
 
 - (NSString *)api {
-    return @"orders/index?";
+    return @"orders/rebuy?";
 }
 
 @end

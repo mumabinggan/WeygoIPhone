@@ -314,6 +314,7 @@
             WGClassifyItem *item = _subArray[indexPath.row];
             WGClassifyDetailViewController *vc = [[WGClassifyDetailViewController alloc] init];
             vc.classifyId = item.id;
+            vc.title = item.name;
             [self.navigationController pushViewController:vc animated:YES];
         }
         else {

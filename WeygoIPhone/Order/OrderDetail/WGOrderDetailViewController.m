@@ -16,6 +16,7 @@
 #import "WGHomeFloorGoodListItemCell.h"
 #import "WGOrderGoodItem.h"
 #import "WGOrderDetailViewController+Request.h"
+#import "WGViewController+ShopCart.h"
 
 @interface WGOrderDetailViewController ()
 {
@@ -38,6 +39,9 @@
 - (void)initSubView {
     [super initSubView];
     self.title = kStr(@"Order Detail");
+    
+    [self initNavigationItem];
+    
     JHView *contentView = [[JHView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:contentView];
     
@@ -150,6 +154,10 @@
 - (void)showhowAllGoods {
     _showAllGoods = YES;
     [_tableView reloadData];
+}
+
+- (void)initNavigationItem {
+    self.navigationItem.rightBarButtonItem = [self createShopCartItem];
 }
 
 - (void)refreshUI {

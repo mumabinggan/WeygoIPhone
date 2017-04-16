@@ -74,6 +74,10 @@
     return self.tabBarController.navigationItem;
 }
 
+- (void)touchShopCartButton:(JHButton *)sender {
+    [[WGApplication sharedApplication] switchTab:WGTabIndexShopCart];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

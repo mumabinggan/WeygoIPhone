@@ -8,11 +8,14 @@
 
 #import "WGTabBenefitViewController.h"
 #import "WGTabBenefitViewController+NavigationBar.h"
-#import "WGCommonViewController.h"
+#import "WGTabBenefitViewController+Scroll.h"
+#import "WGTabBenefitViewController+Segment.h"
+#import "WGTabBenefitViewController+Request.h"
+#import "WGTitleItem.h"
 
 @interface WGTabBenefitViewController ()
 {
-    WGCommonViewController *_contentVC;
+    //WGCommonViewController *_contentVC;
 }
 @end
 
@@ -33,15 +36,29 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = kStr(@"TabBenefit");
+    [self loadHomeTabTitles];
+}
 
+- (void)initData {
+    _tabContentMDictionary = [[NSMutableDictionary alloc] init];
+}
+
+- (void)setCurrentId:(long long)currentId {
+    for (int num = 0; num < _titleArray.count; ++num) {
+        WGTitleItem *item = _titleArray[num];
+        if (item.id == currentId) {
+            [self setSelectedIndex:num];
+            //[self setContentsScrollViewOffsetWithIndex:num];
+            return;
+        }
+    }
+    if (_titleArray.count > 0) {
+        _currentId = 0;
+    }
 }
 
 - (void)initSubView {
     [super initSubView];
-    _contentVC = [[WGCommonViewController alloc] init];
-    _contentVC.type = WGConfigContentTypeBenefit;
-    [self.view addSubview:_contentVC.view];
-    [self addChildViewController:_contentVC];
 }
 
 - (BOOL)prefersNavigationBarHiddenAnimated {
@@ -52,15 +69,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

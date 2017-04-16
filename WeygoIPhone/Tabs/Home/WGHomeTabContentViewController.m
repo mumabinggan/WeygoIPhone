@@ -165,6 +165,14 @@
     }
 }
 
+- (void)handleAddShopCart:(WGHomeFloorContentGoodItem *)item fromPoint:(CGPoint )fromPoint {
+    [[WGApplication sharedApplication] loadAddGoodToCart:item.id count:1 onCompletion:^(WGAddGoodToCartResponse *response) {
+        [WGApplication sharedApplication].shopCartGoodCount = response.data.goodCount;
+        [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationUpdateShopCartCount object:nil];
+    }];
+    [[WGApplication sharedApplication] addShopToCart:item.pictureURL fromPoint:fromPoint];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -310,7 +318,11 @@
                     cell = countryCell;
                 }
                 else if (item.type == WGHomeFloorItemTypeGoodList) {
-                    cell = [[WGHomeFloorGoodListItemCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+                    WGHomeFloorGoodListItemCell *goodListCell = [[WGHomeFloorGoodListItemCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+                    goodListCell.onPurchase = ^(WGHomeFloorContentGoodItem *item, CGPoint fromPoint) {
+                        [weakSelf handleAddShopCart:item fromPoint:fromPoint];
+                    };
+                    cell = goodListCell;
                     JHView *line = [[JHView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kAppSepratorLineHeight)];
                     line.backgroundColor = WGAppSeparateLineColor;
                     [cell.contentView addSubview:line];
@@ -326,6 +338,9 @@
                     WGHomeFloorGoodGridItemCell *goodGridCell = [[WGHomeFloorGoodGridItemCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
                     goodGridCell.onApply = ^(WGHomeFloorContentItem *item) {
                         [weakSelf handleFloorContentItem:item.id name:item.name jumpType:item.jumpType];
+                    };
+                    goodGridCell.onPurchase = ^(WGHomeFloorContentGoodItem *item, CGPoint fromPoint) {
+                        [weakSelf handleAddShopCart:item fromPoint:fromPoint];
                     };
                     cell = goodGridCell;
                 }

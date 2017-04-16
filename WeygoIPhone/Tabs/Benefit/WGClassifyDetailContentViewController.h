@@ -25,6 +25,7 @@ typedef NS_ENUM(NSInteger, WGClassifySortType) {
 
 @interface WGClassifyDetailContentViewController : WGViewController
 {
+    TWRefreshTableView *_tableView;
     WGClassifyFilterCondition *_filter;
     WGClassifyDetail *_data;
     
@@ -36,6 +37,8 @@ typedef NS_ENUM(NSInteger, WGClassifySortType) {
 @property (nonatomic, assign) WGClassifyDetailType type;
 
 @property (nonatomic, strong) void (^onResponse)(WGClassifyDetail *classifyDetail);
+
+@property (nonatomic, copy) void (^onTopRefresh)();
 
 - (void)refreshUI;
 

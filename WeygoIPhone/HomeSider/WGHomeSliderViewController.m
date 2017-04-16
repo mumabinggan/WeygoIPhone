@@ -384,6 +384,7 @@
         //分类详情
         WGClassifyDetailViewController *classifyDetailViewController = [[WGClassifyDetailViewController alloc] init];
         classifyDetailViewController.classifyId = [self subClassifyWithIndexPath:indexPath].id;
+        classifyDetailViewController.title = [self subClassifyWithIndexPath:indexPath].name;
         vc = classifyDetailViewController;
     }
     //进入消息中心

@@ -11,6 +11,7 @@
 #import "WGHomeSliderViewController.h"
 #import "WGMainViewController.h"
 #import "WGTabViewController+Slider.h"
+#import "WGViewController+ShopCart.h"
 
 @implementation WGHomeTabViewController (NavigationBar)
 
@@ -23,6 +24,9 @@
     
     //set leftView
     self.navigationItem.leftBarButtonItem = [self createSliderItem];
+    
+    //set rightView
+    self.navigationItem.rightBarButtonItem = [self createShopCartItem];
 }
 
 @end

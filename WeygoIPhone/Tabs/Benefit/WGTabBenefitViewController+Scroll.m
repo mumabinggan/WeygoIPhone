@@ -1,20 +1,19 @@
 //
-//  WGCommonViewController+Scroll.m
+//  WGTabBenefitViewController+Scroll.m
 //  WeygoIPhone
 //
-//  Created by muma on 2017/3/26.
+//  Created by muma on 2017/4/16.
 //  Copyright © 2017年 weygo.com. All rights reserved.
 //
 
-#import "WGCommonViewController+Scroll.h"
-#import "WGScrollAdView.h"
-#import "WGCommonViewController+Contents.h"
+#import "WGTabBenefitViewController+Scroll.h"
+#import "WGTabBenefitViewController+Contents.h"
 
-@interface WGCommonViewController (ScrollDelegate) <UIScrollViewDelegate>
+@interface WGTabBenefitViewController (ScrollDelegate) <UIScrollViewDelegate>
 
 @end
 
-@implementation WGCommonViewController (Scroll)
+@implementation WGTabBenefitViewController (Scroll)
 
 - (void)addContentsScrollView {
     if (_contentsScrollView) {
@@ -45,7 +44,7 @@
 
 @end
 
-@implementation WGCommonViewController (ScrollDelegate)
+@implementation WGTabBenefitViewController (ScrollDelegate)
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     NSInteger selectedIndex = ((int)(scrollView.contentOffset.x + 1)) / (int)kDeviceWidth;

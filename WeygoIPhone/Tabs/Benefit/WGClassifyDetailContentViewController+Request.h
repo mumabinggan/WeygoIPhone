@@ -10,6 +10,8 @@
 
 @interface WGClassifyDetailContentViewController (Request)
 
+- (void)loadNeedCheckData;
+
 - (void)loadData:(BOOL)refresh pulling:(BOOL)pulling;
 
 @end

@@ -42,7 +42,6 @@
 }
 
 - (void)loadHomeTabTitles {
-    
     WGHomeTabTitleRequest *request = [[WGHomeTabTitleRequest alloc] init];
     __weak typeof(self) weakSelf = self;
     [self get:request forResponseClass:[WGHomeTabTitleResponse class] success:^(JHResponse *response) {

@@ -30,18 +30,6 @@
     _tabDataMDictionary = [[NSMutableDictionary alloc] init];
 }
 
-//- (void)initSubView {
-//    [super initSubView];
-//    //JHView *contentView = [[JHView alloc] initWithFrame:self.view.bounds];
-//    //[self.view addSubview:contentView];
-//    //[self addTitleSegmentView];
-//    //
-//    //[self addContentsScrollView];
-//    
-//    //[self addContentsWithIndex:0];
-//    //[_contentsScrollView addSubview:[self collectionView]];
-//}
-
 - (void)setCurrentId:(long long)currentId {
     for (int num = 0; num < _titleArray.count; ++num) {
         WGTitleItem *item = _titleArray[num];
@@ -51,21 +39,14 @@
             return;
         }
     }
+    if (_titleArray.count > 0) {
+        _currentId = 0;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

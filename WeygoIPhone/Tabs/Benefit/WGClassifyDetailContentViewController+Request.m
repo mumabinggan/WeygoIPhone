@@ -14,6 +14,12 @@
 
 @implementation WGClassifyDetailContentViewController (Request)
 
+- (void)loadNeedCheckData {
+    if (!_data) {
+        [self loadData:YES pulling:NO];
+    }
+}
+
 - (void)loadData:(BOOL)refresh pulling:(BOOL)pulling {
     if (self.type == WGClassifyDetailTypeNormal) {
         [self loadClassifyDetailNormal:refresh pulling:pulling];
@@ -50,14 +56,19 @@
         request.showsLoadingView = NO;
     }
     __weak typeof(self) weakSelf = self;
-    [self get:request forResponseClass:[WGClassifyDetailResponse class] success:^(JHResponse *response) {
+    [self post:request forResponseClass:[WGClassifyDetailResponse class] success:^(JHResponse *response) {
         [weakSelf handleClassifyDetailResponse:(WGClassifyDetailResponse *)response refresh:refresh pulling:pulling];
     } failure:^(NSError *error) {
-        [weakSelf showWarningMessage:kStr(@"Request Failed")];
+        [weakSelf handleClassifyDetailResponse:nil refresh:refresh pulling:pulling];
     }];
 }
 
 - (void)handleClassifyDetailResponse:(WGClassifyDetailResponse *)response refresh:(BOOL)refresh pulling:(BOOL)pulling {
+    [self stopRefreshing:_tableView refresh:refresh pulling:pulling];
+    if (!response) {
+        [self showWarningMessage:kStr(@"Request Failed")];
+        return;
+    }
     if (response.success) {
         if (refresh) {
             _data = response.data;

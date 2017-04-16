@@ -17,6 +17,8 @@
 #import "WGClassifyDetailFilterViewController.h"
 #import "WGShopCartViewController.h"
 #import "WGClassifyDetailContentViewController.h"
+#import "WGClassifyDetailContentViewController+Request.h"
+#import "WGViewController+ShopCart.h"
 
 //for test
 #import "WGCarouselFigureItem.h"
@@ -45,26 +47,17 @@
     
     WeakSelf;
     _contentVC = [[WGClassifyDetailContentViewController alloc] init];
+    _contentVC.classifyId = _classifyId;
     _contentVC.onResponse = ^(WGClassifyDetail *classifyDetail) {
         [weakSelf handleOnResponse:classifyDetail];
     };
+    [_contentVC loadData:YES pulling:NO];
     [self.view addSubview:_contentVC.view];
     [self addChildViewController:_contentVC];
 }
 
 - (void)initNavigationItem {
-    WGHomeTitleView *titleView = [[WGHomeTitleView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth / 2, kAppNavigationBarHeight)];
-    [titleView setTitle:self.title];
-    __weak id weakSelf = self;
-    titleView.onTouch = ^(WGHomeTitleView *titleView) {
-        [weakSelf touchTitleView];
-    };
-    self.navigationItem.titleView = titleView;
-    
-    JHButton *cartBtn = [[JHButton alloc] initWithFrame:CGRectMake(0, 0, 24, 24)];
-    [cartBtn setBackgroundImage:[UIImage imageNamed:@"right_cart"] forState:UIControlStateNormal];
-    [cartBtn addTarget:self action:@selector(touchShopCartBtn:) forControlEvents:UIControlEventTouchUpInside];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:cartBtn];
+    self.navigationItem.rightBarButtonItem = [self createShopCartItem];
 }
 
 - (void)touchTitleView {
@@ -81,17 +74,23 @@
 
 - (void)handleOnResponse:(WGClassifyDetail *)classifyDetail {
     _subClassifyArray = classifyDetail.subClassifyArray;
+    if (_subClassifyArray == nil || _subClassifyArray.count == 0) {
+        self.title = classifyDetail.name;
+    }
+    else {
+        WGHomeTitleView *titleView = [[WGHomeTitleView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth / 2, kAppNavigationBarHeight)];
+        [titleView setTitle:classifyDetail.name];
+        __weak id weakSelf = self;
+        titleView.onTouch = ^(WGHomeTitleView *titleView) {
+            [weakSelf touchTitleView];
+        };
+    }
 }
 
 - (void)handleApply:(WGClassifyItem *)item {
     WGClassifyDetailViewController *vc = [[WGClassifyDetailViewController alloc] init];
     vc.classifyId = item.id;
     vc.title = item.name;
-    [self.navigationController pushViewController:vc animated:YES];
-}
-
-- (void)touchShopCartBtn:(id)sender {
-    WGShopCartViewController *vc = [[WGShopCartViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
