@@ -49,6 +49,8 @@ typedef NS_ENUM(NSInteger, WGHomeFloorItemType) {
 
 @property (nonatomic, assign) WGAppJumpType jumpType;
 
+@property (nonatomic, assign) int inStock;
+
 //for dif skip
 @property (nonatomic, assign) int requestParameter;
 

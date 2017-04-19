@@ -23,6 +23,8 @@
 		BE2B42D71E8BA29E0010BCB7 /* WGDeleteGoodFromShopCartRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE2B42D61E8BA29E0010BCB7 /* WGDeleteGoodFromShopCartRequest.m */; };
 		BE2B42DA1E8BA2B50010BCB7 /* WGDeleteGoodFromShopCartResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BE2B42D91E8BA2B50010BCB7 /* WGDeleteGoodFromShopCartResponse.m */; };
 		BE32F92F1EA320A90063B38F /* WGViewController+ShopCart.m in Sources */ = {isa = PBXBuildFile; fileRef = BE32F92E1EA320A90063B38F /* WGViewController+ShopCart.m */; };
+		BE32F9891EA3B3760063B38F /* WGSetPostCodeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE32F9881EA3B3760063B38F /* WGSetPostCodeRequest.m */; };
+		BE32F98C1EA3B3870063B38F /* WGSetPostCodeResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BE32F98B1EA3B3870063B38F /* WGSetPostCodeResponse.m */; };
 		BE49E3B41E45BA4200ECDEE5 /* WGSessionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE49E3B31E45BA4200ECDEE5 /* WGSessionRequest.m */; };
 		BE49E3B71E45BAA100ECDEE5 /* WGCallBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE49E3B61E45BAA100ECDEE5 /* WGCallBaseRequest.m */; };
 		BE49E3BA1E45BAB100ECDEE5 /* WGLoginBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE49E3B91E45BAB100ECDEE5 /* WGLoginBaseRequest.m */; };
@@ -449,7 +451,7 @@
 			remoteGlobalIDString = BE62D5D31DF8DAFD004510A5;
 			remoteInfo = JHKitTests;
 		};
-		BE62E4421DF92BE7004510A5 /* PBXContainerItemProxy */ = {
+		BEE084F21EA754AE00DC2CC3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BE62E40C1DF927BC004510A5 /* JHKit.xcodeproj */;
 			proxyType = 1;
@@ -511,6 +513,13 @@
 		BE2B42D91E8BA2B50010BCB7 /* WGDeleteGoodFromShopCartResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGDeleteGoodFromShopCartResponse.m; sourceTree = "<group>"; };
 		BE32F92D1EA320A90063B38F /* WGViewController+ShopCart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGViewController+ShopCart.h"; sourceTree = "<group>"; };
 		BE32F92E1EA320A90063B38F /* WGViewController+ShopCart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGViewController+ShopCart.m"; sourceTree = "<group>"; };
+		BE32F9601EA37D020063B38F /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Main.strings; sourceTree = "<group>"; };
+		BE32F9611EA37D020063B38F /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		BE32F9631EA37D020063B38F /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		BE32F9871EA3B3760063B38F /* WGSetPostCodeRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGSetPostCodeRequest.h; sourceTree = "<group>"; };
+		BE32F9881EA3B3760063B38F /* WGSetPostCodeRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGSetPostCodeRequest.m; sourceTree = "<group>"; };
+		BE32F98A1EA3B3870063B38F /* WGSetPostCodeResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGSetPostCodeResponse.h; sourceTree = "<group>"; };
+		BE32F98B1EA3B3870063B38F /* WGSetPostCodeResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGSetPostCodeResponse.m; sourceTree = "<group>"; };
 		BE49E3B21E45BA4200ECDEE5 /* WGSessionRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGSessionRequest.h; sourceTree = "<group>"; };
 		BE49E3B31E45BA4200ECDEE5 /* WGSessionRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGSessionRequest.m; sourceTree = "<group>"; };
 		BE49E3B51E45BAA100ECDEE5 /* WGCallBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGCallBaseRequest.h; sourceTree = "<group>"; };
@@ -3156,6 +3165,8 @@
 				BEB8D0FA1E48637400BB9BA3 /* WGLoginRequest.m */,
 				BE2B42C41E8B86370010BCB7 /* WGImageVerificationCodeRequest.h */,
 				BE2B42C51E8B86370010BCB7 /* WGImageVerificationCodeRequest.m */,
+				BE32F9871EA3B3760063B38F /* WGSetPostCodeRequest.h */,
+				BE32F9881EA3B3760063B38F /* WGSetPostCodeRequest.m */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -3167,6 +3178,8 @@
 				BEB8D0F71E48586700BB9BA3 /* WGImageVerificationCodeResponse.m */,
 				BE2B42C01E8B86240010BCB7 /* WGLoginResponse.h */,
 				BE2B42C11E8B86240010BCB7 /* WGLoginResponse.m */,
+				BE32F98A1EA3B3870063B38F /* WGSetPostCodeResponse.h */,
+				BE32F98B1EA3B3870063B38F /* WGSetPostCodeResponse.m */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -3575,7 +3588,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				BE62E4431DF92BE7004510A5 /* PBXTargetDependency */,
+				BEE084F31EA754AE00DC2CC3 /* PBXTargetDependency */,
 			);
 			name = WeygoIPhone;
 			productName = WeygoIPhone;
@@ -3655,6 +3668,7 @@
 				en,
 				Base,
 				"zh-Hans",
+				it,
 			);
 			mainGroup = BE62E2201DF92176004510A5;
 			productRefGroup = BE62E22A1DF92176004510A5 /* Products */;
@@ -3909,6 +3923,7 @@
 				BE52ED931E2CDDC50022EF5B /* WGBaseAddressAndReceiptListViewController.m in Sources */,
 				BEFEC33F1E9642E6002FCF1F /* WGClassifyDetailFilterViewController+Request.m in Sources */,
 				BE57D1461E7DAB8100149738 /* WGMessageCenterViewController+Request.m in Sources */,
+				BE32F98C1EA3B3870063B38F /* WGSetPostCodeResponse.m in Sources */,
 				BE63A6D61E7BBC0B00F77282 /* WGOrderPayCell.m in Sources */,
 				BEEC212C1E9B7EF20065DE90 /* WGIntegrationResponse.m in Sources */,
 				BE6753991E9320F400250BA8 /* WGDealFailureProductsRequest.m in Sources */,
@@ -3953,6 +3968,7 @@
 				BE5F61A31E94E7A900FBA32A /* WGGetVerifyCodeRequest.m in Sources */,
 				BE6BE90C1E7FA7C100A081BA /* WGCommitOrderRemarkCell.m in Sources */,
 				BE6229E01E765969002BFEDB /* WGGoodDetail.m in Sources */,
+				BE32F9891EA3B3760063B38F /* WGSetPostCodeRequest.m in Sources */,
 				BEE937B71E825BC800875131 /* WGInvitationDescription.m in Sources */,
 				BE6229ED1E765BF6002BFEDB /* WGGoodDetailResponse.m in Sources */,
 				BEE937CC1E825F8300875131 /* WGInvitationViewController+Request.m in Sources */,
@@ -4147,10 +4163,10 @@
 			target = BE62E2281DF92176004510A5 /* WeygoIPhone */;
 			targetProxy = BE62E24E1DF92176004510A5 /* PBXContainerItemProxy */;
 		};
-		BE62E4431DF92BE7004510A5 /* PBXTargetDependency */ = {
+		BEE084F31EA754AE00DC2CC3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = JHKit;
-			targetProxy = BE62E4421DF92BE7004510A5 /* PBXContainerItemProxy */;
+			targetProxy = BEE084F21EA754AE00DC2CC3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -4160,6 +4176,7 @@
 			children = (
 				BE62E2361DF92176004510A5 /* Base */,
 				BE62E4CD1DF94D1C004510A5 /* zh-Hans */,
+				BE32F9601EA37D020063B38F /* it */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -4169,6 +4186,7 @@
 			children = (
 				BE62E23B1DF92176004510A5 /* Base */,
 				BE62E4CE1DF94D1C004510A5 /* zh-Hans */,
+				BE32F9611EA37D020063B38F /* it */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -4178,6 +4196,7 @@
 			children = (
 				BE62E4D31DF94EB4004510A5 /* en */,
 				BE62E4DA1DF94F02004510A5 /* zh-Hans */,
+				BE32F9631EA37D020063B38F /* it */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -4280,6 +4299,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = J2R863TVVR;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -4308,6 +4329,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = J2R863TVVR;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

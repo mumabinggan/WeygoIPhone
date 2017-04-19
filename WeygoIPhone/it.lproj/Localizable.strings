@@ -1,0 +1,321 @@
+/*
+ Localizable.strings
+ WeygoIPhone
+ 
+ Created by muma on 2016/12/8.
+ Copyright © 2016年 weygo.com. All rights reserved.
+ */
+"TabHome" = "Home";
+"TabClassify" = "Reparti";
+"TabBenefit" = "Go Promo";
+"TabShopCart" = "Carrello";
+"TabMine" = "My Weygo";
+"Price With Unit" = "€%.1f";
+"Price With 2 Unit" = "€%.2f";
+"More" = "GUARDALI TUTTI";
+"Add to Cart" = "Aggiungi";
+//fax
+"Raginone sociale" = "Raginone sociale";
+"Italia" = "Italia";
+"Recapito telefonico" = "Recapito telefonico";
+"Indirizzo" = "Indirizzo";
+"N civico" = "N. civico";
+"Citta" = "Città";
+"CAP" = "CAP";
+"Stato" = "Stato/Provincia";
+"Codice fiscale" = "P. IVA / Codice fiscale";
+"Default" = "Difetto";
+"Use" = "Uso";
+"Modify" = "Modifica";
+"Fax" = "发票";
+//address
+"Cognome" = "Cognome";
+"Nome" = "Nome";
+"Italia" = "Italia";
+"Telefono/Cellulare" = "Telefono/Cellulare";
+"Citta" = "Città";
+"CAP" = "CAP";
+"Indirizzo" = "Indirizzo";
+"Numero civico" = "Numero civico";
+"Citofono" = "Citofono";
+"Scala" = "Scala";
+"Ascensore" = "Ascensore";
+"Piano" = "Piano";
+//购物车
+"Totale:Price With Unit" = "Totale:€%.2f";
+"Totale:Price With String Unit" = "Totale:%@";
+"Confirm" = "conferma";
+"Carrello" = "Carrello";
+//优惠卷
+"CouponList_Title" = "Coupon spesa";
+"CouponList_Selected_Title" = "Coupon spesa";
+"Input Placeholder" = "Input Placeholder";
+"Activate" = "Activate";
+"Inactivate" = "Inactivate";
+//收藏
+"Collection" = "Collection";
+//足迹
+"FootPrint" = "FootPrint";
+//设置
+"Setting" = "Setting";
+"Informazioni" = "Informazioni";
+"System" = "System";
+"Inserisci CAP" = "Inserisci CAP";
+"Versione" = "Versione";
+"Svuota cache" = "Svuota cache";
+"Seleziona lingua" = "Seleziona lingua";
+"Italiano" = "Italiano";
+"China" = "China";
+"Log out" = "Log out";
+//分类 Tab
+"Hot Sale" = "PIÙ VENDUTI";
+//分类详情
+"Default Sort" = "rilevanza";
+"Filtro" = "Filtro";
+"Vista" = "Vista";
+"Brand Sort" = "marchi";
+"Price Sort Down" = "prezzo crescente";
+"Price Sort Up" = "prezzo decrescente";
+"Cancel Sort" = "Cancel";
+"Confirm Sort" = "Confirm";
+"Brand" = "Marchi";
+"Classify Filter" = "Filter";
+//环球
+"Asia" = "Asia";
+
+
+//Tab Mine（完成）
+"Mine_Order" = "I tuoi ordini";
+"Mine_Delivery" = "In consegna";
+"Mine_Points" = "Punti Spesa";
+"Mine_Coupon" = "Coupon";
+"Mine_FootPrint" = "Cronologia";
+"Mine_Collection" = "Preferiti";
+"Mine_Address" = "Rubrica";
+"Mine_Customer" = "Servizio Clienti";
+"Mine_Info" = "Profilo";
+"Mine_Setting" = "Impostazioni";
+"Mine_Logout" = "Esci";
+
+//Person Info(完成)
+"PersonInfo_Title" = "Profilo Account";
+"PersonInfo_Header" = "La tua icona";
+"PersonInfo_Name" = "Nome";
+"PersonInfo_SurName" = "Cognome";
+"PersonInfo_Number" = "Codice Cliente";
+"PersonInfo_Mobile" = "Telefono / Cellulare";
+"PersonInfo_Email" = "E-mail";
+"PersonInfo_Sex" = "Sesso";
+"PersonInfo_Birth" = "Data di nascita";
+"PersonInfo_tax" = "P. IVA / Codice fiscale";
+"PersonInfo_ChangePW" = "Modifica password";
+
+//登录页面(完成)
+"Login_Title" = "Accedi";
+"Login_Register" = "Registrati";
+"Login_UserName" = "E-mail / Cellulare";
+"Login_PW" = "Inserisci password";
+"Login_ValidCode" = "Codice di controllo";
+"Login_ForgetPW" = "Password dimenticata?";
+"Login_WeChat" = "WeChat";
+"Login_FaceBook" = "Facebook";
+"Login_Tip_Email" = "用户名不能为空";
+"Login_Tip_PW" = "密码不能为空";
+"Login_Tip_ValidCode" = "验证码不能为空";
+"Login_Tip_ValidCode2" = "验证码错误";
+
+//注册页面(完成)
+"Register_Title" = "Accedi";
+"Register_Login" = "Entra";
+"Register_Mobile" = "Cellulare";
+"Register_Code" = "Richiedi codice di verifica";
+"Register_Get_Code" = "Invia codice";
+"Register_Cognome" = "Cognome";
+"Register_Name" = "Nome";
+"Register_Password" = "Password";
+"Register_Confirm_Password" = "Conferma password";
+
+//找回密码(完成)
+"ForgetPW_Title" = "Password dimenticata";
+"Register_Mobile" = "Cellulare";
+"Register_Code" = "Richiedi codice di verifica";
+"Register_Get_Code" = "Invia codice";
+"Register_Password" = "Password";
+"Register_Confirm_Password" = "Conferma password";
+"ForgetPW_FindPW" = "Ripristino password";
+
+//第三方绑定（完成）
+"ThirdPartyBing_HadRegister" = "Registrato";
+"ThirdPartyBing_UnRegister" = "Non registrato";
+"ThirdPartyBing_Mobile" = "Cellulare";
+"ThirdPartyBing_Password" = "Inserisci password";
+"ThirdPartyBing_Code" = "Codice di controllo";
+"ThirdPartyBing_Ok" = "Collega il mio account";
+
+//侧边栏(完成)
+"Slider_Mine_Order" = "I miei ordini";
+"Slider_Mine_FootPrint" = "Cronologia";
+"Slider_Mine_Coupon" = "Coupon";
+"Slider_Mine_Message" = "Messaggi";
+"Slider_Mine_Scan" = "Scansione";
+"Slider_Mine_MessageCenter" = "Live chat";
+"Slider_Mine_UnRegister" = "Nome utente";
+"Slider_Hello" = "Ciao，%@";
+"Slider_All" = "Tutti i prodotti";
+
+//客服中心(未完成)
+"Live Chat" = "Live Chat";
+"Chi siamo" = "Chi siamo";
+"Come funziona" = "Come funziona";
+"Contatti" = "Contatti";
+"FAQ" = "FAQ";
+"Aiutaci a migliorare" = "Aiutaci a migliorare";
+"Condizioni generali di vendita" = "Condizioni generali di vendita";
+"Garanzia legale di" = "Garanzia legale di conformità";
+"Privacy e cookies" = "Privacy e cookies";
+"Suggerimenti" = "Suggerimenti";
+"Servizio clienti"= "Servizio clienti";
+
+//订单详情（完成）
+"Order Detail" = "Elenco ordini";
+"Order Number" = "Numero ordine: %@";
+"Order Comfirm" = "Spesa in arrivo";
+"Order Transport" = "Spesa consegnata";
+"Order Finish" = "Ordine completato";
+"Order Deliver Goods Info" = "Consegna";
+"Order Client Name" = "Nome e cognome: %@";
+"Order Address" = "Indirizzo: %@";
+"Order Phone" = "Telefono / Cellulare: %@";
+"Order Importo Spesa" = "Importo spesa: %@";
+"Order Deliver Time" = "Dati di consegna: %@";
+"Order Goods List" = "Elenco prodotti";
+"Order Good Look More" = "Guardali tutti";
+"Order Fattura" = "Fattura";
+"Order Tax Number" = "P. IVA / Codice fiscale: %@";
+"Order Company" = "Ragione sociale: %@";
+"Order CAP" = "CAP: %@";
+"Order Pay Detail" = "Dettagli pagamento";
+"Order Pay Total" = "Subtotale: %@";
+"Order Pay Benefit Detail" = "Spedizione: %@";
+"Order Pay Totale" = "Totale: %@";
+"Order Good Number" = "x%d";
+"Order Rebuy" = "Riordina";
+
+//商品详情(完成)
+"Good Detail Price With .2 Unit" = "€%.2f";
+"Good Detail Des" = "Descrizione";
+"Good Detail Info" = "Info";
+"Good Detail Consegna" = "Consegna";
+"Good Detail CommodityInfo" = "Descrizione";
+"Good Detail Add" = "Aggiungi";
+
+//订单列表(完成)
+"Order List How Many Good" = "Totale %d prodotti";
+"Order List Title" = "Elenco ordini";
+
+//消息中心（完成）
+"MessageCenter Title" = "Messaggi";
+"MessageCenter All" = "Tutto";
+"MessageCenter New Message" = "Novità";
+"MessageCenter Deliver" = "Consegna";
+"MessageCenter More" = "più";
+
+//生成订单
+"CommitOrder Title" = "Invia ordine";
+"CommitOrder Address" = "填写派送地址";
+"CommitOrder Fax" = "Fattura";
+"CommitOrder Deliver" = "Orario di consegna";
+"CommitOrder Deliver Date" = "Data di consegna";
+"CommitOrder Deliver Time" = "Ora di consegna";
+"CommitOrder Pay" = "METODI DI PAGAMENTO";
+"CommitOrder Pay Mode" = "Metodi di pagamento";
+"CommitOrder Pay Online" = "在线支付";
+"CommitOrder Pay Offline" = "货到付款";
+"CommitOrder No Coupon Title" = "Buono sconto";
+"CommitOrder No Coupon SubTitle" = "Non scordarti del tuo coupon";
+"CommitOrder Consume" = "IL TUO ACQUISTO";
+"CommitOrder Total" = "Totale :";
+"CommitOrder DeliverPrice" = "Spedizione :";
+"CommitOrder CouponPrice" = "Coupon :";
+"CommitOrder Consume List" = "IL TUO CARRELLO";
+"CommitOrder Remark" = "Commenti";
+"CommitOrder Look More" = "Vedi perché";
+"CommitOrder Total Pay" = "mporto da pagare : %@";
+"CommitOrder Confirm" = "Conferma";
+"CommitOrder Score" = "Punti spesa :";
+"CommitOrder Use Score" = "Utilizza i punti spesa";
+"CommitOrder_Use_Score" = "Si";
+"CommitOrder_No_Use_Score" = "No";
+
+//地址列表（完成）
+"Address_Title" = "Rubrica";
+"Address_Add_Title" = "Nuovo indirizzo";
+"Address_HaveLift" = "Si";
+"Address_NoLift" = "No";
+"Address_Italia" = "Italia";
+
+//发票列表(完成)
+"ReceiptList_Title" = "Fattura";
+"AddReceipt_Title" = "Dati fattura";
+
+//邀请界面
+"Invitation_Title" = "Invita un amico";
+"Invitation_Commit" = "Invita";
+"Invitation_Input_HolderPlace" = "Inserisci l'indirizzo e-mail";
+"Invitation_Input_EmptyTip" = "邮箱不能为空";
+
+//首页
+"Home_Title" = "Milano";
+
+//定位
+"Insert_Cap_Des" = "Indicaci la tua \n posizione attuale";
+"Insert_Cap" = "Inserisci CAP";
+"Insert_Cap_Error" = "Il tuo CAP non è servito al momento, torna a trovarci!";
+
+//购物车
+"ShopCart_DeleteFailGood" = "ELIMINA I PRODOTTI";
+"ShopCart_ChangeFailGood" = "PROCEDI CON LE QUANTITA' DISPONIBILI";
+"ShopCart_GiftGoodOne" = "Sì, desidero l'omaggio";
+"ShopCart_GiftGoodTwo" = "No, non desidero l'omaggio";
+"ShopCart_GiftGoodThree" = "INVITO ALL'ASSAGGIO:PER OGNI SPESA EFFETTUATAWEYGO REGALA";
+"ShopCart_DeliverPrice_Title" = "Informazioni per la consegna";
+"ShopCart_DeliverPrice_Ok" = "Chiudi";
+
+//个人信息
+"PersonInfo_Sex_Select" = "Seleziona";
+"PersonInfo_Sex_Man" = "Maschile";
+"PersonInfo_Sex_Woman" = "Femminile";
+"PersonInfo_Save" = "Salva";
+
+//积分
+"Integration_Title" = "I miei Punti Spesa";
+"Integration_Reduce_Count" = "Saldo punti: %ld";
+"Integration_Use_History" = "History";
+"Integration_Help_Title" = "CODICE CLIENTE E PUNTI SPESA";
+"Integration_Help_Button" = "Si";
+
+//使用积分
+"UseIntegration_Title" = "Utilizza i punti spesa";
+"UseIntegration_Use" = "UTILIZZA PUNTI";
+"UseIntegration_Cancel_Use" = "Cancella";
+"UseIntegration_Tip" = "%ld punti spesa disponibili \n puoi utilizzare %ld punti = %@";
+
+//支付成功
+"PaySuccess_Title" = "Pagamento effettuato con successo";
+"PaySuccess_SubTitle" = "TI RINGRAZIAMO PER IL \n TUO ACQUISTO!";
+"PaySuccess_SubTitle1" = "IL TUO ORDINE È STATO RICEVUTO.";
+"PaySuccess_SubTitle2" = "IL TUO ORDINE : %@";
+"PaySuccess_SubTitle3" = "Riceverai una conferma dell’ordine via email con \n i dettagli e il link per seguirne i progressi.";
+"PaySuccess_Button" = "Continua l'acquisto";
+
+//我的页面退出登录
+"Mine_Logout_Tip" = "您确认退出登录？";
+"Mine_Logout_Cancel" = "annulla";
+"Mine_Logout_Ok" = "conferma";
+
+//请求参数___store
+"Request_StoreValue" = "mobileitaly";
+
+//失效产品
+"Home_Grid_Instock" = "Non disponbile";
+"GoodDetail_Grid_Instock" = "Non disponbile";

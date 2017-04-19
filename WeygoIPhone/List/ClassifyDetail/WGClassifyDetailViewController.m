@@ -84,6 +84,7 @@
         titleView.onTouch = ^(WGHomeTitleView *titleView) {
             [weakSelf touchTitleView];
         };
+        self.navigationItem.titleView = titleView;
     }
 }
 

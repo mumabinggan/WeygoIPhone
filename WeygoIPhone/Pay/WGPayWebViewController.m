@@ -18,7 +18,7 @@
 @implementation WGPayWebViewController
 
 - (id)initWithOrderData:(WGCommitOrderData *)data {
-    self = [super initWithURLAddress:data.action];
+    self = [super initWithURLAddress:[[WGApplication sharedApplication] payUrl:data.action]];
     if (self) {
         _orderData = data;
     }

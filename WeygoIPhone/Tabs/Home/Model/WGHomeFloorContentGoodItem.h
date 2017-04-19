@@ -26,4 +26,6 @@
 
 @property (nonatomic, assign) long long favoriteId;
 
+@property (nonatomic, assign) int inStock;
+
 @end

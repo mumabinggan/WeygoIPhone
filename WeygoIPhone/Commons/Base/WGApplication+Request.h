@@ -25,6 +25,8 @@
 #import "WGShopCartCountResponse.h"
 #import "WGRebuyOrderRequest.h"
 #import "WGRebuyOrderResponse.h"
+#import "WGSetPostCodeRequest.h"
+#import "WGSetPostCodeResponse.h"
 
 @interface WGApplication (Request)
 
@@ -51,5 +53,7 @@
 - (void)loadShopCartCountOnCompletion:(void (^)(WGShopCartCountResponse *))completion;
 
 - (void)loadRebuyOrder:(long long)orderId onCompletion:(void (^)(WGRebuyOrderResponse *))completion;
+
+- (void)loadSetPostCode:(NSString *)cap onCompletion:(void (^)(WGSetPostCodeResponse *))completion;
 
 @end

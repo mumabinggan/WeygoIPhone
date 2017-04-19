@@ -25,6 +25,10 @@
     return [super classForArray:propertyName];
 }
 
++ (NSDictionary *)convertKeyMapper {
+    return @{@"subClassifyArray" : @"subArray"};
+}
+
 - (BOOL)hasNews {
     return _news != nil;
 }

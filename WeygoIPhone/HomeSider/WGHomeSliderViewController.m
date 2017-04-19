@@ -26,6 +26,10 @@
 #import "WGMainViewController.h"
 #import "WGPersonInfoViewController.h"
 #import "WGScanViewController.h"
+#import "WGHomeTabViewController.h"
+#import "WGSpecialClassifyViewController.h"
+#import "WGSpecialClassifyGoodViewController.h"
+#import "WGTabBenefitViewController.h"
 
 //for test
 #import "WGGoodDetailViewController.h"
@@ -122,16 +126,6 @@
 }
 
 - (void)handleOnMessageCenter {
-    [[WGApplication sharedApplication] closeSideBarViewController];
-//    WGIntegrationViewController *vcc = [[WGIntegrationViewController alloc] init];
-    //WGPaySuccessViewController *vcc = [[WGPaySuccessViewController alloc] init];
-    //vcc.orderId = 34433443;
-    WGClientServiceCenterViewController *vcc = [[WGClientServiceCenterViewController alloc] init];
-    //vcc.id = 19;
-//    //vcc.goodId = 1591;
-    UINavigationController *navc = [WGApplication sharedApplication].navigationController;
-    [navc pushViewController:vcc animated:YES];
-    return;
 //    [[WGApplication sharedApplication] closeSideBarViewController];
 //    //进入消息中心
 //    WGMessageCenterViewController *vc = [[WGMessageCenterViewController alloc] init];
@@ -180,6 +174,39 @@
 
 - (BOOL)cannotEditPostCode {
     return ([WGApplication sharedApplication].isLogined && ![NSString isNullOrEmpty:[WGApplication sharedApplication].currentPostCode]);
+}
+
+- (void)handleTopicItem:(WGTopicItem *)item {
+    if (item.jumpType == WGAppJumpTypeClassifyDetail) {
+        WGClassifyDetailViewController *vc = [[WGClassifyDetailViewController alloc] init];
+        vc.classifyId = item.id;
+        vc.title = item.name;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    else if (item.jumpType == WGAppJumpTypeSpecailClassifyHomeTab) {
+        WGApplication *application = [WGApplication sharedApplication];
+        WGHomeTabViewController *homeViewController = application.homeTabViewController;
+        homeViewController.currentId = item.id;
+        [application switchTab:WGTabIndexHome];
+    }
+    else if (item.jumpType == WGAppJumpTypeSpecailClassifyGoodBenefitTab) {
+        WGApplication *application = [WGApplication sharedApplication];
+        WGTabBenefitViewController *benefitViewController = application.benefitTabViewController;
+        benefitViewController.currentId = item.id;
+        [application switchTab:WGTabIndexBenefit];
+    }
+    else if (item.jumpType == WGAppJumpTypeSpecailClassifyNoTab) {
+        WGSpecialClassifyViewController *vc = [[WGSpecialClassifyViewController alloc] init];
+        vc.id = item.id;
+        vc.title = item.name;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    else if (item.jumpType == WGAppJumpTypeSpecailClassifyGoodNoTab) {
+        WGSpecialClassifyGoodViewController *vc = [[WGSpecialClassifyGoodViewController alloc] init];
+        vc.id = item.id;
+        vc.title = item.name;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -290,7 +317,12 @@
             cell = [[JHTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
         }
         else if (indexPath.section == 1) {
-            cell = [[WGSliderTopicCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+            WeakSelf;
+            WGSliderTopicCell *topicCell = [[WGSliderTopicCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+            topicCell.onApply = ^(WGTopicItem *item) {
+                [weakSelf handleTopicItem:item];
+            };
+            cell = topicCell;
         }
         else {
             cell = [[WGSliderClassifyItemCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
@@ -331,34 +363,11 @@
     WeakSelf;
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
-//            if ([self cannotEditPostCode]) {
-//                return;
-//            }
-//            WGHomeFloorContentGoodItem *item = [[WGHomeFloorContentGoodItem alloc] init];
-//            item.name = @"fasdfasdfasdfasdf";
-//            item.pictureURL = @"";
-//            item.chineseName = @"郑渊谦";
-//            item.briefDescription = @"要想两行文字大小不同，颜色不同，那加一个UILabel作为UIButton的subview了应该是最方便的实现方式了";
-//            item.price = @"932.32";
-//            item.currentPrice = @"322.23";
-//            
-//            WGHomeFloorContentGoodItem *item1 = [[WGHomeFloorContentGoodItem alloc] init];
-//            item1.name = @"sadfas";
-//            item1.pictureURL = @"";
-//            item1.chineseName = @"郑渊谦";
-//            item1.briefDescription = @"要想两行文字大小不同，颜色不同，那加一个UILabel作为UIButton的subview了应该是最方便的实现方式了要想两行文字大小不同，颜色不同，那加一个UILabel作为UIButton的subview了应该是最方便的实现方式了";
-//            item1.price = @"932.32";
-//            item1.currentPrice = @"322.23";
-//            WGDealShopCartGiftGoodView *view = [[WGDealShopCartGiftGoodView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kDeviceHeight)];
-//            view.goods = @[item, item1];
-            WGDeliverPriceView *view = [[WGDeliverPriceView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kDeviceHeight)];
-            view.tip = @"要想两行文字大小不同，颜色不同，那加一个UILabel作为UIButton的subview了应该是最方便的实现方式了要想两行文字大小不同，颜色不同，那加一个UILabel作为UIButton的subview了应该是最方便的实现方式了";
-//            WGDealFailGoodView *view = [[WGDealFailGoodView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kDeviceHeight)];
-            //view.tip = @"如果两行文字大小相同，颜色相同，可以直接设置Line Break为Word Wrap，然后在Title中按option+enter就可以增加行数。";
-//            WGPostCodePopoverView *view = [[WGPostCodePopoverView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kDeviceHeight)];
-//            view.onApply = ^(NSString *postCode) {
-//                [weakSelf handleSetPostCode];
-//            };
+            WGPostCodePopoverView *view = [[WGPostCodePopoverView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kDeviceHeight)];
+            view.cap = [WGApplication sharedApplication].currentPostCode;
+            view.onApply = ^(NSString *postCode) {
+                [weakSelf handleSetPostCode];
+            };
             [view show];
             //弹出输入邮编
             return;

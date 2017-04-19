@@ -10,6 +10,8 @@
 
 @interface WGPostCodePopoverView : JHPopoverView
 
+@property (nonatomic, strong) NSString *cap;
+
 @property (nonatomic, copy) void (^onApply)(NSString *postCode);
 
 @end

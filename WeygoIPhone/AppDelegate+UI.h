@@ -12,4 +12,6 @@
 
 - (void)launchUIApplicatioin:(UIApplication *)application withOptions:(NSDictionary *)launchOptions;
 
+- (void)loadRootViewController:(UIApplication *)application withOptions:(NSDictionary *)launchOptions;
+
 @end

@@ -33,8 +33,8 @@
     _contentView.center = CGPointMake(kDeviceWidth/2, kDeviceHeight/2);
     [self addSubview:_contentView];
     
-    JHImageView *bgImageView = [[JHImageView alloc] initWithFrame:CGRectMake(kAppAdaptWidth(101), kAppAdaptHeight(16), kAppAdaptWidth(46), kAppAdaptWidth(62))];
-    bgImageView.image = [UIImage imageNamed:@"classifyDetail_sub_bg"];
+    JHImageView *bgImageView = [[JHImageView alloc] initWithFrame:CGRectMake(kAppAdaptWidth(91), kAppAdaptHeight(16), kAppAdaptWidth(62), kAppAdaptWidth(62))];
+    bgImageView.image = [UIImage imageNamed:@"mine_local"];
     [_contentView addSubview:bgImageView];
     
     JHLabel *desLabel = [[JHLabel alloc] initWithFrame:CGRectMake(0, kAppAdaptHeight(89), _contentView.width, kAppAdaptHeight(40))];
@@ -77,19 +77,41 @@
     [[NSNotificationCenter defaultCenter] addObserver:self  selector:@selector(changeHidden:)  name:UIKeyboardWillHideNotification object:nil];
 }
 
+- (void)setCap:(NSString *)cap {
+    _postCodeTextField.text = cap;
+}
+
 - (void)touchCloseBtn:(JHButton *)sender {
     [self close];
 }
 
+- (void)handleLoginSetPostCode:(WGSetPostCodeResponse *)response {
+    _tipLabel.hidden = YES;
+    if (self.onApply) {
+        self.onApply(_postCodeTextField.text);
+    }
+    [self close];
+    [_postCodeTextField resignFirstResponder];
+}
+
 - (void)touchComfirmBtn:(id)sender {
     if ([[WGApplication sharedApplication] supportPostcode:_postCodeTextField.text]) {
-        [WGApplication sharedApplication].currentPostCode = _postCodeTextField.text;
         _tipLabel.hidden = YES;
-        if (self.onApply) {
-            self.onApply(_postCodeTextField.text);
+        if ([WGApplication sharedApplication].isLogined) {
+            WeakSelf;
+            [[WGApplication sharedApplication] loadSetPostCode:_postCodeTextField.text onCompletion:^(WGSetPostCodeResponse *response) {
+                [weakSelf handleLoginSetPostCode:response];
+            }];
         }
-        [self close];
-        [_postCodeTextField resignFirstResponder];
+        else {
+            [WGApplication sharedApplication].currentPostCode = _postCodeTextField.text;
+            _tipLabel.hidden = YES;
+            if (self.onApply) {
+                self.onApply(_postCodeTextField.text);
+            }
+            [self close];
+            [_postCodeTextField resignFirstResponder];
+        }
     }
     else {
         _tipLabel.hidden = NO;

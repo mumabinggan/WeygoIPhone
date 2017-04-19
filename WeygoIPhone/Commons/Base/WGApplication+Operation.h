@@ -69,3 +69,17 @@
 - (void)decreaseGoodCount:(NSInteger)decreaseCount;
 
 @end
+
+@interface WGApplication (Language)
+
+- (void)setLanguage:(int)language;
+
+@end
+
+@interface WGApplication (RequestSign)
+
+- (NSString *)sign:(NSDictionary *)dictionary;
+
+- (NSString *)payUrl:(NSString *)url;
+
+@end

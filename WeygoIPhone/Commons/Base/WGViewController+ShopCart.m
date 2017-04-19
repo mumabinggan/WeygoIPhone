@@ -61,7 +61,7 @@ static const NSString *WGShopCartButtonKey = @"WGSliderButtonKey";
 
 - (void)handleUpdateShopCart:(NSNotification *)notification {
     JHBarButtonItem *item = (JHBarButtonItem *)[self rightItem];
-    [item showBadge:([WGApplication sharedApplication].shopCartGoodCount > 0 ? YES : NO) withNumber:(int)[WGApplication sharedApplication].shopCartGoodCount withFrame:CGRectMake(10, 0, 15, 15)];
+    [item showBadge:([WGApplication sharedApplication].shopCartGoodCount > 0 ? YES : NO) withNumber:(int)[WGApplication sharedApplication].shopCartGoodCount withFrame:CGRectMake(13, 5, 15, 15)];
 }
 
 - (UIBarButtonItem *)rightItem {

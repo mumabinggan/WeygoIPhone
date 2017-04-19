@@ -17,6 +17,7 @@
     JHLabel         *_reducePriceLabel;
     
     JHButton        *_purchaseBtn;
+    JHButton        *_notPurchaseBtn;
 }
 
 - (void)showWithData:(WGHomeFloorContentGoodItem *)object;

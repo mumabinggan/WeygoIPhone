@@ -13,6 +13,10 @@
 
 @implementation WGApplication (Controller)
 
+- (AppDelegate *)appdelegate {
+    return (AppDelegate *)[UIApplication sharedApplication].delegate;
+}
+
 - (WGNavigationController *)navigationController {
     return (WGNavigationController *)([UIApplication sharedApplication].keyWindow.rootViewController);
 }

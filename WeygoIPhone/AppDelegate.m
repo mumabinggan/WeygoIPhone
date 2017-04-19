@@ -23,6 +23,7 @@
 //    [[WGApplication sharedApplication] loadShopCartCountOnCompletion:^(WGShopCartCountResponse *response) {
 //        NSLog(@"-----%@", response);
 //    }];
+    
     NSString *sss = [NSString stringWithFormat:@"%@", @"ss"];
     NSMutableArray *array = [[NSMutableArray alloc] init];
     [array addObject:sss];
@@ -30,7 +31,7 @@
     sss = @"fs";
     NSLog(@"---%@", array);
     [self launchInitApplicatioin:application withOptions:launchOptions];
-    [self launchUIApplicatioin:application withOptions:launchOptions];
+    //[self launchUIApplicatioin:application withOptions:launchOptions];
     
     return YES;
 }

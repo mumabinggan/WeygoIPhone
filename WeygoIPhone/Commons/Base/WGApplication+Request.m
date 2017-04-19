@@ -91,7 +91,7 @@
 - (void)loadUserInfoOnCompletion:(void (^)(WGUserInfoResponse *))completion {
     WGUserInfoRequest *request = [[WGUserInfoRequest alloc] init];
     WeakSelf;
-    [[JHNetworkManager sharedManager] get:request forResponseClass:[WGUserInfoResponse class] success:^(JHResponse *response) {
+    [[JHNetworkManager sharedManager] post:request forResponseClass:[WGUserInfoResponse class] success:^(JHResponse *response) {
         [weakSelf handleUserInfoResponse:(WGUserInfoResponse *)response];
         if (completion) {
             completion((WGUserInfoResponse *)response);
@@ -203,6 +203,28 @@
             completion(nil);
         }
     }];
+}
+
+- (void)loadSetPostCode:(NSString *)cap onCompletion:(void (^)(WGSetPostCodeResponse *))completion {
+    WGSetPostCodeRequest *request = [[WGSetPostCodeRequest alloc] init];
+    request.cap = cap;
+    WeakSelf;
+    [[JHNetworkManager sharedManager] post:request forResponseClass:[WGSetPostCodeResponse class] success:^(JHResponse *response) {
+        [weakSelf handleSetPostCodeResponse:(WGSetPostCodeResponse *)response cap:cap];
+        if (completion) {
+            completion((WGSetPostCodeResponse *)response);
+        }
+    } failure:^(NSError *error) {
+        if (completion) {
+            completion(nil);
+        }
+    }];
+}
+
+- (void)handleSetPostCodeResponse:(WGSetPostCodeResponse *)response cap:(NSString *)cap {
+    if (response.success) {
+        [WGApplication sharedApplication].currentPostCode = cap;
+    }
 }
 
 @end

@@ -120,7 +120,6 @@
     if (self.onSelect) {
         self.onSelect(preSelectedIndex, _selectedIndex);
     }
-    NSLog(@"---width--%f--%f", sender.x, _contentScrollView.contentOffset.x);
     [UIView animateWithDuration:0.25 animations:^(void) {
         if (sender.x - _contentScrollView.contentOffset.x < 0) {
             _contentScrollView.contentOffset = CGPointMake(-sender.x, _contentScrollView.contentOffset.y);

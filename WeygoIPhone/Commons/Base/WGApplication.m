@@ -22,10 +22,16 @@ static WGApplication* _sharedInstance = nil;
     @synchronized([WGApplication class]) {
         if(!_sharedInstance) {
             _sharedInstance = [[self alloc] init];
+            [_sharedInstance initData];
         }
         return _sharedInstance;
     }
     return nil;
+}
+
+- (void)initData {
+    NSString *language = [[JHLocalSettings sharedSettings] getSettingsForKey:kLocalSettingsLocalLanguage];
+    [JHLocalizableManager sharedManager].type = language.integerValue;
 }
 
 @end

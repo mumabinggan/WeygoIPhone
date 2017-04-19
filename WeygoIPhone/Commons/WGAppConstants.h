@@ -72,7 +72,7 @@ static NSString *kNotificationUpdateShopCartCount = @"kNotificationUpdateShopCar
 #define kLocalSettingsKeyUser   @"kLocalSettingsKeyUser"
 #define kLocalSettingsKeyUnLoginCap   @"kLocalSettingsKeyUnLoginCap"
 #define kLocalSettingsLocalCartGoods    @"kLocalSettingsLocalCartGoods"
-
+#define kLocalSettingsLocalLanguage    @"kLocalSettingsLocalLanguage"
 
 //Placeholder UIImage
 

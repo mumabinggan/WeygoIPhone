@@ -57,7 +57,7 @@
     [super viewWillAppear:animated];
     WeakSelf;
     [[WGApplication sharedApplication] loadUserInfoOnCompletion:^(WGUserInfoResponse *userResponse) {
-        [weakSelf refresh];
+        [weakSelf refresh:userResponse.data];
     }];
 }
 
@@ -66,16 +66,9 @@
     // Do any additional setup after loading the view.
 }
 
-//- (void)initData {
-//    _data = [[WGMine alloc] init];
-//    _data.messageCount = 12;
-//    _data.orderCount = 43;
-//    _data.deliveryCount = 5;
-//    WGUser *user = [[WGUser alloc] init];
-//    user.name = @"ZhengYuan";
-//    user.cap = @"983223";
-//    _data.user = user;
-//}
+- (void)initData {
+    _data = [WGApplication sharedApplication].user;
+}
 
 - (void)initSubView {
     JHView *contentView = [[JHView alloc] initWithFrame:self.view.bounds];
@@ -105,6 +98,8 @@
     [_messageBtn setBackgroundImage:[UIImage imageNamed:@"mine_message"] forState:UIControlStateNormal];
     [_messageBtn addTarget:self action:@selector(touchMessageBtn:) forControlEvents:UIControlEventTouchUpInside];
     [_messageBtn addBadge];
+    
+    [self refresh:_data];
     //[contentView addSubview:_messageBtn];
 }
 
@@ -171,7 +166,8 @@
     return footerView;
 }
 
-- (void)refresh {
+- (void)refresh:(WGUser *)user {
+    _data = user;
     if (_data) {
         [_headerView showWithData:_data];
         _orderLabel.text = [NSString stringWithFormat:@"%d", _data.orderCount];

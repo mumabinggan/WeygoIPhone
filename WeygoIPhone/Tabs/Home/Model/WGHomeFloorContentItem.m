@@ -38,6 +38,7 @@
             goodItem.reducePrice = _reducePrice;
             goodItem.currentPrice = _currentPrice;
             goodItem.discount = _discount;
+            goodItem.inStock = _inStock;
             _contentItem = goodItem;
         }
         else if (type == WGHomeFloorItemTypeClassifyList ||

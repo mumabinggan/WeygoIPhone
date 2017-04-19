@@ -14,6 +14,7 @@
 @implementation AppDelegate (Init)
 
 - (void)launchInitApplicatioin:(UIApplication *)application withOptions:(NSDictionary *)launchOptions {
+    [self initAppearance];
     WeakSelf
     [[WGApplication sharedApplication] loadBaseServiceOnCompletion:^(WGBaseServiceResponse *response) {
         [weakSelf handleBaseServiceResponse:application withOptions:launchOptions withResponse:(WGBaseServiceResponse *)response];
@@ -21,12 +22,12 @@
     if ([WGApplication sharedApplication].isLogined) {
         [[WGApplication sharedApplication] loadUserInfoOnCompletion:nil];
     }
-    [[WGApplication sharedApplication] loadReceiptCountryListOnCompletion:nil];
+    //[[WGApplication sharedApplication] loadReceiptCountryListOnCompletion:nil];
 }
 
 - (void)handleBaseServiceResponse:(UIApplication *)application withOptions:(NSDictionary *)launchOptions withResponse:(WGBaseServiceResponse *)response {
     if (response.success) {
-        //[self launchUIApplicatioin:application withOptions:launchOptions];
+        [self launchUIApplicatioin:application withOptions:launchOptions];
     }
     else {
         WeakSelf;
@@ -39,6 +40,17 @@
             }
         }];
     }
+}
+
+- (void)initAppearance {
+    [UINavigationBar appearance].barTintColor = WGAppBaseColor;
+    //[UINavigationBar appearance].tintColor = kWhiteColor;
+    //    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navbar-white"] forBarMetrics:UIBarMetricsDefault];
+    //[[UINavigationBar appearance] setShadowImage:[UIImage imageNamed:@"nav-shadowImage"]];
+    //[[UINavigationBar appearance] setShadowImage:[[UIImage alloc] init]];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:kWhiteColor, NSFontAttributeName:kWGOswaldRegularFont(18)}];
+    
+    [[UITabBar appearance] setTintColor:WGAppBaseColor];
 }
 
 @end

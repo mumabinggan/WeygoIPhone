@@ -36,7 +36,13 @@
     _purchaseBtn = [[JHButton alloc] initWithFrame:CGRectMake(kAppAdaptWidth(10), _currentPriceLabel.maxY + kAppAdaptHeight(10), self.width - kAppAdaptWidth(20), kAppAdaptHeight(30)) difRadius:JHRadiusMake(kAppAdaptWidth(15), kAppAdaptWidth(15), kAppAdaptWidth(15), kAppAdaptWidth(15)) backgroundColor:WGAppBaseColor];
     [_purchaseBtn setTitle:kStr(@"Add to Cart") forState:UIControlStateNormal];
     _purchaseBtn.titleLabel.font = kAppAdaptFont(12);
+    [_purchaseBtn addTarget:self action:@selector(touchPurchase:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_purchaseBtn];
+    
+    _notPurchaseBtn = [[JHButton alloc] initWithFrame:CGRectMake(kAppAdaptWidth(10), _currentPriceLabel.maxY + kAppAdaptHeight(10), self.width - kAppAdaptWidth(20), kAppAdaptHeight(30)) difRadius:JHRadiusMake(kAppAdaptWidth(15), kAppAdaptWidth(15), kAppAdaptWidth(15), kAppAdaptWidth(15)) backgroundColor:kRGB(173, 190, 197)];
+    [_notPurchaseBtn setTitle:kStr(@"Home_Grid_Instock") forState:UIControlStateNormal];
+    _notPurchaseBtn.titleLabel.font = kAppAdaptFont(12);
+    [self addSubview:_notPurchaseBtn];
 }
 
 - (void)touchPurchase:(id)sender {
@@ -49,6 +55,8 @@
 
 - (void)showWithData:(WGHomeFloorContentGoodItem *)object {
     _data = object;
+    _notPurchaseBtn.hidden = (_data.inStock);
+    //[_purchaseBtn setBackgroundColor:(_data.inStock) ? WGAppBaseColor : WGAppSeparateLineColor];
     [super showWithData:object];
 }
 

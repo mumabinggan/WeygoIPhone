@@ -172,13 +172,13 @@
         [self showWarningMessage:kStr(@"Login_Tip_ValidCode")];
         return;
     }
-    if (![_verificationView.changeString isEqualToString:_codeTextField.text]) {
+    if (NSOrderedSame != [_verificationView.changeString caseInsensitiveCompare:_codeTextField.text]) {
         [self showWarningMessage:kStr(@"Login_Tip_ValidCode2")];
         return;
     }
     WGLoginRequest *loginRequest = [[WGLoginRequest alloc] init];
-    loginRequest.username = username;
-    loginRequest.password = password;
+    loginRequest.username = [username trim];
+    loginRequest.password = [password trim];
     if (_from == WGLoginFromShopCart) {
 //        loginRequest.cap = [WGApplication sharedApplication].currentPostCode;
 //        loginRequest.shopCarts = [WGApplication sharedApplication].getGoodsInLocalCart;

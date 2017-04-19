@@ -13,8 +13,11 @@
 @class WGMainViewController;
 @class WGHomeTabViewController;
 @class WGTabBenefitViewController;
+@class AppDelegate;
 
 @interface WGApplication (Controller)
+
+@property (nonatomic, strong, readonly) AppDelegate *appdelegate;
 
 @property (nonatomic, strong, readonly) WGNavigationController *navigationController;
 

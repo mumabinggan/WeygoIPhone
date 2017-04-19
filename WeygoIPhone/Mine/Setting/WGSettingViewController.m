@@ -8,11 +8,22 @@
 
 #import "WGSettingViewController.h"
 #import "JHCacheManager.h"
+#import "AppDelegate+UI.h"
 
 @interface WGSettingViewController ()
 {
     JHTableView *_tableView;
+    
+    NSArray *_languageArray;
+    NSInteger _selectedLanguageIndex;
+    
+    JHView *_sortPickerBgView;
+    UIPickerView *_sortPickerView;
 }
+@end
+
+@interface WGSettingViewController (PickerViewDelegate) <UIPickerViewDelegate, UIPickerViewDataSource>
+
 @end
 
 @interface WGSettingViewController (TableViewDelegate) <UITableViewDelegate, UITableViewDataSource>
@@ -21,15 +32,15 @@
 
 @implementation WGSettingViewController
 
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    NSLog(@"----set---viewWillDisappear----");
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = kStr(@"Setting");
+}
+
+- (void)initData {
+    _languageArray = @[kStr(@"Italiano"), kStr(@"China")];
+    _selectedLanguageIndex = 0;
 }
 
 - (void)initSubView {
@@ -63,6 +74,58 @@
 
 - (void)touchChatBtn:(UIButton *)sender {
     //聊天
+}
+
+- (void)openPickerView {
+    if (_sortPickerView) {
+        [self removePickerView];
+    }
+    else {
+        _sortPickerBgView = [[JHView alloc] initWithFrame:CGRectMake(0, kDeviceHeight - kAppAdaptHeight(160), kDeviceWidth, kAppAdaptHeight(160))];
+        _sortPickerBgView.backgroundColor = kGrayColor;
+        [self.view addSubview:_sortPickerBgView];
+        
+        _sortPickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, kAppAdaptHeight(30), kDeviceWidth, kAppAdaptHeight(130))];
+        _sortPickerView.backgroundColor = kRGB(244, 244, 244);
+        _sortPickerView.delegate = self;
+        _sortPickerView.dataSource = self;
+        _sortPickerView.showsSelectionIndicator = YES;
+        [_sortPickerView selectRow:0 inComponent:0 animated:NO];
+        [_sortPickerBgView addSubview:_sortPickerView];
+        
+        JHButton *cancelBtn = [[JHButton alloc] initWithFrame:CGRectMake(kAppAdaptWidth(8), 0, kAppAdaptWidth(100), kAppAdaptHeight(30))];
+        [cancelBtn setTitle:kStr(@"Mine_Logout_Cancel") forState:UIControlStateNormal];
+        [cancelBtn setTitleColor:kWhiteColor forState:UIControlStateNormal];
+        [cancelBtn addTarget:self action:@selector(touchCancelBtn:) forControlEvents:UIControlEventTouchUpInside];
+        cancelBtn.titleLabel.font = kAppAdaptFont(14);
+        [_sortPickerBgView addSubview:cancelBtn];
+        
+        JHButton *confirmBtn = [[JHButton alloc] initWithFrame:CGRectMake(kDeviceWidth - kAppAdaptWidth(108), 0, kAppAdaptWidth(100), kAppAdaptHeight(30))];
+        [confirmBtn setTitle:kStr(@"Mine_Logout_Ok") forState:UIControlStateNormal];
+        [confirmBtn setTitleColor:kWhiteColor forState:UIControlStateNormal];
+        [confirmBtn addTarget:self action:@selector(touchConfirmBtn:) forControlEvents:UIControlEventTouchUpInside];
+        confirmBtn.titleLabel.font = kAppAdaptFont(14);
+        [_sortPickerBgView addSubview:confirmBtn];
+    }
+}
+
+- (void)touchCancelBtn:(JHButton *)sender {
+    [self removePickerView];
+}
+
+- (void)removePickerView {
+    [_sortPickerBgView removeFromSuperview];
+    _sortPickerBgView = nil;
+    [_sortPickerView removeFromSuperview];
+    _sortPickerView = nil;
+}
+
+- (void)touchConfirmBtn:(JHButton *)sender {
+    _selectedLanguageIndex = [_sortPickerView selectedRowInComponent:0];
+    [self removePickerView];
+    [_tableView reloadData];
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    [appDelegate loadRootViewController:nil withOptions:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -116,6 +179,7 @@
             style = UITableViewCellStyleValue1;
             text = kStr(@"Seleziona lingua");
             accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            detailText = _languageArray[_selectedLanguageIndex];
         }
         else if (indexPath.row == 4) {
             style = UITableViewCellStyleValue1;
@@ -151,6 +215,7 @@
     }
     else if (indexPath.row == 3) {
         //国家切换
+        [self openPickerView];
     }
     else if (indexPath.row == 4) {
         //关于
@@ -168,6 +233,26 @@
             }];
         }
     }
+}
+
+@end
+
+@implementation WGSettingViewController (PickerViewDelegate)
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    return _languageArray.count;
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    return _languageArray[row];
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    //[self loadData:YES pulling:NO];
 }
 
 @end
