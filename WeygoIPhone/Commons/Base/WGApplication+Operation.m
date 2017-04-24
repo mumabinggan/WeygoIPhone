@@ -153,6 +153,7 @@
     self.currentPostCode = nil;
     [[JHLocalSettings sharedSettings] removeSettingsForKey:kLocalSettingsKeyUser];
     [[JHLocalSettings sharedSettings] removeSettingsForKey:kLocalSettingsKeyUnLoginCap];
+    self.shopCartGoodCount = 0;
 }
 
 - (void)addGoodToLocalCart:(WGGoodInLocalCart *)good {
@@ -280,6 +281,11 @@
     if (_shopCartGoodCount >= decreaseCount) {
         _shopCartGoodCount -= decreaseCount;
     }
+}
+
+- (void)handleShopCartGoodCount:(NSInteger)count {
+    [WGApplication sharedApplication].shopCartGoodCount = count;
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationUpdateShopCartCount object:nil];
 }
 
 @end

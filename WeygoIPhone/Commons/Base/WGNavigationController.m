@@ -16,6 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //self.navigationBar.translucent = NO;
+//    self.automaticallyAdjustsScrollViewInsets = YES;
     // Do any additional setup after loading the view.
     // Custom handle pop gesture recognizer
     if ([self respondsToSelector:@selector(interactivePopGestureRecognizer)]) {

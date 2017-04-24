@@ -130,8 +130,7 @@
     [[WGApplication sharedApplication] loadAddGoodToCart:_goodDetail.id count:_addView.count onCompletion:^(WGAddGoodToCartResponse *response) {
         [self showWarningMessage:response.message];
     }];
-    [[WGApplication sharedApplication] increaseGoodCount:_addView.count];
-    [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationUpdateShopCartCount object:nil];
+    [[WGApplication sharedApplication] handleShopCartGoodCount:_addView.count];
 }
 
 - (void)handleRecommendGood:(WGHomeFloorContentItem *)item {
@@ -141,11 +140,17 @@
 }
 
 - (void)handleAddShopCart:(WGHomeFloorContentGoodItem *)item fromPoint:(CGPoint )fromPoint {
+    WeakSelf;
     [[WGApplication sharedApplication] loadAddGoodToCart:item.id count:1 onCompletion:^(WGAddGoodToCartResponse *response) {
-        [WGApplication sharedApplication].shopCartGoodCount = response.data.goodCount;
-        [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationUpdateShopCartCount object:nil];
+        [weakSelf handleShopCartCount:response];
     }];
     [[WGApplication sharedApplication] addShopToCart:item.pictureURL fromPoint:fromPoint];
+}
+
+- (void)handleShopCartCount:(WGAddGoodToCartResponse *)response {
+    if (response.success) {
+        [[WGApplication sharedApplication] handleShopCartGoodCount:response.data.goodCount];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

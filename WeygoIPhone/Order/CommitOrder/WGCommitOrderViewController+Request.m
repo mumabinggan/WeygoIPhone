@@ -76,6 +76,7 @@
     if (response.success) {
         if ([NSString isNullOrEmpty:response.data.action]) {
             if ([NSString isNullOrEmpty:response.data.orderId]) {
+                
                 __weak WGCommitOrderViewController *weakSelf = self;
                 [self showWarningMessage:response.message onCompletion:^(void) {
                     [weakSelf.navigationController popToRootViewControllerAnimated:YES];

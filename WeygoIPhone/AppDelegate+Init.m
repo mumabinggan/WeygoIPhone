@@ -10,11 +10,13 @@
 #import "WGBaseServiceRequest.h"
 #import "WGBaseServiceResponse.h"
 #import "AppDelegate+UI.h"
+#import "AppDelegate+Fabric.h"
 
 @implementation AppDelegate (Init)
 
 - (void)launchInitApplicatioin:(UIApplication *)application withOptions:(NSDictionary *)launchOptions {
     [self initAppearance];
+    [self register3rdParty];
     WeakSelf
     [[WGApplication sharedApplication] loadBaseServiceOnCompletion:^(WGBaseServiceResponse *response) {
         [weakSelf handleBaseServiceResponse:application withOptions:launchOptions withResponse:(WGBaseServiceResponse *)response];
@@ -42,8 +44,15 @@
     }
 }
 
+- (void)register3rdParty {
+#if !TARGET_IPHONE_SIMULATOR
+    [self registerFabric];
+#endif
+}
+
 - (void)initAppearance {
     [UINavigationBar appearance].barTintColor = WGAppBaseColor;
+    //[UINavigationBar appearance].translucent = NO;
     //[UINavigationBar appearance].tintColor = kWhiteColor;
     //    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navbar-white"] forBarMetrics:UIBarMetricsDefault];
     //[[UINavigationBar appearance] setShadowImage:[UIImage imageNamed:@"nav-shadowImage"]];

@@ -11,6 +11,7 @@
 #import "WGRegisterViewController.h"
 #import "WGForgetPasswordViewController.h"
 #import "PooCodeView.h"
+#import "WGNavigationController.h"
 
 @interface WGLoginViewController ()
 {
@@ -56,6 +57,10 @@
     [returnBtn addTarget:self action:@selector(touchReturnBtn:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:returnBtn];
     
+    JHButton *returnBackgroundBtn = [[JHButton alloc] initWithFrame:CGRectMake(kAppAdaptWidth(0), kAppAdaptHeight(0), kAppAdaptWidth(80), kAppAdaptHeight(80))];
+    [returnBackgroundBtn addTarget:self action:@selector(touchReturnBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:returnBackgroundBtn];
+    
     JHLabel *registerLabel = [[JHLabel alloc] initWithFrame:CGRectMake(kDeviceWidth - kAppAdaptWidth(86), kAppAdaptHeight(30), kAppAdaptWidth(70), kAppAdaptHeight(24))];
     registerLabel.text = kStr(@"Login_Register");
     registerLabel.font = kAppAdaptFont(16);
@@ -83,6 +88,7 @@
     _passwordTextField = [[JHTextField alloc] initWithFrame:CGRectMake(_usernameTextField.x, _usernameTextField.maxY, _usernameTextField.width, _usernameTextField.height)];
     _passwordTextField.font = kAppAdaptFont(14);
     _passwordTextField.placeholder = kStr(@"Login_PW");
+    _passwordTextField.secureTextEntry = YES;
     _passwordTextField.textColor = WGAppNameLabelColor;
     [_scrollView addSubview:_passwordTextField];
     
@@ -94,7 +100,7 @@
     _codeTextField.font = kAppAdaptFont(14);
     _codeTextField.placeholder = kStr(@"Login_ValidCode");
     _codeTextField.textColor = WGAppNameLabelColor;
-    [_scrollView addSubview:_codeTextField];
+    //[_scrollView addSubview:_codeTextField];
     //_pooCodeView = [[PooCodeView alloc] initWithFrame:CGRectMake(50, 100, 82, 32)];
     _verificationView = [[PooCodeView alloc] initWithFrame:CGRectMake(kAppAdaptWidth(231), kAppAdaptHeight(8), kAppAdaptWidth(82), kAppAdaptHeight(32))];
     [_codeTextField addSubview:_verificationView];
@@ -102,7 +108,7 @@
     
     JHView *codeLineView = [[JHView alloc] initWithFrame:CGRectMake(0, lineY, _usernameTextField.width, kAppSepratorLineHeight)];
     codeLineView.backgroundColor = WGAppSeparateLineColor;
-    [_codeTextField addSubview:codeLineView];
+    //[_codeTextField addSubview:codeLineView];
     
     float radius = kAppAdaptWidth(20);
     JHButton *loginBtn = [[JHButton alloc] initWithFrame:CGRectMake(_usernameTextField.x, _codeTextField.maxY + kAppAdaptHeight(24), _usernameTextField.width, kAppAdaptHeight(40)) difRadius:JHRadiusMake(radius, radius, radius, radius) backgroundColor:WGAppBlueButtonColor];
@@ -167,15 +173,15 @@
         [self showWarningMessage:kStr(@"Login_Tip_PW")];
         return;
     }
-    NSString *code = _codeTextField.text;
-    if ([NSString isNullOrEmpty:code]) {
-        [self showWarningMessage:kStr(@"Login_Tip_ValidCode")];
-        return;
-    }
-    if (NSOrderedSame != [_verificationView.changeString caseInsensitiveCompare:_codeTextField.text]) {
-        [self showWarningMessage:kStr(@"Login_Tip_ValidCode2")];
-        return;
-    }
+//    NSString *code = _codeTextField.text;
+//    if ([NSString isNullOrEmpty:code]) {
+//        [self showWarningMessage:kStr(@"Login_Tip_ValidCode")];
+//        return;
+//    }
+//    if (NSOrderedSame != [_verificationView.changeString caseInsensitiveCompare:_codeTextField.text]) {
+//        [self showWarningMessage:kStr(@"Login_Tip_ValidCode2")];
+//        return;
+//    }
     WGLoginRequest *loginRequest = [[WGLoginRequest alloc] init];
     loginRequest.username = [username trim];
     loginRequest.password = [password trim];

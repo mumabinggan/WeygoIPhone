@@ -87,6 +87,7 @@
         _passwordTextField.font = kAppAdaptFont(14);
         _passwordTextField.placeholder = kStr(@"ThirdPartyBing_Password");
         _passwordTextField.textColor = WGAppNameLabelColor;
+        _passwordTextField.secureTextEntry = YES;
         [_registerView addSubview:_passwordTextField];
         
         JHView *passwordLineView = [[JHView alloc] initWithFrame:CGRectMake(0, lineY, _usernameTextField.width, kAppSepratorLineHeight)];
@@ -97,16 +98,16 @@
         _codeTextField.font = kAppAdaptFont(14);
         _codeTextField.placeholder = kStr(@"ThirdPartyBing_Code");
         _codeTextField.textColor = WGAppNameLabelColor;
-        [_registerView addSubview:_codeTextField];
+        //[_registerView addSubview:_codeTextField];
         
         _verificationCodeBtn = [[PooCodeView alloc] initWithFrame:CGRectMake(kAppAdaptWidth(231), kAppAdaptHeight(8), kAppAdaptWidth(82), kAppAdaptHeight(32))];
         [_verificationCodeBtn addSingleTapGestureRecognizerWithTarget:self action:@selector(changeVerificationCode)];
         [_verificationCodeBtn setBackgroundColor:kGreenColor];
-        [_codeTextField addSubview:_verificationCodeBtn];
+        //[_codeTextField addSubview:_verificationCodeBtn];
         
         JHView *codeLineView = [[JHView alloc] initWithFrame:CGRectMake(0, lineY, _usernameTextField.width, kAppSepratorLineHeight)];
         codeLineView.backgroundColor = WGAppSeparateLineColor;
-        [_codeTextField addSubview:codeLineView];
+        //[_codeTextField addSubview:codeLineView];
         
         float radius = kAppAdaptWidth(20);
         JHButton *confirmBtn = [[JHButton alloc] initWithFrame:CGRectMake(_usernameTextField.x, _codeTextField.maxY + kAppAdaptHeight(24), _usernameTextField.width, kAppAdaptHeight(40)) difRadius:JHRadiusMake(radius, radius, radius, radius) backgroundColor:WGAppBlueButtonColor];

@@ -47,6 +47,7 @@
 
 - (void)handleChangeSuccess {
     [self sendNotification:WGRefreshNotificationTypeLogout];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationLogOut object:nil];
     [[WGApplication sharedApplication] switchTab:WGTabIndexHome];
     [self openLoginViewController];
 }

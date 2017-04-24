@@ -68,6 +68,8 @@
 
 - (void)decreaseGoodCount:(NSInteger)decreaseCount;
 
+- (void)handleShopCartGoodCount:(NSInteger)count;
+
 @end
 
 @interface WGApplication (Language)

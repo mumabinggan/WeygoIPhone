@@ -137,11 +137,11 @@
 
 //找回密码(完成)
 "ForgetPW_Title" = "Password dimenticata";
-"Register_Mobile" = "Cellulare";
-"Register_Code" = "Richiedi codice di verifica";
-"Register_Get_Code" = "Invia codice";
-"Register_Password" = "Password";
-"Register_Confirm_Password" = "Conferma password";
+"ForgetPW_Mobile" = "Cellulare";
+"ForgetPW_Code" = "Richiedi codice di verifica";
+"ForgetPW_Get_Code" = "Invia codice";
+"ForgetPW_Password" = "Password";
+"ForgetPW_Confirm_Password" = "Conferma password";
 "ForgetPW_FindPW" = "Ripristino password";
 
 //第三方绑定（完成）

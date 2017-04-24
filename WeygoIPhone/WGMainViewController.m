@@ -55,10 +55,25 @@ static const float kTabBarHeight = 60;
     
     [self initNotification];
     //[self setCenterTabBarItem];
+    
+    WeakSelf;
+    [[WGApplication sharedApplication] loadShopCartCountOnCompletion:^(WGShopCartCountResponse *response) {
+        [weakSelf handleShopCartCount:response];
+    }];
+}
+
+- (void)handleShopCartCount:(WGShopCartCountResponse *)response {
+    if (response.success) {
+        [WGApplication sharedApplication].shopCartGoodCount = response.data.goodCount;
+        [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationUpdateShopCartCount object:nil];
+    }
 }
 
 - (void)initNotification {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleLogIn:) name:kNotificationLogIn object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleLogOut:) name:kNotificationLogOut object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleLoginFail:) name:kNotificationReLoginRequired object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleUpdateShopCart:) name:kNotificationUpdateShopCartCount object:nil];
 }
 
 - (void)handleLoginFail:(NSNotification *)notification {
@@ -83,6 +98,18 @@ static const float kTabBarHeight = 60;
 //            }
 //        }];
 //    }
+}
+
+- (void)handleLogIn:(NSNotification *)notification {
+    [[WGApplication sharedApplication] loadShopCartCountOnCompletion:nil];
+}
+
+- (void)handleLogOut:(NSNotification *)notification {
+    [[WGApplication sharedApplication] loadShopCartCountOnCompletion:nil];
+}
+
+- (void)handleUpdateShopCart:(NSNotification *)notification {
+    [self.tabBar show:[WGApplication sharedApplication].shopCartGoodCount > 0 ? YES : NO index:WGTabIndexShopCart badgeNumber:[WGApplication sharedApplication].shopCartGoodCount];
 }
 
 - (void)resetViewControllersWithIndex:(NSInteger)index {

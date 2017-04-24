@@ -6,9 +6,9 @@
 //  Copyright © 2017年 weygo.com. All rights reserved.
 //
 
-#import "WGRequest.h"
+#import "WGGuestRequest.h"
 
-@interface WGRebuyOrderRequest : WGRequest
+@interface WGRebuyOrderRequest : WGGuestRequest
 
 @property (nonatomic, assign) long long orderId;
 

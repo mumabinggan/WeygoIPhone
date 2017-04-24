@@ -218,6 +218,7 @@
             [array addObjectsFromArray:response.data.goods];
             _data.goods = array;
         }
+        [[WGApplication sharedApplication] handleShopCartGoodCount:_data.goods.count];
         [self refreshUI];
     }
     else {

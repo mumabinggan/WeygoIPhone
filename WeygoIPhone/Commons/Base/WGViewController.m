@@ -37,6 +37,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //self.edgesForExtendedLayout = UIRectEdgeNone;
     // Do any additional setup after loading the view.
     [self initData];
     
@@ -185,7 +187,15 @@ static const NSString *WGLoginCustomDataKey = @"";
 
 - (void)handleLoginCancel:(id)customData {
     self.loginType = WGLoginTypeNormal;
-    [self.navigationController popViewControllerAnimated:YES];
+    //[self.navigationController popViewControllerAnimated:YES];
+    NSMutableArray *viewControllers = [NSMutableArray array];
+    for (UIViewController *item in self.navigationController.viewControllers) {
+        if ([item isKindOfClass:[WGLoginViewController class]]) {
+            break;
+        }
+        [viewControllers addObject:item];
+    }
+    [self.navigationController setViewControllers:viewControllers animated:YES];
 }
 
 - (void)pushViewControllerAfterLogin:(UIViewController *)viewController {

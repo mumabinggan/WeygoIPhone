@@ -16,6 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //self.edgesForExtendedLayout = UIRectEdgeNone;
+    //self.automaticallyAdjustsScrollViewInsets = YES;
     // Do any additional setup after loading the view.
     _viewType = 1;
     

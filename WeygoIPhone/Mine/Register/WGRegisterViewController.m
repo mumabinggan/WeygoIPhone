@@ -50,6 +50,10 @@
     [returnBtn addTarget:self action:@selector(touchReturnBtn:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:returnBtn];
     
+    JHButton *returnBackgroundBtn = [[JHButton alloc] initWithFrame:CGRectMake(kAppAdaptWidth(0), kAppAdaptHeight(0), kAppAdaptWidth(80), kAppAdaptHeight(80))];
+    [returnBackgroundBtn addTarget:self action:@selector(touchReturnBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:returnBackgroundBtn];
+    
     JHView *loginBgView = [[JHView alloc] initWithFrame:CGRectMake(kDeviceWidth - kAppAdaptWidth(86), kAppAdaptHeight(30), kAppAdaptWidth(70), kAppAdaptHeight(24))];
     [loginBgView addSingleTapGestureRecognizerWithTarget:self action:@selector(intoLoginViewController:)];
     [self.view addSubview:loginBgView];
@@ -194,6 +198,7 @@
 
 - (void)handleLoginSuccess:(id)customData {
     [self sendNotification:WGRefreshNotificationTypeLogin];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationLogIn object:nil];
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 

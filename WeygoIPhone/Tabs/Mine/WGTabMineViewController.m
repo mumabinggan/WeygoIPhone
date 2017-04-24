@@ -245,6 +245,7 @@
 
 - (void)handleLogoutCompletion {
     [self sendNotification:WGRefreshNotificationTypeLogout];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationLogOut object:nil];
     [[WGApplication sharedApplication] switchTab:WGTabIndexHome];
 }
 

@@ -31,7 +31,22 @@ static WGApplication* _sharedInstance = nil;
 
 - (void)initData {
     NSString *language = [[JHLocalSettings sharedSettings] getSettingsForKey:kLocalSettingsLocalLanguage];
-    [JHLocalizableManager sharedManager].type = language.integerValue;
+    if ([NSString isNullOrEmpty:language]) {
+        NSArray *appLanguages = [[NSUserDefaults standardUserDefaults] objectForKey:@"AppleLanguages"];
+        NSString *languageName = [appLanguages objectAtIndex:0];
+        if ([languageName containsString:@"zh-Hans"] || [language containsString:@"zh-Hant"] || [language containsString:@"zh-Hant"]) {
+            [JHLocalizableManager sharedManager].type = JHLocalizableTypeChina;
+        }
+        else if ([languageName containsString:@"it-"]) {
+            [JHLocalizableManager sharedManager].type = JHLocalizableTypeItalian;
+        }
+        else {
+            [JHLocalizableManager sharedManager].type = JHLocalizableTypeItalian;
+        }
+    }
+    else {
+        [JHLocalizableManager sharedManager].type = language.integerValue;
+    }
 }
 
 @end

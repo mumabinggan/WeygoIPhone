@@ -150,20 +150,6 @@
 		BE62E23C1DF92176004510A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE62E23A1DF92176004510A5 /* LaunchScreen.storyboard */; };
 		BE62E2471DF92176004510A5 /* WeygoIPhoneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62E2461DF92176004510A5 /* WeygoIPhoneTests.m */; };
 		BE62E2521DF92176004510A5 /* WeygoIPhoneUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62E2511DF92176004510A5 /* WeygoIPhoneUITests.m */; };
-		BE62E4351DF92B74004510A5 /* JHKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE62E4181DF927BC004510A5 /* JHKit.framework */; };
-		BE62E43B1DF92B8C004510A5 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE62E4361DF92B8C004510A5 /* AFNetworking.framework */; };
-		BE62E43C1DF92B8C004510A5 /* IQKeyboardManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE62E4371DF92B8C004510A5 /* IQKeyboardManager.framework */; };
-		BE62E43D1DF92B8C004510A5 /* JSONModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE62E4381DF92B8C004510A5 /* JSONModel.framework */; };
-		BE62E43E1DF92B8C004510A5 /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE62E4391DF92B8C004510A5 /* MBProgressHUD.framework */; };
-		BE62E43F1DF92B8C004510A5 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE62E43A1DF92B8C004510A5 /* SDWebImage.framework */; };
-		BE62E4411DF92BA4004510A5 /* FMDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE62E4401DF92BA4004510A5 /* FMDB.framework */; };
-		BE62E4441DF92BEF004510A5 /* JHKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE62E4181DF927BC004510A5 /* JHKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BE62E4501DF92DEC004510A5 /* AFNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE62E4361DF92B8C004510A5 /* AFNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BE62E4511DF92E01004510A5 /* SDWebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE62E43A1DF92B8C004510A5 /* SDWebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BE62E4521DF92E08004510A5 /* IQKeyboardManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE62E4371DF92B8C004510A5 /* IQKeyboardManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BE62E4531DF92E0F004510A5 /* JSONModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE62E4381DF92B8C004510A5 /* JSONModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BE62E4541DF92E1A004510A5 /* MBProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE62E4391DF92B8C004510A5 /* MBProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BE62E4551DF92E21004510A5 /* FMDB.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE62E4401DF92BA4004510A5 /* FMDB.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BE62E4601DF935E9004510A5 /* WGMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62E45E1DF935E9004510A5 /* WGMainViewController.m */; };
 		BE62E4631DF937F8004510A5 /* AppDelegate+UI.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62E4621DF937F8004510A5 /* AppDelegate+UI.m */; };
 		BE62E4D21DF94EB4004510A5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE62E4D41DF94EB4004510A5 /* Localizable.strings */; };
@@ -254,6 +240,9 @@
 		BE83BB2D1E23E60D002F3BCC /* WGHomeFloorItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BE83BB2C1E23E60D002F3BCC /* WGHomeFloorItem.m */; };
 		BE83BB301E23EB54002F3BCC /* WGHomeTabContentRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE83BB2F1E23EB54002F3BCC /* WGHomeTabContentRequest.m */; };
 		BE83BB331E23EB68002F3BCC /* WGHomeTabContentResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BE83BB321E23EB68002F3BCC /* WGHomeTabContentResponse.m */; };
+		BE97E80D1EAE3DE100E9667C /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE97E80B1EAE3DE100E9667C /* Crashlytics.framework */; };
+		BE97E80E1EAE3DE100E9667C /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE97E80C1EAE3DE100E9667C /* Fabric.framework */; };
+		BE97E8131EAE3EC400E9667C /* AppDelegate+Fabric.m in Sources */ = {isa = PBXBuildFile; fileRef = BE97E8121EAE3EC400E9667C /* AppDelegate+Fabric.m */; };
 		BE99E79E1E1C928200210546 /* WGHomeFloorBaseContentItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BE99E79D1E1C928200210546 /* WGHomeFloorBaseContentItem.m */; };
 		BE99E7A21E1C947F00210546 /* WGHomeFloorContentGoodItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BE99E7A11E1C947F00210546 /* WGHomeFloorContentGoodItem.m */; };
 		BE99E7A51E1C94C400210546 /* WGHomeFloorContentClassifyItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BE99E7A41E1C94C400210546 /* WGHomeFloorContentClassifyItem.m */; };
@@ -354,6 +343,20 @@
 		BED697D11E9F2D5900163355 /* WGClassifyDetailContentViewController+Request.m in Sources */ = {isa = PBXBuildFile; fileRef = BED697D01E9F2D5900163355 /* WGClassifyDetailContentViewController+Request.m */; };
 		BEDCA7EB1E627BC500BCDED6 /* WGSliderClassifyItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDCA7EA1E627BC500BCDED6 /* WGSliderClassifyItemCell.m */; };
 		BEDCA7EF1E627E8000BCDED6 /* WGHomeSliderUserHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDCA7EE1E627E8000BCDED6 /* WGHomeSliderUserHeaderView.m */; };
+		BEE085311EA75EDE00DC2CC3 /* JHKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE62E4181DF927BC004510A5 /* JHKit.framework */; };
+		BEE085321EA75EF000DC2CC3 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE62E4361DF92B8C004510A5 /* AFNetworking.framework */; };
+		BEE085331EA75EF000DC2CC3 /* FMDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE62E4401DF92BA4004510A5 /* FMDB.framework */; };
+		BEE085341EA75EF000DC2CC3 /* IQKeyboardManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE62E4371DF92B8C004510A5 /* IQKeyboardManager.framework */; };
+		BEE085351EA75EF000DC2CC3 /* JSONModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE62E4381DF92B8C004510A5 /* JSONModel.framework */; };
+		BEE085361EA75EF000DC2CC3 /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE62E4391DF92B8C004510A5 /* MBProgressHUD.framework */; };
+		BEE085371EA75EF000DC2CC3 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE62E43A1DF92B8C004510A5 /* SDWebImage.framework */; };
+		BEE085381EA75F3A00DC2CC3 /* JHKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE62E4181DF927BC004510A5 /* JHKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BEE085391EA75F4600DC2CC3 /* FMDB.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE62E4401DF92BA4004510A5 /* FMDB.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BEE0853A1EA75F4600DC2CC3 /* AFNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE62E4361DF92B8C004510A5 /* AFNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BEE0853B1EA75F4600DC2CC3 /* IQKeyboardManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE62E4371DF92B8C004510A5 /* IQKeyboardManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BEE0853C1EA75F4600DC2CC3 /* JSONModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE62E4381DF92B8C004510A5 /* JSONModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BEE0853D1EA75F4600DC2CC3 /* MBProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE62E4391DF92B8C004510A5 /* MBProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BEE0853E1EA75F4600DC2CC3 /* SDWebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE62E43A1DF92B8C004510A5 /* SDWebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BEE937B71E825BC800875131 /* WGInvitationDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE937B61E825BC800875131 /* WGInvitationDescription.m */; };
 		BEE937BA1E825C3C00875131 /* WGInvitationDescriptionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE937B91E825C3C00875131 /* WGInvitationDescriptionRequest.m */; };
 		BEE937BD1E825C4D00875131 /* WGInvitationDescriptionResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE937BC1E825C4D00875131 /* WGInvitationDescriptionResponse.m */; };
@@ -451,7 +454,7 @@
 			remoteGlobalIDString = BE62D5D31DF8DAFD004510A5;
 			remoteInfo = JHKitTests;
 		};
-		BEE084F21EA754AE00DC2CC3 /* PBXContainerItemProxy */ = {
+		BEE085191EA75DFA00DC2CC3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BE62E40C1DF927BC004510A5 /* JHKit.xcodeproj */;
 			proxyType = 1;
@@ -467,13 +470,13 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				BE62E4551DF92E21004510A5 /* FMDB.framework in Embed Frameworks */,
-				BE62E4541DF92E1A004510A5 /* MBProgressHUD.framework in Embed Frameworks */,
-				BE62E4531DF92E0F004510A5 /* JSONModel.framework in Embed Frameworks */,
-				BE62E4521DF92E08004510A5 /* IQKeyboardManager.framework in Embed Frameworks */,
-				BE62E4511DF92E01004510A5 /* SDWebImage.framework in Embed Frameworks */,
-				BE62E4501DF92DEC004510A5 /* AFNetworking.framework in Embed Frameworks */,
-				BE62E4441DF92BEF004510A5 /* JHKit.framework in Embed Frameworks */,
+				BEE085391EA75F4600DC2CC3 /* FMDB.framework in Embed Frameworks */,
+				BEE0853A1EA75F4600DC2CC3 /* AFNetworking.framework in Embed Frameworks */,
+				BEE0853B1EA75F4600DC2CC3 /* IQKeyboardManager.framework in Embed Frameworks */,
+				BEE0853C1EA75F4600DC2CC3 /* JSONModel.framework in Embed Frameworks */,
+				BEE0853D1EA75F4600DC2CC3 /* MBProgressHUD.framework in Embed Frameworks */,
+				BEE0853E1EA75F4600DC2CC3 /* SDWebImage.framework in Embed Frameworks */,
+				BEE085381EA75F3A00DC2CC3 /* JHKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -948,6 +951,10 @@
 		BE83BB2F1E23EB54002F3BCC /* WGHomeTabContentRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGHomeTabContentRequest.m; sourceTree = "<group>"; };
 		BE83BB311E23EB68002F3BCC /* WGHomeTabContentResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGHomeTabContentResponse.h; sourceTree = "<group>"; };
 		BE83BB321E23EB68002F3BCC /* WGHomeTabContentResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGHomeTabContentResponse.m; sourceTree = "<group>"; };
+		BE97E80B1EAE3DE100E9667C /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		BE97E80C1EAE3DE100E9667C /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		BE97E8111EAE3EC400E9667C /* AppDelegate+Fabric.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Fabric.h"; sourceTree = "<group>"; };
+		BE97E8121EAE3EC400E9667C /* AppDelegate+Fabric.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Fabric.m"; sourceTree = "<group>"; };
 		BE99E79C1E1C928200210546 /* WGHomeFloorBaseContentItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGHomeFloorBaseContentItem.h; sourceTree = "<group>"; };
 		BE99E79D1E1C928200210546 /* WGHomeFloorBaseContentItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGHomeFloorBaseContentItem.m; sourceTree = "<group>"; };
 		BE99E7A01E1C947F00210546 /* WGHomeFloorContentGoodItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGHomeFloorContentGoodItem.h; sourceTree = "<group>"; };
@@ -1279,13 +1286,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE62E4351DF92B74004510A5 /* JHKit.framework in Frameworks */,
-				BE62E4411DF92BA4004510A5 /* FMDB.framework in Frameworks */,
-				BE62E43B1DF92B8C004510A5 /* AFNetworking.framework in Frameworks */,
-				BE62E43C1DF92B8C004510A5 /* IQKeyboardManager.framework in Frameworks */,
-				BE62E43D1DF92B8C004510A5 /* JSONModel.framework in Frameworks */,
-				BE62E43E1DF92B8C004510A5 /* MBProgressHUD.framework in Frameworks */,
-				BE62E43F1DF92B8C004510A5 /* SDWebImage.framework in Frameworks */,
+				BEE085321EA75EF000DC2CC3 /* AFNetworking.framework in Frameworks */,
+				BEE085331EA75EF000DC2CC3 /* FMDB.framework in Frameworks */,
+				BE97E80D1EAE3DE100E9667C /* Crashlytics.framework in Frameworks */,
+				BEE085341EA75EF000DC2CC3 /* IQKeyboardManager.framework in Frameworks */,
+				BEE085351EA75EF000DC2CC3 /* JSONModel.framework in Frameworks */,
+				BE97E80E1EAE3DE100E9667C /* Fabric.framework in Frameworks */,
+				BEE085361EA75EF000DC2CC3 /* MBProgressHUD.framework in Frameworks */,
+				BEE085371EA75EF000DC2CC3 /* SDWebImage.framework in Frameworks */,
+				BEE085311EA75EDE00DC2CC3 /* JHKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2261,6 +2270,7 @@
 		BE62E2201DF92176004510A5 = {
 			isa = PBXGroup;
 			children = (
+				BE97E8091EAE3DE100E9667C /* Libraries */,
 				BE62E3461DF927AE004510A5 /* Submodules */,
 				BE62E22B1DF92176004510A5 /* WeygoIPhone */,
 				BE62E2451DF92176004510A5 /* WeygoIPhoneTests */,
@@ -2303,6 +2313,8 @@
 				BE5210021E89102C004BD34E /* AppDelegate+Init.m */,
 				BE62E4611DF937F8004510A5 /* AppDelegate+UI.h */,
 				BE62E4621DF937F8004510A5 /* AppDelegate+UI.m */,
+				BE97E8111EAE3EC400E9667C /* AppDelegate+Fabric.h */,
+				BE97E8121EAE3EC400E9667C /* AppDelegate+Fabric.m */,
 				BE62E45F1DF935E9004510A5 /* WGMainViewController.h */,
 				BE62E45E1DF935E9004510A5 /* WGMainViewController.m */,
 				BE6753CA1E948DDC00250BA8 /* WGMainViewController+TabBarDelegate.h */,
@@ -2582,6 +2594,23 @@
 			children = (
 			);
 			path = Layout;
+			sourceTree = "<group>";
+		};
+		BE97E8091EAE3DE100E9667C /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				BE97E80A1EAE3DE100E9667C /* Fabric */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		BE97E80A1EAE3DE100E9667C /* Fabric */ = {
+			isa = PBXGroup;
+			children = (
+				BE97E80B1EAE3DE100E9667C /* Crashlytics.framework */,
+				BE97E80C1EAE3DE100E9667C /* Fabric.framework */,
+			);
+			path = Fabric;
 			sourceTree = "<group>";
 		};
 		BE99E7CB1E1CEA0B00210546 /* SFUIDisplay */ = {
@@ -3584,11 +3613,12 @@
 				BE62E2261DF92176004510A5 /* Frameworks */,
 				BE62E2271DF92176004510A5 /* Resources */,
 				BE62E4341DF92B36004510A5 /* Embed Frameworks */,
+				BEC3D05E1EAE491B00AE35C2 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				BEE084F31EA754AE00DC2CC3 /* PBXTargetDependency */,
+				BEE0851A1EA75DFA00DC2CC3 /* PBXTargetDependency */,
 			);
 			name = WeygoIPhone;
 			productName = WeygoIPhone;
@@ -3761,6 +3791,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BEC3D05E1EAE491B00AE35C2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 822086e38faa11be65913ddd4e0773223c018fb9 e7d1abe437bb7dd9303549d0ea0f33be7ac2887017dd57a3d36542ae0acca673";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BE62E2251DF92176004510A5 /* Sources */ = {
@@ -4079,6 +4125,7 @@
 				BE52ED2D1E2C66100022EF5B /* WGEditReceiptCell.m in Sources */,
 				BE52ED8D1E2CC78A0022EF5B /* WGBaseAddressAndReceiptListCell.m in Sources */,
 				BE9F932D1E6B1C960051B054 /* WGClientServiceCenterViewController.m in Sources */,
+				BE97E8131EAE3EC400E9667C /* AppDelegate+Fabric.m in Sources */,
 				BEFEC3451E964CE0002FCF1F /* WGRegisterResponse.m in Sources */,
 				BEF8ED691E8A743900E15C8F /* WGCollectionListResponse.m in Sources */,
 				BEEC21231E9B79AF0065DE90 /* WGUseIntegrationRequest.m in Sources */,
@@ -4163,10 +4210,10 @@
 			target = BE62E2281DF92176004510A5 /* WeygoIPhone */;
 			targetProxy = BE62E24E1DF92176004510A5 /* PBXContainerItemProxy */;
 		};
-		BEE084F31EA754AE00DC2CC3 /* PBXTargetDependency */ = {
+		BEE0851A1EA75DFA00DC2CC3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = JHKit;
-			targetProxy = BEE084F21EA754AE00DC2CC3 /* PBXContainerItemProxy */;
+			targetProxy = BEE085191EA75DFA00DC2CC3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -4310,6 +4357,7 @@
 					"$(PROJECT_DIR)/Submodules/JHKit/Submodules/JsonModel/build/Debug-iphoneos",
 					"$(PROJECT_DIR)/Submodules/JHKit/Submodules/MBProgressHUD/build/Debug-iphoneos",
 					"$(PROJECT_DIR)/Submodules/JHKit/Submodules/SDWebImage/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/Libraries/Fabric",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WeygoIPhone/WeygoIPhone-Prefix.pch";
@@ -4339,6 +4387,7 @@
 					"$(PROJECT_DIR)/Submodules/JHKit/Submodules/JsonModel/build/Debug-iphoneos",
 					"$(PROJECT_DIR)/Submodules/JHKit/Submodules/MBProgressHUD/build/Debug-iphoneos",
 					"$(PROJECT_DIR)/Submodules/JHKit/Submodules/SDWebImage/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/Libraries/Fabric",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WeygoIPhone/WeygoIPhone-Prefix.pch";

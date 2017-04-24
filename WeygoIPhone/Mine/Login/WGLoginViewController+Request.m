@@ -40,6 +40,7 @@
         [[WGApplication sharedApplication] reset];
         [WGApplication sharedApplication].user = response.data;
         [self sendNotification:WGRefreshNotificationTypeLogin];
+        [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationLogIn object:nil];
         if (self.successBlock) {
             self.successBlock(self);
         }

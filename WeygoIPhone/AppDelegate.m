@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "AppDelegate+UI.h"
 #import "AppDelegate+Init.h"
-
+#import "AppDelegate+Fabric.h"
 #import "JHNetworkManager.h"
 
 @interface AppDelegate ()<NSXMLParserDelegate>

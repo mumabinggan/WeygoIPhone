@@ -179,8 +179,10 @@
 }
 
 - (void)loadShopCartCountOnCompletion:(void (^)(WGShopCartCountResponse *))completion {
+    WeakSelf;
     WGShopCartCountRequest *request = [[WGShopCartCountRequest alloc] init];
     [[JHNetworkManager sharedManager] post:request forResponseClass:[WGShopCartCountResponse class] success:^(JHResponse *response) {
+        [weakSelf handleShopCartCountResponse:(WGShopCartCountResponse *)response];
         if (completion) {
             completion((WGShopCartCountResponse *)response);
         }
@@ -189,6 +191,10 @@
             completion(nil);
         }
     }];
+}
+
+- (void)handleShopCartCountResponse:(WGShopCartCountResponse *)response {
+    [self handleShopCartGoodCount:response.data.goodCount];
 }
 
 - (void)loadRebuyOrder:(long long)orderId onCompletion:(void (^)(WGRebuyOrderResponse *))completion {
