@@ -31,6 +31,7 @@
 #import "WGGoodDetailViewController.h"
 #import "WGTabBenefitViewController.h"
 #import "WGHomeTabViewController.h"
+#import "WGApplication.h"
 
 //for test
 #import "WGClassifyGoodListViewController.h"
@@ -111,14 +112,31 @@
     }
 }
 
+- (void)handleLoginSuccess:(id)customData {
+    if (_loginType == WGLoginTypeInvitation) {
+        _loginType = WGLoginTypeNormal;
+        WGInvitationViewController *vc = [[WGInvitationViewController alloc] init];
+        [self pushViewControllerAfterLogin:vc];
+    }
+    else {
+        [super handleLoginSuccess:customData];
+    }
+}
+
 - (void)handleFloorContentItem:(long long)id name:(NSString *)name jumpType:(WGAppJumpType)jumpType {
     if (jumpType == WGAppJumpTypeRegister) {
         WGRegisterViewController *vc = [[WGRegisterViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
     }
     else if (jumpType == WGAppJumpTypeInvitation) {
-        WGInvitationViewController *vc = [[WGInvitationViewController alloc] init];
-        [self.navigationController pushViewController:vc animated:YES];
+        if ([WGApplication sharedApplication].isLogined) {
+            WGInvitationViewController *vc = [[WGInvitationViewController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+        else {
+            _loginType = WGLoginTypeInvitation;
+            [self openLoginViewController];
+        }
     }
     else if (jumpType == WGAppJumpTypeGoodDetail) {
         WGGoodDetailViewController *vc = [[WGGoodDetailViewController alloc] init];

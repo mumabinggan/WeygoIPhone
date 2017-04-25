@@ -24,6 +24,8 @@
     WGGoodAddView *_addView;
     JHButton *_likeBtn;
     JHView *_bottomView;
+    
+    JHButton *_noAddBtn;
 }
 @end
 
@@ -78,6 +80,12 @@
     addBtn.titleLabel.font = kAppAdaptFont(14);
     [_bottomView addSubview:addBtn];
     
+    _noAddBtn = [[JHButton alloc] initWithFrame:CGRectMake(_addView.maxX + kAppAdaptWidth(16), kAppAdaptHeight(8), kAppAdaptWidth(210), kAppAdaptHeight(28)) difRadius:JHRadiusMake(kAppAdaptHeight(14), kAppAdaptHeight(14), kAppAdaptHeight(14), kAppAdaptHeight(14)) backgroundColor:kRGB(173, 190, 197)];
+    [_noAddBtn setTitle:kStr(@"GoodDetail_Grid_Instock") forState:UIControlStateNormal];
+    [_noAddBtn setTitleColor:kWhiteColor forState:UIControlStateNormal];
+    _noAddBtn.titleLabel.font = kAppAdaptFont(14);
+    [_bottomView addSubview:_noAddBtn];
+    
     _likeBtn = [[JHButton alloc] initWithFrame:CGRectMake(addBtn.maxX + kAppAdaptWidth(16), _addView.y + kAppAdaptHeight(3), kAppAdaptWidth(20), kAppAdaptHeight(18))];
     [_likeBtn addTarget:self action:@selector(touchLikeBtn:) forControlEvents:UIControlEventTouchUpInside];
     [_likeBtn setImage:[UIImage imageNamed:@"good-like-normal"] forState:UIControlStateNormal];
@@ -100,6 +108,7 @@
 }
 
 - (void)refreshBottomView {
+    _noAddBtn.hidden = _goodDetail.inStock;
     [_likeBtn setImage:[UIImage imageNamed:(_goodDetail.hasFavorited) ? @"good-like-selected" : @"good-like-normal" ] forState:UIControlStateNormal];
 }
 

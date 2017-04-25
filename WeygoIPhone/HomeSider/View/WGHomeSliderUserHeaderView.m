@@ -33,6 +33,7 @@
     _imageView.layer.masksToBounds = YES;
     _imageView.layer.borderColor = kWhiteColor.CGColor;
     _imageView.layer.borderWidth = kAppAdaptHeight(3);
+    _imageView.contentMode = UIViewContentModeScaleAspectFill;
     [self addSubview:_imageView];
     
     _nameLabel = [[JHLabel alloc] initWithFrame:CGRectMake(_imageView.maxX + kAppAdaptWidth(10), _imageView.y, kAppAdaptWidth(170), _imageView.height)];

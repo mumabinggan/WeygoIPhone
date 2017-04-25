@@ -22,6 +22,7 @@ typedef NS_ENUM(NSInteger, WGLoginType) {
     WGLoginTypeGoodDetailFavorite,
     WGLoginTypeShopCart,
     WGLoginTypeOpenSlider,
+    WGLoginTypeInvitation,
 };
 
 typedef NS_ENUM(NSInteger, WGAppJumpType) {

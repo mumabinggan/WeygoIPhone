@@ -16,6 +16,7 @@
     _headerImageView = [[JHImageView alloc] initWithFrame:CGRectMake(0, 0, kAppAdaptWidth(56), kAppAdaptHeight(56))];
     _headerImageView.layer.masksToBounds = YES;
     _headerImageView.layer.cornerRadius = kAppAdaptWidth(28);
+    _headerImageView.contentMode = UIViewContentModeScaleAspectFill;
     self.accessoryView = _headerImageView;
 }
 

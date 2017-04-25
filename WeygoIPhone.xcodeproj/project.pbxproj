@@ -739,7 +739,7 @@
 		BE62CDC61EA29D770076BD69 /* WGBenefitTabRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGBenefitTabRequest.m; sourceTree = "<group>"; };
 		BE62CDC81EA29D8C0076BD69 /* WGBenefitTabResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGBenefitTabResponse.h; sourceTree = "<group>"; };
 		BE62CDC91EA29D8C0076BD69 /* WGBenefitTabResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGBenefitTabResponse.m; sourceTree = "<group>"; };
-		BE62E2291DF92176004510A5 /* WeygoIPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeygoIPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE62E2291DF92176004510A5 /* Weygo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weygo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE62E22D1DF92176004510A5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BE62E22F1DF92176004510A5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BE62E2301DF92176004510A5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -2283,7 +2283,7 @@
 		BE62E22A1DF92176004510A5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BE62E2291DF92176004510A5 /* WeygoIPhone.app */,
+				BE62E2291DF92176004510A5 /* Weygo.app */,
 				BE62E2421DF92176004510A5 /* WeygoIPhoneTests.xctest */,
 				BE62E24D1DF92176004510A5 /* WeygoIPhoneUITests.xctest */,
 			);
@@ -3622,7 +3622,7 @@
 			);
 			name = WeygoIPhone;
 			productName = WeygoIPhone;
-			productReference = BE62E2291DF92176004510A5 /* WeygoIPhone.app */;
+			productReference = BE62E2291DF92176004510A5 /* Weygo.app */;
 			productType = "com.apple.product-type.application";
 		};
 		BE62E2411DF92176004510A5 /* WeygoIPhoneTests */ = {
@@ -4365,7 +4365,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.starfacealliance.WeygoIPhone;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Weygo;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Submodules/JHKit/**";
