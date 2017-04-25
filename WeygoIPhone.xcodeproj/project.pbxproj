@@ -394,6 +394,12 @@
 		BEEC21351E9B7F850065DE90 /* WGIntegrationDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEC21341E9B7F850065DE90 /* WGIntegrationDetail.m */; };
 		BEEC21381E9B91850065DE90 /* WGIntegrationHelpView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEC21371E9B91850065DE90 /* WGIntegrationHelpView.m */; };
 		BEEC21471E9BC6D50065DE90 /* WGCommitOrderViewController+PickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEC21461E9BC6D50065DE90 /* WGCommitOrderViewController+PickerView.m */; };
+		BEED6B711EAF8BFE00B56455 /* ZDCChat.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BEED6B6D1EAF8BFE00B56455 /* ZDCChat.bundle */; };
+		BEED6B721EAF8BFE00B56455 /* ZDCChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEED6B6E1EAF8BFE00B56455 /* ZDCChat.framework */; };
+		BEED6B731EAF8BFE00B56455 /* ZDCChatAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEED6B6F1EAF8BFE00B56455 /* ZDCChatAPI.framework */; };
+		BEED6B741EAF8BFE00B56455 /* ZDCChatStrings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BEED6B701EAF8BFE00B56455 /* ZDCChatStrings.bundle */; };
+		BEED6B771EAF8C3B00B56455 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEED6B761EAF8C3B00B56455 /* MobileCoreServices.framework */; };
+		BEED6B7A1EAF8CA700B56455 /* AppDelegate+Zendesk.m in Sources */ = {isa = PBXBuildFile; fileRef = BEED6B791EAF8CA700B56455 /* AppDelegate+Zendesk.m */; };
 		BEF286BD1E35F4F300274FCA /* WGUniversalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF286BC1E35F4F300274FCA /* WGUniversalViewController.m */; };
 		BEF6851F1E31AC84003B745B /* WGBaseFootPrintAndCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF6851E1E31AC84003B745B /* WGBaseFootPrintAndCollectionViewController.m */; };
 		BEF685231E31ADD9003B745B /* WGFootPrintViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF685221E31ADD9003B745B /* WGFootPrintViewController.m */; };
@@ -1221,6 +1227,13 @@
 		BEEC21371E9B91850065DE90 /* WGIntegrationHelpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGIntegrationHelpView.m; sourceTree = "<group>"; };
 		BEEC21451E9BC6D50065DE90 /* WGCommitOrderViewController+PickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGCommitOrderViewController+PickerView.h"; sourceTree = "<group>"; };
 		BEEC21461E9BC6D50065DE90 /* WGCommitOrderViewController+PickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGCommitOrderViewController+PickerView.m"; sourceTree = "<group>"; };
+		BEED6B6D1EAF8BFE00B56455 /* ZDCChat.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZDCChat.bundle; sourceTree = "<group>"; };
+		BEED6B6E1EAF8BFE00B56455 /* ZDCChat.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ZDCChat.framework; sourceTree = "<group>"; };
+		BEED6B6F1EAF8BFE00B56455 /* ZDCChatAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ZDCChatAPI.framework; sourceTree = "<group>"; };
+		BEED6B701EAF8BFE00B56455 /* ZDCChatStrings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZDCChatStrings.bundle; sourceTree = "<group>"; };
+		BEED6B761EAF8C3B00B56455 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		BEED6B781EAF8CA700B56455 /* AppDelegate+Zendesk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Zendesk.h"; sourceTree = "<group>"; };
+		BEED6B791EAF8CA700B56455 /* AppDelegate+Zendesk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Zendesk.m"; sourceTree = "<group>"; };
 		BEF286BB1E35F4F300274FCA /* WGUniversalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGUniversalViewController.h; sourceTree = "<group>"; };
 		BEF286BC1E35F4F300274FCA /* WGUniversalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGUniversalViewController.m; sourceTree = "<group>"; };
 		BEF6851D1E31AC84003B745B /* WGBaseFootPrintAndCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGBaseFootPrintAndCollectionViewController.h; sourceTree = "<group>"; };
@@ -1286,6 +1299,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEED6B771EAF8C3B00B56455 /* MobileCoreServices.framework in Frameworks */,
 				BEE085321EA75EF000DC2CC3 /* AFNetworking.framework in Frameworks */,
 				BEE085331EA75EF000DC2CC3 /* FMDB.framework in Frameworks */,
 				BE97E80D1EAE3DE100E9667C /* Crashlytics.framework in Frameworks */,
@@ -1294,7 +1308,9 @@
 				BE97E80E1EAE3DE100E9667C /* Fabric.framework in Frameworks */,
 				BEE085361EA75EF000DC2CC3 /* MBProgressHUD.framework in Frameworks */,
 				BEE085371EA75EF000DC2CC3 /* SDWebImage.framework in Frameworks */,
+				BEED6B721EAF8BFE00B56455 /* ZDCChat.framework in Frameworks */,
 				BEE085311EA75EDE00DC2CC3 /* JHKit.framework in Frameworks */,
+				BEED6B731EAF8BFE00B56455 /* ZDCChatAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2315,6 +2331,8 @@
 				BE62E4621DF937F8004510A5 /* AppDelegate+UI.m */,
 				BE97E8111EAE3EC400E9667C /* AppDelegate+Fabric.h */,
 				BE97E8121EAE3EC400E9667C /* AppDelegate+Fabric.m */,
+				BEED6B781EAF8CA700B56455 /* AppDelegate+Zendesk.h */,
+				BEED6B791EAF8CA700B56455 /* AppDelegate+Zendesk.m */,
 				BE62E45F1DF935E9004510A5 /* WGMainViewController.h */,
 				BE62E45E1DF935E9004510A5 /* WGMainViewController.m */,
 				BE6753CA1E948DDC00250BA8 /* WGMainViewController+TabBarDelegate.h */,
@@ -2382,6 +2400,7 @@
 		BE62E41C1DF9292F004510A5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BEED6B761EAF8C3B00B56455 /* MobileCoreServices.framework */,
 				BE62E4401DF92BA4004510A5 /* FMDB.framework */,
 				BE62E4361DF92B8C004510A5 /* AFNetworking.framework */,
 				BE62E4371DF92B8C004510A5 /* IQKeyboardManager.framework */,
@@ -2599,6 +2618,7 @@
 		BE97E8091EAE3DE100E9667C /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				BEED6B6C1EAF8BFE00B56455 /* Zendesk */,
 				BE97E80A1EAE3DE100E9667C /* Fabric */,
 			);
 			path = Libraries;
@@ -3460,6 +3480,17 @@
 			path = Response;
 			sourceTree = "<group>";
 		};
+		BEED6B6C1EAF8BFE00B56455 /* Zendesk */ = {
+			isa = PBXGroup;
+			children = (
+				BEED6B6D1EAF8BFE00B56455 /* ZDCChat.bundle */,
+				BEED6B6E1EAF8BFE00B56455 /* ZDCChat.framework */,
+				BEED6B6F1EAF8BFE00B56455 /* ZDCChatAPI.framework */,
+				BEED6B701EAF8BFE00B56455 /* ZDCChatStrings.bundle */,
+			);
+			path = Zendesk;
+			sourceTree = "<group>";
+		};
 		BEF286B71E35DCC500274FCA /* Universal */ = {
 			isa = PBXGroup;
 			children = (
@@ -3743,6 +3774,7 @@
 				BE52572A1DFFB6FE00AB5CB9 /* Oswald-HeavyItalic.ttf in Resources */,
 				BE52572E1DFFB6FE00AB5CB9 /* Oswald-MediumItalic.ttf in Resources */,
 				BE99E7D81E1CEA0C00210546 /* SF-UI-Display-Light.otf in Resources */,
+				BEED6B711EAF8BFE00B56455 /* ZDCChat.bundle in Resources */,
 				BE62E23C1DF92176004510A5 /* LaunchScreen.storyboard in Resources */,
 				BE5257231DFFB6FE00AB5CB9 /* Oswald-Bold.ttf in Resources */,
 				BE99E7D71E1CEA0C00210546 /* SF-UI-Display-Heavy.otf in Resources */,
@@ -3769,6 +3801,7 @@
 				BE5257271DFFB6FE00AB5CB9 /* Oswald-Extra-LightItalic.ttf in Resources */,
 				BE52572D1DFFB6FE00AB5CB9 /* Oswald-Medium.ttf in Resources */,
 				BE5257301DFFB6FE00AB5CB9 /* Oswald-RegularItalic.ttf in Resources */,
+				BEED6B741EAF8BFE00B56455 /* ZDCChatStrings.bundle in Resources */,
 				BE99E7DC1E1CEA0C00210546 /* SF-UI-Display-Thin.otf in Resources */,
 				BE52572B1DFFB6FE00AB5CB9 /* Oswald-Light.ttf in Resources */,
 				BE52572C1DFFB6FE00AB5CB9 /* Oswald-LightItalic.ttf in Resources */,
@@ -3854,6 +3887,7 @@
 				BEB8D0F51E48581D00BB9BA3 /* WGLoginViewController+Request.m in Sources */,
 				BE57D1591E7DB77900149738 /* TTTAttributedLabel.m in Sources */,
 				BEB2D9211DFBDFE900F2E74B /* WGHomeTabViewController.m in Sources */,
+				BEED6B7A1EAF8CA700B56455 /* AppDelegate+Zendesk.m in Sources */,
 				BE63A6DB1E7BBC0B00F77282 /* WGOrderGoodItem.m in Sources */,
 				BE63A6D91E7BBC0B00F77282 /* WGOrderDetailResponse.m in Sources */,
 				BE6753AE1E93331500250BA8 /* WGDealShopCartGiftResponse.m in Sources */,
@@ -4358,6 +4392,7 @@
 					"$(PROJECT_DIR)/Submodules/JHKit/Submodules/MBProgressHUD/build/Debug-iphoneos",
 					"$(PROJECT_DIR)/Submodules/JHKit/Submodules/SDWebImage/build/Debug-iphoneos",
 					"$(PROJECT_DIR)/Libraries/Fabric",
+					"$(PROJECT_DIR)/Libraries/Zendesk",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WeygoIPhone/WeygoIPhone-Prefix.pch";
@@ -4388,6 +4423,7 @@
 					"$(PROJECT_DIR)/Submodules/JHKit/Submodules/MBProgressHUD/build/Debug-iphoneos",
 					"$(PROJECT_DIR)/Submodules/JHKit/Submodules/SDWebImage/build/Debug-iphoneos",
 					"$(PROJECT_DIR)/Libraries/Fabric",
+					"$(PROJECT_DIR)/Libraries/Zendesk",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WeygoIPhone/WeygoIPhone-Prefix.pch";

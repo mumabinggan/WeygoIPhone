@@ -27,7 +27,8 @@
     float width = kAppAdaptWidth(30);
     float height = kAppAdaptWidth(30);
     _imageView = [[JHImageView alloc] initWithFrame:CGRectMake(kAppAdaptWidth(13), kAppAdaptHeight(17), width, height)];
-    _imageView.contentMode = UIViewContentModeScaleAspectFit;
+    _imageView.contentMode = UIViewContentModeScaleAspectFill;
+    _imageView.clipsToBounds = YES;
     [self addSubview:_imageView];
     
     _nameLabel = [[JHLabel alloc] initWithFrame:CGRectMake(_imageView.maxX + kAppAdaptWidth(10), 0, kAppAdaptWidth(72), self.height)];

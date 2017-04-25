@@ -11,6 +11,7 @@
 #import "WGBaseServiceResponse.h"
 #import "AppDelegate+UI.h"
 #import "AppDelegate+Fabric.h"
+#import "AppDelegate+Zendesk.h"
 
 @implementation AppDelegate (Init)
 
@@ -47,14 +48,15 @@
 - (void)register3rdParty {
 #if !TARGET_IPHONE_SIMULATOR
     [self registerFabric];
+    [self registerZendesk];
 #endif
 }
 
 - (void)initAppearance {
-    [UINavigationBar appearance].barTintColor = WGAppBaseColor;
+    [UINavigationBar appearance].barTintColor = kHRGB(0xed7338);
     //[UINavigationBar appearance].translucent = NO;
     //[UINavigationBar appearance].tintColor = kWhiteColor;
-    //    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navbar-white"] forBarMetrics:UIBarMetricsDefault];
+    //[[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navbar"] forBarMetrics:UIBarMetricsDefault];
     //[[UINavigationBar appearance] setShadowImage:[UIImage imageNamed:@"nav-shadowImage"]];
     //[[UINavigationBar appearance] setShadowImage:[[UIImage alloc] init]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:kWhiteColor, NSFontAttributeName:kWGOswaldRegularFont(18)}];

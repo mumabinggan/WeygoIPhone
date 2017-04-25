@@ -21,7 +21,8 @@
     [super loadSubviews];
     self.backgroundColor = kWhiteColor;
     _imageView = [[JHImageView alloc] initWithFrame:CGRectMake(0, 0, self.width, self.width)];
-    _imageView.contentMode = UIViewContentModeScaleAspectFit;
+    _imageView.contentMode = UIViewContentModeScaleAspectFill;
+    _imageView.clipsToBounds = YES;
     [self addSubview:_imageView];
     
     _nameLabel = [[JHLabel alloc] initWithFrame:CGRectMake(kAppAdaptWidth(8), _imageView.maxY + kAppAdaptHeight(12), self.width - kAppAdaptWidth(16), kAppAdaptHeight(32))];

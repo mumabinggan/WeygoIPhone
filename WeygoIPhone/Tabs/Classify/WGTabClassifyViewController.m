@@ -298,7 +298,9 @@
             line.hidden = (_goodsArray.count > 0) && (indexPath.row + 1 == _subArray.count);
         }
         else if (indexPath.section == 2) {
-            [cell showWithData:_goodsArray[indexPath.row]];
+            WGClassifyHotSaleGoodCell *hotSaleCell = (WGClassifyHotSaleGoodCell *)cell;
+            hotSaleCell.hotNumberImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"hotsale_icon_%ld", indexPath.row]];
+            [hotSaleCell showWithData:_goodsArray[indexPath.row]];
         }
     }
     return cell;

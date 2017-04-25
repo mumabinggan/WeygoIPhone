@@ -21,7 +21,8 @@
 - (void)loadSubviews {
     [super loadSubviews];
     _imageView = [[JHImageView alloc] initWithFrame:CGRectMake(kAppAdaptWidth(16), 0, kAppAdaptWidth(50), kAppAdaptHeight(50))];
-    _imageView.contentMode = UIViewContentModeScaleAspectFit;
+    _imageView.contentMode = UIViewContentModeScaleAspectFill;
+    _imageView.clipsToBounds = YES;
     [self addSubview:_imageView];
     
     _nameLabel = [[JHLabel alloc] initWithFrame:CGRectMake(0, _imageView.maxY + kAppAdaptHeight(10), self.width, kAppAdaptHeight(32))];

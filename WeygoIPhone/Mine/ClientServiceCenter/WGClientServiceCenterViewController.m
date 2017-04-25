@@ -12,6 +12,7 @@
 #import "WGBaseWebViewController.h"
 #import "WGClientServiceCenterRequest.h"
 #import "WGClientServiceCenterResponse.h"
+#import <ZDCChat/ZDCChat.h>
 
 @interface WGClientServiceCenterViewController ()
 {
@@ -67,10 +68,14 @@
 }
 
 - (void)touchChatBtn:(UIButton *)sender {
-    //to chat web
-    WGBaseWebViewController *vc = [[WGBaseWebViewController alloc] initWithURLAddress:@"http://www.baidu.com"];
-    vc.title = kStr(@"Live Chat");
-    [self.navigationController pushViewController:vc animated:YES];
+    // start a chat in a new modal
+    [ZDCChat startChatIn:self.navigationController withConfig:^(ZDCConfig *config) {
+        config.preChatDataRequirements.name = ZDCPreChatDataOptionalEditable;
+        config.preChatDataRequirements.email = ZDCPreChatDataOptionalEditable;
+        config.preChatDataRequirements.phone = ZDCPreChatDataOptionalEditable;
+        config.preChatDataRequirements.department = ZDCPreChatDataOptionalEditable;
+        config.preChatDataRequirements.message = ZDCPreChatDataOptionalEditable;
+    }];
 }
 
 - (void)refreshUI {

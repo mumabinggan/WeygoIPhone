@@ -10,4 +10,6 @@
 
 @interface WGClassifyHotSaleGoodCell : JHTableViewCell
 
+@property (nonatomic, strong) JHImageView *hotNumberImageView;
+
 @end

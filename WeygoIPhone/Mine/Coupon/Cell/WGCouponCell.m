@@ -27,7 +27,8 @@
     [super loadSubviews];
     self.backgroundColor = kRGB(234, 238, 240);
     _imageView = [[JHImageView alloc] initWithFrame:CGRectMake(kAppAdaptWidth(8), kAppAdaptWidth(8), kAppAdaptWidth(359), kAppAdaptHeight(118))];
-    _imageView.contentMode = UIViewContentModeScaleAspectFit;
+    _imageView.contentMode = UIViewContentModeScaleAspectFill;
+    _imageView.clipsToBounds = YES;
     _imageView.image = [UIImage imageNamed:@"coupon_bg"];
     [self addSubview:_imageView];
     

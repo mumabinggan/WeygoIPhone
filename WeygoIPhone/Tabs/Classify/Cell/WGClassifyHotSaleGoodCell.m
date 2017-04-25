@@ -12,7 +12,6 @@
 @interface WGClassifyHotSaleGoodCell ()
 {
     JHImageView     *_imageView;
-    JHImageView     *_hotNumberImageView;
     JHLabel         *_nameLabel;
     JHLabel         *_currentPriceLabel;
     JHLabel         *_reducePriceLabel;
@@ -34,7 +33,7 @@
     [contentView addSubview:_imageView];
     
     _hotNumberImageView = [[JHImageView alloc] initWithFrame:CGRectMake(0, 0, kAppAdaptWidth(48), kAppAdaptWidth(48))];
-    _hotNumberImageView.contentMode = UIViewContentModeScaleAspectFit;
+    _hotNumberImageView.contentMode = UIViewContentModeScaleAspectFill;
     [_imageView addSubview:_hotNumberImageView];
     
     _nameLabel = [[JHLabel alloc] initWithFrame:CGRectMake(0, _imageView.maxY + kAppAdaptHeight(12), _imageView.width, kAppAdaptHeight(32))];
@@ -59,7 +58,7 @@
 
 - (void)showWithData:(WGClassifyHotGoodItem *)object {
     [_imageView setImageWithURL:[NSURL URLWithString:object.pictureURL] placeholderImage:kHomeGoodColumnPlaceholderImage options:JHWebImageOptionsRefreshCached];
-    _hotNumberImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"hotsale_icon_%ld", object.number]];
+    //_hotNumberImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"hotsale_icon_%ld", object.number]];
     _nameLabel.text = object.name;
     _currentPriceLabel.text = object.currentPrice;
     _reducePriceLabel.attributedText = [object.reducePrice addMidline];

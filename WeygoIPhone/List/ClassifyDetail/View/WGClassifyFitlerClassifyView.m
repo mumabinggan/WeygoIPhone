@@ -23,7 +23,7 @@
     [super loadSubviews];
     
     _imageView = [[JHImageView alloc] initWithFrame:CGRectMake(0, 0, kAppAdaptWidth(114), kAppAdaptHeight(114))];
-    _imageView.contentMode = UIViewContentModeScaleAspectFit;
+    _imageView.contentMode = UIViewContentModeScaleAspectFill;
     _imageView.clipsToBounds = YES;
     _imageView.layer.cornerRadius = kAppAdaptWidth(6);
     [self addSubview:_imageView];

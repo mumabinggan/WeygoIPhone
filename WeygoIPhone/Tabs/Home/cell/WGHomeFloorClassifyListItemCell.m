@@ -23,7 +23,7 @@
     float marginLeft = kAppAdaptWidth(8);
     float marginTop = kAppAdaptWidth(8);
     _imageView = [[JHImageView alloc] initWithFrame:CGRectMake(marginLeft, marginTop, kDeviceWidth - kAppAdaptWidth(16), kAppAdaptHeight(176))];
-    //_imageView.contentMode = UIViewContentModeScaleAspectFit;
+    _imageView.contentMode = UIViewContentModeScaleAspectFill;
     _imageView.clipsToBounds = YES;
     _imageView.layer.cornerRadius = kAppAdaptWidth(6);
     [self addSubview:_imageView];
