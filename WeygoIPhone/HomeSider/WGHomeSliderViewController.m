@@ -104,6 +104,7 @@
 }
 
 - (void)handleOnLogin {
+    [[WGApplication sharedApplication] closeSideBarViewController];
     if ([WGApplication sharedApplication].isLogined) {
         //进入用户信息
         [[WGApplication sharedApplication] closeSideBarViewController];
@@ -177,6 +178,7 @@
 }
 
 - (void)handleTopicItem:(WGTopicItem *)item {
+    [[WGApplication sharedApplication] closeSideBarViewController];
     if (item.jumpType == WGAppJumpTypeClassifyDetail) {
         WGClassifyDetailViewController *vc = [[WGClassifyDetailViewController alloc] init];
         vc.classifyId = item.id;

@@ -13,6 +13,7 @@
 #import "WGTabViewController+Slider.h"
 #import "WGViewController+ShopCart.h"
 #import "WGPostCodePopoverView.h"
+#import "WGViewController+Search.h"
 
 @implementation WGHomeTabViewController (NavigationBar)
 
@@ -31,7 +32,7 @@
     self.navigationItem.leftBarButtonItem = [self createSliderItem];
     
     //set rightView
-    self.navigationItem.rightBarButtonItem = [self createShopCartItem];
+    self.navigationItem.rightBarButtonItem = [self createSearchItem];
 }
 
 - (void)handleTitleView {

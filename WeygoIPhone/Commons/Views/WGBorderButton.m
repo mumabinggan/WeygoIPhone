@@ -10,29 +10,12 @@
 
 @implementation WGBorderButton
 
-/*
-- (void)setBtnBorderWidth:(CGFloat)btnBorderColor
-{
-    _btn.layer.borderWidth = btnBorderColor;
-}
-
-- (void)setBtnBorderColor:(UIColor *)btnBorderColor
-{
-    _btn.layer.borderColor = btnBorderColor.CGColor;
-}
-
-- (void)setBtnCornerRadius:(CGFloat)btnCornerRadius
-{
-    _btn.radius = btnCornerRadius;
-}
- */
-
 - (void)loadSubviews {
     [super loadSubviews];
     
     self.backgroundColor = kClearColor;
     self.layer.masksToBounds = YES;
-    self.layer.borderColor = kRedColor.CGColor;
+    //self.layer.borderColor = kRedColor.CGColor;
     CGRect frame = self.bounds;
     frame.size.height = self.bounds.size.height;
     frame.origin.y = 0;

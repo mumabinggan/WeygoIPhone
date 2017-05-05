@@ -137,7 +137,7 @@
         return;
     }
     [[WGApplication sharedApplication] loadAddGoodToCart:_goodDetail.id count:_addView.count onCompletion:^(WGAddGoodToCartResponse *response) {
-        [self showWarningMessage:response.message];
+        //[self showWarningMessage:response.message];
     }];
     [[WGApplication sharedApplication] handleShopCartGoodCount:_addView.count];
 }

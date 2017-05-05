@@ -237,7 +237,7 @@
 "CommitOrder DeliverPrice" = "运费：";
 "CommitOrder CouponPrice" = "抵用：";
 "CommitOrder Consume List" = "消费清单";
-"CommitOrder Remark" = "备助留言";
+"CommitOrder Remark" = "备注留言";
 "CommitOrder Look More" = "查看详情";
 "CommitOrder Total Pay" = "最终支付金额：%@";
 "CommitOrder Confirm" = "确认购买";
@@ -318,3 +318,7 @@
 //失效产品
 "Home_Grid_Instock" = "缺货";
 "GoodDetail_Grid_Instock" = "缺货";
+
+//搜索
+"Search_Hot_Title" = "推荐";
+"Search_History_Title" = "历史纪录";

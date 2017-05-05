@@ -205,10 +205,12 @@
     _totalPriceLabel.text = totalPrice;
     CGSize size = [totalPrice returnSize:_totalPriceLabel.font];
     _totalPriceLabel.width = size.width;
-    _reducePriceLabel.text = _commitOrderDetail.consumePrice.reducePrice;
+    NSString *reducePrice = _commitOrderDetail.consumePrice.reducePrice;
+    _reducePriceLabel.text = reducePrice;
     size = [_commitOrderDetail.consumePrice.reducePrice returnSize:_totalPriceLabel.font];
     _reducePriceLabel.width = size.width + kAppAdaptWidth(12);
     _reducePriceLabel.x = _totalPriceLabel.maxX + kAppAdaptWidth(22);
+    _reducePriceLabel.hidden = [NSString isNullOrEmpty:reducePrice];
 }
 
 - (void)touchConfirmBtn:(JHButton *)sender {

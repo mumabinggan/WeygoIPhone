@@ -21,7 +21,7 @@
         _contentsScrollView = nil;
     }
     _contentsScrollView = [[JHScrollView alloc] initWithFrame:CGRectMake(0, _titleSegmentView.maxY, kDeviceWidth, kDeviceHeight - _titleSegmentView.maxY - kAppTabBarHeight)];
-    _contentsScrollView.backgroundColor = kRedColor;
+    //_contentsScrollView.backgroundColor = kRedColor;
     _contentsScrollView.contentSize = CGSizeMake(_titleArray.count * kDeviceWidth, _contentsScrollView.height);
     _contentsScrollView.showsHorizontalScrollIndicator = NO;
     _contentsScrollView.delegate = self;

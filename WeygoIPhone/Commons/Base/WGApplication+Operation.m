@@ -8,6 +8,7 @@
 
 #import "WGApplication+Operation.h"
 #import "WGGoodInLocalCart.h"
+#import "WGSearchKeywordItem.h"
 
 @implementation WGApplication (Operation)
 
@@ -332,13 +333,78 @@
 
 - (NSString *)paySign {
     NSMutableString *returnString = [[NSMutableString alloc] initWithString:[self signPrefix]];
-    [returnString appendString:@"sessionKey"];
-    [returnString appendString:[WGApplication sharedApplication].sessionKey];
+    if (![NSString isNullOrEmpty:self.sessionKey]) {
+        [returnString appendString:@"sessionKey"];
+        [returnString appendString:[WGApplication sharedApplication].sessionKey];
+    }
     return [NSString stringWithFormat:@"sign=%@", [returnString md5]];
 }
 
 - (NSString *)payUrl:(NSString *)url {
     return [NSString stringWithFormat:@"%@%@&sessionKey=%@", url, [self paySign], [WGApplication sharedApplication].sessionKey];
+}
+
+@end
+
+@implementation WGApplication (Search)
+
+- (NSString *)searchKey {
+    if ([self isLogined]) {
+        return kLocalSettingsLocalSearchHistory(self.user.userId);;
+    }
+    else {
+        return kLocalSettingsLocalSearchHistory(-1ll);
+    }
+}
+
+- (NSArray*)getLocalSettingHistorySearchArray {
+    NSString *key = [self searchKey];
+    NSArray *historyArray = [[JHLocalSettings sharedSettings] getSettingsForKey:key];
+    NSMutableArray *searchHistoryArray = [NSMutableArray array];
+    for (NSData *item in historyArray) {
+        WGSearchKeywordItem *info = [NSKeyedUnarchiver unarchiveObjectWithData:item];
+        [searchHistoryArray addObject:info];
+    }
+    return searchHistoryArray;
+}
+
+- (void)addLocalSettingHistorySearch:(WGSearchKeywordItem *)searchInfo {
+    if (nil == searchInfo) {
+        return;
+    }
+    NSString *key = [self searchKey];
+    NSArray *curArray = [[JHLocalSettings sharedSettings] getSettingsForKey:key];
+    NSMutableArray *searchHistoryArray = [NSMutableArray arrayWithArray:curArray];
+    for (NSData *item in searchHistoryArray) {
+        WGSearchKeywordItem *info = [NSKeyedUnarchiver unarchiveObjectWithData:item];
+        if ([info.name isEqualToString:searchInfo.name]) {
+            [searchHistoryArray removeObject:item];
+            break;
+        }
+    }
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:searchInfo];
+    [searchHistoryArray insertObject:data atIndex:0];
+    [[JHLocalSettings sharedSettings] setSettings:searchHistoryArray forKey:key];
+}
+
+- (void)cleanLocalSettingHistorySearch:(NSString *)name {
+    NSString *key = [self searchKey];
+    NSArray *historyArray = [[JHLocalSettings sharedSettings] getSettingsForKey:key];
+    NSMutableArray *historyMArray = [[NSMutableArray alloc] initWithArray:historyArray];
+    for (NSData *item in historyMArray) {
+        WGSearchKeywordItem *info = [NSKeyedUnarchiver unarchiveObjectWithData:item];
+        if ([name isEqualToString:info.name]) {
+            [historyMArray removeObject:item];
+            break;
+        }
+    }
+    [[JHLocalSettings sharedSettings] setSettings:historyMArray forKey:key];
+}
+
+- (void)cleanLocalSettingHistorySearch {
+    NSString *key = [self searchKey];
+    NSMutableArray* searchHistoryArray = [[NSMutableArray alloc] init];
+    [[JHLocalSettings sharedSettings] setSettings:searchHistoryArray forKey:key];
 }
 
 @end

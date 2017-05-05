@@ -319,3 +319,7 @@
 //失效产品
 "Home_Grid_Instock" = "Non disponbile";
 "GoodDetail_Grid_Instock" = "Non disponbile";
+
+//搜索
+"Search_Hot_Title" = "推荐";
+"Search_History_Title" = "历史纪录";

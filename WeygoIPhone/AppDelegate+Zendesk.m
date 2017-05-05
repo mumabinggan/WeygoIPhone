@@ -12,7 +12,7 @@
 @implementation AppDelegate (Zendesk)
 
 - (void)registerZendesk {
-    [ZDCChat initializeWithAccountKey:@"your account key here"];
+    [ZDCChat initializeWithAccountKey:@"3posW2IznifTuXsiwtKNJ2u6Su8uXDiG"];
     [ZDCLog enable:YES];
     [ZDCLog setLogLevel:ZDCLogLevelWarn];
 }

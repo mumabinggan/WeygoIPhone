@@ -75,6 +75,7 @@ static NSString *kNotificationLogOut = @"kNotificationLogOut";
 #define kLocalSettingsKeyUnLoginCap   @"kLocalSettingsKeyUnLoginCap"
 #define kLocalSettingsLocalCartGoods    @"kLocalSettingsLocalCartGoods"
 #define kLocalSettingsLocalLanguage    @"kLocalSettingsLocalLanguage"
+#define kLocalSettingsLocalSearchHistory(userId)            ([NSString stringWithFormat:@"kLocalSettingsLocalSearchHistory_%lld", userId])
 
 //Placeholder UIImage
 

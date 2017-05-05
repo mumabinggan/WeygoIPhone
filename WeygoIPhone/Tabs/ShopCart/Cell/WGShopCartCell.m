@@ -102,7 +102,7 @@
     
     NSString *price = [_data.price addMidline].string;
     size = [price returnSize:_priceLabel.font];
-    _priceLabel.attributedText = [price addMidline];
+    _priceLabel.attributedText = [_data.price addMidline];
     frame = _priceLabel.frame;
     frame.origin.x = _currentPriceLabel.maxX + kAppAdaptWidth(8);
     frame.size.width = size.width;
@@ -115,6 +115,7 @@
     frame.size.width = size.width + kAppAdaptWidth(4);
     _reduceLabel.frame = frame;
     _reduceLabel.text = reduce;
+    _reduceLabel.hidden = [NSString isNullOrEmpty:reduce];
     
     _addView.count = _data.goodCount;
 }

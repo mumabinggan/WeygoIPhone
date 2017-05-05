@@ -10,4 +10,6 @@
 
 @interface WGSearchViewController (Request)
 
+- (void)loadSearch;
+
 @end

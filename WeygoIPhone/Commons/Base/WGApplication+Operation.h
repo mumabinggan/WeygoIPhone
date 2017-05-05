@@ -7,6 +7,7 @@
 //
 
 #import "WGApplication.h"
+#import "WGSearchKeywordItem.h"
 
 @class WGGoodInLocalCart;
 
@@ -83,5 +84,17 @@
 - (NSString *)sign:(NSDictionary *)dictionary;
 
 - (NSString *)payUrl:(NSString *)url;
+
+@end
+
+@interface WGApplication (Search)
+
+- (NSArray*)getLocalSettingHistorySearchArray;
+
+- (void)addLocalSettingHistorySearch:(WGSearchKeywordItem *)searchInfo;
+
+- (void)cleanLocalSettingHistorySearch;
+
+- (void)cleanLocalSettingHistorySearch:(NSString *)name;
 
 @end

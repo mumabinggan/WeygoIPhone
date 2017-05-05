@@ -118,9 +118,6 @@
     if (response.success) {
         _integration = response.data;
         [self refreshUI];
-        [self showWarningMessage:response.message onCompletion:^(void) {
-            [self.navigationController popViewControllerAnimated:YES];
-        }];
     }
     else {
         [self showWarningMessage:response.message];

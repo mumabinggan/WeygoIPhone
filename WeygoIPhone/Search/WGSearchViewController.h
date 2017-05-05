@@ -7,7 +7,18 @@
 //
 
 #import "WGViewController.h"
+#import "WGSearchResponse.h"
+#import "WGHotSearchViewController.h"
 
 @interface WGSearchViewController : WGViewController
+{
+    WGSearchData *_data;
+    
+    WGHotSearchViewController *_hotSearchViewController;
+    
+    JHTextField *_textFiled;
+}
+
+- (void)refreshUI;
 
 @end
