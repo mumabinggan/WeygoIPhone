@@ -12,12 +12,17 @@
 
 @interface WGSearchViewController : WGViewController
 {
+    TWRefreshTableView *_tableView;
     WGSearchData *_data;
     
     WGHotSearchViewController *_hotSearchViewController;
     
     JHTextField *_textFiled;
+    
+    NSString *_currentSearchString;
 }
+
+@property (nonatomic, strong) NSString *name;
 
 - (void)refreshUI;
 

@@ -326,6 +326,7 @@
 //搜索
 "Search_Hot_Title" = "热门搜索";
 "Search_History_Title" = "搜索历史记录";
+"Search_Keyword" = "\"%@\"的搜索结果";
 
 //地址
 "Full Name" = "姓名";

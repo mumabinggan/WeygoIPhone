@@ -19,6 +19,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self checkNavigationBarHidden];
+    self.extendedLayoutIncludesOpaqueBars = YES;
 }
 
 - (void)checkNavigationBarHidden {
@@ -37,6 +38,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //self.edgesForExtendedLayout = UIRectEdgeAll;
+    //self.extendedLayoutIncludesOpaqueBars = NO;
     
     //self.edgesForExtendedLayout = UIRectEdgeNone;
     // Do any additional setup after loading the view.

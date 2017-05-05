@@ -25,6 +25,8 @@
     if (array.count == _array.count) {
         return;
     }
+    [_hotSearchHistoryView removeFromSuperview];
+    _hotSearchHistoryView = nil;
     _array = array;
     _hotSearchHistoryView = [[WGHotSearchHistoryView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, 1) disArray:array];
     WeakSelf;

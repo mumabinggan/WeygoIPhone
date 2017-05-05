@@ -17,22 +17,11 @@
 @implementation WGSearchData
 
 + (Class)classForArray:(NSString *)propertyName {
-    if ([@"classifys" isEqualToString:propertyName]) {
-        return [WGSearchClassifyItem class];
+    if ([@"goods" isEqualToString:propertyName]) {
+        return [WGHomeFloorContentGoodItem class];
     }
     if ([@"keywords" isEqualToString:propertyName]) {
         return [WGSearchKeywordItem class];
-    }
-    return [super classForArray:propertyName];
-}
-
-@end
-
-@implementation WGSearchClassifyItem
-
-+ (Class)classForArray:(NSString *)propertyName {
-    if ([@"goods" isEqualToString:propertyName]) {
-        return [WGHomeFloorContentGoodItem class];
     }
     return [super classForArray:propertyName];
 }

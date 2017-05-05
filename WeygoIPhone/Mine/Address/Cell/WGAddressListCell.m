@@ -123,9 +123,8 @@
     if ([_data isKindOfClass:[WGAddress class]]) {
         WGAddress *address = (WGAddress *)_data;
         if (address) {
-            _title1ValueLabel.text = address.name;
+            _title1ValueLabel.text = address.fullName;
             NSString *addressString = address.address;
-            addressString = @"2016年9月25日 - 在iOS开发中经常会用到UIlabel来展示一些文字性的内容,但是默认的文字排版会觉得有些挤,为了更美观也更易于阅读";
             CGFloat height = 0.0f;
             CGFloat width = [addressString returnSize:_title2ValueLabel.font maxWidth:kDeviceWidth].width;
             if (width > _title2ValueLabel.width) {

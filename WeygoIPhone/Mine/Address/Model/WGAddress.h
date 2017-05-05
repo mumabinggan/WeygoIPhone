@@ -12,7 +12,7 @@
 
 @property (nonatomic, assign) long long addressId;
 
-@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *fullName;
 
 @property (nonatomic, strong) NSString *firstName;  //姓
 

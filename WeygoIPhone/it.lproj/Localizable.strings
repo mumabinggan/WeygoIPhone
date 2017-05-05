@@ -327,6 +327,7 @@
 //搜索
 "Search_Hot_Title" = "I più ricercati";
 "Search_History_Title" = "Cronologia di ricerca";
+"Search_Keyword" = "Risultati per \"%@\"";
 
 //地址
 "Full Name" = "Nome";

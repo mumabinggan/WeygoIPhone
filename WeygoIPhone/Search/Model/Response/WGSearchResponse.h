@@ -17,17 +17,9 @@
 
 @interface WGSearchData : WGObject
 
-@property (nonatomic, strong) NSArray *classifys;
+@property (nonatomic, strong) NSArray *goods;
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSArray *keywords;
-
-@end
-
-@interface WGSearchClassifyItem : WGObject
-
-@property (nonatomic, strong) NSString *name;
-
-@property (nonatomic, strong) NSArray *goods;
 
 @end

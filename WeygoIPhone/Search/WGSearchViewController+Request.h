@@ -12,4 +12,6 @@
 
 - (void)loadSearch;
 
+- (void)loadSearch:(BOOL)refresh pulling:(BOOL)pulling;
+
 @end

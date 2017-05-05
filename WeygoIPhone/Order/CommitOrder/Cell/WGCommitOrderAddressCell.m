@@ -37,8 +37,8 @@
     if (address) {
         _nameLabel.hidden = NO;
         NSMutableString *nameString = [[NSMutableString alloc] init];
-        [nameString appendString:[NSString safeString:address.name]];
-        if (![NSString isNullOrEmpty:address.name]) {
+        [nameString appendString:[NSString safeString:address.fullName]];
+        if (![NSString isNullOrEmpty:address.fullName]) {
             [nameString appendString:@"   "];
         }
         [nameString appendString:[NSString safeString:address.address]];

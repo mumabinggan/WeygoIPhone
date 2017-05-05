@@ -12,4 +12,8 @@
 
 @property (nonatomic, strong) NSString *name;
 
+@property (nonatomic, assign) int pageId;
+
+@property (nonatomic, assign) int pageSize;
+
 @end

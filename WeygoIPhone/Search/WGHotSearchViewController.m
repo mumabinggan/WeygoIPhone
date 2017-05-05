@@ -12,6 +12,7 @@
 #import "WGHotSearchCell.h"
 #import "WGHotSearchHistoryCell.h"
 #import "WGSearchGoodListViewController.h"
+#import "WGSearchViewController.h"
 
 @interface WGHotSearchViewController ()
 {
@@ -34,45 +35,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    //[self loadHotSearch];
+    [self loadHotSearch];
 }
 
 - (void)initData {
-    NSMutableArray *array = [NSMutableArray array];
-    WGSearchKeywordItem *item = [[WGSearchKeywordItem alloc] init];
-    item.id = 12;
-    item.name = @"郑要要";
-    
-    WGSearchKeywordItem *item2 = [[WGSearchKeywordItem alloc] init];
-    item2.id = 12;
-    item2.name = @"郑s左厅要要";
-    
-    WGSearchKeywordItem *item3 = [[WGSearchKeywordItem alloc] init];
-    item3.id = 12;
-    item3.name = @"郑要";
-    
-    WGSearchKeywordItem *item4 = [[WGSearchKeywordItem alloc] init];
-    item4.id = 12;
-    item4.name = @"郑要要我们";
-    
-    WGSearchKeywordItem *item5 = [[WGSearchKeywordItem alloc] init];
-    item5.id = 12;
-    item5.name = @"我们";
-    
-    WGSearchKeywordItem *item6 = [[WGSearchKeywordItem alloc] init];
-    item6.id = 12;
-    item6.name = @"我们是中国";
-    
-    WGSearchKeywordItem *item7 = [[WGSearchKeywordItem alloc] init];
-    item7.id = 12;
-    item7.name = @"人";
-    
-    WGSearchKeywordItem *item8 = [[WGSearchKeywordItem alloc] init];
-    item8.id = 12;
-    item8.name = @"测试侃侃";
-    
-    _hotArray = @[item, item2, item3, item4, item5, item6, item7, item8];
-    
     _historyArray = [[WGApplication sharedApplication] getLocalSettingHistorySearchArray];
 }
 
@@ -112,7 +78,7 @@
     //加入记录
     [[WGApplication sharedApplication] addLocalSettingHistorySearch:item];
     
-    WGSearchGoodListViewController *vc = [[WGSearchGoodListViewController alloc] init];
+    WGSearchViewController *vc = [[WGSearchViewController alloc] init];
     vc.name = item.name;
     [self.navigationController pushViewController:vc animated:YES];
 }

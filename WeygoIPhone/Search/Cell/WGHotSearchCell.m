@@ -18,9 +18,8 @@
 @implementation WGHotSearchCell
 
 - (void)showWithArray:(NSArray *)array {
-    if (_hotSearchView) {
-        return;
-    }
+    [_hotSearchView removeFromSuperview];
+    _hotSearchView = nil;
     _hotSearchView = [[WGHotSearchView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, 1) disArray:array];
     WeakSelf;
     _hotSearchView.onApply = ^(WGSearchKeywordItem *item) {
