@@ -80,11 +80,13 @@
     _titleLabel.text = [NSString stringWithFormat:kStr(@"UseIntegration_Tip"), _integration.totalCount, _integration.currentCanUseCount, _integration.money];
     if (_integration.isSelected) {
         [_confirmBtn setTitle:kStr(@"UseIntegration_Cancel_Use") forState:UIControlStateNormal];
-        [_confirmBtn setBackgroundColor:WGAppBaseColor];
+        //_confirmBtn = [_confirmBtn initWithFrame:_confirmBtn.frame difRadius:_confirmBtn.radius backgroundColor:WGAppBaseColor];
+        //[_confirmBtn setBackgroundColor:WGAppBaseColor];
     }
     else {
         [_confirmBtn setTitle:kStr(@"UseIntegration_Use") forState:UIControlStateNormal];
-        [_confirmBtn setBackgroundColor:WGAppBlueButtonColor];
+        //_confirmBtn = [_confirmBtn initWithFrame:_confirmBtn.frame difRadius:_confirmBtn.radius backgroundColor:WGAppBlueButtonColor];
+        //[_confirmBtn setBackgroundColor:WGAppBlueButtonColor];
     }
 }
 

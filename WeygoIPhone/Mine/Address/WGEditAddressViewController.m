@@ -43,12 +43,12 @@
                          kStr(@"Cognome"),
                          kStr(@"Nome"),
                          kStr(@"Italia"),
-                         kStr(@"Indirizzo"),
                          kStr(@"Telefono/Cellulare"),
-                         kStr(@"Citta"),
                          kStr(@"CAP"),
+                         kStr(@"Citta"),
                          kStr(@"Indirizzo"),
                          kStr(@"Numero civico"),
+                         kStr(@"Citofono"),
                          kStr(@"Scala"),
                          kStr(@"Ascensore"),
                          kStr(@"Piano"),
@@ -187,7 +187,7 @@
             _address.cap = editCell.textField.text;
         }
         else if (row == 5) {
-            //_address.cap = editCell.textField.text;
+            //_address.address = editCell.textField.text;
         }
         else if (row == 6) {
             _address.address = editCell.textField.text;

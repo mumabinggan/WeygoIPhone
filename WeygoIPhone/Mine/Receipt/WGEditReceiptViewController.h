@@ -21,6 +21,8 @@
 
 @property (nonatomic, strong) void (^onApply)(WGReceipt *receipt);
 
+@property (nonatomic, strong) void (^onCancel)();
+
 - (void)refreshUI;
 
 @end

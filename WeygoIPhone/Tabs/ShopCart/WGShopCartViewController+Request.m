@@ -27,6 +27,8 @@
 #import "WGDealFailGoodView.h"
 #import "WGDealShopCartGiftGoodView.h"
 #import "WGShopCartGiftResponse.h"
+#import "WGCleanShopCartRequest.h"
+#import "WGCleanShopCartResponse.h"
 
 @implementation WGShopCartViewController (Request)
 
@@ -192,7 +194,7 @@
 
 - (void)loadShopCartList:(BOOL)refresh pulling:(BOOL)pulling {
     WGShopCartRequest *request = [[WGShopCartRequest alloc] init];
-    if (pulling || _data) {
+    if (pulling) {
         request.showsLoadingView = NO;
     }
     __weak typeof(self) weakSelf = self;
@@ -218,8 +220,38 @@
             [array addObjectsFromArray:response.data.goods];
             _data.goods = array;
         }
+        if (_data.goods.count > 0) {
+            [self removeNoDataViewFromeSuperView];
+        }
+        else {
+            [self addNoDataView];
+        }
         [[WGApplication sharedApplication] handleShopCartGoodCount:_data.goods.count];
         [self refreshUI];
+    }
+    else {
+        [self showWarningMessage:response.message];
+    }
+}
+
+- (void)addNoDataView {
+    [self removeNoDataViewFromeSuperView];
+    [self addNoDataViewWithImageName:@"empty_shopcart" title:kStr(@"EmptyPage_NoShopCart")];
+}
+
+- (void)loadCleanShopCart {
+    WGCleanShopCartRequest *request = [[WGCleanShopCartRequest alloc] init];
+    __weak typeof(self) weakSelf = self;
+    [self post:request forResponseClass:[WGCleanShopCartResponse class] success:^(JHResponse *response) {
+        [weakSelf handleCleanShopCartResponse:(WGCleanShopCartResponse *)response];
+    } failure:^(NSError *error) {
+        [weakSelf showWarningMessage:kStr(@"Request Failed")];
+    }];
+}
+
+- (void)handleCleanShopCartResponse:(WGCleanShopCartResponse *)response {
+    if (response.success) {
+        [self loadShopCartList:YES pulling:NO];
     }
     else {
         [self showWarningMessage:response.message];

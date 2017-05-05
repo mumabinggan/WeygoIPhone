@@ -11,11 +11,18 @@
 
 @interface WGBaseAddressAndReceiptListCell : JHTableViewCell
 {
+    JHLabel *_title1NameLabel;
+    JHLabel *_title2NameLabel;
+    JHLabel *_title3NameLabel;
+
     JHLabel *_title1ValueLabel;
     JHLabel *_title2ValueLabel;
     JHLabel *_title3ValueLabel;
     
     JHButton *_defaultBtn;
+    JHButton *_useBtn;
+    JHButton *_modifyBtn;
+    JHView *_lineView;
 }
 
 @property (nonatomic, assign) BOOL hasUse;

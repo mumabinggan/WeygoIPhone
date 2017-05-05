@@ -8,6 +8,28 @@
 
 #import "WGBaseAddressAndReceiptListCell.h"
 
-@interface WGAddressListCell : WGBaseAddressAndReceiptListCell
+@interface WGAddressListCell : JHTableViewCell
+{
+    JHLabel *_title1NameLabel;
+    JHLabel *_title2NameLabel;
+    JHLabel *_title3NameLabel;
+    
+    JHLabel *_title1ValueLabel;
+    JHLabel *_title2ValueLabel;
+    JHLabel *_title3ValueLabel;
+    
+    JHButton *_defaultBtn;
+    JHButton *_useBtn;
+    JHButton *_modifyBtn;
+    JHView *_lineView;
+}
+
+@property (nonatomic, assign) BOOL hasUse;
+
+@property (nonatomic, copy) void (^onDefault)(WGObject *receipt);
+
+@property (nonatomic, copy) void (^onUse)(WGObject *receipt);
+
+@property (nonatomic, copy) void (^onModify)(WGObject *receipt);
 
 @end

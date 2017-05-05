@@ -77,11 +77,22 @@
             [_dataMArray removeAllObjects];
         }
         [_dataMArray addObjectsFromArray:response.data];
+        if (_dataMArray.count == 0) {
+            [self addNoDataView];
+        }
+        else {
+            [self removeNoDataViewFromeSuperView];
+        }
         [self refreshUI];
     }
     else {
         [self showWarningMessage:response.message];
     }
+}
+
+- (void)addNoDataView {
+    [self removeNoDataViewFromeSuperView];
+    [self addNoDataViewWithImageName:@"empty_favorite" title:kStr(@"EmptyPage_NoFavorite")];
 }
 
 - (void)didReceiveMemoryWarning {

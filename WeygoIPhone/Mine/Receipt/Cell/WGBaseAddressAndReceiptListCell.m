@@ -11,13 +11,6 @@
 
 @interface WGBaseAddressAndReceiptListCell ()
 {
-    JHLabel *_title1NameLabel;
-    JHLabel *_title2NameLabel;
-    JHLabel *_title3NameLabel;
-    
-    JHButton *_useBtn;
-    JHButton *_modifyBtn;
-    
     WGObject *_data;
 }
 @end
@@ -30,7 +23,7 @@
     _title1NameLabel = [[JHLabel alloc] initWithFrame:CGRectMake(kAppAdaptWidth(16), kAppAdaptHeight(14), kDeviceWidth - kAppAdaptWidth(32), kAppAdaptHeight(20))];
     _title1NameLabel.font = kAppAdaptFont(14);
     _title1NameLabel.textColor = WGAppTitleColor;
-    _title1NameLabel.text = kStr(@"Codice fiscale");
+    _title1NameLabel.text = kStr(@"Nome");
     [self.contentView addSubview:_title1NameLabel];
     
     _title1ValueLabel = [[JHLabel alloc] initWithFrame:_title1NameLabel.frame];
@@ -42,7 +35,7 @@
     _title2NameLabel = [[JHLabel alloc] initWithFrame:CGRectMake(_title1NameLabel.x, _title1NameLabel.maxY + kAppAdaptHeight(4), kDeviceWidth - kAppAdaptWidth(32), kAppAdaptHeight(20))];
     _title2NameLabel.font = kAppAdaptFont(14);
     _title2NameLabel.textColor = WGAppTitleColor;
-    _title2NameLabel.text = kStr(@"Raginone sociale");
+    _title2NameLabel.text = kStr(@"Indirizzo");
     [self.contentView addSubview:_title2NameLabel];
     
     _title2ValueLabel = [[JHLabel alloc] initWithFrame:_title2NameLabel.frame];
@@ -54,7 +47,7 @@
     _title3NameLabel = [[JHLabel alloc] initWithFrame:CGRectMake(_title1NameLabel.x, _title2NameLabel.maxY + kAppAdaptHeight(4), kDeviceWidth - kAppAdaptWidth(32), kAppAdaptHeight(20))];
     _title3NameLabel.font = kAppAdaptFont(14);
     _title3NameLabel.textColor = WGAppTitleColor;
-    _title3NameLabel.text = kStr(@"CAP");
+    _title3NameLabel.text = kStr(@"Telefono/Cellulare");
     [self.contentView addSubview:_title3NameLabel];
     
     _title3ValueLabel = [[JHLabel alloc] initWithFrame:_title3NameLabel.frame];
@@ -63,11 +56,11 @@
     _title3ValueLabel.textColor = WGAppNameLabelColor;
     [self.contentView addSubview:_title3ValueLabel];
     
-    JHView *line = [[JHView alloc] initWithFrame:CGRectMake(kAppAdaptWidth(16), _title3NameLabel.maxY + kAppAdaptHeight(14), kDeviceWidth - kAppAdaptWidth(32), kAppSepratorLineHeight)];
-    line.backgroundColor = WGAppSeparateLineColor;
-    [self.contentView addSubview:line];
+    _lineView = [[JHView alloc] initWithFrame:CGRectMake(kAppAdaptWidth(16), _title3NameLabel.maxY + kAppAdaptHeight(14), kDeviceWidth - kAppAdaptWidth(32), kAppSepratorLineHeight)];
+    _lineView.backgroundColor = WGAppSeparateLineColor;
+    [self.contentView addSubview:_lineView];
     
-    _defaultBtn = [[JHButton alloc] initWithFrame:CGRectMake(_title1NameLabel.x, line.maxY + kAppAdaptHeight(8), kAppAdaptWidth(80), kAppAdaptHeight(24))];
+    _defaultBtn = [[JHButton alloc] initWithFrame:CGRectMake(_title1NameLabel.x, _lineView.maxY + kAppAdaptHeight(8), kAppAdaptWidth(80), kAppAdaptHeight(24))];
     [_defaultBtn setTitle:kStr(@"Default") forState:UIControlStateNormal];
     _defaultBtn.titleLabel.font = kAppAdaptFont(12);
     _defaultBtn.layer.masksToBounds = YES;

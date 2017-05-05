@@ -229,7 +229,7 @@
     else if (sender.tag == 8) {
         //退出页面
         WeakSelf;
-        [self showConfirmMessage:kStr(@"Mine_Logout_Tip") withTitle:nil cancelButtonTitle:kStr(@"Mine_Logout_Cancel") okButtonTitle:kStr(@"Mine_Logout_Ok") onCompletion:^(NSInteger index, UIAlertController *alertViewController) {
+        [self showConfirmMessage:kStr(@"Mine_Logout_Tip") withTitle:nil cancelButtonTitle:kStr(@"Mine_Logout_No") okButtonTitle:kStr(@"Mine_Logout_Si") onCompletion:^(NSInteger index, UIAlertController *alertViewController) {
             if (index == 1) {
                 [weakSelf handleLogout];
             }

@@ -46,6 +46,8 @@
 "Totale:Price With String Unit" = "总价:%@";
 "Confirm" = "确定";
 "Carrello" = "购物车";
+"ShopCart_Clean" = "清空";
+"ShopCart_Clean_Tip" = "您确定清空所有购物车中商品么？";
 //优惠卷列表
 "CouponList_Title" = "我的优惠卷";
 "CouponList_Selected_Title" = "选择优惠卷";
@@ -308,9 +310,11 @@
 "PaySuccess_Button" = "继续购物";
 
 //我的页面退出登录
-"Mine_Logout_Tip" = "您确认退出登录？";
+"Mine_Logout_Tip" = "您确认退出吗？";
 "Mine_Logout_Cancel" = "取消";
 "Mine_Logout_Ok" = "确认";
+"Mine_Logout_Si" = "是";
+"Mine_Logout_No" = "不";
 
 //请求参数___store
 "Request_StoreValue" = "mobilecn";
@@ -320,5 +324,17 @@
 "GoodDetail_Grid_Instock" = "缺货";
 
 //搜索
-"Search_Hot_Title" = "推荐";
-"Search_History_Title" = "历史纪录";
+"Search_Hot_Title" = "热门搜索";
+"Search_History_Title" = "搜索历史记录";
+
+//地址
+"Full Name" = "姓名";
+
+//发票编辑
+"Fax_Cancel" = "取消";
+"Fax_Apply" = "提交";
+
+//空白页面
+"EmptyPage_NoFavorite" = "您还未收藏任何商品哦";
+"EmptyPage_NoOrderList" = "您还未下过任何订单赶紧下单吧";
+"EmptyPage_NoShopCart" = "您的购物车里空空如也";

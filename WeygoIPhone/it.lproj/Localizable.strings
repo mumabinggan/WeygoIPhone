@@ -46,6 +46,8 @@
 "Totale:Price With String Unit" = "Totale:%@";
 "Confirm" = "conferma";
 "Carrello" = "Carrello";
+"ShopCart_Clean" = "Svuota";
+"ShopCart_Clean_Tip" = "Tutti i prodotti verranno eliminati dal carrello. Vuoi procedere?";
 //优惠卷
 "CouponList_Title" = "Coupon spesa";
 "CouponList_Selected_Title" = "Coupon spesa";
@@ -312,6 +314,8 @@
 "Mine_Logout_Tip" = "您确认退出登录？";
 "Mine_Logout_Cancel" = "annulla";
 "Mine_Logout_Ok" = "conferma";
+"Mine_Logout_Si" = "sì";
+"Mine_Logout_No" = "no";
 
 //请求参数___store
 "Request_StoreValue" = "mobileitaly";
@@ -321,5 +325,17 @@
 "GoodDetail_Grid_Instock" = "Non disponbile";
 
 //搜索
-"Search_Hot_Title" = "推荐";
-"Search_History_Title" = "历史纪录";
+"Search_Hot_Title" = "I più ricercati";
+"Search_History_Title" = "Cronologia di ricerca";
+
+//地址
+"Full Name" = "Nome";
+
+//发票编辑
+"Fax_Cancel" = "Annulla";
+"Fax_Apply" = "Invia";
+
+//空白页面
+"EmptyPage_NoFavorite" = "Non hai nessun articolo preferito";
+"EmptyPage_NoOrderList" = "Non hai ordini nel lista";
+"EmptyPage_NoShopCart" = "Non hai articoli nel carrello";

@@ -36,11 +36,22 @@
             [_orderMArray removeAllObjects];
         }
         [_orderMArray addObjectsFromArray:response.data];
+        if (_orderMArray.count == 0) {
+            [self addNoDataView];
+        }
+        else {
+            [self removeNoDataViewFromeSuperView];
+        }
         [self refreshUI];
     }
     else {
         [self showWarningMessage:response.message];
     }
+}
+
+- (void)addNoDataView {
+    [self removeNoDataViewFromeSuperView];
+    [self addNoDataViewWithImageName:@"empty_shopcart" title:kStr(@"EmptyPage_NoOrderList")];
 }
 
 - (void)handleOrderListFailResponse:(WGOrderListResponse *)response refresh:(BOOL)refresh pulling:(BOOL)pulling {

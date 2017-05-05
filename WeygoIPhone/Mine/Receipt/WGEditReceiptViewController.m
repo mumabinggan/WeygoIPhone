@@ -13,6 +13,7 @@
 @interface WGEditReceiptViewController ()
 {
     JHButton *_addBtn;
+    JHButton *_cancelBtn;
     UIPickerView *_pickerView;
 }
 @end
@@ -51,19 +52,33 @@
     _tableView.contentInset = UIEdgeInsetsMake(-35, 0, 0, 0);
     _tableView.backgroundColor = kWhiteColor;
     [self.view addSubview:_tableView];
-    
-    _addBtn = [[JHButton alloc] initWithFrame:CGRectMake(kAppAdaptWidth(16), kDeviceHeight - kAppAdaptHeight(56), kDeviceWidth - kAppAdaptWidth(32), kAppAdaptHeight(40)) difRadius:JHRadiusMake(kAppAdaptWidth(20), kAppAdaptWidth(20), kAppAdaptWidth(20), kAppAdaptWidth(20)) backgroundColor:WGAppFooterButtonColor];
-    [_addBtn setTitle:kStr(@"PersonInfo_Save") forState:UIControlStateNormal];
+
+    _addBtn = [[JHButton alloc] initWithFrame:CGRectMake(kAppAdaptWidth(16), kDeviceHeight - kAppAdaptHeight(56), kDeviceWidth/2 - kAppAdaptWidth(32), kAppAdaptHeight(40)) difRadius:JHRadiusMake(kAppAdaptWidth(20), kAppAdaptWidth(20), kAppAdaptWidth(20), kAppAdaptWidth(20)) backgroundColor:WGAppFooterButtonColor];
+    [_addBtn setTitle:kStr(@"Fax_Apply") forState:UIControlStateNormal];
     _addBtn.titleLabel.font = kAppAdaptFont(14);
     [_addBtn setTitleColor:kWhiteColor forState:UIControlStateNormal];
     [_addBtn addTarget:self action:@selector(touchAddBtn:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_addBtn];
+    
+    _cancelBtn = [[JHButton alloc] initWithFrame:CGRectMake(kDeviceWidth/2 + kAppAdaptWidth(16), kDeviceHeight - kAppAdaptHeight(56), kDeviceWidth/2 - kAppAdaptWidth(32), kAppAdaptHeight(40)) difRadius:JHRadiusMake(kAppAdaptWidth(20), kAppAdaptWidth(20), kAppAdaptWidth(20), kAppAdaptWidth(20)) backgroundColor:WGAppBaseColor];
+    [_cancelBtn setTitle:kStr(@"Fax_Cancel") forState:UIControlStateNormal];
+    _cancelBtn.titleLabel.font = kAppAdaptFont(14);
+    [_cancelBtn setTitleColor:kWhiteColor forState:UIControlStateNormal];
+    [_cancelBtn addTarget:self action:@selector(touchCancelBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_cancelBtn];
 }
 
 - (void)touchAddBtn:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
     if (self.onApply) {
         self.onApply(_receipt);
+    }
+}
+
+- (void)touchCancelBtn:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+    if (self.onCancel) {
+        self.onCancel();
     }
 }
 

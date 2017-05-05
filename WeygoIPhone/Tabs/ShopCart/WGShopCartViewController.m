@@ -114,7 +114,23 @@
     [contentView addSubview:_footView];
     _footView.hidden = YES;
     
-    JHImageView *deliveryImageView = [[JHImageView alloc] initWithFrame:CGRectMake(kAppAdaptWidth(16), kAppAdaptHeight(20), kAppAdaptWidth(20), kAppAdaptHeight(14))];
+    JHImageView *deleteImageView = [[JHImageView alloc] initWithFrame:CGRectMake(kAppAdaptWidth(16), kAppAdaptHeight(20), kAppAdaptWidth(20), kAppAdaptHeight(14))];
+    deleteImageView.image = [UIImage imageNamed:@"shopcart_clean"];
+    [_footView addSubview:deleteImageView];
+    deleteImageView.userInteractionEnabled = YES;
+    _footView.layer.opacity = 0.0f;
+    
+    [deleteImageView addSingleTapGestureRecognizerWithTarget:self action:@selector(touchCleanShopCart:)];
+    
+    JHLabel *deleteLabel = [[JHLabel alloc] initWithFrame:CGRectMake(deleteImageView.maxX + kAppAdaptWidth(5), kAppAdaptHeight(18), kDeviceWidth/2 - kAppAdaptWidth(16 + 20 + 5), kAppAdaptHeight(20))];
+    deleteLabel.font = kAppAdaptFont(14);
+    deleteLabel.text = kStr(@"ShopCart_Clean");
+    deleteLabel.textColor = WGAppTitleColor;
+    deleteLabel.userInteractionEnabled = YES;
+    [_footView addSubview:deleteLabel];
+    [deleteLabel addSingleTapGestureRecognizerWithTarget:self action:@selector(touchCleanShopCart:)];
+    
+    JHImageView *deliveryImageView = [[JHImageView alloc] initWithFrame:CGRectMake(kDeviceWidth/2 - kAppAdaptWidth(22), kAppAdaptHeight(20), kAppAdaptWidth(20), kAppAdaptHeight(14))];
     deliveryImageView.image = [UIImage imageNamed:@"deliver_car"];
     [_footView addSubview:deliveryImageView];
     _footView.layer.opacity = 0.0f;
@@ -148,6 +164,19 @@
         _loginType = WGLoginTypeShopCart;
         [self openCartLoginViewController];
     }
+}
+
+- (void)touchCleanShopCart:(UIGestureRecognizer *)regognizer {
+    WeakSelf;
+    [self showConfirmMessage:kStr(@"ShopCart_Clean_Tip") withTitle:nil cancelButtonTitle:kStr(@"Mine_Logout_Cancel") okButtonTitle:kStr(@"Mine_Logout_Ok") onCompletion:^(NSInteger index, UIAlertController *alertController) {
+        if (1 == index) {
+            [weakSelf handleCleanShopCart];
+        }
+    }];
+}
+
+- (void)handleCleanShopCart {
+    [self loadCleanShopCart];
 }
 
 - (void)handleLoginSuccess:(id)customData {

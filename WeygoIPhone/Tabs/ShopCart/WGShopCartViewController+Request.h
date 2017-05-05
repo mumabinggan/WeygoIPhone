@@ -19,4 +19,6 @@
 
 - (void)loadUpdateGood:(WGShopCartGoodItem *)item count:(NSInteger)count;
 
+- (void)loadCleanShopCart;
+
 @end

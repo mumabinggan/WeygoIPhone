@@ -312,3 +312,5 @@
 "Mine_Logout_Tip" = "您确认退出登录？";
 "Mine_Logout_Cancel" = "annulla";
 "Mine_Logout_Ok" = "conferma";
+"Mine_Logout_Si" = "sì";
+"Mine_Logout_No" = "no";

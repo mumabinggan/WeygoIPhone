@@ -547,6 +547,9 @@
             vc.onApply = ^(WGReceipt *object) {
                 [weakSelf handleReceipt:(WGReceipt *)object];
             };
+            vc.onCancel = ^() {
+                [weakSelf handleReceipt:nil];
+            };
             [self.navigationController pushViewController:vc animated:YES];
         }
     }
