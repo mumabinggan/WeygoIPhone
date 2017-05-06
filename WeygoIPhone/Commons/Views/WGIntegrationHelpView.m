@@ -12,6 +12,7 @@
 {
     UIView *_contentView;
     JHTextView *_textView;
+    JHLabel *_titleLabel;
 }
 
 - (void)loadSubviews {
@@ -31,13 +32,13 @@
     JHView *titleBgView = [[JHView alloc] initWithFrame:CGRectMake(0, 0, _contentView.width, kAppAdaptHeight(48)) difRadius:JHRadiusMake(radius, 0, radius, 0) backgroundColor:kHRGB(0xF8FAFA)];
     [_contentView addSubview:titleBgView];
     
-    JHLabel *titleLabel = [[JHLabel alloc] initWithFrame:CGRectMake(kAppAdaptWidth(24), 0, titleBgView.width - kAppAdaptWidth(48), titleBgView.height)];
-    titleLabel.font = kAppAdaptFontBold(16);
-    titleLabel.numberOfLines = 0;
-    titleLabel.textAlignment = NSTextAlignmentCenter;
-    titleLabel.textColor = WGAppNameLabelColor;
-    titleLabel.text = kStr(@"Integration_Help_Title");
-    [titleBgView addSubview:titleLabel];
+    _titleLabel = [[JHLabel alloc] initWithFrame:CGRectMake(kAppAdaptWidth(24), 0, titleBgView.width - kAppAdaptWidth(48), titleBgView.height)];
+    _titleLabel.font = kAppAdaptFontBold(16);
+    _titleLabel.numberOfLines = 0;
+    _titleLabel.text = kStr(@"Integration_Help_Title");
+    _titleLabel.textAlignment = NSTextAlignmentCenter;
+    _titleLabel.textColor = WGAppNameLabelColor;
+    [titleBgView addSubview:_titleLabel];
     
     _textView = [[JHTextView alloc] initWithFrame:CGRectMake(kAppAdaptWidth(24), kAppAdaptHeight(16) + titleBgView.maxY, _contentView.width - kAppAdaptWidth(48), kAppAdaptHeight(160))];
     _textView.font = kAppAdaptFont(14);
@@ -58,6 +59,15 @@
 
 - (void)setTip:(NSString *)tip {
     _textView.text = tip;
+}
+
+- (void)setType:(int)type {
+    if (0 == type) {
+        _titleLabel.text = kStr(@"Integration_Help_Title");
+    }
+    else {
+        _titleLabel.text = kStr(@"CommitOrder_OrderPrice_Tip_Title");
+    }
 }
 
 - (void)touchCloseBtn:(JHButton *)sender {

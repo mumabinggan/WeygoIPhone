@@ -26,6 +26,38 @@
     pickerView.delegate = self;
     pickerView.dataSource = self;
     pickerView.showsSelectionIndicator = YES;
+    if (pickerView.tag == 1000) {
+        NSArray *dates = _commitOrderDetail.deliverTime.deliverTimes;
+        for (int num = 0; num < dates.count; ++num) {
+            WGSettlementDate *item = dates[num];
+            if ([item.id isEqualToString:_commitOrderDetail.deliverTime.currentDateId]) {
+                [pickerView selectRow:num inComponent:0 animated:NO];
+                break;
+            }
+        }
+    }
+    else if (pickerView.tag == 1001) {
+        NSArray *times = _commitOrderDetail.deliverTime.currentTimes;
+        for (int num = 0; num < times.count; ++num) {
+            WGSettlementTime *item = times[num];
+            if ([item.id isEqualToString:_commitOrderDetail.deliverTime.currentTimeId]) {
+                [pickerView selectRow:num inComponent:0 animated:NO];
+                break;
+            }
+        }
+    }
+    else if (pickerView.tag == 1002) {
+        if (_commitOrderDetail && _commitOrderDetail.payMothod) {
+            NSArray *payMethods = _commitOrderDetail.payMothod.payMethods;
+            for (int num = 0; num < payMethods.count; ++num) {
+                WGSettlementPayMethod *item = payMethods[num];
+                if ([item.id isEqualToString:_commitOrderDetail.payMothod.currentPayId]) {
+                    [pickerView selectRow:num inComponent:0 animated:NO];
+                    break;
+                }
+            }
+        }
+    }
     [self.view addSubview:pickerView];
     _pickerView = pickerView;
 }
@@ -60,6 +92,10 @@
         return _commitOrderDetail.payMothod.payMethods.count;
     }
     return 0;
+}
+
+- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component {
+    return kAppAdaptHeight(40);
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {

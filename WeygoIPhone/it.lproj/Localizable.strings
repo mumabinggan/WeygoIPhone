@@ -248,6 +248,7 @@
 "CommitOrder Use Score" = "Utilizza i punti spesa";
 "CommitOrder_Use_Score" = "Si";
 "CommitOrder_No_Use_Score" = "No";
+"CommitOrder_OrderPrice_Tip_Title" = "PRODOTTI A PESO VARIABILE";
 
 //地址列表（完成）
 "Address_Title" = "Rubrica";
@@ -294,7 +295,7 @@
 "Integration_Reduce_Count" = "Saldo punti: %ld";
 "Integration_Use_History" = "History";
 "Integration_Help_Title" = "CODICE CLIENTE E PUNTI SPESA";
-"Integration_Help_Button" = "Si";
+"Integration_Help_Button" = "Chiudi";
 
 //使用积分
 "UseIntegration_Title" = "Utilizza i punti spesa";

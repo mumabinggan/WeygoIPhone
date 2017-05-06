@@ -40,7 +40,7 @@
 
 - (void)initData {
     _languageArray = @[kStr(@"Italiano"), kStr(@"China")];
-    _selectedLanguageIndex = 0;
+    _selectedLanguageIndex = [JHLocalizableManager sharedManager].type;
 }
 
 - (void)initSubView {
@@ -90,7 +90,7 @@
         _sortPickerView.delegate = self;
         _sortPickerView.dataSource = self;
         _sortPickerView.showsSelectionIndicator = YES;
-        [_sortPickerView selectRow:0 inComponent:0 animated:NO];
+        [_sortPickerView selectRow:_selectedLanguageIndex inComponent:0 animated:NO];
         [_sortPickerBgView addSubview:_sortPickerView];
         
         JHButton *cancelBtn = [[JHButton alloc] initWithFrame:CGRectMake(kAppAdaptWidth(8), 0, kAppAdaptWidth(100), kAppAdaptHeight(30))];
@@ -124,6 +124,7 @@
     _selectedLanguageIndex = [_sortPickerView selectedRowInComponent:0];
     [self removePickerView];
     [_tableView reloadData];
+    [[WGApplication sharedApplication] setLanguage:_selectedLanguageIndex];
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     [appDelegate loadRootViewController:nil withOptions:nil];
 }
@@ -245,6 +246,10 @@
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
     return _languageArray.count;
+}
+
+- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component {
+    return kAppAdaptHeight(40);
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {

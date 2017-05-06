@@ -97,6 +97,15 @@
     pickerView.delegate = self;
     pickerView.dataSource = self;
     pickerView.showsSelectionIndicator = YES;
+    if (_receipt) {
+        for (int num = 0; num < _countryArray.count; ++num) {
+            WGReceiptCountryListItem *item = _countryArray[num];
+            if ([item.value isEqualToString:_receipt.countryId]) {
+                [pickerView selectRow:num inComponent:0 animated:NO];
+                break;
+            }
+        }
+    }
     [self.view addSubview:pickerView];
     _pickerView = pickerView;
 }
@@ -237,6 +246,10 @@
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
     return _countryArray.count;
+}
+
+- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component {
+    return kAppAdaptHeight(40);
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {

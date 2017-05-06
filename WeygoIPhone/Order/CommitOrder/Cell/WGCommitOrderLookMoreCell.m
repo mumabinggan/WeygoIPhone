@@ -32,6 +32,7 @@
     _moreLabel.textColor = WGAppBaseColor;
     _moreLabel.text = kStr(@"CommitOrder Look More");
     [self.contentView addSubview:_moreLabel];
+    _moreLabel.userInteractionEnabled = YES;
     
     [_moreLabel addSingleTapGestureRecognizerWithTarget:self action:@selector(handleMore:)];
 }
@@ -55,7 +56,13 @@
 
 + (CGFloat)heightWithData:(JHObject *)data {
     WGSettlementTips *tip = (WGSettlementTips *)data;
+    tip.orderPriceTip = @"iOS UIView的点击事件与触摸手势 - Gabriel的专栏 - 博客频道 - ..";
+    tip.orderPriceDetailTip = @"2014年7月23日 - 在UIViewController中,加入协议UIGestureRecognizerDelegate,然后.m文件里加入以下代码...在照片查看的时候,缩小手势也可实现缩小图片的功能。 8.长按...blog.csdn.net/gf771115...  - 百度快照 - 1766条评价";
     if (tip) {
+//        if ([NSString isNullOrEmpty:tip.orderPriceTip] &&
+//            [NSString isNullOrEmpty:tip.orderPriceDetailTip]) {
+//            return 0;
+//        }
         CGSize size = [tip.orderPriceTip returnSize:kAppAdaptFont(12) maxWidth:kAppAdaptWidth(270)];
         return size.height + kAppAdaptHeight(24);
     }

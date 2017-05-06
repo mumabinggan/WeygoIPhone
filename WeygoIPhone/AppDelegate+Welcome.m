@@ -11,7 +11,6 @@
 @implementation AppDelegate (Welcome)
 
 - (void)showWelcomeView {
-    
     BOOL firstLaunched = [@"yes" isEqualToString:[[JHLocalSettings sharedSettings] getSettingsForKey:[NSString stringWithFormat:@"FIRST_LAUNCHED_%@", kAppVersion]]];
     
     if(!firstLaunched){

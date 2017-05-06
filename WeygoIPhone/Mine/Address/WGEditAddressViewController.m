@@ -109,6 +109,13 @@
     pickerView.dataSource = self;
     pickerView.showsSelectionIndicator = YES;
     pickerView.tag = 1000;
+    for (int num = 0; num < _cityArray.count; ++num) {
+        WGAddressCityListItem *item = _cityArray[num];
+        if ([item.value isEqualToString:_address.cityId]) {
+            [pickerView selectRow:num inComponent:0 animated:NO];
+            break;
+        }
+    }
     [self.view addSubview:pickerView];
     _pickerView = pickerView;
 }
@@ -129,6 +136,7 @@
     pickerView.dataSource = self;
     pickerView.tag = 1001;
     pickerView.showsSelectionIndicator = YES;
+    [pickerView selectRow:_address.ascensore inComponent:0 animated:NO];
     [self.view addSubview:pickerView];
     _pickerView = pickerView;
 }
@@ -328,6 +336,10 @@
         return 2;
     }
     return 0;
+}
+
+- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component {
+    return kAppAdaptHeight(40);
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {

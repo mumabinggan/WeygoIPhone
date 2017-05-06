@@ -226,7 +226,11 @@
         else {
             [self addNoDataView];
         }
-        [[WGApplication sharedApplication] handleShopCartGoodCount:_data.goods.count];
+        NSInteger goodCount = 0;
+        for (WGShopCartGoodItem *item in _data.goods) {
+            goodCount += item.goodCount;
+        }
+        [[WGApplication sharedApplication] handleShopCartGoodCount:goodCount];
         [self refreshUI];
     }
     else {

@@ -188,7 +188,7 @@
         [WGApplication sharedApplication].shopCartGoodCount = response.data.goodCount;
         [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationUpdateShopCartCount object:nil];
     }];
-    [[WGApplication sharedApplication] addShopToCart:item.pictureURL fromPoint:fromPoint];
+    [[WGApplication sharedApplication] addShopToTabCart:item.pictureURL fromPoint:fromPoint];
 }
 
 - (void)didReceiveMemoryWarning {

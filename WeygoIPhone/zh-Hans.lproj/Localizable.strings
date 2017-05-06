@@ -247,6 +247,7 @@
 "CommitOrder Use Score" = "使用积分";
 "CommitOrder_Use_Score" = "是";
 "CommitOrder_No_Use_Score" = "否";
+"CommitOrder_OrderPrice_Tip_Title" = "重量浮动的商品规则";
 
 //地址列表（完成）
 "Address_Title" = "派送地址";

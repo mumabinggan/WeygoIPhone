@@ -14,4 +14,6 @@
 
 @property (nonatomic, strong) NSString *tip;
 
+@property (nonatomic, assign) int type;
+
 @end

@@ -32,7 +32,7 @@
     [closeBtn addTarget:self action:@selector(touchCloseBtn:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:closeBtn];
     
-    _contentView = [[JHView alloc] initWithFrame:CGRectMake(0, 0, kAppAdaptWidth(300), _goods.count > 1 ? kAppAdaptHeight(350) : kAppAdaptHeight(260)) radius:kAppAdaptWidth(24)];
+    _contentView = [[JHView alloc] initWithFrame:CGRectMake(0, 0, kAppAdaptWidth(300), _goods.count > 1 ? kAppAdaptHeight(360) : kAppAdaptHeight(270)) radius:kAppAdaptWidth(24)];
     _contentView.backgroundColor = kHRGBA(0xF8FAFA, 0.88);
     _contentView.center = CGPointMake(kDeviceWidth/2, kDeviceHeight/2);
     [self addSubview:_contentView];

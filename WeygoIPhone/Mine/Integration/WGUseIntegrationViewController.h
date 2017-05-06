@@ -11,6 +11,6 @@
 
 @interface WGUseIntegrationViewController : WGViewController
 
-@property (nonatomic, strong) void (^onApply)(WGSettlementConsumePrice *price);
+@property (nonatomic, strong) void (^onApply)(WGSettlementConsumePrice *price, WGIntegrationState use);
 
 @end

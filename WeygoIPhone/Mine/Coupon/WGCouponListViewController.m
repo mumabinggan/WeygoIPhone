@@ -91,9 +91,6 @@
     _inputTextField.font = kAppAdaptFont(12);
     _inputTextField.placeholder = kStr(@"Input Placeholder");
     [headerView addSubview:_inputTextField];
-    if (_coupon) {
-        _inputTextField.text = _coupon.couponCode;
-    }
     
     _activateBtn = [[JHButton alloc] initWithFrame:CGRectMake(_inputTextField.maxX + kAppAdaptWidth(8), _inputTextField.y + kAppAdaptHeight(2), kAppAdaptWidth(88), kAppAdaptHeight(24)) difRadius:JHRadiusMake(kAppAdaptWidth(12), kAppAdaptWidth(12), kAppAdaptWidth(12), kAppAdaptWidth(12)) borderWidth:kAppAdaptWidth(1) borderColor:kHRGB(0x5677fc)];
     [_activateBtn setTitle:kStr(@"Activate") forState:UIControlStateNormal];
@@ -102,10 +99,6 @@
     [_activateBtn setTitleColor:kHRGB(0x5677fc) forState:UIControlStateNormal];
     [_activateBtn addTarget:self action:@selector(touchActivateBtn:) forControlEvents:UIControlEventTouchUpInside];
     [headerView addSubview:_activateBtn];
-    if (_coupon && _coupon.isCouponCode) {
-        _activateBtn.selected = YES;
-    }
-    
     return headerView;
 }
 
@@ -149,15 +142,7 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     WGCoupon *coupon = _dataMArray[indexPath.row];
-    if (_coupon) {
-        if (_coupon.id == coupon.id) {
-            coupon.isSelected = YES;
-        }
-        else {
-            coupon.isSelected = NO;
-        }
-    }
-    [cell showWithData:_dataMArray[indexPath.row]];
+    [cell showWithData:coupon];
     return cell;
 }
 

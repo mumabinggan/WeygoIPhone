@@ -109,6 +109,7 @@
     sexPickerView.delegate = self;
     sexPickerView.dataSource = self;
     sexPickerView.showsSelectionIndicator = YES;
+    [sexPickerView selectRow:_user.sex inComponent:0 animated:NO];
     [self.view addSubview:sexPickerView];
     _pickerView = sexPickerView;
 }
@@ -280,6 +281,10 @@
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
     return 3;
+}
+
+- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component {
+    return kAppAdaptHeight(40);
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {

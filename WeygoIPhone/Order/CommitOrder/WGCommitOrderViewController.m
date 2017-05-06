@@ -24,6 +24,7 @@
 #import "WGEditReceiptViewController.h"
 #import "WGUseIntegrationViewController.h"
 #import "WGCommitOrderViewController+PickerView.h"
+#import "WGIntegrationHelpView.h"
 
 @interface WGCommitOrderViewController ()
 {
@@ -46,111 +47,6 @@
     // Do any additional setup after loading the view.
     [self loadSettlementResultDetail];
 }
-
-//- (void)initData {
-//    WGSettlementResult *result = [[WGSettlementResult alloc] init];
-//    result.id = 12122;
-//    
-//    WGSettlementDate *date = [[WGSettlementDate alloc] init];
-//    date.id = @"2323";
-//    date.date = @"20170321";
-//    WGSettlementTime *time = [[WGSettlementTime alloc] init];
-//    time.id = 23;
-//    time.time = @"12:00-18:00";
-//    WGSettlementTime *time2 = [[WGSettlementTime alloc] init];
-//    time2.id = 21;
-//    time2.time = @"12:00-19:00";
-//    WGSettlementTime *time3 = [[WGSettlementTime alloc] init];
-//    time3.id = 223;
-//    time3.time = @"2:00-18:00";
-//    date.times = @[time, time2, time3];
-//    
-//    WGSettlementDate *date2 = [[WGSettlementDate alloc] init];
-//    date2.id = @"2323";
-//    date2.date = @"20170319";
-//    date2.times = @[time3, time];
-//    
-//    result.deliverTimes = @[date, date2];
-//    
-//    WGSettlementPayMethod *payMethod = [[WGSettlementPayMethod alloc] init];
-//    payMethod.id = @"2";
-//    payMethod.name = @"在线";
-//    
-//    WGSettlementPayMethod *payMethod2 = [[WGSettlementPayMethod alloc] init];
-//    payMethod2.id = @"3";
-//    payMethod2.name = @"支付宝";
-//    
-//    result.payMethods = @[payMethod, payMethod2];
-//    
-//    WGSettlementConsumePrice *price = [[WGSettlementConsumePrice alloc] init];
-//    price.totalPrice = @"34.23";
-//    price.currentTotalPrice = @"5634.32";
-//    price.reducePrice = @"23.23";
-//    price.deliverPrice = @"3.23";
-//    price.couponPrice = @"23.323";
-//    
-//    result.price = price;
-//    
-//    WGSettlementTips *tip = [[WGSettlementTips alloc] init];
-//    tip.orderPriceDetailTip = @"“华夏”一词最早见于周朝《尚书·周书·武成》，“华夏蛮貊，罔不率俾”。 《书经》曰：“冕服采装曰华，大国曰夏”。《尚书正义》注：“冕服华章曰华，大国曰夏”。“华”，是指华丽、兴旺；也有说上古华、夏同音，本一字。《左传》曰：“中国有礼仪之大，故称夏；有服章之美，谓之华。”[9]  华是指汉服，夏指行周礼的大国，故中国有礼仪之邦、衣冠上国之美誉。";
-//    tip.orderChangeTip = @"是以华夏文明为源泉、中华文化为基础，并以汉族为主体民族的多民族国家，通用汉语、汉字，汉族与少数民族被统称为“中华民族”，又自称为炎黄子孙、龙的";
-//    tip.orderPriceTip = @"中国政府网由国务院办公厅主办,中国政府网运行中心负责运行维护,是国务院和国务院各部门,以及各省、自治区、直辖市人民政府在国际互联网上发布政府信息和提供在线服务的";
-//    
-//    result.tip = tip;
-//    
-//    WGOrderGoodItem *goodItem = [[WGOrderGoodItem alloc] init];
-//    goodItem.number = 12;
-//    goodItem.orderPrice = @"123.32";
-//    goodItem.orderCurrentPrice = @"54.23";
-//    goodItem.orderReducePrice = @"43.23";
-//    goodItem.name = @"fasdfasdfasdfasdf";
-//    goodItem.pictureURL = @"https://imgwater-test.oss.aliyuncs.com/b9831974f70a4108b2bdfcde5c241a22";
-//    goodItem.chineseName = @"郑渊谦";
-//    goodItem.briefDescription = @"asdfasdfasdfasdfasdfas";
-//    goodItem.price = @"932.32";
-//    goodItem.currentPrice = @"322.23";
-//    
-//    WGOrderGoodItem *goodItem1 = [[WGOrderGoodItem alloc] init];
-//    goodItem1.number = 1;
-//    goodItem1.orderPrice = @"123.32";
-//    goodItem1.orderCurrentPrice = @"54.23";
-//    goodItem1.orderReducePrice = @"43.23";
-//    goodItem1.name = @"sadfas";
-//    goodItem1.pictureURL = @"https://imgwater-test.oss.aliyuncs.com/b9831974f70a4108b2bdfcde5c241a22";
-//    goodItem1.chineseName = @"郑渊谦";
-//    goodItem1.briefDescription = @"asdfasdfasdfasdfasdfas";
-//    goodItem1.price = @"932.32";
-//    goodItem1.currentPrice = @"322.23";
-//    
-//    WGOrderGoodItem *goodItem2 = [[WGOrderGoodItem alloc] init];
-//    goodItem2.number = 4;
-//    goodItem2.orderPrice = @"123.32";
-//    goodItem2.orderCurrentPrice = @"54.23";
-//    goodItem2.orderReducePrice = @"43.23";
-//    goodItem2.name = @"zhengasdfl";
-//    goodItem2.pictureURL = @"https://imgwater-test.oss.aliyuncs.com/b9831974f70a4108b2bdfcde5c241a22";
-//    goodItem2.chineseName = @"郑渊谦";
-//    goodItem2.briefDescription = @"asdfasdfasdfasdfasdfas";
-//    goodItem2.price = @"932.32";
-//    goodItem2.currentPrice = @"122.23";
-//    
-//    WGOrderGoodItem *goodItem3 = [[WGOrderGoodItem alloc] init];
-//    goodItem3.number = 8;
-//    goodItem3.orderPrice = @"123.32";
-//    goodItem3.orderCurrentPrice = @"54.23";
-//    goodItem3.orderReducePrice = @"43.23";
-//    goodItem3.name = @"zhengasdfl";
-//    goodItem3.pictureURL = @"https://imgwater-test.oss.aliyuncs.com/b9831974f70a4108b2bdfcde5c241a22";
-//    goodItem3.chineseName = @"郑渊谦";
-//    goodItem3.briefDescription = @"asdfasdfasdfasdfasdfas";
-//    goodItem3.price = @"932.32";
-//    goodItem3.currentPrice = @"122.23";
-//    
-//    result.goods = @[goodItem, goodItem1, goodItem2, goodItem3];
-//    
-//    _commitOrderDetail = [[WGCommitOrderDetail alloc] initWithSettlementResult:result];
-//    
-//}
 
 - (void)initSubView {
     [super initSubView];
@@ -216,7 +112,10 @@
 }
 
 - (void)handleMoreTip:(WGSettlementTips *)tip {
-    //
+    WGIntegrationHelpView *view = [[WGIntegrationHelpView alloc] initWithFrame:self.view.bounds];
+    view.tip = tip.orderPriceDetailTip;
+    view.type = 1;
+    [view showInView:self.view];
 }
 
 - (void)handleAddress:(WGAddress *)address {
@@ -234,6 +133,12 @@
     _commitOrderDetail.consumePrice = price;
     [self refreshUI];
     //[self loadUpdateOrderCoupon];
+}
+
+- (void)handleIntegration:(WGSettlementConsumePrice *)price use:(WGIntegrationState)use {
+    _commitOrderDetail.useIntegration = use;
+    _commitOrderDetail.consumePrice = price;
+    [self refreshUI];
 }
 
 - (void)handleGood:(WGOrderGoodItem *)good {
@@ -564,7 +469,11 @@
     }
     else if (section == 3) {
         if (row == 1) {
+            WeakSelf;
             WGUseIntegrationViewController *vc = [[WGUseIntegrationViewController alloc] init];
+            vc.onApply = ^(WGSettlementConsumePrice *price, WGIntegrationState use) {
+                [weakSelf handleIntegration:price use:use];
+            };
             [self.navigationController pushViewController:vc animated:YES];
         }
         else if (row == 2) {

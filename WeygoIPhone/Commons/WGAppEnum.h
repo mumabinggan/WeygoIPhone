@@ -53,4 +53,9 @@ typedef NS_ENUM(NSInteger, WGRefreshNotificationType) {
     WGRefreshNotificationTypeChangeAddress,
 };
 
+typedef NS_ENUM(NSInteger, WGIntegrationState) {
+    WGIntegrationStateNoUse = 0,
+    WGIntegrationStateUse,
+};
+
 #endif /* WGAppEnum_h */

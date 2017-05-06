@@ -13,7 +13,7 @@
 - (id)init {
     self = [super init];
     if (self) {
-        _ascensore = 1;
+        _ascensore = 0;
         _country = kStr(@"Address_Italia");
     }
     return self;
@@ -25,10 +25,10 @@
 
 - (NSString *)currentAscensore {
     if (_ascensore == 0) {
-        return [self ascensores][1];
+        return [self ascensores][0];
     }
     else {
-        return [self ascensores][0];
+        return [self ascensores][1];
     }
 }
 

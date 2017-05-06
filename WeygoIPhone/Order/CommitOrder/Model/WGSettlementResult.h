@@ -28,7 +28,7 @@
 
 @property (nonatomic, strong) WGSettlementConsumePrice *price;
 
-@property (nonatomic, assign) int useIntegral;  //1使用：0不使用
+@property (nonatomic, assign) WGIntegrationState useIntegral;  //1使用：0不使用
 @property (nonatomic, assign) long long integral;
 @property (nonatomic, strong) NSString *integralDescription;
 

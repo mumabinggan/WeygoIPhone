@@ -131,21 +131,19 @@
     request.remove = _integration.isSelected;
     __weak typeof(self) weakSelf = self;
     [self post:request forResponseClass:[WGUseIntegrationResponse class] success:^(JHResponse *response) {
-        [weakSelf handleUseIntegrationResponse:(WGUseIntegrationResponse *)response];
+        [weakSelf handleUseIntegrationResponse:(WGUseIntegrationResponse *)response use:request.remove ? WGIntegrationStateNoUse : WGIntegrationStateUse];
     } failure:^(NSError *error) {
         [weakSelf showWarningMessage:kStr(@"Request Failed")];
     }];
 }
 
-- (void)handleUseIntegrationResponse:(WGUseIntegrationResponse *)response {
+- (void)handleUseIntegrationResponse:(WGUseIntegrationResponse *)response use:(int)use {
     if (response.success) {
         if (self.onApply) {
-            self.onApply(response.data.price);
+            self.onApply(response.data.price, use);
         }
         [self refreshUI];
-        [self showWarningMessage:response.message onCompletion:^(void) {
-            [self.navigationController popViewControllerAnimated:YES];
-        }];
+        [self.navigationController popViewControllerAnimated:YES];
     }
     else {
         [self showWarningMessage:response.message];

@@ -41,6 +41,30 @@
             [_dataMArray removeAllObjects];
         }
         [_dataMArray addObjectsFromArray:response.data];
+        BOOL isCouponCode = YES;
+        if (self.coupon) {
+            for (WGCoupon *item in _dataMArray) {
+                if (item.id == self.coupon.id) {
+                    item.isSelected = !item.isSelected;
+                    isCouponCode = NO;
+                }
+                else {
+                    item.isSelected = NO;
+                }
+            }
+        }
+        if (self.coupon) {
+            _inputTextField.text = self.coupon.couponCode;
+            _activateBtn.selected = YES;
+            _inputTextField.enabled = isCouponCode;
+            _activateBtn.userInteractionEnabled = isCouponCode;
+        }
+        else {
+            _inputTextField.text = nil;
+            _inputTextField.enabled = YES;
+            _activateBtn.selected = NO;
+            _activateBtn.userInteractionEnabled = YES;
+        }
         [self refreshUI];
     }
     else {
@@ -50,7 +74,7 @@
 
 - (void)loadUseCoupon:(WGCoupon *)coupon remove:(BOOL)remove {
     WGActiveCouponRequest *request = [[WGActiveCouponRequest alloc] init];
-    request.couponCode = (coupon.isCouponCode) ? coupon.couponCode : nil;
+    request.couponCode = (coupon.id == 0) ? coupon.couponCode : nil;
     request.couponId = coupon.id;
     request.remove = remove;
     __weak typeof(self) weakSelf = self;
@@ -63,38 +87,53 @@
 
 - (void)handleActiveCouponListResponse:(WGActiveCouponResponse *)response coupon:(WGCoupon *)coupon remove:(BOOL)remove {
     if (response.success) {
-        if (coupon.isCouponCode) {
+        if (remove) {
+            _inputTextField.enabled = YES;
+            _inputTextField.text = nil;
+            _activateBtn.selected = NO;
+            _activateBtn.userInteractionEnabled = YES;
             for (WGCoupon *item in _dataMArray) {
                 item.isSelected = NO;
             }
-            _activateBtn.selected = !remove;
             if (self.onUse) {
-                self.onUse(response.data.coupon, response.data.price);
-            }
-            if (!remove) {
-                [self showWarningMessage:response.message onCompletion:^() {
-                    [self.navigationController popViewControllerAnimated:YES];
-                }];
+                self.onUse(nil, response.data.price);
             }
         }
         else {
+            BOOL isCouponCode = YES;
             for (WGCoupon *item in _dataMArray) {
-                if (item.id == coupon.id) {
-                    item.isSelected = !item.isSelected;
+                if (response.data.coupon.id == item.id) {
+                    isCouponCode = NO;
                 }
-                else {
+            }
+            if (isCouponCode) {
+                _inputTextField.text = coupon.couponCode;
+                _activateBtn.selected = YES;
+                _inputTextField.enabled = YES;
+                _activateBtn.userInteractionEnabled = YES;
+                for (WGCoupon *item in _dataMArray) {
                     item.isSelected = NO;
                 }
+                if (self.onUse) {
+                    self.onUse(response.data.coupon, response.data.price);
+                }
             }
-            _activateBtn.selected = !remove;
-            _inputTextField.text = coupon.couponCode;
-            if (self.onUse) {
-                self.onUse(response.data.coupon, response.data.price);
-            }
-            if (!remove) {
-                [self showWarningMessage:response.message onCompletion:^() {
-                    [self.navigationController popViewControllerAnimated:YES];
-                }];
+            else {
+                _inputTextField.text = coupon.couponCode;
+                _activateBtn.selected = YES;
+                _inputTextField.enabled = NO;
+                _activateBtn.userInteractionEnabled = NO;
+                for (WGCoupon *item in _dataMArray) {
+                    if (response.data.coupon.id == item.id) {
+                        item.isSelected = YES;
+                    }
+                    else {
+                        item.isSelected = NO;
+                    }
+                }
+                if (self.onUse) {
+                    self.onUse(response.data.coupon, response.data.price);
+                }
             }
         }
         [self refreshUI];

@@ -52,7 +52,7 @@
 }
 
 - (NSString *)useIntegrationString {
-    return (_useIntegration == YES) ? kStr(@"CommitOrder_Use_Score") : kStr(@"CommitOrder_No_Use_Score");
+    return (_useIntegration == 1) ? kStr(@"CommitOrder_Use_Score") : kStr(@"CommitOrder_No_Use_Score");
 }
 
 @end
@@ -67,6 +67,12 @@
 }
 
 - (NSString *)currentDate {
+    if ([NSString isNullOrEmpty:_currentDateId]) {
+        if (_deliverTimes && _deliverTimes.count > 0) {
+            WGSettlementDate *item = _deliverTimes[0];
+            _currentDateId = item.id;
+        }
+    }
     for (WGSettlementDate *item in _deliverTimes) {
         if ([item.id isEqualToString:_currentDateId]) {
             _currentDate = item.date;
@@ -79,6 +85,12 @@
 - (NSString *)currentTime {
     for (WGSettlementDate *date in _deliverTimes) {
         if (date.id == _currentDateId) {
+            if ([NSString isNullOrEmpty:_currentTimeId]) {
+                if (date.times && date.times.count > 0) {
+                    WGSettlementTime *time = date.times[0];
+                    _currentTimeId = time.id;
+                }
+            }
             for (WGSettlementTime *time in date.times) {
                 if ([time.id isEqualToString:_currentTimeId]) {
                     _currentTime = time.time;
@@ -112,6 +124,12 @@
 }
 
 - (NSString *)payName {
+    if ([NSString isNullOrEmpty:_currentPayId]) {
+        if (_payMethods.count > 0) {
+            WGSettlementPayMethod *method = _payMethods[0];
+            _currentPayId = method.id;
+        }
+    }
     for (WGSettlementPayMethod *item in _payMethods) {
         if ([item.id isEqualToString:_currentPayId]) {
             return item.name;

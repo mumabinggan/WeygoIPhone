@@ -29,7 +29,4 @@
 //for self use
 @property (nonatomic, assign) BOOL isSelected;
 
-//for self use
-@property (nonatomic, assign) BOOL isCouponCode;
-
 @end

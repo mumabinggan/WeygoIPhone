@@ -27,7 +27,7 @@
 
 @property (nonatomic, strong) NSString *remark;     //备注
 
-@property (nonatomic, assign) int useIntegration;
+@property (nonatomic, assign) WGIntegrationState useIntegration;
 
 @property (nonatomic, assign) long long integration;
 
