@@ -9,6 +9,7 @@
 #import "AppDelegate+UI.h"
 #import "WGMainViewController.h"
 #import "WGNavigationController.h"
+#import "AppDelegate+Welcome.h"
 
 @implementation AppDelegate (UI)
 
@@ -23,9 +24,14 @@
     self.window.rootViewController = _rootVC;
     [self.window makeKeyAndVisible];
     
+    /// Show welcome view
+    [self showWelcomeView];
+    
+    /// Show launch view, waiting for base info response
+    [self showLaunchView];
     //[self initAppearance];
     
-    [self loadRootViewController:application withOptions:launchOptions];
+    //[self loadRootViewController:application withOptions:launchOptions];
 }
 
 - (void)loadRootViewController:(UIApplication *)application withOptions:(NSDictionary *)launchOptions {

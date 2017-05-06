@@ -19,6 +19,8 @@
 
 @interface WGActiveCouponData : WGObject
 
+@property (nonatomic, strong) WGCoupon *coupon;
+
 @property (nonatomic, strong) WGSettlementConsumePrice *price;
 
 @end

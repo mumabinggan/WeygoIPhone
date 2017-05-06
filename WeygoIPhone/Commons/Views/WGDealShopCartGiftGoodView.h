@@ -14,4 +14,6 @@
 
 @property (nonatomic, strong) NSArray *goods;
 
+- (id)initWithFrame:(CGRect)frame goods:(NSArray *)goods;
+
 @end

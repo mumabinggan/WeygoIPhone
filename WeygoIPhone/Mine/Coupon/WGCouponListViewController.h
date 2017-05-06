@@ -16,6 +16,7 @@
 {
     NSMutableArray *_dataMArray;
     TWRefreshTableView *_tableView;
+    JHTextField *_inputTextField;
     JHButton *_activateBtn;
 }
 

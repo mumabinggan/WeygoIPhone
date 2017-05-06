@@ -68,7 +68,7 @@
 "Seleziona lingua" = "设置语言";
 "Italiano" = "意大利";
 "China" = "中国";
-"Log out" = "Log out";
+"Log out" = "退出登录";
 //分类 Tab
 "Hot Sale" = "PIÙ VENDUTI";
 //分类详情
@@ -237,7 +237,7 @@
 "CommitOrder Consume" = "消费清单";
 "CommitOrder Total" = "总价 :";
 "CommitOrder DeliverPrice" = "运费：";
-"CommitOrder CouponPrice" = "抵用：";
+"CommitOrder CouponPrice" = "优惠卷：";
 "CommitOrder Consume List" = "消费清单";
 "CommitOrder Remark" = "备注留言";
 "CommitOrder Look More" = "查看详情";

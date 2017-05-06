@@ -68,8 +68,6 @@
 		<string>Oswald-RegularItalic.ttf</string>
 		<string>Oswald-Stencil.ttf</string>
 	</array>
-	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>

@@ -155,7 +155,7 @@
     if (response.success) {
         if (response.data && response.data.goods && response.data.goods.count > 0) {
             //弹出列表
-            WGDealShopCartGiftGoodView *view = [[WGDealShopCartGiftGoodView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kDeviceHeight)];
+            WGDealShopCartGiftGoodView *view = [[WGDealShopCartGiftGoodView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kDeviceHeight) goods:response.data.goods];
             WeakSelf;
             view.onApply = ^(int index) {
                 [weakSelf loadDealGiftGood:index];

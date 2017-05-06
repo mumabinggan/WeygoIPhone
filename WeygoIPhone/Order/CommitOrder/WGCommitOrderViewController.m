@@ -166,8 +166,6 @@
     _tableView.contentInset = UIEdgeInsetsMake(0, 0, bottomHeight, 0);
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [_contentView addSubview:_tableView];
-    
-    [self refreshUI];
 }
 
 - (void)refreshUI {
@@ -544,6 +542,7 @@
     else if (section == 1) {
         if (row == 1) {
             WGEditReceiptViewController *vc = [[WGEditReceiptViewController alloc] init];
+            vc.receipt = _commitOrderDetail.receipt;
             vc.onApply = ^(WGReceipt *object) {
                 [weakSelf handleReceipt:(WGReceipt *)object];
             };

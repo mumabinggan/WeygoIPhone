@@ -9,6 +9,12 @@
 #import "JHViewController.h"
 #import "WGViewController.h"
 
+typedef NS_ENUM(NSInteger, WGRightItemType) {
+    WGRightItemTypeNone = 6000,
+    WGRightItemTypeShopCart,
+    WGRightItemTypeSearch,
+};
+
 @interface WGViewController : JHViewController
 {
     WGLoginType _loginType;

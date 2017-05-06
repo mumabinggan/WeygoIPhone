@@ -42,12 +42,7 @@
         //tips
         _tip = settlement.tip;
         
-        if (![NSString isNullOrEmpty:settlement.couponCode]) {
-            WGCoupon *coupon = [[WGCoupon alloc] init];
-            coupon.couponCode = settlement.couponCode;
-            coupon.isSelected = YES;
-            _coupon = coupon;
-        }
+        _coupon = settlement.coupon;
         
         _integration = settlement.integral;
         

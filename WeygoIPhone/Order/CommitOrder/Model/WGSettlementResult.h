@@ -8,6 +8,7 @@
 
 #import "WGObject.h"
 #import "WGAddress.h"
+#import "WGCoupon.h"
 
 @class WGSettlementTips;
 @class WGSettlementConsumePrice;
@@ -18,7 +19,8 @@
 
 @property (nonatomic, strong) WGAddress *address;
 
-@property (nonatomic, strong) NSString *couponCode;
+//@property (nonatomic, strong) NSString *couponCode;
+@property (nonatomic, strong) WGCoupon *coupon;
 
 @property (nonatomic, strong) NSArray *deliverTimes;
 

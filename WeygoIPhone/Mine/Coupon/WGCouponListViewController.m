@@ -13,9 +13,7 @@
 #import "WGCouponListViewController+Request.h"
 
 @interface WGCouponListViewController ()
-{
-    JHTextField *_inputTextField;
-}
+
 @end
 
 @interface WGCouponListViewController (TableViewDelegate) <UITableViewDelegate, UITableViewDataSource, TWTableViewRefreshingDelegate>
@@ -93,7 +91,7 @@
     _inputTextField.font = kAppAdaptFont(12);
     _inputTextField.placeholder = kStr(@"Input Placeholder");
     [headerView addSubview:_inputTextField];
-    if (_coupon && _coupon.isCouponCode) {
+    if (_coupon) {
         _inputTextField.text = _coupon.couponCode;
     }
     
@@ -154,6 +152,9 @@
     if (_coupon) {
         if (_coupon.id == coupon.id) {
             coupon.isSelected = YES;
+        }
+        else {
+            coupon.isSelected = NO;
         }
     }
     [cell showWithData:_dataMArray[indexPath.row]];

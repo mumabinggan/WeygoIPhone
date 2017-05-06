@@ -142,12 +142,9 @@
         _receipt.city = editCell.textField.text;
     }
     else if (row == 6) {
-        _receipt.address = editCell.textField.text;
-    }
-    else if (row == 7) {
         _receipt.cap = editCell.textField.text;
     }
-    else if (row == 8) {
+    else if (row == 7) {
         _receipt.taxCode = editCell.textField.text;
     }
 }
@@ -211,12 +208,9 @@
             editCell.textField.text = _receipt.city;
         }
         else if (row == 6) {
-            editCell.textField.text = _receipt.address;
-        }
-        else if (row == 7) {
             editCell.textField.text = _receipt.cap;
         }
-        else if (row == 8) {
+        else if (row == 7) {
             editCell.textField.text = _receipt.taxCode;
         }
     }

@@ -69,6 +69,7 @@ static NSString *kNotificationTabChanged = @"kNotificationTabChanged";
 static NSString *kNotificationUpdateShopCartCount = @"kNotificationUpdateShopCartCount";
 static NSString *kNotificationLogIn = @"kNotificationLogIn";
 static NSString *kNotificationLogOut = @"kNotificationLogOut";
+static NSString *kNotificationServiceLoad = @"kNotificationServiceLoad";
 
 //Local Setting
 #define kLocalSettingsKeyUser   @"kLocalSettingsKeyUser"

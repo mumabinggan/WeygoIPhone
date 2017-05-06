@@ -69,7 +69,7 @@
             }
             _activateBtn.selected = !remove;
             if (self.onUse) {
-                self.onUse(coupon, response.data.price);
+                self.onUse(response.data.coupon, response.data.price);
             }
             if (!remove) {
                 [self showWarningMessage:response.message onCompletion:^() {
@@ -81,14 +81,17 @@
             for (WGCoupon *item in _dataMArray) {
                 if (item.id == coupon.id) {
                     item.isSelected = !item.isSelected;
-                    break;
+                }
+                else {
+                    item.isSelected = NO;
                 }
             }
+            _activateBtn.selected = !remove;
+            _inputTextField.text = coupon.couponCode;
             if (self.onUse) {
-                self.onUse(coupon, response.data.price);
+                self.onUse(response.data.coupon, response.data.price);
             }
             if (!remove) {
-                _activateBtn.selected = NO;
                 [self showWarningMessage:response.message onCompletion:^() {
                     [self.navigationController popViewControllerAnimated:YES];
                 }];

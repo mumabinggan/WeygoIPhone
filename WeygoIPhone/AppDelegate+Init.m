@@ -25,12 +25,15 @@
     if ([WGApplication sharedApplication].isLogined) {
         [[WGApplication sharedApplication] loadUserInfoOnCompletion:nil];
     }
+    
+    [self launchUIApplicatioin:application withOptions:launchOptions];
     //[[WGApplication sharedApplication] loadReceiptCountryListOnCompletion:nil];
 }
 
 - (void)handleBaseServiceResponse:(UIApplication *)application withOptions:(NSDictionary *)launchOptions withResponse:(WGBaseServiceResponse *)response {
     if (response.success) {
-        [self launchUIApplicatioin:application withOptions:launchOptions];
+        [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationServiceLoad object:nil];
+        [self loadRootViewController:application withOptions:launchOptions];
     }
     else {
         WeakSelf;

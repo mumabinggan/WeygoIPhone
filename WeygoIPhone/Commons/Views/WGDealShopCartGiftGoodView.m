@@ -15,6 +15,15 @@
     JHScrollView *_scrollView;
 }
 
+- (id)initWithFrame:(CGRect)frame goods:(NSArray *)goods {
+    self = [super initWithFrame:frame];
+    if (self) {
+        _goods = goods;
+        [self loadSubviews];
+    }
+    return self;
+}
+
 - (void)loadSubviews {
     [super loadSubviews];
     self.maskColor = kHRGBA(0x000000, 0.4);
@@ -23,7 +32,7 @@
     [closeBtn addTarget:self action:@selector(touchCloseBtn:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:closeBtn];
     
-    _contentView = [[JHView alloc] initWithFrame:CGRectMake(0, 0, kAppAdaptWidth(300), kAppAdaptHeight(350)) radius:kAppAdaptWidth(24)];
+    _contentView = [[JHView alloc] initWithFrame:CGRectMake(0, 0, kAppAdaptWidth(300), _goods.count > 1 ? kAppAdaptHeight(350) : kAppAdaptHeight(260)) radius:kAppAdaptWidth(24)];
     _contentView.backgroundColor = kHRGBA(0xF8FAFA, 0.88);
     _contentView.center = CGPointMake(kDeviceWidth/2, kDeviceHeight/2);
     [self addSubview:_contentView];
@@ -36,7 +45,7 @@
     titleLabel.text = kStr(@"ShopCart_GiftGoodThree");
     [_contentView addSubview:titleLabel];
     
-    _scrollView = [[JHScrollView alloc] initWithFrame:CGRectMake(0, titleLabel.maxY + kAppAdaptHeight(20), _contentView.width, kAppAdaptHeight(160))];
+    _scrollView = [[JHScrollView alloc] initWithFrame:CGRectMake(0, titleLabel.maxY + kAppAdaptHeight(20), _contentView.width, _goods.count > 1 ? kAppAdaptHeight(160) : kAppAdaptHeight(80))];
     _scrollView.showsHorizontalScrollIndicator = NO;
     _scrollView.bounces = NO;
     [_contentView addSubview:_scrollView];
