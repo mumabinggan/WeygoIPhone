@@ -75,11 +75,11 @@
         //logoFrame = CGRectMake(0, 414/3, 226/3.0, 422/3.0);
     }
     
-    NSString * path = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"service_bg_%@",resolution] ofType:@"jpg"];
+    NSString * path = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"service_bg_%@",resolution] ofType:@"png"];
     UIImage * image = [UIImage imageWithContentsOfFile:path];
     bgView.image = image;
     
-    NSString * path2 = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"service_bg_while_%@",resolution] ofType:@"jpg"];
+    NSString * path2 = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"service_bg_while_%@",resolution] ofType:@"png"];
     UIImage * image2 = [UIImage imageWithContentsOfFile:path2];
     bgWhileView.image = image2;
     
@@ -99,21 +99,21 @@
 
 - (void)startAnimation {
     CAAnimationGroup* group = [CAAnimationGroup animation];
-    group.duration = 6;
+    group.duration = 4;
     group.repeatCount = INT_MAX;
     
     group.animations = [NSArray arrayWithObjects:[self createScaleAnimation],[self createOpacityAnimationForMode:YES], nil];
     [bgView.layer addAnimation:group forKey:@"bgViewAnimation"];
     
     CAAnimationGroup* group2 = [CAAnimationGroup animation];
-    group2.duration = 6;
+    group2.duration = 4;
     group2.repeatCount = INT_MAX;
     
     group2.animations = [NSArray arrayWithObjects:[self createScaleAnimation],[self createOpacityAnimationForMode:NO], nil];
     [bgWhileView.layer addAnimation:group2 forKey:@"bgWhileViewAnimation"];
     
     CAKeyframeAnimation *opacityAnimation = [self createOpacityAnimationForMode:NO];
-    opacityAnimation.duration = 6.0;
+    opacityAnimation.duration = 4.0;
     opacityAnimation.repeatCount = INT_MAX;
     [logo.layer addAnimation:opacityAnimation forKey:@"logoViewAnimation"];
 }
@@ -129,7 +129,7 @@
     CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"transform"];
     
     CATransform3D scale1 = CATransform3DMakeScale(1, 1, 1);
-    CATransform3D scale2 = CATransform3DMakeScale(1.05, 1.05, 1);
+    CATransform3D scale2 = CATransform3DMakeScale(1.1, 1.1, 1);
     CATransform3D scale3 = CATransform3DMakeScale(1, 1, 1);
     
     NSArray *frameValues = [NSArray arrayWithObjects:
@@ -148,7 +148,7 @@
     CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"opacity"];
     
     NSNumber * opacity1 = [NSNumber numberWithFloat:1.0];
-    NSNumber * opacity2 = [NSNumber numberWithFloat:0.0];
+    NSNumber * opacity2 = [NSNumber numberWithFloat:0.5];
     NSArray *frameValues = nil;
     if (mode) {
         frameValues = [NSArray arrayWithObjects:opacity2,opacity1,opacity2, nil];

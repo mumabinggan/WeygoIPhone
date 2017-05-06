@@ -321,6 +321,10 @@
 		BEAC8F441EBD7300006B236B /* WGWelcomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAC8F421EBD7300006B236B /* WGWelcomeView.m */; };
 		BEAC8F631EBD7702006B236B /* AppDelegate+Welcome.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAC8F621EBD7701006B236B /* AppDelegate+Welcome.m */; };
 		BEAC8F6D1EBDD302006B236B /* WGOrderPriceTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAC8F6C1EBDD302006B236B /* WGOrderPriceTipView.m */; };
+		BEAC8F731EBDE008006B236B /* service_bg_640_960.png in Resources */ = {isa = PBXBuildFile; fileRef = BEAC8F6F1EBDE008006B236B /* service_bg_640_960.png */; };
+		BEAC8F741EBDE008006B236B /* service_bg_1242_2208.png in Resources */ = {isa = PBXBuildFile; fileRef = BEAC8F701EBDE008006B236B /* service_bg_1242_2208.png */; };
+		BEAC8F751EBDE008006B236B /* service_bg_while_640_960.png in Resources */ = {isa = PBXBuildFile; fileRef = BEAC8F711EBDE008006B236B /* service_bg_while_640_960.png */; };
+		BEAC8F761EBDE008006B236B /* service_bg_while_1242_2208.png in Resources */ = {isa = PBXBuildFile; fileRef = BEAC8F721EBDE008006B236B /* service_bg_while_1242_2208.png */; };
 		BEB2D91E1DFBDFE900F2E74B /* WGTabBenefitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB2D9111DFBDFE900F2E74B /* WGTabBenefitViewController.m */; };
 		BEB2D91F1DFBDFE900F2E74B /* WGTabClassifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB2D9141DFBDFE900F2E74B /* WGTabClassifyViewController.m */; };
 		BEB2D9211DFBDFE900F2E74B /* WGHomeTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB2D91A1DFBDFE900F2E74B /* WGHomeTabViewController.m */; };
@@ -1128,6 +1132,10 @@
 		BEAC8F621EBD7701006B236B /* AppDelegate+Welcome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Welcome.m"; sourceTree = "<group>"; };
 		BEAC8F6B1EBDD302006B236B /* WGOrderPriceTipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGOrderPriceTipView.h; sourceTree = "<group>"; };
 		BEAC8F6C1EBDD302006B236B /* WGOrderPriceTipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGOrderPriceTipView.m; sourceTree = "<group>"; };
+		BEAC8F6F1EBDE008006B236B /* service_bg_640_960.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = service_bg_640_960.png; sourceTree = "<group>"; };
+		BEAC8F701EBDE008006B236B /* service_bg_1242_2208.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = service_bg_1242_2208.png; sourceTree = "<group>"; };
+		BEAC8F711EBDE008006B236B /* service_bg_while_640_960.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = service_bg_while_640_960.png; sourceTree = "<group>"; };
+		BEAC8F721EBDE008006B236B /* service_bg_while_1242_2208.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = service_bg_while_1242_2208.png; sourceTree = "<group>"; };
 		BEB2D9101DFBDFE900F2E74B /* WGTabBenefitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGTabBenefitViewController.h; sourceTree = "<group>"; };
 		BEB2D9111DFBDFE900F2E74B /* WGTabBenefitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGTabBenefitViewController.m; sourceTree = "<group>"; };
 		BEB2D9131DFBDFE900F2E74B /* WGTabClassifyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGTabClassifyViewController.h; sourceTree = "<group>"; };
@@ -2888,6 +2896,10 @@
 		BEAC8F151EBD7287006B236B /* serviceLoading */ = {
 			isa = PBXGroup;
 			children = (
+				BEAC8F6F1EBDE008006B236B /* service_bg_640_960.png */,
+				BEAC8F701EBDE008006B236B /* service_bg_1242_2208.png */,
+				BEAC8F711EBDE008006B236B /* service_bg_while_640_960.png */,
+				BEAC8F721EBDE008006B236B /* service_bg_while_1242_2208.png */,
 				BEAC8F161EBD7287006B236B /* service_bg_1242_2208.jpg */,
 				BEAC8F171EBD7287006B236B /* service_bg_640_960.jpg */,
 				BEAC8F181EBD7287006B236B /* service_bg_while_1242_2208.jpg */,
@@ -3960,6 +3972,7 @@
 				BE62E23C1DF92176004510A5 /* LaunchScreen.storyboard in Resources */,
 				BE5257231DFFB6FE00AB5CB9 /* Oswald-Bold.ttf in Resources */,
 				BE99E7D71E1CEA0C00210546 /* SF-UI-Display-Heavy.otf in Resources */,
+				BEAC8F731EBDE008006B236B /* service_bg_640_960.png in Resources */,
 				BE62E4D21DF94EB4004510A5 /* Localizable.strings in Resources */,
 				BE52572F1DFFB6FE00AB5CB9 /* Oswald-Regular.ttf in Resources */,
 				BE99E7D51E1CEA0C00210546 /* SF-UI-Display-Black.otf in Resources */,
@@ -3981,12 +3994,14 @@
 				BEAC8F321EBD7287006B236B /* enter-button@3x.png in Resources */,
 				BEAC8F3A1EBD7287006B236B /* welcome2-6s.jpg in Resources */,
 				BE5257311DFFB6FE00AB5CB9 /* Oswald-Stencil.ttf in Resources */,
+				BEAC8F741EBDE008006B236B /* service_bg_1242_2208.png in Resources */,
 				BE5257261DFFB6FE00AB5CB9 /* Oswald-DemiBold.ttf in Resources */,
 				BE5257241DFFB6FE00AB5CB9 /* Oswald-BoldItalic.ttf in Resources */,
 				BE49E3CE1E4617DD00ECDEE5 /* File3.xml in Resources */,
 				BE99E7D61E1CEA0C00210546 /* SF-UI-Display-Bold.otf in Resources */,
 				BEAC8F341EBD7287006B236B /* welcome1-5s.jpg in Resources */,
 				BE49E3CC1E4611B000ECDEE5 /* File2.xml in Resources */,
+				BEAC8F761EBDE008006B236B /* service_bg_while_1242_2208.png in Resources */,
 				BE99E7DA1E1CEA0C00210546 /* SF-UI-Display-Regular.otf in Resources */,
 				BEAC8F2B1EBD7287006B236B /* service_bg_1242_2208.jpg in Resources */,
 				BEAC8F3E1EBD7287006B236B /* welcome3-6s.jpg in Resources */,
@@ -3994,6 +4009,7 @@
 				BEAC8F351EBD7287006B236B /* welcome1-6p.jpg in Resources */,
 				BE52572D1DFFB6FE00AB5CB9 /* Oswald-Medium.ttf in Resources */,
 				BE5257301DFFB6FE00AB5CB9 /* Oswald-RegularItalic.ttf in Resources */,
+				BEAC8F751EBDE008006B236B /* service_bg_while_640_960.png in Resources */,
 				BEAC8F3C1EBD7287006B236B /* welcome3-5s.jpg in Resources */,
 				BEED6B741EAF8BFE00B56455 /* ZDCChatStrings.bundle in Resources */,
 				BE99E7DC1E1CEA0C00210546 /* SF-UI-Display-Thin.otf in Resources */,
