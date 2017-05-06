@@ -16,6 +16,7 @@
 @implementation AppDelegate (Init)
 
 - (void)launchInitApplicatioin:(UIApplication *)application withOptions:(NSDictionary *)launchOptions {
+    [self launchUIApplicatioin:application withOptions:launchOptions];
     [self initAppearance];
     [self register3rdParty];
     WeakSelf
@@ -25,8 +26,6 @@
     if ([WGApplication sharedApplication].isLogined) {
         [[WGApplication sharedApplication] loadUserInfoOnCompletion:nil];
     }
-    
-    [self launchUIApplicatioin:application withOptions:launchOptions];
     //[[WGApplication sharedApplication] loadReceiptCountryListOnCompletion:nil];
 }
 

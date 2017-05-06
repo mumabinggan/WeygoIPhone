@@ -19,7 +19,6 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [NSThread sleepForTimeInterval:3];
     [self launchInitApplicatioin:application withOptions:launchOptions];
     
     return YES;
