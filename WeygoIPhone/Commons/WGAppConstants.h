@@ -71,6 +71,8 @@ static NSString *kNotificationLogIn = @"kNotificationLogIn";
 static NSString *kNotificationLogOut = @"kNotificationLogOut";
 static NSString *kNotificationServiceLoad = @"kNotificationServiceLoad";
 
+static float kNavigationY = 64;
+
 //Local Setting
 #define kLocalSettingsKeyUser   @"kLocalSettingsKeyUser"
 #define kLocalSettingsKeyUnLoginCap   @"kLocalSettingsKeyUnLoginCap"

@@ -8,12 +8,16 @@
 
 #import "WGTabShopCartViewController+NavigationBar.h"
 #import "WGTabViewController+Slider.h"
+#import "WGViewController+Search.h"
 
 @implementation WGTabShopCartViewController (NavigationBar)
 
 - (void)initNavigationItems {
     //set leftView
     self.navigationItem.leftBarButtonItem = [self createSliderItem];
+    
+    //set rightView
+    self.navigationItem.rightBarButtonItem = [self createSearchItem];
 }
 
 @end

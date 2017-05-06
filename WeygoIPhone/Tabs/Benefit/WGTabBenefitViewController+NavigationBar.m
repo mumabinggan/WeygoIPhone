@@ -11,6 +11,7 @@
 #import "WGHomeTitleView.h"
 #import "WGTabViewController+Slider.h"
 #import "WGViewController+ShopCart.h"
+#import "WGViewController+Search.h"
 
 @implementation WGTabBenefitViewController (NavigationBar)
 
@@ -19,7 +20,7 @@
     self.navigationItem.leftBarButtonItem = [self createSliderItem];
     
     //set rightView
-    self.navigationItem.rightBarButtonItem = [self createShopCartItem];
+    self.navigationItem.rightBarButtonItems = @[[self createShopCartItem], [self createSearchItem]];
 }
 
 //- (void)touchSliderButton:(id)sender {

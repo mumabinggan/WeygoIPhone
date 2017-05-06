@@ -32,7 +32,7 @@
     self.navigationItem.leftBarButtonItem = [self createSliderItem];
     
     //set rightView
-    self.navigationItem.rightBarButtonItem = [self createSearchItem];
+    self.navigationItem.rightBarButtonItems = @[[self createShopCartItem], [self createSearchItem]];
 }
 
 - (void)handleTitleView {

@@ -9,6 +9,7 @@
 #import "WGTabClassifyViewController+NavigationBar.h"
 #import "WGTabViewController+Slider.h"
 #import "WGViewController+ShopCart.h"
+#import "WGViewController+Search.h"
 
 @implementation WGTabClassifyViewController (NavigationBar)
 
@@ -17,7 +18,7 @@
     self.navigationItem.leftBarButtonItem = [self createSliderItem];
     
     //set rightView
-    self.navigationItem.rightBarButtonItem = [self createShopCartItem];
+    self.navigationItem.rightBarButtonItems = @[[self createShopCartItem], [self createSearchItem]];
 }
 
 @end

@@ -15,16 +15,16 @@ static const NSString *WGSearchButtonKey = @"WGSearchButtonKey";
 
 @implementation WGViewController (Search)
 
-- (UIBarButtonItem *)rightItem {
+- (UIBarButtonItem *)searchItem {
     return objc_getAssociatedObject(self, &WGSearchButtonKey);
 }
 
-- (void)setRightItem:(UIBarButtonItem *)rightItem {
-    objc_setAssociatedObject(self, &WGSearchButtonKey, rightItem, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setSearchItem:(UIBarButtonItem *)searchItem {
+    objc_setAssociatedObject(self, &WGSearchButtonKey, searchItem, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (UIBarButtonItem *)createSearchItem {
-    if (!self.rightItem) {
+    if (!self.searchItem) {
         JHButton *backButton = [JHButton buttonWithType:UIButtonTypeCustom];
         [backButton setImage:[UIImage imageNamed:@"right_search"] forState:UIControlStateNormal];
         [backButton setTitle:nil forState:UIControlStateNormal];
@@ -39,9 +39,9 @@ static const NSString *WGSearchButtonKey = @"WGSearchButtonKey";
         JHBarButtonItem *item =  [[JHBarButtonItem alloc] initWithCustomView:backButton];
         item.tag = WGRightItemTypeSearch;
         //[item showBadge:([WGApplication sharedApplication].shopCartGoodCount > 0 ? YES : NO) withNumber:(int)[WGApplication sharedApplication].shopCartGoodCount withFrame:CGRectMake(13, 5, 15, 15)];
-        self.rightItem = item;
+        self.searchItem = item;
     }
-    return self.rightItem;
+    return self.searchItem;
 }
 
 - (void)touchSearchButton:(JHButton *)sender {

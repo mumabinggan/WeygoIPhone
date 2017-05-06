@@ -57,6 +57,7 @@
 - (void)initSubView {
     _contentVC = [[WGCommonViewController alloc] init];
     _contentVC.type = WGConfigContentTypeHome;
+    _contentVC.view.frame = CGRectMake(0, 0, kDeviceWidth, kDeviceHeight - kAppTabBarHeight);
     [self.view addSubview:_contentVC.view];
     [self addChildViewController:_contentVC];
     //JHView *contentView = [[JHView alloc] initWithFrame:self.view.bounds];

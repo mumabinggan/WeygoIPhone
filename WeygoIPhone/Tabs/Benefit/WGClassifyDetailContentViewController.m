@@ -53,68 +53,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-}
-
-//- (void)initData {
-//    _data = [[WGClassifyDetail alloc] init];
-//    _data.name = @"AFDSFSA";
-//    _data.id = 213121;
-//    WGCarouselFigureItem *carouselFigureItem = [[WGCarouselFigureItem alloc] init];
-//    carouselFigureItem.pictureURL = @"http://www.pp3.cn/uploads/201610/2016100805.jpg";
-//    _data.carouselFigureItem = carouselFigureItem;
-//    
-//    WGClassifyItem *item = [[WGClassifyItem alloc] init];
-//    item.name = @"zhenguasdf";
-//    item.pictureURL = @"http://www.pp3.cn/uploads/201609/2016091012.jpg";
-//    
-//    WGClassifyItem *item2 = [[WGClassifyItem alloc] init];
-//    item2.name = @"uasdf";
-//    item2.pictureURL = @"http://img1.touxiang.cn/uploads/20131203/03-073408_255.jpg";
-//    
-//    WGClassifyItem *item3 = [[WGClassifyItem alloc] init];
-//    item3.name = @"fsuasdf";
-//    item3.pictureURL = @"http://img1.touxiang.cn/uploads/20131203/03-073436_260.jpg";
-//    
-//    WGClassifyItem *item4 = [[WGClassifyItem alloc] init];
-//    item4.name = @"asfsdazhenguasdf";
-//    item4.pictureURL = @"http://img1.touxiang.cn/uploads/20131203/03-073440_93.jpg";
-//    
-//    WGClassifyItem *item5 = [[WGClassifyItem alloc] init];
-//    item5.name = @"zfjdhenguasdf";
-//    item5.pictureURL = @"http://img1.touxiang.cn/uploads/20131203/03-073442_102.jpg";
-//    _data.subClassifyArray = @[item, item2, item3, item4, item5];
-//    
-//    _data.goodArray = [self getGoodArray:8];
-//    
-//    _sortType = WGClassifySortTypeDefault;
-//    
-//    //New
-//    WGNewsItem *newItem1 = [[WGNewsItem alloc] init];
-//    newItem1.name = @"How do you return a multiline text CGSize from the new iOS 7 method sizeW";
-//    WGNewsItem *newItem2 = [[WGNewsItem alloc] init];
-//    newItem2.name = @"CGSize textSize = [text sizeWithAttributes:@{ NSFontAttributeName : [UIFon";
-//    WGNewsItem *newItem3 = [[WGNewsItem alloc] init];
-//    newItem3.name = @"or the first time i see this notation for di";
-//    WGNewsItem *newItem4 = [[WGNewsItem alloc] init];
-//    newItem4.name = @"Have a look at this: stackoverflow.com/question";
-//    WGNews *news = [[WGNews alloc] init];
-//    news.name = @"好消息";
-//    news.contents = @[newItem1, newItem2, newItem3, newItem4];
-//    _data.news = news;
-//    _data.recommendedArray = [self getGoodArray:2];
-//}
-
-- (NSArray *)getGoodArray:(NSInteger)count {
-    NSMutableArray *subMArray = [NSMutableArray array];
-    for (int num = 0; num < count; ++num) {
-        WGHomeFloorContentGoodItem *subItem = [[WGHomeFloorContentGoodItem alloc] init];
-        subItem.name = [NSString stringWithFormat:@"name_%d", num];
-        subItem.pictureURL = @"http://img1.touxiang.cn/uploads/20131203/03-073442_102.jpg";
-        subItem.price = @"98.32";
-        subItem.currentPrice = @"43.32";
-        [subMArray addObject:subItem];
-    }
-    return subMArray;
+    [self loadData:YES pulling:NO];
 }
 
 - (void)initSubView {
@@ -130,12 +69,12 @@
     _tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [contentView addSubview:_tableView];
-    //_tableView.layer.opacity = 0.0f;
+    _tableView.layer.opacity = 0.0f;
 }
 
 - (void)refreshUI {
     [_tableView reloadData];
-    [UIView animateWithDuration:0.5 animations:^() {
+    [UIView animateWithDuration:0.25 animations:^() {
         _tableView.layer.opacity = 1.0f;
     }];
 }

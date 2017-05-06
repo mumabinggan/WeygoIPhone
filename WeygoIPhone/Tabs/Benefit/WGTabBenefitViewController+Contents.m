@@ -29,12 +29,12 @@
     _tabContentMDictionary = [[NSMutableDictionary alloc] init];
     for (int num = 0; num < _titleArray.count; ++num) {
         WGClassifyDetailContentViewController *contentVC = [[WGClassifyDetailContentViewController alloc] init];
-        contentVC.view.frame = CGRectMake(kDeviceWidth * num, 0, _contentsScrollView.width, _contentsScrollView.height);
         if (_titleArray.count > num) {
             WGTitleItem *item = _titleArray[num];
             contentVC.classifyId = item.id;
         }
-        __weak id weakSelf = self;
+        contentVC.view.frame = CGRectMake(kDeviceWidth * num, 0, _contentsScrollView.width, _contentsScrollView.height);
+        WeakSelf;
         contentVC.onTopRefresh = ^(void) {
             [weakSelf handleRefresh];
         };

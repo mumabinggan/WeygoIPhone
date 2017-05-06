@@ -55,8 +55,8 @@
 }
 
 - (void)initAppearance {
-    [UINavigationBar appearance].barTintColor = kHRGB(0xed7338);
-    //[UINavigationBar appearance].translucent = NO;
+    [UINavigationBar appearance].barTintColor = WGAppBaseColor;
+    [UINavigationBar appearance].translucent = NO;
     //[UINavigationBar appearance].tintColor = kWhiteColor;
     //[[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navbar"] forBarMetrics:UIBarMetricsDefault];
     //[[UINavigationBar appearance] setShadowImage:[UIImage imageNamed:@"nav-shadowImage"]];
