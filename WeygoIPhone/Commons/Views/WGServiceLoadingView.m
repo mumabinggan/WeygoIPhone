@@ -57,18 +57,22 @@
         _isIphone4 = YES;
         resolution = @"640_960";
         logoFrame = CGRectMake(0, 130.3/2.0, 164/2.0, 219/2.0);
+        //logoFrame = CGRectMake(0, 130.3/2.0, 74/2.0, 219/2.0);
     }
     else if ([[JHDeviceManager sharedManager] iPhone40]) {
 //        resolution = @"640_1136";
         logoFrame = CGRectMake(0, 213/2.0, 164/2.0, 219/2.0);
+        //logoFrame = CGRectMake(0, 213/2.0, 74/2.0, 219/2.0);
     }
     else if ([[JHDeviceManager sharedManager] iPhone47]) {
 //        resolution = @"750_1334";
         logoFrame = CGRectMake(0, 248/2, 191/2.0, 257/2.0);
+        //logoFrame = CGRectMake(0, 248/2, 101/2.0, 257/2.0);
     }
     else if ([[JHDeviceManager sharedManager] iPhone55]) {
 //        resolution = @"1242_2208";
         logoFrame = CGRectMake(0, 414/3, 316/3.0, 422/3.0);
+        //logoFrame = CGRectMake(0, 414/3, 226/3.0, 422/3.0);
     }
     
     NSString * path = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"service_bg_%@",resolution] ofType:@"jpg"];
@@ -81,6 +85,8 @@
     
     
     logo = [[JHImageView alloc] initWithFrame:logoFrame];
+    logo.contentMode = UIViewContentModeScaleAspectFit;
+    logo.clipsToBounds = YES;
     [self addSubview:logo];
     CGPoint center = logo.center;
     center.y -= 1;
