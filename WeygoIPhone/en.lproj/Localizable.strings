@@ -32,7 +32,7 @@
 "Cognome" = "Cognome";
 "Nome" = "Nome";
 "Italia" = "Italia";
-"Telefono/Cellulare" = "Telefono/Cellulare";
+"Telefono/Cellulare" = "Telphone";
 "Citta" = "Città";
 "CAP" = "CAP";
 "Indirizzo" = "Indirizzo";
@@ -42,7 +42,7 @@
 "Ascensore" = "Ascensore";
 "Piano" = "Piano";
 //购物车
-"Totale:Price With Unit" = "Totale:€%.2f";
+"Totale:Price With Unit" = "Totale：%@";
 "Totale:Price With String Unit" = "Totale:%@";
 "Confirm" = "conferma";
 "Carrello" = "Carrello";

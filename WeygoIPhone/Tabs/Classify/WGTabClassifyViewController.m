@@ -175,7 +175,6 @@
     _firstTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _firstTableView.contentInset = UIEdgeInsetsMake(0, 0, kAppTabBarHeight, 0);
     _firstTableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    _firstTableView.backgroundColor = kRedColor;
     [contentView addSubview:_firstTableView];
     
     _secondTableView = [[JHTableView alloc] initWithFrame:CGRectMake(_firstTableView.maxX, 0, kAppAdaptWidth(215), self.view.height)];

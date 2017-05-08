@@ -107,10 +107,10 @@
 
 - (void)loadIntegrationDetailResponse:(BOOL)refresh pulling:(BOOL)pulling {
     WGIntegrationDetailRequest *request = [[WGIntegrationDetailRequest alloc] init];
-//    request.pageId = (refresh) ? 0 : _integrationDetail.history.count;
-//    if (pulling) {
-//        request.showsLoadingView = NO;
-//    }
+    request.pageId = (refresh) ? 0 : _integrationDetail.history.count;
+    if (pulling) {
+        request.showsLoadingView = NO;
+    }
     __weak typeof(self) weakSelf = self;
     [self post:request forResponseClass:[WGIntegrationDetailResponse class] success:^(JHResponse *response) {
         [weakSelf handleIntegrationDetailResponse:(WGIntegrationDetailResponse *)response refresh:refresh pulling:pulling];

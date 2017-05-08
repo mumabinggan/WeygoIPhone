@@ -97,6 +97,9 @@
     if (response.success) {
         [[WGApplication sharedApplication] handleShopCartGoodCount:response.data.goodCount];
     }
+    else {
+        [self showWarningMessage:response.message];
+    }
 }
 
 - (void)handleDeleteIndexPath:(NSIndexPath *)indexPath {

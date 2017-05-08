@@ -33,13 +33,13 @@
     [self addSubview:_nameLabel];
     
     _reducePriceLabel = [[JHLabel alloc] initWithFrame:CGRectMake(_nameLabel.x, _nameLabel.maxY + kAppAdaptHeight(10), _nameLabel.width, kAppAdaptHeight(20))];
-    _reducePriceLabel.font = kAppAdaptFont(15);
+    _reducePriceLabel.font = kAppAdaptFont(14);
     _reducePriceLabel.textColor = kRGBA(0, 0, 0, 0.87);
     _reducePriceLabel.textAlignment = NSTextAlignmentRight;
     [self addSubview:_reducePriceLabel];
     
     _currentPriceLabel = [[JHLabel alloc] initWithFrame:CGRectMake(_nameLabel.x, _nameLabel.maxY + kAppAdaptHeight(10), _nameLabel.width, kAppAdaptHeight(20))];
-    _currentPriceLabel.font = kAppAdaptFont(16);
+    _currentPriceLabel.font = kAppAdaptFont(14);
     _currentPriceLabel.textColor = WGAppBaseColor;
     _currentPriceLabel.textAlignment = NSTextAlignmentLeft;
     [self addSubview:_currentPriceLabel];

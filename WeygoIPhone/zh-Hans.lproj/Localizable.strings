@@ -32,7 +32,7 @@
 "Cognome" = "姓";
 "Nome" = "名";
 "Italia" = "意大利";
-"Telefono/Cellulare" = "电话/手机";
+"Telefono/Cellulare" = "电话";
 "Citta" = "城市";
 "CAP" = "邮编";
 "Indirizzo" = "地址";
@@ -42,7 +42,7 @@
 "Ascensore" = "是否有电梯";
 "Piano" = "楼层";
 //购物车
-"Totale:Price With Unit" = "Totale:€%.2f";
+"Totale:Price With Unit" = "Totale：%@";
 "Totale:Price With String Unit" = "总价:%@";
 "Confirm" = "确定";
 "Carrello" = "购物车";
@@ -255,6 +255,8 @@
 "Address_HaveLift" = "是";
 "Address_NoLift" = "否";
 "Address_Italia" = "意大利";
+"Address_Default" = "设置为默认";
+"Address_unDefault" = "默认";
 
 //发票列表(完成)
 "ReceiptList_Title" = "发票列表";

@@ -14,6 +14,7 @@
     JHLabel *_nameLabel;
     JHLabel *_priceLabel;
     JHLabel *_currentLabel;
+    JHLabel *_specificationLabel;
 }
 @end
 
@@ -35,6 +36,11 @@
     _priceLabel.font = kAppAdaptFont(14);
     _priceLabel.textColor = WGAppLightNameLabelColor;
     [self.contentView addSubview:_priceLabel];
+    
+    _specificationLabel = [[JHLabel alloc] initWithFrame:CGRectMake(kAppAdaptWidth(15), _priceLabel.maxY + kAppAdaptHeight(8), kDeviceWidth - kAppAdaptWidth(30), _currentLabel.height)];
+    _specificationLabel.font = kAppAdaptFont(14);
+    _specificationLabel.textColor = WGAppLightNameLabelColor;
+    [self.contentView addSubview:_specificationLabel];
 }
 
 - (void)showWithData:(JHObject *)data {
@@ -52,6 +58,10 @@
     _priceLabel.attributedText = [priceStr addMidline];
     _priceLabel.x = _currentLabel.maxX + kAppAdaptWidth(10);
     _priceLabel.y = _currentLabel.y;
+    
+    NSString *specification = good.specification;
+    _specificationLabel.y = _currentLabel.maxY + kAppAdaptHeight(8);
+    _specificationLabel.text = specification;
 }
 
 + (CGFloat)heightWithData:(JHObject *)data {
@@ -61,8 +71,12 @@
     height += [good.name returnSize:kAppAdaptFontBold(16) maxWidth:kDeviceWidth - kAppAdaptWidth(30)].height;
     height += kAppAdaptHeight(8);
     NSString *currentPriceStr = good.currentPrice;
-    height += [currentPriceStr returnSize:kAppAdaptFont(14) maxWidth:200].height;
+    float currentPriceHeight = [currentPriceStr returnSize:kAppAdaptFont(14) maxWidth:200].height;
+    height += currentPriceHeight;
     height += kAppAdaptHeight(16);
+    if (![NSString isNullOrEmpty:good.specification]) {
+        height += kAppAdaptHeight(20);
+    }
     return height;
 }
 

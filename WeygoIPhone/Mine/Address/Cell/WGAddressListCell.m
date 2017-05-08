@@ -71,7 +71,7 @@
     [self.contentView addSubview:_lineView];
     
     _defaultBtn = [[JHButton alloc] initWithFrame:CGRectMake(_title1NameLabel.x, _lineView.maxY + kAppAdaptHeight(8), kAppAdaptWidth(80), kAppAdaptHeight(24))];
-    [_defaultBtn setTitle:kStr(@"Default") forState:UIControlStateNormal];
+    [_defaultBtn setTitle:kStr(@"Address_Default") forState:UIControlStateNormal];
     _defaultBtn.titleLabel.font = kAppAdaptFont(12);
     _defaultBtn.layer.masksToBounds = YES;
     _defaultBtn.layer.cornerRadius = kAppAdaptHeight(12);

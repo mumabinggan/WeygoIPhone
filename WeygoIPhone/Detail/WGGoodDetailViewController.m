@@ -18,6 +18,7 @@
 #import "WGPostCodePopoverView.h"
 #import "WGViewController+ShopCart.h"
 #import "WGHomeFloorContentGoodItem.h"
+#import "WGCarouselFigureItem.h"
 
 @interface WGGoodDetailViewController ()
 {
@@ -136,30 +137,29 @@
         [view showInView:self.view];
         return;
     }
-    [[WGApplication sharedApplication] loadAddGoodToCart:_goodDetail.id count:_addView.count onCompletion:^(WGAddGoodToCartResponse *response) {
-        //[self showWarningMessage:response.message];
-    }];
-    [[WGApplication sharedApplication] handleShopCartGoodCount:_addView.count];
-}
-
-- (void)handleRecommendGood:(WGHomeFloorContentItem *)item {
-    WGGoodDetailViewController *vc = [[WGGoodDetailViewController alloc] init];
-    vc.goodId = item.id;
-    [self.navigationController pushViewController:vc animated:YES];
-}
-
-- (void)handleAddShopCart:(WGHomeFloorContentGoodItem *)item fromPoint:(CGPoint )fromPoint {
     WeakSelf;
-    [[WGApplication sharedApplication] loadAddGoodToCart:item.id count:1 onCompletion:^(WGAddGoodToCartResponse *response) {
+    [[WGApplication sharedApplication] loadAddGoodToCart:_goodDetail.id count:_addView.count onCompletion:^(WGAddGoodToCartResponse *response) {
         [weakSelf handleShopCartCount:response];
     }];
-    [[WGApplication sharedApplication] addShopToCart:item.pictureURL fromPoint:fromPoint];
+    if (_goodDetail && _goodDetail.carouselFigures && _goodDetail.carouselFigures.count > 0) {
+        WGCarouselFigureItem *item = _goodDetail.carouselFigures[0];
+        [[WGApplication sharedApplication] addShopToCart:item.pictureURL fromPoint:CGPointMake(sender.center.x, sender.center.y)];
+    }
 }
 
 - (void)handleShopCartCount:(WGAddGoodToCartResponse *)response {
     if (response.success) {
         [[WGApplication sharedApplication] handleShopCartGoodCount:response.data.goodCount];
     }
+    else {
+        [self showWarningMessage:response.message];
+    }
+}
+
+- (void)handleRecommendGood:(WGHomeFloorContentItem *)item {
+    WGGoodDetailViewController *vc = [[WGGoodDetailViewController alloc] init];
+    vc.goodId = item.id;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

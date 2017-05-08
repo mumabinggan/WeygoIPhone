@@ -32,6 +32,7 @@
 
 - (NSString *)host {
     return @"m.delong6688.develop.weygo.com";
+    //return @"m.roc.weygo.com";
 }
 
 - (NSString *)userPath {

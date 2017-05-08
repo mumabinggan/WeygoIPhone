@@ -22,6 +22,8 @@
 
 @property (nonatomic, strong) NSString *currentPrice;
 
+@property (nonatomic, strong) NSString *specification;  //规格
+
 @property (nonatomic, assign) float discount;
 
 @property (nonatomic, assign) long long favoriteId;
