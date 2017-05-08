@@ -7,16 +7,24 @@
 //
 
 #import "WGOrderListRebuyCell.h"
+#import "WGOrderListItem.h"
+
+@interface WGOrderListRebuyCell ()
+{
+    WGOrderListItem *_data;
+    JHButton *_rebuyBtn;
+}
+@end
 
 @implementation WGOrderListRebuyCell
 
 - (void)loadSubviews {
-    JHButton *rebuyBtn = [[JHButton alloc] initWithFrame:CGRectMake(kAppAdaptWidth(108), kAppAdaptHeight(12), kAppAdaptWidth(160), kAppAdaptHeight(32)) difRadius:JHRadiusMake(kAppAdaptHeight(16), kAppAdaptHeight(16), kAppAdaptHeight(16), kAppAdaptHeight(16)) backgroundColor:WGAppBlueButtonColor];
-    [rebuyBtn addTarget:self action:@selector(touchRebuyBtn:) forControlEvents:UIControlEventTouchUpInside];
-    [rebuyBtn setTitle:kStr(@"Order Rebuy") forState:UIControlStateNormal];
-    [rebuyBtn setTitleColor:kWhiteColor forState:UIControlStateNormal];
-    rebuyBtn.titleLabel.font = kAppAdaptFont(12);
-    [self.contentView addSubview:rebuyBtn];
+    _rebuyBtn = [[JHButton alloc] initWithFrame:CGRectMake(kAppAdaptWidth(108), kAppAdaptHeight(12), kAppAdaptWidth(160), kAppAdaptHeight(32)) difRadius:JHRadiusMake(kAppAdaptHeight(16), kAppAdaptHeight(16), kAppAdaptHeight(16), kAppAdaptHeight(16)) backgroundColor:WGAppBlueButtonColor];
+    [_rebuyBtn addTarget:self action:@selector(touchRebuyBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [_rebuyBtn setTitle:kStr(@"Order Rebuy") forState:UIControlStateNormal];
+    [_rebuyBtn setTitleColor:kWhiteColor forState:UIControlStateNormal];
+    _rebuyBtn.titleLabel.font = kAppAdaptFont(12);
+    [self.contentView addSubview:_rebuyBtn];
     
     JHView *lineView = [[JHView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kAppSepratorLineHeight)];
     lineView.backgroundColor = WGAppSeparateLineColor;
@@ -24,9 +32,15 @@
 }
 
 - (void)touchRebuyBtn:(JHButton *)sender {
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    CGPoint point = [self convertPoint:CGPointMake(_rebuyBtn.x + _rebuyBtn.width/2, _rebuyBtn.y) toView:window];
     if (self.onApply) {
-        self.onApply();
+        self.onApply(_data, point);
     }
+}
+
+- (void)showWithData:(JHObject *)data {
+    _data = (WGOrderListItem *)data;
 }
 
 @end

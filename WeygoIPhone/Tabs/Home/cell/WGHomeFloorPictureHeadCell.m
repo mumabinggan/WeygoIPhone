@@ -21,6 +21,8 @@
 - (void)loadSubviews {
     [super loadSubviews];
     _imageView = [[JHImageView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, 1)];
+    _imageView.contentMode = UIViewContentModeScaleAspectFill;
+    _imageView.clipsToBounds = YES;
     [self.contentView addSubview:_imageView];
     
     //_radiusLabel = [[JHLabel alloc] initWithFrame:CGRectMake(0, 0, 1, 1)];

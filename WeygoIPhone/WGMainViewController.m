@@ -14,6 +14,7 @@
 #import "WGTabMineViewController.h"
 #import "WGHomeSliderViewController.h"
 #import "WGLoginViewController.h"
+#import "WGTabAsiaViewController.h"
 
 static const float kTabBarHeight = 60;
 
@@ -37,8 +38,8 @@ static const float kTabBarHeight = 60;
     self.viewControllers = [NSArray arrayWithObjects:
                             [[WGHomeTabViewController alloc] init],
                             [[WGTabClassifyViewController alloc] init],
-                            [[WGTabShopCartViewController alloc] init],
                             [[WGTabBenefitViewController alloc] init],
+                            [[WGTabAsiaViewController alloc] init],
                             [[WGTabMineViewController alloc] init],
                             nil];
 //    self.viewControllers = [NSArray arrayWithObjects:
@@ -109,7 +110,7 @@ static const float kTabBarHeight = 60;
 }
 
 - (void)handleUpdateShopCart:(NSNotification *)notification {
-    [self.tabBar show:[WGApplication sharedApplication].shopCartGoodCount > 0 ? YES : NO index:WGTabIndexShopCart badgeNumber:[WGApplication sharedApplication].shopCartGoodCount];
+//    [self.tabBar show:[WGApplication sharedApplication].shopCartGoodCount > 0 ? YES : NO index:WGTabIndexShopCart badgeNumber:[WGApplication sharedApplication].shopCartGoodCount];
 }
 
 - (void)resetViewControllersWithIndex:(NSInteger)index {

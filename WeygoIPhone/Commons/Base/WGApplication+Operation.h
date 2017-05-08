@@ -61,6 +61,8 @@
 
 - (void)addShopToCart:(NSString *)imageURL fromPoint:(CGPoint)fromPoint;
 
+- (void)addShopToCartImage:(NSString *)imageString fromPoint:(CGPoint)fromPoint;
+
 - (void)addShopToTabCart:(NSString *)imageURL fromPoint:(CGPoint)fromPoint;
 
 @end

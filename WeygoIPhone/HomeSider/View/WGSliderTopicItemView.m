@@ -50,7 +50,7 @@
     _item = (WGTopicItem *)data;
     NSString *url = _item.pictureURL;
     NSString *name = _item.name;
-    UIImage *placeholderImage = [UIImage imageNamed:@""];
+    UIImage *placeholderImage = kHomeTopicPlaceholderImage;
     [_imageView setImageWithURL:[NSURL URLWithString:url] placeholderImage:placeholderImage options:JHWebImageOptionsRefreshCached];
     
     _nameLabel.text = name;

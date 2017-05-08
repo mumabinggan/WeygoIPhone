@@ -24,4 +24,6 @@ typedef NS_ENUM(NSInteger, WGConfigContentType) {
 
 @property (nonatomic, assign) TWRefreshType refreshType;
 
+- (TWRefreshTableView *)tableView;
+
 @end

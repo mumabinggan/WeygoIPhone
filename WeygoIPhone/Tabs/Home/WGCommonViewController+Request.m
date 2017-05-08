@@ -116,6 +116,10 @@
         WGTitleItem *item = _titleArray[index];
         WGHomeTabContentRequest *request = [[WGHomeTabContentRequest alloc] init];
         request.menuId = item.id;
+        JHObject *object = [_tabDataMDictionary objectForKey:@(index)];
+        if (object) {
+            request.showsLoadingView = NO;
+        }
         __weak typeof(self) weakSelf = self;
         [self post:request forResponseClass:[WGHomeTabContentResponse class] success:^(JHResponse *response) {
             [weakSelf handleHomeContent:(WGHomeTabContentResponse *)response index:index isFirst:isFirst];
@@ -127,6 +131,10 @@
 }
 
 - (void)handleHomeContent:(WGHomeTabContentResponse *)response index:(NSInteger)index isFirst:(BOOL)isFirst {
+    WGHomeTabContentViewController *contentVC = [_tabContentMDictionary objectForKey:@(index)];
+    if (contentVC) {
+        [self stopRefreshing:contentVC.tableView refresh:YES pulling:YES];
+    }
     if (response.success) {
         if (response.data) {
             [_tabDataMDictionary setObject:response.data forKey:@(index)];

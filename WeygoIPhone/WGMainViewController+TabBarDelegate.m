@@ -36,8 +36,8 @@
 - (void)handleLoginSuccess {
     self.selectedIndex = WGTabIndexMine;
     WGTabMineViewController *mineViewController = self.selectedViewController;
-    if (mineViewController && [mineViewController respondsToSelector:@selector(refresh)]) {
-        [mineViewController refresh];
+    if (mineViewController && [mineViewController respondsToSelector:@selector(refresh:)]) {
+        [mineViewController refresh:[WGApplication sharedApplication].user];
     }
     [self.navigationController popViewControllerAnimated:YES];
 }

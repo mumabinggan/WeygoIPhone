@@ -31,65 +31,6 @@
     [self loadOrderList:YES pulling:NO];
 }
 
-//- (void)initData {
-//    WGOrderListItem *item = [[WGOrderListItem alloc] init];
-//    item.id = 54434334343;
-//    item.status = @"发送中";
-//    item.deliverPrice = @"4334.23";
-//    item.totalPrice = @"434323.23";
-//    
-//    WGOrderGoodItem *goodItem = [[WGOrderGoodItem alloc] init];
-//    goodItem.goodCount = 12;
-//    goodItem.orderPrice = @"123.32";
-//    goodItem.orderCurrentPrice = @"54.23";
-//    goodItem.orderReducePrice = @"43.23";
-//    goodItem.name = @"fasdfasdfasdfasdf";
-//    goodItem.pictureURL = @"https://imgwater-test.oss.aliyuncs.com/b9831974f70a4108b2bdfcde5c241a22";
-//    goodItem.chineseName = @"郑渊谦";
-//    goodItem.briefDescription = @"asdfasdfasdfasdfasdfas";
-//    goodItem.price = @"932.32";
-//    goodItem.currentPrice = @"322.23";
-//    
-//    WGOrderGoodItem *goodItem1 = [[WGOrderGoodItem alloc] init];
-//    goodItem1.goodCount = 1;
-//    goodItem1.orderPrice = @"123.32";
-//    goodItem1.orderCurrentPrice = @"54.23";
-//    goodItem1.orderReducePrice = @"43.23";
-//    goodItem1.name = @"sadfas";
-//    goodItem1.pictureURL = @"https://imgwater-test.oss.aliyuncs.com/b9831974f70a4108b2bdfcde5c241a22";
-//    goodItem1.chineseName = @"郑渊谦";
-//    goodItem1.briefDescription = @"asdfasdfasdfasdfasdfas";
-//    goodItem1.price = @"932.32";
-//    goodItem1.currentPrice = @"322.23";
-//    
-//    WGOrderGoodItem *goodItem2 = [[WGOrderGoodItem alloc] init];
-//    goodItem2.goodCount = 4;
-//    goodItem2.orderPrice = @"123.32";
-//    goodItem2.orderCurrentPrice = @"54.23";
-//    goodItem2.orderReducePrice = @"43.23";
-//    goodItem2.name = @"zhengasdfl";
-//    goodItem2.pictureURL = @"https://imgwater-test.oss.aliyuncs.com/b9831974f70a4108b2bdfcde5c241a22";
-//    goodItem2.chineseName = @"郑渊谦";
-//    goodItem2.briefDescription = @"asdfasdfasdfasdfasdfas";
-//    goodItem2.price = @"932.32";
-//    goodItem2.currentPrice = @"122.23";
-//    
-//    WGOrderGoodItem *goodItem3 = [[WGOrderGoodItem alloc] init];
-//    goodItem3.goodCount = 8;
-//    goodItem3.orderPrice = @"123.32";
-//    goodItem3.orderCurrentPrice = @"54.23";
-//    goodItem3.orderReducePrice = @"43.23";
-//    goodItem3.name = @"zhengasdfl";
-//    goodItem3.pictureURL = @"https://imgwater-test.oss.aliyuncs.com/b9831974f70a4108b2bdfcde5c241a22";
-//    goodItem3.chineseName = @"郑渊谦";
-//    goodItem3.briefDescription = @"asdfasdfasdfasdfasdfas";
-//    goodItem3.price = @"932.32";
-//    goodItem3.currentPrice = @"122.23";
-//    
-//    item.goods = @[goodItem, goodItem1, goodItem2, goodItem3];
-//    _orderMArray = @[item, item, item, item];
-//}
-
 - (void)initSubView {
     [super initSubView];
     
@@ -115,11 +56,18 @@
     self.navigationItem.rightBarButtonItem = [self createShopCartItem];
 }
 
-- (void)handleReBuy:(NSInteger)index {
-    WGOrderListItem *item = _orderMArray[index];
+- (void)handleReBuy:(WGOrderListItem *)item fromPoint:(CGPoint)fromPoint {
+    WeakSelf;
+    [self showLoadingViewWithMessage:nil];
     [[WGApplication sharedApplication] loadRebuyOrder:item.id onCompletion:^(WGRebuyOrderResponse *response) {
-        [[WGApplication sharedApplication] switchTab:WGTabIndexShopCart];
+        [weakSelf handleRebuy:response fromPoint:fromPoint];
     }];
+}
+
+- (void)handleRebuy:(WGRebuyOrderResponse *)response fromPoint:(CGPoint)fromPoint {
+    [self removeLoadingView];
+    [self showWarningMessage:response.message];
+    [[WGApplication sharedApplication] addShopToCartImage:@"add_cart" fromPoint:fromPoint];
 }
 
 - (void)handleGoodDetail:(long long)goodId {
@@ -204,8 +152,8 @@
         else if (row == 3) {
             __weak id weakSelf = self;
             WGOrderListRebuyCell *reBuyCell = [[WGOrderListRebuyCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
-            reBuyCell.onApply = ^() {
-                [weakSelf handleReBuy:indexPath.section];
+            reBuyCell.onApply = ^(WGOrderListItem *item, CGPoint fromPoint) {
+                [weakSelf handleReBuy:item fromPoint:fromPoint];
             };
             cell = reBuyCell;
         }

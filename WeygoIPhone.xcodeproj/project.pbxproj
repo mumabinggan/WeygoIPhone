@@ -453,6 +453,8 @@
 		BEF6855E1E31FF8E003B745B /* WGClassifyHotSaleGoodCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF6855D1E31FF8E003B745B /* WGClassifyHotSaleGoodCell.m */; };
 		BEF685611E320216003B745B /* WGClassifyHotGoodItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF685601E320216003B745B /* WGClassifyHotGoodItem.m */; };
 		BEF685641E3205D9003B745B /* WGTextClassifyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF685631E3205D9003B745B /* WGTextClassifyCell.m */; };
+		BEF6AF751EC0C9C500B8DE1E /* WGTabAsiaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF6AF741EC0C9C500B8DE1E /* WGTabAsiaViewController.m */; };
+		BEF6AF7B1EC0CB4C00B8DE1E /* WGTabAsiaViewController+Request.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF6AF7A1EC0CB4C00B8DE1E /* WGTabAsiaViewController+Request.m */; };
 		BEF8ED521E8A549400E15C8F /* WGTabClassifyViewController+Request.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF8ED511E8A549400E15C8F /* WGTabClassifyViewController+Request.m */; };
 		BEF8ED5E1E8A683A00E15C8F /* WGCancelCollectGoodRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF8ED5D1E8A683A00E15C8F /* WGCancelCollectGoodRequest.m */; };
 		BEF8ED611E8A695C00E15C8F /* WGCancelCollectGoodResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF8ED601E8A695C00E15C8F /* WGCancelCollectGoodResponse.m */; };
@@ -1360,6 +1362,10 @@
 		BEF685601E320216003B745B /* WGClassifyHotGoodItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGClassifyHotGoodItem.m; sourceTree = "<group>"; };
 		BEF685621E3205D9003B745B /* WGTextClassifyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGTextClassifyCell.h; sourceTree = "<group>"; };
 		BEF685631E3205D9003B745B /* WGTextClassifyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGTextClassifyCell.m; sourceTree = "<group>"; };
+		BEF6AF731EC0C9C500B8DE1E /* WGTabAsiaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGTabAsiaViewController.h; sourceTree = "<group>"; };
+		BEF6AF741EC0C9C500B8DE1E /* WGTabAsiaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGTabAsiaViewController.m; sourceTree = "<group>"; };
+		BEF6AF791EC0CB4C00B8DE1E /* WGTabAsiaViewController+Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGTabAsiaViewController+Request.h"; sourceTree = "<group>"; };
+		BEF6AF7A1EC0CB4C00B8DE1E /* WGTabAsiaViewController+Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGTabAsiaViewController+Request.m"; sourceTree = "<group>"; };
 		BEF8ED501E8A549400E15C8F /* WGTabClassifyViewController+Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGTabClassifyViewController+Request.h"; sourceTree = "<group>"; };
 		BEF8ED511E8A549400E15C8F /* WGTabClassifyViewController+Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGTabClassifyViewController+Request.m"; sourceTree = "<group>"; };
 		BEF8ED5C1E8A683A00E15C8F /* WGCancelCollectGoodRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGCancelCollectGoodRequest.h; sourceTree = "<group>"; };
@@ -3570,6 +3576,10 @@
 				BECBE30F1E87C43800ADAD6C /* WGSpecialClassifyViewController.m */,
 				BE62CD871EA0DDB70076BD69 /* WGSpecialClassifyViewController+Request.h */,
 				BE62CD881EA0DDB70076BD69 /* WGSpecialClassifyViewController+Request.m */,
+				BEF6AF731EC0C9C500B8DE1E /* WGTabAsiaViewController.h */,
+				BEF6AF741EC0C9C500B8DE1E /* WGTabAsiaViewController.m */,
+				BEF6AF791EC0CB4C00B8DE1E /* WGTabAsiaViewController+Request.h */,
+				BEF6AF7A1EC0CB4C00B8DE1E /* WGTabAsiaViewController+Request.m */,
 			);
 			path = Asia;
 			sourceTree = "<group>";
@@ -4100,6 +4110,7 @@
 				BE6BE9271E7FB70800A081BA /* WGUpdateOrderCouponResponse.m in Sources */,
 				BEA374B21E3491770054B8E6 /* WGClassifySortView.m in Sources */,
 				BEB8D0F51E48581D00BB9BA3 /* WGLoginViewController+Request.m in Sources */,
+				BEF6AF7B1EC0CB4C00B8DE1E /* WGTabAsiaViewController+Request.m in Sources */,
 				BE57D1591E7DB77900149738 /* TTTAttributedLabel.m in Sources */,
 				BEB2D9211DFBDFE900F2E74B /* WGHomeTabViewController.m in Sources */,
 				BEED6B7A1EAF8CA700B56455 /* AppDelegate+Zendesk.m in Sources */,
@@ -4381,6 +4392,7 @@
 				BE52EDBD1E2DC26D0022EF5B /* WGAddressListViewController.m in Sources */,
 				BEB2D9851DFE3FF400F2E74B /* WGHomeTitleView.m in Sources */,
 				BE99E7A81E1C957F00210546 /* WGHomeFloorContentCountryItem.m in Sources */,
+				BEF6AF751EC0C9C500B8DE1E /* WGTabAsiaViewController.m in Sources */,
 				BEF6855B1E31FD06003B745B /* WGImageClassifyCell.m in Sources */,
 				BEB2D91F1DFBDFE900F2E74B /* WGTabClassifyViewController.m in Sources */,
 				BE6CC1DD1E2BBA78003755FF /* WGClassifyGoodListViewController.m in Sources */,

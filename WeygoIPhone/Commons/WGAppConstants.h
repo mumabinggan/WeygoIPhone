@@ -82,28 +82,24 @@ static float kNavigationY = 64;
 
 //Placeholder UIImage
 
-#define kLoginVerificationCodePlaceholderImage [UIImage imageNamed:@""]
-#define kMineHeaderPlaceholderImage [UIImage imageNamed:@""]
-#define kPersonInfoHeaderPlaceholderImage [UIImage imageNamed:@""]
+#define kHomeTopicPlaceholderImage [UIImage imageNamed:@"image_loading_small"]
 
-#define kHomeTopicPlaceholderImage [UIImage imageNamed:@""]
+#define kHomeFloorPictureHeaderPlaceholderImage [UIImage imageNamed:@"image_loading"]
 
-#define kHomeFloorPictureHeaderPlaceholderImage [UIImage imageNamed:@""]
+#define kHomeGoodListPlaceholderImage [UIImage imageNamed:@"image_loading_small"]
+#define kHomeGoodColumnPlaceholderImage [UIImage imageNamed:@"image_loading_small"]
+#define kHomeGoodGridPlaceholderImage [UIImage imageNamed:@"image_loading_small"]
+#define kHomeClassifyGridPlaceholderImage [UIImage imageNamed:@"image_loading_small"]
+#define kHomeClassifyColumnPlaceholderImage [UIImage imageNamed:@"image_loading_small"]
+#define kHomeClassifyListPlaceholderImage [UIImage imageNamed:@"image_loading_small"]
+#define kHomeCountryPlaceholderImage [UIImage imageNamed:@"image_loading_small"]
 
-#define kHomeGoodListPlaceholderImage [UIImage imageNamed:@""]
-#define kHomeGoodColumnPlaceholderImage [UIImage imageNamed:@""]
-#define kHomeGoodGridPlaceholderImage [UIImage imageNamed:@""]
-#define kHomeClassifyGridPlaceholderImage [UIImage imageNamed:@""]
-#define kHomeClassifyColumnPlaceholderImage [UIImage imageNamed:@""]
-#define kHomeClassifyListPlaceholderImage [UIImage imageNamed:@""]
-#define kHomeCountryPlaceholderImage [UIImage imageNamed:@""]
+#define kClassifyGoodListClassifyPlaceholderImage [UIImage imageNamed:@"image_loading_small"]
 
-#define kClassifyGoodListClassifyPlaceholderImage [UIImage imageNamed:@""]
+#define kClassifyClassifyPlaceholderImage [UIImage imageNamed:@"image_loading_small"]
 
-#define kClassifyClassifyPlaceholderImage [UIImage imageNamed:@""]
+#define kInvitationPlaceholderImage [UIImage imageNamed:@"image_loading"]
 
-#define kInvitationPlaceholderImage [UIImage imageNamed:@""]
-
-#define kShopCartGiftPlaceholderImage [UIImage imageNamed:@""]
+#define kShopCartGiftPlaceholderImage [UIImage imageNamed:@"image_loading_small"]
 
 #endif /* WGAppConstants_h */

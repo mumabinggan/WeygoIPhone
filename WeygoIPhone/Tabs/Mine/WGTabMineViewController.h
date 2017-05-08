@@ -14,6 +14,6 @@
     WGUser *_data;
 }
 
-- (void)refresh;
+- (void)refresh:(WGUser *)user;
 
 @end

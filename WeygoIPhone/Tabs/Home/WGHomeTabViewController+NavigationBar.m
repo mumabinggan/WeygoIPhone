@@ -41,6 +41,4 @@
     [view show];
 }
 
-//- (void)
-
 @end

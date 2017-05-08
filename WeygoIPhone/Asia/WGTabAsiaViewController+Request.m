@@ -1,20 +1,20 @@
 //
-//  WGSpecialClassifyViewController+Request.m
+//  WGTabAsiaViewController+Request.m
 //  WeygoIPhone
 //
-//  Created by muma on 2017/4/14.
+//  Created by muma on 2017/5/8.
 //  Copyright © 2017年 weygo.com. All rights reserved.
 //
 
-#import "WGSpecialClassifyViewController+Request.h"
+#import "WGTabAsiaViewController+Request.h"
 #import "WGHomeTabContentRequest.h"
 #import "WGHomeTabContentResponse.h"
 
-@implementation WGSpecialClassifyViewController (Request)
+@implementation WGTabAsiaViewController (Request)
 
-- (void)loadSpecailClassify {
+- (void)loadAsiaClassify {
     WGHomeTabContentRequest *request = [[WGHomeTabContentRequest alloc] init];
-    request.menuId = self.id;
+    request.menuId = 193;
     __weak typeof(self) weakSelf = self;
     [self post:request forResponseClass:[WGHomeTabContentResponse class] success:^(JHResponse *response) {
         [weakSelf handleHomeContent:(WGHomeTabContentResponse *)response];

@@ -7,6 +7,7 @@
 //
 
 #import "WGTabViewController.h"
+#import "WGShopCartViewController.h"
 
 @interface WGTabViewController ()
 
@@ -77,7 +78,8 @@
 }
 
 - (void)touchShopCartButton:(JHButton *)sender {
-    [[WGApplication sharedApplication] switchTab:WGTabIndexShopCart];
+    WGShopCartViewController *vc = [[WGShopCartViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

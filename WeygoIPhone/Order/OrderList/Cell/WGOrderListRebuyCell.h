@@ -7,9 +7,10 @@
 //
 
 #import "JHTableViewCell.h"
+#import "WGOrderListItem.h"
 
 @interface WGOrderListRebuyCell : JHTableViewCell
 
-@property (nonatomic, copy) void (^onApply)();
+@property (nonatomic, copy) void (^onApply)(WGOrderListItem *item, CGPoint fromPoint);
 
 @end
