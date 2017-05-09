@@ -9,12 +9,12 @@
 #import "WGHomeFloorGoodListItemView.h"
 #import "WGRatingView.h"
 #import "WGHomeFloorContentGoodItem.h"
+#import "WGDiscountView.h"
 
 @interface WGHomeFloorGoodListItemView ()
 {
     JHImageView     *_imageView;
-    JHImageView     *_discountImageView;
-    JHLabel         *_discountLabel;
+    WGDiscountView  *_discountView;
     
     JHLabel         *_nameLabel;
     JHLabel         *_briefDescribeLabel;
@@ -38,6 +38,12 @@
     _imageView.contentMode = UIViewContentModeScaleAspectFill;
     _imageView.clipsToBounds = YES;
     [self addSubview:_imageView];
+    
+    CGFloat width = _imageView.width * 3 / 7;
+    _discountView = [[WGDiscountView alloc] initWithFrame:CGRectMake(0, 0, width, width)];
+    _discountView.font = kWGOswaldMediumAdaptFont(11);
+    [_imageView addSubview:_discountView];
+    _discountView.hidden = YES;
     
     _nameLabel = [[JHLabel alloc] initWithFrame:CGRectMake(_imageView.maxX + kAppAdaptWidth(16), kAppAdaptHeight(12), kDeviceWidth - _imageView.maxX - marginRight - kAppAdaptWidth(16), kAppAdaptHeight(20))];
     _nameLabel.font = kAppAdaptFontBold(16);
@@ -101,6 +107,9 @@
     _data = object;
     
     [_imageView setImageWithURL:[NSURL URLWithString:_data.pictureURL] placeholderImage:kHomeGoodListPlaceholderImage options:JHWebImageOptionsRefreshCached];
+    
+    _discountView.hidden = !_data.hasDiscount;
+    _discountView.discount = _data.discount;
     
     _nameLabel.text = _data.name;
     

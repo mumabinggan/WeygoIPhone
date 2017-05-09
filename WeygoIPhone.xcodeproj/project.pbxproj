@@ -232,6 +232,7 @@
 		BE74CDAC1E626B3700600A28 /* WGHomeSliderViewController+Request.m in Sources */ = {isa = PBXBuildFile; fileRef = BE74CDAB1E626B3700600A28 /* WGHomeSliderViewController+Request.m */; };
 		BE74CDB01E626B7400600A28 /* WGHomeSliderRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE74CDAF1E626B7400600A28 /* WGHomeSliderRequest.m */; };
 		BE74CDB31E626B8E00600A28 /* WGHomeSliderResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BE74CDB21E626B8E00600A28 /* WGHomeSliderResponse.m */; };
+		BE81F9271EC19C9A00EA922E /* WGDiscountView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE81F9261EC19C9A00EA922E /* WGDiscountView.m */; };
 		BE83BB1E1E23E233002F3BCC /* WGHome.m in Sources */ = {isa = PBXBuildFile; fileRef = BE83BB1D1E23E233002F3BCC /* WGHome.m */; };
 		BE83BB211E23E300002F3BCC /* WGCarouselFigureItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BE83BB201E23E300002F3BCC /* WGCarouselFigureItem.m */; };
 		BE83BB2A1E23E46F002F3BCC /* WGNewsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BE83BB291E23E46F002F3BCC /* WGNewsItem.m */; };
@@ -455,6 +456,7 @@
 		BEF685641E3205D9003B745B /* WGTextClassifyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF685631E3205D9003B745B /* WGTextClassifyCell.m */; };
 		BEF6AF751EC0C9C500B8DE1E /* WGTabAsiaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF6AF741EC0C9C500B8DE1E /* WGTabAsiaViewController.m */; };
 		BEF6AF7B1EC0CB4C00B8DE1E /* WGTabAsiaViewController+Request.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF6AF7A1EC0CB4C00B8DE1E /* WGTabAsiaViewController+Request.m */; };
+		BEF6AF8D1EC175F800B8DE1E /* WGClassifyDetailGoodGridItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF6AF8C1EC175F800B8DE1E /* WGClassifyDetailGoodGridItemCell.m */; };
 		BEF8ED521E8A549400E15C8F /* WGTabClassifyViewController+Request.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF8ED511E8A549400E15C8F /* WGTabClassifyViewController+Request.m */; };
 		BEF8ED5E1E8A683A00E15C8F /* WGCancelCollectGoodRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF8ED5D1E8A683A00E15C8F /* WGCancelCollectGoodRequest.m */; };
 		BEF8ED611E8A695C00E15C8F /* WGCancelCollectGoodResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF8ED601E8A695C00E15C8F /* WGCancelCollectGoodResponse.m */; };
@@ -985,6 +987,8 @@
 		BE74CDAF1E626B7400600A28 /* WGHomeSliderRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGHomeSliderRequest.m; sourceTree = "<group>"; };
 		BE74CDB11E626B8E00600A28 /* WGHomeSliderResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGHomeSliderResponse.h; sourceTree = "<group>"; };
 		BE74CDB21E626B8E00600A28 /* WGHomeSliderResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGHomeSliderResponse.m; sourceTree = "<group>"; };
+		BE81F9251EC19C9A00EA922E /* WGDiscountView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGDiscountView.h; sourceTree = "<group>"; };
+		BE81F9261EC19C9A00EA922E /* WGDiscountView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGDiscountView.m; sourceTree = "<group>"; };
 		BE83BB1C1E23E233002F3BCC /* WGHome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGHome.h; sourceTree = "<group>"; };
 		BE83BB1D1E23E233002F3BCC /* WGHome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGHome.m; sourceTree = "<group>"; };
 		BE83BB1F1E23E300002F3BCC /* WGCarouselFigureItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGCarouselFigureItem.h; sourceTree = "<group>"; };
@@ -1366,6 +1370,8 @@
 		BEF6AF741EC0C9C500B8DE1E /* WGTabAsiaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGTabAsiaViewController.m; sourceTree = "<group>"; };
 		BEF6AF791EC0CB4C00B8DE1E /* WGTabAsiaViewController+Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGTabAsiaViewController+Request.h"; sourceTree = "<group>"; };
 		BEF6AF7A1EC0CB4C00B8DE1E /* WGTabAsiaViewController+Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGTabAsiaViewController+Request.m"; sourceTree = "<group>"; };
+		BEF6AF8B1EC175F800B8DE1E /* WGClassifyDetailGoodGridItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGClassifyDetailGoodGridItemCell.h; sourceTree = "<group>"; };
+		BEF6AF8C1EC175F800B8DE1E /* WGClassifyDetailGoodGridItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGClassifyDetailGoodGridItemCell.m; sourceTree = "<group>"; };
 		BEF8ED501E8A549400E15C8F /* WGTabClassifyViewController+Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGTabClassifyViewController+Request.h"; sourceTree = "<group>"; };
 		BEF8ED511E8A549400E15C8F /* WGTabClassifyViewController+Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGTabClassifyViewController+Request.m"; sourceTree = "<group>"; };
 		BEF8ED5C1E8A683A00E15C8F /* WGCancelCollectGoodRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGCancelCollectGoodRequest.h; sourceTree = "<group>"; };
@@ -3051,6 +3057,7 @@
 		BEB2D90F1DFBDFE900F2E74B /* Benefit */ = {
 			isa = PBXGroup;
 			children = (
+				BEF6AF891EC175C800B8DE1E /* Cell */,
 				BE62CDC21EA29D5B0076BD69 /* Model */,
 				BEB2D9101DFBDFE900F2E74B /* WGTabBenefitViewController.h */,
 				BEB2D9111DFBDFE900F2E74B /* WGTabBenefitViewController.m */,
@@ -3196,6 +3203,8 @@
 				BEEC21371E9B91850065DE90 /* WGIntegrationHelpView.m */,
 				BEAC8F6B1EBDD302006B236B /* WGOrderPriceTipView.h */,
 				BEAC8F6C1EBDD302006B236B /* WGOrderPriceTipView.m */,
+				BE81F9251EC19C9A00EA922E /* WGDiscountView.h */,
+				BE81F9261EC19C9A00EA922E /* WGDiscountView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -3771,6 +3780,15 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		BEF6AF891EC175C800B8DE1E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				BEF6AF8B1EC175F800B8DE1E /* WGClassifyDetailGoodGridItemCell.h */,
+				BEF6AF8C1EC175F800B8DE1E /* WGClassifyDetailGoodGridItemCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		BEF8ED5A1E8A64C000E15C8F /* Request */ = {
 			isa = PBXGroup;
 			children = (
@@ -4166,6 +4184,7 @@
 				BEF685571E31F6D2003B745B /* WGClassifyItem.m in Sources */,
 				BE8CB27D1EBB586E002480CA /* WGKeywordSearchGoodListRequest.m in Sources */,
 				BE6753A81E9332BB00250BA8 /* WGShopCartGiftResponse.m in Sources */,
+				BEF6AF8D1EC175F800B8DE1E /* WGClassifyDetailGoodGridItemCell.m in Sources */,
 				BEB8D08B1E46CDB100BB9BA3 /* WGBaseServiceRequest.m in Sources */,
 				BEF6855E1E31FF8E003B745B /* WGClassifyHotSaleGoodCell.m in Sources */,
 				BEB8D0E21E47F62500BB9BA3 /* WGEditPersonInfoCell.m in Sources */,
@@ -4222,6 +4241,7 @@
 				BE6CC1BE1E2941AA003755FF /* WGHomeFloorClassifyListItemCell.m in Sources */,
 				BEF6854E1E31DFB5003B745B /* WGShopCartViewController.m in Sources */,
 				BEEC212F1E9B7F270065DE90 /* WGIntegrationDetailRequest.m in Sources */,
+				BE81F9271EC19C9A00EA922E /* WGDiscountView.m in Sources */,
 				BEFEC33C1E964272002FCF1F /* WGClassifyDetailFilterResponse.m in Sources */,
 				BE57D1651E7E35CC00149738 /* WGDeleteMessageRequest.m in Sources */,
 				BE520FF01E88094B004BD34E /* WGTabClassifyViewController+NavigationBar.m in Sources */,

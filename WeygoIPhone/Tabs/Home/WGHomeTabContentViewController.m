@@ -363,8 +363,8 @@
                 }
                 else if (item.type == WGHomeFloorItemTypeGoodGrid) {
                     WGHomeFloorGoodGridItemCell *goodGridCell = [[WGHomeFloorGoodGridItemCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
-                    goodGridCell.onApply = ^(WGHomeFloorContentItem *item) {
-                        [weakSelf handleFloorContentItem:item.id name:item.name jumpType:item.jumpType];
+                    goodGridCell.onApply = ^(WGHomeFloorContentGoodItem *item) {
+                        [weakSelf handleFloorContentItem:item.id name:item.name jumpType:WGAppJumpTypeGoodDetail];
                     };
                     goodGridCell.onPurchase = ^(WGHomeFloorContentGoodItem *item, CGPoint fromPoint) {
                         [weakSelf handleAddShopCart:item fromPoint:fromPoint];

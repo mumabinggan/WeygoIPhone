@@ -19,6 +19,7 @@
     JHLabel *_title3ValueLabel;
     
     JHButton *_defaultBtn;
+    JHButton *_unDefaultBtn;
     JHButton *_useBtn;
     JHButton *_modifyBtn;
     JHView *_lineView;

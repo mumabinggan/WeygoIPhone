@@ -70,15 +70,25 @@
     _lineView.backgroundColor = WGAppSeparateLineColor;
     [self.contentView addSubview:_lineView];
     
-    _defaultBtn = [[JHButton alloc] initWithFrame:CGRectMake(_title1NameLabel.x, _lineView.maxY + kAppAdaptHeight(8), kAppAdaptWidth(80), kAppAdaptHeight(24))];
-    [_defaultBtn setTitle:kStr(@"Address_Default") forState:UIControlStateNormal];
+    NSString *defaultTitle = kStr(@"Address_Default");
+    CGFloat width = [defaultTitle returnSize:kAppAdaptFont(12) maxWidth:kDeviceWidth].width;
+    _defaultBtn = [[JHButton alloc] initWithFrame:CGRectMake(_title1NameLabel.x, _lineView.maxY + kAppAdaptHeight(8), width + kAppAdaptWidth(15), kAppAdaptHeight(24)) difRadius:JHRadiusMake(kAppAdaptHeight(12), kAppAdaptHeight(12), kAppAdaptHeight(12), kAppAdaptHeight(12)) backgroundColor:WGAppBaseColor];
+    [_defaultBtn setTitle:defaultTitle forState:UIControlStateNormal];
     _defaultBtn.titleLabel.font = kAppAdaptFont(12);
-    _defaultBtn.layer.masksToBounds = YES;
-    _defaultBtn.layer.cornerRadius = kAppAdaptHeight(12);
-    //[_defaultBtn setTitleColor:kWhiteColor forState:UIControlStateNormal];
+    [_defaultBtn setTitleColor:kWhiteColor forState:UIControlStateNormal];
     [_defaultBtn addTarget:self action:@selector(touchDefaultBtn:) forControlEvents:UIControlEventTouchUpInside];
-    //[_defaultBtn setBackgroundColor:kHRGB(0xF8FAFA)];
     [self.contentView addSubview:_defaultBtn];
+    _defaultBtn.hidden = YES;
+
+    NSString *unDefaultTitle = kStr(@"Address_unDefault");
+    width = [unDefaultTitle returnSize:kAppAdaptFont(12) maxWidth:kDeviceWidth].width;
+    _unDefaultBtn = [[JHButton alloc] initWithFrame:CGRectMake(_title1NameLabel.x, _lineView.maxY + kAppAdaptHeight(8), width + kAppAdaptWidth(15), kAppAdaptHeight(24)) difRadius:JHRadiusMake(kAppAdaptHeight(12), kAppAdaptHeight(12), kAppAdaptHeight(12), kAppAdaptHeight(12)) backgroundColor:kRGB(247, 249, 250)];
+    [_unDefaultBtn setTitle:unDefaultTitle forState:UIControlStateNormal];
+    _unDefaultBtn.titleLabel.font = kAppAdaptFont(12);
+    [_unDefaultBtn setTitleColor:WGAppNameLabelColor forState:UIControlStateNormal];
+    [_unDefaultBtn addTarget:self action:@selector(touchDefaultBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [self.contentView addSubview:_unDefaultBtn];
+    _unDefaultBtn.hidden = YES;
     
     _useBtn = [[JHButton alloc] initWithFrame:CGRectMake(kAppAdaptWidth(223), _defaultBtn.y, kAppAdaptWidth(64), kAppAdaptHeight(24)) difRadius:JHRadiusMake(kAppAdaptHeight(12), kAppAdaptHeight(12), kAppAdaptHeight(12), kAppAdaptHeight(12)) borderWidth:kAppAdaptWidth(1) borderColor:WGAppFooterButtonColor];
     [_useBtn setTitle:kStr(@"Use") forState:UIControlStateNormal];
@@ -140,10 +150,11 @@
             _title3ValueLabel.text = address.phone;
             _lineView.y = _title3ValueLabel.maxY + kAppAdaptHeight(14);
             _defaultBtn.y = _lineView.maxY + kAppAdaptHeight(8);
+            _defaultBtn.hidden = !address.isDefault;
+            _unDefaultBtn.y = _defaultBtn.y;
+            _unDefaultBtn.hidden = address.isDefault;
             _useBtn.y = _defaultBtn.y;
             _modifyBtn.y = _defaultBtn.y;
-            [_defaultBtn setBackgroundColor:address.isDefault ? WGAppBaseColor : kRGB(247, 249, 250)];
-            [_defaultBtn setTitleColor:address.isDefault ? kWhiteColor : kRGB(235, 239, 240) forState:UIControlStateNormal];
         }
     }
 }
@@ -152,7 +163,6 @@
     WGAddress *address = (WGAddress *)data;
     if (address){
         NSString *addressString = address.address;
-        addressString = @"2016年9月25日 - 在iOS开发中经常会用到UIlabel来展示一些文字性的内容,但是默认的文字排版会觉得有些挤,为了更美观也更易于阅读";
         CGFloat height = kAppAdaptHeight(116);
         CGFloat addHeight = 0.0f;
         CGFloat width = [addressString returnSize:kAppAdaptFont(14) maxWidth:kDeviceWidth].width;

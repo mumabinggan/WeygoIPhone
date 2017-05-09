@@ -7,13 +7,7 @@
 //
 
 #import "WGHomeFloorGoodColumnItemView.h"
-
-@interface WGHomeFloorGoodColumnItemView ()
-{
-    JHImageView     *_discountImageView;
-    JHLabel         *_discountLabel;
-}
-@end
+#import "WGDiscountView.h"
 
 @implementation WGHomeFloorGoodColumnItemView
 
@@ -24,6 +18,12 @@
     _imageView.contentMode = UIViewContentModeScaleAspectFill;
     _imageView.clipsToBounds = YES;
     [self addSubview:_imageView];
+    
+    CGFloat width = _imageView.width * 3 / 7;
+    _discountView = [[WGDiscountView alloc] initWithFrame:CGRectMake(0, 0, width, width)];
+    _discountView.font = kWGOswaldMediumAdaptFont(12);
+    [_imageView addSubview:_discountView];
+    _discountView.hidden = YES;
     
     _nameLabel = [[JHLabel alloc] initWithFrame:CGRectMake(kAppAdaptWidth(8), _imageView.maxY + kAppAdaptHeight(12), self.width - kAppAdaptWidth(16), kAppAdaptHeight(38))];
     //_nameLabel.backgroundColor = kRedColor;
@@ -47,6 +47,8 @@
 
 - (void)showWithData:(WGHomeFloorContentGoodItem *)object {
     [_imageView setImageWithURL:[NSURL URLWithString:object.pictureURL] placeholderImage:kHomeGoodColumnPlaceholderImage options:JHWebImageOptionsRefreshCached];
+    _discountView.hidden = !object.hasDiscount;
+    _discountView.discount = object.discount;
     _nameLabel.text = object.name;
     _currentPriceLabel.text = object.currentPrice;
     _reducePriceLabel.text = [object.price addMidline].string;

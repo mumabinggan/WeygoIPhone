@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "WGHomeFloorContentGoodItem.h"
+#import "WGDiscountView.h"
 
 @interface WGHomeFloorGoodColumnItemView : JHView
 {
     JHImageView     *_imageView;
+    WGDiscountView *_discountView;
+    
     JHLabel         *_nameLabel;
     JHLabel         *_currentPriceLabel;
     JHLabel         *_reducePriceLabel;

@@ -67,8 +67,8 @@
         v.backgroundColor = kRGBA(255, 255, 255, 0.5);
         [_messageView addSubview:v];
         
-        UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleNotificationViewPan:)];
-        [_messageView addGestureRecognizer:panGesture];
+        //UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleNotificationViewPan:)];
+        //[_messageView addGestureRecognizer:panGesture];
     }
     JHLabel *messageLabel = (JHLabel*)[_messageView viewWithTag:100];
     if (messageLabel) {

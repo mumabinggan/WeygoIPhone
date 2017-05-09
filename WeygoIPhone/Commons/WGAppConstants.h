@@ -26,8 +26,8 @@
 
 #define kWGSideBarWidth  kAppAdaptWidth(280)
 
-#define kWGOswaldMediumFont(fsize)    kAppFont(fsize)
-#define kWGOswaldMediumAdaptFont(fsize)    kAppAdaptFont(fsize)
+//#define kWGOswaldMediumFont(fsize)    kAppFont(fsize)
+//#define kWGOswaldMediumAdaptFont(fsize)    kAppAdaptFont(fsize)
 
 #define kWGSFUIDisplaySemiBoldFont(fsize)    kAppFont(fsize)
 #define kWGSFUIDisplaySemiBoldAdaptFont(fsize)    kAppAdaptFont(fsize)
@@ -47,8 +47,8 @@
 
 
 
-//#define kWGOswaldMediumFont(fsize)    kFont(fsize, @"Oswald-Medium");
-//#define kWGOswaldMediumAdaptFont(fsize)    kWGOswaldMediumFont(fsize * kDeviceWidthScaleTo47Inch)
+#define kWGOswaldMediumFont(fsize)    kFont(fsize, @"Oswald-Medium");
+#define kWGOswaldMediumAdaptFont(fsize)    kWGOswaldMediumFont(fsize * kDeviceWidthScaleTo47Inch)
 //
 //#define kWGSFUIDisplaySemiBoldFont(fsize)    kFont(fsize, @"SF-UI-Display-Semibold")
 //#define kWGSFUIDisplaySemiBoldAdaptFont(fsize)    kWGSFUIDisplaySemiBoldFont(fsize * kDeviceWidthScaleTo47Inch)

@@ -10,4 +10,8 @@
 
 @implementation WGHomeFloorContentGoodItem
 
+- (BOOL)hasDiscount {
+    return ![NSString isNullOrEmpty:_discount];
+}
+
 @end

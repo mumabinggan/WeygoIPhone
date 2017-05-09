@@ -14,6 +14,8 @@
     WGHomeFloorContentGoodItem *_data;
 }
 
+@property (nonatomic, assign) BOOL displaySpecification;
+
 @property (nonatomic, copy) void (^onPurchase)(WGHomeFloorContentGoodItem *item, CGPoint fromPoint);
 
 @end

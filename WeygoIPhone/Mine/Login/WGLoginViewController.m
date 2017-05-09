@@ -185,6 +185,7 @@
     WGLoginRequest *loginRequest = [[WGLoginRequest alloc] init];
     loginRequest.username = [username trim];
     loginRequest.password = [password trim];
+    loginRequest.showsLoadingView = YES;
     if (_from == WGLoginFromShopCart) {
 //        loginRequest.cap = [WGApplication sharedApplication].currentPostCode;
 //        loginRequest.shopCarts = [WGApplication sharedApplication].getGoodsInLocalCart;

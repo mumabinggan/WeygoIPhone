@@ -24,10 +24,14 @@
 
 @property (nonatomic, strong) NSString *specification;  //规格
 
-@property (nonatomic, assign) float discount;
+//@property (nonatomic, assign) float discount;
+@property (nonatomic, strong) NSString *discount;
 
 @property (nonatomic, assign) long long favoriteId;
 
 @property (nonatomic, assign) int inStock;
+
+//for self use
+@property (nonatomic, assign) BOOL hasDiscount;
 
 @end

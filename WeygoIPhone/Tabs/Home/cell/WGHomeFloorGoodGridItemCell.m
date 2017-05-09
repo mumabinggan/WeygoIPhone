@@ -11,8 +11,6 @@
 
 @interface WGHomeFloorGoodGridItemCell ()
 {
-    WGHomeFloorGoodGridItemView *_firstItemView;
-    WGHomeFloorGoodGridItemView *_secondItemView;
     NSArray *_dataArray;
 }
 @end
@@ -50,26 +48,37 @@
     if (array.count == 1) {
         _firstItemView.hidden = NO;
         _secondItemView.hidden = YES;
-        
-        [_firstItemView showWithData:array[0]];
+        WGHomeFloorContentItem *contentItem = array[0];
+        WGHomeFloorContentGoodItem *item = (WGHomeFloorContentGoodItem *)[contentItem contentItemWithType:WGHomeFloorItemTypeClassifyGrid];
+        [_firstItemView showWithData:item];
     }
     
     if (array.count == 2) {
         _firstItemView.hidden = NO;
         _secondItemView.hidden = NO;
         
-        [_firstItemView showWithData:array[0]];
-        [_secondItemView showWithData:array[1]];
+        WGHomeFloorContentItem *contentItem0 = array[0];
+        WGHomeFloorContentGoodItem *item0 = (WGHomeFloorContentGoodItem *)[contentItem0 contentItemWithType:WGHomeFloorItemTypeGoodGrid];
+        
+        WGHomeFloorContentItem *contentItem1 = array[1];
+        WGHomeFloorContentGoodItem *item1 = (WGHomeFloorContentGoodItem *)[contentItem1 contentItemWithType:WGHomeFloorItemTypeGoodGrid];
+        
+        [_firstItemView showWithData:item0];
+        [_secondItemView showWithData:item1];
     }
 }
 
 - (void)handleClick:(UIGestureRecognizer *)recognizer {
     if (self.onApply) {
         if ([recognizer.view isEqual:_firstItemView]) {
-            self.onApply((WGHomeFloorContentItem *)(_dataArray[0]));
+            WGHomeFloorContentItem *contentItem = _dataArray[0];
+            WGHomeFloorContentGoodItem *item = (WGHomeFloorContentGoodItem *)[contentItem contentItemWithType:WGHomeFloorItemTypeGoodGrid];
+            self.onApply(item);
         }
         else {
-            self.onApply((WGHomeFloorContentItem *)_dataArray[1]);
+            WGHomeFloorContentItem *contentItem = _dataArray[1];
+            WGHomeFloorContentGoodItem *item = (WGHomeFloorContentGoodItem *)[contentItem contentItemWithType:WGHomeFloorItemTypeGoodGrid];
+            self.onApply(item);
         }
     }
 }

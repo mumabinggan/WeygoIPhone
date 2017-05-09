@@ -19,6 +19,7 @@
 #import "WGClassifyDetailContentViewController+Request.h"
 #import "WGHomeNewsCell.h"
 #import "WGGoodDetailViewController.h"
+#import "WGClassifyDetailGoodGridItemCell.h"
 
 //for test
 #import "WGCarouselFigureItem.h"
@@ -245,7 +246,7 @@
         }
     }
     else {
-        return _isGrid ? [WGHomeFloorGoodGridItemCell heightWithData:nil] : [WGHomeFloorGoodListItemCell heightWithData:nil];
+        return _isGrid ? [WGClassifyDetailGoodGridItemCell heightWithData:nil] : [WGHomeFloorGoodListItemCell heightWithData:nil];
     }
 }
 
@@ -302,8 +303,8 @@
         else {
             if (_isGrid) {
                 WeakSelf;
-                WGHomeFloorGoodGridItemCell *gridCell = [[WGHomeFloorGoodGridItemCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
-                gridCell.onApply = ^(WGHomeFloorContentItem *item) {
+                WGClassifyDetailGoodGridItemCell *gridCell = [[WGClassifyDetailGoodGridItemCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+                gridCell.onApply = ^(WGHomeFloorContentGoodItem *item) {
                     [weakSelf openGoodDetailViewController:item.id];
                 };
                 gridCell.onPurchase = ^(WGHomeFloorContentGoodItem *item, CGPoint fromPoint) {
