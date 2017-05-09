@@ -65,19 +65,17 @@
     //[self addSubview:_ratingView];
     
     _currentPriceLabel = [[JHLabel alloc] initWithFrame:CGRectMake(_nameLabel.x, _chineseNameLabel.maxY + kAppAdaptHeight(12), 100, kAppAdaptHeight(24))];
-    _currentPriceLabel.font = kWGOswaldRegularFont(16);
-    _currentPriceLabel.font = kAppAdaptFont(17);
+    _currentPriceLabel.font = kWGOswaldRegularAdaptFont(16);
+    //_currentPriceLabel.font = kWGOswaldRegularAdaptFont(17);
     _currentPriceLabel.textColor = kRGB(238, 122, 60);
     [self addSubview:_currentPriceLabel];
     
     _priceLabel = [[JHLabel alloc] initWithFrame:CGRectMake(_nameLabel.x, _chineseNameLabel.maxY + kAppAdaptHeight(16), 100, kAppAdaptHeight(16))];
-    _priceLabel.font = kWGOswaldRegularFont(12);
     _priceLabel.font = kAppAdaptFont(14);
     _priceLabel.textColor = kRGBA(0, 0, 0, 0.38);
     [self addSubview:_priceLabel];
     
     _reduceLabel = [[JHLabel alloc] initWithFrame:CGRectMake(_nameLabel.x, _chineseNameLabel.maxY + kAppAdaptHeight(16), 100, kAppAdaptHeight(16))];
-    _reduceLabel.font = kWGOswaldRegularFont(12);
     _reduceLabel.font = kAppAdaptFont(14);
     _reduceLabel.textColor = kWhiteColor;
     _reduceLabel.textAlignment = NSTextAlignmentCenter;
@@ -126,9 +124,9 @@
     frame.size.width = size.width;
     _currentPriceLabel.frame = frame;
     
-    NSString *price = [_data.price addMidline].string;
+    NSString *price = _data.price;
     size = [price returnSize:_priceLabel.font];
-    _priceLabel.attributedText = [_data.price addMidline];
+    _priceLabel.attributedText = [price addMidline];
     frame = _priceLabel.frame;
     frame.origin.x = _currentPriceLabel.maxX + kAppAdaptWidth(8);
     frame.size.width = size.width;

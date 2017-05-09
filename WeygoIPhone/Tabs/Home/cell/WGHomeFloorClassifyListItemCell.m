@@ -29,7 +29,7 @@
     [self addSubview:_imageView];
     
     _nameLabel = [[JHLabel alloc] initWithFrame:_imageView.bounds];
-    _nameLabel.font = kWGOswaldRegularFont(22);
+    _nameLabel.font = kAppAdaptFont(22);
     _nameLabel.textColor = kWhiteColor;
     _nameLabel.textAlignment = NSTextAlignmentCenter;
     [self addSubview:_nameLabel];

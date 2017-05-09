@@ -14,9 +14,7 @@
 #import "WGTabViewController+Slider.h"
 
 @interface WGTabAsiaViewController ()
-{
-    WGHomeTabContentViewController *_contentVC;
-}
+
 @end
 
 @implementation WGTabAsiaViewController
@@ -64,6 +62,10 @@
 
 - (void)handleRefresh {
     [self loadAsiaClassify];
+}
+
+- (BOOL)prefersNavigationBarHiddenAnimated {
+    return NO;
 }
 
 - (void)didReceiveMemoryWarning {

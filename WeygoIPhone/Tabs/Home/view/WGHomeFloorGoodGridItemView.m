@@ -41,9 +41,8 @@
     frame.origin.y = _nameLabel.maxY + kAppAdaptHeight(10);
     _reducePriceLabel.frame = frame;
     
-    _specificationLabel = [[JHLabel alloc] initWithFrame:CGRectMake(_nameLabel.x, _nameLabel.maxY + kAppAdaptHeight(10), self.width - kAppAdaptWidth(20), kAppAdaptHeight(20))];
+    _specificationLabel = [[JHLabel alloc] initWithFrame:CGRectMake(_nameLabel.x, _currentPriceLabel.maxY + kAppAdaptHeight(10), self.width - kAppAdaptWidth(20), kAppAdaptHeight(20))];
     _specificationLabel.font = kAppAdaptFont(14);
-    _specificationLabel.backgroundColor = kRedColor;
     _specificationLabel.textColor = WGAppNameLabelColor;
     [self addSubview:_specificationLabel];
     
@@ -70,19 +69,22 @@
 - (void)showWithData:(WGHomeFloorContentGoodItem *)object {
     _data = object;
     if (_displaySpecification) {
-        
         if ([NSString isNullOrEmpty:_data.specification]) {
             _specificationLabel.hidden = YES;
             _purchaseBtn.y = _currentPriceLabel.maxY + kAppAdaptHeight(10);
+            _notPurchaseBtn.y = _currentPriceLabel.maxY + kAppAdaptHeight(10);
         }
         else {
             _specificationLabel.hidden = NO;
             _purchaseBtn.y = _specificationLabel.maxY + kAppAdaptHeight(10);
+            _notPurchaseBtn.y = _specificationLabel.maxY + kAppAdaptHeight(10);
+            _specificationLabel.text = _data.specification;
         }
     }
     else {
         _specificationLabel.hidden = YES;
         _purchaseBtn.y = _currentPriceLabel.maxY + kAppAdaptHeight(10);
+        _notPurchaseBtn.y = _currentPriceLabel.maxY + kAppAdaptHeight(10);
     }
     _notPurchaseBtn.hidden = (_data.inStock);
     //[_purchaseBtn setBackgroundColor:(_data.inStock) ? WGAppBaseColor : WGAppSeparateLineColor];

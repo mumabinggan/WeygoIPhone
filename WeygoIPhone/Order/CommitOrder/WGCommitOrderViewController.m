@@ -78,7 +78,6 @@
         [_bottomView addSubview:_totalPriceLabel];
         
         _reducePriceLabel = [[JHLabel alloc] initWithFrame:CGRectMake(_totalPriceLabel.x, _totalPriceLabel.y, 120, kAppAdaptHeight(16))];
-        _reducePriceLabel.font = kWGOswaldRegularFont(12);
         _reducePriceLabel.font = kAppAdaptFont(12);
         _reducePriceLabel.textColor = kWhiteColor;
         _reducePriceLabel.textAlignment = NSTextAlignmentCenter;

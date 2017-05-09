@@ -27,7 +27,7 @@
     
     _nameLabel = [[JHLabel alloc] initWithFrame:CGRectMake(0, 0, kAppAdaptWidth(80), kAppAdaptHeight(24))];
     _nameLabel.center = CGPointMake(_imageView.width/2, _imageView.height/2);
-    _nameLabel.font = kWGOswaldRegularFont(12);
+    _nameLabel.font = kAppAdaptFont(12);
     _nameLabel.textColor = kWhiteColor;
     _nameLabel.backgroundColor = WGAppBaseColor;
     _nameLabel.layer.cornerRadius = kAppAdaptHeight(12);

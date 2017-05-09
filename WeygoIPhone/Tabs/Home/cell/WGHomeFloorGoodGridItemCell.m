@@ -20,7 +20,7 @@
 - (void)loadSubviews {
     self.backgroundColor = kRGB(247, 250, 250);
     WeakSelf;
-    _firstItemView = [[WGHomeFloorGoodGridItemView alloc] initWithFrame:CGRectMake(kAppAdaptWidth(8), kAppAdaptWidth(8), kAppAdaptWidth(175), kAppAdaptHeight(312)) radius:kAppAdaptWidth(6)];
+    _firstItemView = [[WGHomeFloorGoodGridItemView alloc] initWithFrame:CGRectMake(kAppAdaptWidth(8), kAppAdaptWidth(8), kAppAdaptWidth(175), [WGHomeFloorGoodGridItemCell heightWithArray:nil] - kAppAdaptHeight(8)) radius:kAppAdaptWidth(6)];
     _firstItemView.backgroundColor = kWhiteColor;
     [self.contentView addSubview:_firstItemView];
     _firstItemView.onPurchase = ^(WGHomeFloorContentGoodItem *item, CGPoint fromPoint) {
@@ -48,21 +48,33 @@
     if (array.count == 1) {
         _firstItemView.hidden = NO;
         _secondItemView.hidden = YES;
-        WGHomeFloorContentItem *contentItem = array[0];
-        WGHomeFloorContentGoodItem *item = (WGHomeFloorContentGoodItem *)[contentItem contentItemWithType:WGHomeFloorItemTypeClassifyGrid];
+        WGHomeFloorContentGoodItem *item = nil;
+        if ([array[0] isKindOfClass:[WGHomeFloorContentGoodItem class]]) {
+            item = array[0];
+        }
+        else if ([array[0] isKindOfClass:[WGHomeFloorContentItem class]]) {
+            WGHomeFloorContentItem *contentItem0 = array[0];
+            item = (WGHomeFloorContentGoodItem *)[contentItem0 contentItemWithType:WGHomeFloorItemTypeGoodGrid];
+        }
         [_firstItemView showWithData:item];
     }
     
     if (array.count == 2) {
         _firstItemView.hidden = NO;
         _secondItemView.hidden = NO;
-        
-        WGHomeFloorContentItem *contentItem0 = array[0];
-        WGHomeFloorContentGoodItem *item0 = (WGHomeFloorContentGoodItem *)[contentItem0 contentItemWithType:WGHomeFloorItemTypeGoodGrid];
-        
-        WGHomeFloorContentItem *contentItem1 = array[1];
-        WGHomeFloorContentGoodItem *item1 = (WGHomeFloorContentGoodItem *)[contentItem1 contentItemWithType:WGHomeFloorItemTypeGoodGrid];
-        
+        WGHomeFloorContentGoodItem *item0 = nil;
+        WGHomeFloorContentGoodItem *item1 = nil;
+        if ([array[0] isKindOfClass:[WGHomeFloorContentGoodItem class]]) {
+            item0 = array[0];
+            item1 = array[1];
+        }
+        else if ([array[0] isKindOfClass:[WGHomeFloorContentItem class]]) {
+            WGHomeFloorContentItem *contentItem0 = array[0];
+            item0 = (WGHomeFloorContentGoodItem *)[contentItem0 contentItemWithType:WGHomeFloorItemTypeGoodGrid];
+            
+            WGHomeFloorContentItem *contentItem1 = array[1];
+            item1 = (WGHomeFloorContentGoodItem *)[contentItem1 contentItemWithType:WGHomeFloorItemTypeGoodGrid];
+        }
         [_firstItemView showWithData:item0];
         [_secondItemView showWithData:item1];
     }
@@ -70,16 +82,22 @@
 
 - (void)handleClick:(UIGestureRecognizer *)recognizer {
     if (self.onApply) {
+        int index = 0;
         if ([recognizer.view isEqual:_firstItemView]) {
-            WGHomeFloorContentItem *contentItem = _dataArray[0];
-            WGHomeFloorContentGoodItem *item = (WGHomeFloorContentGoodItem *)[contentItem contentItemWithType:WGHomeFloorItemTypeGoodGrid];
-            self.onApply(item);
+            index = 0;
         }
         else {
-            WGHomeFloorContentItem *contentItem = _dataArray[1];
-            WGHomeFloorContentGoodItem *item = (WGHomeFloorContentGoodItem *)[contentItem contentItemWithType:WGHomeFloorItemTypeGoodGrid];
-            self.onApply(item);
+            index = 1;
         }
+        WGHomeFloorContentGoodItem *item = nil;
+        if ([_dataArray[index] isKindOfClass:[WGHomeFloorContentGoodItem class]]) {
+            item = _dataArray[index];
+        }
+        else if ([_dataArray[index] isKindOfClass:[WGHomeFloorContentItem class]]) {
+            WGHomeFloorContentItem *contentItem0 = _dataArray[index];
+            item = (WGHomeFloorContentGoodItem *)[contentItem0 contentItemWithType:WGHomeFloorItemTypeGoodGrid];
+        }
+        self.onApply(item);
     }
 }
 
@@ -89,7 +107,7 @@
     }
 }
 
-+ (CGFloat)heightWithData:(JHObject *)data {
++ (CGFloat)heightWithArray:(NSArray *)array {
     return kAppAdaptHeight(320);
 }
 

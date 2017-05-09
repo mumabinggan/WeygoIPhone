@@ -105,6 +105,7 @@
 
 - (JHView *)createHeaderView {
     _headerView = [[WGMineHeaderView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kAppAdaptHeight(244))];
+    [_headerView showWithData:_data];
     return _headerView;
 }
 
@@ -128,7 +129,7 @@
         [itemBtn addSubview:titleLabel];
         
         JHLabel *countLabel = [[JHLabel alloc] initWithFrame:CGRectMake(0, titleLabel.maxY + kAppAdaptHeight(4), itemBtn.width, kAppAdaptHeight(24))];
-        countLabel.font = kWGOswaldRegularAdaptFont(16);
+        countLabel.font = kAppAdaptFont(16);
         countLabel.textColor = WGAppNameLabelColor;
         countLabel.text = @"0";
         countLabel.textAlignment = NSTextAlignmentCenter;

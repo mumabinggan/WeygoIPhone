@@ -246,7 +246,7 @@
         }
     }
     else {
-        return _isGrid ? [WGClassifyDetailGoodGridItemCell heightWithData:nil] : [WGHomeFloorGoodListItemCell heightWithData:nil];
+        return _isGrid ? [WGClassifyDetailGoodGridItemCell heightWithArray:nil] : [WGHomeFloorGoodListItemCell heightWithData:nil];
     }
 }
 

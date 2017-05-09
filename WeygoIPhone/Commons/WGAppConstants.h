@@ -41,8 +41,8 @@
 #define kWGSFUIDisplayBoldFont(fsize)    kAppFont(fsize)
 #define kWGSFUIDisplayBoldAdaptFont(fsize)    kAppAdaptFont(fsize)
 
-#define kWGOswaldRegularFont(fsize)    kAppFont(fsize)
-#define kWGOswaldRegularAdaptFont(fsize)    kAppAdaptFont(fsize)
+#define kWGOswaldRegularFont(fsize)    kFont(fsize, @"Oswald-Regular")
+#define kWGOswaldRegularAdaptFont(fsize)    kWGOswaldRegularFont(fsize * kDeviceWidthScaleTo47Inch)
 
 
 
@@ -84,7 +84,9 @@ static float kNavigationY = 64;
 
 #define kHomeTopicPlaceholderImage [UIImage imageNamed:@"image_loading_small"]
 
-#define kHomeFloorPictureHeaderPlaceholderImage [UIImage imageNamed:@"image_loading"]
+#define kHomeFloorPictureHeaderPlaceholderImage [UIImage imageNamed:@"image_loading_floor"]
+
+#define kHomeCarouselPictureHeaderPlaceholderImage [UIImage imageNamed:@"image_loading_carousel"]
 
 #define kHomeGoodListPlaceholderImage [UIImage imageNamed:@"image_loading_small"]
 #define kHomeGoodColumnPlaceholderImage [UIImage imageNamed:@"image_loading_small"]
@@ -98,7 +100,7 @@ static float kNavigationY = 64;
 
 #define kClassifyClassifyPlaceholderImage [UIImage imageNamed:@"image_loading_small"]
 
-#define kInvitationPlaceholderImage [UIImage imageNamed:@"image_loading"]
+#define kInvitationPlaceholderImage [UIImage imageNamed:@"image_loading_carousel"]
 
 #define kShopCartGiftPlaceholderImage [UIImage imageNamed:@"image_loading_small"]
 

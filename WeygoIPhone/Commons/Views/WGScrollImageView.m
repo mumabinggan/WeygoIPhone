@@ -80,7 +80,7 @@
     for (int num = 0; num < newImageArray.count; num++) {
         frame.origin.x = CGRectGetWidth(_scrollView.frame) * (num);
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:frame];
-        [imageView setImageWithURL:newImageArray[num] placeholderImage:nil options:JHWebImageOptionsRetryFailed|JHWebImageOptionsRefreshCached];
+        [imageView setImageWithURL:newImageArray[num] placeholderImage:kHomeCarouselPictureHeaderPlaceholderImage options:JHWebImageOptionsRetryFailed|JHWebImageOptionsRefreshCached];
         imageView.userInteractionEnabled = YES;
         [imageView addSingleTapGestureRecognizerWithTarget:self action:@selector(touchImage:)];
         [_scrollView addSubview:imageView];

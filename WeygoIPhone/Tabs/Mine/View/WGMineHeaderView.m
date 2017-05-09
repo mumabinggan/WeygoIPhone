@@ -31,7 +31,7 @@
     _imageView.image = [UIImage imageNamed:@"personCenter_bg"];
     [self addSubview:_imageView];
     
-    _nameLabel = [[JHLabel alloc] initWithFrame:CGRectMake(0, _imageView.maxY + kAppAdaptHeight(6), kDeviceWidth, kAppAdaptHeight(24))];
+    _nameLabel = [[JHLabel alloc] initWithFrame:CGRectMake(0, _imageView.maxY - kAppAdaptHeight(96), kDeviceWidth, kAppAdaptHeight(24))];
     _nameLabel.textAlignment = NSTextAlignmentCenter;
     _nameLabel.font = kAppAdaptFont(16);
     _nameLabel.textColor = kWhiteColor;

@@ -24,6 +24,9 @@
 }
 
 - (void)handleHomeContent:(WGHomeTabContentResponse *)response {
+    if (_contentVC) {
+        [self stopRefreshing:_contentVC.tableView refresh:YES pulling:YES];
+    }
     if (response.success) {
         _data = response.data;
         [self refreshUI];
