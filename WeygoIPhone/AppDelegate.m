@@ -12,37 +12,38 @@
 #import "AppDelegate+Fabric.h"
 #import "JHNetworkManager.h"
 
-@interface AppDelegate ()<NSXMLParserDelegate>
+@interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    //[NSThread sleepForTimeInterval:5000];
     [self launchInitApplicatioin:application withOptions:launchOptions];
     
     return YES;
 }
 
-- (void)initXMLParser {
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"File3" ofType:@"xml"];
-    NSFileHandle *file = [NSFileHandle fileHandleForReadingAtPath:path];
-    NSData *data = [file readDataToEndOfFile];
-    NSXMLParser *m_parser = [[NSXMLParser alloc] initWithData:data];
-    //设置该类本身为代理类，即该类在声明时要实现NSXMLParserDelegate委托协议
-    [m_parser setDelegate:self];  //设置代理为本地
-}
-
-- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
-    //记录所取得的文字列
-    NSLog(@"---string---%@", string);
-}
-
-- (void)parser:(NSXMLParser *)parser foundCDATA:(NSData *)CDATABlock{
-    //NSLog(@"cData:%@",[NSString stringWithUTF8String:[CDATABlock bytes]]);
-    NSString *str = [[NSString alloc] initWithData:CDATABlock encoding:NSUTF8StringEncoding];
-    NSLog(@"---cdata--%@", str);
-}
+//- (void)initXMLParser {
+//    NSString *path = [[NSBundle mainBundle] pathForResource:@"File3" ofType:@"xml"];
+//    NSFileHandle *file = [NSFileHandle fileHandleForReadingAtPath:path];
+//    NSData *data = [file readDataToEndOfFile];
+//    NSXMLParser *m_parser = [[NSXMLParser alloc] initWithData:data];
+//    //设置该类本身为代理类，即该类在声明时要实现NSXMLParserDelegate委托协议
+//    [m_parser setDelegate:self];  //设置代理为本地
+//}
+//
+//- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
+//    //记录所取得的文字列
+//    NSLog(@"---string---%@", string);
+//}
+//
+//- (void)parser:(NSXMLParser *)parser foundCDATA:(NSData *)CDATABlock{
+//    //NSLog(@"cData:%@",[NSString stringWithUTF8String:[CDATABlock bytes]]);
+//    NSString *str = [[NSString alloc] initWithData:CDATABlock encoding:NSUTF8StringEncoding];
+//    NSLog(@"---cdata--%@", str);
+//}
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {

@@ -11,7 +11,7 @@
 @implementation WGUserInfoRequest
 
 - (NSString *)api {
-    return kStr(@"customer/accountinfo?");
+    return @"customer/accountinfo?";
 }
 
 @end

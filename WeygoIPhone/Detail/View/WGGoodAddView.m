@@ -46,10 +46,12 @@
 }
 
 - (void)touchSubBtn:(JHButton *)sender {
-    if (_count != 0) {
-        _count--;
+    if (_fromType == WGGoodAddViewFromGoodDetail) {
+        if (_count != 0) {
+            _count--;
+        }
+        _countLabel.text = @(_count).stringValue;
     }
-    _countLabel.text = @(_count).stringValue;
     if (self.onSub) {
         self.onSub(_count);
     }

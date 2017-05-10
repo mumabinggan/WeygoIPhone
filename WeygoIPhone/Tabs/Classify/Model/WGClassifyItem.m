@@ -22,9 +22,6 @@
 }
 
 - (NSArray *)allArray {
-    if (_allArray) {
-        return _allArray;
-    }
     WGClassifyItem *totalItem = [[WGClassifyItem alloc] init];
     totalItem.id = _id;
     totalItem.name = kStr(@"Slider_All");

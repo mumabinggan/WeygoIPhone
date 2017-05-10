@@ -82,7 +82,10 @@ static const float kTabBarHeight = 60;
     [[WGApplication sharedApplication] switchTab:WGTabIndexHome];
     [WGLoginViewController pushInNavigationController:self.navigationController loginFrom:WGLoginFromDefault sucess:^(WGLoginViewController *vc) {
         [self.navigationController popViewControllerAnimated:YES];
-    } cancel:nil];
+    } cancel:^(WGLoginViewController *vc) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationUpdateShopCartCount object:nil];
     return;
 //    if (notification.object && [notification.object isKindOfClass:[NSDictionary class]]) {
 //        NSString *message = nil;

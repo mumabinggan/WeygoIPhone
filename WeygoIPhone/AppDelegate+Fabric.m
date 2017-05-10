@@ -13,7 +13,7 @@
 @implementation AppDelegate (Fabric)
 
 - (void)registerFabric {
-    //[Fabric with:@[[Crashlytics class]]];
+    [Fabric with:@[[Crashlytics class]]];
 }
 
 @end

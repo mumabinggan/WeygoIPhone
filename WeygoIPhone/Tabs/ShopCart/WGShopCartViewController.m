@@ -229,9 +229,7 @@
 }
 
 - (void)handleSub:(WGShopCartGoodItem *)item {
-    if (item.goodCount - 1 > 0) {
-        [self loadUpdateGood:item count:item.goodCount - 1];
-    }
+    [self loadUpdateGood:item count:item.goodCount - 1];
 }
 
 - (void)didReceiveMemoryWarning {
