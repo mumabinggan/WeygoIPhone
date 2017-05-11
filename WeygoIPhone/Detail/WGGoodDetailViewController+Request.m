@@ -22,7 +22,7 @@
     WGGoodDetailRequest *request = [[WGGoodDetailRequest alloc] init];
     request.id = self.goodId;
     __weak typeof(self) weakSelf = self;
-    [self get:request forResponseClass:[WGGoodDetailResponse class] success:^(JHResponse *response) {
+    [self post:request forResponseClass:[WGGoodDetailResponse class] success:^(JHResponse *response) {
         [weakSelf handleGoodDetailResponse:(WGGoodDetailResponse *)response];
     } failure:^(NSError *error) {
         [weakSelf showWarningMessage:kStr(@"Request Failed")];

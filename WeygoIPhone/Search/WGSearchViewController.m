@@ -170,9 +170,10 @@
     }
 }
 
-- (void)openGoodDetailViewController:(long long)goodId {
+- (void)openGoodDetailViewController:(WGHomeFloorContentGoodItem *)item {
     WGGoodDetailViewController *vc = [[WGGoodDetailViewController alloc] init];
-    vc.goodId = goodId;
+    vc.goodId = item.id;
+    vc.title = item.name;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -286,7 +287,7 @@
                 WeakSelf;
                 WGHomeFloorGoodGridItemCell *gridCell = [[WGHomeFloorGoodGridItemCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
                 gridCell.onApply = ^(WGHomeFloorContentGoodItem *item) {
-                    [weakSelf openGoodDetailViewController:item.id];
+                    [weakSelf openGoodDetailViewController:item];
                 };
                 gridCell.onPurchase = ^(WGHomeFloorContentGoodItem *item, CGPoint fromPoint) {
                     [weakSelf handleAddShopCart:item fromPoint:fromPoint];
@@ -339,7 +340,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row > 1 && !_isGrid) {
         WGHomeFloorContentGoodItem *item = _data.goods[indexPath.row - 2];
-        [self openGoodDetailViewController:item.id];
+        [self openGoodDetailViewController:item];
     }
 }
 

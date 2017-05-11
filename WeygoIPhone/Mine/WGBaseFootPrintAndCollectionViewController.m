@@ -157,6 +157,7 @@
     WGHomeFloorContentGoodItem *item = _dataMArray[indexPath.row];
     WGGoodDetailViewController *vc = [[WGGoodDetailViewController alloc] init];
     vc.goodId = item.id;
+    vc.title = item.name;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

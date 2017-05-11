@@ -143,6 +143,7 @@
 - (void)handleGood:(WGOrderGoodItem *)good {
     WGGoodDetailViewController *vc = [[WGGoodDetailViewController alloc] init];
     vc.goodId = good.id;
+    vc.title = good.name;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

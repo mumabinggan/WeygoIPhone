@@ -221,6 +221,7 @@
 - (void)openGoodDetailViewController:(WGShopCartGoodItem *)item {
     WGGoodDetailViewController *vc = [[WGGoodDetailViewController alloc] init];
     vc.goodId = item.id;
+    vc.title = item.name;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

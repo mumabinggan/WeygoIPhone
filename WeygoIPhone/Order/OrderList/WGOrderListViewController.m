@@ -70,9 +70,10 @@
     [[WGApplication sharedApplication] addShopToCartImage:@"add_cart" fromPoint:fromPoint];
 }
 
-- (void)handleGoodDetail:(long long)goodId {
+- (void)handleGoodDetail:(WGOrderGoodItem *)item {
     WGGoodDetailViewController *vc = [[WGGoodDetailViewController alloc] init];
-    vc.goodId = goodId;
+    vc.goodId = item.id;
+    vc.title = item.name;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -141,7 +142,7 @@
             __weak id weakSelf = self;
             WGOrderListGoodsCell *goodsCell = [[WGOrderListGoodsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
             goodsCell.onApply = ^(WGOrderGoodItem *item) {
-                [weakSelf handleGoodDetail:item.id];
+                [weakSelf handleGoodDetail:item];
             };
             cell = goodsCell;
         }

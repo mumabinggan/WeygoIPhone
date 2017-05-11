@@ -100,6 +100,7 @@
 }
 
 - (void)refreshUI {
+    
     [self refreshBottomView];
     [_tableView reloadData];
     [UIView animateWithDuration:0.3 animations:^() {
@@ -159,6 +160,7 @@
 - (void)handleRecommendGood:(WGHomeFloorContentItem *)item {
     WGGoodDetailViewController *vc = [[WGGoodDetailViewController alloc] init];
     vc.goodId = item.id;
+    vc.title = item.name;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

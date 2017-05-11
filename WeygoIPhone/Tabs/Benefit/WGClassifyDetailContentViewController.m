@@ -176,9 +176,10 @@
     [self loadData:YES pulling:NO];
 }
 
-- (void)openGoodDetailViewController:(long long)goodId {
+- (void)openGoodDetailViewController:(WGHomeFloorContentGoodItem *)item {
     WGGoodDetailViewController *vc = [[WGGoodDetailViewController alloc] init];
-    vc.goodId = goodId;
+    vc.goodId = item.id;
+    vc.title = item.name;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -305,7 +306,7 @@
                 WeakSelf;
                 WGClassifyDetailGoodGridItemCell *gridCell = [[WGClassifyDetailGoodGridItemCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
                 gridCell.onApply = ^(WGHomeFloorContentGoodItem *item) {
-                    [weakSelf openGoodDetailViewController:item.id];
+                    [weakSelf openGoodDetailViewController:item];
                 };
                 gridCell.onPurchase = ^(WGHomeFloorContentGoodItem *item, CGPoint fromPoint) {
                     [weakSelf handleAddShopCart:item fromPoint:fromPoint];
@@ -364,14 +365,14 @@
         NSInteger row = indexPath.row;
         if (row >= 2) {
             WGHomeFloorContentGoodItem *item = _data.recommendedArray[row - 2];
-            [self openGoodDetailViewController:item.id];
+            [self openGoodDetailViewController:item];
         }
     }
     else {
         if (!_isGrid) {
             //打开详情
             WGHomeFloorContentGoodItem *item = _data.goodArray[indexPath.row];
-            [self openGoodDetailViewController:item.id];
+            [self openGoodDetailViewController:item];
         }
     }
 }
