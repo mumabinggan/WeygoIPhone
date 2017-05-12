@@ -11,6 +11,7 @@
 #import "WGHomeFloorGoodListItemCell.h"
 #import "WGGoodDetailViewController.h"
 #import "WGViewController+ShopCart.h"
+#import "WGPostCodePopoverView.h"
 
 @interface WGBaseFootPrintAndCollectionViewController ()
 
@@ -86,6 +87,12 @@
 }
 
 - (void)handleAddShopCart:(WGHomeFloorContentGoodItem *)item fromPoint:(CGPoint )fromPoint {
+    if ([NSString isNullOrEmpty:[WGApplication sharedApplication].currentPostCode]) {
+        UIWindow *window = [UIApplication sharedApplication].keyWindow;
+        WGPostCodePopoverView *view = [[WGPostCodePopoverView alloc] initWithFrame:window.bounds];
+        [view showInView:window];
+        return;
+    }
     WeakSelf;
     [[WGApplication sharedApplication] loadAddGoodToCart:item.id count:1 onCompletion:^(WGAddGoodToCartResponse *response) {
         [weakSelf handleShopCartCount:response];

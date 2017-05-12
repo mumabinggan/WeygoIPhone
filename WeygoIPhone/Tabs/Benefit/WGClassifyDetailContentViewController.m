@@ -20,6 +20,7 @@
 #import "WGHomeNewsCell.h"
 #import "WGGoodDetailViewController.h"
 #import "WGClassifyDetailGoodGridItemCell.h"
+#import "WGPostCodePopoverView.h"
 
 //for test
 #import "WGCarouselFigureItem.h"
@@ -184,6 +185,12 @@
 }
 
 - (void)handleAddShopCart:(WGHomeFloorContentGoodItem *)item fromPoint:(CGPoint )fromPoint {
+    if ([NSString isNullOrEmpty:[WGApplication sharedApplication].currentPostCode]) {
+        UIWindow *window = [UIApplication sharedApplication].keyWindow;
+        WGPostCodePopoverView *view = [[WGPostCodePopoverView alloc] initWithFrame:window.bounds];
+        [view showInView:window];
+        return;
+    }
     WeakSelf;
     [[WGApplication sharedApplication] loadAddGoodToCart:item.id count:1 onCompletion:^(WGAddGoodToCartResponse *response) {
         [weakSelf handleShopCartCount:response];

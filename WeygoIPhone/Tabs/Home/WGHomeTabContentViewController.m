@@ -32,6 +32,7 @@
 #import "WGTabBenefitViewController.h"
 #import "WGHomeTabViewController.h"
 #import "WGApplication.h"
+#import "WGPostCodePopoverView.h"
 
 //for test
 #import "WGClassifyGoodListViewController.h"
@@ -184,6 +185,11 @@
 }
 
 - (void)handleAddShopCart:(WGHomeFloorContentGoodItem *)item fromPoint:(CGPoint )fromPoint {
+    if ([NSString isNullOrEmpty:[WGApplication sharedApplication].currentPostCode]) {
+        WGPostCodePopoverView *view = [[WGPostCodePopoverView alloc] initWithFrame:self.view.bounds];
+        [view show];
+        return;
+    }
     WeakSelf;
     [[WGApplication sharedApplication] loadAddGoodToCart:item.id count:1 onCompletion:^(WGAddGoodToCartResponse *response) {
         [weakSelf handleShopCartCount:response];

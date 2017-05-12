@@ -134,8 +134,9 @@
 
 - (void)touchAddBtn:(JHButton *)sender {
     if ([NSString isNullOrEmpty:[WGApplication sharedApplication].currentPostCode]) {
-        WGPostCodePopoverView *view = [[WGPostCodePopoverView alloc] initWithFrame:self.view.bounds];
-        [view showInView:self.view];
+        UIWindow *window = [UIApplication sharedApplication].keyWindow;
+        WGPostCodePopoverView *view = [[WGPostCodePopoverView alloc] initWithFrame:window.bounds];
+        [view showInView:window];
         return;
     }
     WeakSelf;
