@@ -20,7 +20,7 @@
     [closeBtn addTarget:self action:@selector(touchCloseBtn:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:closeBtn];
     
-    UIPickerView *pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, kDeviceHeight - kAppAdaptHeight(130), kDeviceWidth, kAppAdaptHeight(130))];
+    UIPickerView *pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, kDeviceHeight - kAppAdaptHeight(200), kDeviceWidth, kAppAdaptHeight(200))];
     pickerView.backgroundColor = kRGB(244, 244, 244);
     pickerView.tag = tag;
     pickerView.delegate = self;

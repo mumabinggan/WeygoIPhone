@@ -14,6 +14,7 @@
     JHTextField *_codeTextField;
     JHTextField *_surnameTextField;
     JHTextField *_nameTextField;
+    JHTextField *_emailTextField;
     JHTextField *_passwordTextField;
     JHTextField *_confirmPasswordTextField;
 }

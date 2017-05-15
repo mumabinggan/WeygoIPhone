@@ -30,6 +30,9 @@
 }
 
 - (void)loadSubviews {
+    if (_dataArray == nil || _dataArray.count == 0) {
+        self.frame = CGRectMake(self.x, self.y, self.width, 0.1);
+    }
     //[super loadSubviews];
     //self.backgroundColor = kClearColor;
     CGFloat leftSepX = kAppAdaptWidth(16);

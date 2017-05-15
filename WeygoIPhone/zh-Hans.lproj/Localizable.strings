@@ -9,6 +9,7 @@
 "TabClassify" = "分类";
 "TabBenefit" = "优惠";
 "TabShopCart" = "购物车";
+"TabAsia" = "环球";
 "TabMine" = "我的";
 "Price With Unit" = "€%.1f";
 "Price With 2 Unit" = "€%.2f";
@@ -70,11 +71,11 @@
 "China" = "中国";
 "Log out" = "退出登录";
 //分类 Tab
-"Hot Sale" = "PIÙ VENDUTI";
+"Hot Sale" = "热卖推荐";
 //分类详情
 "Default Sort" = "默认";
-"Filtro" = "Filtro";
-"Vista" = "Vista";
+"Filtro" = "筛选";
+"Vista" = "视图";
 "Brand Sort" = "品牌";
 "Price Sort Down" = "价格从低到高";
 "Price Sort Up" = "价格从高到低";
@@ -135,6 +136,7 @@
 "Register_Name" = "名";
 "Register_Password" = "密码";
 "Register_Confirm_Password" = "确认密码";
+"Register_Email" = "e-mail地址";
 
 //找回密码(完成)
 "ForgetPW_Title" = "忘记密码";
@@ -255,8 +257,8 @@
 "Address_HaveLift" = "是";
 "Address_NoLift" = "否";
 "Address_Italia" = "意大利";
-"Address_Default" = "设置为默认";
-"Address_unDefault" = "默认";
+"Address_Default" = "默认";
+"Address_unDefault" = "设置为默认";
 
 //发票列表(完成)
 "ReceiptList_Title" = "发票列表";

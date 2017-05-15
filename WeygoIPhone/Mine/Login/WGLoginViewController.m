@@ -110,6 +110,13 @@
     codeLineView.backgroundColor = WGAppSeparateLineColor;
     //[_codeTextField addSubview:codeLineView];
     
+    JHButton *forgetBtn = [[JHButton alloc] initWithFrame:CGRectMake(_usernameTextField.x, _passwordTextField.maxY + kAppAdaptHeight(10), kAppAdaptWidth(70), kAppAdaptHeight(17))];
+    [forgetBtn setTitle:kStr(@"Login_ForgetPW") forState:UIControlStateNormal];
+    [forgetBtn setTitleColor:WGAppLightNameLabelColor forState:UIControlStateNormal];
+    forgetBtn.titleLabel.font = kAppAdaptFont(12);
+    [forgetBtn addTarget:self action:@selector(touchForgetBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [_scrollView addSubview:forgetBtn];
+    
     float radius = kAppAdaptWidth(20);
     JHButton *loginBtn = [[JHButton alloc] initWithFrame:CGRectMake(_usernameTextField.x, _codeTextField.maxY + kAppAdaptHeight(24), _usernameTextField.width, kAppAdaptHeight(40)) difRadius:JHRadiusMake(radius, radius, radius, radius) backgroundColor:WGAppBlueButtonColor];
     [loginBtn setTitle:kStr(@"Login_Title") forState:UIControlStateNormal];
@@ -118,15 +125,15 @@
     [loginBtn addTarget:self action:@selector(touchLoginBtn:) forControlEvents:UIControlEventTouchUpInside];
     [_scrollView addSubview:loginBtn];
     
-    JHButton *forgetBtn = [[JHButton alloc] initWithFrame:CGRectMake(_usernameTextField.x, loginBtn.maxY + kAppAdaptHeight(14), _usernameTextField.width, kAppAdaptHeight(14))];
-    [forgetBtn setTitle:kStr(@"Login_ForgetPW") forState:UIControlStateNormal];
-    [forgetBtn setTitleColor:WGAppLightNameLabelColor forState:UIControlStateNormal];
-    forgetBtn.titleLabel.font = kAppAdaptFont(12);
-    [forgetBtn addTarget:self action:@selector(touchForgetBtn:) forControlEvents:UIControlEventTouchUpInside];
-    [_scrollView addSubview:forgetBtn];
+    JHButton *registerBtn = [[JHButton alloc] initWithFrame:CGRectMake(loginBtn.x, loginBtn.maxY + kAppAdaptHeight(20), loginBtn.width, loginBtn.height) difRadius:JHRadiusMake(radius, radius, radius, radius) backgroundColor:WGAppBaseColor];
+    [registerBtn setTitle:kStr(@"Login_Register") forState:UIControlStateNormal];
+    [registerBtn setTitleColor:kWhiteColor forState:UIControlStateNormal];
+    registerBtn.titleLabel.font = kAppAdaptFont(14);
+    [registerBtn addTarget:self action:@selector(touchRegisterBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [_scrollView addSubview:registerBtn];
     
     radius = kAppAdaptWidth(20);
-    JHButton *wechatBtn = [[JHButton alloc] initWithFrame:CGRectMake(_usernameTextField.x, forgetBtn.maxY + kAppAdaptHeight(77), kAppAdaptWidth(147), kAppAdaptHeight(40)) difRadius:JHRadiusMake(radius, radius, radius, radius) borderWidth:kAppAdaptWidth(1) borderColor:kHRGB(0xEBEFF0) backgroundColor:kHRGB(0xF8FAFA)];
+    JHButton *wechatBtn = [[JHButton alloc] initWithFrame:CGRectMake(_usernameTextField.x, loginBtn.maxY + kAppAdaptHeight(100), kAppAdaptWidth(147), kAppAdaptHeight(40)) difRadius:JHRadiusMake(radius, radius, radius, radius) borderWidth:kAppAdaptWidth(1) borderColor:kHRGB(0xEBEFF0) backgroundColor:kHRGB(0xF8FAFA)];
     [wechatBtn setTitle:[NSString stringWithFormat:@"  %@", kStr(@"Login_WeChat")] forState:UIControlStateNormal];
     [wechatBtn setTitleColor:WGAppTitleColor forState:UIControlStateNormal];
     wechatBtn.titleLabel.font = kAppAdaptFont(14);
@@ -150,6 +157,10 @@
     if (self.cancelBlock) {
         self.cancelBlock(self);
     }
+}
+
+- (void)touchRegisterBtn:(JHButton *)sender {
+    [self openRegisterViewController];
 }
 
 - (void)openRegisterViewController {

@@ -29,7 +29,7 @@
 
 @property (nonatomic, assign) long long favoriteId;
 
-@property (nonatomic, assign) int inStock;
+@property (nonatomic, assign) int inStock;  //int	有无货(1,有货;0,无货) ;
 
 //for self use
 @property (nonatomic, assign) BOOL hasDiscount;

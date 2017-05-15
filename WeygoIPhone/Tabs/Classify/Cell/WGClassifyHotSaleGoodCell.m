@@ -58,7 +58,7 @@
 
 - (void)showWithData:(WGClassifyHotGoodItem *)object {
     [_imageView setImageWithURL:[NSURL URLWithString:object.pictureURL] placeholderImage:kHomeGoodColumnPlaceholderImage options:JHWebImageOptionsRefreshCached];
-    //_hotNumberImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"hotsale_icon_%ld", object.number]];
+    _hotNumberImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"hotsale_icon_%ld", object.number]];
     _nameLabel.text = object.name;
     _currentPriceLabel.text = object.currentPrice;
     _reducePriceLabel.attributedText = [object.reducePrice addMidline];

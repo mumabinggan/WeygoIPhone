@@ -73,7 +73,7 @@
 //分类 Tab
 "Hot Sale" = "PIÙ VENDUTI";
 //分类详情
-"Default Sort" = "rilevanza";
+"Default Sort" = "Rilevanza";
 "Filtro" = "Filtro";
 "Vista" = "Vista";
 "Brand Sort" = "marchi";
@@ -137,6 +137,7 @@
 "Register_Name" = "Nome";
 "Register_Password" = "Password";
 "Register_Confirm_Password" = "Conferma password";
+"Register_Email" = "indirizzo e-mail";
 
 //找回密码(完成)
 "ForgetPW_Title" = "Password dimenticata";

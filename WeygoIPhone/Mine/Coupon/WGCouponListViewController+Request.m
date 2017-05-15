@@ -57,7 +57,7 @@
             _inputTextField.text = self.coupon.couponCode;
             _activateBtn.selected = YES;
             _inputTextField.enabled = isCouponCode;
-            _activateBtn.userInteractionEnabled = isCouponCode;
+            _activateBtn.userInteractionEnabled = YES;
         }
         else {
             _inputTextField.text = nil;
@@ -137,6 +137,7 @@
             }
         }
         [self refreshUI];
+        [self.navigationController popViewControllerAnimated:YES];
     }
     else {
         [self showWarningMessage:response.message];

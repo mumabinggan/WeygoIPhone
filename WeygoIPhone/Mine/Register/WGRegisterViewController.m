@@ -153,7 +153,17 @@
     nameLineView.backgroundColor = WGAppSeparateLineColor;
     [_nameTextField addSubview:nameLineView];
     
-    _passwordTextField = [[JHTextField alloc] initWithFrame:CGRectMake(textFieldX, _nameTextField.maxY, textFieldWidth, textFieldHeight)];
+    _emailTextField = [[JHTextField alloc] initWithFrame:CGRectMake(textFieldX, _nameTextField.maxY, textFieldWidth, textFieldHeight)];
+    _emailTextField.font = kAppAdaptFont(14);
+    _emailTextField.placeholder = kStr(@"Register_Email");
+    _emailTextField.textColor = WGAppNameLabelColor;
+    [_scrollView addSubview:_emailTextField];
+    
+    JHView *emailLineView = [[JHView alloc] initWithFrame:CGRectMake(0, lineY, textFieldWidth, kAppSepratorLineHeight)];
+    emailLineView.backgroundColor = WGAppSeparateLineColor;
+    [_emailTextField addSubview:emailLineView];
+    
+    _passwordTextField = [[JHTextField alloc] initWithFrame:CGRectMake(textFieldX, _emailTextField.maxY, textFieldWidth, textFieldHeight)];
     _passwordTextField.font = kAppAdaptFont(14);
     _passwordTextField.placeholder = kStr(@"Register_Password");
     _passwordTextField.textColor = WGAppNameLabelColor;
@@ -181,7 +191,14 @@
     [registerBtn addTarget:self action:@selector(touchRegisterBtn:) forControlEvents:UIControlEventTouchUpInside];
     [_scrollView addSubview:registerBtn];
     
-    _scrollView.contentSize = CGSizeMake(kDeviceWidth, registerBtn.maxY + kAppAdaptHeight(27));
+    JHButton *loginBtn = [[JHButton alloc] initWithFrame:CGRectMake(textFieldX, registerBtn.maxY + kAppAdaptHeight(22), textFieldWidth, kAppAdaptHeight(40)) difRadius:JHRadiusMake(radius, radius, radius, radius) backgroundColor:WGAppBaseColor];
+    [loginBtn setTitle:kStr(@"Register_Title") forState:UIControlStateNormal];
+    [loginBtn setTitleColor:kWhiteColor forState:UIControlStateNormal];
+    loginBtn.titleLabel.font = kAppAdaptFont(14);
+    [loginBtn addTarget:self action:@selector(touchLoginBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [_scrollView addSubview:loginBtn];
+    
+    _scrollView.contentSize = CGSizeMake(kDeviceWidth, loginBtn.maxY + kAppAdaptHeight(27));
 }
 
 - (void)touchReturnBtn:(JHButton *)sender {
@@ -190,6 +207,10 @@
 
 - (void)touchVerificationCodeBtn:(JHButton *)sender {
     
+}
+
+- (void)touchLoginBtn:(JHButton *)sender {
+    [self openLoginViewController];
 }
 
 - (void)intoLoginViewController:(UIGestureRecognizer *)recognizer {

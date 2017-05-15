@@ -20,8 +20,9 @@
     request.confirmPassword = _confirmPasswordTextField.text;
     request.firstname = _nameTextField.text;
     request.lastname = _surnameTextField.text;
+    request.email = _emailTextField.text;
     __weak typeof(self) weakSelf = self;
-    [self get:request forResponseClass:[WGRegisterResponse class] success:^(JHResponse *response) {
+    [self post:request forResponseClass:[WGRegisterResponse class] success:^(JHResponse *response) {
         [weakSelf handleRegisterResponse:(WGRegisterResponse *)response];
     } failure:^(NSError *error) {
         [weakSelf showWarningMessage:kStr(@"Request Failed")];

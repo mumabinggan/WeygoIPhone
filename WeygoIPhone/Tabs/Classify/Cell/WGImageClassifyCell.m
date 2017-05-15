@@ -35,7 +35,7 @@
 - (void)showWithData:(JHObject *)data {
     [super showWithData:data];
     WGClassifyItem *item = (WGClassifyItem *)data;
-    [_imageView setImageWithURL:[NSURL URLWithString:item.pictureURL] placeholderImage:kClassifyClassifyPlaceholderImage options:JHWebImageOptionsRefreshCached];
+    [_imageView setImageWithURL:[NSURL URLWithString:item.pictureURL] placeholderImage:kHomeCarouselPictureHeaderPlaceholderImage options:JHWebImageOptionsRefreshCached];
     _nameLabel.text = item.name;
 }
 

@@ -27,6 +27,11 @@
     _nameLabel.numberOfLines = 0;
     [self.contentView addSubview:_nameLabel];
     
+    _specificationLabel = [[JHLabel alloc] initWithFrame:CGRectMake(kAppAdaptWidth(15), _nameLabel.maxY + kAppAdaptHeight(8), kDeviceWidth - kAppAdaptWidth(30), kAppAdaptHeight(20))];
+    _specificationLabel.font = kAppAdaptFont(14);
+    _specificationLabel.textColor = WGAppTitleColor;
+    [self.contentView addSubview:_specificationLabel];
+    
     _currentLabel = [[JHLabel alloc] initWithFrame:CGRectMake(kAppAdaptWidth(15), 0, kAppAdaptWidth(100), kAppAdaptHeight(20))];
     _currentLabel.font = kAppAdaptFont(14);
     _currentLabel.textColor = WGAppBaseColor;
@@ -36,11 +41,6 @@
     _priceLabel.font = kAppAdaptFont(14);
     _priceLabel.textColor = WGAppLightNameLabelColor;
     [self.contentView addSubview:_priceLabel];
-    
-    _specificationLabel = [[JHLabel alloc] initWithFrame:CGRectMake(kAppAdaptWidth(15), _priceLabel.maxY + kAppAdaptHeight(8), kDeviceWidth - kAppAdaptWidth(30), _currentLabel.height)];
-    _specificationLabel.font = kAppAdaptFont(14);
-    _specificationLabel.textColor = WGAppLightNameLabelColor;
-    [self.contentView addSubview:_specificationLabel];
 }
 
 - (void)showWithData:(JHObject *)data {
@@ -48,9 +48,21 @@
     _nameLabel.text = good.name;
     CGSize size = [good.name returnSize:_nameLabel.font maxWidth:_nameLabel.width];
     _nameLabel.height = size.height;
+    
+    float y = _nameLabel.maxY + kAppAdaptHeight(8);
+    NSString *specification = good.specification;
+    _specificationLabel.y = _nameLabel.maxY + kAppAdaptHeight(8);
+    _specificationLabel.text = specification;
+    if ([NSString isNullOrEmpty:specification]) {
+        _specificationLabel.height = 0;
+    }
+    else {
+        y = _specificationLabel.maxY + kAppAdaptHeight(8);;
+    }
+    
     NSString *currentPriceStr = good.currentPrice;
     _currentLabel.text = currentPriceStr;
-    _currentLabel.y = _nameLabel.maxY + kAppAdaptHeight(8);
+    _currentLabel.y = y;
     size = [currentPriceStr returnSize:_currentLabel.font maxWidth:200];
     _currentLabel.width = size.width + kAppAdaptWidth(5);
     
@@ -58,10 +70,6 @@
     _priceLabel.attributedText = [priceStr addMidline];
     _priceLabel.x = _currentLabel.maxX + kAppAdaptWidth(10);
     _priceLabel.y = _currentLabel.y;
-    
-    NSString *specification = good.specification;
-    _specificationLabel.y = _currentLabel.maxY + kAppAdaptHeight(8);
-    _specificationLabel.text = specification;
 }
 
 + (CGFloat)heightWithData:(JHObject *)data {

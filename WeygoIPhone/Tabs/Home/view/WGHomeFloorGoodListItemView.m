@@ -113,7 +113,7 @@
     
     _briefDescribeLabel.text = _data.briefDescription;
     
-    _chineseNameLabel.text = _data.name;
+    _chineseNameLabel.text = _data.chineseName;
     
     [_ratingView showWithData:_data.rating];
     

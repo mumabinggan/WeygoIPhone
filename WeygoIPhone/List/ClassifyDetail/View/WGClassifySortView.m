@@ -23,7 +23,7 @@
     [super loadSubviews];
     _itemImageArray = @[@"classify_detail_default", @"classify_detail_filter", @"classify_detail_vista"];
     _itemHighLightImageArray = @[@"classify_detail_default", @"classify_detail_filter", @"classify_detail_vista"];
-    _itemTitleArray = @[kStr(@"Default"), kStr(@"Filtro"), kStr(@"Vista")];
+    _itemTitleArray = @[kStr(@"Default Sort"), kStr(@"Filtro"), kStr(@"Vista")];
     NSInteger count = _itemImageArray.count;
     NSMutableArray *itemMArray = [NSMutableArray array];
     CGFloat width = kDeviceWidth / count;

@@ -31,34 +31,6 @@
 
 - (void)initData {
     _dataMArray = [NSMutableArray array];
-//    WGCoupon *coupon = [[WGCoupon alloc] init];
-//    coupon.id = 2323;
-//    coupon.name = @"kdfasdfas";
-//    coupon.briefDescription = @"南非世界杯夺";
-//    coupon.totalCount = 5;
-//    coupon.residueCount = 3;
-//    coupon.time = @"21-12-2017";
-//    coupon.couponCode = @"ZDQFADSFSSFASD";
-//    
-//    WGCoupon *coupon1 = [[WGCoupon alloc] init];
-//    coupon1.id = 24323;
-//    coupon1.name = @"kdfasdfas";
-//    coupon1.briefDescription = @"南非世界杯夺";
-//    coupon1.totalCount = 5;
-//    coupon1.residueCount = 1;
-//    coupon1.time = @"21-12-2017";
-//    coupon1.couponCode = @"ZDQFSFSADSFASD";
-//    
-//    WGCoupon *coupon2 = [[WGCoupon alloc] init];
-//    coupon2.id = 243263;
-//    coupon2.name = @"kdfasdfas";
-//    coupon2.briefDescription = @"南非世界杯夺";
-//    coupon2.totalCount = 5;
-//    coupon2.residueCount = 3;
-//    coupon2.time = @"21-12-2017";
-//    coupon2.couponCode = @"ZDQFFFADSFASD";
-//    
-//    _dataArray = @[coupon, coupon1, coupon2];
 }
 
 - (void)initSubView {
@@ -111,6 +83,12 @@
 
 - (void)touchActivateBtn:(JHButton *)sender {
     [_inputTextField resignFirstResponder];
+    for (WGCoupon *coupon in _dataMArray) {
+        if (coupon.isSelected) {
+            [self loadUseCoupon:coupon remove:(YES)];
+            return;
+        }
+    }
     WGCoupon *coupon = [[WGCoupon alloc] init];
     coupon.couponCode = _inputTextField.text;
     coupon.isSelected = sender.selected;
@@ -147,8 +125,10 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    WGCoupon *coupon = _dataMArray[indexPath.row];
-    [self loadUseCoupon:coupon remove:coupon.isSelected];
+    if (_isSelect) {
+        WGCoupon *coupon = _dataMArray[indexPath.row];
+        [self loadUseCoupon:coupon remove:coupon.isSelected];
+    }
 }
 
 - (void)beginRefreshFooter:(TWRefreshTableView *)tableView {

@@ -17,7 +17,7 @@
 - (void)loadBaseServiceOnCompletion:(void (^)(WGBaseServiceResponse *))completion {
     __weak id weakSelf = self;
     WGBaseServiceRequest *request = [[WGBaseServiceRequest alloc] init];
-    [[JHNetworkManager sharedManager] get:request forResponseClass:[WGBaseServiceResponse class] success:^(JHResponse *response) {
+    [[JHNetworkManager sharedManager] post:request forResponseClass:[WGBaseServiceResponse class] success:^(JHResponse *response) {
         [weakSelf handleBaseServiceResponse:(WGBaseServiceResponse *)response];
         if (completion) {
             completion((WGBaseServiceResponse *)response);
