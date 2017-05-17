@@ -48,7 +48,7 @@
         _nameLabel.text = [NSString stringWithFormat:kStr(@"Order Client Name"), deliver.userName];
         _addressLabel.text = [NSString stringWithFormat:kStr(@"Order Address"), deliver.userAddress];
         _phoneLabel.text = [NSString stringWithFormat:kStr(@"Order Phone"), deliver.phone];
-        _deliverTimeLabel.text = [NSString stringWithFormat:kStr(@"Order Address"), deliver.deliverTime];
+        _deliverTimeLabel.text = [NSString stringWithFormat:kStr(@"Order Deliver Time"), deliver.deliverTime];
     }
 }
 

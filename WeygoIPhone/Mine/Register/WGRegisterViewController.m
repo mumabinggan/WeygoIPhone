@@ -206,7 +206,10 @@
 }
 
 - (void)touchVerificationCodeBtn:(JHButton *)sender {
-    
+    WeakSelf;
+    [[WGApplication sharedApplication] loadVerificationCodeUserName:_mobileTextField.text countryCode:_codeTextField.text onCompletion:^(WGGetVerifyCodeResponse *response) {
+        [weakSelf showWarningMessage:response.message];
+    }];
 }
 
 - (void)touchLoginBtn:(JHButton *)sender {

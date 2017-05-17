@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE0B6BC31ECAD1FD0096FAC2 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE0B6BC21ECAD1FD0096FAC2 /* FBSDKLoginKit.framework */; };
 		BE1BB9C51E49CCC20008BD68 /* WGBindThirdPartyViewController+Request.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1BB9C41E49CCC20008BD68 /* WGBindThirdPartyViewController+Request.m */; };
 		BE1BBA261E4AFE6F0008BD68 /* WGHomeSliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1BBA251E4AFE6F0008BD68 /* WGHomeSliderViewController.m */; };
 		BE1BBA291E4AFEB20008BD68 /* WGHomeSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1BBA281E4AFEB20008BD68 /* WGHomeSlider.m */; };
@@ -536,6 +537,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BE0B6BC21ECAD1FD0096FAC2 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		BE1BB9C31E49CCC20008BD68 /* WGBindThirdPartyViewController+Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGBindThirdPartyViewController+Request.h"; sourceTree = "<group>"; };
 		BE1BB9C41E49CCC20008BD68 /* WGBindThirdPartyViewController+Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGBindThirdPartyViewController+Request.m"; sourceTree = "<group>"; };
 		BE1BBA241E4AFE6F0008BD68 /* WGHomeSliderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGHomeSliderViewController.h; sourceTree = "<group>"; };
@@ -1422,6 +1424,7 @@
 				BEE085341EA75EF000DC2CC3 /* IQKeyboardManager.framework in Frameworks */,
 				BEE085351EA75EF000DC2CC3 /* JSONModel.framework in Frameworks */,
 				BE97E80E1EAE3DE100E9667C /* Fabric.framework in Frameworks */,
+				BE0B6BC31ECAD1FD0096FAC2 /* FBSDKLoginKit.framework in Frameworks */,
 				BEE085361EA75EF000DC2CC3 /* MBProgressHUD.framework in Frameworks */,
 				BEE085371EA75EF000DC2CC3 /* SDWebImage.framework in Frameworks */,
 				BEED6B721EAF8BFE00B56455 /* ZDCChat.framework in Frameworks */,
@@ -1447,6 +1450,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE0B6BC11ECAD1FD0096FAC2 /* Facebook */ = {
+			isa = PBXGroup;
+			children = (
+				BE0B6BC21ECAD1FD0096FAC2 /* FBSDKLoginKit.framework */,
+			);
+			path = Facebook;
+			sourceTree = "<group>";
+		};
 		BE1BBA1F1E4AFE6F0008BD68 /* HomeSider */ = {
 			isa = PBXGroup;
 			children = (
@@ -2739,6 +2750,7 @@
 		BE97E8091EAE3DE100E9667C /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				BE0B6BC11ECAD1FD0096FAC2 /* Facebook */,
 				BEED6B6C1EAF8BFE00B56455 /* Zendesk */,
 				BE97E80A1EAE3DE100E9667C /* Fabric */,
 			);
@@ -4658,6 +4670,7 @@
 					"$(PROJECT_DIR)/Submodules/JHKit/Submodules/SDWebImage/build/Debug-iphoneos",
 					"$(PROJECT_DIR)/Libraries/Fabric",
 					"$(PROJECT_DIR)/Libraries/Zendesk",
+					"$(PROJECT_DIR)/Libraries/Facebook",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WeygoIPhone/WeygoIPhone-Prefix.pch";
@@ -4690,6 +4703,7 @@
 					"$(PROJECT_DIR)/Submodules/JHKit/Submodules/SDWebImage/build/Debug-iphoneos",
 					"$(PROJECT_DIR)/Libraries/Fabric",
 					"$(PROJECT_DIR)/Libraries/Zendesk",
+					"$(PROJECT_DIR)/Libraries/Facebook",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WeygoIPhone/WeygoIPhone-Prefix.pch";
