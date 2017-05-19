@@ -10,7 +10,7 @@
 
 @interface WGCouponListViewController (Request)
 
-- (void)loadListResponse:(BOOL)refresh pulling:(BOOL)pulling;
+- (void)loadCouponList;
 
 - (void)loadUseCoupon:(WGCoupon *)coupon remove:(BOOL)remove;
 

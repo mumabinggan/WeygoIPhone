@@ -58,4 +58,9 @@ typedef NS_ENUM(NSInteger, WGIntegrationState) {
     WGIntegrationStateUse,
 };
 
+typedef NS_ENUM(NSInteger, WGThirdPartyLoginType) {
+    WGThirdPartyLoginTypeFacebook = 1,
+    WGThirdPartyLoginTypeWechat,
+};
+
 #endif /* WGAppEnum_h */

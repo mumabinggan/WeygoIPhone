@@ -15,31 +15,22 @@
 
 @implementation WGCouponListViewController (Request)
 
-- (void)loadListResponse:(BOOL)refresh pulling:(BOOL)pulling {
+- (void)loadCouponList {
     WGCouponListRequest *request = [[WGCouponListRequest alloc] init];
-    request.pageId = (refresh) ? 0 : _dataMArray.count;
-    request.pageSize = 15;
-    if (pulling) {
-        request.showsLoadingView = NO;
-    }
     __weak typeof(self) weakSelf = self;
     [self post:request forResponseClass:[WGCouponListResponse class] success:^(JHResponse *response) {
-        [weakSelf handleCouponListResponse:(WGCouponListResponse *)response refresh:refresh pulling:pulling];
+        [weakSelf handleCouponListResponse:(WGCouponListResponse *)response];
     } failure:^(NSError *error) {
-        [weakSelf handleCouponListResponse:nil refresh:refresh pulling:pulling];
+        [weakSelf handleCouponListResponse:nil];
     }];
 }
 
-- (void)handleCouponListResponse:(WGCouponListResponse *)response refresh:(BOOL)refresh pulling:(BOOL)pulling {
-    [self stopRefreshing:_tableView refresh:refresh pulling:pulling];
+- (void)handleCouponListResponse:(WGCouponListResponse *)response {
     if (!response) {
         [self showWarningMessage:kStr(@"Request Failed")];
         return;
     }
     if (response.success) {
-        if (refresh) {
-            [_dataMArray removeAllObjects];
-        }
         [_dataMArray addObjectsFromArray:response.data];
         BOOL isCouponCode = YES;
         if (self.coupon) {

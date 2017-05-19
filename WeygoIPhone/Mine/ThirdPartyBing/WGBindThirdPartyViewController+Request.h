@@ -10,6 +10,8 @@
 
 @interface WGBindThirdPartyViewController (Request)
 
-- (void)requestVerificationCode;
+- (void)loadBindRegister;
+
+- (void)loadBindUnRegister;
 
 @end

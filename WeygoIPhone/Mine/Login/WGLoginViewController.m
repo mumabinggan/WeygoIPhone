@@ -12,6 +12,9 @@
 #import "WGForgetPasswordViewController.h"
 #import "PooCodeView.h"
 #import "WGNavigationController.h"
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import "WGBindThirdPartyViewController.h"
 
 @interface WGLoginViewController ()
 {
@@ -210,11 +213,47 @@
 }
 
 - (void)touchWeChatBtn:(JHButton *)sender {
-
+    
+    //[WGApplication sharedApplication] loadCheckBind:<#(NSString *)#> type:<#(WGThirdPartyLoginType)#> onCompletion:<#^(WGCheckBindResponse *)completion#>
 }
 
 - (void)touchFaceBookBtn:(JHButton *)sender {
+    [FBSDKProfile enableUpdatesOnAccessTokenChange:true];
+    [FBSDKAccessToken setCurrentAccessToken:nil];
+    FBSDKLoginManager *loginManager = [[FBSDKLoginManager alloc] init];
+    [loginManager logOut];
+    [loginManager setLoginBehavior:FBSDKLoginBehaviorNative];
+    [loginManager logInWithReadPermissions:@[@"public_profile"] fromViewController:self handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+        if (result) {
+            [[WGApplication sharedApplication] loadCheckBind:result.token.tokenString type:WGThirdPartyLoginTypeFacebook onCompletion:^(WGCheckBindResponse *response) {
+                [self handleCheckBind:response uniqueId:result.token.tokenString type:WGThirdPartyLoginTypeFacebook];
+            }];
+            NSLog(@"---------%@", result.token.tokenString);
+        }
+        else {
+            NSLog(@"----------error---");
+        }
+    }];
+}
+
+- (void)handleCheckBind:(WGCheckBindResponse *)response uniqueId:(NSString *)uniqueId type:(WGThirdPartyLoginType)type {
+    if (response == nil) {
+        [self showWarningMessage:kStr(@"Request Failed")];
+        return;
+    }
     
+    if (response.unBind) {
+        WGBindThirdPartyViewController *bindViewController = [[WGBindThirdPartyViewController alloc] init];
+        bindViewController.uniqueId = uniqueId;
+        bindViewController.type = type;
+        [self.navigationController pushViewController:bindViewController animated:YES];
+    }
+    else if (response.bind) {
+        [[WGApplication sharedApplication] switchTab:WGTabIndexHome];
+    }
+    else {
+        [self showWarningMessage:response.message];
+    }
 }
 
 - (void)refreshkVerificationCode {

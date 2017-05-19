@@ -7,19 +7,69 @@
 //
 
 #import "WGBindThirdPartyViewController+Request.h"
+#import "WGBindRegisteredRequest.h"
+#import "WGBindRegisteredResponse.h"
+#import "WGBindUnRegisteredRequest.h"
+#import "WGBindUnRegisteredResponse.h"
 
 @implementation WGBindThirdPartyViewController (Request)
 
-- (void)requestVerificationCode {
-    __weak id weakSelf = self;
-    [[WGApplication sharedApplication] loadImageVerificationCodeOnCompletion:^(WGImageVerificationCodeResponse *response) {
-        [weakSelf handleVerificationCodeResponse:response];
+- (void)loadBindUnRegister {
+    WGBindUnRegisteredRequest *request = [[WGBindUnRegisteredRequest alloc] init];
+    request.type = self.type;
+    request.uniqueId = self.uniqueId;
+    request.username = _mobileTextField.text;
+    request.verifyCode = _codeTextField.text;
+    request.password = _passwordTextField.text;
+    request.confirmPassword = _confirmPasswordTextField.text;
+    request.firstname = _nameTextField.text;
+    request.lastname = _surnameTextField.text;
+    request.email = _emailTextField.text;
+    __weak typeof(self) weakSelf = self;
+    [self post:request forResponseClass:[WGBindUnRegisteredResponse class] success:^(JHResponse *response) {
+        [weakSelf handleBindUnRegisterResponse:(WGBindUnRegisteredResponse *)response];
+    } failure:^(NSError *error) {
+        [weakSelf showWarningMessage:kStr(@"Request Failed")];
     }];
 }
 
-- (void)handleVerificationCodeResponse:(WGImageVerificationCodeResponse *)response {
+- (void)handleBindUnRegisterResponse:(WGBindUnRegisteredResponse *)response {
     if (response.success) {
-        [self refreshkVerificationCode];
+        [[WGApplication sharedApplication] reset];
+        [WGApplication sharedApplication].user = response.data;
+        [self sendNotification:WGRefreshNotificationTypeLogin];
+        [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationLogIn object:nil];
+        [[WGApplication sharedApplication] switchTab:WGTabIndexHome];
+    }
+    else {
+        [self showWarningMessage:response.message];
+    }
+}
+
+- (void)loadBindRegister {
+    WGBindRegisteredRequest *request = [[WGBindRegisteredRequest alloc] init];
+    request.uniqueId = self.uniqueId;
+    request.type = self.type;
+    request.account = _usernameTextField.text;
+    request.password = _passwordTextField.text;
+    __weak typeof(self) weakSelf = self;
+    [self post:request forResponseClass:[WGBindRegisteredResponse class] success:^(JHResponse *response) {
+        [weakSelf handleBindRegisteredResponse:(WGBindRegisteredResponse *)response];
+    } failure:^(NSError *error) {
+        [weakSelf showWarningMessage:kStr(@"Request Failed")];
+    }];
+}
+
+- (void)handleBindRegisteredResponse:(WGBindRegisteredResponse *)response {
+    if (response.success) {
+        [[WGApplication sharedApplication] reset];
+        [WGApplication sharedApplication].user = response.data;
+        [self sendNotification:WGRefreshNotificationTypeLogin];
+        [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationLogIn object:nil];
+        [[WGApplication sharedApplication] switchTab:WGTabIndexHome];
+    }
+    else {
+        [self showWarningMessage:response.message];
     }
 }
 

@@ -27,6 +27,8 @@
 #import "WGRebuyOrderResponse.h"
 #import "WGSetPostCodeRequest.h"
 #import "WGSetPostCodeResponse.h"
+#import "WGCheckBindRequest.h"
+#import "WGCheckBindResponse.h"
 
 @interface WGApplication (Request)
 
@@ -55,5 +57,7 @@
 - (void)loadRebuyOrder:(long long)orderId onCompletion:(void (^)(WGRebuyOrderResponse *))completion;
 
 - (void)loadSetPostCode:(NSString *)cap onCompletion:(void (^)(WGSetPostCodeResponse *))completion;
+
+- (void)loadCheckBind:(NSString *)uniqueId type:(WGThirdPartyLoginType)type onCompletion:(void (^)(WGCheckBindResponse *))completion;
 
 @end

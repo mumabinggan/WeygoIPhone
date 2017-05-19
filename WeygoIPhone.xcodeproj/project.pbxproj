@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BE0B6BC31ECAD1FD0096FAC2 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE0B6BC21ECAD1FD0096FAC2 /* FBSDKLoginKit.framework */; };
 		BE1BB9C51E49CCC20008BD68 /* WGBindThirdPartyViewController+Request.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1BB9C41E49CCC20008BD68 /* WGBindThirdPartyViewController+Request.m */; };
 		BE1BBA261E4AFE6F0008BD68 /* WGHomeSliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1BBA251E4AFE6F0008BD68 /* WGHomeSliderViewController.m */; };
 		BE1BBA291E4AFEB20008BD68 /* WGHomeSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1BBA281E4AFEB20008BD68 /* WGHomeSlider.m */; };
@@ -345,6 +344,10 @@
 		BEB2D9751DFD933600F2E74B /* WGScrollImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB2D9741DFD933600F2E74B /* WGScrollImageView.m */; };
 		BEB2D9851DFE3FF400F2E74B /* WGHomeTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB2D9841DFE3FF400F2E74B /* WGHomeTitleView.m */; };
 		BEB2D9931DFE77C100F2E74B /* WGScrollAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB2D9921DFE77C000F2E74B /* WGScrollAdView.m */; };
+		BEB6703C1ECDF467002173D7 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEB6703B1ECDF467002173D7 /* FBSDKLoginKit.framework */; };
+		BEB6703E1ECDF478002173D7 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEB6703D1ECDF478002173D7 /* Bolts.framework */; };
+		BEB670401ECDF48B002173D7 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEB6703F1ECDF48B002173D7 /* FBSDKCoreKit.framework */; };
+		BEB670421ECDF497002173D7 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEB670411ECDF497002173D7 /* FBSDKShareKit.framework */; };
 		BEB8D08B1E46CDB100BB9BA3 /* WGBaseServiceRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB8D08A1E46CDB100BB9BA3 /* WGBaseServiceRequest.m */; };
 		BEB8D08E1E46CDCC00BB9BA3 /* WGBaseServiceResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB8D08D1E46CDCC00BB9BA3 /* WGBaseServiceResponse.m */; };
 		BEB8D0911E46CEEB00BB9BA3 /* WGBaseServiceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB8D0901E46CEEB00BB9BA3 /* WGBaseServiceInfo.m */; };
@@ -380,6 +383,13 @@
 		BECBE3161E87C68E00ADAD6C /* WGTitleItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BECBE3151E87C68E00ADAD6C /* WGTitleItem.m */; };
 		BECBE3191E87D13100ADAD6C /* WGCommonViewController+Data.m in Sources */ = {isa = PBXBuildFile; fileRef = BECBE3181E87D13100ADAD6C /* WGCommonViewController+Data.m */; };
 		BECEBF9F1E2BD104002C4462 /* WGClassifyGoodListViewController+Request.m in Sources */ = {isa = PBXBuildFile; fileRef = BECEBF9E1E2BD104002C4462 /* WGClassifyGoodListViewController+Request.m */; };
+		BED471701ECDDC9400F9FCC9 /* WGCheckBindRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BED4716F1ECDDC9400F9FCC9 /* WGCheckBindRequest.m */; };
+		BED471741ECDDCAE00F9FCC9 /* WGCheckBindResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BED471731ECDDCAE00F9FCC9 /* WGCheckBindResponse.m */; };
+		BED471771ECDDD9100F9FCC9 /* WGBindRegisteredRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BED471761ECDDD9100F9FCC9 /* WGBindRegisteredRequest.m */; };
+		BED4717A1ECDDDAC00F9FCC9 /* WGBindRegisteredResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BED471791ECDDDAC00F9FCC9 /* WGBindRegisteredResponse.m */; };
+		BED4717D1ECDE05200F9FCC9 /* WGBindUnRegisteredRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BED4717C1ECDE05200F9FCC9 /* WGBindUnRegisteredRequest.m */; };
+		BED471801ECDE07000F9FCC9 /* WGBindUnRegisteredResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BED4717F1ECDE07000F9FCC9 /* WGBindUnRegisteredResponse.m */; };
+		BED471831ECDE9DF00F9FCC9 /* AppDelegate+Facebook.m in Sources */ = {isa = PBXBuildFile; fileRef = BED471821ECDE9DF00F9FCC9 /* AppDelegate+Facebook.m */; };
 		BED697B31E9E348100163355 /* WGPayWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BED697B21E9E348100163355 /* WGPayWebViewController.m */; };
 		BED697B71E9E38BC00163355 /* WGPaySuccessRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BED697B61E9E38BC00163355 /* WGPaySuccessRequest.m */; };
 		BED697BA1E9E38CE00163355 /* WGPaySuccessResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BED697B91E9E38CE00163355 /* WGPaySuccessResponse.m */; };
@@ -537,7 +547,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		BE0B6BC21ECAD1FD0096FAC2 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		BE1BB9C31E49CCC20008BD68 /* WGBindThirdPartyViewController+Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGBindThirdPartyViewController+Request.h"; sourceTree = "<group>"; };
 		BE1BB9C41E49CCC20008BD68 /* WGBindThirdPartyViewController+Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGBindThirdPartyViewController+Request.m"; sourceTree = "<group>"; };
 		BE1BBA241E4AFE6F0008BD68 /* WGHomeSliderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGHomeSliderViewController.h; sourceTree = "<group>"; };
@@ -1180,6 +1189,11 @@
 		BEB2D9841DFE3FF400F2E74B /* WGHomeTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGHomeTitleView.m; sourceTree = "<group>"; };
 		BEB2D9911DFE77C000F2E74B /* WGScrollAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGScrollAdView.h; sourceTree = "<group>"; };
 		BEB2D9921DFE77C000F2E74B /* WGScrollAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGScrollAdView.m; sourceTree = "<group>"; };
+		BEB6703B1ECDF467002173D7 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		BEB6703D1ECDF478002173D7 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		BEB6703F1ECDF48B002173D7 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		BEB670411ECDF497002173D7 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		BEB670431ECDF72B002173D7 /* Weygo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Weygo.entitlements; sourceTree = "<group>"; };
 		BEB8D0891E46CDB100BB9BA3 /* WGBaseServiceRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGBaseServiceRequest.h; sourceTree = "<group>"; };
 		BEB8D08A1E46CDB100BB9BA3 /* WGBaseServiceRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGBaseServiceRequest.m; sourceTree = "<group>"; };
 		BEB8D08C1E46CDCC00BB9BA3 /* WGBaseServiceResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGBaseServiceResponse.h; sourceTree = "<group>"; };
@@ -1251,6 +1265,20 @@
 		BECBE3181E87D13100ADAD6C /* WGCommonViewController+Data.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGCommonViewController+Data.m"; sourceTree = "<group>"; };
 		BECEBF9D1E2BD104002C4462 /* WGClassifyGoodListViewController+Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGClassifyGoodListViewController+Request.h"; sourceTree = "<group>"; };
 		BECEBF9E1E2BD104002C4462 /* WGClassifyGoodListViewController+Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGClassifyGoodListViewController+Request.m"; sourceTree = "<group>"; };
+		BED4716E1ECDDC9400F9FCC9 /* WGCheckBindRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGCheckBindRequest.h; sourceTree = "<group>"; };
+		BED4716F1ECDDC9400F9FCC9 /* WGCheckBindRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGCheckBindRequest.m; sourceTree = "<group>"; };
+		BED471721ECDDCAE00F9FCC9 /* WGCheckBindResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGCheckBindResponse.h; sourceTree = "<group>"; };
+		BED471731ECDDCAE00F9FCC9 /* WGCheckBindResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGCheckBindResponse.m; sourceTree = "<group>"; };
+		BED471751ECDDD9100F9FCC9 /* WGBindRegisteredRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGBindRegisteredRequest.h; sourceTree = "<group>"; };
+		BED471761ECDDD9100F9FCC9 /* WGBindRegisteredRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGBindRegisteredRequest.m; sourceTree = "<group>"; };
+		BED471781ECDDDAC00F9FCC9 /* WGBindRegisteredResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGBindRegisteredResponse.h; sourceTree = "<group>"; };
+		BED471791ECDDDAC00F9FCC9 /* WGBindRegisteredResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGBindRegisteredResponse.m; sourceTree = "<group>"; };
+		BED4717B1ECDE05200F9FCC9 /* WGBindUnRegisteredRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGBindUnRegisteredRequest.h; sourceTree = "<group>"; };
+		BED4717C1ECDE05200F9FCC9 /* WGBindUnRegisteredRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGBindUnRegisteredRequest.m; sourceTree = "<group>"; };
+		BED4717E1ECDE07000F9FCC9 /* WGBindUnRegisteredResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGBindUnRegisteredResponse.h; sourceTree = "<group>"; };
+		BED4717F1ECDE07000F9FCC9 /* WGBindUnRegisteredResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGBindUnRegisteredResponse.m; sourceTree = "<group>"; };
+		BED471811ECDE9DF00F9FCC9 /* AppDelegate+Facebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Facebook.h"; sourceTree = "<group>"; };
+		BED471821ECDE9DF00F9FCC9 /* AppDelegate+Facebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Facebook.m"; sourceTree = "<group>"; };
 		BED697B11E9E348100163355 /* WGPayWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGPayWebViewController.h; sourceTree = "<group>"; };
 		BED697B21E9E348100163355 /* WGPayWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGPayWebViewController.m; sourceTree = "<group>"; };
 		BED697B51E9E38BC00163355 /* WGPaySuccessRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGPaySuccessRequest.h; sourceTree = "<group>"; };
@@ -1424,12 +1452,15 @@
 				BEE085341EA75EF000DC2CC3 /* IQKeyboardManager.framework in Frameworks */,
 				BEE085351EA75EF000DC2CC3 /* JSONModel.framework in Frameworks */,
 				BE97E80E1EAE3DE100E9667C /* Fabric.framework in Frameworks */,
-				BE0B6BC31ECAD1FD0096FAC2 /* FBSDKLoginKit.framework in Frameworks */,
+				BEB6703C1ECDF467002173D7 /* FBSDKLoginKit.framework in Frameworks */,
+				BEB670421ECDF497002173D7 /* FBSDKShareKit.framework in Frameworks */,
 				BEE085361EA75EF000DC2CC3 /* MBProgressHUD.framework in Frameworks */,
 				BEE085371EA75EF000DC2CC3 /* SDWebImage.framework in Frameworks */,
+				BEB670401ECDF48B002173D7 /* FBSDKCoreKit.framework in Frameworks */,
 				BEED6B721EAF8BFE00B56455 /* ZDCChat.framework in Frameworks */,
 				BEE085311EA75EDE00DC2CC3 /* JHKit.framework in Frameworks */,
 				BEED6B731EAF8BFE00B56455 /* ZDCChatAPI.framework in Frameworks */,
+				BEB6703E1ECDF478002173D7 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1453,7 +1484,10 @@
 		BE0B6BC11ECAD1FD0096FAC2 /* Facebook */ = {
 			isa = PBXGroup;
 			children = (
-				BE0B6BC21ECAD1FD0096FAC2 /* FBSDKLoginKit.framework */,
+				BEB670411ECDF497002173D7 /* FBSDKShareKit.framework */,
+				BEB6703F1ECDF48B002173D7 /* FBSDKCoreKit.framework */,
+				BEB6703D1ECDF478002173D7 /* Bolts.framework */,
+				BEB6703B1ECDF467002173D7 /* FBSDKLoginKit.framework */,
 			);
 			path = Facebook;
 			sourceTree = "<group>";
@@ -2438,6 +2472,7 @@
 		BE62E22B1DF92176004510A5 /* WeygoIPhone */ = {
 			isa = PBXGroup;
 			children = (
+				BEB670431ECDF72B002173D7 /* Weygo.entitlements */,
 				BE62CD9E1EA246DB0076BD69 /* SpecialClassify */,
 				BECBE30D1E87C41900ADAD6C /* Asia */,
 				BEB8D0841E46CD1E00BB9BA3 /* Base */,
@@ -2464,6 +2499,8 @@
 				BEED6B791EAF8CA700B56455 /* AppDelegate+Zendesk.m */,
 				BEAC8F611EBD7701006B236B /* AppDelegate+Welcome.h */,
 				BEAC8F621EBD7701006B236B /* AppDelegate+Welcome.m */,
+				BED471811ECDE9DF00F9FCC9 /* AppDelegate+Facebook.h */,
+				BED471821ECDE9DF00F9FCC9 /* AppDelegate+Facebook.m */,
 				BE62E45F1DF935E9004510A5 /* WGMainViewController.h */,
 				BE62E45E1DF935E9004510A5 /* WGMainViewController.m */,
 				BE6753CA1E948DDC00250BA8 /* WGMainViewController+TabBarDelegate.h */,
@@ -3513,6 +3550,12 @@
 		BEB8D1631E49C1D200BB9BA3 /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				BED4716E1ECDDC9400F9FCC9 /* WGCheckBindRequest.h */,
+				BED4716F1ECDDC9400F9FCC9 /* WGCheckBindRequest.m */,
+				BED471751ECDDD9100F9FCC9 /* WGBindRegisteredRequest.h */,
+				BED471761ECDDD9100F9FCC9 /* WGBindRegisteredRequest.m */,
+				BED4717B1ECDE05200F9FCC9 /* WGBindUnRegisteredRequest.h */,
+				BED4717C1ECDE05200F9FCC9 /* WGBindUnRegisteredRequest.m */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -3520,6 +3563,12 @@
 		BEB8D1641E49C1D200BB9BA3 /* Response */ = {
 			isa = PBXGroup;
 			children = (
+				BED471721ECDDCAE00F9FCC9 /* WGCheckBindResponse.h */,
+				BED471731ECDDCAE00F9FCC9 /* WGCheckBindResponse.m */,
+				BED471781ECDDDAC00F9FCC9 /* WGBindRegisteredResponse.h */,
+				BED471791ECDDDAC00F9FCC9 /* WGBindRegisteredResponse.m */,
+				BED4717E1ECDE07000F9FCC9 /* WGBindUnRegisteredResponse.h */,
+				BED4717F1ECDE07000F9FCC9 /* WGBindUnRegisteredResponse.m */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -3936,6 +3985,11 @@
 						DevelopmentTeam = 646D5H398Z;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					BE62E2411DF92176004510A5 = {
 						CreatedOnToolsVersion = 8.1;
@@ -4133,6 +4187,7 @@
 				BE5E4C181E249ADB00ACA48F /* WGHomeTabContentViewController.m in Sources */,
 				BE6BE9151E7FA84400A081BA /* WGCommitOrderResponse.m in Sources */,
 				BEEC20DD1E9924310065DE90 /* WGSetDefaultAddressRequest.m in Sources */,
+				BED4717D1ECDE05200F9FCC9 /* WGBindUnRegisteredRequest.m in Sources */,
 				BE63A6F71E7BC5BF00F77282 /* WGOrderListResponse.m in Sources */,
 				BE520FEA1E880431004BD34E /* WGTabViewController+Slider.m in Sources */,
 				BEB2D9751DFD933600F2E74B /* WGScrollImageView.m in Sources */,
@@ -4163,6 +4218,7 @@
 				BE6BE9121E7FA83600A081BA /* WGCommitOrderRequest.m in Sources */,
 				BEB9A6061E9FCCC20089B1BE /* WGRebuyOrderResponse.m in Sources */,
 				BE6CC1B21E29406C003755FF /* WGHomeFloorClassifyGridItemCell.m in Sources */,
+				BED471771ECDDD9100F9FCC9 /* WGBindRegisteredRequest.m in Sources */,
 				BE5F047D1E9CD22200A701CB /* WGPaySuccessViewController.m in Sources */,
 				BE6BE9061E7FA77B00A081BA /* WGCommitOrderConsumeCell.m in Sources */,
 				BEB2D91E1DFBDFE900F2E74B /* WGTabBenefitViewController.m in Sources */,
@@ -4234,6 +4290,7 @@
 				BEEC20E31E99246E0065DE90 /* WGDeleteAddressResponse.m in Sources */,
 				BE74CDAC1E626B3700600A28 /* WGHomeSliderViewController+Request.m in Sources */,
 				BE99E7CA1E1CB67600210546 /* WGRatingView.m in Sources */,
+				BED471801ECDE07000F9FCC9 /* WGBindUnRegisteredResponse.m in Sources */,
 				BEEC21351E9B7F850065DE90 /* WGIntegrationDetail.m in Sources */,
 				BE6BE91B1E7FAF1400A081BA /* WGSettlementResult.m in Sources */,
 				BE62CD6F1EA0BD310076BD69 /* WGScanViewController.m in Sources */,
@@ -4274,11 +4331,13 @@
 				BEA375041E34FA3B0054B8E6 /* WGClassifyDetailFilterViewController.m in Sources */,
 				BE57D1401E7DAB5300149738 /* WGMessageCenterViewController.m in Sources */,
 				BE63A6E51E7BBE4A00F77282 /* WGOrderListViewController.m in Sources */,
+				BED471741ECDDCAE00F9FCC9 /* WGCheckBindResponse.m in Sources */,
 				BEA374A81E347FE60054B8E6 /*  .m in Sources */,
 				BE2B42CE1E8B98530010BCB7 /* WGShopCartViewController+Request.m in Sources */,
 				BE52ED8A1E2CC7400022EF5B /* WGBaseAddressAndReceiveEditCell.m in Sources */,
 				BE6CC1961E28B163003755FF /* WGHomeCarouselFiguresCell.m in Sources */,
 				BE6CC1B81E2940DB003755FF /* WGHomeFloorCountryCell.m in Sources */,
+				BED4717A1ECDDDAC00F9FCC9 /* WGBindRegisteredResponse.m in Sources */,
 				BEB2D96C1DFC579400F2E74B /* WGHomeTabViewController+Scroll.m in Sources */,
 				BE8CB2A71EBB8BFA002480CA /* WGBorderLabel.m in Sources */,
 				BEF8ED521E8A549400E15C8F /* WGTabClassifyViewController+Request.m in Sources */,
@@ -4409,6 +4468,7 @@
 				BE62CD7D1EA0BFF30076BD69 /* WGScanJumpGood.m in Sources */,
 				BE520FDA1E87EB17004BD34E /* WGApplication+Controller.m in Sources */,
 				BE62E22E1DF92176004510A5 /* main.m in Sources */,
+				BED471701ECDDC9400F9FCC9 /* WGCheckBindRequest.m in Sources */,
 				BEB8D0AE1E46F27400BB9BA3 /* WGUser.m in Sources */,
 				BEB8D0D91E470FDF00BB9BA3 /* WGMineHeaderView.m in Sources */,
 				BE52ED331E2C71630022EF5B /* WGReceipt.m in Sources */,
@@ -4452,6 +4512,7 @@
 				BE63A6EB1E7BBE8000F77282 /* WGOrderListItem.m in Sources */,
 				BE8CB27A1EBB581C002480CA /* WGHotSearchResponse.m in Sources */,
 				BE6BE8F01E7F912300A081BA /* WGCommitOrderViewController.m in Sources */,
+				BED471831ECDE9DF00F9FCC9 /* AppDelegate+Facebook.m in Sources */,
 				BE1BBA2F1E4B0DE10008BD68 /* WGSliderTopicItemView.m in Sources */,
 				BE6BE9211E7FB6B300A081BA /* WGSettlementResultResponse.m in Sources */,
 				BE5F61B21E94F4AE00FBA32A /* WGVerificationCodeView.m in Sources */,
@@ -4588,6 +4649,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Libraries/Facebook";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -4636,6 +4698,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Libraries/Facebook";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -4656,7 +4719,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = WeygoIPhone/Weygo.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 646D5H398Z;
@@ -4671,6 +4736,7 @@
 					"$(PROJECT_DIR)/Libraries/Fabric",
 					"$(PROJECT_DIR)/Libraries/Zendesk",
 					"$(PROJECT_DIR)/Libraries/Facebook",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WeygoIPhone/WeygoIPhone-Prefix.pch";
@@ -4681,7 +4747,7 @@
 				PRODUCT_NAME = Weygo;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
-				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Submodules/JHKit/**";
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Submodules/JHKit/** $(PROJECT_DIR)/Libraries/Facebook";
 			};
 			name = Debug;
 		};
@@ -4690,7 +4756,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = WeygoIPhone/Weygo.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 646D5H398Z;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -4704,6 +4772,7 @@
 					"$(PROJECT_DIR)/Libraries/Fabric",
 					"$(PROJECT_DIR)/Libraries/Zendesk",
 					"$(PROJECT_DIR)/Libraries/Facebook",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WeygoIPhone/WeygoIPhone-Prefix.pch";
@@ -4713,7 +4782,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.weygo.weygo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Submodules/JHKit/**";
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Submodules/JHKit/** $(PROJECT_DIR)/Libraries/Facebook";
 			};
 			name = Release;
 		};

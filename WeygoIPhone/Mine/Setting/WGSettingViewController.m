@@ -9,6 +9,7 @@
 #import "WGSettingViewController.h"
 #import "JHCacheManager.h"
 #import "AppDelegate+UI.h"
+#import "WGPostCodePopoverView.h"
 
 @interface WGSettingViewController ()
 {
@@ -81,28 +82,30 @@
         [self removePickerView];
     }
     else {
-        _sortPickerBgView = [[JHView alloc] initWithFrame:CGRectMake(0, kDeviceHeight - kAppAdaptHeight(160), kDeviceWidth, kAppAdaptHeight(160))];
-        _sortPickerBgView.backgroundColor = kGrayColor;
+        
+        _sortPickerBgView = [[JHView alloc] initWithFrame:CGRectMake(0, kDeviceHeight - kAppAdaptHeight(300), kDeviceWidth, kAppAdaptHeight(300))];
+        _sortPickerBgView.backgroundColor = kWhiteColor;
         [self.view addSubview:_sortPickerBgView];
         
-        _sortPickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, kAppAdaptHeight(30), kDeviceWidth, kAppAdaptHeight(130))];
+        _sortPickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, kAppAdaptHeight(60), kDeviceWidth, kAppAdaptHeight(200))];
         _sortPickerView.backgroundColor = kRGB(244, 244, 244);
         _sortPickerView.delegate = self;
         _sortPickerView.dataSource = self;
         _sortPickerView.showsSelectionIndicator = YES;
         [_sortPickerView selectRow:_selectedLanguageIndex inComponent:0 animated:NO];
+        _sortPickerBgView.backgroundColor = _sortPickerView.backgroundColor;
         [_sortPickerBgView addSubview:_sortPickerView];
         
-        JHButton *cancelBtn = [[JHButton alloc] initWithFrame:CGRectMake(kAppAdaptWidth(8), 0, kAppAdaptWidth(100), kAppAdaptHeight(30))];
+        JHButton *cancelBtn = [[JHButton alloc] initWithFrame:CGRectMake(kAppAdaptWidth(8), kAppAdaptWidth(10), kAppAdaptWidth(50), kAppAdaptHeight(30))];
         [cancelBtn setTitle:kStr(@"Mine_Logout_Cancel") forState:UIControlStateNormal];
-        [cancelBtn setTitleColor:kWhiteColor forState:UIControlStateNormal];
+        [cancelBtn setTitleColor:WGAppBaseColor forState:UIControlStateNormal];
         [cancelBtn addTarget:self action:@selector(touchCancelBtn:) forControlEvents:UIControlEventTouchUpInside];
         cancelBtn.titleLabel.font = kAppAdaptFont(14);
         [_sortPickerBgView addSubview:cancelBtn];
         
-        JHButton *confirmBtn = [[JHButton alloc] initWithFrame:CGRectMake(kDeviceWidth - kAppAdaptWidth(108), 0, kAppAdaptWidth(100), kAppAdaptHeight(30))];
+        JHButton *confirmBtn = [[JHButton alloc] initWithFrame:CGRectMake(kDeviceWidth - kAppAdaptWidth(58), kAppAdaptWidth(10), kAppAdaptWidth(50), kAppAdaptHeight(30))];
         [confirmBtn setTitle:kStr(@"Mine_Logout_Ok") forState:UIControlStateNormal];
-        [confirmBtn setTitleColor:kWhiteColor forState:UIControlStateNormal];
+        [confirmBtn setTitleColor:WGAppBaseColor forState:UIControlStateNormal];
         [confirmBtn addTarget:self action:@selector(touchConfirmBtn:) forControlEvents:UIControlEventTouchUpInside];
         confirmBtn.titleLabel.font = kAppAdaptFont(14);
         [_sortPickerBgView addSubview:confirmBtn];
@@ -212,7 +215,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 1) {
-        
+        WGPostCodePopoverView *view = [[WGPostCodePopoverView alloc] initWithFrame:self.view.bounds];
+        view.onApply = ^(NSString *postCode) {
+            [_tableView reloadData];
+        };
+        [view show];
+        return;
     }
     else if (indexPath.row == 3) {
         //国家切换
@@ -229,6 +237,7 @@
             animalView.hidesWhenStopped = YES;
             cell.accessoryView = animalView;
             [[JHCacheManager sharedCacheManager] clearCache:^(void) {
+                [self showWarningMessage:@""];
                 UIActivityIndicatorView *accessoryView = (UIActivityIndicatorView *)cell.accessoryView;
                 [accessoryView stopAnimating];
             }];

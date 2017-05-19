@@ -10,8 +10,8 @@
 
 @interface WGCouponListRequest : WGGuestRequest
 
-@property (nonatomic, assign) long long pageId;
-
-@property (nonatomic, assign) long long pageSize;
+//@property (nonatomic, assign) long long pageId;
+//
+//@property (nonatomic, assign) long long pageSize;
 
 @end

@@ -10,27 +10,12 @@
 #import "WGSegmentView.h"
 #import "WGVerificationCodeView.h"
 #import "PooCodeView.h"
+#import "WGBindThirdPartyViewController+Request.h"
 
 @interface WGBindThirdPartyViewController ()
 {
     WGSegmentView *_titleSegmentView;
     JHScrollView *_contentsScrollView;
-    
-    JHView *_registerView;
-    JHTextField *_usernameTextField;
-    JHTextField *_passwordTextField;
-    JHTextField *_codeTextField;
-    PooCodeView *_verificationCodeBtn;
-    
-    JHView *_unRegisterView;
-    JHTextField *_mobileTextField;
-    JHTextField *_unRegisterCodeTextField;
-    JHTextField *_surnameTextField;
-    JHTextField *_nameTextField;
-    JHTextField *_unRegisterPasswordTextField;
-    JHTextField *_confirmPasswordTextField;
-    
-    WGVerificationCodeView *_unRegisterVerificationCodeBtn;
 }
 @end
 
@@ -114,17 +99,24 @@
         [confirmBtn setTitle:kStr(@"ThirdPartyBing_Ok") forState:UIControlStateNormal];
         [confirmBtn setTitleColor:kWhiteColor forState:UIControlStateNormal];
         confirmBtn.titleLabel.font = kAppAdaptFont(14);
-        [confirmBtn addTarget:self action:@selector(touchConfirmBtn:) forControlEvents:UIControlEventTouchUpInside];
+        [confirmBtn addTarget:self action:@selector(touchRegisterConfirmBtn:) forControlEvents:UIControlEventTouchUpInside];
         [_registerView addSubview:confirmBtn];
     }
 }
 
 - (void)touchVerificationCodeBtn:(JHButton *)sender {
-    
+    WeakSelf;
+    [[WGApplication sharedApplication] loadVerificationCodeUserName:_mobileTextField.text countryCode:_codeTextField.text onCompletion:^(WGGetVerifyCodeResponse *response) {
+        [weakSelf showWarningMessage:response.message];
+    }];
 }
 
-- (void)touchConfirmBtn:(JHButton *)sender {
-    
+- (void)touchRegisterConfirmBtn:(JHButton *)sender {
+    [self loadBindRegister];
+}
+
+- (void)touchUnRegisterConfirmBtn:(JHButton *)sender {
+    [self loadBindUnRegister];
 }
 
 - (void)createUnRegisterView {
@@ -200,7 +192,17 @@
         nameLineView.backgroundColor = WGAppSeparateLineColor;
         [_nameTextField addSubview:nameLineView];
         
-        _unRegisterCodeTextField = [[JHTextField alloc] initWithFrame:CGRectMake(textFieldX, _nameTextField.maxY, textFieldWidth, textFieldHeight)];
+        _emailTextField = [[JHTextField alloc] initWithFrame:CGRectMake(textFieldX, _nameTextField.maxY, textFieldWidth, textFieldHeight)];
+        _emailTextField.font = kAppAdaptFont(14);
+        _emailTextField.placeholder = kStr(@"Register_Email");
+        _emailTextField.textColor = WGAppNameLabelColor;
+        [_unRegisterView addSubview:_emailTextField];
+        
+        JHView *emailLineView = [[JHView alloc] initWithFrame:CGRectMake(0, lineY, textFieldWidth, kAppSepratorLineHeight)];
+        emailLineView.backgroundColor = WGAppSeparateLineColor;
+        [_emailTextField addSubview:emailLineView];
+        
+        _unRegisterCodeTextField = [[JHTextField alloc] initWithFrame:CGRectMake(textFieldX, _emailTextField.maxY, textFieldWidth, textFieldHeight)];
         _unRegisterCodeTextField.font = kAppAdaptFont(14);
         _unRegisterCodeTextField.placeholder = kStr(@"Register_Password");
         _unRegisterCodeTextField.textColor = WGAppNameLabelColor;
@@ -225,7 +227,7 @@
         [confirmBtn setTitle:kStr(@"ThirdPartyBing_Ok") forState:UIControlStateNormal];
         [confirmBtn setTitleColor:kWhiteColor forState:UIControlStateNormal];
         confirmBtn.titleLabel.font = kAppAdaptFont(14);
-        [confirmBtn addTarget:self action:@selector(touchConfirmBtn:) forControlEvents:UIControlEventTouchUpInside];
+        [confirmBtn addTarget:self action:@selector(touchUnRegisterConfirmBtn:) forControlEvents:UIControlEventTouchUpInside];
         [_unRegisterView addSubview:confirmBtn];
     }
 }

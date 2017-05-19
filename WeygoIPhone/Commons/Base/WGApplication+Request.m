@@ -233,4 +233,32 @@
     }
 }
 
+- (void)loadCheckBind:(NSString *)uniqueId type:(WGThirdPartyLoginType)type onCompletion:(void (^)(WGCheckBindResponse *))completion {
+    WGCheckBindRequest *request = [[WGCheckBindRequest alloc] init];
+    request.uniqueId = uniqueId;
+    request.type = type;
+    WeakSelf;
+    [[JHNetworkManager sharedManager] post:request forResponseClass:[WGCheckBindResponse class] success:^(JHResponse *response) {
+        [weakSelf handleCheckBindResponse:(WGCheckBindResponse *)response];
+        if (completion) {
+            completion((WGCheckBindResponse *)response);
+        }
+    } failure:^(NSError *error) {
+        if (completion) {
+            completion(nil);
+        }
+    }];
+}
+
+- (void)handleCheckBindResponse:(WGCheckBindResponse *)response {
+    if (response.bind) {
+        [[WGApplication sharedApplication] reset];
+        [WGApplication sharedApplication].user = response.data;
+        [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationRefreshRequired
+                                                            object:@(WGRefreshNotificationTypeLogin)];
+        [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationLogIn object:nil];
+        [self switchTab:WGTabIndexMine];
+    }
+}
+
 @end

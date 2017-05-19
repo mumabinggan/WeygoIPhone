@@ -16,7 +16,7 @@
 
 @end
 
-@interface WGCouponListViewController (TableViewDelegate) <UITableViewDelegate, UITableViewDataSource, TWTableViewRefreshingDelegate>
+@interface WGCouponListViewController (TableViewDelegate) <UITableViewDelegate, UITableViewDataSource>
 
 @end
 
@@ -26,7 +26,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = kStr(@"CouponList_Selected_Title");
-    [self loadListResponse:YES pulling:NO];
+    [self loadCouponList];
 }
 
 - (void)initData {
@@ -38,10 +38,9 @@
     JHView *contentView = [[JHView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:contentView];
     
-    _tableView = [[TWRefreshTableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped refreshType:TWRefreshTypeBottom];
+    _tableView = [[JHTableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
     _tableView.dataSource = self;
     _tableView.delegate = self;
-    _tableView.refreshDelegate = self;
     _tableView.backgroundColor = kRGB(234, 238, 240);
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     if (_isSelect) {
@@ -129,14 +128,6 @@
         WGCoupon *coupon = _dataMArray[indexPath.row];
         [self loadUseCoupon:coupon remove:coupon.isSelected];
     }
-}
-
-- (void)beginRefreshFooter:(TWRefreshTableView *)tableView {
-    [self loadListResponse:NO pulling:YES];
-}
-
-- (void)beginRefreshHeader:(TWRefreshTableView *)tableView {
-    [self loadListResponse:YES pulling:YES];
 }
 
 @end

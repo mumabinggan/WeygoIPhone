@@ -9,6 +9,9 @@
 #import "WGRegisterViewController.h"
 #import "WGRegisterViewController+Request.h"
 #import "WGVerificationCodeView.h"
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import "WGBindThirdPartyViewController.h"
 
 @interface WGRegisterViewController ()
 {
@@ -82,7 +85,7 @@
     [facebookBtn setTitleColor:WGAppTitleColor forState:UIControlStateNormal];
     facebookBtn.titleLabel.font = kAppAdaptFont(14);
     [facebookBtn setImage:[UIImage imageNamed:@"login_facebook"] forState:UIControlStateNormal];
-    [facebookBtn addTarget:self action:@selector(touchFacebookBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [facebookBtn addTarget:self action:@selector(touchFaceBookBtn:) forControlEvents:UIControlEventTouchUpInside];
     [_scrollView addSubview:facebookBtn];
     
     JHImageView *countryImageView = [[JHImageView alloc] initWithFrame:CGRectMake(kAppAdaptWidth(32), facebookBtn.maxY + kAppAdaptHeight(33), kAppAdaptWidth(18), kAppAdaptHeight(12))];
@@ -230,8 +233,43 @@
 
 }
 
-- (void)touchFacebookBtn:(JHButton *)sender {
+- (void)touchFaceBookBtn:(UIButton *)sender {
+    [FBSDKProfile enableUpdatesOnAccessTokenChange:true];
+    [FBSDKAccessToken setCurrentAccessToken:nil];
+    FBSDKLoginManager *loginManager = [[FBSDKLoginManager alloc] init];
+    [loginManager logOut];
+    [loginManager setLoginBehavior:FBSDKLoginBehaviorNative];
+    [loginManager logInWithReadPermissions:@[@"public_profile"] fromViewController:self handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+        if (result) {
+            [[WGApplication sharedApplication] loadCheckBind:result.token.tokenString type:WGThirdPartyLoginTypeFacebook onCompletion:^(WGCheckBindResponse *response) {
+                [self handleCheckBind:response uniqueId:result.token.tokenString type:WGThirdPartyLoginTypeFacebook];
+            }];
+            NSLog(@"---------%@", result.token.tokenString);
+        }
+        else {
+            NSLog(@"----------error---");
+        }
+    }];
+}
 
+- (void)handleCheckBind:(WGCheckBindResponse *)response uniqueId:(NSString *)uniqueId type:(WGThirdPartyLoginType)type {
+    if (response == nil) {
+        [self showWarningMessage:kStr(@"Request Failed")];
+        return;
+    }
+    
+    if (response.unBind) {
+        WGBindThirdPartyViewController *bindViewController = [[WGBindThirdPartyViewController alloc] init];
+        bindViewController.uniqueId = uniqueId;
+        bindViewController.type = type;
+        [self.navigationController pushViewController:bindViewController animated:YES];
+    }
+    else if (response.bind) {
+        [[WGApplication sharedApplication] switchTab:WGTabIndexHome];
+    }
+    else {
+        [self showWarningMessage:response.message];
+    }
 }
 
 - (void)touchRegisterBtn:(JHButton *)sender {

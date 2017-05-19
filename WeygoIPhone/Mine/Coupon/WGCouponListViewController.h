@@ -15,7 +15,7 @@
 @interface WGCouponListViewController : WGViewController
 {
     NSMutableArray *_dataMArray;
-    TWRefreshTableView *_tableView;
+    JHTableView *_tableView;
     JHTextField *_inputTextField;
     JHButton *_activateBtn;
 }
