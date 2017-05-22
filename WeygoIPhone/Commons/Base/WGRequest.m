@@ -13,13 +13,22 @@
 - (id)init {
     self = [super init];
     if (self) {
-
+        NSString *bundleIdentifier = [[NSBundle mainBundle] bundleIdentifier];
+        _app = bundleIdentifier;
+        _os = @"iOS";
     }
     return self;
 }
 
 - (NSDictionary *)headers {
     return nil;
+    NSMutableDictionary *dictionary = [NSMutableDictionary dictionaryWithDictionary:[super headers]];
+    NSString *bundleIdentifier = [[NSBundle mainBundle] bundleIdentifier];
+    [dictionary setObject:bundleIdentifier forKey:@"app"];
+    [dictionary setObject:[[UIDevice currentDevice] systemVersion] forKey:@"systemVersion"];
+    [dictionary setObject:@"iOS" forKey:@"os"];
+    [dictionary setObject:kAppVersion forKey:@"version"];
+    return dictionary;
 }
 
 - (NSSet *)acceptContentTypes {
@@ -31,7 +40,8 @@
 }
 
 - (NSString *)host {
-    return @"m.delong6688.develop.weygo.com";
+    //return @"m.delong6688.develop.weygo.com";
+    return @"m.preview.weygo.com";
     //return @"m.roc.weygo.com";
 }
 

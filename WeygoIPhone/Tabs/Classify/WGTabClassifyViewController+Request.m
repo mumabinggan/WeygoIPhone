@@ -23,7 +23,7 @@
         request.showsLoadingView = NO;
     }
     WeakSelf;
-    [self get:request forResponseClass:[WGClassifyResponse class] success:^(JHResponse *response) {
+    [self post:request forResponseClass:[WGClassifyResponse class] success:^(JHResponse *response) {
         [weakSelf handleClassifyResponse:(WGClassifyResponse *)response];
     } failure:^(NSError *error) {
         [weakSelf showWarningMessage:kStr(@"Request Failed")];

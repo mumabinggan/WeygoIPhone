@@ -7,8 +7,39 @@
 //
 
 #import "WGWelcomeView.h"
+#import "JHPageControl.h"
 
 #define WG_WELCOME_PAGE_NUM 3
+
+@interface LFBoutiqueColumnPageControl : JHPageControl
+
+@end
+
+@implementation LFBoutiqueColumnPageControl
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    [self layoutDots];
+}
+
+- (void)layoutDots {
+    for (int i = 0; i < [self.subviews count]; i++) {
+        UIView *dot = [self.subviews objectAtIndex:i];
+        dot.size = CGSizeMake(kAppAdaptWidth(8), kAppAdaptHeight(8));
+        if (i != self.currentPage) {
+            dot.layer.borderColor = kHRGBA(0xffffff, 0.5).CGColor;
+            dot.layer.borderWidth = 0;
+            dot.backgroundColor = kHRGBA(0xffffff, 0.5);
+        }
+        else {
+            dot.layer.borderColor = kWhiteColor.CGColor;
+            dot.layer.borderWidth = 1.5;
+            dot.backgroundColor = kClearColor;
+        }
+    }
+}
+
+@end
 
 @interface WGWelcomeView (ScrollDelegate) <UIScrollViewDelegate>
 
@@ -18,7 +49,7 @@
 {
     JHView *_backView;
     JHScrollView *_scrollView;
-    UIPageControl *_pageControl;
+    LFBoutiqueColumnPageControl *_pageControl;
     int _currentPage;
     JHButton *_enterButton;
 }
@@ -39,8 +70,8 @@
         JHView *imageWrapperView = [[JHView alloc] initWithFrame:CGRectMake(self.bounds.size.width * i , 0, kDeviceWidth, _scrollView.height)];
         imageWrapperView.layer.masksToBounds = YES;
         [_scrollView addSubview:imageWrapperView];
-        
-        UIImage *image = [WGWelcomeView imageJPGWithDeferenceDevices:[NSString stringWithFormat:@"welcome%d", i+1]];
+        int index = [JHLocalizableManager sharedManager].type;
+        UIImage *image = [WGWelcomeView imagePNGWithDeferenceDevices:[NSString stringWithFormat:@"welcome%d", i+1]];
         if (i == WG_WELCOME_PAGE_NUM - 1) {
             NSInteger columns = 2, rows = 2;
             NSArray *images = [self getImagesFromImage:image withRow:rows withColumn:columns];
@@ -54,10 +85,10 @@
                 [imageWrapperView addSubview:imageView];
             }
             _enterButton = [JHButton buttonWithType:UIButtonTypeCustom];
-            [_enterButton setBackgroundImage:[UIImage imageNamed:@"enter-button"] forState:UIControlStateNormal];
-            CGFloat buttonWidth = imageWrapperView.width * 3.0 / 5.0;
-            CGFloat buttonHeight = buttonWidth * 200.0 / 466.0;
-            _enterButton.frame = CGRectMake((imageWrapperView.width - buttonWidth) / 2, imageWrapperView.height - buttonHeight - kAppAdaptHeight(16), buttonWidth, buttonHeight);
+            [_enterButton setBackgroundImage:[UIImage imageNamed:[NSString stringWithFormat:@"enter-button_%d", index]] forState:UIControlStateNormal];
+            CGFloat buttonWidth = imageWrapperView.width * 2.0 / 5.0;
+            CGFloat buttonHeight = buttonWidth * 146.0 / 668.0;
+            _enterButton.frame = CGRectMake((imageWrapperView.width - buttonWidth) / 2, imageWrapperView.height - buttonHeight - kAppAdaptHeight(80), buttonWidth, buttonHeight);
             [_enterButton addTarget:self action:@selector(handleEnterApp:) forControlEvents:UIControlEventTouchUpInside];
             [imageWrapperView addSubview:_enterButton];
         }
@@ -71,7 +102,7 @@
     _scrollView.pagingEnabled = YES;
     _scrollView.contentSize = CGSizeMake(_scrollView.width * (WG_WELCOME_PAGE_NUM + 1), _scrollView.height);
     
-    _pageControl = [[UIPageControl alloc] init];
+    _pageControl = [[LFBoutiqueColumnPageControl alloc] init];
     CGRect pageRect ;
     if ([[JHDeviceManager sharedManager] iPhone35]) {
         pageRect = CGRectMake(0, self.height - 20 - 18, kDeviceWidth, 20);
@@ -83,8 +114,11 @@
     _pageControl.numberOfPages = WG_WELCOME_PAGE_NUM;
     _pageControl.hidesForSinglePage = YES;
     _pageControl.userInteractionEnabled = NO;
-    _pageControl.pageIndicatorTintColor = kHRGB(0xe4e4e4);
-    _pageControl.currentPageIndicatorTintColor = WGAppBaseColor;
+//    _pageControl.pageIndicatorTintColor = kHRGB(0xe4e4e4);
+//    _pageControl.currentPageIndicatorTintColor = WGAppBaseColor;
+//    _pageControl.currentPageIndicatorTintColor = kHRGBA(0xFFFFFF, 0.5);
+//    _pageControl.pageIndicatorTintColor = WGAppBaseColor;
+    _pageControl.hidesForSinglePage = YES;
     [self addSubview:_pageControl];
 }
 
@@ -98,17 +132,18 @@
 
 + (UIImage *)imageWithDeferenceDevice:(NSString *)imageName type:(NSString *)type {
     NSString *newName = nil;
+    int index = [JHLocalizableManager sharedManager].type;
     if ([[JHDeviceManager sharedManager] iPhone35]) {
-        newName = [NSString stringWithFormat:@"%@-4s.%@", imageName, type];
+        newName = [NSString stringWithFormat:@"%@-4s_%d.%@", imageName, index, type];
     }
     else if ([[JHDeviceManager sharedManager] iPhone40]) {
-        newName = [NSString stringWithFormat:@"%@-5s.%@", imageName, type];
+        newName = [NSString stringWithFormat:@"%@-5s_%d.%@", imageName, index, type];
     }
     else if ([[JHDeviceManager sharedManager] iPhone47]) {
-        newName = [NSString stringWithFormat:@"%@-6s.%@", imageName, type];
+        newName = [NSString stringWithFormat:@"%@-6s_%d.%@", imageName, index, type];
     }
     else if ([[JHDeviceManager sharedManager] iPhone55]) {
-        newName = [NSString stringWithFormat:@"%@-6p.%@", imageName, type];
+        newName = [NSString stringWithFormat:@"%@-6p_%d.%@", imageName, index, type];
     }
     return [UIImage imageNamed:newName];
 }

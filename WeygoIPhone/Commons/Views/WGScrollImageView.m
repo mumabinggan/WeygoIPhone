@@ -100,10 +100,10 @@
         _timer = nil;
     }
     else {
-        __weak typeof (self) weakSelf = self;
-        _timer = [NSTimer scheduledTimerWithTimeInterval:2 repeats:YES block:^(NSTimer *timer) {
-            [weakSelf handleTimer:timer];
-        }];
+//        _timer = [NSTimer scheduledTimerWithTimeInterval:2 repeats:YES block:^(NSTimer *timer) {
+//            [weakSelf handleTimer:timer];
+//        }];
+        _timer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(handleTimer:) userInfo:nil repeats:YES];
     }
 }
 

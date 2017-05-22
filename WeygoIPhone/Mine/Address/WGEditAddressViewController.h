@@ -16,6 +16,8 @@
     WGAddress *_address;
     
     NSArray *_cityArray;
+    JHView *_sortPickerBgView;
+    JHButton *_closeBtn;
 }
 
 @property (nonatomic, assign) long long addressId;

@@ -100,27 +100,71 @@
         _pickerView = nil;
     }
     
-    JHButton *closeBtn = [[JHButton alloc] initWithFrame:self.view.bounds];
-    [closeBtn addTarget:self action:@selector(touchCloseBtn:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:closeBtn];
+    _closeBtn = [[JHButton alloc] initWithFrame:self.view.bounds];
+    [_closeBtn addTarget:self action:@selector(touchCloseBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [_closeBtn setBackgroundColor:kHRGBA(0x000000, 0.5)];
+    [self.view addSubview:_closeBtn];
     
-    UIPickerView *sexPickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, kDeviceHeight - kAppAdaptHeight(130), kDeviceWidth, kAppAdaptHeight(130))];
+    _sortPickerBgView = [[JHView alloc] initWithFrame:CGRectMake(0, kDeviceHeight - kAppAdaptHeight(300), kDeviceWidth, kAppAdaptHeight(300))];
+    _sortPickerBgView.backgroundColor = kWhiteColor;
+    [self.view addSubview:_sortPickerBgView];
+    
+    UIPickerView *sexPickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, kAppAdaptHeight(60), kDeviceWidth, kAppAdaptHeight(200))];
     sexPickerView.backgroundColor = kRGB(244, 244, 244);
     sexPickerView.delegate = self;
     sexPickerView.dataSource = self;
     sexPickerView.showsSelectionIndicator = YES;
     [sexPickerView selectRow:_user.sex inComponent:0 animated:NO];
-    [self.view addSubview:sexPickerView];
+    [_sortPickerBgView addSubview:sexPickerView];
     _pickerView = sexPickerView;
+    
+    _sortPickerBgView.backgroundColor = _pickerView.backgroundColor;
+    JHButton *cancelBtn = [[JHButton alloc] initWithFrame:CGRectMake(kAppAdaptWidth(8), kAppAdaptWidth(10), kAppAdaptWidth(50), kAppAdaptHeight(30))];
+    [cancelBtn setTitle:kStr(@"Mine_Logout_Cancel") forState:UIControlStateNormal];
+    [cancelBtn setTitleColor:WGAppBaseColor forState:UIControlStateNormal];
+    [cancelBtn addTarget:self action:@selector(touchCancelBtn:) forControlEvents:UIControlEventTouchUpInside];
+    cancelBtn.titleLabel.font = kAppAdaptFont(16);
+    [_sortPickerBgView addSubview:cancelBtn];
+    
+    JHButton *confirmBtn = [[JHButton alloc] initWithFrame:CGRectMake(kDeviceWidth - kAppAdaptWidth(58), kAppAdaptWidth(10), kAppAdaptWidth(50), kAppAdaptHeight(30))];
+    [confirmBtn setTitle:kStr(@"Mine_Logout_Ok") forState:UIControlStateNormal];
+    [confirmBtn setTitleColor:WGAppBaseColor forState:UIControlStateNormal];
+    [confirmBtn addTarget:self action:@selector(touchConfirmBtn:) forControlEvents:UIControlEventTouchUpInside];
+    confirmBtn.titleLabel.font = kAppAdaptFont(16);
+    [_sortPickerBgView addSubview:confirmBtn];
+}
+
+- (void)touchCancelBtn:(JHButton *)sender {
+    [self removePickerView];
+}
+
+- (void)removePickerView {
+    [_sortPickerBgView removeFromSuperview];
+    _sortPickerBgView = nil;
+    [_pickerView removeFromSuperview];
+    _pickerView = nil;
+    [_closeBtn removeFromSuperview];
+    _closeBtn = nil;
+}
+
+- (void)touchConfirmBtn:(JHButton *)sender {
+    if ([_pickerView isKindOfClass:[UIPickerView class]]) {
+        _user.sex = (int)[(UIPickerView *)_pickerView selectedRowInComponent:0];
+        [_tableView reloadData];
+    }
+    else if ([_pickerView isKindOfClass:[UIDatePicker class]]) {
+        [self handleDateChange:nil];
+    }
+    [self removePickerView];
 }
 
 - (void)touchCloseBtn:(JHButton *)sender {
     [UIView animateWithDuration:0.3 animations:^() {
-        _pickerView.layer.opacity = 0.0f;
+        _sortPickerBgView.layer.opacity = 0.0f;
     } completion:^(BOOL finished) {
         if (finished) {
-            [_pickerView removeFromSuperview];
-            _pickerView = nil;
+            [_sortPickerBgView removeFromSuperview];
+            _sortPickerBgView = nil;
         }
     }];
     [sender removeFromSuperview];
@@ -135,14 +179,34 @@
     
     JHButton *closeBtn = [[JHButton alloc] initWithFrame:self.view.bounds];
     [closeBtn addTarget:self action:@selector(touchCloseBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [closeBtn setBackgroundColor:kHRGBA(0x000000, 0.5)];
     [self.view addSubview:closeBtn];
     
-    UIDatePicker *datePickerView = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, kDeviceHeight - kAppAdaptHeight(160), kDeviceWidth, kAppAdaptHeight(160))];
+    _sortPickerBgView = [[JHView alloc] initWithFrame:CGRectMake(0, kDeviceHeight - kAppAdaptHeight(300), kDeviceWidth, kAppAdaptHeight(300))];
+    _sortPickerBgView.backgroundColor = kWhiteColor;
+    [self.view addSubview:_sortPickerBgView];
+    
+    UIDatePicker *datePickerView = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, kAppAdaptHeight(60), kDeviceWidth, kAppAdaptHeight(200))];
     datePickerView.datePickerMode = UIDatePickerModeDate;
     datePickerView.backgroundColor = kGrayColor;
-    [datePickerView addTarget:self action:@selector(handleDateChange:) forControlEvents:UIControlEventValueChanged];
-    [self.view addSubview:datePickerView];
+    //[datePickerView addTarget:self action:@selector(handleDateChange:) forControlEvents:UIControlEventValueChanged];
+    [_sortPickerBgView addSubview:datePickerView];
     _pickerView = datePickerView;
+    
+    _sortPickerBgView.backgroundColor = _pickerView.backgroundColor;
+    JHButton *cancelBtn = [[JHButton alloc] initWithFrame:CGRectMake(kAppAdaptWidth(8), kAppAdaptWidth(10), kAppAdaptWidth(50), kAppAdaptHeight(30))];
+    [cancelBtn setTitle:kStr(@"Mine_Logout_Cancel") forState:UIControlStateNormal];
+    [cancelBtn setTitleColor:WGAppBaseColor forState:UIControlStateNormal];
+    [cancelBtn addTarget:self action:@selector(touchCancelBtn:) forControlEvents:UIControlEventTouchUpInside];
+    cancelBtn.titleLabel.font = kAppAdaptFont(14);
+    [_sortPickerBgView addSubview:cancelBtn];
+    
+    JHButton *confirmBtn = [[JHButton alloc] initWithFrame:CGRectMake(kDeviceWidth - kAppAdaptWidth(58), kAppAdaptWidth(10), kAppAdaptWidth(50), kAppAdaptHeight(30))];
+    [confirmBtn setTitle:kStr(@"Mine_Logout_Ok") forState:UIControlStateNormal];
+    [confirmBtn setTitleColor:WGAppBaseColor forState:UIControlStateNormal];
+    [confirmBtn addTarget:self action:@selector(touchConfirmBtn:) forControlEvents:UIControlEventTouchUpInside];
+    confirmBtn.titleLabel.font = kAppAdaptFont(14);
+    [_sortPickerBgView addSubview:confirmBtn];
 }
 
 - (void)handleDateChange:(id)sender {
@@ -292,8 +356,8 @@
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    _user.sex = (int)row;
-    [_tableView reloadData];
+//    _user.sex = (int)row;
+//    [_tableView reloadData];
 }
 
 @end

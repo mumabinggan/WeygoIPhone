@@ -16,11 +16,16 @@
         _pickerView = nil;
     }
     
-    JHButton *closeBtn = [[JHButton alloc] initWithFrame:self.view.bounds];
-    [closeBtn addTarget:self action:@selector(touchCloseBtn:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:closeBtn];
+    _closeBtn = [[JHButton alloc] initWithFrame:self.view.bounds];
+    [_closeBtn addTarget:self action:@selector(touchCloseBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [_closeBtn setBackgroundColor:kHRGBA(0x000000, 0.5)];
+    [self.view addSubview:_closeBtn];
     
-    UIPickerView *pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, kDeviceHeight - kAppAdaptHeight(200), kDeviceWidth, kAppAdaptHeight(200))];
+    _sortPickerBgView = [[JHView alloc] initWithFrame:CGRectMake(0, kDeviceHeight - kAppAdaptHeight(300), kDeviceWidth, kAppAdaptHeight(300))];
+    _sortPickerBgView.backgroundColor = kWhiteColor;
+    [self.view addSubview:_sortPickerBgView];
+    
+    UIPickerView *pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, kAppAdaptHeight(60), kDeviceWidth, kAppAdaptHeight(200))];
     pickerView.backgroundColor = kRGB(244, 244, 244);
     pickerView.tag = tag;
     pickerView.delegate = self;
@@ -58,17 +63,69 @@
             }
         }
     }
-    [self.view addSubview:pickerView];
     _pickerView = pickerView;
+    [_sortPickerBgView addSubview:pickerView];
+    
+    _sortPickerBgView.backgroundColor = _pickerView.backgroundColor;
+    JHButton *cancelBtn = [[JHButton alloc] initWithFrame:CGRectMake(kAppAdaptWidth(8), kAppAdaptWidth(10), kAppAdaptWidth(50), kAppAdaptHeight(30))];
+    [cancelBtn setTitle:kStr(@"Mine_Logout_Cancel") forState:UIControlStateNormal];
+    [cancelBtn setTitleColor:WGAppBaseColor forState:UIControlStateNormal];
+    [cancelBtn addTarget:self action:@selector(touchCancelBtn:) forControlEvents:UIControlEventTouchUpInside];
+    cancelBtn.titleLabel.font = kAppAdaptFont(16);
+    [_sortPickerBgView addSubview:cancelBtn];
+    
+    JHButton *confirmBtn = [[JHButton alloc] initWithFrame:CGRectMake(kDeviceWidth - kAppAdaptWidth(58), kAppAdaptWidth(10), kAppAdaptWidth(50), kAppAdaptHeight(30))];
+    [confirmBtn setTitle:kStr(@"Mine_Logout_Ok") forState:UIControlStateNormal];
+    [confirmBtn setTitleColor:WGAppBaseColor forState:UIControlStateNormal];
+    [confirmBtn addTarget:self action:@selector(touchConfirmBtn:) forControlEvents:UIControlEventTouchUpInside];
+    confirmBtn.titleLabel.font = kAppAdaptFont(16);
+    [_sortPickerBgView addSubview:confirmBtn];
+    
+    _pickerView = pickerView;
+}
+
+- (void)touchCancelBtn:(JHButton *)sender {
+    [self removePickerView];
+}
+
+- (void)removePickerView {
+    [_sortPickerBgView removeFromSuperview];
+    _sortPickerBgView = nil;
+    [_pickerView removeFromSuperview];
+    _pickerView = nil;
+    [_closeBtn removeFromSuperview];
+    _closeBtn = nil;
+}
+
+- (void)touchConfirmBtn:(JHButton *)sender {
+    NSInteger row = [_pickerView selectedRowInComponent:0];
+    if (_pickerView.tag == 1000) {
+        NSArray *dates = _commitOrderDetail.deliverTime.deliverTimes;
+        WGSettlementDate *item = dates[row];
+        _commitOrderDetail.deliverTime.currentDateId = item.id;
+        _commitOrderDetail.deliverTime.currentTimeId = @"";
+    }
+    else if (_pickerView.tag == 1001) {
+        NSArray *times = _commitOrderDetail.deliverTime.currentTimes;
+        WGSettlementTime *item = times[row];
+        _commitOrderDetail.deliverTime.currentTimeId = item.id;
+    }
+    else if (_pickerView.tag == 1002) {
+        NSArray *payMethods = _commitOrderDetail.payMothod.payMethods;
+        WGSettlementPayMethod *item = payMethods[row];
+        _commitOrderDetail.payMothod.currentPayId = item.id;
+    }
+    [self refreshUI];
+    [self removePickerView];
 }
 
 - (void)touchCloseBtn:(JHButton *)sender {
     [UIView animateWithDuration:0.3 animations:^() {
-        _pickerView.layer.opacity = 0.0f;
+        _sortPickerBgView.layer.opacity = 0.0f;
     } completion:^(BOOL finished) {
         if (finished) {
-            [_pickerView removeFromSuperview];
-            _pickerView = nil;
+            [_sortPickerBgView removeFromSuperview];
+            _sortPickerBgView = nil;
         }
     }];
     [sender removeFromSuperview];
@@ -118,23 +175,23 @@
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    if (pickerView.tag == 1000) {
-        NSArray *dates = _commitOrderDetail.deliverTime.deliverTimes;
-        WGSettlementDate *item = dates[row];
-        _commitOrderDetail.deliverTime.currentDateId = item.id;
-        _commitOrderDetail.deliverTime.currentTimeId = @"";
-    }
-    else if (pickerView.tag == 1001) {
-        NSArray *times = _commitOrderDetail.deliverTime.currentTimes;
-        WGSettlementTime *item = times[row];
-        _commitOrderDetail.deliverTime.currentTimeId = item.id;
-    }
-    else if (pickerView.tag == 1002) {
-        NSArray *payMethods = _commitOrderDetail.payMothod.payMethods;
-        WGSettlementPayMethod *item = payMethods[row];
-        _commitOrderDetail.payMothod.currentPayId = item.id;
-    }
-    [self refreshUI];
+//    if (pickerView.tag == 1000) {
+//        NSArray *dates = _commitOrderDetail.deliverTime.deliverTimes;
+//        WGSettlementDate *item = dates[row];
+//        _commitOrderDetail.deliverTime.currentDateId = item.id;
+//        _commitOrderDetail.deliverTime.currentTimeId = @"";
+//    }
+//    else if (pickerView.tag == 1001) {
+//        NSArray *times = _commitOrderDetail.deliverTime.currentTimes;
+//        WGSettlementTime *item = times[row];
+//        _commitOrderDetail.deliverTime.currentTimeId = item.id;
+//    }
+//    else if (pickerView.tag == 1002) {
+//        NSArray *payMethods = _commitOrderDetail.payMothod.payMethods;
+//        WGSettlementPayMethod *item = payMethods[row];
+//        _commitOrderDetail.payMothod.currentPayId = item.id;
+//    }
+//    [self refreshUI];
 }
 
 @end

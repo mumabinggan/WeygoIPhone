@@ -122,6 +122,11 @@
         [self removePickerView];
     }
     else {
+        _closeBtn = [[JHButton alloc] initWithFrame:self.view.bounds];
+        [_closeBtn addTarget:self action:@selector(touchCloseBtn:) forControlEvents:UIControlEventTouchUpInside];
+        [_closeBtn setBackgroundColor:kHRGBA(0x000000, 0.5)];
+        [self.view addSubview:_closeBtn];
+        
         _sortPickerBgView = [[JHView alloc] initWithFrame:CGRectMake(0, kDeviceHeight - kAppAdaptHeight(300), kDeviceWidth, kAppAdaptHeight(300))];
         _sortPickerBgView.backgroundColor = kWhiteColor;
         [self.view addSubview:_sortPickerBgView];
@@ -139,16 +144,29 @@
         [cancelBtn setTitle:kStr(@"Mine_Logout_Cancel") forState:UIControlStateNormal];
         [cancelBtn setTitleColor:WGAppBaseColor forState:UIControlStateNormal];
         [cancelBtn addTarget:self action:@selector(touchCancelBtn:) forControlEvents:UIControlEventTouchUpInside];
-        cancelBtn.titleLabel.font = kAppAdaptFont(14);
+        cancelBtn.titleLabel.font = kAppAdaptFont(16);
         [_sortPickerBgView addSubview:cancelBtn];
         
         JHButton *confirmBtn = [[JHButton alloc] initWithFrame:CGRectMake(kDeviceWidth - kAppAdaptWidth(58), kAppAdaptWidth(10), kAppAdaptWidth(50), kAppAdaptHeight(30))];
         [confirmBtn setTitle:kStr(@"Mine_Logout_Ok") forState:UIControlStateNormal];
         [confirmBtn setTitleColor:WGAppBaseColor forState:UIControlStateNormal];
         [confirmBtn addTarget:self action:@selector(touchConfirmBtn:) forControlEvents:UIControlEventTouchUpInside];
-        confirmBtn.titleLabel.font = kAppAdaptFont(14);
+        confirmBtn.titleLabel.font = kAppAdaptFont(16);
         [_sortPickerBgView addSubview:confirmBtn];
     }
+}
+
+- (void)touchCloseBtn:(JHButton *)sender {
+    [UIView animateWithDuration:0.3 animations:^() {
+        _sortPickerBgView.layer.opacity = 0.0f;
+    } completion:^(BOOL finished) {
+        if (finished) {
+            [_sortPickerBgView removeFromSuperview];
+            _sortPickerBgView = nil;
+        }
+    }];
+    [sender removeFromSuperview];
+    sender = nil;
 }
 
 - (void)touchCancelBtn:(JHButton *)sender {
@@ -160,6 +178,8 @@
     _sortPickerBgView = nil;
     [_sortPickerView removeFromSuperview];
     _sortPickerView = nil;
+    [_closeBtn removeFromSuperview];
+    _closeBtn = nil;
 }
 
 - (void)touchConfirmBtn:(JHButton *)sender {

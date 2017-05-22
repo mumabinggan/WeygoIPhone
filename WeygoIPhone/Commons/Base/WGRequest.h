@@ -14,6 +14,10 @@
 //
 //@property (nonatomic, strong) NSString *___store;
 
+@property (nonatomic, strong) NSString *app;
+
+@property (nonatomic, strong) NSString *os;
+
 - (NSString *)apiSuffix;
 
 @end

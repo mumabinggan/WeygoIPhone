@@ -15,6 +15,9 @@
     WGCommitOrderDetail *_commitOrderDetail;
     
     UIPickerView *_pickerView;
+    
+    JHView *_sortPickerBgView;
+    JHButton *_closeBtn;
 }
 
 @property (nonatomic, assign) NSInteger settlementId;

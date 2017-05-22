@@ -393,6 +393,7 @@
 
 - (NSString *)sign:(NSDictionary *)dictionary {
     NSMutableString *returnString = [[NSMutableString alloc] initWithString:[self signPrefix]];
+    NSLog(@"---%@--", returnString);
     [returnString appendString:@"___store"];
     [returnString appendString:kStr(@"Request_StoreValue")];
     NSComparator cmptr = ^(NSString *obj1, NSString *obj2){
@@ -408,7 +409,12 @@
             [returnString appendString:dictionary[key]];
         }
     }
-    return [NSString stringWithFormat:@"sign=%@&___store=%@", [returnString md5], kStr(@"Request_StoreValue")];
+    NSLog(@"---%@--", returnString);
+    NSString *sss = [NSString stringWithFormat:@"sign=%@&___store=%@", [returnString md5], kStr(@"Request_StoreValue")];
+    //NSString *sss = [NSString stringWithFormat:@"sign=%@&___store=%@&app=%@&os=%@", [returnString md5], kStr(@"Request_StoreValue"), bundleIdentifier, @"iOS"];
+    NSLog(@"-----%@-----", sss);
+    return sss;
+    //return [NSString stringWithFormat:@"sign=%@&___store=%@", [returnString md5], kStr(@"Request_StoreValue")];
 }
 
 - (NSString *)paySign {

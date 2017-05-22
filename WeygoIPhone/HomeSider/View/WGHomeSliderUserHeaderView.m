@@ -49,7 +49,7 @@
     float width = kAppAdaptWidth(140);
     NSArray *imageArray = @[@"home_slider_scan", @"home_slider_messageCenter"];
     NSArray *titleArray = @[kStr(@"Slider_Mine_Scan"), kStr(@"Slider_Mine_MessageCenter")];
-    for (int num = 0; num < imageArray.count; ++num) {
+    for (int num = 0; num < 1; ++num) {
         JHButton *item = [[JHButton alloc] initWithFrame:CGRectMake(num * width, _imageView.maxY + kAppAdaptHeight(3), width, kAppAdaptHeight(56))];
         [item setImage:[UIImage imageNamed:imageArray[num]] forState:UIControlStateNormal];
         [item setTitle:[NSString stringWithFormat:@"    %@", titleArray[num]] forState:UIControlStateNormal];

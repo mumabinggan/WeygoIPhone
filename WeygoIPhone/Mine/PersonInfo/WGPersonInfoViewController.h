@@ -13,6 +13,8 @@
 {
     WGUser *_user;
     JHTableView *_tableView;
+    JHView *_sortPickerBgView;
+    JHButton *_closeBtn;
 }
 
 - (void)refreshUI;

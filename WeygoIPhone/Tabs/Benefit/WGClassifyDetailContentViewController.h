@@ -30,6 +30,7 @@ typedef NS_ENUM(NSInteger, WGClassifySortType) {
     WGClassifyDetail *_data;
     
     WGClassifySortType _sortType;
+    JHButton *_closeBtn;
 }
 
 @property (nonatomic, assign) long long classifyId;

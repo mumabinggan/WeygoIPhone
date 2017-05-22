@@ -87,7 +87,7 @@
         [_bottomView addSubview:_reducePriceLabel];
         
         JHButton *addBtn = [[JHButton alloc] initWithFrame:CGRectMake(kAppAdaptWidth(16), kAppAdaptHeight(52), kDeviceWidth - kAppAdaptWidth(32), kAppAdaptHeight(40)) difRadius:JHRadiusMake(kAppAdaptHeight(20), kAppAdaptHeight(20), kAppAdaptHeight(20), kAppAdaptHeight(20)) backgroundColor:WGAppBlueButtonColor];
-        [addBtn addTarget:self action:@selector(touchConfirmBtn:) forControlEvents:UIControlEventTouchUpInside];
+        [addBtn addTarget:self action:@selector(touchCommitBtn:) forControlEvents:UIControlEventTouchUpInside];
         [addBtn setTitle:kStr(@"CommitOrder Confirm") forState:UIControlStateNormal];
         [addBtn setTitleColor:kWhiteColor forState:UIControlStateNormal];
         addBtn.titleLabel.font = kAppAdaptFont(14);
@@ -106,7 +106,7 @@
     _reducePriceLabel.hidden = [NSString isNullOrEmpty:reducePrice];
 }
 
-- (void)touchConfirmBtn:(JHButton *)sender {
+- (void)touchCommitBtn:(JHButton *)sender {
     [self loadCommitOrder];
 }
 

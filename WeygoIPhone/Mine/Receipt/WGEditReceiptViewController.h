@@ -15,6 +15,8 @@
     NSArray     *_placeholderArray;
     
     NSArray *_countryArray;
+    JHView *_sortPickerBgView;
+    JHButton *_closeBtn;
 }
 
 @property (nonatomic, copy) WGReceipt *receipt;
