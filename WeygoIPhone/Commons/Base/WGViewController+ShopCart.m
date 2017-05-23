@@ -62,7 +62,7 @@ static const NSString *WGShopCartButtonKey = @"WGShopCartButtonKey";
 - (void)handleUpdateShopCart:(NSNotification *)notification {
     JHBarButtonItem *item = (JHBarButtonItem *)[self rightItem];
     if (item.tag == WGRightItemTypeShopCart) {
-        [item showBadge:([WGApplication sharedApplication].shopCartGoodCount > 0 ? YES : NO) withNumber:(int)[WGApplication sharedApplication].shopCartGoodCount withFrame:CGRectMake(13, 5, 15, 15)];
+        [item showBadge:([WGApplication sharedApplication].shopCartGoodCount > 0 ? YES : NO) withNumber:(int)[WGApplication sharedApplication].shopCartGoodCount withFrame:CGRectMake(13, 5, 17, 17)];
     }
 }
 
