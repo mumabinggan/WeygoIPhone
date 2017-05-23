@@ -102,15 +102,19 @@
         _sortPickerBgView.backgroundColor = _sortPickerView.backgroundColor;
         [_sortPickerBgView addSubview:_sortPickerView];
         
-        JHButton *cancelBtn = [[JHButton alloc] initWithFrame:CGRectMake(kAppAdaptWidth(8), kAppAdaptWidth(10), kAppAdaptWidth(50), kAppAdaptHeight(30))];
-        [cancelBtn setTitle:kStr(@"Mine_Logout_Cancel") forState:UIControlStateNormal];
+        NSString *titleString = kStr(@"Mine_Logout_Cancel");
+        float width = [titleString returnSize:kAppAdaptFont(16)].width + kAppAdaptWidth(10);
+        JHButton *cancelBtn = [[JHButton alloc] initWithFrame:CGRectMake(kAppAdaptWidth(8), kAppAdaptWidth(10), width, kAppAdaptHeight(30))];
+        [cancelBtn setTitle:titleString forState:UIControlStateNormal];
         [cancelBtn setTitleColor:WGAppBaseColor forState:UIControlStateNormal];
         [cancelBtn addTarget:self action:@selector(touchCancelBtn:) forControlEvents:UIControlEventTouchUpInside];
         cancelBtn.titleLabel.font = kAppAdaptFont(16);
         [_sortPickerBgView addSubview:cancelBtn];
         
-        JHButton *confirmBtn = [[JHButton alloc] initWithFrame:CGRectMake(kDeviceWidth - kAppAdaptWidth(58), kAppAdaptWidth(10), kAppAdaptWidth(50), kAppAdaptHeight(30))];
-        [confirmBtn setTitle:kStr(@"Mine_Logout_Ok") forState:UIControlStateNormal];
+        titleString = kStr(@"Mine_Logout_Ok");
+        width = [titleString returnSize:kAppAdaptFont(16)].width + kAppAdaptWidth(10);
+        JHButton *confirmBtn = [[JHButton alloc] initWithFrame:CGRectMake(kDeviceWidth - width - kAppAdaptWidth(8), kAppAdaptWidth(10), width, kAppAdaptHeight(30))];
+        [confirmBtn setTitle:titleString forState:UIControlStateNormal];
         [confirmBtn setTitleColor:WGAppBaseColor forState:UIControlStateNormal];
         [confirmBtn addTarget:self action:@selector(touchConfirmBtn:) forControlEvents:UIControlEventTouchUpInside];
         confirmBtn.titleLabel.font = kAppAdaptFont(16);
@@ -258,7 +262,7 @@
             animalView.hidesWhenStopped = YES;
             cell.accessoryView = animalView;
             [[JHCacheManager sharedCacheManager] clearCache:^(void) {
-                [self showWarningMessage:@""];
+                [self showWarningMessage:kStr(@"Clean_Cache_Success")];
                 UIActivityIndicatorView *accessoryView = (UIActivityIndicatorView *)cell.accessoryView;
                 [accessoryView stopAnimating];
             }];

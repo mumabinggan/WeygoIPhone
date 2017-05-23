@@ -18,6 +18,7 @@
 #import "WGIntegrationViewController.h"
 #import "WGClientServiceCenterViewController.h"
 #import "WGOrderListViewController.h"
+#import "WGViewController+ShopCart.h"
 
 @interface WGTabMineViewController ()
 {
@@ -29,6 +30,8 @@
     JHButton *_messageBtn;
     JHLabel *_orderLabel;
     JHLabel *_deliveryLabel;
+    
+    UIBarButtonItem *_shopCartBtn;
 }
 @end
 
@@ -98,6 +101,9 @@
     [_messageBtn setBackgroundImage:[UIImage imageNamed:@"mine_message"] forState:UIControlStateNormal];
     [_messageBtn addTarget:self action:@selector(touchMessageBtn:) forControlEvents:UIControlEventTouchUpInside];
     [_messageBtn addBadge];
+    
+//    _shopCartBtn = [self createShopCartItem];
+//    _shopCartBtn.
     
     [self refresh:_data];
     //[contentView addSubview:_messageBtn];

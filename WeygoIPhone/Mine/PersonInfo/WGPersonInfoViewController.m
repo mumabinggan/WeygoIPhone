@@ -119,15 +119,20 @@
     _pickerView = sexPickerView;
     
     _sortPickerBgView.backgroundColor = _pickerView.backgroundColor;
-    JHButton *cancelBtn = [[JHButton alloc] initWithFrame:CGRectMake(kAppAdaptWidth(8), kAppAdaptWidth(10), kAppAdaptWidth(50), kAppAdaptHeight(30))];
-    [cancelBtn setTitle:kStr(@"Mine_Logout_Cancel") forState:UIControlStateNormal];
+    
+    NSString *titleString = kStr(@"Mine_Logout_Cancel");
+    float width = [titleString returnSize:kAppAdaptFont(16)].width + kAppAdaptWidth(10);
+    JHButton *cancelBtn = [[JHButton alloc] initWithFrame:CGRectMake(kAppAdaptWidth(8), kAppAdaptWidth(10), width, kAppAdaptHeight(30))];
+    [cancelBtn setTitle:titleString forState:UIControlStateNormal];
     [cancelBtn setTitleColor:WGAppBaseColor forState:UIControlStateNormal];
     [cancelBtn addTarget:self action:@selector(touchCancelBtn:) forControlEvents:UIControlEventTouchUpInside];
     cancelBtn.titleLabel.font = kAppAdaptFont(16);
     [_sortPickerBgView addSubview:cancelBtn];
     
-    JHButton *confirmBtn = [[JHButton alloc] initWithFrame:CGRectMake(kDeviceWidth - kAppAdaptWidth(58), kAppAdaptWidth(10), kAppAdaptWidth(50), kAppAdaptHeight(30))];
-    [confirmBtn setTitle:kStr(@"Mine_Logout_Ok") forState:UIControlStateNormal];
+    titleString = kStr(@"Mine_Logout_Ok");
+    width = [titleString returnSize:kAppAdaptFont(16)].width + kAppAdaptWidth(10);
+    JHButton *confirmBtn = [[JHButton alloc] initWithFrame:CGRectMake(kDeviceWidth - width - kAppAdaptWidth(8), kAppAdaptWidth(10), width, kAppAdaptHeight(30))];
+    [confirmBtn setTitle:titleString forState:UIControlStateNormal];
     [confirmBtn setTitleColor:WGAppBaseColor forState:UIControlStateNormal];
     [confirmBtn addTarget:self action:@selector(touchConfirmBtn:) forControlEvents:UIControlEventTouchUpInside];
     confirmBtn.titleLabel.font = kAppAdaptFont(16);
@@ -177,35 +182,37 @@
         _pickerView = nil;
     }
     
-    JHButton *closeBtn = [[JHButton alloc] initWithFrame:self.view.bounds];
-    [closeBtn addTarget:self action:@selector(touchCloseBtn:) forControlEvents:UIControlEventTouchUpInside];
-    [closeBtn setBackgroundColor:kHRGBA(0x000000, 0.5)];
-    [self.view addSubview:closeBtn];
+    _closeBtn = [[JHButton alloc] initWithFrame:self.view.bounds];
+    [_closeBtn addTarget:self action:@selector(touchCloseBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [_closeBtn setBackgroundColor:kHRGBA(0x000000, 0.5)];
+    [self.view addSubview:_closeBtn];
     
     _sortPickerBgView = [[JHView alloc] initWithFrame:CGRectMake(0, kDeviceHeight - kAppAdaptHeight(300), kDeviceWidth, kAppAdaptHeight(300))];
-    _sortPickerBgView.backgroundColor = kWhiteColor;
+    _sortPickerBgView.backgroundColor = kRGB(244, 244, 244);;
     [self.view addSubview:_sortPickerBgView];
     
     UIDatePicker *datePickerView = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, kAppAdaptHeight(60), kDeviceWidth, kAppAdaptHeight(200))];
     datePickerView.datePickerMode = UIDatePickerModeDate;
-    datePickerView.backgroundColor = kGrayColor;
-    //[datePickerView addTarget:self action:@selector(handleDateChange:) forControlEvents:UIControlEventValueChanged];
+    datePickerView.backgroundColor = kRGB(244, 244, 244);
     [_sortPickerBgView addSubview:datePickerView];
     _pickerView = datePickerView;
     
-    _sortPickerBgView.backgroundColor = _pickerView.backgroundColor;
-    JHButton *cancelBtn = [[JHButton alloc] initWithFrame:CGRectMake(kAppAdaptWidth(8), kAppAdaptWidth(10), kAppAdaptWidth(50), kAppAdaptHeight(30))];
-    [cancelBtn setTitle:kStr(@"Mine_Logout_Cancel") forState:UIControlStateNormal];
+    NSString *titleString = kStr(@"Mine_Logout_Cancel");
+    float width = [titleString returnSize:kAppAdaptFont(16)].width + kAppAdaptWidth(10);
+    JHButton *cancelBtn = [[JHButton alloc] initWithFrame:CGRectMake(kAppAdaptWidth(8), kAppAdaptWidth(10), width, kAppAdaptHeight(30))];
+    [cancelBtn setTitle:titleString forState:UIControlStateNormal];
     [cancelBtn setTitleColor:WGAppBaseColor forState:UIControlStateNormal];
     [cancelBtn addTarget:self action:@selector(touchCancelBtn:) forControlEvents:UIControlEventTouchUpInside];
-    cancelBtn.titleLabel.font = kAppAdaptFont(14);
+    cancelBtn.titleLabel.font = kAppAdaptFont(16);
     [_sortPickerBgView addSubview:cancelBtn];
     
-    JHButton *confirmBtn = [[JHButton alloc] initWithFrame:CGRectMake(kDeviceWidth - kAppAdaptWidth(58), kAppAdaptWidth(10), kAppAdaptWidth(50), kAppAdaptHeight(30))];
-    [confirmBtn setTitle:kStr(@"Mine_Logout_Ok") forState:UIControlStateNormal];
+    titleString = kStr(@"Mine_Logout_Ok");
+    width = [titleString returnSize:kAppAdaptFont(16)].width + kAppAdaptWidth(10);
+    JHButton *confirmBtn = [[JHButton alloc] initWithFrame:CGRectMake(kDeviceWidth - width - kAppAdaptWidth(8), kAppAdaptWidth(10), width, kAppAdaptHeight(30))];
+    [confirmBtn setTitle:titleString forState:UIControlStateNormal];
     [confirmBtn setTitleColor:WGAppBaseColor forState:UIControlStateNormal];
     [confirmBtn addTarget:self action:@selector(touchConfirmBtn:) forControlEvents:UIControlEventTouchUpInside];
-    confirmBtn.titleLabel.font = kAppAdaptFont(14);
+    confirmBtn.titleLabel.font = kAppAdaptFont(16);
     [_sortPickerBgView addSubview:confirmBtn];
 }
 

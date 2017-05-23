@@ -82,6 +82,9 @@
         if (self.onResponse) {
             self.onResponse(_data);
         }
+        if (_data.recommendedArray && _data.recommendedArray.count > 0) {
+            _isGrid = YES;
+        }
         [self refreshUI];
     }
     else {

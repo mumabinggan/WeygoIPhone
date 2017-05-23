@@ -19,6 +19,7 @@
 #import "WGClassifyDetailContentViewController.h"
 #import "WGClassifyDetailContentViewController+Request.h"
 #import "WGViewController+ShopCart.h"
+#import "WGViewController+Search.h"
 
 //for test
 #import "WGCarouselFigureItem.h"
@@ -57,7 +58,7 @@
 }
 
 - (void)initNavigationItem {
-    self.navigationItem.rightBarButtonItem = [self createShopCartItem];
+    self.navigationItem.rightBarButtonItems = @[[self createShopCartItem], [self createSearchItem]];
 }
 
 - (void)touchTitleView {

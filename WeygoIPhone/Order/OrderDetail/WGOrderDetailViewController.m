@@ -17,6 +17,7 @@
 #import "WGOrderGoodItem.h"
 #import "WGOrderDetailViewController+Request.h"
 #import "WGViewController+ShopCart.h"
+#import "WGViewController+TopButton.h"
 
 @interface WGOrderDetailViewController ()
 {
@@ -77,7 +78,7 @@
 
 - (void)handleRebuy:(WGRebuyOrderResponse *)response {
     [self removeLoadingView];
-    [self showWarningMessage:response.message];
+    //[self showWarningMessage:response.message];
     [[WGApplication sharedApplication] addShopToCartImage:@"add_cart" fromPoint:CGPointMake(kDeviceWidth/2, kDeviceHeight - kAppAdaptHeight(72))];
 }
 
@@ -92,6 +93,10 @@
 
 - (void)refreshUI {
     [_tableView reloadData];
+}
+
+- (void)scrollToTop {
+    [_tableView setContentOffset:CGPointMake(0, 0) animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -308,6 +313,12 @@
         }
     }
     return cell;
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    JHButton *topButton = [self createTopButton];
+    topButton.y = self.view.height - kAppAdaptWidth(140);
+    [self showTopButton:(scrollView.contentOffset.y > kAppAdaptHeight(176)) ? YES : NO];
 }
 
 @end

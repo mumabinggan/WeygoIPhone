@@ -70,6 +70,8 @@
 "Italiano" = "Italiano";
 "China" = "China";
 "Log out" = "Log out";
+"Clean_Cache_Success" = "Lo svuotamento della cache è avvenuto con successo.";
+
 //分类 Tab
 "Hot Sale" = "PIÙ VENDUTI";
 //分类详情
@@ -209,7 +211,7 @@
 "Good Detail Price With .2 Unit" = "€%.2f";
 "Good Detail Des" = "Descrizione";
 "Good Detail Info" = "Info";
-"Good Detail Consegna" = "Consegna";
+"Good Detail Consegna" = "Spedizione";
 "Good Detail CommodityInfo" = "Descrizione";
 "Good Detail Add" = "Aggiungi";
 
@@ -326,8 +328,8 @@
 "Request_StoreValue" = "mobileitaly";
 
 //失效产品
-"Home_Grid_Instock" = "Non disponbile";
-"GoodDetail_Grid_Instock" = "Non disponbile";
+"Home_Grid_Instock" = "Non Disp.";
+"GoodDetail_Grid_Instock" = "Non Disp.";
 
 //搜索
 "Search_Hot_Title" = "I più ricercati";
@@ -345,3 +347,5 @@
 "EmptyPage_NoFavorite" = "Non hai nessun articolo preferito";
 "EmptyPage_NoOrderList" = "Non hai ordini nel lista";
 "EmptyPage_NoShopCart" = "Non hai articoli nel carrello";
+
+"GoodList_UnPurchase" = "Non Disp.";

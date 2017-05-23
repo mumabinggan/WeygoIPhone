@@ -33,6 +33,7 @@
 #import "WGHomeTabViewController.h"
 #import "WGApplication.h"
 #import "WGPostCodePopoverView.h"
+#import "WGViewController+TopButton.h"
 
 //for test
 #import "WGClassifyGoodListViewController.h"
@@ -206,6 +207,10 @@
     }
 }
 
+- (void)scrollToTop {
+    [_tableView setContentOffset:CGPointMake(0, 0) animated:YES];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -337,6 +342,7 @@
             WGHomeFloorItem *item = _homeData.floors[indexPath.section - 1];
             if (indexPath.row == 0) {
                 cell = [[WGHomeFloorNameAndBriefInfoHeadCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             }
             else if (indexPath.row == 1) {
                 cell = [[WGHomeFloorPictureHeadCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
@@ -469,6 +475,10 @@
             }
         }
     }
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    [self showTopButton:(scrollView.contentOffset.y > kAppAdaptHeight(176)) ? YES : NO];
 }
 
 - (void)beginRefreshHeader:(TWRefreshTableView*) tableView {

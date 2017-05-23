@@ -24,6 +24,7 @@
     self.window.rootViewController = _rootVC;
     [self.window makeKeyAndVisible];
     
+    [WGApplication sharedApplication];
     /// Show welcome view
     [self showWelcomeView];
     

@@ -23,7 +23,11 @@
     JHLabel         *_currentPriceLabel;    //current price
     JHLabel         *_priceLabel;           //origin price
     JHLabel         *_reduceLabel;          //reduce price
+    
+    JHButton        *_purchaseResponseButton;
     JHButton        *_purchaseBtn;
+    
+    JHButton        *_unPurchaseBtn;
     
     WGHomeFloorContentGoodItem  *_data;
 }
@@ -87,10 +91,16 @@
     JHButton *tempButton = [[JHButton alloc] initWithFrame:CGRectMake(kDeviceWidth/5 * 4, 0, kDeviceWidth/5, self.height)];
     [tempButton addTarget:self action:@selector(touchPurchase:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:tempButton];
-    _purchaseBtn = [[JHButton alloc] initWithFrame:CGRectMake(kDeviceWidth - kAppAdaptWidth(16 + 24), kAppAdaptHeight(84), kAppAdaptWidth(24), kAppAdaptHeight(24))];
+    _purchaseBtn = [[JHButton alloc] initWithFrame:CGRectMake(kDeviceWidth - kAppAdaptWidth(16 + 24), kAppAdaptHeight(86), kAppAdaptWidth(24), kAppAdaptHeight(24))];
     [_purchaseBtn setImage:[UIImage imageNamed:@"add_cart"] forState:UIControlStateNormal];
     [_purchaseBtn addTarget:self action:@selector(touchPurchase:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_purchaseBtn];
+    
+    _unPurchaseBtn = [[JHButton alloc] initWithFrame:CGRectMake(kDeviceWidth - kAppAdaptWidth(16 + 72), kAppAdaptHeight(88), kAppAdaptWidth(72), kAppAdaptHeight(20)) difRadius:JHRadiusMake(kAppAdaptHeight(10), kAppAdaptHeight(10), kAppAdaptHeight(10), kAppAdaptHeight(10)) backgroundColor:kHRGB(0xB0BEC5)];
+    [_unPurchaseBtn setTitle:kStr(@"GoodList_UnPurchase") forState:UIControlStateNormal];
+    [_unPurchaseBtn setTitleColor:kWhiteColor forState:UIControlStateNormal];
+    _unPurchaseBtn.titleLabel.font = kAppAdaptFont(12);
+    [self addSubview:_unPurchaseBtn];
 }
 
 - (void)touchPurchase:(JHButton *)sender {
@@ -140,6 +150,10 @@
     _reduceLabel.frame = frame;
     _reduceLabel.text = reduce;
     _reduceLabel.hidden = [NSString isNullOrEmpty:reduce];
+    
+    _unPurchaseBtn.hidden = (_data.inStock);
+    _purchaseBtn.hidden = (!_data.inStock);
+    _purchaseResponseButton.hidden = (!_data.inStock);
 }
 
 @end

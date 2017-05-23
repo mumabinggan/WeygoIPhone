@@ -39,6 +39,9 @@
         [itemMArray addObject:itemBtn];
     }
     _itemViewArray = itemMArray;
+    JHView *lineView = [[JHView alloc] initWithFrame:CGRectMake(0, self.height - kAppSepratorLineHeight, kDeviceWidth, kAppSepratorLineHeight)];
+    lineView.backgroundColor = WGAppSeparateLineColor;
+    [self addSubview:lineView];
 }
 
 - (void)touchItemBtn:(JHButton *)sender {

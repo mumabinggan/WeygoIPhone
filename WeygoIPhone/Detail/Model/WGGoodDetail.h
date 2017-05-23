@@ -32,6 +32,9 @@
 
 @property (nonatomic, strong) NSString *commodityInfo;
 
+//
+@property (nonatomic, strong) NSString *purchaseTip;    //购买须知
+
 @property (nonatomic, strong) NSArray *recommendProduce;
 
 @property (nonatomic, assign) long long hasFavorited; //0为没有收藏，>0为收藏并且为收藏 id

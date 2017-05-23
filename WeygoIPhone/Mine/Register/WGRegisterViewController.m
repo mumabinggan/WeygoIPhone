@@ -195,7 +195,7 @@
     [_scrollView addSubview:registerBtn];
     
     JHButton *loginBtn = [[JHButton alloc] initWithFrame:CGRectMake(textFieldX, registerBtn.maxY + kAppAdaptHeight(22), textFieldWidth, kAppAdaptHeight(40)) difRadius:JHRadiusMake(radius, radius, radius, radius) backgroundColor:WGAppBaseColor];
-    [loginBtn setTitle:kStr(@"Register_Title") forState:UIControlStateNormal];
+    [loginBtn setTitle:kStr(@"Register_Login") forState:UIControlStateNormal];
     [loginBtn setTitleColor:kWhiteColor forState:UIControlStateNormal];
     loginBtn.titleLabel.font = kAppAdaptFont(14);
     [loginBtn addTarget:self action:@selector(touchLoginBtn:) forControlEvents:UIControlEventTouchUpInside];

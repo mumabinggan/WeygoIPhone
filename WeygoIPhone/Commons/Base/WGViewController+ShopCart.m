@@ -89,7 +89,7 @@ static const NSString *WGShopCartButtonKey = @"WGShopCartButtonKey";
         backButton.titleEdgeInsets = UIEdgeInsetsMake(0, 3, 0, 0);
         JHBarButtonItem *item =  [[JHBarButtonItem alloc] initWithCustomView:backButton];
         item.tag = WGRightItemTypeShopCart;
-        [item showBadge:([WGApplication sharedApplication].shopCartGoodCount > 0 ? YES : NO) withNumber:(int)[WGApplication sharedApplication].shopCartGoodCount withFrame:CGRectMake(13, 5, 15, 15)];
+        [item showBadge:([WGApplication sharedApplication].shopCartGoodCount > 0 ? YES : NO) withNumber:(int)[WGApplication sharedApplication].shopCartGoodCount withFrame:CGRectMake(13, 5, 17, 17)];
         self.rightItem = item;
     }
     return self.rightItem;

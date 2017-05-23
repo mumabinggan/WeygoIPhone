@@ -21,6 +21,7 @@
 #import "WGGoodDetailViewController.h"
 #import "WGClassifyDetailGoodGridItemCell.h"
 #import "WGPostCodePopoverView.h"
+#import "WGViewController+TopButton.h"
 
 //for test
 #import "WGCarouselFigureItem.h"
@@ -30,8 +31,6 @@
 @interface WGClassifyDetailContentViewController ()
 {
     WGClassifySortView *_sortView;
-    
-    BOOL _isGrid;
     
     WGSubClassifyView *_subClassifyView;
     
@@ -58,13 +57,17 @@
     [self loadData:YES pulling:NO];
 }
 
+- (void)initData {
+    [super initData];
+}
+
 - (void)initSubView {
     [super initSubView];
     JHView *contentView = [[JHView alloc] initWithFrame:self.view.bounds];
     contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     [self.view addSubview:contentView];
     
-    _tableView = [[TWRefreshTableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped refreshType:TWRefreshTypeBottom | TWRefreshTypeTop];
+    _tableView = [[TWRefreshTableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain refreshType:TWRefreshTypeBottom | TWRefreshTypeTop];
     _tableView.dataSource = self;
     _tableView.delegate = self;
     _tableView.refreshDelegate = self;
@@ -127,11 +130,20 @@
         [_closeBtn setBackgroundColor:kHRGBA(0x000000, 0.5)];
         [self.view addSubview:_closeBtn];
         
-        _sortPickerBgView = [[JHView alloc] initWithFrame:CGRectMake(0, kDeviceHeight - kAppAdaptHeight(300), kDeviceWidth, kAppAdaptHeight(300))];
+        BOOL hasTab = (self.view.height < kDeviceHeight - 64 - kAppAdaptWidth(44) - 10);
+        float bgHeight = kAppAdaptHeight(300);
+        if (hasTab) {
+            bgHeight = kAppAdaptHeight(240);
+        }
+        _sortPickerBgView = [[JHView alloc] initWithFrame:CGRectMake(0, self.view.height - bgHeight, kDeviceWidth, bgHeight)];
         _sortPickerBgView.backgroundColor = kWhiteColor;
         [self.view addSubview:_sortPickerBgView];
         
-        _sortPickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, kAppAdaptHeight(60), kDeviceWidth, kAppAdaptHeight(200))];
+        float pickY = kAppAdaptHeight(60);
+        if (hasTab) {
+            pickY = kAppAdaptHeight(40);
+        }
+        _sortPickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, pickY, kDeviceWidth, kAppAdaptHeight(200))];
         _sortPickerView.backgroundColor = kRGB(244, 244, 244);
         _sortPickerView.delegate = self;
         _sortPickerView.dataSource = self;
@@ -140,15 +152,19 @@
         _sortPickerBgView.backgroundColor = _sortPickerView.backgroundColor;
         [_sortPickerBgView addSubview:_sortPickerView];
         
-        JHButton *cancelBtn = [[JHButton alloc] initWithFrame:CGRectMake(kAppAdaptWidth(8), kAppAdaptWidth(10), kAppAdaptWidth(50), kAppAdaptHeight(30))];
-        [cancelBtn setTitle:kStr(@"Mine_Logout_Cancel") forState:UIControlStateNormal];
+        NSString *titleString = kStr(@"Mine_Logout_Cancel");
+        float width = [titleString returnSize:kAppAdaptFont(16)].width + kAppAdaptWidth(10);
+        JHButton *cancelBtn = [[JHButton alloc] initWithFrame:CGRectMake(kAppAdaptWidth(8), kAppAdaptWidth(10), width, kAppAdaptHeight(30))];
+        [cancelBtn setTitle:titleString forState:UIControlStateNormal];
         [cancelBtn setTitleColor:WGAppBaseColor forState:UIControlStateNormal];
         [cancelBtn addTarget:self action:@selector(touchCancelBtn:) forControlEvents:UIControlEventTouchUpInside];
         cancelBtn.titleLabel.font = kAppAdaptFont(16);
         [_sortPickerBgView addSubview:cancelBtn];
         
-        JHButton *confirmBtn = [[JHButton alloc] initWithFrame:CGRectMake(kDeviceWidth - kAppAdaptWidth(58), kAppAdaptWidth(10), kAppAdaptWidth(50), kAppAdaptHeight(30))];
-        [confirmBtn setTitle:kStr(@"Mine_Logout_Ok") forState:UIControlStateNormal];
+        titleString = kStr(@"Mine_Logout_Ok");
+        width = [titleString returnSize:kAppAdaptFont(16)].width + kAppAdaptWidth(10);
+        JHButton *confirmBtn = [[JHButton alloc] initWithFrame:CGRectMake(kDeviceWidth - width - kAppAdaptWidth(8), kAppAdaptWidth(10), width, kAppAdaptHeight(30))];
+        [confirmBtn setTitle:titleString forState:UIControlStateNormal];
         [confirmBtn setTitleColor:WGAppBaseColor forState:UIControlStateNormal];
         [confirmBtn addTarget:self action:@selector(touchConfirmBtn:) forControlEvents:UIControlEventTouchUpInside];
         confirmBtn.titleLabel.font = kAppAdaptFont(16);
@@ -226,6 +242,10 @@
     else {
         [self showWarningMessage:response.message];
     }
+}
+
+- (void)scrollToTop {
+    [_tableView setContentOffset:CGPointMake(0, 0) animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -323,7 +343,12 @@
                 cell = [[WGHomeNewsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
             }
             else {
-                cell = [[WGHomeFloorGoodListItemCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+                WeakSelf;
+                WGHomeFloorGoodListItemCell *goodListCell = [[WGHomeFloorGoodListItemCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+                goodListCell.onPurchase = ^(WGHomeFloorContentGoodItem *item, CGPoint fromPoint) {
+                    [weakSelf handleAddShopCart:item fromPoint:fromPoint];
+                };
+                cell = goodListCell;
                 JHView *line = [[JHView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kAppSepratorLineHeight)];
                 line.backgroundColor = WGAppSeparateLineColor;
                 [cell.contentView addSubview:line];
@@ -403,6 +428,10 @@
             [self openGoodDetailViewController:item];
         }
     }
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    [self showTopButton:(scrollView.contentOffset.y > kAppAdaptHeight(176)) ? YES : NO];
 }
 
 - (void)beginRefreshHeader:(TWRefreshTableView *)tableView {
