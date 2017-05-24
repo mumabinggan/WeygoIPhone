@@ -11,6 +11,8 @@
 @interface WGMineHeaderView ()
 {
     JHImageView *_imageView;
+    
+    JHImageView *_headImageView;
     JHLabel     *_nameLabel;
     
     JHImageView *_localImageView;
@@ -31,6 +33,9 @@
     _imageView.image = [UIImage imageNamed:@"personCenter_bg"];
     [self addSubview:_imageView];
     
+    _headImageView = [[JHImageView alloc] initWithFrame:CGRectMake((kDeviceWidth - kAppAdaptWidth(70))/2, kAppAdaptHeight(70), kAppAdaptWidth(70), kAppAdaptHeight(70))];
+    [self addSubview:_headImageView];
+    
     _nameLabel = [[JHLabel alloc] initWithFrame:CGRectMake(0, _imageView.maxY - kAppAdaptHeight(96), kDeviceWidth, kAppAdaptHeight(24))];
     _nameLabel.textAlignment = NSTextAlignmentCenter;
     _nameLabel.font = kAppAdaptFont(16);
@@ -50,6 +55,7 @@
 
 - (void)showWithData:(WGUser *)user {
     //[_imageView setImageWithURL:[NSURL URLWithString:user.headerUrl] placeholderImage:kMineHeaderPlaceholderImage options:JHWebImageOptionsRefreshCached];
+    _headImageView.image = [UIImage imageNamed:user.userAvatar];
     _nameLabel.text = user.name;
     _postCodeLabel.text = user.cap;
 }

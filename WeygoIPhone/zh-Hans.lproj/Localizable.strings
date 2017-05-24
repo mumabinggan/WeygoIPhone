@@ -163,8 +163,8 @@
 "Slider_Mine_Coupon" = "优惠卷";
 "Slider_Mine_Message" = "消息";
 "Slider_Mine_Scan" = "扫一扫";
-"Slider_Mine_MessageCenter" = "消息中心";
-"Slider_Mine_UnRegister" = "未登录";
+"Slider_Mine_MessageCenter" = "客服中心";
+"Slider_Mine_UnRegister" = "登录/注册";
 "Slider_Hello" = "您好，%@";
 "Slider_All" = "全部";
 

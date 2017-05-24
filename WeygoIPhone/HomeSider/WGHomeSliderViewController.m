@@ -30,6 +30,7 @@
 #import "WGSpecialClassifyViewController.h"
 #import "WGSpecialClassifyGoodViewController.h"
 #import "WGTabBenefitViewController.h"
+#import <ZDCChat/ZDCChat.h>
 
 //for test
 #import "WGGoodDetailViewController.h"
@@ -105,17 +106,35 @@
 
 - (void)handleOnLogin {
     [[WGApplication sharedApplication] closeSideBarViewController];
+    WGMainViewController *mainVC = [WGApplication sharedApplication].mainViewController;
     if ([WGApplication sharedApplication].isLogined) {
         //进入用户信息
         [[WGApplication sharedApplication] closeSideBarViewController];
         WGPersonInfoViewController *vc = [[WGPersonInfoViewController alloc] init];
-        WGMainViewController *mainVC = [WGApplication sharedApplication].mainViewController;
+        
         [mainVC.navigationController pushViewController:vc animated:YES];
     }
     else {
         //进入登录界面
+        
+        WeakSelf;
         [[WGApplication sharedApplication] closeSideBarViewController];
+        [WGLoginViewController pushInNavigationController:mainVC.navigationController loginFrom:WGLoginFromDefault sucess:^(WGLoginViewController *vc) {
+            [weakSelf handleLoginSuccess];
+        } cancel:^(WGLoginViewController *vc) {
+            [weakSelf handleCancelLogin];
+        }];
     }
+}
+
+- (void)handleLoginSuccess {
+    WGMainViewController *mainVC = [WGApplication sharedApplication].mainViewController;
+    [mainVC.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)handleCancelLogin {
+    WGMainViewController *mainVC = [WGApplication sharedApplication].mainViewController;
+    [mainVC.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)handleOnScan {
@@ -127,6 +146,15 @@
 }
 
 - (void)handleOnMessageCenter {
+    [[WGApplication sharedApplication] closeSideBarViewController];
+    UINavigationController *navc = [WGApplication sharedApplication].navigationController;
+    [ZDCChat startChatIn:navc withConfig:^(ZDCConfig *config) {
+        config.preChatDataRequirements.name = ZDCPreChatDataOptionalEditable;
+        config.preChatDataRequirements.email = ZDCPreChatDataOptionalEditable;
+        config.preChatDataRequirements.phone = ZDCPreChatDataOptionalEditable;
+        config.preChatDataRequirements.department = ZDCPreChatDataOptionalEditable;
+        config.preChatDataRequirements.message = ZDCPreChatDataOptionalEditable;
+    }];
 //    [[WGApplication sharedApplication] closeSideBarViewController];
 //    //进入消息中心
 //    WGMessageCenterViewController *vc = [[WGMessageCenterViewController alloc] init];
@@ -241,7 +269,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     if (section == 0) {
-        return kAppAdaptHeight(112);
+        return [WGHomeSliderUserHeaderView height];
     }
     else if (section >= 2) {
         return kAppAdaptHeight(48);
@@ -256,7 +284,17 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     CGFloat height = 0.0f;
     if (indexPath.section == 0) {
-        height = kAppAdaptHeight(48);
+        if ([WGApplication sharedApplication].isLogined) {
+            height = kAppAdaptHeight(48);
+        }
+        else {
+            if (0 == indexPath.row) {
+                height = kAppAdaptHeight(48);
+            }
+            else {
+                height = 0.0f;
+            }
+        }
     }
     else if (indexPath.section == 1) {
         height = kAppAdaptHeight(74) + (((_data.topics.count + 1)/2 == indexPath.row + 1) ? kAppAdaptHeight(8) : 0.0f);
@@ -331,6 +369,7 @@
             cell.textLabel.textColor = WGAppTitleColor;
         }
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.clipsToBounds = YES;
     }
     if (indexPath.section == 0) {
         cell.textLabel.text = _itemArray[indexPath.row];
@@ -339,7 +378,8 @@
         cell.contentView.backgroundColor = kWhiteColor;
         if (indexPath.row == 0) {
             cell.imageView.image = [UIImage imageNamed:@"mine_local"];
-            cell.accessoryType = [self cannotEditPostCode] ?  UITableViewCellAccessoryNone: UITableViewCellAccessoryDisclosureIndicator;
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            //cell.accessoryType = [self cannotEditPostCode] ?  UITableViewCellAccessoryNone: UITableViewCellAccessoryDisclosureIndicator;
             cell.textLabel.textColor = WGAppBaseColor;
             cell.contentView.backgroundColor = kHRGB(0xF8FAFA);
         }

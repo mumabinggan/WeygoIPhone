@@ -12,6 +12,7 @@
 #import "WGShopCartViewController.h"
 
 static const NSString *WGShopCartButtonKey = @"WGShopCartButtonKey";
+static const NSString *WGShopCartRightItemKey = @"WGShopCartRightItemKey";
 
 @implementation WGViewController (ShopCart)
 
@@ -61,21 +62,45 @@ static const NSString *WGShopCartButtonKey = @"WGShopCartButtonKey";
 
 - (void)handleUpdateShopCart:(NSNotification *)notification {
     JHBarButtonItem *item = (JHBarButtonItem *)[self rightItem];
-    if (item.tag == WGRightItemTypeShopCart) {
-        [item showBadge:([WGApplication sharedApplication].shopCartGoodCount > 0 ? YES : NO) withNumber:(int)[WGApplication sharedApplication].shopCartGoodCount withFrame:CGRectMake(13, 5, 17, 17)];
+    if (item) {
+        if (item.tag == WGRightItemTypeShopCart) {
+            [item showBadge:([WGApplication sharedApplication].shopCartGoodCount > 0 ? YES : NO) withNumber:(int)[WGApplication sharedApplication].shopCartGoodCount withFrame:CGRectMake(13, 5, 17, 17)];
+        }
     }
+    else {
+        JHButton *item = [self rightButton];
+        if (item) {
+            [item showBadge:([WGApplication sharedApplication].shopCartGoodCount > 0 ? YES : NO) text:@([WGApplication sharedApplication].shopCartGoodCount).stringValue];
+        }
+    }
+    
 }
 
 - (UIBarButtonItem *)rightItem {
-    return objc_getAssociatedObject(self, &WGShopCartButtonKey);
+    return objc_getAssociatedObject(self, &WGShopCartRightItemKey);
 }
 
 - (void)setRightItem:(UIBarButtonItem *)rightItem {
-    objc_setAssociatedObject(self, &WGShopCartButtonKey, rightItem, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, &WGShopCartRightItemKey, rightItem, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (UIBarButtonItem *)createShopCartItem {
-    if (!self.rightItem) {
+- (JHButton *)rightButton {
+    return objc_getAssociatedObject(self, &WGShopCartButtonKey);
+}
+
+- (void)setRightButton:(UIButton *)rightButton {
+    objc_setAssociatedObject(self, &WGShopCartButtonKey, rightButton, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (JHButton *)createShopCartWithNumberButton {
+    JHButton *shopCartButton = [self createShopCartButton];
+    [shopCartButton addBadge];
+    [shopCartButton showBadge:([WGApplication sharedApplication].shopCartGoodCount > 0 ? YES : NO) text:@([WGApplication sharedApplication].shopCartGoodCount).stringValue];
+    return shopCartButton;
+}
+
+- (JHButton *)createShopCartButton {
+    if (!self.rightButton) {
         JHButton *backButton = [JHButton buttonWithType:UIButtonTypeCustom];
         [backButton setImage:[UIImage imageNamed:@"right_cart"] forState:UIControlStateNormal];
         [backButton setTitle:nil forState:UIControlStateNormal];
@@ -87,7 +112,15 @@ static const NSString *WGShopCartButtonKey = @"WGShopCartButtonKey";
         r.size.width += 3;
         backButton.frame = r;
         backButton.titleEdgeInsets = UIEdgeInsetsMake(0, 3, 0, 0);
-        JHBarButtonItem *item =  [[JHBarButtonItem alloc] initWithCustomView:backButton];
+        self.rightButton = backButton;
+    }
+    return self.rightButton;
+}
+
+- (UIBarButtonItem *)createShopCartItem {
+    if (!self.rightItem) {
+        UIView *view = [self createShopCartButton];
+        JHBarButtonItem *item =  [[JHBarButtonItem alloc] initWithCustomView:view];
         item.tag = WGRightItemTypeShopCart;
         [item showBadge:([WGApplication sharedApplication].shopCartGoodCount > 0 ? YES : NO) withNumber:(int)[WGApplication sharedApplication].shopCartGoodCount withFrame:CGRectMake(13, 5, 17, 17)];
         self.rightItem = item;

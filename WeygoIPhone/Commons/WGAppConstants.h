@@ -25,6 +25,8 @@
 #define WGAppFooterButtonColor kRGB(86, 119, 252)
 
 #define kWGSideBarWidth  kAppAdaptWidth(280)
+//#define kWGSideBarWidth kW
+
 
 //#define kWGOswaldMediumFont(fsize)    kAppFont(fsize)
 //#define kWGOswaldMediumAdaptFont(fsize)    kAppAdaptFont(fsize)

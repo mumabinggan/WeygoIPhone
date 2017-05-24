@@ -97,10 +97,15 @@
     titleLabel.textAlignment = NSTextAlignmentCenter;
     [contentView addSubview:titleLabel];
     
-    _messageBtn = [[JHButton alloc] initWithFrame:CGRectMake(kDeviceWidth - kAppAdaptWidth(40), kAppAdaptHeight(30), kAppAdaptWidth(24), kAppAdaptHeight(24))];
-    [_messageBtn setBackgroundImage:[UIImage imageNamed:@"mine_message"] forState:UIControlStateNormal];
-    [_messageBtn addTarget:self action:@selector(touchMessageBtn:) forControlEvents:UIControlEventTouchUpInside];
-    [_messageBtn addBadge];
+    _messageBtn = [self createShopCartWithNumberButton];
+    _messageBtn.frame = CGRectMake(kDeviceWidth - kAppAdaptWidth(41), kAppAdaptHeight(30), kAppAdaptWidth(24), kAppAdaptHeight(24));
+//    _messageBtn = [[JHButton alloc] initWithFrame:CGRectMake(kDeviceWidth - kAppAdaptWidth(40), kAppAdaptHeight(30), kAppAdaptWidth(24), kAppAdaptHeight(24))];
+//    
+//    [_messageBtn setBackgroundImage:[UIImage imageNamed:@"mine_message"] forState:UIControlStateNormal];
+//    [_messageBtn addTarget:self action:@selector(touchMessageBtn:) forControlEvents:UIControlEventTouchUpInside];
+//    [_messageBtn addBadge];
+//    [_messageBtn showBadge:YES text:@"12"];
+    [contentView addSubview:_messageBtn];
     
 //    _shopCartBtn = [self createShopCartItem];
 //    _shopCartBtn.

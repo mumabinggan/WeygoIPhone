@@ -10,6 +10,8 @@
 
 @interface WGViewController (ShopCart)
 
+- (JHButton *)createShopCartWithNumberButton;
+
 - (UIBarButtonItem *)createShopCartItem;
 
 @end
