@@ -7,7 +7,10 @@
 //
 
 #import "WGResponse.h"
+#import "WGAddGoodToCartData.h"
 
 @interface WGRebuyOrderResponse : WGResponse
+
+@property (nonatomic, strong) WGAddGoodToCartData *data;
 
 @end

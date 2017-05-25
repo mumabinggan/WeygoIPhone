@@ -110,7 +110,7 @@
 }
 
 - (void)refreshBottomView {
-    _noAddBtn.hidden = _goodDetail.inStock;
+    _noAddBtn.hidden = (_goodDetail.inStock == 1) ? YES : NO;
     [_likeBtn setImage:[UIImage imageNamed:(_goodDetail.hasFavorited) ? @"good-like-selected" : @"good-like-normal" ] forState:UIControlStateNormal];
 }
 

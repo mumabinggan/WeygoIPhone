@@ -309,6 +309,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if ([tableView isEqual:_firstTableView]) {
         _currentSelectedIndex = indexPath.row;
+        [_secondTableView setContentOffset:CGPointMake(0, 0) animated:YES];
         [self refreshUI];
     }
     else {

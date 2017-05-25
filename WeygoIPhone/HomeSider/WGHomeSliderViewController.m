@@ -90,7 +90,7 @@
     [contentView addSingleTapGestureRecognizerWithTarget:self action:@selector(touchBlankArea:)];
     [self.view addSubview:contentView];
     self.view.backgroundColor = kClearColor;
-    _tableView = [[JHTableView alloc] initWithFrame:CGRectMake(0, 0, kWGSideBarWidth, kDeviceHeight)];
+    _tableView = [[JHTableView alloc] initWithFrame:CGRectMake(0, 0, kWGSideBarWidth, kDeviceHeight) style:UITableViewStyleGrouped];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -274,11 +274,11 @@
     else if (section >= 2) {
         return kAppAdaptHeight(48);
     }
-    return 0.0f;
+    return 0.1f;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return 0.0f;
+    return 0.1f;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

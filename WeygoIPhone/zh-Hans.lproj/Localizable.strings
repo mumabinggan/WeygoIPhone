@@ -57,6 +57,7 @@
 "Inactivate" = "取消";
 //收藏
 "Collection" = "我的收藏";
+"Collection_Delete" = "删除";
 //足迹
 "FootPrint" = "我的足迹";
 //设置

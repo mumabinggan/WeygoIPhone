@@ -66,6 +66,7 @@
 
 - (void)handleRebuy:(WGRebuyOrderResponse *)response fromPoint:(CGPoint)fromPoint {
     [self removeLoadingView];
+    [[WGApplication sharedApplication] handleShopCartGoodCount:response.data.goodCount];
     //[self showWarningMessage:response.message];
     [[WGApplication sharedApplication] addShopToCartImage:@"add_cart" fromPoint:fromPoint];
 }

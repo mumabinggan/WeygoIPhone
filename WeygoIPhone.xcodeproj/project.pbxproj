@@ -276,6 +276,7 @@
 		BE99E7DB1E1CEA0C00210546 /* SF-UI-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BE99E7D21E1CEA0C00210546 /* SF-UI-Display-Semibold.otf */; };
 		BE99E7DC1E1CEA0C00210546 /* SF-UI-Display-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = BE99E7D31E1CEA0C00210546 /* SF-UI-Display-Thin.otf */; };
 		BE99E7DD1E1CEA0C00210546 /* SF-UI-Display-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = BE99E7D41E1CEA0C00210546 /* SF-UI-Display-Ultralight.otf */; };
+		BE9D79ED1ED5B92B008175E1 /* WGAddGoodToCartData.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9D79EC1ED5B92B008175E1 /* WGAddGoodToCartData.m */; };
 		BE9F93191E6AED4A0051B054 /* WGHomeTabTitleRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9F93181E6AED4A0051B054 /* WGHomeTabTitleRequest.m */; };
 		BE9F931D1E6AEEB40051B054 /* WGHomeTabTitleResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9F931C1E6AEEB40051B054 /* WGHomeTabTitleResponse.m */; };
 		BE9F932D1E6B1C960051B054 /* WGClientServiceCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9F932C1E6B1C960051B054 /* WGClientServiceCenterViewController.m */; };
@@ -1088,6 +1089,8 @@
 		BE99E7D21E1CEA0C00210546 /* SF-UI-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Semibold.otf"; sourceTree = "<group>"; };
 		BE99E7D31E1CEA0C00210546 /* SF-UI-Display-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Thin.otf"; sourceTree = "<group>"; };
 		BE99E7D41E1CEA0C00210546 /* SF-UI-Display-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Ultralight.otf"; sourceTree = "<group>"; };
+		BE9D79EB1ED5B92B008175E1 /* WGAddGoodToCartData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGAddGoodToCartData.h; sourceTree = "<group>"; };
+		BE9D79EC1ED5B92B008175E1 /* WGAddGoodToCartData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGAddGoodToCartData.m; sourceTree = "<group>"; };
 		BE9F93171E6AED4A0051B054 /* WGHomeTabTitleRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGHomeTabTitleRequest.h; sourceTree = "<group>"; };
 		BE9F93181E6AED4A0051B054 /* WGHomeTabTitleRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGHomeTabTitleRequest.m; sourceTree = "<group>"; };
 		BE9F931B1E6AEEB40051B054 /* WGHomeTabTitleResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGHomeTabTitleResponse.h; sourceTree = "<group>"; };
@@ -2911,6 +2914,8 @@
 				BE6229E71E765BD2002BFEDB /* Response */,
 				BE6229DE1E765969002BFEDB /* WGGoodDetail.h */,
 				BE6229DF1E765969002BFEDB /* WGGoodDetail.m */,
+				BE9D79EB1ED5B92B008175E1 /* WGAddGoodToCartData.h */,
+				BE9D79EC1ED5B92B008175E1 /* WGAddGoodToCartData.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -4601,6 +4606,7 @@
 				BEB2D9221DFBDFE900F2E74B /* WGTabMineViewController.m in Sources */,
 				BEB8D0941E46D18000BB9BA3 /* WGPostCodeItem.m in Sources */,
 				BE52EFC91E2F64E90022EF5B /* WGCollectionViewController.m in Sources */,
+				BE9D79ED1ED5B92B008175E1 /* WGAddGoodToCartData.m in Sources */,
 				BE6CC1A31E29219F003755FF /* WGHomeFloorNameHeadCell.m in Sources */,
 				BEB2D9251DFBE25300F2E74B /* WGHomeTabViewController+NavigationBar.m in Sources */,
 			);
