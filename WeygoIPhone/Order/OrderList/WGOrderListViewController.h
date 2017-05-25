@@ -8,12 +8,15 @@
 
 #import "WGViewController.h"
 #import "WGOrderListItem.h"
+#import "WGOrderListRequest.h"
 
 @interface WGOrderListViewController : WGViewController
 {
     TWRefreshTableView *_tableView;
     NSMutableArray *_orderMArray;
 }
+
+@property (nonatomic, assign) WGOrderListType type;
 
 - (void)refreshUI;
 

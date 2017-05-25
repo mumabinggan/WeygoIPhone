@@ -8,7 +8,14 @@
 
 #import "WGGuestRequest.h"
 
+typedef NS_ENUM(NSInteger, WGOrderListType) {
+    WGOrderListTypeAll = 1,
+    WGOrderListTypeDelivering
+};
+
 @interface WGOrderListRequest : WGGuestRequest
+
+@property (nonatomic, assign) WGOrderListType type;
 
 @property (nonatomic, assign) long long pageId;
 

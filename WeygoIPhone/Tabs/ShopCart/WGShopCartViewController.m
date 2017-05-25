@@ -114,7 +114,7 @@
     [contentView addSubview:_footView];
     _footView.hidden = YES;
     
-    JHImageView *deleteImageView = [[JHImageView alloc] initWithFrame:CGRectMake(kAppAdaptWidth(16), kAppAdaptHeight(20), kAppAdaptWidth(20), kAppAdaptHeight(14))];
+    JHImageView *deleteImageView = [[JHImageView alloc] initWithFrame:CGRectMake(kAppAdaptWidth(16), kAppAdaptHeight(19), kAppAdaptWidth(17), kAppAdaptHeight(17))];
     deleteImageView.image = [UIImage imageNamed:@"shopcart_clean"];
     [_footView addSubview:deleteImageView];
     deleteImageView.userInteractionEnabled = YES;
@@ -285,6 +285,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     WGShopCartGoodItem *item = _data.goods[indexPath.row];
     [self openGoodDetailViewController:item];
+}
+
+- (NSString*)tableView:(UITableView*)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath*)indexpath {
+    return kStr(@"Collection_Delete");
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

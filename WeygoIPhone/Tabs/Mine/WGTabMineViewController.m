@@ -97,21 +97,13 @@
     titleLabel.textAlignment = NSTextAlignmentCenter;
     [contentView addSubview:titleLabel];
     
+    JHButton *outerShopCartBtn = [[JHButton alloc] initWithFrame:CGRectMake(kDeviceWidth - 80, 0, 80, 64)];
+    [outerShopCartBtn addTarget:self action:@selector(touchShopCartButton:) forControlEvents:UIControlEventTouchUpInside];
+    [contentView addSubview:outerShopCartBtn];
     _messageBtn = [self createShopCartWithNumberButton];
     _messageBtn.frame = CGRectMake(kDeviceWidth - kAppAdaptWidth(41), kAppAdaptHeight(30), kAppAdaptWidth(24), kAppAdaptHeight(24));
-//    _messageBtn = [[JHButton alloc] initWithFrame:CGRectMake(kDeviceWidth - kAppAdaptWidth(40), kAppAdaptHeight(30), kAppAdaptWidth(24), kAppAdaptHeight(24))];
-//    
-//    [_messageBtn setBackgroundImage:[UIImage imageNamed:@"mine_message"] forState:UIControlStateNormal];
-//    [_messageBtn addTarget:self action:@selector(touchMessageBtn:) forControlEvents:UIControlEventTouchUpInside];
-//    [_messageBtn addBadge];
-//    [_messageBtn showBadge:YES text:@"12"];
     [contentView addSubview:_messageBtn];
-    
-//    _shopCartBtn = [self createShopCartItem];
-//    _shopCartBtn.
-    
     [self refresh:_data];
-    //[contentView addSubview:_messageBtn];
 }
 
 - (JHView *)createHeaderView {
@@ -128,7 +120,7 @@
     NSArray *titleArray = @[kStr(@"Mine_Order"), kStr(@"Mine_Delivery")];
     for (int num = 0; num < titleArray.count; ++num) {
         JHButton *itemBtn = [[JHButton alloc] initWithFrame:CGRectMake(kAppAdaptWidth(53) + num*kAppAdaptWidth(125) + kAppAdaptWidth(20), 0, kAppAdaptWidth(125), kAppAdaptHeight(80))];
-        itemBtn.tag = num;
+        itemBtn.tag = num + 1;
         [itemBtn addTarget:self action:@selector(touchOrderBtn:) forControlEvents:UIControlEventTouchUpInside];
         [headerView addSubview:itemBtn];
         
@@ -193,6 +185,7 @@
 
 - (void)touchOrderBtn:(JHButton *)sender {
     WGOrderListViewController *vc = [[WGOrderListViewController alloc] init];
+    vc.type = sender.tag;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

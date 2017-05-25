@@ -300,7 +300,7 @@
     if (!cell) {
         if ([self systemCell:indexPath]) {
             cell = [[JHTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
-            cell.textLabel.font = kAppAdaptFont(14);
+            cell.textLabel.font = kAppAdaptFontBold(14);
             cell.textLabel.textColor = WGAppNameLabelColor;
             cell.contentView.backgroundColor = kHRGB(0xF8FAFA);
         }

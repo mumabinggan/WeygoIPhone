@@ -14,6 +14,7 @@
 
 - (void)loadOrderList:(BOOL)refresh pulling:(BOOL)pulling {
     WGOrderListRequest *request = [[WGOrderListRequest alloc] init];
+    request.type = self.type;
     request.pageId = (refresh) ? 0 : _orderMArray.count;
     if (pulling) {
         request.showsLoadingView = NO;

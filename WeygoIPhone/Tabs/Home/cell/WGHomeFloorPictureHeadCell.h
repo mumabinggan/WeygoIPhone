@@ -8,6 +8,10 @@
 
 #import "JHTableViewCell.h"
 
+@class WGHomeFloorItem;
+
 @interface WGHomeFloorPictureHeadCell : JHTableViewCell
+
+@property (nonatomic, copy) void (^onApply)(WGHomeFloorItem *item);
 
 @end

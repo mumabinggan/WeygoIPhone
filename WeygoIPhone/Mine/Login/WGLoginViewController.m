@@ -113,8 +113,10 @@
     codeLineView.backgroundColor = WGAppSeparateLineColor;
     //[_codeTextField addSubview:codeLineView];
     
-    JHButton *forgetBtn = [[JHButton alloc] initWithFrame:CGRectMake(_usernameTextField.x, _passwordTextField.maxY + kAppAdaptHeight(10), kAppAdaptWidth(70), kAppAdaptHeight(17))];
-    [forgetBtn setTitle:kStr(@"Login_ForgetPW") forState:UIControlStateNormal];
+    NSString *forgetString = kStr(@"Login_ForgetPW");
+    float width = [forgetString returnSize:kAppAdaptFont(12)].width + 10;
+    JHButton *forgetBtn = [[JHButton alloc] initWithFrame:CGRectMake(_usernameTextField.x, _passwordTextField.maxY + kAppAdaptHeight(10), width, kAppAdaptHeight(17))];
+    [forgetBtn setTitle:forgetString forState:UIControlStateNormal];
     [forgetBtn setTitleColor:WGAppLightNameLabelColor forState:UIControlStateNormal];
     forgetBtn.titleLabel.font = kAppAdaptFont(12);
     [forgetBtn addTarget:self action:@selector(touchForgetBtn:) forControlEvents:UIControlEventTouchUpInside];

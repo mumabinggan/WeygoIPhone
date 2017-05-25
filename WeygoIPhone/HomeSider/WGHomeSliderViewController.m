@@ -110,9 +110,10 @@
     if ([WGApplication sharedApplication].isLogined) {
         //进入用户信息
         [[WGApplication sharedApplication] closeSideBarViewController];
-        WGPersonInfoViewController *vc = [[WGPersonInfoViewController alloc] init];
-        
-        [mainVC.navigationController pushViewController:vc animated:YES];
+        [[WGApplication sharedApplication] switchTab:WGTabIndexMine];
+//        WGPersonInfoViewController *vc = [[WGPersonInfoViewController alloc] init];
+//        
+//        [mainVC.navigationController pushViewController:vc animated:YES];
     }
     else {
         //进入登录界面
@@ -373,12 +374,15 @@
     }
     if (indexPath.section == 0) {
         cell.textLabel.text = _itemArray[indexPath.row];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        //cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        JHImageView *imageView = [[JHImageView alloc] initWithFrame:CGRectMake(kAppAdaptWidth(256), kAppAdaptHeight(18), kAppAdaptWidth(7), kAppAdaptHeight(12))];
+        imageView.image = [UIImage imageNamed:@"slider-arr"];
+        [cell.contentView addSubview:imageView];
         cell.textLabel.textColor = WGAppNameLabelColor;
         cell.contentView.backgroundColor = kWhiteColor;
         if (indexPath.row == 0) {
             cell.imageView.image = [UIImage imageNamed:@"mine_local"];
-            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            //cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             //cell.accessoryType = [self cannotEditPostCode] ?  UITableViewCellAccessoryNone: UITableViewCellAccessoryDisclosureIndicator;
             cell.textLabel.textColor = WGAppBaseColor;
             cell.contentView.backgroundColor = kHRGB(0xF8FAFA);

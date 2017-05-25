@@ -10,6 +10,13 @@
 
 @implementation WGHomeFloorItem
 
+//- (id)init {
+//    self = [super init];
+//    if (self) {
+//    }
+//    return self;
+//}
+
 + (Class)classForArray:(NSString *)propertyName {
     if ([@"contents" isEqualToString:propertyName]) {
         return [WGHomeFloorContentItem class];

@@ -23,6 +23,10 @@
 
 @property (nonatomic, strong) NSString *pictureName;
 
+@property (nonatomic, strong) NSString *pictureBriefDescription;
+
+@property (nonatomic, strong) NSString *pictureBtnName;
+
 @property (nonatomic, strong) NSArray *contents;
 
 @property (nonatomic, assign) WGAppJumpType jumpType;

@@ -245,6 +245,7 @@
 }
 
 - (void)scrollToTop {
+    [super scrollToTop];
     [_tableView setContentOffset:CGPointMake(0, 0) animated:YES];
 }
 

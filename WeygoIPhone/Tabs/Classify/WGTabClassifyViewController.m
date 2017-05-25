@@ -138,6 +138,7 @@
         _firstTableView.layer.opacity = 1.0;
         _secondTableView.layer.opacity = 1.0;
     }];
+    [_secondTableView setContentOffset:CGPointMake(0, 0) animated:YES];
     [UIView animateWithDuration:0.3 animations:^() {
         _arrImageView.y = _currentSelectedIndex * kAppAdaptHeight(98) + kAppAdaptHeight(49 - 3);
     }];
@@ -309,7 +310,6 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if ([tableView isEqual:_firstTableView]) {
         _currentSelectedIndex = indexPath.row;
-        [_secondTableView setContentOffset:CGPointMake(0, 0) animated:YES];
         [self refreshUI];
     }
     else {

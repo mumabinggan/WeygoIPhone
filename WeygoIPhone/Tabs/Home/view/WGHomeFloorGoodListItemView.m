@@ -88,9 +88,9 @@
     _reduceLabel.layer.masksToBounds = YES;
     [self addSubview:_reduceLabel];
     
-    JHButton *tempButton = [[JHButton alloc] initWithFrame:CGRectMake(kDeviceWidth/5 * 4, 0, kDeviceWidth/5, self.height)];
-    [tempButton addTarget:self action:@selector(touchPurchase:) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview:tempButton];
+    _purchaseResponseButton = [[JHButton alloc] initWithFrame:CGRectMake(kDeviceWidth/5 * 4, 0, kDeviceWidth/5, self.height)];
+    [_purchaseResponseButton addTarget:self action:@selector(touchPurchase:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:_purchaseResponseButton];
     _purchaseBtn = [[JHButton alloc] initWithFrame:CGRectMake(kDeviceWidth - kAppAdaptWidth(16 + 24), kAppAdaptHeight(86), kAppAdaptWidth(24), kAppAdaptHeight(24))];
     [_purchaseBtn setImage:[UIImage imageNamed:@"add_cart"] forState:UIControlStateNormal];
     [_purchaseBtn addTarget:self action:@selector(touchPurchase:) forControlEvents:UIControlEventTouchUpInside];

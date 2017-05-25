@@ -25,12 +25,13 @@ static const NSString *WGTopButtonKey = @"WGTopButtonKey";
     if (!self.topButton) {
         JHButton *backButton = [JHButton buttonWithType:UIButtonTypeCustom];
         [backButton setImage:[UIImage imageNamed:@"to_top_icon"] forState:UIControlStateNormal];
+        backButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
         [backButton setTitle:nil forState:UIControlStateNormal];
-        backButton.frame = CGRectMake(kDeviceWidth - 33 - 28, self.view.height - 45-28, 33, 45);
+        backButton.frame = CGRectMake(kDeviceWidth - 33 - 28, self.view.height - 45-28, 33, 80);
         backButton.layer.shadowColor = [UIColor blackColor].CGColor;//shadowColor阴影颜色
-        backButton.layer.shadowOffset = CGSizeMake(4,4);//shadowOffset阴影偏移,x向右偏移4，y向下偏移4，默认(0, -3),这个跟shadowRadius配合使用
-        backButton.layer.shadowOpacity = 0.8;//阴影透明度，默认0
-        backButton.layer.shadowRadius = 4;//阴影半径，默认3
+        backButton.layer.shadowOffset = CGSizeMake(2,2);//shadowOffset阴影偏移,x向右偏移4，y向下偏移4，默认(0, -3),这个跟shadowRadius配合使用
+        backButton.layer.shadowOpacity = 0.5;//阴影透明度，默认0
+        backButton.layer.shadowRadius = 2;//阴影半径，默认3
         [backButton addTarget:self action:@selector(touchTopButton:) forControlEvents:UIControlEventTouchUpInside];
         [backButton setTitleColor:[UINavigationBar appearance].tintColor forState:UIControlStateNormal];
         [self.view addSubview:backButton];
@@ -40,17 +41,33 @@ static const NSString *WGTopButtonKey = @"WGTopButtonKey";
 }
 
 - (void)showTopButton:(BOOL)show {
+    if (show == !self.topButton.hidden) {
+        return;
+    }
     self.topButton = [self createTopButton];
-    [self.topButton setHidden:!show];
+    if (!show) {
+        [self.topButton setImage:[UIImage imageNamed:@"to_top_icon"] forState:UIControlStateNormal];
+    }
+    [UIView animateWithDuration:0.25 animations:^() {
+        if (show) {
+            self.topButton.layer.opacity = 1.0f;
+            self.topButton.hidden = NO;
+        }
+        else {
+            self.topButton.layer.opacity = 0.0f;
+            self.topButton.hidden = YES;
+        }
+    }];
+    
 }
 
 - (void)touchTopButton:(JHButton *)sender {
     [self scrollToTop];
-    [self showTopButton:NO];
+    //[self showTopButton:NO];
 }
 
 - (void)scrollToTop {
-    
+    [self.topButton setImage:[UIImage imageNamed:@"to_top_fly_icon"] forState:UIControlStateNormal];
 }
 
 @end

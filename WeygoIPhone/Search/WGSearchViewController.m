@@ -248,7 +248,7 @@
         height = [WGHotSearchCell heightWithArray:_data.keywords];
     }
     else {
-        height = _isGrid ? [WGHomeFloorGoodGridItemCell heightWithData:nil] : [WGHomeFloorGoodListItemCell heightWithData:nil];
+        height = _isGrid ? [WGHomeFloorGoodGridItemCell heightWithArray:nil] : [WGHomeFloorGoodListItemCell heightWithData:nil];
     }
     return height;
 }
