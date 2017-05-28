@@ -47,6 +47,8 @@ typedef NS_ENUM(NSInteger, WGHomeFloorItemType) {
 
 @property (nonatomic, strong) NSString *specification;  //规格
 
+@property (nonatomic, strong) NSString *expiredTime;    //过期时间
+
 @property (nonatomic, strong) NSString *discount;
 
 @property (nonatomic, assign) WGAppJumpType jumpType;

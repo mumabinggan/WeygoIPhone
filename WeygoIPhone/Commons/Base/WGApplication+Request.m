@@ -200,7 +200,7 @@
 - (void)loadRebuyOrder:(long long)orderId onCompletion:(void (^)(WGRebuyOrderResponse *))completion {
     WGRebuyOrderRequest *request = [[WGRebuyOrderRequest alloc] init];
     request.orderId = orderId;
-    [[JHNetworkManager sharedManager] post:request forResponseClass:[WGShopCartCountResponse class] success:^(JHResponse *response) {
+    [[JHNetworkManager sharedManager] post:request forResponseClass:[WGRebuyOrderResponse class] success:^(JHResponse *response) {
         if (completion) {
             completion((WGRebuyOrderResponse *)response);
         }

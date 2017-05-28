@@ -165,6 +165,10 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+- (void)handleSwitchTab {
+    [_tableView reloadData];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
@@ -209,8 +213,13 @@
             cell = [[WGGoodConfigInfoCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
         }
         else if (2 == indexPath.row) {
-            cell = [[WGGoodDesCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
-            cell.backgroundColor = kHRGB(0xF8FAFA);
+            WeakSelf;
+            WGGoodDesCell *desCell = [[WGGoodDesCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+            desCell.backgroundColor = kHRGB(0xF8FAFA);
+            desCell.onApply = ^(NSInteger index) {
+                [weakSelf handleSwitchTab];
+            };
+            cell = desCell;
         }
         else if (3 == indexPath.row) {
             cell = [[WGCommodityDesCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];

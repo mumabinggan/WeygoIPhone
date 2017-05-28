@@ -15,6 +15,8 @@
 #import "WGHomeSliderViewController.h"
 #import "WGLoginViewController.h"
 #import "WGTabAsiaViewController.h"
+#import "WGUpdateRequest.h"
+#import "WGUpdateResponse.h"
 
 static const float kTabBarHeight = 60;
 
@@ -56,6 +58,13 @@ static const float kTabBarHeight = 60;
     
     [self initNotification];
     //[self setCenterTabBarItem];
+    
+    //[[JHAlert sharedAlert] showConfirmMessage:@"sadfasd" withTitle:@"ss" onCompletion:nil];
+    
+    
+    
+    //检查更新
+    [self checkAppUpdate];
     
     WeakSelf;
     [[WGApplication sharedApplication] loadShopCartCountOnCompletion:^(WGShopCartCountResponse *response) {
@@ -192,6 +201,49 @@ static const float kTabBarHeight = 60;
             _maskView.hidden = hidden;
         }
     }];
+}
+
+- (void)checkAppUpdate {
+    WGUpdateRequest *request = [[WGUpdateRequest alloc] init];
+    WeakSelf;
+    [self post:request forResponseClass:[WGUpdateResponse class] success:^(JHResponse *response) {
+        [weakSelf handleAppUpdateResponse:(WGUpdateResponse *)response];
+    } failure:^(NSError *error) {
+        [weakSelf showWarningMessage:kStr(@"Request Failed")];
+    }];
+}
+
+- (void)handleAppUpdateResponse:(WGUpdateResponse *)response {
+    if (response.success) {
+        if (response.data.versionStatus == 1) {
+            NSArray *newArray = [response.data.versionCode splitBy:@"."];
+            if (newArray.count == 3) {
+                int newVersionCode = ((NSString *)newArray[0]).intValue * 1000 + ((NSString *)newArray[1]).intValue * 100 + ((NSString *)newArray[2]).intValue;
+                NSArray *oldArray = [kAppVersion splitBy:@"."];
+                int oldVersionCode = ((NSString *)oldArray[0]).intValue * 1000 + ((NSString *)oldArray[1]).intValue * 100 + ((NSString *)oldArray[2]).intValue;
+                if (newVersionCode > oldVersionCode) {
+                    WeakSelf;
+                    [[JHAlert sharedAlert] showConfirmMessage:response.data.updateTips withTitle:nil cancelButtonTitle:kStr(@"Mine_Logout_Cancel") okButtonTitle:kStr(@"Mine_Logout_Ok") onCompletion:^(NSInteger buttonIndex, UIAlertView *alertView) {
+                        if (buttonIndex == 0) {
+                            exit(0);
+                        }
+                        else if (buttonIndex == 1) {
+                            [weakSelf skipToUpdateURL:response.data.linkUrl];
+                        }
+                    }];
+                }
+            }
+        }
+    }
+    else {
+        [self showWarningMessage:response.message];
+    }
+}
+
+- (void)skipToUpdateURL:(NSString *)linkURL {
+    if (![NSString isNullOrEmpty:linkURL]) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:linkURL]];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

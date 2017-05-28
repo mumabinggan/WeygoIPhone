@@ -72,6 +72,7 @@
     WGOrderGoodItem *item = (WGOrderGoodItem *)data;
     if (item) {
         [_itemView showWithData:item];
+        _itemView.discountView.hidden = YES;
         _countView.value = [NSString stringWithFormat:kStr(@"Order Good Number"), item.goodCount];
         NSString *currentPrice = item.orderCurrentPrice;
         _totalLabel.text = [NSString stringWithFormat:kStr(@"Order Pay Totale"), item.orderCurrentPrice];

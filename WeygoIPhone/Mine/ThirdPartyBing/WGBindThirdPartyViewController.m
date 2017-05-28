@@ -87,7 +87,7 @@
         
         _verificationCodeBtn = [[PooCodeView alloc] initWithFrame:CGRectMake(kAppAdaptWidth(231), kAppAdaptHeight(8), kAppAdaptWidth(82), kAppAdaptHeight(32))];
         [_verificationCodeBtn addSingleTapGestureRecognizerWithTarget:self action:@selector(changeVerificationCode)];
-        [_verificationCodeBtn setBackgroundColor:kGreenColor];
+        //[_verificationCodeBtn setBackgroundColor:kGreenColor];
         //[_codeTextField addSubview:_verificationCodeBtn];
         
         JHView *codeLineView = [[JHView alloc] initWithFrame:CGRectMake(0, lineY, _usernameTextField.width, kAppSepratorLineHeight)];

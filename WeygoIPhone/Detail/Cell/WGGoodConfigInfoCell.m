@@ -15,6 +15,7 @@
     JHLabel *_priceLabel;
     JHLabel *_currentLabel;
     JHLabel *_specificationLabel;
+    JHLabel *_expiredTimeLabel;
 }
 @end
 
@@ -41,6 +42,13 @@
     _priceLabel.font = kAppAdaptFont(14);
     _priceLabel.textColor = WGAppLightNameLabelColor;
     [self.contentView addSubview:_priceLabel];
+    
+    _expiredTimeLabel = [[JHLabel alloc] initWithFrame:CGRectMake(kAppAdaptWidth(15), _currentLabel.y, kDeviceWidth - kAppAdaptWidth(30), kAppAdaptHeight(20))];
+    //_nameLabel.backgroundColor = kRedColor;
+    _expiredTimeLabel.font = kAppAdaptFont(14);
+    _expiredTimeLabel.textColor = WGAppBaseColor;
+    _expiredTimeLabel.textAlignment = NSTextAlignmentRight;
+    [self.contentView addSubview:_expiredTimeLabel];
 }
 
 - (void)showWithData:(JHObject *)data {
@@ -70,6 +78,10 @@
     _priceLabel.attributedText = [priceStr addMidline];
     _priceLabel.x = _currentLabel.maxX + kAppAdaptWidth(10);
     _priceLabel.y = _currentLabel.y;
+    
+    _expiredTimeLabel.hidden = [NSString isNullOrEmpty:good.expiredTime];
+    _expiredTimeLabel.text = good.expiredTime;
+    _expiredTimeLabel.y = _currentLabel.y;
 }
 
 + (CGFloat)heightWithData:(JHObject *)data {

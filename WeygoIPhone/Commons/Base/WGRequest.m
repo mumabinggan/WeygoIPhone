@@ -40,9 +40,14 @@
 }
 
 - (NSString *)host {
+    return @"m.weygo.com";
     //return @"m.delong6688.develop.weygo.com";
-    return @"m.preview.weygo.com";
+    //return @"m.preview.weygo.com";
     //return @"m.roc.weygo.com";
+}
+
+- (NSString *)scheme {
+    return @"https";
 }
 
 - (NSString *)userPath {

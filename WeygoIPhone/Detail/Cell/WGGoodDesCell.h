@@ -12,4 +12,6 @@
 
 @property (nonatomic, copy) void (^onApply)(NSInteger index);
 
+@property (nonatomic, assign) NSInteger index;
+
 @end

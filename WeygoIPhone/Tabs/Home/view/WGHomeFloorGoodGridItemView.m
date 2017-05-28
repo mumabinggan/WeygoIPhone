@@ -19,7 +19,11 @@
 - (void)loadSubviews {
     [super loadSubviews];
 
-    _discountView.font = kWGOswaldMediumAdaptFont(15);
+    self.discountView.font = kWGOswaldMediumAdaptFont(15);
+    
+    _expiredTimeLabel.y = _imageView.height - kAppAdaptWidth(30);
+    _expiredTimeLabel.height = kAppAdaptWidth(30);
+    _expiredTimeLabel.font = kAppAdaptFontBold(14);
     
     CGRect frame = _nameLabel.frame;
     frame.origin.x = kAppAdaptWidth(10);
@@ -86,6 +90,8 @@
         _purchaseBtn.y = _currentPriceLabel.maxY + kAppAdaptHeight(10);
         _notPurchaseBtn.y = _currentPriceLabel.maxY + kAppAdaptHeight(10);
     }
+    _expiredTimeLabel.text = object.expiredTime;
+    _expiredTimeLabel.hidden = [NSString isNullOrEmpty:object.expiredTime];
     _notPurchaseBtn.hidden = (_data.inStock);
     //[_purchaseBtn setBackgroundColor:(_data.inStock) ? WGAppBaseColor : WGAppSeparateLineColor];
     [super showWithData:object];

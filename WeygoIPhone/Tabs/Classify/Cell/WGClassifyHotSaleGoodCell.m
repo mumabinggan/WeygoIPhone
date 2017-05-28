@@ -15,6 +15,7 @@
     JHLabel         *_nameLabel;
     JHLabel         *_currentPriceLabel;
     JHLabel         *_reducePriceLabel;
+    JHLabel         *_expiredTimeLabel;
 }
 @end
 
@@ -31,6 +32,14 @@
     _imageView = [[JHImageView alloc] initWithFrame:CGRectMake(0, 0, kAppAdaptWidth(199), kAppAdaptHeight(128))];
     _imageView.contentMode = UIViewContentModeScaleToFill;
     [contentView addSubview:_imageView];
+    
+    _expiredTimeLabel = [[JHLabel alloc] initWithFrame:CGRectMake(0, _imageView.height - kAppAdaptWidth(30), _imageView.width, kAppAdaptHeight(30))];
+    //_nameLabel.backgroundColor = kRedColor;
+    _expiredTimeLabel.font = kAppAdaptFontBold(14);
+    _expiredTimeLabel.textColor = WGAppBaseColor;
+    _expiredTimeLabel.backgroundColor = WGAppSeparateLineColor;
+    _expiredTimeLabel.textAlignment = NSTextAlignmentCenter;
+    [_imageView addSubview:_expiredTimeLabel];
     
     _hotNumberImageView = [[JHImageView alloc] initWithFrame:CGRectMake(0, 0, kAppAdaptWidth(48), kAppAdaptWidth(48))];
     _hotNumberImageView.contentMode = UIViewContentModeScaleAspectFill;
@@ -58,10 +67,13 @@
 
 - (void)showWithData:(WGClassifyHotGoodItem *)object {
     [_imageView setImageWithURL:[NSURL URLWithString:object.pictureURL] placeholderImage:kHomeGoodColumnPlaceholderImage options:JHWebImageOptionsRefreshCached];
+    _expiredTimeLabel.text = object.expiredTime;
     _hotNumberImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"hotsale_icon_%ld", object.number]];
     _nameLabel.text = object.name;
     _currentPriceLabel.text = object.currentPrice;
     _reducePriceLabel.attributedText = [object.reducePrice addMidline];
+    _expiredTimeLabel.text = object.expiredTime;
+    _expiredTimeLabel.hidden = [NSString isNullOrEmpty:object.expiredTime];
 }
 
 @end

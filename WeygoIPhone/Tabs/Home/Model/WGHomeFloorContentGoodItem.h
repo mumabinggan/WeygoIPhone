@@ -24,6 +24,8 @@
 
 @property (nonatomic, strong) NSString *specification;  //规格
 
+@property (nonatomic, strong) NSString *expiredTime;
+
 //@property (nonatomic, assign) float discount;
 @property (nonatomic, strong) NSString *discount;
 

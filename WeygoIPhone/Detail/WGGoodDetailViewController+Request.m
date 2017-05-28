@@ -32,6 +32,7 @@
 - (void)handleGoodDetailResponse:(WGGoodDetailResponse *)response {
     if (response.success) {
         _goodDetail = response.data;
+        _goodDetail.productDes = nil;
         [self refreshUI];
     }
     else {

@@ -39,6 +39,8 @@
             goodItem.currentPrice = _currentPrice;
             goodItem.discount = _discount;
             goodItem.inStock = _inStock;
+            goodItem.specification = _specification;
+            goodItem.expiredTime = _expiredTime;
             _contentItem = goodItem;
         }
         else if (type == WGHomeFloorItemTypeClassifyList ||

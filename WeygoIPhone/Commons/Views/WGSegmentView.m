@@ -84,10 +84,15 @@
     }
 }
 
+- (void)setTitle:(NSString *)title index:(NSInteger)index {
+    JHButton *item = _titleBtnArray[index];
+    [item setTitle:title forState:UIControlStateNormal];
+}
+
 - (void)setTitleArray:(NSArray *)titleArray {
     [_titleBtnArray removeAllObjects];
     float itemWidth = self.width / titleArray.count;
-    UIFont *font = kAppAdaptFont(14);
+    UIFont *font = kAppAdaptFontBold(14);
     float totalWidth = 0.0f;
     for (int num = 0; num < titleArray.count; ++num) {
         NSString *title = titleArray[num];
@@ -97,7 +102,7 @@
         JHButton *titleBtn = [JHButton buttonWithType:UIButtonTypeCustom];
         titleBtn.frame = CGRectMake(0, 0, itemWidth, self.height);
         [titleBtn setTitle:title forState:UIControlStateNormal];
-        titleBtn.titleLabel.font = kAppAdaptFont(14);
+        titleBtn.titleLabel.font = font;
         [titleBtn setTitleColor:(_selectedIndex == num) ? _titleSelectedColor : _titleColor forState:UIControlStateNormal];
         titleBtn.tag = num;
         [titleBtn addTarget:self action:@selector(touchItemBtn:) forControlEvents:UIControlEventTouchUpInside];

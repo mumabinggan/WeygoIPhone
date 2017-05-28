@@ -19,6 +19,15 @@
     _imageView.clipsToBounds = YES;
     [self addSubview:_imageView];
     
+    _expiredTimeLabel = [[JHLabel alloc] initWithFrame:CGRectMake(0, _imageView.width - kAppAdaptWidth(25), _imageView.width, kAppAdaptHeight(25))];
+    _expiredTimeLabel.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin;
+    //_nameLabel.backgroundColor = kRedColor;
+    _expiredTimeLabel.font = kAppAdaptFontBold(12);
+    _expiredTimeLabel.textColor = WGAppBaseColor;
+    _expiredTimeLabel.backgroundColor = WGAppSeparateLineColor;
+    _expiredTimeLabel.textAlignment = NSTextAlignmentCenter;
+    [_imageView addSubview:_expiredTimeLabel];
+    
     CGFloat width = _imageView.width * 3 / 7;
     _discountView = [[WGDiscountView alloc] initWithFrame:CGRectMake(0, 0, width, width)];
     _discountView.font = kWGOswaldMediumAdaptFont(12);
@@ -52,6 +61,8 @@
     _nameLabel.text = object.name;
     _currentPriceLabel.text = object.currentPrice;
     _reducePriceLabel.attributedText = [object.price addMidline];
+    _expiredTimeLabel.text = object.expiredTime;
+    _expiredTimeLabel.hidden = [NSString isNullOrEmpty:object.expiredTime];
 }
 
 @end

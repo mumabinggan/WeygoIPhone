@@ -209,7 +209,7 @@
 
 //商品详情(完成)
 "Good Detail Price With .2 Unit" = "€%.2f";
-"Good Detail Des" = "产品详情";
+"Good Detail Des" = "产品规格";
 "Good Detail Info" = "购买须知";
 "Good Detail Consegna" = "配送条款";
 "Good Detail CommodityInfo" = "商品描述";

@@ -10,4 +10,8 @@
 
 @implementation WGRebuyOrderResponse
 
+- (BOOL)outStock {
+    return (self.code == 2);
+}
+
 @end

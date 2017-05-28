@@ -22,6 +22,8 @@
 
 @property (nonatomic, strong) NSString *specification;
 
+@property (nonatomic, strong) NSString *expiredTime;
+
 @property (nonatomic, assign) int inStock;//	int	有无货(1,有货;0,无货) ;
 
 @property (nonatomic, strong) NSArray *productDes;
@@ -29,8 +31,6 @@
 @property (nonatomic, strong) NSString *productInfo;
 
 @property (nonatomic, strong) NSString *deliveryInfo;
-
-@property (nonatomic, strong) NSString *commodityInfo;
 
 //
 @property (nonatomic, strong) NSString *purchaseTip;    //购买须知
@@ -44,6 +44,10 @@
 
 //for self use
 @property (nonatomic, assign, readonly) long long favoritedId;
+
+
+//for self use
+@property (nonatomic, assign) NSInteger selectedIndex;    //详情页面描述选择 tab
 
 @end
 

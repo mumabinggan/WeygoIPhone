@@ -13,7 +13,6 @@
 @interface WGHomeFloorGoodColumnItemView : JHView
 {
     JHImageView     *_imageView;
-    WGDiscountView *_discountView;
     
     JHLabel         *_nameLabel;
     JHLabel         *_currentPriceLabel;
@@ -21,7 +20,11 @@
     
     JHButton        *_purchaseBtn;
     JHButton        *_notPurchaseBtn;
+    
+    JHLabel         *_expiredTimeLabel;
 }
+
+@property (nonatomic, strong) WGDiscountView *discountView;
 
 - (void)showWithData:(WGHomeFloorContentGoodItem *)object;
 

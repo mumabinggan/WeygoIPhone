@@ -32,4 +32,6 @@ typedef NS_ENUM(NSInteger, WGSegmentViewType) {
 
 - (void)setSelectedIndex:(NSInteger)selectedIndex;
 
+- (void)setTitle:(NSString *)title index:(NSInteger)index;
+
 @end

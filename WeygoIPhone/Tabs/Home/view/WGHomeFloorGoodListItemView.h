@@ -7,10 +7,14 @@
 //
 
 #import "JHTableViewCell.h"
+#import "WGDiscountView.h"
 
+@class WGDiscountView;
 @class WGHomeFloorContentGoodItem;
 
 @interface WGHomeFloorGoodListItemView : JHView
+
+@property (nonatomic, strong) WGDiscountView  *discountView;
 
 @property (nonatomic, copy) void (^onPurchase)(WGHomeFloorContentGoodItem *object, CGPoint fromPoint);
 

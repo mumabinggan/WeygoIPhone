@@ -14,7 +14,6 @@
 @interface WGHomeFloorGoodListItemView ()
 {
     JHImageView     *_imageView;
-    WGDiscountView  *_discountView;
     
     JHLabel         *_nameLabel;
     JHLabel         *_briefDescribeLabel;
@@ -123,9 +122,9 @@
     
     _briefDescribeLabel.text = _data.briefDescription;
     
-    _chineseNameLabel.text = _data.chineseName;
+    _chineseNameLabel.text = [NSString isNullOrEmpty:_data.expiredTime] ? _data.chineseName : _data.expiredTime;
     
-    [_ratingView showWithData:_data.rating];
+    //[_ratingView showWithData:_data.rating];
     
     NSString *currentPrice = _data.currentPrice;
     CGSize size = [currentPrice returnSize:_currentPriceLabel.font];

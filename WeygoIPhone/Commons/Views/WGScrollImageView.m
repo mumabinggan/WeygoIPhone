@@ -82,6 +82,7 @@
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:frame];
         [imageView setImageWithURL:newImageArray[num] placeholderImage:kHomeCarouselPictureHeaderPlaceholderImage options:JHWebImageOptionsRetryFailed|JHWebImageOptionsRefreshCached];
         imageView.userInteractionEnabled = YES;
+        imageView.contentMode = UIViewContentModeScaleAspectFit;
         [imageView addSingleTapGestureRecognizerWithTarget:self action:@selector(touchImage:)];
         [_scrollView addSubview:imageView];
     }
@@ -103,7 +104,9 @@
 //        _timer = [NSTimer scheduledTimerWithTimeInterval:2 repeats:YES block:^(NSTimer *timer) {
 //            [weakSelf handleTimer:timer];
 //        }];
-        _timer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(handleTimer:) userInfo:nil repeats:YES];
+        if (imageArray.count > 1) {
+            _timer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(handleTimer:) userInfo:nil repeats:YES];
+        }
     }
 }
 

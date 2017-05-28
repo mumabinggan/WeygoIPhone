@@ -13,4 +13,6 @@
 
 @property (nonatomic, strong) WGAddGoodToCartData *data;
 
+- (BOOL)outStock;
+
 @end

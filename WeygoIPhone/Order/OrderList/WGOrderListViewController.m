@@ -66,8 +66,12 @@
 
 - (void)handleRebuy:(WGRebuyOrderResponse *)response fromPoint:(CGPoint)fromPoint {
     [self removeLoadingView];
-    [[WGApplication sharedApplication] handleShopCartGoodCount:response.data.goodCount];
-    //[self showWarningMessage:response.message];
+    if (response.success || response.outStock) {
+        [[WGApplication sharedApplication] handleShopCartGoodCount:response.data.goodCount];
+    }
+    if (!response.success) {
+        [self showWarningMessage:response.message];
+    }
     [[WGApplication sharedApplication] addShopToCartImage:@"add_cart" fromPoint:fromPoint];
 }
 

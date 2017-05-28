@@ -38,20 +38,23 @@
 
 - (void)showWithData:(JHObject *)data {
     WGGoodDetail *good = (WGGoodDetail *)data;
-    _contentLabel.text = good.commodityInfo;
-    CGSize size = [good.commodityInfo returnSize:_contentLabel.font maxWidth:_contentLabel.width];
+    _contentLabel.text = good.productInfo;
+    CGSize size = [good.productInfo returnSize:_contentLabel.font maxWidth:_contentLabel.width];
     _contentLabel.height = size.height;
 }
 
 + (CGFloat)heightWithData:(JHObject *)data {
     CGFloat height = 0.0f;
     WGGoodDetail *good = (WGGoodDetail *)data;
-    if ([NSString isNullOrEmpty:good.commodityInfo]) {
+    if ([NSString isNullOrEmpty:good.productInfo]) {
+        return height;
+    }
+    if (!(good && good.productDes && good.productDes.count > 0)) {
         return height;
     }
     height += kAppAdaptHeight(40);
     height += kAppAdaptHeight(15);
-    CGSize size = [good.commodityInfo returnSize:kAppAdaptFont(14) maxWidth:kDeviceWidth - kAppAdaptWidth(30)];
+    CGSize size = [good.productInfo returnSize:kAppAdaptFont(14) maxWidth:kDeviceWidth - kAppAdaptWidth(30)];
     height += size.height;
     height += kAppAdaptHeight(15);
     return height;
