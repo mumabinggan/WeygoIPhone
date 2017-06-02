@@ -93,7 +93,7 @@
 }
 
 - (void)refreshUI {
-    [UIView animateWithDuration:0.5 animations:^() {
+    [UIView animateWithDuration:0.05 animations:^() {
         _tableView.layer.opacity = 1.0f;
     }];
     _orderTitleLabel.text = [NSString stringWithFormat:kStr(@"PaySuccess_SubTitle2"), _paySuccessData.orderId];

@@ -194,7 +194,7 @@
     _deliveryPriceLabel.text = deliveryPrice;
     NSString *totalePrice = _data.shopCartPrice.totalePrice;
     _totalePriceLabel.text = [NSString stringWithFormat:kStr(@"Totale:Price With String Unit"), totalePrice];
-    [UIView animateWithDuration:0.5 animations:^() {
+    [UIView animateWithDuration:0.05 animations:^() {
         _tableView.layer.opacity = 1.0f;
         _footView.layer.opacity = 1.0f;
     }];

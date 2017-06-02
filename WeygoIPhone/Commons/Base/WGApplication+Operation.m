@@ -419,6 +419,10 @@
 
 - (NSString *)paySign {
     NSMutableString *returnString = [[NSMutableString alloc] initWithString:[self signPrefix]];
+    [returnString appendString:@"app"];
+    [returnString appendString:[[NSBundle mainBundle] bundleIdentifier]];
+    [returnString appendString:@"os"];
+    [returnString appendString:@"iOS"];
     if (![NSString isNullOrEmpty:self.sessionKey]) {
         [returnString appendString:@"sessionKey"];
         [returnString appendString:[WGApplication sharedApplication].sessionKey];

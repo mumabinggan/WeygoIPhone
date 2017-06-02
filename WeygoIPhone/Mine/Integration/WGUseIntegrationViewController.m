@@ -74,7 +74,7 @@
 
 - (void)refreshUI {
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"integration_help"] style:UIBarButtonItemStylePlain target:self action:@selector(touchHelp:)];
-    [UIView animateWithDuration:0.5 animations:^() {
+    [UIView animateWithDuration:0.05 animations:^() {
         _tableView.layer.opacity = 1.0f;
     }];
     _titleLabel.text = [NSString stringWithFormat:kStr(@"UseIntegration_Tip"), _integration.totalCount, _integration.currentCanUseCount, _integration.money];

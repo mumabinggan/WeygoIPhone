@@ -350,3 +350,5 @@
 "EmptyPage_NoShopCart" = "Non hai articoli nel carrello";
 
 "GoodList_UnPurchase" = "Non Disp.";
+
+"Request Failed" = "Fallita connessione";

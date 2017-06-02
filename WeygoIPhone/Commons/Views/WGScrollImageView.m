@@ -18,6 +18,8 @@
     UIPageControl *_pageControl;
     
     NSTimer *_timer;
+    
+    WGScrollImageViewFromType _fromType;
 }
 @end
 
@@ -36,8 +38,13 @@
 }
 
 - (id)initWithFrame:(CGRect)frame imageArray:(NSArray *)imageArray {
+    return [self initWithFrame:frame imageArray:imageArray fromType:WGScrollImageViewFromTypeDefault];
+}
+
+- (id)initWithFrame:(CGRect)frame imageArray:(NSArray *)imageArray fromType:(WGScrollImageViewFromType)fromType {
     self = [self initWithFrame:frame];
     if (self) {
+        _fromType = fromType;
         [self setImageArray:imageArray];
     }
     return self;
@@ -104,7 +111,7 @@
 //        _timer = [NSTimer scheduledTimerWithTimeInterval:2 repeats:YES block:^(NSTimer *timer) {
 //            [weakSelf handleTimer:timer];
 //        }];
-        if (imageArray.count > 1) {
+        if (imageArray.count > 1 && _fromType == WGScrollImageViewFromTypeDefault) {
             _timer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(handleTimer:) userInfo:nil repeats:YES];
         }
     }

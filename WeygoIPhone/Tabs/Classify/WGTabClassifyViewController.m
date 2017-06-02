@@ -134,7 +134,7 @@
     [self setGoodArray];
     [_firstTableView reloadData];
     [_secondTableView reloadData];
-    [UIView animateWithDuration:0.3 animations:^() {
+    [UIView animateWithDuration:0.05 animations:^() {
         _firstTableView.layer.opacity = 1.0;
         _secondTableView.layer.opacity = 1.0;
     }];

@@ -11,7 +11,7 @@
 @implementation WGGoodDetailCarouselFiguresCell
 
 + (CGFloat)heightWithData:(NSArray *)array {
-    return kAppAdaptHeight(176);
+    return kAppAdaptHeight(280);
 }
 
 @end

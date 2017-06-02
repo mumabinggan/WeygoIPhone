@@ -26,6 +26,6 @@
 
 @property (nonatomic, strong) NSString *email;
 
-@property (nonatomic, strong) NSString *countryCode;    //国家code(+39默认, +86)
+@property (nonatomic, strong) NSString *countryCode;    //国家code(39默认, 86)
 
 @end

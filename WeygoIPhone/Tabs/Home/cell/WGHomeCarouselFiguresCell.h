@@ -7,8 +7,12 @@
 //
 
 #import "JHTableViewCell.h"
+#import "WGScrollImageView.h"
 
 @interface WGHomeCarouselFiguresCell : JHTableViewCell
+{
+    WGScrollImageView *_scrollImageView;
+}
 
 @property (nonatomic, copy) void (^onApply)(NSInteger index);
 

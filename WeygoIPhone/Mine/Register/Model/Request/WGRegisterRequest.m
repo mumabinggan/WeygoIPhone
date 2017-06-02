@@ -22,7 +22,7 @@
 
 - (NSString *)countryCode {
     if ([NSString isNullOrEmpty:_countryCode]) {
-        _countryCode = @"+39";
+        _countryCode = @"39";
     }
     return _countryCode;
 }

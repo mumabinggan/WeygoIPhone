@@ -100,7 +100,7 @@
 - (void)setHomeData:(WGHome *)homeData {
     _homeData = homeData;
     [_tableView reloadData];
-    [UIView animateWithDuration:0.5 animations:^() {
+    [UIView animateWithDuration:0.05 animations:^() {
         _tableView.layer.opacity = 1.0f;
     }];
 }

@@ -144,9 +144,11 @@
     wechatBtn.titleLabel.font = kAppAdaptFont(14);
     [wechatBtn setImage:[UIImage imageNamed:@"login_wechat"] forState:UIControlStateNormal];
     [wechatBtn addTarget:self action:@selector(touchLoginBtn:) forControlEvents:UIControlEventTouchUpInside];
+    wechatBtn.hidden = YES;
     [_scrollView addSubview:wechatBtn];
     
-    JHButton *facebookBtn = [[JHButton alloc] initWithFrame:CGRectMake(kDeviceWidth/2 + kAppAdaptWidth(8), wechatBtn.y, kAppAdaptWidth(147), kAppAdaptHeight(40)) difRadius:JHRadiusMake(radius, radius, radius, radius) borderWidth:kAppAdaptWidth(1) borderColor:kHRGB(0xEBEFF0) backgroundColor:kHRGB(0xF8FAFA)];
+//    JHButton *facebookBtn = [[JHButton alloc] initWithFrame:CGRectMake(kDeviceWidth/2 + kAppAdaptWidth(8), wechatBtn.y, kAppAdaptWidth(147), kAppAdaptHeight(40)) difRadius:JHRadiusMake(radius, radius, radius, radius) borderWidth:kAppAdaptWidth(1) borderColor:kHRGB(0xEBEFF0) backgroundColor:kHRGB(0xF8FAFA)];
+    JHButton *facebookBtn = [[JHButton alloc] initWithFrame:CGRectMake((kDeviceWidth - kAppAdaptWidth(200))/2, wechatBtn.y, kAppAdaptWidth(200), kAppAdaptHeight(40)) difRadius:JHRadiusMake(radius, radius, radius, radius) borderWidth:kAppAdaptWidth(1) borderColor:kHRGB(0xEBEFF0) backgroundColor:kHRGB(0xF8FAFA)];
     [facebookBtn setTitle:[NSString stringWithFormat:@"  %@", kStr(@"Login_FaceBook")] forState:UIControlStateNormal];
     [facebookBtn setTitleColor:WGAppTitleColor forState:UIControlStateNormal];
     facebookBtn.titleLabel.font = kAppAdaptFont(14);

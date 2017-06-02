@@ -13,7 +13,7 @@
 - (id)init {
     self = [super init];
     if (self) {
-        _pageSize = 15;
+        _pageSize = 16;
     }
     return self;
 }

@@ -205,6 +205,7 @@ static const float kTabBarHeight = 60;
 
 - (void)checkAppUpdate {
     WGUpdateRequest *request = [[WGUpdateRequest alloc] init];
+    request.showsLoadingView = NO;
     WeakSelf;
     [self post:request forResponseClass:[WGUpdateResponse class] success:^(JHResponse *response) {
         [weakSelf handleAppUpdateResponse:(WGUpdateResponse *)response];

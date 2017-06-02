@@ -89,6 +89,8 @@
 
 - (NSString *)payUrl:(NSString *)url;
 
+- (NSString *)paySign;
+
 @end
 
 @interface WGApplication (Search)

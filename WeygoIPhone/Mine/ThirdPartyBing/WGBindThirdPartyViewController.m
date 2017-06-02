@@ -206,6 +206,7 @@
         _unRegisterCodeTextField.font = kAppAdaptFont(14);
         _unRegisterCodeTextField.placeholder = kStr(@"Register_Password");
         _unRegisterCodeTextField.textColor = WGAppNameLabelColor;
+        _unRegisterCodeTextField.secureTextEntry = YES;
         [_unRegisterView addSubview:_unRegisterCodeTextField];
         
         JHView *passwordLineView = [[JHView alloc] initWithFrame:CGRectMake(0, lineY, textFieldWidth, kAppSepratorLineHeight)];
@@ -216,6 +217,7 @@
         _confirmPasswordTextField.font = kAppAdaptFont(14);
         _confirmPasswordTextField.placeholder = kStr(@"Register_Confirm_Password");
         _confirmPasswordTextField.textColor = WGAppNameLabelColor;
+        _confirmPasswordTextField.secureTextEntry = YES;
         [_unRegisterView addSubview:_confirmPasswordTextField];
         
         JHView *confirmPasswordLineView = [[JHView alloc] initWithFrame:CGRectMake(0, lineY, textFieldWidth, kAppSepratorLineHeight)];
@@ -254,7 +256,7 @@
 }
 
 - (void)setContentsScrollViewOffsetWithIndex:(NSInteger)selectedIndex {
-    [UIView animateWithDuration:0.5 animations:^(void) {
+    [UIView animateWithDuration:0.25 animations:^(void) {
         _contentsScrollView.contentOffset = CGPointMake(selectedIndex * kDeviceWidth, 0);
     } completion:^(BOOL finished) {
         [self addContentsWithIndex:selectedIndex];

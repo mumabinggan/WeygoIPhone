@@ -103,7 +103,7 @@
     
     [self refreshBottomView];
     [_tableView reloadData];
-    [UIView animateWithDuration:0.3 animations:^() {
+    [UIView animateWithDuration:0.05 animations:^() {
         _tableView.layer.opacity = 1.0;
         _bottomView.layer.opacity = 1.0;
     }];

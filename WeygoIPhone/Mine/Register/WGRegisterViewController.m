@@ -79,8 +79,10 @@
     [wechatBtn setImage:[UIImage imageNamed:@"login_wechat"] forState:UIControlStateNormal];
     [wechatBtn addTarget:self action:@selector(touchWeChatBtn:) forControlEvents:UIControlEventTouchUpInside];
     [_scrollView addSubview:wechatBtn];
+    wechatBtn.hidden = YES;
     
-    JHButton *facebookBtn = [[JHButton alloc] initWithFrame:CGRectMake(kDeviceWidth/2 + kAppAdaptWidth(8), wechatBtn.y, kAppAdaptWidth(147), kAppAdaptHeight(40)) difRadius:JHRadiusMake(radius, radius, radius, radius) borderWidth:kAppAdaptWidth(1) borderColor:kHRGB(0xEBEFF0) backgroundColor:kHRGB(0xF8FAFA)];
+    JHButton *facebookBtn = [[JHButton alloc] initWithFrame:CGRectMake((kDeviceWidth - kAppAdaptWidth(200))/2, wechatBtn.y, kAppAdaptWidth(200), kAppAdaptHeight(40)) difRadius:JHRadiusMake(radius, radius, radius, radius) borderWidth:kAppAdaptWidth(1) borderColor:kHRGB(0xEBEFF0) backgroundColor:kHRGB(0xF8FAFA)];
+//    JHButton *facebookBtn = [[JHButton alloc] initWithFrame:CGRectMake(kDeviceWidth/2 + kAppAdaptWidth(8), wechatBtn.y, kAppAdaptWidth(147), kAppAdaptHeight(40)) difRadius:JHRadiusMake(radius, radius, radius, radius) borderWidth:kAppAdaptWidth(1) borderColor:kHRGB(0xEBEFF0) backgroundColor:kHRGB(0xF8FAFA)];
     [facebookBtn setTitle:[NSString stringWithFormat:@"  %@", kStr(@"Login_FaceBook")] forState:UIControlStateNormal];
     [facebookBtn setTitleColor:WGAppTitleColor forState:UIControlStateNormal];
     facebookBtn.titleLabel.font = kAppAdaptFont(14);
@@ -170,6 +172,7 @@
     _passwordTextField.font = kAppAdaptFont(14);
     _passwordTextField.placeholder = kStr(@"Register_Password");
     _passwordTextField.textColor = WGAppNameLabelColor;
+    _passwordTextField.secureTextEntry = YES;
     [_scrollView addSubview:_passwordTextField];
     
     JHView *passwordLineView = [[JHView alloc] initWithFrame:CGRectMake(0, lineY, textFieldWidth, kAppSepratorLineHeight)];
@@ -180,6 +183,7 @@
     _confirmPasswordTextField.font = kAppAdaptFont(14);
     _confirmPasswordTextField.placeholder = kStr(@"Register_Confirm_Password");
     _confirmPasswordTextField.textColor = WGAppNameLabelColor;
+    _confirmPasswordTextField.secureTextEntry = YES;
     [_scrollView addSubview:_confirmPasswordTextField];
     
     JHView *confirmPasswordLineView = [[JHView alloc] initWithFrame:CGRectMake(0, lineY, textFieldWidth, kAppSepratorLineHeight)];

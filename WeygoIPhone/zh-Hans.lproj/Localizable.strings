@@ -349,3 +349,5 @@
 "EmptyPage_NoShopCart" = "您的购物车里空空如也";
 
 "GoodList_UnPurchase" = "缺货";
+
+"Request Failed" = "网络异常";

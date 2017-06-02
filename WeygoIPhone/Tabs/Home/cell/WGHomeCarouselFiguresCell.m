@@ -12,7 +12,6 @@
 
 @interface WGHomeCarouselFiguresCell ()
 {
-    WGScrollImageView *_scrollImageView;
     NSArray *_array;
 }
 @end
@@ -35,7 +34,8 @@
     }
     _array = array;
     if (!_scrollImageView) {
-        _scrollImageView = [[WGScrollImageView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kAppAdaptHeight(176)) imageArray:nil];
+        _scrollImageView = [[WGScrollImageView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, [[self class] heightWithData:array]) imageArray:nil fromType:WGScrollImageViewFromTypeGoodDetail];
+        _scrollImageView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
         __weak id weakSelf = self;
         _scrollImageView.onClick = ^(NSInteger index) {
             [weakSelf handleClick:index];
