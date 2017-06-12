@@ -241,7 +241,7 @@
 "CommitOrder Consume List" = "IL TUO CARRELLO";
 "CommitOrder Remark" = "Commenti";
 "CommitOrder Look More" = "Vedi perché";
-"CommitOrder Total Pay" = "mporto da pagare : %@";
+"CommitOrder Total Pay" = "importo da pagare : %@";
 "CommitOrder Confirm" = "Conferma";
 "CommitOrder Score" = "Punti spesa :";
 "CommitOrder Use Score" = "Utilizza i punti spesa";

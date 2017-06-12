@@ -66,7 +66,11 @@
     _reduceLabel.layer.masksToBounds = YES;
     [self.contentView addSubview:_reduceLabel];
     
-    _addView = [[WGGoodAddView alloc] initWithFrame:CGRectMake(_nameLabel.x, _reduceLabel.maxY + kAppAdaptHeight(5), kAppAdaptWidth(80), kAppAdaptHeight(24))];
+    UIButton *tempView = [UIButton buttonWithType:UIButtonTypeCustom];
+    tempView.frame = CGRectMake(_nameLabel.x - kAppAdaptWidth(15), _reduceLabel.maxY - kAppAdaptWidth(5), kAppAdaptWidth(110), kAppAdaptHeight(54));
+    [self.contentView addSubview:tempView];
+    
+    _addView = [[WGGoodAddView alloc] initWithFrame:CGRectMake(kAppAdaptWidth(15), kAppAdaptHeight(15), kAppAdaptWidth(80), kAppAdaptHeight(24))];
     _addView.fromType = WGGoodAddViewFromCart;
     _addView.count = 1;
     WeakSelf;
@@ -76,7 +80,7 @@
     _addView.onSub = ^(NSInteger count) {
         [weakSelf handleSub];
     };
-    [self.contentView addSubview:_addView];
+    [tempView addSubview:_addView];
 }
 
 - (void)showWithData:(WGShopCartGoodItem *)object {

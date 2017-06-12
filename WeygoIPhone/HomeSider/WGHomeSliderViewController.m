@@ -212,7 +212,8 @@
         WGClassifyDetailViewController *vc = [[WGClassifyDetailViewController alloc] init];
         vc.classifyId = item.id;
         vc.title = item.name;
-        [self.navigationController pushViewController:vc animated:YES];
+        UINavigationController *navc = [WGApplication sharedApplication].navigationController;
+        [navc pushViewController:vc animated:YES];
     }
     else if (item.jumpType == WGAppJumpTypeSpecailClassifyHomeTab) {
         WGApplication *application = [WGApplication sharedApplication];
@@ -230,13 +231,17 @@
         WGSpecialClassifyViewController *vc = [[WGSpecialClassifyViewController alloc] init];
         vc.id = item.id;
         vc.title = item.name;
-        [self.navigationController pushViewController:vc animated:YES];
+        UINavigationController *navc = [WGApplication sharedApplication].navigationController;
+        [navc pushViewController:vc animated:YES];
+        //[self.navigationController pushViewController:vc animated:YES];
     }
     else if (item.jumpType == WGAppJumpTypeSpecailClassifyGoodNoTab) {
         WGSpecialClassifyGoodViewController *vc = [[WGSpecialClassifyGoodViewController alloc] init];
         vc.id = item.id;
         vc.title = item.name;
-        [self.navigationController pushViewController:vc animated:YES];
+        UINavigationController *navc = [WGApplication sharedApplication].navigationController;
+        [navc pushViewController:vc animated:YES];
+        //[self.navigationController pushViewController:vc animated:YES];
     }
 }
 

@@ -17,7 +17,7 @@
     
     JHLabel *_nameLabel;
     JHLabel *_briefInfoLabel;
-    JHButton *_moreBtn;
+    UIButton *_moreBtn;
 }
 @end
 
@@ -42,8 +42,11 @@
     _briefInfoLabel.textColor = kWhiteColor;
     [self.contentView addSubview:_briefInfoLabel];
     
-    _moreBtn = [[JHButton alloc] initWithFrame:CGRectMake(0, 0, 100, kAppAdaptHeight(24)) difRadius:JHRadiusMake(kAppAdaptWidth(10), kAppAdaptWidth(10), kAppAdaptWidth(10), kAppAdaptWidth(10)) borderWidth:2.0f borderColor:kWhiteColor];
+    _moreBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, kAppAdaptHeight(24))];
     _moreBtn.titleLabel.font = kAppAdaptFont(12);
+    _moreBtn.layer.cornerRadius = kAppAdaptWidth(12);
+    _moreBtn.layer.borderColor = kWhiteColor.CGColor;
+    _moreBtn.layer.borderWidth = 2;
     [_moreBtn setTitleColor:kWhiteColor forState:UIControlStateNormal];
     [_moreBtn addTarget:self action:@selector(touchMoreBtn:) forControlEvents:UIControlEventTouchUpInside];
     [self.contentView addSubview:_moreBtn];

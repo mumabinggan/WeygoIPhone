@@ -48,7 +48,7 @@
     _breifDestrictionLabel.textColor = WGAppLightNameLabelColor;
     [_imageView addSubview:_breifDestrictionLabel];
     
-    _codeAndTimeLabel = [[JHLabel alloc] initWithFrame:CGRectMake(0, kAppAdaptHeight(86), kAppAdaptWidth(_imageView.width - kAppAdaptWidth(16)), kAppAdaptHeight(16))];
+    _codeAndTimeLabel = [[JHLabel alloc] initWithFrame:CGRectMake(kAppAdaptWidth(8), kAppAdaptHeight(86), _imageView.width - kAppAdaptWidth(16), kAppAdaptHeight(16))];
     _codeAndTimeLabel.font = kAppAdaptFont(12);
     _codeAndTimeLabel.textAlignment = NSTextAlignmentRight;
     _codeAndTimeLabel.textColor = WGAppLightNameLabelColor;

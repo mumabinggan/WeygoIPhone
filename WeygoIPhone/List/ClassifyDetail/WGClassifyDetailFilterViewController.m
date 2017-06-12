@@ -79,11 +79,7 @@
         sectionView.backgroundColor = kRGBA(0, 0, 0, 0.12);
         [_scrollView addSubview:sectionView];
         
-        JHImageView *imageView = [[JHImageView alloc] initWithFrame:CGRectMake(kAppAdaptWidth(16), kAppAdaptHeight(8), kAppAdaptWidth(24), kAppAdaptHeight(24))];
-        imageView.image = [UIImage imageNamed:@"brand_icon"];
-        [sectionView addSubview:imageView];
-        
-        JHLabel *sectionTitleLabel = [[JHLabel alloc] initWithFrame:CGRectMake(imageView.maxX + kAppAdaptWidth(8), 0, kAppAdaptWidth(200), sectionView.height)];
+        JHLabel *sectionTitleLabel = [[JHLabel alloc] initWithFrame:CGRectMake(kAppAdaptWidth(16), 0, kAppAdaptWidth(200), sectionView.height)];
         sectionTitleLabel.font = kAppAdaptFont(14);
         sectionTitleLabel.textColor = WGAppNameLabelColor;
         sectionTitleLabel.text = kStr(@"Brand");
@@ -93,17 +89,35 @@
         [_scrollView addSubview:keyworkView];
     }
     
-    NSMutableArray *classifyViewMArray = [NSMutableArray array];
-    NSInteger count = _data.classifyArray.count;
-    for (int num = 0; num < count; ++num) {
-        WGClassifyFitlerClassifyView *itemView = [[WGClassifyFitlerClassifyView alloc] initWithFrame:CGRectMake(kAppAdaptWidth(8) + kAppAdaptWidth(122) * (num%3), keyworkView.maxY + kAppAdaptHeight(122) * (num/3), kAppAdaptHeight(114), kAppAdaptHeight(114))];
-        itemView.backgroundColor = kHRGB(0xF8FAFA);
-        [itemView showWithData:_data.classifyArray[num]];
-        [_scrollView addSubview:itemView];
-        [classifyViewMArray addObject:itemView];
+    WGClassifyKeywordView *classifyView = nil;
+    if (_data && _data.classifyArray != nil && _data.classifyArray.count != 0) {
+        JHView *sectionView = [[JHView alloc] initWithFrame:CGRectMake(0, keyworkView.maxY, kDeviceWidth, kAppAdaptHeight(40))];
+        sectionView.backgroundColor = kRGBA(0, 0, 0, 0.12);
+        [_scrollView addSubview:sectionView];
+        
+        JHLabel *sectionTitleLabel = [[JHLabel alloc] initWithFrame:CGRectMake(kAppAdaptWidth(16), 0, kAppAdaptWidth(200), sectionView.height)];
+        sectionTitleLabel.font = kAppAdaptFont(14);
+        sectionTitleLabel.textColor = WGAppNameLabelColor;
+        sectionTitleLabel.text = kStr(@"classify_filter_classifyname");
+        [sectionView addSubview:sectionTitleLabel];
+        
+        classifyView = [[WGClassifyKeywordView alloc] initWithFrame:CGRectMake(0, sectionView.maxY, kDeviceWidth, 1) disArray:_data.classifyArray];
+        [_scrollView addSubview:classifyView];
     }
-    _classifyViewArray = classifyViewMArray;
-    _scrollView.contentSize = CGSizeMake(kDeviceWidth, keyworkView.maxY + (count + 2)/3 * kAppAdaptHeight(122));
+    
+    _scrollView.contentSize = CGSizeMake(kDeviceWidth, classifyView.maxY);
+    
+//    NSMutableArray *classifyViewMArray = [NSMutableArray array];
+//    NSInteger count = _data.classifyArray.count;
+//    for (int num = 0; num < count; ++num) {
+//        WGClassifyFitlerClassifyView *itemView = [[WGClassifyFitlerClassifyView alloc] initWithFrame:CGRectMake(kAppAdaptWidth(8) + kAppAdaptWidth(122) * (num%3), keyworkView.maxY + kAppAdaptHeight(122) * (num/3), kAppAdaptHeight(114), kAppAdaptHeight(114))];
+//        itemView.backgroundColor = kHRGB(0xF8FAFA);
+//        [itemView showWithData:_data.classifyArray[num]];
+//        [_scrollView addSubview:itemView];
+//        [classifyViewMArray addObject:itemView];
+//    }
+//    _classifyViewArray = classifyViewMArray;
+//    _scrollView.contentSize = CGSizeMake(kDeviceWidth, keyworkView.maxY + (count + 2)/3 * kAppAdaptHeight(122));
 }
 
 - (void)didReceiveMemoryWarning {

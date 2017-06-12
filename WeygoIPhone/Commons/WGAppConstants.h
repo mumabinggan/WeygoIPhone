@@ -82,6 +82,8 @@ static float kNavigationY = 64;
 #define kLocalSettingsLocalLanguage    @"kLocalSettingsLocalLanguage"
 #define kLocalSettingsLocalSearchHistory(userId)            ([NSString stringWithFormat:@"kLocalSettingsLocalSearchHistory_%lld", userId])
 
+#define kLocalSettingsHomeTitles   @"kLocalSettingsHomeTitles"
+
 //Placeholder UIImage
 
 #define kHomeTopicPlaceholderImage [UIImage imageNamed:@"image_loading_small"]

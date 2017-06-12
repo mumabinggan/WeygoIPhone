@@ -84,8 +84,8 @@
 "Price Sort Up" = "价格从高到低";
 "Cancel Sort" = "Cancel";
 "Confirm Sort" = "Confirm";
-"Brand" = "Marchi";
-"Classify Filter" = "Filter";
+"Brand" = "品牌";
+"Classify Filter" = "筛选";
 //环球
 "Asia" = "Asia";
 
@@ -351,3 +351,5 @@
 "GoodList_UnPurchase" = "缺货";
 
 "Request Failed" = "网络异常";
+
+"classify_filter_classifyname" = "关键词";

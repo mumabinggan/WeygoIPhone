@@ -9,6 +9,7 @@
 #import "WGClassifyKeywordView.h"
 #import "WGBorderButton.h"
 #import "WGClassifyKeyword.h"
+#import "WGClassifyItem.h"
 
 @interface WGClassifyKeywordView ()
 {
@@ -43,7 +44,7 @@
     CGFloat columnSepY = kAppAdaptHeight(40);
     NSInteger curLineNum = 0;
     __weak id weakSelf = self;
-    for (WGClassifyKeyword *itemInfo in _dataArray) {
+    for (WGObject *itemInfo in _dataArray) {
         WGBorderButton *itemBtn = [[WGBorderButton alloc] initWithFrame:CGRectMake(0, 0, 100, kAppAdaptHeight(32))];
         itemBtn.cornerRadius = kAppAdaptHeight(16);
         itemBtn.titleColor = WGAppTitleColor;
@@ -55,10 +56,23 @@
         itemBtn.onTouch = ^(void) {
             [weakSelf handleTouch:itemInfo];
         };
-        [itemBtn.btn setTitle:itemInfo.name forState:UIControlStateNormal];
+        NSString *name = nil;
+        BOOL isSelected = YES;
+        long id = 0;
+        if ([itemInfo isKindOfClass:[WGClassifyKeyword class]]) {
+            name = ((WGClassifyKeyword *)itemInfo).name;
+            isSelected = ((WGClassifyKeyword *)itemInfo).isSelected;
+            id = ((WGClassifyKeyword *)itemInfo).id;
+        }
+        else {
+            name = ((WGClassifyItem *)itemInfo).name;
+            isSelected = ((WGClassifyItem *)itemInfo).isSelected;
+            id = ((WGClassifyItem *)itemInfo).id;
+        }
+        [itemBtn.btn setTitle:name forState:UIControlStateNormal];
         [itemBtn sizeToFit];
-        itemBtn.tag = itemInfo.id;
-        [itemBtn setSelected:itemInfo.isSelected];
+        itemBtn.tag = id;
+        [itemBtn setSelected:isSelected];
         [self addSubview:itemBtn];
         
         //CGRect frame = CGRectZero;
@@ -88,8 +102,14 @@
     self.frame = tmpFrame;
 }
 
-- (void)handleTouch:(WGClassifyKeyword *)keyword {
-    keyword.isSelected = !keyword.isSelected;
+- (void)handleTouch:(WGObject *)keyword {
+    if ([keyword isKindOfClass:[WGClassifyKeyword class]]) {
+        ((WGClassifyKeyword *)keyword).isSelected = !((WGClassifyKeyword *)keyword).isSelected;
+    }
+    else if ([keyword isKindOfClass:[WGClassifyItem class]]) {
+        ((WGClassifyItem *)keyword).isSelected = !((WGClassifyItem *)keyword).isSelected;
+    }
+    
 }
 
 - (NSArray *)dataArray {
