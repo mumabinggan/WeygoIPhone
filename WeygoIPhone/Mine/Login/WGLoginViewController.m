@@ -229,13 +229,13 @@
     [loginManager setLoginBehavior:FBSDKLoginBehaviorNative];
     [loginManager logInWithReadPermissions:@[@"public_profile"] fromViewController:self handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
         if (result) {
-            [[WGApplication sharedApplication] loadCheckBind:result.token.tokenString type:WGThirdPartyLoginTypeFacebook onCompletion:^(WGCheckBindResponse *response) {
-                [self handleCheckBind:response uniqueId:result.token.tokenString type:WGThirdPartyLoginTypeFacebook];
+            [[WGApplication sharedApplication] loadCheckBind:result.token.userID type:WGThirdPartyLoginTypeFacebook onCompletion:^(WGCheckBindResponse *response) {
+                [self handleCheckBind:response uniqueId:result.token.userID type:WGThirdPartyLoginTypeFacebook];
             }];
-            NSLog(@"---------%@", result.token.tokenString);
+            //NSLog(@"---------%@", result.token.tokenString);
         }
         else {
-            NSLog(@"----------error---");
+            //NSLog(@"----------error---");
         }
     }];
 }

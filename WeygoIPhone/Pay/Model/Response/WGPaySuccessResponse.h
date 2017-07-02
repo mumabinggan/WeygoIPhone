@@ -20,4 +20,6 @@
 
 @property (nonatomic, strong) NSString *orderId;
 
+@property (nonatomic, strong) NSString *currentTotalPriceUnUnit;
+
 @end

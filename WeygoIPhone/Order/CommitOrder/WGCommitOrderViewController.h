@@ -8,6 +8,7 @@
 
 #import "WGViewController.h"
 #import "WGCommitOrderDetail.h"
+#import "WGOverweightView.h"
 
 @interface WGCommitOrderViewController : WGViewController
 {
@@ -18,10 +19,15 @@
     
     JHView *_sortPickerBgView;
     JHButton *_closeBtn;
+    
+    WGOverweightView *_overWeightView;
+    NSArray *_overWeightArray;
 }
 
 @property (nonatomic, assign) NSInteger settlementId;
 
 - (void)refreshUI;
+
+- (void)showOverWeightView;
 
 @end

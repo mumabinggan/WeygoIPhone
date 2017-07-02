@@ -12,6 +12,8 @@
 
 @interface WGHome : WGObject
 
+@property (nonatomic, assign) long long expiredTime;
+
 @property (nonatomic, strong) NSArray *carouselFigures;
 
 @property (nonatomic, strong) NSArray *topics;

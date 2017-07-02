@@ -8,12 +8,15 @@
 
 #import "WGHomeFloorPictureHeadCell.h"
 #import "WGHomeFloorItem.h"
+#import "WGCountdownTimeView.h"
 
 @interface WGHomeFloorPictureHeadCell ()
 {
     WGHomeFloorItem *_item;
     
     JHImageView *_imageView;
+    
+    WGCountdownTimeView *_countDownTimeView;
     
     JHLabel *_nameLabel;
     JHLabel *_briefInfoLabel;
@@ -73,6 +76,27 @@
     _nameLabel.hidden = [NSString isNullOrEmpty:item.pictureName] ? YES : NO;
     _briefInfoLabel.hidden = [NSString isNullOrEmpty:item.pictureBriefDescription] ? YES : NO;
     _moreBtn.hidden = [NSString isNullOrEmpty:item.pictureBtnName] ? YES : NO;
+    
+    [self setCountDownTime:item.snappedUpExpiredTime];
+}
+
+- (void)setCountDownTime:(long long)time {
+    if (!_countDownTimeView || time != 0) {
+        _countDownTimeView = [[WGCountdownTimeView alloc] initWithFrame:CGRectMake(kAppAdaptWidth(10), kAppAdaptHeight(10), kAppAdaptWidth(200), kAppAdaptWidth(107))];
+        WeakSelf;
+        _countDownTimeView.onHidden = ^() {
+            [weakSelf handleRefresh];
+        };
+        [self.contentView addSubview:_countDownTimeView];
+    }
+    _countDownTimeView.hidden = (time == 0);
+    [_countDownTimeView setTime:time];
+}
+
+- (void)handleRefresh {
+    if (self.onRefresh) {
+        self.onRefresh();
+    }
 }
 
 - (void)touchMoreBtn:(UIButton *)sender {

@@ -14,4 +14,6 @@
 
 @property (nonatomic, copy) void (^onApply)(WGHomeFloorItem *item);
 
+@property (nonatomic, copy) void (^onRefresh)();
+
 @end

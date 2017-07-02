@@ -130,6 +130,7 @@
     if (response.success) {
         _paySuccessData = response.data;
         [self refreshUI];
+        [[WGEvent shareInstance] purchase:response.data.currentTotalPriceUnUnit orderId:response.data.orderId];
     }
     else {
         [self showWarningMessage:response.message];

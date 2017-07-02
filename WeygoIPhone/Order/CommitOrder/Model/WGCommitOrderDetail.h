@@ -46,6 +46,7 @@
 //from settlement
 @property (nonatomic, strong) NSArray *goods;
 
+@property (nonatomic, strong) NSString *minPriceTips;
 
 //for self use
 @property (nonatomic, strong) NSString *useIntegrationString;
@@ -56,7 +57,6 @@
 
 @interface WGCommitOrderDeliverTime : WGObject
 
-//@property (nonatomic, strong) NSString *currentDate;
 @property (nonatomic, strong) NSString *currentDateId;
 
 @property (nonatomic, strong) NSString *currentTimeId;
@@ -69,6 +69,8 @@
 @property (nonatomic, strong) NSString *currentTime;
 
 @property (nonatomic, strong) NSArray *currentTimes;
+
+- (void)resetWithTimes:(NSArray *)deliverTimes;
 
 @end
 

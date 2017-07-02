@@ -14,6 +14,8 @@
 
 @property (nonatomic, strong) WGCommitOrderData *data;
 
+- (BOOL)overWeight;
+
 @end
 
 @interface WGCommitOrderData : JHObject

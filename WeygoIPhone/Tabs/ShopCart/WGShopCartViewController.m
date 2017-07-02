@@ -20,6 +20,7 @@
     UIVisualEffectView *_footView;
     JHLabel *_deliveryPriceLabel;
     JHLabel *_totalePriceLabel;
+    UIButton *_confirmBtn;
 }
 @end
 
@@ -39,57 +40,6 @@
     // Do any additional setup after loading the view.
     self.title = kStr(@"Carrello");
 }
-
-//- (void)initData {
-//    _data = [[WGShopCart alloc] init];
-//    
-//    WGShopCartPrice *price = [[WGShopCartPrice alloc] init];
-//    price.deliveryPrice = @"99.00";
-//    price.totalePrice = @"8999.99";
-//    _data.shopCartPrice = price;
-//    
-//    WGShopCartGoodItem *goodItem = [[WGShopCartGoodItem alloc] init];
-//    goodItem.name = @"香蕉";
-//    goodItem.briefDescription = @"导航条可以看做是self.navigationController导航控制器的一个属";
-//    goodItem.pictureURL = @"http://www.pp3.cn/uploads/201609/2016091606.jpg";
-//    goodItem.price = @"9844.99";
-//    goodItem.reducePrice = @"244.99";
-//    goodItem.price = @"8939.99";
-//    
-//    WGShopCartGoodItem *goodItem2 = [[WGShopCartGoodItem alloc] init];
-//    goodItem2.name = @"苹果";
-//    goodItem2.briefDescription = @"导航条可以看做是self.navigationController导航控制器的一个属";
-//    goodItem2.pictureURL = @"http://www.pp3.cn/uploads/201609/2016091606.jpg";
-//    goodItem2.price = @"1844.99";
-//    goodItem2.reducePrice = @"544.99";
-//    goodItem2.price = @"6939.99";
-//    
-//    WGShopCartGoodItem *goodItem3 = [[WGShopCartGoodItem alloc] init];
-//    goodItem3.name = @"梨";
-//    goodItem3.briefDescription = @"导航条可以看做是self.navigationController导航控制器的一个属";
-//    goodItem3.pictureURL = @"http://www.pp3.cn/uploads/201609/2016091606.jpg";
-//    goodItem3.price = @"1844.99";
-//    goodItem3.reducePrice = @"544.99";
-//    goodItem3.price = @"6939.99";
-//    
-//    WGShopCartGoodItem *goodItem4 = [[WGShopCartGoodItem alloc] init];
-//    goodItem4.name = @"桔子";
-//    goodItem4.briefDescription = @"导航条可以看做是self.navigationController导航控制器的一个属";
-//    goodItem4.pictureURL = @"http://www.pp3.cn/uploads/201609/2016091606.jpg";
-//    goodItem4.price = @"1844.99";
-//    goodItem4.reducePrice = @"544.99";
-//    goodItem4.price = @"6939.99";
-//    
-//    WGShopCartGoodItem *goodItem5 = [[WGShopCartGoodItem alloc] init];
-//    goodItem5.name = @"西瓜";
-//    goodItem5.briefDescription = @"导航条可以看做是self.navigationController导航控制器的一个属";
-//    goodItem5.pictureURL = @"http://www.pp3.cn/uploads/201609/2016091606.jpg";
-//    goodItem5.price = @"1844.99";
-//    goodItem5.reducePrice = @"544.99";
-//    goodItem5.price = @"6939.99";
-//    
-//    _data.goods = @[goodItem, goodItem2, goodItem3, goodItem4, goodItem5];
-//}
 
 - (void)initSubView {
     [super initSubView];
@@ -146,12 +96,16 @@
     _totalePriceLabel.textAlignment = NSTextAlignmentRight;
     [_footView addSubview:_totalePriceLabel];
     
-    JHButton *confirmBtn = [[JHButton alloc] initWithFrame:CGRectMake(kAppAdaptWidth(16), kAppAdaptHeight(52), kDeviceWidth - kAppAdaptWidth(32), kAppAdaptHeight(40)) difRadius:JHRadiusMake(kAppAdaptWidth(20), kAppAdaptWidth(20), kAppAdaptWidth(20), kAppAdaptWidth(20)) backgroundColor:WGAppFooterButtonColor];
-    [confirmBtn setTitle:kStr(@"Confirm") forState:UIControlStateNormal];
-    confirmBtn.titleLabel.font = kAppAdaptFont(14);
-    [confirmBtn setTitleColor:kWhiteColor forState:UIControlStateNormal];
-    [confirmBtn addTarget:self action:@selector(touchConfirmBtnBtn:) forControlEvents:UIControlEventTouchUpInside];
-    [_footView addSubview:confirmBtn];
+    //_confirmBtn = [[JHButton alloc] initWithFrame:CGRectMake(kAppAdaptWidth(16), kAppAdaptHeight(52), kDeviceWidth - kAppAdaptWidth(32), kAppAdaptHeight(40)) difRadius:JHRadiusMake(kAppAdaptWidth(20), kAppAdaptWidth(20), kAppAdaptWidth(20), kAppAdaptWidth(20)) backgroundColor:WGAppFooterButtonColor];
+    _confirmBtn = [[UIButton alloc] initWithFrame:CGRectMake(kAppAdaptWidth(16), kAppAdaptHeight(52), kDeviceWidth - kAppAdaptWidth(32), kAppAdaptHeight(40))];
+    [_confirmBtn setBackgroundColor:WGAppFooterButtonColor];
+    _confirmBtn.layer.cornerRadius = kAppAdaptHeight(20);
+    
+    [_confirmBtn setTitle:kStr(@"Confirm") forState:UIControlStateNormal];
+    _confirmBtn.titleLabel.font = kAppAdaptFont(14);
+    [_confirmBtn setTitleColor:kWhiteColor forState:UIControlStateNormal];
+    [_confirmBtn addTarget:self action:@selector(touchConfirmBtnBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [_footView addSubview:_confirmBtn];
     //[self refreshTableView];
 }
 
@@ -198,6 +152,7 @@
         _tableView.layer.opacity = 1.0f;
         _footView.layer.opacity = 1.0f;
     }];
+    [_confirmBtn setBackgroundColor:[NSString isNullOrEmpty:_data.minPriceTips] ? WGAppFooterButtonColor : kRGB(173, 190, 197)];
 }
 
 - (void)refreshTableView {
@@ -233,6 +188,10 @@
     [self loadUpdateGood:item count:item.goodCount - 1];
 }
 
+- (BOOL)isMinPriceTipsCell:(NSIndexPath *)indexPath {
+    return indexPath.row == _data.goods.count;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -243,11 +202,15 @@
 @implementation WGShopCartViewController (TableViewDelegate)
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return (_data && _data.goods) ? _data.goods.count : 0;
+    return (_data && _data.goods) ? _data.goods.count + ([NSString isNullOrEmpty:_data.minPriceTips] ? 0 : 1) : 0;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [WGShopCartCell heightWithData:nil];
+    float height = [WGShopCartCell heightWithData:nil];
+    if ([self isMinPriceTipsCell:indexPath]) {
+        height = kAppAdaptHeight(40);
+    }
+    return height;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -260,31 +223,48 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellId = @"cellId";
-    WGShopCartCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    JHTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
     if (!cell) {
-        cell = [[WGShopCartCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
-        JHView *line = [[JHView alloc] initWithFrame:CGRectMake(0, [WGShopCartCell heightWithData:nil] - kAppSepratorLineHeight, kDeviceWidth, kAppSepratorLineHeight)];
-        line.backgroundColor = WGAppSeparateLineColor;
-        [cell.contentView addSubview:line];
-        WeakSelf;
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.onApply = ^(WGShopCartGoodItem *item) {
-            [weakSelf openGoodDetailViewController:item];
-        };
-        cell.onAdd = ^(WGShopCartGoodItem *item) {
-            [weakSelf handleAdd:item];
-        };
-        cell.onSub = ^(WGShopCartGoodItem *item) {
-            [weakSelf handleSub:item];
-        };
+        if ([self isMinPriceTipsCell:indexPath]) {
+            cell = [[JHTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+            cell.textLabel.font = kAppAdaptFontBold(14);
+            cell.textLabel.textColor = WGAppBaseColor;
+            cell.contentView.backgroundColor = kWhiteColor;
+            cell.textLabel.textAlignment = NSTextAlignmentCenter;
+        }
+        else {
+            WGShopCartCell *shopCartCell = [[WGShopCartCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+            JHView *line = [[JHView alloc] initWithFrame:CGRectMake(0, [WGShopCartCell heightWithData:nil] - kAppSepratorLineHeight, kDeviceWidth, kAppSepratorLineHeight)];
+            line.backgroundColor = WGAppSeparateLineColor;
+            [shopCartCell.contentView addSubview:line];
+            WeakSelf;
+            shopCartCell.selectionStyle = UITableViewCellSelectionStyleNone;
+            shopCartCell.onApply = ^(WGShopCartGoodItem *item) {
+                [weakSelf openGoodDetailViewController:item];
+            };
+            shopCartCell.onAdd = ^(WGShopCartGoodItem *item) {
+                [weakSelf handleAdd:item];
+            };
+            shopCartCell.onSub = ^(WGShopCartGoodItem *item) {
+                [weakSelf handleSub:item];
+            };
+            cell = shopCartCell;
+        }
     }
-    [cell showWithData:_data.goods[indexPath.row]];
+    if ([self isMinPriceTipsCell:indexPath]) {
+        cell.textLabel.text = _data.minPriceTips;
+    }
+    else {
+        [cell showWithData:_data.goods[indexPath.row]];
+    }
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    WGShopCartGoodItem *item = _data.goods[indexPath.row];
-    [self openGoodDetailViewController:item];
+    if (![self isMinPriceTipsCell:indexPath]) {
+        WGShopCartGoodItem *item = _data.goods[indexPath.row];
+        [self openGoodDetailViewController:item];
+    }
 }
 
 - (NSString*)tableView:(UITableView*)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath*)indexpath {
@@ -292,11 +272,14 @@
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
+    if (![self isMinPriceTipsCell:indexPath]) {
+        return YES;
+    }
+    return NO;
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
+    if (editingStyle == UITableViewCellEditingStyleDelete && ![self isMinPriceTipsCell:indexPath]) {
         [self loadDeleteIndexPath:indexPath];
     }
 }

@@ -9,6 +9,7 @@
 #import "WGObject.h"
 #import "WGAddress.h"
 #import "WGCoupon.h"
+#import "WGOverHeightDetail.h"
 
 @class WGSettlementTips;
 @class WGSettlementConsumePrice;
@@ -35,6 +36,10 @@
 @property (nonatomic, strong) NSArray *goods;
 
 @property (nonatomic, strong) WGSettlementTips *tip;
+
+@property (nonatomic, assign) NSInteger goodsCount;
+
+@property (nonatomic, strong) NSArray *overHeightDetail;
 
 @end
 
@@ -78,6 +83,8 @@
 @property (nonatomic, strong) NSString *integralPrice;
 
 @property (nonatomic, strong) NSString *currentTotalPrice;
+
+@property (nonatomic, strong) NSString *currentTotalPriceUnUnit;
 
 @property (nonatomic, strong) NSString *reducePrice;
 

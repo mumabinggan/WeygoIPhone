@@ -18,6 +18,8 @@
 
 @property (nonatomic, strong) NSString *deliverPriceDescription;
 
+@property (nonatomic, strong) NSString *minPriceTips;
+
 //for self use
 @property (nonatomic, assign, readonly) BOOL hasInvalidGood;
 

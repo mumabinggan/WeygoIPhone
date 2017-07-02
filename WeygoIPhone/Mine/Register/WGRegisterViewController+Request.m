@@ -31,6 +31,7 @@
 
 - (void)handleRegisterResponse:(WGRegisterResponse *)response {
     if (response.success) {
+        [[WGEvent shareInstance] registerCompletion:@(response.data.userId).stringValue from:kRegisterCompletionFromForm];
         [[WGApplication sharedApplication] reset];
         [WGApplication sharedApplication].user = response.data;
         [self sendNotification:WGRefreshNotificationTypeLogin];

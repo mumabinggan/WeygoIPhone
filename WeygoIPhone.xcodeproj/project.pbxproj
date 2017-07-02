@@ -25,6 +25,16 @@
 		BE32F92F1EA320A90063B38F /* WGViewController+ShopCart.m in Sources */ = {isa = PBXBuildFile; fileRef = BE32F92E1EA320A90063B38F /* WGViewController+ShopCart.m */; };
 		BE32F9891EA3B3760063B38F /* WGSetPostCodeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE32F9881EA3B3760063B38F /* WGSetPostCodeRequest.m */; };
 		BE32F98C1EA3B3870063B38F /* WGSetPostCodeResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BE32F98B1EA3B3870063B38F /* WGSetPostCodeResponse.m */; };
+		BE43FB7B1EFF589A00B0A415 /* WGOverweightView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE43FB7A1EFF589A00B0A415 /* WGOverweightView.m */; };
+		BE43FB7F1EFF5A2300B0A415 /* WGOverHeightRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE43FB7E1EFF5A2300B0A415 /* WGOverHeightRequest.m */; };
+		BE43FB821EFF5D1D00B0A415 /* WGOverHeightResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BE43FB811EFF5D1D00B0A415 /* WGOverHeightResponse.m */; };
+		BE43FB851EFF5D3000B0A415 /* WGOverHeightDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = BE43FB841EFF5D3000B0A415 /* WGOverHeightDetail.m */; };
+		BE43FB881EFF5FC500B0A415 /* WGOverHeightGoodItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BE43FB871EFF5FC500B0A415 /* WGOverHeightGoodItem.m */; };
+		BE43FB8B1EFF6C9400B0A415 /* WGOverHeightGoodCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE43FB8A1EFF6C9400B0A415 /* WGOverHeightGoodCell.m */; };
+		BE43FB8E1EFF7EA000B0A415 /* WGOverHeightDeleteRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE43FB8D1EFF7EA000B0A415 /* WGOverHeightDeleteRequest.m */; };
+		BE43FB911EFF7EB000B0A415 /* WGOverHeightDeleteResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BE43FB901EFF7EB000B0A415 /* WGOverHeightDeleteResponse.m */; };
+		BE43FB941EFF7ED200B0A415 /* WGOverHeightResetRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE43FB931EFF7ED200B0A415 /* WGOverHeightResetRequest.m */; };
+		BE43FB971EFF7EE600B0A415 /* WGOverHeightResetResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BE43FB961EFF7EE600B0A415 /* WGOverHeightResetResponse.m */; };
 		BE49E3B41E45BA4200ECDEE5 /* WGSessionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE49E3B31E45BA4200ECDEE5 /* WGSessionRequest.m */; };
 		BE49E3B71E45BAA100ECDEE5 /* WGCallBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE49E3B61E45BAA100ECDEE5 /* WGCallBaseRequest.m */; };
 		BE49E3BA1E45BAB100ECDEE5 /* WGLoginBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE49E3B91E45BAB100ECDEE5 /* WGLoginBaseRequest.m */; };
@@ -203,8 +213,6 @@
 		BE6BE91B1E7FAF1400A081BA /* WGSettlementResult.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6BE91A1E7FAF1400A081BA /* WGSettlementResult.m */; };
 		BE6BE91E1E7FB69F00A081BA /* WGSettlementResultRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6BE91D1E7FB69F00A081BA /* WGSettlementResultRequest.m */; };
 		BE6BE9211E7FB6B300A081BA /* WGSettlementResultResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6BE9201E7FB6B300A081BA /* WGSettlementResultResponse.m */; };
-		BE6BE9241E7FB6F900A081BA /* WGUpdateOrderCouponRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6BE9231E7FB6F900A081BA /* WGUpdateOrderCouponRequest.m */; };
-		BE6BE9271E7FB70800A081BA /* WGUpdateOrderCouponResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6BE9261E7FB70800A081BA /* WGUpdateOrderCouponResponse.m */; };
 		BE6BE92A1E7FD7A600A081BA /* WGCommitOrderDeliverTipCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6BE9291E7FD7A600A081BA /* WGCommitOrderDeliverTipCell.m */; };
 		BE6BE9341E8102E300A081BA /* WGReceiptCode.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6BE9331E8102E300A081BA /* WGReceiptCode.m */; };
 		BE6CC1961E28B163003755FF /* WGHomeCarouselFiguresCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6CC1951E28B163003755FF /* WGHomeCarouselFiguresCell.m */; };
@@ -374,6 +382,13 @@
 		BECBE3161E87C68E00ADAD6C /* WGTitleItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BECBE3151E87C68E00ADAD6C /* WGTitleItem.m */; };
 		BECBE3191E87D13100ADAD6C /* WGCommonViewController+Data.m in Sources */ = {isa = PBXBuildFile; fileRef = BECBE3181E87D13100ADAD6C /* WGCommonViewController+Data.m */; };
 		BECEBF9F1E2BD104002C4462 /* WGClassifyGoodListViewController+Request.m in Sources */ = {isa = PBXBuildFile; fileRef = BECEBF9E1E2BD104002C4462 /* WGClassifyGoodListViewController+Request.m */; };
+		BECFEAA31EFAA8DD0001AE49 /* libKochavaTrackeriOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BECFEAA21EFAA8DD0001AE49 /* libKochavaTrackeriOS.a */; };
+		BECFEAA61EFAA8FC0001AE49 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BECFEAA51EFAA8FC0001AE49 /* AdSupport.framework */; };
+		BECFEAA81EFAA9060001AE49 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BECFEAA71EFAA9060001AE49 /* CoreLocation.framework */; };
+		BECFEAAA1EFAA94B0001AE49 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BECFEAA91EFAA94B0001AE49 /* SystemConfiguration.framework */; };
+		BECFEAAC1EFAA9A20001AE49 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BECFEAAB1EFAA9A20001AE49 /* WebKit.framework */; };
+		BECFEAAE1EFAA9AB0001AE49 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BECFEAAD1EFAA9AB0001AE49 /* AVFoundation.framework */; };
+		BECFEAB41EFAB9950001AE49 /* WGEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = BECFEAB31EFAB9950001AE49 /* WGEvent.m */; };
 		BED471701ECDDC9400F9FCC9 /* WGCheckBindRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BED4716F1ECDDC9400F9FCC9 /* WGCheckBindRequest.m */; };
 		BED471741ECDDCAE00F9FCC9 /* WGCheckBindResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BED471731ECDDCAE00F9FCC9 /* WGCheckBindResponse.m */; };
 		BED471771ECDDD9100F9FCC9 /* WGBindRegisteredRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BED471761ECDDD9100F9FCC9 /* WGBindRegisteredRequest.m */; };
@@ -495,6 +510,7 @@
 		BEF8ED931E8B52AD00E15C8F /* WGDeleteFootPrintRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF8ED921E8B52AD00E15C8F /* WGDeleteFootPrintRequest.m */; };
 		BEF8ED961E8B52E900E15C8F /* WGDeleteFootPrintResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF8ED951E8B52E900E15C8F /* WGDeleteFootPrintResponse.m */; };
 		BEF8EDA01E8B68D300E15C8F /* WGPostCodePopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF8ED9F1E8B68D300E15C8F /* WGPostCodePopoverView.m */; };
+		BEFDFA0A1EF82985004C79A9 /* WGCountdownTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFDFA091EF82985004C79A9 /* WGCountdownTimeView.m */; };
 		BEFEC3321E963FA2002FCF1F /* WGClassifyDetailRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFEC3311E963FA2002FCF1F /* WGClassifyDetailRequest.m */; };
 		BEFEC3361E963FB2002FCF1F /* WGClassifyDetailResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFEC3351E963FB2002FCF1F /* WGClassifyDetailResponse.m */; };
 		BEFEC3391E964264002FCF1F /* WGClassifyDetailFilterRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFEC3381E964264002FCF1F /* WGClassifyDetailFilterRequest.m */; };
@@ -602,6 +618,26 @@
 		BE32F9881EA3B3760063B38F /* WGSetPostCodeRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGSetPostCodeRequest.m; sourceTree = "<group>"; };
 		BE32F98A1EA3B3870063B38F /* WGSetPostCodeResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGSetPostCodeResponse.h; sourceTree = "<group>"; };
 		BE32F98B1EA3B3870063B38F /* WGSetPostCodeResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGSetPostCodeResponse.m; sourceTree = "<group>"; };
+		BE43FB791EFF589A00B0A415 /* WGOverweightView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGOverweightView.h; sourceTree = "<group>"; };
+		BE43FB7A1EFF589A00B0A415 /* WGOverweightView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGOverweightView.m; sourceTree = "<group>"; };
+		BE43FB7D1EFF5A2300B0A415 /* WGOverHeightRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGOverHeightRequest.h; sourceTree = "<group>"; };
+		BE43FB7E1EFF5A2300B0A415 /* WGOverHeightRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGOverHeightRequest.m; sourceTree = "<group>"; };
+		BE43FB801EFF5D1D00B0A415 /* WGOverHeightResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGOverHeightResponse.h; sourceTree = "<group>"; };
+		BE43FB811EFF5D1D00B0A415 /* WGOverHeightResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGOverHeightResponse.m; sourceTree = "<group>"; };
+		BE43FB831EFF5D3000B0A415 /* WGOverHeightDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGOverHeightDetail.h; sourceTree = "<group>"; };
+		BE43FB841EFF5D3000B0A415 /* WGOverHeightDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGOverHeightDetail.m; sourceTree = "<group>"; };
+		BE43FB861EFF5FC500B0A415 /* WGOverHeightGoodItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGOverHeightGoodItem.h; sourceTree = "<group>"; };
+		BE43FB871EFF5FC500B0A415 /* WGOverHeightGoodItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGOverHeightGoodItem.m; sourceTree = "<group>"; };
+		BE43FB891EFF6C9400B0A415 /* WGOverHeightGoodCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGOverHeightGoodCell.h; sourceTree = "<group>"; };
+		BE43FB8A1EFF6C9400B0A415 /* WGOverHeightGoodCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGOverHeightGoodCell.m; sourceTree = "<group>"; };
+		BE43FB8C1EFF7EA000B0A415 /* WGOverHeightDeleteRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGOverHeightDeleteRequest.h; sourceTree = "<group>"; };
+		BE43FB8D1EFF7EA000B0A415 /* WGOverHeightDeleteRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGOverHeightDeleteRequest.m; sourceTree = "<group>"; };
+		BE43FB8F1EFF7EB000B0A415 /* WGOverHeightDeleteResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGOverHeightDeleteResponse.h; sourceTree = "<group>"; };
+		BE43FB901EFF7EB000B0A415 /* WGOverHeightDeleteResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGOverHeightDeleteResponse.m; sourceTree = "<group>"; };
+		BE43FB921EFF7ED200B0A415 /* WGOverHeightResetRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGOverHeightResetRequest.h; sourceTree = "<group>"; };
+		BE43FB931EFF7ED200B0A415 /* WGOverHeightResetRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGOverHeightResetRequest.m; sourceTree = "<group>"; };
+		BE43FB951EFF7EE600B0A415 /* WGOverHeightResetResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGOverHeightResetResponse.h; sourceTree = "<group>"; };
+		BE43FB961EFF7EE600B0A415 /* WGOverHeightResetResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGOverHeightResetResponse.m; sourceTree = "<group>"; };
 		BE49E3B21E45BA4200ECDEE5 /* WGSessionRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGSessionRequest.h; sourceTree = "<group>"; };
 		BE49E3B31E45BA4200ECDEE5 /* WGSessionRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGSessionRequest.m; sourceTree = "<group>"; };
 		BE49E3B51E45BAA100ECDEE5 /* WGCallBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGCallBaseRequest.h; sourceTree = "<group>"; };
@@ -956,10 +992,6 @@
 		BE6BE91D1E7FB69F00A081BA /* WGSettlementResultRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGSettlementResultRequest.m; sourceTree = "<group>"; };
 		BE6BE91F1E7FB6B300A081BA /* WGSettlementResultResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGSettlementResultResponse.h; sourceTree = "<group>"; };
 		BE6BE9201E7FB6B300A081BA /* WGSettlementResultResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGSettlementResultResponse.m; sourceTree = "<group>"; };
-		BE6BE9221E7FB6F900A081BA /* WGUpdateOrderCouponRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGUpdateOrderCouponRequest.h; sourceTree = "<group>"; };
-		BE6BE9231E7FB6F900A081BA /* WGUpdateOrderCouponRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGUpdateOrderCouponRequest.m; sourceTree = "<group>"; };
-		BE6BE9251E7FB70800A081BA /* WGUpdateOrderCouponResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGUpdateOrderCouponResponse.h; sourceTree = "<group>"; };
-		BE6BE9261E7FB70800A081BA /* WGUpdateOrderCouponResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGUpdateOrderCouponResponse.m; sourceTree = "<group>"; };
 		BE6BE9281E7FD7A600A081BA /* WGCommitOrderDeliverTipCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGCommitOrderDeliverTipCell.h; sourceTree = "<group>"; };
 		BE6BE9291E7FD7A600A081BA /* WGCommitOrderDeliverTipCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGCommitOrderDeliverTipCell.m; sourceTree = "<group>"; };
 		BE6BE9321E8102E300A081BA /* WGReceiptCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGReceiptCode.h; sourceTree = "<group>"; };
@@ -1276,6 +1308,16 @@
 		BECBE3181E87D13100ADAD6C /* WGCommonViewController+Data.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGCommonViewController+Data.m"; sourceTree = "<group>"; };
 		BECEBF9D1E2BD104002C4462 /* WGClassifyGoodListViewController+Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGClassifyGoodListViewController+Request.h"; sourceTree = "<group>"; };
 		BECEBF9E1E2BD104002C4462 /* WGClassifyGoodListViewController+Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGClassifyGoodListViewController+Request.m"; sourceTree = "<group>"; };
+		BECFEAA01EFAA8DD0001AE49 /* KochavaEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KochavaEvent.h; sourceTree = "<group>"; };
+		BECFEAA11EFAA8DD0001AE49 /* KochavaTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KochavaTracker.h; sourceTree = "<group>"; };
+		BECFEAA21EFAA8DD0001AE49 /* libKochavaTrackeriOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libKochavaTrackeriOS.a; sourceTree = "<group>"; };
+		BECFEAA51EFAA8FC0001AE49 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		BECFEAA71EFAA9060001AE49 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		BECFEAA91EFAA94B0001AE49 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		BECFEAAB1EFAA9A20001AE49 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		BECFEAAD1EFAA9AB0001AE49 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		BECFEAB21EFAB9950001AE49 /* WGEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGEvent.h; sourceTree = "<group>"; };
+		BECFEAB31EFAB9950001AE49 /* WGEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGEvent.m; sourceTree = "<group>"; };
 		BED4716E1ECDDC9400F9FCC9 /* WGCheckBindRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGCheckBindRequest.h; sourceTree = "<group>"; };
 		BED4716F1ECDDC9400F9FCC9 /* WGCheckBindRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGCheckBindRequest.m; sourceTree = "<group>"; };
 		BED471721ECDDCAE00F9FCC9 /* WGCheckBindResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGCheckBindResponse.h; sourceTree = "<group>"; };
@@ -1460,6 +1502,8 @@
 		BEF8ED951E8B52E900E15C8F /* WGDeleteFootPrintResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGDeleteFootPrintResponse.m; sourceTree = "<group>"; };
 		BEF8ED9E1E8B68D300E15C8F /* WGPostCodePopoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGPostCodePopoverView.h; sourceTree = "<group>"; };
 		BEF8ED9F1E8B68D300E15C8F /* WGPostCodePopoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGPostCodePopoverView.m; sourceTree = "<group>"; };
+		BEFDFA081EF82985004C79A9 /* WGCountdownTimeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGCountdownTimeView.h; sourceTree = "<group>"; };
+		BEFDFA091EF82985004C79A9 /* WGCountdownTimeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGCountdownTimeView.m; sourceTree = "<group>"; };
 		BEFEC3301E963FA2002FCF1F /* WGClassifyDetailRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGClassifyDetailRequest.h; sourceTree = "<group>"; };
 		BEFEC3311E963FA2002FCF1F /* WGClassifyDetailRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGClassifyDetailRequest.m; sourceTree = "<group>"; };
 		BEFEC3341E963FB2002FCF1F /* WGClassifyDetailResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGClassifyDetailResponse.h; sourceTree = "<group>"; };
@@ -1481,6 +1525,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BECFEAAE1EFAA9AB0001AE49 /* AVFoundation.framework in Frameworks */,
+				BECFEAAC1EFAA9A20001AE49 /* WebKit.framework in Frameworks */,
+				BECFEAAA1EFAA94B0001AE49 /* SystemConfiguration.framework in Frameworks */,
+				BECFEAA81EFAA9060001AE49 /* CoreLocation.framework in Frameworks */,
+				BECFEAA61EFAA8FC0001AE49 /* AdSupport.framework in Frameworks */,
 				BEED6B771EAF8C3B00B56455 /* MobileCoreServices.framework in Frameworks */,
 				BEE085321EA75EF000DC2CC3 /* AFNetworking.framework in Frameworks */,
 				BEE085331EA75EF000DC2CC3 /* FMDB.framework in Frameworks */,
@@ -1495,6 +1544,7 @@
 				BEB670401ECDF48B002173D7 /* FBSDKCoreKit.framework in Frameworks */,
 				BEED6B721EAF8BFE00B56455 /* ZDCChat.framework in Frameworks */,
 				BEE085311EA75EDE00DC2CC3 /* JHKit.framework in Frameworks */,
+				BECFEAA31EFAA8DD0001AE49 /* libKochavaTrackeriOS.a in Frameworks */,
 				BEED6B731EAF8BFE00B56455 /* ZDCChatAPI.framework in Frameworks */,
 				BEB6703E1ECDF478002173D7 /* Bolts.framework in Frameworks */,
 			);
@@ -2220,6 +2270,8 @@
 				BE6BE9291E7FD7A600A081BA /* WGCommitOrderDeliverTipCell.m */,
 				BE6BE90D1E7FA80300A081BA /* WGCommitOrderLookMoreCell.h */,
 				BE6BE90E1E7FA80300A081BA /* WGCommitOrderLookMoreCell.m */,
+				BE43FB891EFF6C9400B0A415 /* WGOverHeightGoodCell.h */,
+				BE43FB8A1EFF6C9400B0A415 /* WGOverHeightGoodCell.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -2229,10 +2281,14 @@
 			children = (
 				BE57D1741E7F90AC00149738 /* Request */,
 				BE57D1771E7F90AC00149738 /* Response */,
+				BE43FB831EFF5D3000B0A415 /* WGOverHeightDetail.h */,
+				BE43FB841EFF5D3000B0A415 /* WGOverHeightDetail.m */,
 				BE6BE9161E7FA9BB00A081BA /* WGCommitOrderDetail.h */,
 				BE6BE9171E7FA9BB00A081BA /* WGCommitOrderDetail.m */,
 				BE6BE9191E7FAF1400A081BA /* WGSettlementResult.h */,
 				BE6BE91A1E7FAF1400A081BA /* WGSettlementResult.m */,
+				BE43FB861EFF5FC500B0A415 /* WGOverHeightGoodItem.h */,
+				BE43FB871EFF5FC500B0A415 /* WGOverHeightGoodItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2244,8 +2300,12 @@
 				BE6BE9111E7FA83600A081BA /* WGCommitOrderRequest.m */,
 				BE6BE91C1E7FB69F00A081BA /* WGSettlementResultRequest.h */,
 				BE6BE91D1E7FB69F00A081BA /* WGSettlementResultRequest.m */,
-				BE6BE9221E7FB6F900A081BA /* WGUpdateOrderCouponRequest.h */,
-				BE6BE9231E7FB6F900A081BA /* WGUpdateOrderCouponRequest.m */,
+				BE43FB7D1EFF5A2300B0A415 /* WGOverHeightRequest.h */,
+				BE43FB7E1EFF5A2300B0A415 /* WGOverHeightRequest.m */,
+				BE43FB8C1EFF7EA000B0A415 /* WGOverHeightDeleteRequest.h */,
+				BE43FB8D1EFF7EA000B0A415 /* WGOverHeightDeleteRequest.m */,
+				BE43FB921EFF7ED200B0A415 /* WGOverHeightResetRequest.h */,
+				BE43FB931EFF7ED200B0A415 /* WGOverHeightResetRequest.m */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -2257,8 +2317,12 @@
 				BE6BE9141E7FA84400A081BA /* WGCommitOrderResponse.m */,
 				BE6BE91F1E7FB6B300A081BA /* WGSettlementResultResponse.h */,
 				BE6BE9201E7FB6B300A081BA /* WGSettlementResultResponse.m */,
-				BE6BE9251E7FB70800A081BA /* WGUpdateOrderCouponResponse.h */,
-				BE6BE9261E7FB70800A081BA /* WGUpdateOrderCouponResponse.m */,
+				BE43FB801EFF5D1D00B0A415 /* WGOverHeightResponse.h */,
+				BE43FB811EFF5D1D00B0A415 /* WGOverHeightResponse.m */,
+				BE43FB8F1EFF7EB000B0A415 /* WGOverHeightDeleteResponse.h */,
+				BE43FB901EFF7EB000B0A415 /* WGOverHeightDeleteResponse.m */,
+				BE43FB951EFF7EE600B0A415 /* WGOverHeightResetResponse.h */,
+				BE43FB961EFF7EE600B0A415 /* WGOverHeightResetResponse.m */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -2605,6 +2669,11 @@
 		BE62E41C1DF9292F004510A5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BECFEAAD1EFAA9AB0001AE49 /* AVFoundation.framework */,
+				BECFEAAB1EFAA9A20001AE49 /* WebKit.framework */,
+				BECFEAA91EFAA94B0001AE49 /* SystemConfiguration.framework */,
+				BECFEAA71EFAA9060001AE49 /* CoreLocation.framework */,
+				BECFEAA51EFAA8FC0001AE49 /* AdSupport.framework */,
 				BEED6B761EAF8C3B00B56455 /* MobileCoreServices.framework */,
 				BE62E4401DF92BA4004510A5 /* FMDB.framework */,
 				BE62E4361DF92B8C004510A5 /* AFNetworking.framework */,
@@ -2630,6 +2699,8 @@
 				BEB2D94A1DFBED1500F2E74B /* Base */,
 				BE62E49D1DF93E8D004510A5 /* WGAppConstants.h */,
 				BE62E4B01DF93EA2004510A5 /* WGAppEnum.h */,
+				BECFEAB21EFAB9950001AE49 /* WGEvent.h */,
+				BECFEAB31EFAB9950001AE49 /* WGEvent.m */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -2823,6 +2894,7 @@
 		BE97E8091EAE3DE100E9667C /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				BECFEA9F1EFAA8DD0001AE49 /* KochavaTracker */,
 				BE0B6BC11ECAD1FD0096FAC2 /* Facebook */,
 				BEED6B6C1EAF8BFE00B56455 /* Zendesk */,
 				BE97E80A1EAE3DE100E9667C /* Fabric */,
@@ -3304,6 +3376,10 @@
 				BEAC8F6C1EBDD302006B236B /* WGOrderPriceTipView.m */,
 				BE81F9251EC19C9A00EA922E /* WGDiscountView.h */,
 				BE81F9261EC19C9A00EA922E /* WGDiscountView.m */,
+				BEFDFA081EF82985004C79A9 /* WGCountdownTimeView.h */,
+				BEFDFA091EF82985004C79A9 /* WGCountdownTimeView.m */,
+				BE43FB791EFF589A00B0A415 /* WGOverweightView.h */,
+				BE43FB7A1EFF589A00B0A415 /* WGOverweightView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -3708,6 +3784,16 @@
 				BEF6AF7A1EC0CB4C00B8DE1E /* WGTabAsiaViewController+Request.m */,
 			);
 			path = Asia;
+			sourceTree = "<group>";
+		};
+		BECFEA9F1EFAA8DD0001AE49 /* KochavaTracker */ = {
+			isa = PBXGroup;
+			children = (
+				BECFEAA01EFAA8DD0001AE49 /* KochavaEvent.h */,
+				BECFEAA11EFAA8DD0001AE49 /* KochavaTracker.h */,
+				BECFEAA21EFAA8DD0001AE49 /* libKochavaTrackeriOS.a */,
+			);
+			path = KochavaTracker;
 			sourceTree = "<group>";
 		};
 		BEE937B01E825B5300875131 /* Invite */ = {
@@ -4260,7 +4346,6 @@
 				BE520FEA1E880431004BD34E /* WGTabViewController+Slider.m in Sources */,
 				BEB2D9751DFD933600F2E74B /* WGScrollImageView.m in Sources */,
 				BE83BB331E23EB68002F3BCC /* WGHomeTabContentResponse.m in Sources */,
-				BE6BE9271E7FB70800A081BA /* WGUpdateOrderCouponResponse.m in Sources */,
 				BEA374B21E3491770054B8E6 /* WGClassifySortView.m in Sources */,
 				BEB8D0F51E48581D00BB9BA3 /* WGLoginViewController+Request.m in Sources */,
 				BEF6AF7B1EC0CB4C00B8DE1E /* WGTabAsiaViewController+Request.m in Sources */,
@@ -4274,6 +4359,7 @@
 				BE5F61AC1E94E7E100FBA32A /* WGChangePasswordResponse.m in Sources */,
 				BE2B42D41E8BA2400010BCB7 /* WGShopCartResponse.m in Sources */,
 				BEEC211A1E9B5D620065DE90 /* WGIntegrationViewController.m in Sources */,
+				BE43FB851EFF5D3000B0A415 /* WGOverHeightDetail.m in Sources */,
 				BE49E3BD1E45BD4200ECDEE5 /* WGSessionResponse.m in Sources */,
 				BE6753891E92A1A400250BA8 /* WGGoodDetailCarouselFiguresCell.m in Sources */,
 				BEB2D95E1DFBED1500F2E74B /* WGTabViewController.m in Sources */,
@@ -4290,10 +4376,13 @@
 				BE5F047D1E9CD22200A701CB /* WGPaySuccessViewController.m in Sources */,
 				BE6BE9061E7FA77B00A081BA /* WGCommitOrderConsumeCell.m in Sources */,
 				BEB2D91E1DFBDFE900F2E74B /* WGTabBenefitViewController.m in Sources */,
+				BE43FB881EFF5FC500B0A415 /* WGOverHeightGoodItem.m in Sources */,
 				BEB8D1501E48CC4700BB9BA3 /* WGRegisterViewController.m in Sources */,
+				BEFDFA0A1EF82985004C79A9 /* WGCountdownTimeView.m in Sources */,
 				BE63A6D81E7BBC0B00F77282 /* WGOrderDetailRequest.m in Sources */,
 				BE8CB2921EBB69BF002480CA /* WGSearchGoodListViewController.m in Sources */,
 				BEF8ED931E8B52AD00E15C8F /* WGDeleteFootPrintRequest.m in Sources */,
+				BE43FB911EFF7EB000B0A415 /* WGOverHeightDeleteResponse.m in Sources */,
 				BEEC20D41E9923CD0065DE90 /* WGAddressListResponse.m in Sources */,
 				BEB2D95D1DFBED1500F2E74B /* WGResponse.m in Sources */,
 				BE6BE92A1E7FD7A600A081BA /* WGCommitOrderDeliverTipCell.m in Sources */,
@@ -4309,6 +4398,7 @@
 				BE32F92F1EA320A90063B38F /* WGViewController+ShopCart.m in Sources */,
 				BEEC21381E9B91850065DE90 /* WGIntegrationHelpView.m in Sources */,
 				BE63A6FD1E7BC7AE00F77282 /* WGOrderListPriceCell.m in Sources */,
+				BE43FB8B1EFF6C9400B0A415 /* WGOverHeightGoodCell.m in Sources */,
 				BEB8D0B71E4708E300BB9BA3 /* WGMineRequest.m in Sources */,
 				BEA375011E34FA160054B8E6 /* JHClassifyDetailFilterLayout.m in Sources */,
 				BEB8D0E51E47F8AE00BB9BA3 /* WGPersonHeaderCell.m in Sources */,
@@ -4342,6 +4432,7 @@
 				BEF8ED5E1E8A683A00E15C8F /* WGCancelCollectGoodRequest.m in Sources */,
 				BECBE2F31E87B60100ADAD6C /* WGTabBenefitViewController+NavigationBar.m in Sources */,
 				BEE937C31E825CB200875131 /* WGInvitationResponse.m in Sources */,
+				BE43FB8E1EFF7EA000B0A415 /* WGOverHeightDeleteRequest.m in Sources */,
 				BE52EFB81E2F3BDE0022EF5B /* WGCouponCell.m in Sources */,
 				BEB8D0BA1E4708F800BB9BA3 /* WGMineResponse.m in Sources */,
 				BE1BB9C51E49CCC20008BD68 /* WGBindThirdPartyViewController+Request.m in Sources */,
@@ -4376,11 +4467,13 @@
 				BEC772051E83AD1C00678D0B /* WGSearchViewController.m in Sources */,
 				BE622A0C1E77C613002BFEDB /* WGAddGoodToCartRequest.m in Sources */,
 				BE52D5381E1B9D5A00D4FFCD /* WGHomeTopicItemView.m in Sources */,
+				BE43FB971EFF7EE600B0A415 /* WGOverHeightResetResponse.m in Sources */,
 				BE6CC1BE1E2941AA003755FF /* WGHomeFloorClassifyListItemCell.m in Sources */,
 				BEF6854E1E31DFB5003B745B /* WGShopCartViewController.m in Sources */,
 				BEEC212F1E9B7F270065DE90 /* WGIntegrationDetailRequest.m in Sources */,
 				BE81F9271EC19C9A00EA922E /* WGDiscountView.m in Sources */,
 				BEFEC33C1E964272002FCF1F /* WGClassifyDetailFilterResponse.m in Sources */,
+				BE43FB7B1EFF589A00B0A415 /* WGOverweightView.m in Sources */,
 				BE57D1651E7E35CC00149738 /* WGDeleteMessageRequest.m in Sources */,
 				BE520FF01E88094B004BD34E /* WGTabClassifyViewController+NavigationBar.m in Sources */,
 				BE57D1621E7DBD4200149738 /* WGMessageItemCell.m in Sources */,
@@ -4416,6 +4509,7 @@
 				BE62CD801EA0C0080076BD69 /* WGScanJumpClassify.m in Sources */,
 				BECBE3091E87BB9D00ADAD6C /* WGCommonViewController+Scroll.m in Sources */,
 				BEEC21071E9A83040065DE90 /* WGEditReceiptViewController+Request.m in Sources */,
+				BE43FB941EFF7ED200B0A415 /* WGOverHeightResetRequest.m in Sources */,
 				BE6CC1CA1E2AA397003755FF /* WGHomeFloorGoodGridItemView.m in Sources */,
 				BE5F61A61E94E7B800FBA32A /* WGGetVerifyCodeResponse.m in Sources */,
 				BEF6851F1E31AC84003B745B /* WGBaseFootPrintAndCollectionViewController.m in Sources */,
@@ -4440,7 +4534,6 @@
 				BE6BE8FD1E7FA6EB00A081BA /* WGCommitOrderAddressCell.m in Sources */,
 				BEF8ED611E8A695C00E15C8F /* WGCancelCollectGoodResponse.m in Sources */,
 				BEB2D9691DFC054B00F2E74B /* WGHomeTabViewController+Segment.m in Sources */,
-				BE6BE9241E7FB6F900A081BA /* WGUpdateOrderCouponRequest.m in Sources */,
 				BE57D14C1E7DAC1900149738 /* WGMessageResponse.m in Sources */,
 				BE5F61A31E94E7A900FBA32A /* WGGetVerifyCodeRequest.m in Sources */,
 				BE6BE90C1E7FA7C100A081BA /* WGCommitOrderRemarkCell.m in Sources */,
@@ -4481,6 +4574,7 @@
 				BE6CC1D01E2B9426003755FF /* WGHomeFloorCountryItemView.m in Sources */,
 				BE63A6E81E7BBE5D00F77282 /* WGOrderListViewController+Request.m in Sources */,
 				BEEC21261E9B79BF0065DE90 /* WGUseIntegrationResponse.m in Sources */,
+				BE43FB7F1EFF5A2300B0A415 /* WGOverHeightRequest.m in Sources */,
 				BEE937C91E825EF400875131 /* WGInvitationViewController.m in Sources */,
 				BE49E3BA1E45BAB100ECDEE5 /* WGLoginBaseRequest.m in Sources */,
 				BEF8EDA01E8B68D300E15C8F /* WGPostCodePopoverView.m in Sources */,
@@ -4562,6 +4656,7 @@
 				BEEC20E61E9924A00065DE90 /* WGSetDefaultAddressResponse.m in Sources */,
 				BE5F04871E9CF84F00A701CB /* WGLogoutResponse.m in Sources */,
 				BE52ED2D1E2C66100022EF5B /* WGEditReceiptCell.m in Sources */,
+				BECFEAB41EFAB9950001AE49 /* WGEvent.m in Sources */,
 				BE9F932D1E6B1C960051B054 /* WGClientServiceCenterViewController.m in Sources */,
 				BE97E8131EAE3EC400E9667C /* AppDelegate+Fabric.m in Sources */,
 				BEFEC3451E964CE0002FCF1F /* WGRegisterResponse.m in Sources */,
@@ -4597,6 +4692,7 @@
 				BE8CB28C1EBB65AF002480CA /* WGHotSearchCell.m in Sources */,
 				BED697BA1E9E38CE00163355 /* WGPaySuccessResponse.m in Sources */,
 				BE62CDA31EA246DB0076BD69 /* WGSpecialClassifyGoodViewController.m in Sources */,
+				BE43FB821EFF5D1D00B0A415 /* WGOverHeightResponse.m in Sources */,
 				BE622A121E77CEDC002BFEDB /* WGGoodInLocalCart.m in Sources */,
 				BE62CDCA1EA29D8C0076BD69 /* WGBenefitTabResponse.m in Sources */,
 				BE52EFBB1E2F44970022EF5B /* WGCouponListViewController.m in Sources */,
@@ -4815,7 +4911,11 @@
 				INFOPLIST_FILE = WeygoIPhone/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.weygo.weygo;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libraries/KochavaTracker",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.weygo.test;
 				PRODUCT_NAME = Weygo;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -4851,7 +4951,11 @@
 				INFOPLIST_FILE = WeygoIPhone/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.weygo.weygo;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libraries/KochavaTracker",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.weygo.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Submodules/JHKit/** $(PROJECT_DIR)/Libraries/Facebook";

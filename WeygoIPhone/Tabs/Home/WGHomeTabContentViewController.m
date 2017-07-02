@@ -212,6 +212,12 @@
     [_tableView setContentOffset:CGPointMake(0, 0) animated:YES];
 }
 
+- (void)handleOnTopRefresh {
+    if (self.onTopRefresh) {
+        self.onTopRefresh();
+    }
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -347,9 +353,12 @@
             }
             else if (indexPath.row == 1) {
                 WGHomeFloorPictureHeadCell *headCell = [[WGHomeFloorPictureHeadCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+                WeakSelf;
                 headCell.onApply = ^(WGHomeFloorItem *item) {
-                    [self handleFloorContentItem:item.id name:item.name jumpType:item.jumpType];
-                        
+                    [weakSelf handleFloorContentItem:item.id name:item.name jumpType:item.jumpType];
+                };
+                headCell.onRefresh = ^ {
+                    [weakSelf handleOnTopRefresh];
                 };
                 cell = headCell;
             }

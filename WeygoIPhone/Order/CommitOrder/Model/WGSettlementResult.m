@@ -21,7 +21,22 @@
     else if ([@"goods" isEqualToString:propertyName]) {
         return [WGOrderGoodItem class];
     }
+    else if ([@"overHeightDetail" isEqualToString:propertyName]) {
+        return [WGOverHeightDetail class];
+    }
     return [super classForArray:propertyName];
+}
+
+- (NSInteger)goodsCount {
+    if (_goodsCount == 0) {
+        NSInteger count = 0;
+        for (int num = 0; num < _goods.count; ++num) {
+            WGOrderGoodItem *item = _goods[num];
+            count += item.goodCount;
+        }
+        _goodsCount = count;
+    }
+    return _goodsCount;
 }
 
 @end

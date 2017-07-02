@@ -33,6 +33,7 @@
     JHLabel *_totalPriceLabel;
     JHLabel *_reducePriceLabel;
     JHView *_bottomView;
+    UIButton *_confirmBtn;
 }
 @end
 
@@ -86,12 +87,15 @@
         _reducePriceLabel.layer.masksToBounds = YES;
         [_bottomView addSubview:_reducePriceLabel];
         
-        JHButton *addBtn = [[JHButton alloc] initWithFrame:CGRectMake(kAppAdaptWidth(16), kAppAdaptHeight(52), kDeviceWidth - kAppAdaptWidth(32), kAppAdaptHeight(40)) difRadius:JHRadiusMake(kAppAdaptHeight(20), kAppAdaptHeight(20), kAppAdaptHeight(20), kAppAdaptHeight(20)) backgroundColor:WGAppBlueButtonColor];
-        [addBtn addTarget:self action:@selector(touchCommitBtn:) forControlEvents:UIControlEventTouchUpInside];
-        [addBtn setTitle:kStr(@"CommitOrder Confirm") forState:UIControlStateNormal];
-        [addBtn setTitleColor:kWhiteColor forState:UIControlStateNormal];
-        addBtn.titleLabel.font = kAppAdaptFont(14);
-        [_bottomView addSubview:addBtn];
+//        _confirmBtn = [[JHButton alloc] initWithFrame:CGRectMake(kAppAdaptWidth(16), kAppAdaptHeight(52), kDeviceWidth - kAppAdaptWidth(32), kAppAdaptHeight(40)) difRadius:JHRadiusMake(kAppAdaptHeight(20), kAppAdaptHeight(20), kAppAdaptHeight(20), kAppAdaptHeight(20)) backgroundColor:WGAppBlueButtonColor];
+        _confirmBtn = [[UIButton alloc] initWithFrame:CGRectMake(kAppAdaptWidth(16), kAppAdaptHeight(52), kDeviceWidth - kAppAdaptWidth(32), kAppAdaptHeight(40))];
+        _confirmBtn.layer.cornerRadius = kAppAdaptHeight(20);
+        _confirmBtn.layer.masksToBounds = YES;
+        [_confirmBtn addTarget:self action:@selector(touchCommitBtn:) forControlEvents:UIControlEventTouchUpInside];
+        [_confirmBtn setTitle:kStr(@"CommitOrder Confirm") forState:UIControlStateNormal];
+        [_confirmBtn setTitleColor:kWhiteColor forState:UIControlStateNormal];
+        _confirmBtn.titleLabel.font = kAppAdaptFont(14);
+        [_bottomView addSubview:_confirmBtn];
     }
     
     NSString *totalPrice = [NSString stringWithFormat:kStr(@"CommitOrder Total Pay"), _commitOrderDetail.consumePrice.currentTotalPrice];
@@ -104,10 +108,25 @@
     _reducePriceLabel.width = size.width + kAppAdaptWidth(12);
     _reducePriceLabel.x = _totalPriceLabel.maxX + kAppAdaptWidth(22);
     _reducePriceLabel.hidden = [NSString isNullOrEmpty:reducePrice];
+    
+    [_confirmBtn setBackgroundColor:[NSString isNullOrEmpty:_commitOrderDetail.minPriceTips] ? WGAppFooterButtonColor : kRGB(173, 190, 197)];
 }
 
 - (void)touchCommitBtn:(JHButton *)sender {
     [self loadCommitOrder];
+}
+
+- (void)showOverWeightView {
+    [_overWeightView close];
+    WeakSelf;
+    _overWeightView = [[WGOverweightView alloc] initWithFrame:self.view.bounds overHeightDetail:_overWeightArray];
+    _overWeightView.onDelete = ^(NSArray *datail) {
+        [weakSelf loadDeleteOverHeight];
+    };
+    _overWeightView.onConfirm = ^(NSArray *datail) {
+        [weakSelf loadOverHeightReset:datail];
+    };
+    [_overWeightView showInView:self.view];
 }
 
 - (void)handleMoreTip:(WGSettlementTips *)tip {
@@ -119,6 +138,7 @@
 
 - (void)handleAddress:(WGAddress *)address {
     _commitOrderDetail.address = address;
+    [self loadOverHeightDetail];
     [self refreshUI];
 }
 
@@ -157,7 +177,7 @@
 @implementation WGCommitOrderViewController (TableViewDelegate)
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return (_commitOrderDetail) ? 8 : 0;
+    return (_commitOrderDetail) ? 9 : 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -184,6 +204,9 @@
         count = 1;
     }
     else if (7 == section) {
+        count = 1;
+    }
+    else if (8 == section) {
         count = 1;
     }
     return count;
@@ -262,6 +285,9 @@
     else if (7 == section) {
         height = [WGCommitOrderLookMoreCell heightWithData:_commitOrderDetail.tip];
     }
+    else if (8 == section) {
+        height = [NSString isNullOrEmpty:_commitOrderDetail.minPriceTips] ? 0 : kAppAdaptHeight(40);
+    }
     return height;
 }
 
@@ -272,7 +298,8 @@
             (section == 2 && row == 0) ||
             (section == 3 && row == 0) ||
             (section == 4 && row == 0) ||
-            (section == 5 && row == 0) );
+            (section == 5 && row == 0) ||
+            (section == 8 && row == 0));
 }
 
 - (NSString *)getIdentifier:(NSIndexPath *)indexPath {
@@ -428,6 +455,19 @@
     }
     else if (7 == section) {
         [cell showWithData:_commitOrderDetail.tip];
+    }
+    else if (8 == section) {
+        cell.textLabel.text = _commitOrderDetail.minPriceTips;
+    }
+    if ([self systemCell:indexPath] && indexPath.section == 8) {
+        cell.textLabel.textAlignment = NSTextAlignmentCenter;
+        cell.textLabel.textColor = WGAppBaseColor;
+        cell.contentView.backgroundColor = kWhiteColor;
+    }
+    else {
+        cell.textLabel.textAlignment = NSTextAlignmentLeft;
+        cell.textLabel.textColor = WGAppNameLabelColor;
+        cell.contentView.backgroundColor = kHRGB(0xF8FAFA);
     }
     return cell;
 }

@@ -35,6 +35,7 @@
 
 - (void)handleBindUnRegisterResponse:(WGBindUnRegisteredResponse *)response {
     if (response.success) {
+        [[WGEvent shareInstance] registerCompletion:@(response.data.userId).stringValue from:(self.type == WGThirdPartyLoginTypeWechat) ? kRegisterCompletionFromWeChat : kRegisterCompletionFromFacebook];
         [[WGApplication sharedApplication] reset];
         [WGApplication sharedApplication].user = response.data;
         [self sendNotification:WGRefreshNotificationTypeLogin];

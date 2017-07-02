@@ -254,6 +254,11 @@
 "CommitOrder_Use_Score" = "Si";
 "CommitOrder_No_Use_Score" = "No";
 "CommitOrder_OrderPrice_Tip_Title" = "PRODOTTI A PESO VARIABILE";
+"CommitOrder_OverHeight_Rise" = "L";
+"CommitOrder_OverHeight_MaxRise" = "LIMITE MAX %@%@";
+"CommitOrder_OverHeight_CurrentRise" = "CONTENUTO ATTUALE %.2f%@";
+"CommitOrder_OverHeight_DeleteBtnTitle" = "ELIMINA I PRODOTTI";
+"CommitOrder_OverHeight_Confirm" = "Conferma";
 
 //地址列表（完成）
 "Address_Title" = "Rubrica";

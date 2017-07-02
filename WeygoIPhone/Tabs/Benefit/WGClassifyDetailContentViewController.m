@@ -338,7 +338,12 @@
     if (!cell) {
         if (section == 0) {
             if (row == 0) {
-                cell = [[WGHomeCarouselFiguresCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+                WGHomeCarouselFiguresCell *tempCell = [[WGHomeCarouselFiguresCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+                WeakSelf;
+                tempCell.onRefresh = ^ {
+                    [weakSelf loadData:YES pulling:NO];
+                };
+                cell = tempCell;
             }
             else if (row == 1) {
                 cell = [[WGHomeNewsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
@@ -385,6 +390,8 @@
         if (row == 0) {
             if (_data.hasCarousel) {
                 [cell showWithArray:@[_data.carouselFigureItem.pictureURL]];
+                WGHomeCarouselFiguresCell *tempCell = (WGHomeCarouselFiguresCell *)cell;
+                [tempCell setCountDownTime:_data.snappedUpExpiredTime];
             }
         }
         else if (row == 1) {

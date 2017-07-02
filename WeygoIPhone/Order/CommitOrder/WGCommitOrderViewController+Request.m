@@ -11,11 +11,18 @@
 #import "WGCommitOrderResponse.h"
 #import "WGSettlementResultRequest.h"
 #import "WGSettlementResultResponse.h"
-#import "WGUpdateOrderCouponRequest.h"
-#import "WGUpdateOrderCouponResponse.h"
 #import "WGCommitOrderDetail.h"
 #import "WGPaySuccessViewController.h"
 #import "WGPayWebViewController.h"
+#import "WGApplication.h"
+#import "WGOverHeightRequest.h"
+#import "WGOverHeightResponse.h"
+#import "WGOverHeightDeleteRequest.h"
+#import "WGOverHeightDeleteResponse.h"
+#import "WGOverHeightResetRequest.h"
+#import "WGOverHeightResetResponse.h"
+#import "WGOverweightView.h"
+#import "WGOverHeightGoodItem.h"
 
 @implementation WGCommitOrderViewController (Request)
 
@@ -31,8 +38,13 @@
 
 - (void)handleSettlementResultResponse:(WGSettlementResultResponse *)response {
     if (response.success) {
+        [[WGEvent shareInstance] checkOutStart:@([WGApplication sharedApplication].user.userId).stringValue sum:@(response.data.goodsCount).stringValue];
         _commitOrderDetail = [[WGCommitOrderDetail alloc] initWithSettlementResult:response.data];
         [self refreshUI];
+        if (response.data.overHeightDetail && response.data.overHeightDetail.count > 0) {
+            _overWeightArray = response.data.overHeightDetail;
+            [self showOverWeightView];
+        }
     }
     else {
         [self showWarningMessage:response.message];
@@ -76,13 +88,14 @@
     if (response.success) {
         if ([NSString isNullOrEmpty:response.data.action]) {
             if ([NSString isNullOrEmpty:response.data.orderId]) {
-                
+                //[[WGEvent shareInstance] purchase:@([WGApplication sharedApplication].user.userId).stringValue sum:@(response.data.goodsCount).stringValue];
                 __weak WGCommitOrderViewController *weakSelf = self;
                 [self showWarningMessage:response.message onCompletion:^(void) {
                     [weakSelf.navigationController popToRootViewControllerAnimated:YES];
                 }];
             }
             else {
+                [[WGEvent shareInstance] purchase:_commitOrderDetail.consumePrice.currentTotalPriceUnUnit orderId:response.data.orderId];
                 WGPaySuccessViewController *vc = [[WGPaySuccessViewController alloc] init];
                 vc.orderId = response.data.orderId;
                 [self.navigationController pushViewController:vc animated:YES];
@@ -93,27 +106,86 @@
             [self.navigationController pushViewController:vc animated:YES];
         }
     }
+    else if (response.overWeight) {
+        [self loadOverHeightDetail];
+    }
     else {
         [self showWarningMessage:response.message];
     }
 }
 
-- (void)loadUpdateOrderCoupon {
-    WGUpdateOrderCouponRequest *request = [[WGUpdateOrderCouponRequest alloc] init];
-    request.settlementId = self.settlementId;
-    request.couponId = _commitOrderDetail.coupon.id;
+- (void)loadOverHeightDetail {
+    WGOverHeightRequest *request = [[WGOverHeightRequest alloc] init];
+    request.addressId = @(_commitOrderDetail.address.addressId).stringValue;
     __weak typeof(self) weakSelf = self;
-    [self post:request forResponseClass:[WGUpdateOrderCouponResponse class] success:^(JHResponse *response) {
-        [weakSelf handleUpdateOrderCouponResponse:(WGUpdateOrderCouponResponse *)response];
+    [self post:request forResponseClass:[WGOverHeightResponse class] success:^(JHResponse *response) {
+        [weakSelf handleOverHeightDetailResponse:(WGOverHeightResponse *)response];
     } failure:^(NSError *error) {
         [weakSelf showWarningMessage:kStr(@"Request Failed")];
     }];
 }
 
-- (void)handleUpdateOrderCouponResponse:(WGUpdateOrderCouponResponse *)response {
+- (void)handleOverHeightDetailResponse:(WGOverHeightResponse *)response {
     if (response.success) {
-        _commitOrderDetail.consumePrice = response.data;
-        [self refreshUI];
+        if (response.data && response.data.overWeight && response.data.overWeight.count > 0) {
+            _overWeightArray = response.data.overWeight;
+            [_commitOrderDetail.deliverTime resetWithTimes:response.data.deliverTimes];
+            _commitOrderDetail.minPriceTips = response.data.minPriceTips;
+            [_tableView reloadData];
+            if (_overWeightArray) {
+                [self showOverWeightView];
+            }
+        }
+        
+    }
+    else {
+        [self showWarningMessage:response.message];
+    }
+}
+
+- (void)loadDeleteOverHeight {
+    WGOverHeightDeleteRequest *request = [[WGOverHeightDeleteRequest alloc] init];
+    __weak typeof(self) weakSelf = self;
+    [self post:request forResponseClass:[WGOverHeightDeleteResponse class] success:^(JHResponse *response) {
+        [weakSelf handleDeleteOverHeightResponse:(WGOverHeightDeleteResponse *)response];
+    } failure:^(NSError *error) {
+        [weakSelf showWarningMessage:kStr(@"Request Failed")];
+    }];
+}
+
+- (void)handleDeleteOverHeightResponse:(WGOverHeightDeleteResponse *)response {
+    if (response.success) {
+        [self loadSettlementResultDetail];
+        [_overWeightView close];
+    }
+    else {
+        [self showWarningMessage:response.message];
+    }
+}
+
+- (void)loadOverHeightReset:(NSArray *)array {
+    WGOverHeightResetRequest *request = [[WGOverHeightResetRequest alloc] init];
+    NSMutableArray *ids = [[NSMutableArray alloc] init];
+    NSMutableArray *counts = [[NSMutableArray alloc] init];
+    WGOverHeightDetail *detail = array[0];
+    for (WGOverHeightGoodItem *item in detail.goods) {
+        [ids addObject:@(item.shopCartId).stringValue];
+        [counts addObject:@(item.goodCount).stringValue];
+    }
+    request.goodIds = [ids join:@","];
+    request.goodCounts = [counts join:@","];
+    WeakSelf;
+    [self post:request forResponseClass:[WGOverHeightResetResponse class] success:^(JHResponse *response) {
+        [weakSelf handleOverHeightResetResponse:(WGOverHeightResetResponse *)response];
+    } failure:^(NSError *error) {
+        [weakSelf showWarningMessage:kStr(@"Request Failed")];
+    }];
+}
+
+- (void)handleOverHeightResetResponse:(WGOverHeightResetResponse *)response {
+    if (response.success) {
+        [self loadSettlementResultDetail];
+        [_overWeightView close];
     }
     else {
         [self showWarningMessage:response.message];

@@ -29,6 +29,8 @@
 
 @property (nonatomic, strong) NSArray *contents;
 
+@property (nonatomic, assign) long long snappedUpExpiredTime;
+
 @property (nonatomic, assign) WGAppJumpType jumpType;
 
 //for dif skip

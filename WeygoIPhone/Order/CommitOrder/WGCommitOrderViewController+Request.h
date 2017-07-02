@@ -12,8 +12,12 @@
 
 - (void)loadSettlementResultDetail;
 
-- (void)loadUpdateOrderCoupon;
-
 - (void)loadCommitOrder;
+
+- (void)loadOverHeightDetail;
+
+- (void)loadDeleteOverHeight;
+
+- (void)loadOverHeightReset:(NSArray *)array;
 
 @end

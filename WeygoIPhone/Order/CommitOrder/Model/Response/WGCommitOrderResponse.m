@@ -10,6 +10,10 @@
 
 @implementation WGCommitOrderResponse
 
+- (BOOL)overWeight {
+    return self.code == 3;
+}
+
 @end
 
 @implementation WGCommitOrderData

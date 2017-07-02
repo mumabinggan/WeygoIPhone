@@ -66,6 +66,12 @@
     return [super classForArray:propertyName];
 }
 
+- (void)resetWithTimes:(NSArray *)deliverTimes {
+    _deliverTimes = deliverTimes;
+    _currentTimeId = nil;
+    _currentDateId = nil;
+}
+
 - (NSString *)currentDate {
     if ([NSString isNullOrEmpty:_currentDateId]) {
         if (_deliverTimes && _deliverTimes.count > 0) {

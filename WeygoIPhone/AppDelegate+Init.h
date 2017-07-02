@@ -10,6 +10,8 @@
 
 @interface AppDelegate (Init)
 
+@property (nonatomic, strong) NSString *name;
+
 - (void)launchInitApplicatioin:(UIApplication *)application withOptions:(NSDictionary *)launchOptions;
 
 @end

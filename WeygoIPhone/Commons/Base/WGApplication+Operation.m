@@ -431,7 +431,9 @@
 }
 
 - (NSString *)payUrl:(NSString *)url {
-    return [NSString stringWithFormat:@"%@%@&sessionKey=%@", url, [self paySign], [WGApplication sharedApplication].sessionKey];
+    return [NSString stringWithFormat:@"%@%@&sessionKey=%@&app=%@&os=iOS", url, [self paySign], [WGApplication sharedApplication].sessionKey, [[NSBundle mainBundle] bundleIdentifier]];
+//    NSString *payUrl = [NSString stringWithFormat:@"%@%@&sessionKey=%@", url, [self paySign], [WGApplication sharedApplication].sessionKey];
+//    return payUrl;
 }
 
 @end

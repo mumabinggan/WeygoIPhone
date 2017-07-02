@@ -13,6 +13,7 @@
 #import "JHNetworkManager.h"
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import "KochavaEvent.h"
 
 @interface AppDelegate ()
 
@@ -23,8 +24,12 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [[FBSDKApplicationDelegate sharedInstance] application:application
                              didFinishLaunchingWithOptions:launchOptions];
-    //[NSThread sleepForTimeInterval:5000];
     [self launchInitApplicatioin:application withOptions:launchOptions];
+
+    //[[WGEvent shareInstance] test];
+    
+    //self.name = @"sfds";
+    //NSLog(@"----%@---", self.name);
     
     return YES;
 }

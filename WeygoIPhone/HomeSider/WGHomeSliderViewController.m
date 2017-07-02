@@ -49,6 +49,9 @@
 #import "WGSpecialClassifyViewController.h"
 #import "WGInvitationViewController.h"
 #import "WGClientServiceCenterViewController.h"
+#import "WGOverweightView.h"
+#import "WGOverHeightDetail.h"
+#import "WGOverHeightGoodItem.h"
 
 @interface WGHomeSliderViewController ()
 {
@@ -139,6 +142,23 @@
 }
 
 - (void)handleOnScan {
+//    WGOverHeightDetail *detail = [[WGOverHeightDetail alloc] init];
+//    detail.title = @"asdfasdfkasd;fklasldkfkasdfasdf";
+//    detail.maxRise = @"90";
+//    WGOverHeightGoodItem *item = [[WGOverHeightGoodItem alloc] init];
+//    item.name = @"dasdfa";
+//    item.briefDescription = @"ww";
+//    item.goodCount = 2;
+//    detail.goods = @[item, item, item];
+//    WGOverweightView *_overWeightView = [[WGOverweightView alloc] initWithFrame:self.view.bounds overHeightDetail:@[detail]];
+////    _overWeightView.onDelete = ^(WGOverHeightDetail *datail) {
+////        //[weakSelf loadDeleteOverHeight];
+////    };
+////    _overWeightView.onConfirm = ^(WGOverHeightDetail *datail) {
+////        //[weakSelf loadOverHeightReset];
+////    };
+//    [_overWeightView show];
+//    return;
     //进入扫一扫界面
     [[WGApplication sharedApplication] closeSideBarViewController];
     WGScanViewController *vc = [[WGScanViewController alloc] init];

@@ -46,6 +46,25 @@
     [_scrollImageView setImageArray:array];
 }
 
+- (void)setCountDownTime:(long long)time {
+    if (!_countDownTimeView || time != 0) {
+        _countDownTimeView = [[WGCountdownTimeView alloc] initWithFrame:CGRectMake(kAppAdaptWidth(10), kAppAdaptHeight(20), kAppAdaptWidth(200), kAppAdaptWidth(107))];
+        WeakSelf;
+        _countDownTimeView.onHidden = ^() {
+            [weakSelf handleRefresh];
+        };
+        [_scrollImageView addSubview:_countDownTimeView];
+    }
+    _countDownTimeView.hidden = (time == 0);
+    [_countDownTimeView setTime:time];
+}
+
+- (void)handleRefresh {
+    if (self.onRefresh) {
+        self.onRefresh();
+    }
+}
+
 - (void)handleClick:(NSInteger)index {
     if (self.onApply) {
         self.onApply(index);
