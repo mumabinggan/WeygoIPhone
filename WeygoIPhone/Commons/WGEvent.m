@@ -9,6 +9,9 @@
 #import "WGEvent.h"
 
 @implementation WGEvent
+{
+    KochavaTracker *_kochavaTracker;
+}
 
 static WGEvent *_sharedInstance = nil;
 
@@ -23,40 +26,10 @@ static WGEvent *_sharedInstance = nil;
     return nil;
 }
 
-+ (id)alloc {
-    @synchronized([WGEvent class]) {
-        NSAssert(_sharedInstance == nil, @"Attempted to allocate a second instance of a singleton.");
-        _sharedInstance = [super alloc];
-        return _sharedInstance;
-    }
-    return nil;
-}
-
 - (void)initBuried {
     NSMutableDictionary *parametersDictionary = [NSMutableDictionary dictionary];
     parametersDictionary[kKVAParamAppGUIDStringKey] = @"koweygo-ios-7ijs7qpt";
-    //parametersDictionary[kKVAParamLogLevelEnumKey] = kKVALogLevelEnumNone;
     _kochavaTracker = [[KochavaTracker alloc] initWithParametersDictionary:parametersDictionary delegate:self];
-    // trackerParametersDictionary
-//    NSMutableDictionary *trackerParametersDictionary = [NSMutableDictionary dictionary];
-//    trackerParametersDictionary[kKVAParamAppGUIDStringKey] = @"koweygo-ios-7ijs7qpt";
-//    
-//    // KochavaTracker.shared
-//    [KochavaTracker.shared configureWithParametersDictionary:trackerParametersDictionary delegate:self];
-}
-
-- (void)test {
-    KochavaEvent *event = [KochavaEvent eventWithEventTypeEnum:KochavaEventTypeEnumLevelComplete];
-    if (event != nil)
-    {
-        event.userIdString = @"ABCDEF12345";
-        event.levelString = @"1";
-        event.scoreString = @"15500";
-        event.descriptionString = @"some description";
-        event.durationTimeIntervalNumber = @(65.0);
-    }
-    [_kochavaTracker sendEvent: event];
-
 }
 
 - (void)registerCompletion:(NSString *)userId from:(NSString *)from {
@@ -92,5 +65,29 @@ static WGEvent *_sharedInstance = nil;
 - (void)tracker:(nonnull KochavaTracker *)tracker didRetrieveAttributionDictionary:(nonnull NSDictionary *)attributionDictionary {
     NSLog(@"---tracker-----");
 }
+
+- (void)test {
+    KochavaEvent *event = [KochavaEvent eventWithEventTypeEnum:KochavaEventTypeEnumLevelComplete];
+    if (event != nil)
+    {
+        event.userIdString = @"ABCDEF12345";
+        event.levelString = @"1";
+        event.scoreString = @"15500";
+        event.descriptionString = @"some description";
+        event.durationTimeIntervalNumber = @(65.0);
+    }
+    [_kochavaTracker sendEvent: event];
+    
+}
+
+//+ (id)alloc {
+//    @synchronized([WGEvent class]) {
+//        NSAssert(_sharedInstance == nil, @"Attempted to allocate a second instance of a singleton.");
+//        _sharedInstance = [super alloc];
+//        return _sharedInstance;
+//    }
+//    return nil;
+//}
+
 
 @end

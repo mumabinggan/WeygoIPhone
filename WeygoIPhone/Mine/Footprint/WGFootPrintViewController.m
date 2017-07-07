@@ -61,7 +61,7 @@
 - (void)loadListResponse:(BOOL)refresh pulling:(BOOL)pulling {
     WGFootPrintListRequest *request = [[WGFootPrintListRequest alloc] init];
     request.pageId = (refresh) ? 0 : _dataMArray.count;
-    request.pageSize = 15;
+    request.pageSize = 10;
     if (pulling) {
         request.showsLoadingView = NO;
     }

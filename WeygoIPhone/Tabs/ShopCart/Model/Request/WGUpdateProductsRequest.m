@@ -10,6 +10,14 @@
 
 @implementation WGUpdateProductsRequest
 
+- (id)init {
+    self = [super init];
+    if (self) {
+        _cap = [WGApplication sharedApplication].currentPostCode;
+    }
+    return self;
+}
+
 - (NSString *)api {
     return @"cart/updateQty?";
 }

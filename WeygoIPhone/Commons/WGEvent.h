@@ -15,7 +15,7 @@ static NSString *kRegisterCompletionFromFacebook = @"Facebook";
 
 @interface WGEvent : NSObject <KochavaTrackerDelegate>
 {
-    KochavaTracker *_kochavaTracker;
+    //KochavaTracker *_kochavaTracker;
 }
 
 + (WGEvent *)shareInstance;

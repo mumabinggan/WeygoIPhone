@@ -120,7 +120,7 @@
     [_currentRaseLabel sizeToFit];
     _currentRaseLabel.layer.cornerRadius = kAppAdaptWidth(3);
     _currentRaseLabel.layer.masksToBounds = YES;
-    _currentRaseLabel.width = _currentRaseLabel.width + kAppAdaptWidth(30);
+    _currentRaseLabel.width = _currentRaseLabel.width + kAppAdaptWidth(15);
     _currentRaseLabel.center = CGPointMake(_contentView.width/2, _currentRaseLabel.y + _currentRaseLabel.height/2);
 }
 
@@ -190,12 +190,15 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     WGOverHeightDetail *detail = _detailArray[indexPath.section];
-    if (detail && detail.goods.count > 0) {
-        return kAppAdaptHeight(124);
+    if (detail) {
+        if (detail.goods) {
+            WGOverHeightGoodItem *item = detail.goods[indexPath.row];
+            if (item && item.goodCount > 0) {
+                return kAppAdaptHeight(124);
+            }
+        }
     }
-    else {
-        return 0;
-    }
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -233,6 +236,7 @@
         item.goodCount = 0;
         [tableView reloadData];
         [self setCurrentRiseLabel];
+        [self setNoButton];
     }
 }
 

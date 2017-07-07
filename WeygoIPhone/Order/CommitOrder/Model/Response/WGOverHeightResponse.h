@@ -8,6 +8,7 @@
 
 #import "WGResponse.h"
 #import "WGOverHeightDetail.h"
+#import "WGSettlementResultResponse.h"
 
 @class WGAddressBussiness;
 
@@ -24,5 +25,7 @@
 @property (nonatomic, strong) NSArray *deliverTimes;
 
 @property (nonatomic, strong) NSString *minPriceTips;
+
+@property (nonatomic, strong) WGSettlementConsumePrice *price;
 
 @end

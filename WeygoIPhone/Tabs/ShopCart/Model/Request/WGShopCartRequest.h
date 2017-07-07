@@ -10,4 +10,6 @@
 
 @interface WGShopCartRequest : WGGuestRequest
 
+@property (nonatomic, strong) NSString *cap;
+
 @end

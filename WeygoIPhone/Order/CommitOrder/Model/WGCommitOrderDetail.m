@@ -47,6 +47,8 @@
         _integration = settlement.integral;
         
         _useIntegration = settlement.useIntegral;
+        
+        _minPriceTips = settlement.minPriceTips;
     }
     return self;
 }

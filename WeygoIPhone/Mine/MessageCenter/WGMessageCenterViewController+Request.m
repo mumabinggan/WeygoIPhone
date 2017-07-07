@@ -20,7 +20,7 @@
     WGMessageRequest *request = [[WGMessageRequest alloc] init];
     request.tabType = _currentTabType;
     request.pageId = (refresh) ? 0 : _currentArray.count;
-    request.pageSize = 15;
+    request.pageSize = 10;
     if (pulling) {
         request.showsLoadingView = NO;
     }

@@ -78,7 +78,7 @@
         _totalPriceLabel.textColor = WGAppBaseColor;
         [_bottomView addSubview:_totalPriceLabel];
         
-        _reducePriceLabel = [[JHLabel alloc] initWithFrame:CGRectMake(_totalPriceLabel.x, _totalPriceLabel.y, 120, kAppAdaptHeight(16))];
+        _reducePriceLabel = [[JHLabel alloc] initWithFrame:CGRectMake(_totalPriceLabel.x, _totalPriceLabel.y + kAppAdaptHeight(2), 120, kAppAdaptHeight(16))];
         _reducePriceLabel.font = kAppAdaptFont(12);
         _reducePriceLabel.textColor = kWhiteColor;
         _reducePriceLabel.textAlignment = NSTextAlignmentCenter;
@@ -109,11 +109,20 @@
     _reducePriceLabel.x = _totalPriceLabel.maxX + kAppAdaptWidth(22);
     _reducePriceLabel.hidden = [NSString isNullOrEmpty:reducePrice];
     
-    [_confirmBtn setBackgroundColor:[NSString isNullOrEmpty:_commitOrderDetail.minPriceTips] ? WGAppFooterButtonColor : kRGB(173, 190, 197)];
+    [_confirmBtn setBackgroundColor:[self enableConfirm] ? WGAppFooterButtonColor : kRGB(173, 190, 197)];
+}
+
+- (BOOL)enableConfirm {
+    if (_commitOrderDetail) {
+        return [NSString isNullOrEmpty:_commitOrderDetail.minPriceTips];
+    }
+    return NO;
 }
 
 - (void)touchCommitBtn:(JHButton *)sender {
-    [self loadCommitOrder];
+    if ([self enableConfirm]) {
+        [self loadCommitOrder];
+    }
 }
 
 - (void)showOverWeightView {
@@ -459,15 +468,17 @@
     else if (8 == section) {
         cell.textLabel.text = _commitOrderDetail.minPriceTips;
     }
-    if ([self systemCell:indexPath] && indexPath.section == 8) {
-        cell.textLabel.textAlignment = NSTextAlignmentCenter;
-        cell.textLabel.textColor = WGAppBaseColor;
-        cell.contentView.backgroundColor = kWhiteColor;
-    }
-    else {
-        cell.textLabel.textAlignment = NSTextAlignmentLeft;
-        cell.textLabel.textColor = WGAppNameLabelColor;
-        cell.contentView.backgroundColor = kHRGB(0xF8FAFA);
+    if ([self systemCell:indexPath]) {
+        if (indexPath.section == 8) {
+            cell.textLabel.textAlignment = NSTextAlignmentCenter;
+            cell.textLabel.textColor = WGAppBaseColor;
+            cell.contentView.backgroundColor = kWhiteColor;
+        }
+        else {
+            cell.textLabel.textAlignment = NSTextAlignmentLeft;
+            cell.textLabel.textColor = WGAppNameLabelColor;
+            cell.contentView.backgroundColor = kHRGB(0xF8FAFA);
+        }
     }
     return cell;
 }

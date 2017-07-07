@@ -14,4 +14,6 @@
 
 @property (nonatomic, assign) long long count;
 
+@property (nonatomic, strong) NSString *cap;
+
 @end

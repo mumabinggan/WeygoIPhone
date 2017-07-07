@@ -28,6 +28,7 @@
 
 - (void)loadSettlementResultDetail {
     WGSettlementResultRequest *request = [[WGSettlementResultRequest alloc] init];
+    request.addressId = _commitOrderDetail.address.addressId;
     __weak typeof(self) weakSelf = self;
     [self post:request forResponseClass:[WGSettlementResultResponse class] success:^(JHResponse *response) {
         [weakSelf handleSettlementResultResponse:(WGSettlementResultResponse *)response];
@@ -45,6 +46,9 @@
             _overWeightArray = response.data.overHeightDetail;
             [self showOverWeightView];
         }
+    }
+    else if (response.emptyShopCart) {
+        [self.navigationController popViewControllerAnimated:YES];
     }
     else {
         [self showWarningMessage:response.message];
@@ -109,6 +113,9 @@
     else if (response.overWeight) {
         [self loadOverHeightDetail];
     }
+    else if (response.belowMinPrice) {
+        [self showWarningMessage:response.message];
+    }
     else {
         [self showWarningMessage:response.message];
     }
@@ -127,16 +134,16 @@
 
 - (void)handleOverHeightDetailResponse:(WGOverHeightResponse *)response {
     if (response.success) {
-        if (response.data && response.data.overWeight && response.data.overWeight.count > 0) {
+        if (response.data) {
             _overWeightArray = response.data.overWeight;
             [_commitOrderDetail.deliverTime resetWithTimes:response.data.deliverTimes];
             _commitOrderDetail.minPriceTips = response.data.minPriceTips;
+            _commitOrderDetail.consumePrice = response.data.price;
             [_tableView reloadData];
             if (_overWeightArray) {
                 [self showOverWeightView];
             }
         }
-        
     }
     else {
         [self showWarningMessage:response.message];

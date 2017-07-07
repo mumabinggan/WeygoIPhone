@@ -10,4 +10,8 @@
 
 @implementation WGSettlementResultResponse
 
+- (BOOL)emptyShopCart {
+    return self.code == 4;
+}
+
 @end

@@ -84,6 +84,10 @@ static float kNavigationY = 64;
 
 #define kLocalSettingsHomeTitles   @"kLocalSettingsHomeTitles"
 
+#define kLocalSettingsHomeCache   @"kLocalSettingsHomeCache"
+#define kLocalSettingsBenefitCache   @"kLocalSettingsBenefitCache"
+#define kLocalSettingsCountryCache   @"kLocalSettingsCountryCache"
+
 //Placeholder UIImage
 
 #define kHomeTopicPlaceholderImage [UIImage imageNamed:@"image_loading_small"]

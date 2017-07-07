@@ -14,6 +14,10 @@
     return self.code == 3;
 }
 
+- (BOOL)belowMinPrice {
+    return self.code == 4;
+}
+
 @end
 
 @implementation WGCommitOrderData

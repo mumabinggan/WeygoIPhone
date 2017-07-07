@@ -7,11 +7,15 @@
 //
 
 #import "WGObject.h"
+#import "WGHome.h"
 
 @interface WGTitleItem : WGObject
 
 @property (nonatomic, assign) long long id;
 
 @property (nonatomic, strong) NSString *name;
+
+//for self use
+@property (nonatomic, strong) WGHome *data;
 
 @end

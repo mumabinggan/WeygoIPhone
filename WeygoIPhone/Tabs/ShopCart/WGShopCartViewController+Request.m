@@ -194,6 +194,7 @@
 
 - (void)loadShopCartList:(BOOL)refresh pulling:(BOOL)pulling {
     WGShopCartRequest *request = [[WGShopCartRequest alloc] init];
+    request.cap = [WGApplication sharedApplication].currentPostCode;
     if (pulling) {
         request.showsLoadingView = NO;
     }

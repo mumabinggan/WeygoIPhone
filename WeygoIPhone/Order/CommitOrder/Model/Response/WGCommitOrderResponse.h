@@ -16,6 +16,8 @@
 
 - (BOOL)overWeight;
 
+- (BOOL)belowMinPrice;
+
 @end
 
 @interface WGCommitOrderData : JHObject

@@ -12,4 +12,6 @@
 
 @property (nonatomic, assign) int type;
 
+@property (nonatomic, strong) NSString *cap;
+
 @end

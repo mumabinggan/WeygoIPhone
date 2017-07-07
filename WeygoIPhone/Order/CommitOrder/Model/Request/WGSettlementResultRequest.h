@@ -10,4 +10,6 @@
 
 @interface WGSettlementResultRequest : WGGuestRequest
 
+@property (nonatomic, assign) long addressId;
+
 @end

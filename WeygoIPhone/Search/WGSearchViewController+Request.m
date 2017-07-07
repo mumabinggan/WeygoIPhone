@@ -41,7 +41,7 @@
     WGSearchRequest *request = [[WGSearchRequest alloc] init];
     request.name = _currentSearchString;
     request.pageId = refresh ? 0 :  (int)_data.goods.count;
-    request.pageSize = 16;
+    request.pageSize = 10;
     if (pulling) {
         request.showsLoadingView = NO;
     }

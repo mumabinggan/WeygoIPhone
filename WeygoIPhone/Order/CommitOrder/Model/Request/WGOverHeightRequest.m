@@ -11,7 +11,7 @@
 @implementation WGOverHeightRequest
 
 - (NSString *)api {
-    return @"checkout/getOverHeightDetail?";
+    return @"checkout/updateAddressEvent?";
 }
 
 @end

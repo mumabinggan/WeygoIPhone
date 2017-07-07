@@ -51,7 +51,7 @@
         }
     }
     request.subClassifyIds = [subClassifys join:@","];
-    request.pageSize = 16;
+    request.pageSize = 10;
     if (pulling) {
         request.showsLoadingView = NO;
     }
@@ -70,6 +70,7 @@
         return;
     }
     if (response.success) {
+        NSInteger scrollRow = _data.goodArray.count / (_isGrid ? 2 : 1);
         if (refresh) {
             _data = response.data;
         }
@@ -86,6 +87,10 @@
             _isGrid = YES;
         }
         [self refreshUI];
+        if (!refresh && scrollRow < _data.goodArray.count) {
+            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:scrollRow inSection:1];
+            [_tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
+        }
     }
     else {
         [self showWarningMessage:response.message];

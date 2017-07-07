@@ -110,6 +110,9 @@
 }
 
 - (void)touchConfirmBtnBtn:(UIButton *)sender {
+    if (![self enableConfirm]) {
+        return;
+    }
     if ([WGApplication sharedApplication].isLogined) {
         //1, 判断有没有失效产品(服务端)， 如果有失效产品，提示删除
         [self loadCheckFailureGood];
@@ -141,6 +144,10 @@
     }
 }
 
+- (BOOL)enableConfirm {
+    return [NSString isNullOrEmpty:_data.minPriceTips];
+}
+
 - (void)refreshUI {
     [self refreshTableView];
     _footView.hidden = !(_data && _data.goods && _data.goods.count);
@@ -152,7 +159,7 @@
         _tableView.layer.opacity = 1.0f;
         _footView.layer.opacity = 1.0f;
     }];
-    [_confirmBtn setBackgroundColor:[NSString isNullOrEmpty:_data.minPriceTips] ? WGAppFooterButtonColor : kRGB(173, 190, 197)];
+    [_confirmBtn setBackgroundColor:[self enableConfirm] ? WGAppFooterButtonColor : kRGB(173, 190, 197)];
 }
 
 - (void)refreshTableView {
@@ -223,6 +230,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellId = @"cellId";
+    cellId = [NSString stringWithFormat:@"cellId_%d", [self isMinPriceTipsCell:indexPath]];
     JHTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
     if (!cell) {
         if ([self isMinPriceTipsCell:indexPath]) {

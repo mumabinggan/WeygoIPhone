@@ -20,7 +20,7 @@
 }
 
 - (NSArray *)ascensores {
-    return @[kStr(@"Address_HaveLift"), kStr(@"Address_NoLift")];
+    return @[kStr(@"Address_NoLift"), kStr(@"Address_HaveLift")];
 }
 
 - (NSString *)currentAscensore {

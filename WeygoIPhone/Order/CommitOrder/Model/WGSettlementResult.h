@@ -41,6 +41,8 @@
 
 @property (nonatomic, strong) NSArray *overHeightDetail;
 
+@property (nonatomic, strong) NSString *minPriceTips;
+
 @end
 
 @interface WGSettlementPayMethod : WGObject

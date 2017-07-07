@@ -13,4 +13,6 @@
 
 @property (nonatomic, strong) WGSettlementResult *data;
 
+- (BOOL)emptyShopCart;
+
 @end

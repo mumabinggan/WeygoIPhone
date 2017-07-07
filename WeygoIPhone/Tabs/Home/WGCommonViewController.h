@@ -9,6 +9,7 @@
 #import "WGViewController.h"
 #import "WGSegmentView.h"
 #import "WGHomeTabContentViewController.h"
+#import "WGHomeTabTitleResponse.h"
 
 @interface WGCommonViewController : WGViewController
 {
@@ -18,6 +19,7 @@
     NSMutableDictionary *_tabContentMDictionary;
     NSMutableDictionary *_tabDataMDictionary;
     NSArray *_titleArray;
+    WGHomeTabTitleResponse *_titleResponse;
 }
 
 @property (nonatomic, assign) WGConfigContentType type;
