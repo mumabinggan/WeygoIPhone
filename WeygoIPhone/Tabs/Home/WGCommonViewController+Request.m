@@ -30,15 +30,7 @@
 @implementation WGCommonViewController (Request)
 
 - (void)loadData {
-    if (self.type == WGConfigContentTypeHome) {
-        [self loadHomeTabTitles];
-    }
-    else if (self.type == WGConfigContentTypeBenefit) {
-        [self loadBenefitTabTitles];
-    }
-    else if (self.type == WGConfigContentTypeAsia) {
-        [self loadAsiaTabTitles];
-    }
+    [self loadHomeTabTitles];
 }
 
 - (void)loadHomeTabTitles {
@@ -50,39 +42,6 @@
         [weakSelf showWarningMessage:kStr(@"Request Failed")];
         //[self testTitle];
     }];
-}
-
-- (void)loadTest {
-    
-    WGClassifyRequest *request = [[WGClassifyRequest alloc] init];
-    request.is_hot = 1;
-    __weak typeof(self) weakSelf = self;
-    [self get:request forResponseClass:[WGClassifyResponse class] success:^(JHResponse *response) {
-        [weakSelf handleTestClassify:(WGClassifyResponse *)response];
-    } failure:^(NSError *error) {
-        [weakSelf showWarningMessage:kStr(@"Request Failed")];
-        //[self testTitle];
-    }];
-}
-
-- (void)handleTestClassify:(WGClassifyResponse *)response {
-    NSLog(@"----RESPONSE  = %@", response);
-}
-
-- (void)testTitle {
-    WGHomeTabTitleResponse *response = [[WGHomeTabTitleResponse alloc] init];
-    response.code = @"1";
-    WGTitleItem *item = [[WGTitleItem alloc] init];
-    item.id = 232332;
-    item.name = @"asdfasd";
-    WGTitleItem *item2 = [[WGTitleItem alloc] init];
-    item2.id = 232332;
-    item2.name = @"郑渊";
-    WGTitleItem *item3 = [[WGTitleItem alloc] init];
-    item3.id = 232332;
-    item3.name = @"张文";
-    response.data = @[item, item2, item3];
-    [self handleHomeTabTitles:response];
 }
 
 - (void)handleHomeTabTitles:(WGHomeTabTitleResponse *)response {
@@ -100,15 +59,7 @@
 }
 
 - (void)loadContentWithIndex:(NSInteger)index isFirst:(BOOL)isFirst {
-    if (self.type == WGConfigContentTypeHome) {
-        [self loadHomeContentWithIndex:index isFirst:isFirst];
-    }
-    else if (self.type == WGConfigContentTypeBenefit) {
-    
-    }
-    else if (self.type == WGConfigContentTypeAsia) {
-        
-    }
+    [self loadHomeContentWithIndex:index isFirst:isFirst];
 }
 
 - (void)loadHomeContentWithIndex:(NSInteger)index isFirst:(BOOL)isFirst {
@@ -147,14 +98,6 @@
     else {
         [self showWarningMessage:response.message];
     }
-}
-
-- (void)loadBenefitTabTitles {
-    
-}
-
-- (void)loadAsiaTabTitles {
-
 }
 
 @end

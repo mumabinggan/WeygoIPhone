@@ -22,8 +22,6 @@
     WGHomeTabTitleResponse *_titleResponse;
 }
 
-@property (nonatomic, assign) WGConfigContentType type;
-
 @property (nonatomic, assign) long long currentId;
 
 @end
