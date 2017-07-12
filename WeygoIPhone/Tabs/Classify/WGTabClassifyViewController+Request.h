@@ -10,6 +10,6 @@
 
 @interface WGTabClassifyViewController (Request)
 
-- (void)loadClassify;
+- (void)loadClassify:(WGCacheType)cacheType;
 
 @end

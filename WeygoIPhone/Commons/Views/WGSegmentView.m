@@ -13,6 +13,7 @@
     JHScrollView *_contentScrollView;
     
     NSMutableArray *_titleBtnArray;
+    NSArray *_titleArray;
     JHView *_lineView;
     
     //NSInteger _selectedIndex;
@@ -89,7 +90,12 @@
     [item setTitle:title forState:UIControlStateNormal];
 }
 
+- (NSArray *)titleArray {
+    return _titleArray;
+}
+
 - (void)setTitleArray:(NSArray *)titleArray {
+    //_titleArray = titleArray;
     [_titleBtnArray removeAllObjects];
     float itemWidth = self.width / titleArray.count;
     UIFont *font = kAppAdaptFontBold(14);
@@ -111,6 +117,10 @@
     }
     _contentScrollView.contentSize = CGSizeMake(totalWidth, _contentScrollView.height);
     [self drawView];
+    if (_titleBtnArray.count < _selectedIndex) {
+        _selectedIndex = 0;
+    }
+    [self touchItemBtn:_titleBtnArray[_selectedIndex]];
 }
 
 - (void)touchItemBtn:(JHButton *)sender {

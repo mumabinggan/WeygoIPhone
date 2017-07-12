@@ -63,4 +63,10 @@ typedef NS_ENUM(NSInteger, WGThirdPartyLoginType) {
     WGThirdPartyLoginTypeWechat,
 };
 
+typedef NS_ENUM(NSInteger, WGCacheType) {
+    WGCacheTypeCacheBoth,
+    WGCacheTypeCachePrior,
+    WGCacheTypeNetwork,
+};
+
 #endif /* WGAppEnum_h */

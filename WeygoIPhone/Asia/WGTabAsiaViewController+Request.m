@@ -12,12 +12,36 @@
 
 @implementation WGTabAsiaViewController (Request)
 
-- (void)loadAsiaClassify {
+- (void)loadAsiaClassify:(WGCacheType)cacheType {
+    WeakSelf;
+    [self loadAsiaClassifyOnCompletion:^(WGHomeTabContentResponse *response) {
+        [weakSelf handleHomeContent:response];
+    } cacheType:cacheType];
+}
+
+- (void)loadAsiaClassifyOnCompletion:(void (^)(WGHomeTabContentResponse *))completion cacheType:(WGCacheType)cacheType {
+    if (cacheType != WGCacheTypeNetwork) {
+        WGHomeTabContentResponse *cacheResponse = [[WGHomeTabContentResponse alloc] initWithJSON:[[JHLocalSettings sharedSettings] getSettingsForKey:kLocalSettingsAsiaCache]];
+        if (cacheResponse) {
+            if (completion) {
+                completion(cacheResponse);
+                if (cacheType == WGCacheTypeCachePrior) {
+                    return;
+                }
+            }
+        }
+    }
     WGHomeTabContentRequest *request = [[WGHomeTabContentRequest alloc] init];
     request.menuId = 193;
+    if (_data) {
+        request.showsLoadingView = NO;
+    }
     __weak typeof(self) weakSelf = self;
     [self post:request forResponseClass:[WGHomeTabContentResponse class] success:^(JHResponse *response) {
-        [weakSelf handleHomeContent:(WGHomeTabContentResponse *)response];
+        if (completion) {
+            completion((WGHomeTabContentResponse *)response);
+        }
+        //[weakSelf handleHomeContent:(WGHomeTabContentResponse *)response];
     } failure:^(NSError *error) {
         [weakSelf showWarningMessage:kStr(@"Request Failed")];
     }];
@@ -29,6 +53,8 @@
     }
     if (response.success) {
         _data = response.data;
+        WGHomeTabContentResponse *cacheResponse = response;
+        [[JHLocalSettings sharedSettings] setSettings:cacheResponse.toJSONString forKey:kLocalSettingsAsiaCache];
         [self refreshUI];
     }
     else {

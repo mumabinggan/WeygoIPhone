@@ -85,8 +85,10 @@ static float kNavigationY = 64;
 #define kLocalSettingsHomeTitles   @"kLocalSettingsHomeTitles"
 
 #define kLocalSettingsHomeCache   @"kLocalSettingsHomeCache"
-#define kLocalSettingsBenefitCache   @"kLocalSettingsBenefitCache"
-#define kLocalSettingsCountryCache   @"kLocalSettingsCountryCache"
+#define kLocalSettingsBenefitTitlesCache   @"kLocalSettingsBenefitTitlesCache"
+#define kLocalSettingsClassifyContentCache(classifyId)            ([NSString stringWithFormat:@"kLocalSettingsClassifyContentCache_%lld", classifyId])
+#define kLocalSettingsAsiaCache   @"kLocalSettingsAsiaCache"
+#define kLocalSettingsClassifyCache   @"kLocalSettingsClassifyCache"
 
 //Placeholder UIImage
 

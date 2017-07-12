@@ -8,6 +8,7 @@
 
 #import "WGTabViewController.h"
 #import "WGSegmentView.h"
+#import "WGBenefitTabResponse.h"
 
 @interface WGTabBenefitViewController : WGTabViewController
 {
@@ -15,7 +16,9 @@
     JHScrollView *_contentsScrollView;
     
     NSMutableDictionary *_tabContentMDictionary;
-    NSArray *_titleArray;
+    //NSArray *_titleArray;
+    WGBenefitTabResponse *_dataResponse;
+    BOOL _hadReadTitlesCache;
 }
 
 @property (nonatomic, assign) long long currentId;

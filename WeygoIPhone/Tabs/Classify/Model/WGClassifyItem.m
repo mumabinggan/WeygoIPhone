@@ -21,6 +21,10 @@
     return [super classForArray:propertyName];
 }
 
++ (NSArray *)ignoredProperties {
+    return @[@"allArray"];
+}
+
 - (NSArray *)allArray {
     WGClassifyItem *totalItem = [[WGClassifyItem alloc] init];
     totalItem.id = _id;

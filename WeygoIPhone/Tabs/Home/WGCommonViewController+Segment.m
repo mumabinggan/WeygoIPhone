@@ -13,17 +13,8 @@
 @implementation WGCommonViewController (Segment)
 
 - (void)addTitleSegmentView {
-    if (_titleSegmentView) {
-        [_titleSegmentView removeFromSuperview];
-        _titleSegmentView = nil;
-    }
     if (!_titleSegmentView) {
         _titleSegmentView = [[WGSegmentView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kAppAdaptHeight(44))];
-        NSMutableArray *titleMArray = [[NSMutableArray alloc] init];
-        for (WGTitleItem *item in _titleArray) {
-            [titleMArray addObject:item.name];
-        }
-        [_titleSegmentView setTitleArray:titleMArray];
         _titleSegmentView.backgroundColor = kWhiteColor;
         __weak id weakSelf = self;
         _titleSegmentView.onSelect = ^(NSInteger oldIndex, NSInteger newIndex) {
@@ -31,6 +22,12 @@
         };
         [self.view addSubview:_titleSegmentView];
     }
+    NSMutableArray *titleMArray = [[NSMutableArray alloc] init];
+    NSArray *array = _dataResponse.data;
+    for (WGTitleItem *item in array) {
+        [titleMArray addObject:item.name];
+    }
+    [_titleSegmentView setTitleArray:titleMArray];
 }
 
 - (void)setSelectedIndex:(NSInteger)index {

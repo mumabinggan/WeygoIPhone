@@ -12,4 +12,8 @@
 
 @property (nonatomic, strong) NSArray *data;
 
+- (BOOL)titlesEqual:(WGHomeTabTitleResponse *)response;
+
+- (void)setTitles:(WGHomeTabTitleResponse *)response;
+
 @end

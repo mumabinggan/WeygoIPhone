@@ -11,6 +11,7 @@
 @interface WGTabClassifyViewController : WGTabViewController
 {
     NSArray *_data;
+    BOOL _hadReadCache;
 }
 
 - (void)refreshUI;

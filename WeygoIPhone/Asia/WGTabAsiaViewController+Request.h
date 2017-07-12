@@ -10,6 +10,6 @@
 
 @interface WGTabAsiaViewController (Request)
 
-- (void)loadAsiaClassify;
+- (void)loadAsiaClassify:(WGCacheType)cacheType;
 
 @end

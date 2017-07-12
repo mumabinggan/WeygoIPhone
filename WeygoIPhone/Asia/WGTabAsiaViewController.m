@@ -34,7 +34,7 @@
     [super viewDidLoad];
     self.title = kStr(@"TabAsia");
     
-    [self loadAsiaClassify];
+    [self loadAsiaClassify:WGCacheTypeCacheBoth];
 }
 
 - (void)initNavigationItems {
@@ -61,7 +61,7 @@
 }
 
 - (void)handleRefresh {
-    [self loadAsiaClassify];
+    [self loadAsiaClassify:WGCacheTypeNetwork];
 }
 
 - (BOOL)prefersNavigationBarHiddenAnimated {

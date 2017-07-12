@@ -10,7 +10,7 @@
 
 @interface WGCommonViewController (Scroll)
 
-- (void)addContentsScrollView;
+- (void)setContentsScrollView;
 
 - (void)setContentsScrollViewContentsSizeWithItemCount:(NSInteger)itemCount;
 

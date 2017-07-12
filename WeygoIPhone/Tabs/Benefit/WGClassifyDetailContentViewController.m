@@ -54,7 +54,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self loadData:YES pulling:NO];
+    [self loadData:YES pulling:NO cacheType:WGCacheTypeCachePrior];
 }
 
 - (void)initData {
@@ -75,6 +75,18 @@
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [contentView addSubview:_tableView];
     _tableView.layer.opacity = 0.0f;
+}
+
+- (void)setClassifyId:(long long)classifyId {
+    if (_classifyId == 0) {
+        _classifyId = classifyId;
+    }
+    else {
+        if (_classifyId != classifyId) {
+            _classifyId = classifyId;
+            [self loadNeedCheckData:WGCacheTypeCachePrior];
+        }
+    }
 }
 
 - (void)refreshUI {
@@ -204,14 +216,14 @@
     [_sortView setItemSelected:NO title:_sortArray[index] index:0];
     [self removePickerView];
     //request data
-    [self loadData:YES pulling:NO];
+    [self loadData:YES pulling:NO cacheType:WGCacheTypeNetwork];
 }
 
 - (void)handleFilterApply:(WGClassifyFilterCondition *)filter {
     _filter = filter;
     [_sortView setItemSelected:[_filter hasSelected] index:1];
     //[self ]
-    [self loadData:YES pulling:NO];
+    [self loadData:YES pulling:NO cacheType:WGCacheTypeNetwork];
 }
 
 - (void)openGoodDetailViewController:(WGHomeFloorContentGoodItem *)item {
@@ -341,7 +353,7 @@
                 WGHomeCarouselFiguresCell *tempCell = [[WGHomeCarouselFiguresCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
                 WeakSelf;
                 tempCell.onRefresh = ^ {
-                    [weakSelf loadData:YES pulling:NO];
+                    [weakSelf loadData:YES pulling:NO cacheType:WGCacheTypeNetwork];
                 };
                 cell = tempCell;
             }
@@ -443,14 +455,14 @@
 }
 
 - (void)beginRefreshHeader:(TWRefreshTableView *)tableView {
-    [self loadData:YES pulling:YES];
+    [self loadData:YES pulling:YES cacheType:WGCacheTypeNetwork];
     if (self.onTopRefresh) {
         self.onTopRefresh();
     }
 }
 
 - (void)beginRefreshFooter:(TWRefreshTableView *)tableView {
-    [self loadData:NO pulling:YES];
+    [self loadData:NO pulling:YES cacheType:WGCacheTypeNetwork];
 }
 
 @end

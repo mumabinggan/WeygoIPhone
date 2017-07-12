@@ -10,6 +10,13 @@
 #import "WGSegmentView.h"
 #import "WGHomeTabContentViewController.h"
 #import "WGHomeTabTitleResponse.h"
+#import "WGTitleItem.h"
+
+typedef NS_ENUM(NSInteger, WGHomeCacheType) {
+    WGHomeCacheTypeCacheBoth,
+    WGHomeCacheTypeCachePrior,
+    WGHomeCacheTypeCacheNetwork,
+};
 
 @interface WGCommonViewController : WGViewController
 {
@@ -17,11 +24,25 @@
     JHScrollView *_contentsScrollView;
     
     NSMutableDictionary *_tabContentMDictionary;
-    NSMutableDictionary *_tabDataMDictionary;
-    NSArray *_titleArray;
-    WGHomeTabTitleResponse *_titleResponse;
+    //NSMutableDictionary *_tabDataMDictionary;
+    //NSArray *_titleArray;
+    //WGHomeTabTitleResponse *_titleResponse;
+    
+    WGHomeTabTitleResponse *_dataResponse;
+    
+    //Cache
+    BOOL _hadReadTitlesCache;
+    NSMutableDictionary *_hadReadContentCacheDictionary;
 }
 
 @property (nonatomic, assign) long long currentId;
+
+- (long)menuIdWithIndex:(NSInteger)index;
+
+- (WGTitleItem *)dataWithMenuId:(long)menuId;
+
+- (NSInteger)indexWithMenuId:(long)menuId;
+
+- (WGTitleItem *)dataWithIndex:(NSInteger)index;
 
 @end

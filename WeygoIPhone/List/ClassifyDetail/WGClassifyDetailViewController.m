@@ -52,7 +52,7 @@
     _contentVC.onResponse = ^(WGClassifyDetail *classifyDetail) {
         [weakSelf handleOnResponse:classifyDetail];
     };
-    [_contentVC loadData:YES pulling:NO];
+    [_contentVC loadData:YES pulling:NO cacheType:WGCacheTypeNetwork];
     [self.view addSubview:_contentVC.view];
     [self addChildViewController:_contentVC];
 }

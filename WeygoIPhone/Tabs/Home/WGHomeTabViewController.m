@@ -59,14 +59,6 @@
     _contentVC.view.frame = CGRectMake(0, 0, kDeviceWidth, kDeviceHeight - kAppTabBarHeight);
     [self.view addSubview:_contentVC.view];
     [self addChildViewController:_contentVC];
-    //JHView *contentView = [[JHView alloc] initWithFrame:self.view.bounds];
-    //[self.view addSubview:contentView];
-//    [self addTitleSegmentView];
-////    
-//    [self addContentsScrollView];
-//    
-//    [self addContentsWithIndex:0];
-    //[_contentsScrollView addSubview:[self collectionView]];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -18,4 +18,17 @@
     return [super classForArray:propertyName];
 }
 
+- (void)setTitles:(WGBenefitTabResponse *)response {
+    NSMutableDictionary *dataDic = [NSMutableDictionary dictionary];
+    for (WGTitleItem *item in _data) {
+        if (item.data != nil) {
+            [dataDic setObject:item.data forKey:@(item.id)];
+        }
+    }
+    _data = response.data;
+    for (WGTitleItem *item in _data) {
+        item.data = [dataDic objectForKey:@(item.id)];
+    }
+}
+
 @end

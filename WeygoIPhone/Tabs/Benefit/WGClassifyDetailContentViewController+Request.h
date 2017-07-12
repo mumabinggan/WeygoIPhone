@@ -10,8 +10,8 @@
 
 @interface WGClassifyDetailContentViewController (Request)
 
-- (void)loadNeedCheckData;
+- (void)loadNeedCheckData:(WGCacheType)cacheType;
 
-- (void)loadData:(BOOL)refresh pulling:(BOOL)pulling;
+- (void)loadData:(BOOL)refresh pulling:(BOOL)pulling cacheType:(WGCacheType)cacheType;
 
 @end

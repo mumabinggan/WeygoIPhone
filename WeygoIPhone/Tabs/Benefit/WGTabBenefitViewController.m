@@ -44,15 +44,16 @@
 }
 
 - (void)setCurrentId:(long long)currentId {
-    for (int num = 0; num < _titleArray.count; ++num) {
-        WGTitleItem *item = _titleArray[num];
+    NSArray *array = _dataResponse.data;
+    for (int num = 0; num < array.count; ++num) {
+        WGTitleItem *item = array[num];
         if (item.id == currentId) {
             [self setSelectedIndex:num];
             //[self setContentsScrollViewOffsetWithIndex:num];
             return;
         }
     }
-    if (_titleArray.count > 0) {
+    if (array.count > 0) {
         _currentId = 0;
     }
 }

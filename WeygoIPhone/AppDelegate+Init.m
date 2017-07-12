@@ -36,7 +36,7 @@
     }
     else {
         WeakSelf;
-        [[JHAlert sharedAlert] showConfirmMessage:response.message withTitle:nil cancelButtonTitle:kStr(@"Exit") okButtonTitle:kStr(@"Retry") onCompletion:^(NSInteger buttonIndex, UIAlertView *alertView) {
+        [[JHAlert sharedAlert] showConfirmMessage:kStr(@"Request Failed") withTitle:nil cancelButtonTitle:kStr(@"Exit") okButtonTitle:kStr(@"Retry") onCompletion:^(NSInteger buttonIndex, UIAlertView *alertView) {
             if (buttonIndex == 0) {
                 exit(0);
             }

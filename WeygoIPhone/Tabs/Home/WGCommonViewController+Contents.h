@@ -10,7 +10,7 @@
 
 @interface WGCommonViewController (Contents)
 
-- (void)initTabContentDictionary;
+//- (void)initTabContentDictionary;
 
 - (void)addContentsWithIndex:(NSInteger)index;
 

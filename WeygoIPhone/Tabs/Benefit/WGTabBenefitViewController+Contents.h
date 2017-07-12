@@ -10,10 +10,10 @@
 
 @interface WGTabBenefitViewController (Contents)
 
-- (void)initTabContentDictionary;
+//- (void)initTabContentDictionary;
 
 - (void)addContentsWithIndex:(NSInteger)index;
 
-- (void)refreshContent:(NSInteger)index;
+- (void)refreshContent:(NSInteger)index cacheType:(WGCacheType)cacheType;
 
 @end

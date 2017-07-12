@@ -50,7 +50,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self loadClassify];
+    [self loadClassify:WGCacheTypeCacheBoth];
 }
 
 - (void)viewDidLoad {

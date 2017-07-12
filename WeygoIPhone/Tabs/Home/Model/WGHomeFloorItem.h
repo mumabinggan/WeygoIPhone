@@ -37,7 +37,6 @@
 @property (nonatomic, assign) int requestParameter;
 
 
-
 //home page name height
 @property (nonatomic, assign) float homeNameHeight;
 

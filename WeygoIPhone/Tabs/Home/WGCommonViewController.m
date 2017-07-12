@@ -27,21 +27,60 @@
 
 - (void)initData {
     _tabContentMDictionary = [[NSMutableDictionary alloc] init];
-    _tabDataMDictionary = [[NSMutableDictionary alloc] init];
+    //_tabDataMDictionary = [[NSMutableDictionary alloc] init];
 }
 
 - (void)setCurrentId:(long long)currentId {
-    for (int num = 0; num < _titleArray.count; ++num) {
-        WGTitleItem *item = _titleArray[num];
+    NSArray *array = _dataResponse.data;
+    for (int num = 0; num < array.count; ++num) {
+        WGTitleItem *item = array[num];
         if (item.id == currentId) {
             [self setSelectedIndex:num];
             //[self setContentsScrollViewOffsetWithIndex:num];
             return;
         }
     }
-    if (_titleArray.count > 0) {
+    if (array.count > 0) {
         _currentId = 0;
     }
+}
+
+- (long)menuIdWithIndex:(NSInteger)index {
+    WGTitleItem *item = [self dataWithIndex:index];
+    if (item) {
+        return item.id;
+    }
+    return -1;
+}
+
+- (WGTitleItem *)dataWithMenuId:(long)menuId {
+    NSArray *array = _dataResponse.data;
+    for (int num = 0; num < array.count; ++num) {
+        WGTitleItem *item = array[num];
+        if (item.id == menuId) {
+            return item;
+        }
+    }
+    return nil;
+}
+
+- (NSInteger)indexWithMenuId:(long)menuId {
+    NSArray *array = _dataResponse.data;
+    for (int num = 0; num < array.count; ++num) {
+        WGTitleItem *item = array[num];
+        if (item.id == menuId) {
+            return num;
+        }
+    }
+    return 0;
+}
+
+- (WGTitleItem *)dataWithIndex:(NSInteger)index {
+    if (_dataResponse.data.count <= index) {
+        index = 0;
+    }
+    WGTitleItem *item = _dataResponse.data[index];
+    return item;
 }
 
 - (void)didReceiveMemoryWarning {

@@ -140,7 +140,7 @@
             _commitOrderDetail.minPriceTips = response.data.minPriceTips;
             _commitOrderDetail.consumePrice = response.data.price;
             [_tableView reloadData];
-            if (_overWeightArray) {
+            if (_overWeightArray && _overWeightArray.count > 0) {
                 [self showOverWeightView];
             }
         }

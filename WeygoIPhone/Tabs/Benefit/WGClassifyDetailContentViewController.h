@@ -9,6 +9,7 @@
 #import "WGViewController.h"
 #import "WGClassifyDetail.h"
 #import "WGClassifyFilterCondition.h"
+#import "WGClassifyDetailResponse.h"
 
 typedef NS_ENUM(NSInteger, WGClassifyDetailType) {
     WGClassifyDetailTypeNormal,
@@ -33,6 +34,8 @@ typedef NS_ENUM(NSInteger, WGClassifySortType) {
     JHButton *_closeBtn;
     
     BOOL _isGrid;
+    
+    NSMutableDictionary *_hadReadContentCacheDictionary;
 }
 
 @property (nonatomic, assign) long long classifyId;

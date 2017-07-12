@@ -29,6 +29,13 @@
     return @{@"subClassifyArray" : @"subArray"};
 }
 
+- (long long)snappedUpExpiredTime {
+    if (_snappedUpExpiredTime < [[NSDate new] timeIntervalSince1970]) {
+        _snappedUpExpiredTime = 0;
+    }
+    return _snappedUpExpiredTime;
+}
+
 - (BOOL)hasNews {
     return _news != nil;
 }

@@ -12,4 +12,6 @@
 
 @property (nonatomic, strong) NSArray *data;
 
+- (void)setTitles:(WGBenefitTabResponse *)response;
+
 @end

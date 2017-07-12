@@ -12,6 +12,6 @@
 
 - (void)loadData;
 
-- (void)loadContentWithIndex:(NSInteger)index isFirst:(BOOL)isFirst;
+- (void)loadContentWithMenuId:(NSInteger)menuId cacheType:(WGCacheType)cacheType;
 
 @end

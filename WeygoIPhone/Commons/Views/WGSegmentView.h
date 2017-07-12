@@ -28,6 +28,8 @@ typedef NS_ENUM(NSInteger, WGSegmentViewType) {
 
 @property (nonatomic, copy) void (^onSelect)(NSInteger oldIndex, NSInteger newIndex);
 
+@property (nonatomic, strong) NSArray *titleArray;
+
 - (void)setTitleArray:(NSArray *)titleArray;
 
 - (void)setSelectedIndex:(NSInteger)selectedIndex;

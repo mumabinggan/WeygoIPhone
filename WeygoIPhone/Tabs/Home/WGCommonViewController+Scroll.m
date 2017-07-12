@@ -16,19 +16,17 @@
 
 @implementation WGCommonViewController (Scroll)
 
-- (void)addContentsScrollView {
-    if (_contentsScrollView) {
-        [_contentsScrollView removeFromSuperview];
-        _contentsScrollView = nil;
+- (void)setContentsScrollView {
+    if (!_contentsScrollView) {
+        _contentsScrollView = [[JHScrollView alloc] initWithFrame:CGRectMake(0, _titleSegmentView.maxY, kDeviceWidth, kDeviceHeight - _titleSegmentView.maxY - kAppTabBarHeight - kAppNavigationVCY)];
+        _contentsScrollView.showsHorizontalScrollIndicator = NO;
+        _contentsScrollView.delegate = self;
+        _contentsScrollView.pagingEnabled = YES;
+        _contentsScrollView.bounces = NO;
+        [self.view addSubview:_contentsScrollView];
     }
-    _contentsScrollView = [[JHScrollView alloc] initWithFrame:CGRectMake(0, _titleSegmentView.maxY, kDeviceWidth, kDeviceHeight - _titleSegmentView.maxY - kAppTabBarHeight - kAppNavigationVCY)];
-    //_contentsScrollView.backgroundColor = kRedColor;
-    _contentsScrollView.contentSize = CGSizeMake(_titleArray.count * kDeviceWidth, _contentsScrollView.height);
-    _contentsScrollView.showsHorizontalScrollIndicator = NO;
-    _contentsScrollView.delegate = self;
-    _contentsScrollView.pagingEnabled = YES;
-    _contentsScrollView.bounces = NO;
-    [self.view addSubview:_contentsScrollView];
+    NSArray *array = _dataResponse.data;
+    _contentsScrollView.contentSize = CGSizeMake(array.count * kDeviceWidth, _contentsScrollView.height);
 }
 
 - (void)setContentsScrollViewContentsSizeWithItemCount:(NSInteger)itemCount {

@@ -76,6 +76,13 @@
     return [NSString isNullOrEmpty:_breifDescription];
 }
 
+- (long long)snappedUpExpiredTime {
+    if (_snappedUpExpiredTime < [[NSDate new] timeIntervalSince1970]) {
+        _snappedUpExpiredTime = 0;
+    }
+    return _snappedUpExpiredTime;
+}
+
 - (CGFloat)heightOfContentItemOfRow:(NSInteger)row {
     CGFloat height = 0.0f;
     if (row == 0) {
