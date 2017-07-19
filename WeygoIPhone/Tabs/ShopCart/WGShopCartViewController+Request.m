@@ -48,9 +48,24 @@
 
 - (void)handleDeleteGoodResponse:(WGDeleteGoodFromShopCartResponse *)response goodId:(long long)goodId {
     if (response.success) {
-        _data.shopCartPrice = response.data;
+        _data.shopCartPrice = response.data.shopCartPrice;
+        _data.minPriceTips = response.data.minPriceTips;
+        _data.deliverPriceDescription = response.data.deliverPriceDescription;
+        NSMutableArray *goodArray = [[NSMutableArray alloc] initWithArray:_data.goods];
+        for (WGShopCartGoodItem *item in goodArray) {
+            if (item.id == goodId) {
+                [goodArray removeObject:item];
+                break;
+            }
+        }
+        _data.goods = goodArray;
+        int count = 0;
+        for (WGShopCartGoodItem *item in goodArray) {
+            count += item.goodCount;
+        }
+        [[WGApplication sharedApplication] handleShopCartGoodCount:count];
         [self refreshUI];
-        [self loadShopCartList:YES pulling:NO];
+        //[self loadShopCartList:YES pulling:NO];
     }
     else {
         [self showWarningMessage:response.message];
@@ -66,7 +81,7 @@
     request.count = count;
     __weak typeof(self) weakSelf = self;
     [self post:request forResponseClass:[WGUpdateProductsResponse class] success:^(JHResponse *response) {
-        [weakSelf handleUpdateGoodResponse:(WGUpdateProductsResponse *)response goodId:item.id];
+        [weakSelf handleUpdateGoodResponse:(WGUpdateProductsResponse *)response goodId:item.id add:item.goodCount < count];
     } failure:^(NSError *error) {
         [weakSelf handleFailUpdateGoodResponse];
     }];
@@ -77,10 +92,34 @@
     [self showWarningMessage:kStr(@"Request Failed")];
 }
 
-- (void)handleUpdateGoodResponse:(WGUpdateProductsResponse *)response goodId:(long long)goodId {
+- (void)handleUpdateGoodResponse:(WGUpdateProductsResponse *)response goodId:(long long)goodId add:(BOOL)add {
     _loadingUpdateGood = NO;
     if (response.success) {
-        [self loadShopCartList:YES pulling:NO];
+        _data.shopCartPrice = response.data.shopCartPrice;
+        _data.minPriceTips = response.data.minPriceTips;
+        _data.deliverPriceDescription = response.data.deliverPriceDescription;
+        NSMutableArray *goodArray = [[NSMutableArray alloc] initWithArray:_data.goods];
+        for (WGShopCartGoodItem *item in goodArray) {
+            if (item.id == goodId) {
+                if (add) {
+                    item.goodCount++;
+                }
+                else {
+                    item.goodCount--;
+                }
+                if (item.goodCount == 0) {
+                    [goodArray removeObject:item];
+                }
+                break;
+            }
+        }
+        _data.goods = goodArray;
+        int count = 0;
+        for (WGShopCartGoodItem *item in goodArray) {
+            count += item.goodCount;
+        }
+        [[WGApplication sharedApplication] handleShopCartGoodCount:count];
+        [self refreshUI];
     }
     else {
         [self showWarningMessage:response.message];

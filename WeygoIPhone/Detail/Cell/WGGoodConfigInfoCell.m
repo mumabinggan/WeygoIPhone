@@ -16,6 +16,7 @@
     JHLabel *_currentLabel;
     JHLabel *_specificationLabel;
     JHLabel *_expiredTimeLabel;
+    JHLabel *_skuLabel;
 }
 @end
 
@@ -49,6 +50,11 @@
     _expiredTimeLabel.textColor = WGAppBaseColor;
     _expiredTimeLabel.textAlignment = NSTextAlignmentRight;
     [self.contentView addSubview:_expiredTimeLabel];
+    
+    _skuLabel = [[JHLabel alloc] initWithFrame:CGRectMake(kAppAdaptWidth(15), 0, kAppAdaptWidth(100), kAppAdaptHeight(20))];
+    _skuLabel.font = kAppAdaptFont(14);
+    _skuLabel.textColor = WGAppTitleColor;
+    [self.contentView addSubview:_skuLabel];
 }
 
 - (void)showWithData:(JHObject *)data {
@@ -82,6 +88,10 @@
     _expiredTimeLabel.hidden = [NSString isNullOrEmpty:good.expiredTime];
     _expiredTimeLabel.text = good.expiredTime;
     _expiredTimeLabel.y = _currentLabel.y;
+    
+    _skuLabel.text = good.sku;
+    _skuLabel.hidden = [NSString isNullOrEmpty:good.sku];
+    _skuLabel.y = _currentLabel.maxY + kAppAdaptHeight(7);
 }
 
 + (CGFloat)heightWithData:(JHObject *)data {
@@ -96,6 +106,9 @@
     height += kAppAdaptHeight(16);
     if (![NSString isNullOrEmpty:good.specification]) {
         height += kAppAdaptHeight(20);
+    }
+    if (![NSString isNullOrEmpty:good.sku]) {
+        height += kAppAdaptHeight(28);
     }
     return height;
 }

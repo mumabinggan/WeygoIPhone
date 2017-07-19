@@ -35,6 +35,7 @@
 }
 
 - (void)initSubView {
+    [super initSubView];
     _scrollView = [[JHScrollView alloc] initWithFrame:self.view.bounds];
     _scrollView.alwaysBounceVertical = YES;
     [self.view addSubview:_scrollView];
@@ -108,6 +109,7 @@
     _passwordTextField.font = kAppAdaptFont(14);
     _passwordTextField.placeholder = kStr(@"ForgetPW_Password");
     _passwordTextField.textColor = WGAppNameLabelColor;
+    _passwordTextField.secureTextEntry = YES;
     [_scrollView addSubview:_passwordTextField];
     
     JHView *passwordLineView = [[JHView alloc] initWithFrame:CGRectMake(0, lineY, textFieldWidth, kAppSepratorLineHeight)];
@@ -117,6 +119,7 @@
     _confirmPasswordTextField = [[JHTextField alloc] initWithFrame:CGRectMake(textFieldX, _passwordTextField.maxY, textFieldWidth, textFieldHeight)];
     _confirmPasswordTextField.font = kAppAdaptFont(14);
     _confirmPasswordTextField.placeholder = kStr(@"ForgetPW_Confirm_Password");
+    _confirmPasswordTextField.secureTextEntry = YES;
     _confirmPasswordTextField.textColor = WGAppNameLabelColor;
     [_scrollView addSubview:_confirmPasswordTextField];
     

@@ -22,7 +22,9 @@
 
 @property (nonatomic, assign) long long addressId;
 
-@property (nonatomic, strong) void (^onApply)();
+@property (nonatomic, assign) BOOL needRefresh;
+
+@property (nonatomic, strong) void (^onApply)(WGAddress *address);
 
 - (void)refreshUI;
 

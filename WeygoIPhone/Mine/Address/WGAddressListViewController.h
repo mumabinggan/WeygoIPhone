@@ -10,4 +10,8 @@
 
 @interface WGAddressListViewController : WGBaseAddressAndReceiptListViewController
 
+@property (nonatomic, assign) long long addressId;
+
+- (void)handleUse:(WGObject *)object;
+
 @end

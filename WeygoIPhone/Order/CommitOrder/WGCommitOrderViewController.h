@@ -9,6 +9,7 @@
 #import "WGViewController.h"
 #import "WGCommitOrderDetail.h"
 #import "WGOverweightView.h"
+#import "WGOrderExpireGoodView.h"
 
 @interface WGCommitOrderViewController : WGViewController
 {
@@ -22,6 +23,8 @@
     
     WGOverweightView *_overWeightView;
     NSArray *_overWeightArray;
+    
+    WGOrderExpireGoodView *_expireGoodView;
 }
 
 @property (nonatomic, assign) NSInteger settlementId;
@@ -29,5 +32,7 @@
 - (void)refreshUI;
 
 - (void)showOverWeightView;
+
+- (void)showExpireGood:(WGOrderExpireGood *)expireGood;
 
 @end

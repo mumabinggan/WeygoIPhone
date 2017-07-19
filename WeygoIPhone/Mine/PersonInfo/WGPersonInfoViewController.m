@@ -333,12 +333,12 @@
         [self initDatePickerView];
     }
     if (indexPath.row == 9) {
-        WGBindThirdPartyViewController *vc = [[WGBindThirdPartyViewController alloc] init];
-        [self.navigationController pushViewController:vc animated:YES];
-        return;
-        //忘记密码
-//        WGForgetPasswordViewController *vc = [[WGForgetPasswordViewController alloc] init];
+//        WGBindThirdPartyViewController *vc = [[WGBindThirdPartyViewController alloc] init];
 //        [self.navigationController pushViewController:vc animated:YES];
+//        return;
+        //忘记密码
+        WGForgetPasswordViewController *vc = [[WGForgetPasswordViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
     }
 }
 

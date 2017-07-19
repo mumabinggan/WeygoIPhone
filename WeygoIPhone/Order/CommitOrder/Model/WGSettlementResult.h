@@ -10,6 +10,7 @@
 #import "WGAddress.h"
 #import "WGCoupon.h"
 #import "WGOverHeightDetail.h"
+#import "WGOrderExpireGood.h"
 
 @class WGSettlementTips;
 @class WGSettlementConsumePrice;
@@ -40,6 +41,8 @@
 @property (nonatomic, assign) NSInteger goodsCount;
 
 @property (nonatomic, strong) NSArray *overHeightDetail;
+
+@property (nonatomic, strong) WGOrderExpireGood *expireGood;
 
 @property (nonatomic, strong) NSString *minPriceTips;
 

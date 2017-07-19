@@ -51,6 +51,7 @@ typedef NS_ENUM(NSInteger, WGRefreshNotificationType) {
     WGRefreshNotificationTypeLogin,
     WGRefreshNotificationTypeLogout,
     WGRefreshNotificationTypeChangeAddress,
+    WGRefreshNotificationTypeChangeAddressCap,
 };
 
 typedef NS_ENUM(NSInteger, WGIntegrationState) {

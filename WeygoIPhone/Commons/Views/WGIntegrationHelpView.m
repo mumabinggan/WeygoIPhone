@@ -42,9 +42,9 @@
     
     _textView = [[JHTextView alloc] initWithFrame:CGRectMake(kAppAdaptWidth(24), kAppAdaptHeight(16) + titleBgView.maxY, _contentView.width - kAppAdaptWidth(48), kAppAdaptHeight(160))];
     _textView.font = kAppAdaptFont(14);
-    _textView.editable = NO;
     _textView.textColor = WGAppTitleColor;
     _textView.textAlignment = NSTextAlignmentCenter;
+//    _textView.text = @"积分换算规则:\n1欧元=1点积分（0.1至1欧元都视为1点积分。例如：1.2欧=2点积分）\n\n1点积分=0.01欧元，并且您可以随时使用，为提交的订单兑换（但是只有积分达到100分时，结算页面才会显示抵用信息。积分可以在个人中心中查询）\n使用积分规则:\n如果积分超出订单所需额度: \n1. €0.1至€1=100积分\n\n2. 积分使用以整百为单位\n3. 单次使用时必须使用最大整百积分\n4. 积分不能分次使用\n例如：订单额度为€45时可用积分为756分，那需使用700积分抵用，而剩下的56积分可供下次消费抵用";
     [_contentView addSubview:_textView];
     _textView.backgroundColor = kClearColor;
     _textView.editable = NO;
@@ -58,6 +58,7 @@
 }
 
 - (void)setTip:(NSString *)tip {
+    _tip = tip;
     _textView.text = tip;
 }
 

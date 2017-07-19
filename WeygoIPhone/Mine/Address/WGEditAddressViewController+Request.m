@@ -63,6 +63,12 @@
 - (void)handleAddAddressResponse:(WGAddAddressResponse *)response {
     if (response.success) {
         [self sendNotification:WGRefreshNotificationTypeChangeAddress];
+        if (self.needRefresh) {
+            if (self.onApply) {
+                self.onApply(response.data);
+            }
+            //[self sendNotification:WGRefreshNotificationTypeChangeAddressCap];
+        }
         [self showWarningMessage:response.message onCompletion:^() {
             [self.navigationController popViewControllerAnimated:YES];
         }];

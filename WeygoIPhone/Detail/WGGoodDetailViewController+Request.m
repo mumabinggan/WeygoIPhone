@@ -15,6 +15,8 @@
 #import "WGCancelCollectGoodResponse.h"
 #import "WGAddGoodToCartRequest.h"
 #import "WGAddGoodToCartResponse.h"
+#import "WGGoodDetailRecommendRequest.h"
+#import "WGGoodDetailRecommendResponse.h"
 
 @implementation WGGoodDetailViewController (Request)
 
@@ -32,8 +34,34 @@
 - (void)handleGoodDetailResponse:(WGGoodDetailResponse *)response {
     if (response.success) {
         _goodDetail = response.data;
-        _goodDetail.productDes = nil;
+        _goodDetail.recommendProduce = _recommendGoods;
+        //_goodDetail.productDes = nil;
         [self refreshUI];
+    }
+    else {
+        [self showWarningMessage:response.message];
+    }
+}
+
+- (void)loadGoodDetailRecommend {
+    WGGoodDetailRecommendRequest *request = [[WGGoodDetailRecommendRequest alloc] init];
+    request.goodId = self.goodId;
+    request.showsLoadingView = NO;
+    __weak typeof(self) weakSelf = self;
+    [self post:request forResponseClass:[WGGoodDetailRecommendResponse class] success:^(JHResponse *response) {
+        [weakSelf handleGoodDetailRecommendResponse:(WGGoodDetailRecommendResponse *)response];
+    } failure:^(NSError *error) {
+        [weakSelf showWarningMessage:kStr(@"Request Failed")];
+    }];
+}
+
+- (void)handleGoodDetailRecommendResponse:(WGGoodDetailRecommendResponse *)response {
+    if (response.success) {
+        _recommendGoods = response.data;
+        if (_goodDetail) {
+            _goodDetail.recommendProduce = _recommendGoods;
+            [self refreshUI];
+        }
     }
     else {
         [self showWarningMessage:response.message];

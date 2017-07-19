@@ -18,6 +18,10 @@
     return self.code == 4;
 }
 
+- (BOOL)hasExpireGood {
+    return self.code == 5;
+}
+
 @end
 
 @implementation WGCommitOrderData

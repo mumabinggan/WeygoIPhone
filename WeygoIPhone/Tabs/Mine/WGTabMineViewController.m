@@ -85,9 +85,10 @@
     _tableView.showsVerticalScrollIndicator = NO;
     [contentView addSubview:_tableView];
     
-    JHButton *sliderBtn = [[JHButton alloc] initWithFrame:CGRectMake(kAppAdaptWidth(16), kAppAdaptHeight(30), kAppAdaptWidth(24), kAppAdaptHeight(24))];
-    [sliderBtn setBackgroundImage:[UIImage imageNamed:@"mine_slider"] forState:UIControlStateNormal];
+    JHButton *sliderBtn = [[JHButton alloc] initWithFrame:CGRectMake(kAppAdaptWidth(0), kAppAdaptHeight(0), kAppAdaptWidth(56), kAppAdaptHeight(84))];
+    [sliderBtn setImage:[UIImage imageNamed:@"mine_slider_white"] forState:UIControlStateNormal];
     [sliderBtn addTarget:self action:@selector(touchSliderButton:) forControlEvents:UIControlEventTouchUpInside];
+    [sliderBtn setContentEdgeInsets:UIEdgeInsetsMake(10, 10, 10, 10)];
     [contentView addSubview:sliderBtn];
     
     JHLabel *titleLabel = [[JHLabel alloc] initWithFrame:CGRectMake(0, kAppAdaptHeight(30), kDeviceWidth, kAppAdaptHeight(24))];

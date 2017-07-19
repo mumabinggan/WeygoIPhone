@@ -202,18 +202,18 @@
         emailLineView.backgroundColor = WGAppSeparateLineColor;
         [_emailTextField addSubview:emailLineView];
         
-        _unRegisterCodeTextField = [[JHTextField alloc] initWithFrame:CGRectMake(textFieldX, _emailTextField.maxY, textFieldWidth, textFieldHeight)];
-        _unRegisterCodeTextField.font = kAppAdaptFont(14);
-        _unRegisterCodeTextField.placeholder = kStr(@"Register_Password");
-        _unRegisterCodeTextField.textColor = WGAppNameLabelColor;
-        _unRegisterCodeTextField.secureTextEntry = YES;
-        [_unRegisterView addSubview:_unRegisterCodeTextField];
+        _unRegisterPasswordTextField = [[JHTextField alloc] initWithFrame:CGRectMake(textFieldX, _emailTextField.maxY, textFieldWidth, textFieldHeight)];
+        _unRegisterPasswordTextField.font = kAppAdaptFont(14);
+        _unRegisterPasswordTextField.placeholder = kStr(@"Register_Password");
+        _unRegisterPasswordTextField.textColor = WGAppNameLabelColor;
+        _unRegisterPasswordTextField.secureTextEntry = YES;
+        [_unRegisterView addSubview:_unRegisterPasswordTextField];
         
         JHView *passwordLineView = [[JHView alloc] initWithFrame:CGRectMake(0, lineY, textFieldWidth, kAppSepratorLineHeight)];
         passwordLineView.backgroundColor = WGAppSeparateLineColor;
-        [_unRegisterCodeTextField addSubview:passwordLineView];
+        [_unRegisterPasswordTextField addSubview:passwordLineView];
         
-        _confirmPasswordTextField = [[JHTextField alloc] initWithFrame:CGRectMake(textFieldX, _unRegisterCodeTextField.maxY, textFieldWidth, textFieldHeight)];
+        _confirmPasswordTextField = [[JHTextField alloc] initWithFrame:CGRectMake(textFieldX, _unRegisterPasswordTextField.maxY, textFieldWidth, textFieldHeight)];
         _confirmPasswordTextField.font = kAppAdaptFont(14);
         _confirmPasswordTextField.placeholder = kStr(@"Register_Confirm_Password");
         _confirmPasswordTextField.textColor = WGAppNameLabelColor;

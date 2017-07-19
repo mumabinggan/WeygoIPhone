@@ -68,7 +68,7 @@
 "Versione" = "版本";
 "Svuota cache" = "消除缓存";
 "Seleziona lingua" = "设置语言";
-"Italiano" = "意大利";
+"Italiano" = "Italiano";
 "China" = "中国";
 "Log out" = "退出登录";
 "Clean_Cache_Success" = "您的缓存已经清除完毕";
@@ -91,7 +91,7 @@
 
 //Tab Mine（完成）
 "Mine_Order" = "您的订单";
-"Mine_Delivery" = "送货中";
+"Mine_Delivery" = "派送中";
 "Mine_Points" = "积分点数";
 "Mine_Coupon" = "优惠卷";
 "Mine_FootPrint" = "我的足迹";
@@ -206,6 +206,9 @@
 "Order Pay Totale" = "总价: %@";
 "Order Good Number" = "x%d";
 "Order Rebuy" = "重新下单";
+"Order Delete Good" = "删除商品";
+"Order Change Deliver Time" = "更改运送时间";
+"Order Detail Load More" = "加载更多";
 
 //商品详情(完成)
 "Good Detail Price With .2 Unit" = "€%.2f";
@@ -256,7 +259,7 @@
 "CommitOrder_OverHeight_Rise" = "L";
 "CommitOrder_OverHeight_MaxRise" = "限制最大公升数 %@%@";
 "CommitOrder_OverHeight_CurrentRise" = "当前配送公升数 %.2f%@";
-"CommitOrder_OverHeight_DeleteBtnTitle" = "删除超额产品";
+"CommitOrder_OverHeight_DeleteBtnTitle" = "删除全部";
 "CommitOrder_OverHeight_Confirm" = "确认";
 
 //地址列表（完成）
@@ -294,6 +297,7 @@
 "ShopCart_GiftGoodThree" = "邀您品尝：\n 我们将随单附赠以下产品";
 "ShopCart_DeliverPrice_Title" = "运费说明";
 "ShopCart_DeliverPrice_Ok" = "关闭";
+"ShopCart_Confirm" = "进入支付页面";
 
 //个人信息
 "PersonInfo_Sex_Select" = "选择";
@@ -337,7 +341,7 @@
 "GoodDetail_Grid_Instock" = "缺货";
 
 //搜索
-"Search_Hot_Title" = "热门搜索";
+"Search_Hot_Title" = "热搜榜";
 "Search_History_Title" = "搜索历史记录";
 "Search_Keyword" = "\"%@\"的搜索结果";
 

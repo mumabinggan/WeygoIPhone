@@ -9,6 +9,7 @@
 #import "WGResponse.h"
 #import "WGOverHeightDetail.h"
 #import "WGSettlementResultResponse.h"
+#import "WGOrderExpireGood.h"
 
 @class WGAddressBussiness;
 
@@ -27,5 +28,7 @@
 @property (nonatomic, strong) NSString *minPriceTips;
 
 @property (nonatomic, strong) WGSettlementConsumePrice *price;
+
+@property (nonatomic, strong) WGOrderExpireGood *expireGood;
 
 @end

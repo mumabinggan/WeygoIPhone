@@ -238,6 +238,12 @@
 		BE6CC1E01E2BBB4C003755FF /* WGClassifyGoodList.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6CC1DF1E2BBB4C003755FF /* WGClassifyGoodList.m */; };
 		BE6CC1E31E2BBCDF003755FF /* WGClassifyGoodListContentItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6CC1E21E2BBCDF003755FF /* WGClassifyGoodListContentItem.m */; };
 		BE7099BC1ED4A9FE00816D1F /* WGViewController+TopButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BE7099BB1ED4A9FE00816D1F /* WGViewController+TopButton.m */; };
+		BE72345B1F1AFCA0003C7E69 /* WGOrderExpireGoodView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE72345A1F1AFCA0003C7E69 /* WGOrderExpireGoodView.m */; };
+		BE72345F1F1AFD10003C7E69 /* WGCommitOrderUpdateTimeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE72345E1F1AFD10003C7E69 /* WGCommitOrderUpdateTimeRequest.m */; };
+		BE7234621F1AFD21003C7E69 /* WGCommitOrderUpdateTimeResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BE7234611F1AFD21003C7E69 /* WGCommitOrderUpdateTimeResponse.m */; };
+		BE7234651F1AFD49003C7E69 /* WGOrderExpireGood.m in Sources */ = {isa = PBXBuildFile; fileRef = BE7234641F1AFD49003C7E69 /* WGOrderExpireGood.m */; };
+		BE7234681F1B151B003C7E69 /* WGCommitOrderDeleteExpireGoodRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE7234671F1B151B003C7E69 /* WGCommitOrderDeleteExpireGoodRequest.m */; };
+		BE72346B1F1B153A003C7E69 /* WGCommitOrderDeleteExpireGoodResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BE72346A1F1B153A003C7E69 /* WGCommitOrderDeleteExpireGoodResponse.m */; };
 		BE74CDAC1E626B3700600A28 /* WGHomeSliderViewController+Request.m in Sources */ = {isa = PBXBuildFile; fileRef = BE74CDAB1E626B3700600A28 /* WGHomeSliderViewController+Request.m */; };
 		BE74CDB01E626B7400600A28 /* WGHomeSliderRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE74CDAF1E626B7400600A28 /* WGHomeSliderRequest.m */; };
 		BE74CDB31E626B8E00600A28 /* WGHomeSliderResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BE74CDB21E626B8E00600A28 /* WGHomeSliderResponse.m */; };
@@ -370,6 +376,8 @@
 		BEB8D1581E49A12800BB9BA3 /* WGForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB8D1571E49A12800BB9BA3 /* WGForgetPasswordViewController.m */; };
 		BEB9A6021E9FCC8A0089B1BE /* WGRebuyOrderRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB9A6011E9FCC8A0089B1BE /* WGRebuyOrderRequest.m */; };
 		BEB9A6061E9FCCC20089B1BE /* WGRebuyOrderResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB9A6051E9FCCC20089B1BE /* WGRebuyOrderResponse.m */; };
+		BEBE1BE11F1A654800BDC9A9 /* WGGoodDetailRecommendRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBE1BE01F1A654800BDC9A9 /* WGGoodDetailRecommendRequest.m */; };
+		BEBE1BE51F1A655900BDC9A9 /* WGGoodDetailRecommendResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBE1BE41F1A655900BDC9A9 /* WGGoodDetailRecommendResponse.m */; };
 		BEC772051E83AD1C00678D0B /* WGSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC772041E83AD1B00678D0B /* WGSearchViewController.m */; };
 		BEC772081E83AD3400678D0B /* WGSearchViewController+Request.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC772071E83AD3400678D0B /* WGSearchViewController+Request.m */; };
 		BECBE2F31E87B60100ADAD6C /* WGTabBenefitViewController+NavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BECBE2F21E87B60100ADAD6C /* WGTabBenefitViewController+NavigationBar.m */; };
@@ -1042,6 +1050,18 @@
 		BE6CC1E21E2BBCDF003755FF /* WGClassifyGoodListContentItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGClassifyGoodListContentItem.m; sourceTree = "<group>"; };
 		BE7099BA1ED4A9FE00816D1F /* WGViewController+TopButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGViewController+TopButton.h"; sourceTree = "<group>"; };
 		BE7099BB1ED4A9FE00816D1F /* WGViewController+TopButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGViewController+TopButton.m"; sourceTree = "<group>"; };
+		BE7234591F1AFCA0003C7E69 /* WGOrderExpireGoodView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGOrderExpireGoodView.h; sourceTree = "<group>"; };
+		BE72345A1F1AFCA0003C7E69 /* WGOrderExpireGoodView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGOrderExpireGoodView.m; sourceTree = "<group>"; };
+		BE72345D1F1AFD10003C7E69 /* WGCommitOrderUpdateTimeRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGCommitOrderUpdateTimeRequest.h; sourceTree = "<group>"; };
+		BE72345E1F1AFD10003C7E69 /* WGCommitOrderUpdateTimeRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGCommitOrderUpdateTimeRequest.m; sourceTree = "<group>"; };
+		BE7234601F1AFD21003C7E69 /* WGCommitOrderUpdateTimeResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGCommitOrderUpdateTimeResponse.h; sourceTree = "<group>"; };
+		BE7234611F1AFD21003C7E69 /* WGCommitOrderUpdateTimeResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGCommitOrderUpdateTimeResponse.m; sourceTree = "<group>"; };
+		BE7234631F1AFD49003C7E69 /* WGOrderExpireGood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGOrderExpireGood.h; sourceTree = "<group>"; };
+		BE7234641F1AFD49003C7E69 /* WGOrderExpireGood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGOrderExpireGood.m; sourceTree = "<group>"; };
+		BE7234661F1B151B003C7E69 /* WGCommitOrderDeleteExpireGoodRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGCommitOrderDeleteExpireGoodRequest.h; sourceTree = "<group>"; };
+		BE7234671F1B151B003C7E69 /* WGCommitOrderDeleteExpireGoodRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGCommitOrderDeleteExpireGoodRequest.m; sourceTree = "<group>"; };
+		BE7234691F1B153A003C7E69 /* WGCommitOrderDeleteExpireGoodResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGCommitOrderDeleteExpireGoodResponse.h; sourceTree = "<group>"; };
+		BE72346A1F1B153A003C7E69 /* WGCommitOrderDeleteExpireGoodResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGCommitOrderDeleteExpireGoodResponse.m; sourceTree = "<group>"; };
 		BE74CDAA1E626B3700600A28 /* WGHomeSliderViewController+Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGHomeSliderViewController+Request.h"; sourceTree = "<group>"; };
 		BE74CDAB1E626B3700600A28 /* WGHomeSliderViewController+Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGHomeSliderViewController+Request.m"; sourceTree = "<group>"; };
 		BE74CDAE1E626B7400600A28 /* WGHomeSliderRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGHomeSliderRequest.h; sourceTree = "<group>"; };
@@ -1284,6 +1304,10 @@
 		BEB9A6011E9FCC8A0089B1BE /* WGRebuyOrderRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGRebuyOrderRequest.m; sourceTree = "<group>"; };
 		BEB9A6041E9FCCC20089B1BE /* WGRebuyOrderResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGRebuyOrderResponse.h; sourceTree = "<group>"; };
 		BEB9A6051E9FCCC20089B1BE /* WGRebuyOrderResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGRebuyOrderResponse.m; sourceTree = "<group>"; };
+		BEBE1BDF1F1A654800BDC9A9 /* WGGoodDetailRecommendRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGGoodDetailRecommendRequest.h; sourceTree = "<group>"; };
+		BEBE1BE01F1A654800BDC9A9 /* WGGoodDetailRecommendRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGGoodDetailRecommendRequest.m; sourceTree = "<group>"; };
+		BEBE1BE31F1A655900BDC9A9 /* WGGoodDetailRecommendResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGGoodDetailRecommendResponse.h; sourceTree = "<group>"; };
+		BEBE1BE41F1A655900BDC9A9 /* WGGoodDetailRecommendResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGGoodDetailRecommendResponse.m; sourceTree = "<group>"; };
 		BEC772031E83AD1B00678D0B /* WGSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGSearchViewController.h; sourceTree = "<group>"; };
 		BEC772041E83AD1B00678D0B /* WGSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGSearchViewController.m; sourceTree = "<group>"; };
 		BEC772061E83AD3400678D0B /* WGSearchViewController+Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGSearchViewController+Request.h"; sourceTree = "<group>"; };
@@ -2289,6 +2313,8 @@
 				BE6BE91A1E7FAF1400A081BA /* WGSettlementResult.m */,
 				BE43FB861EFF5FC500B0A415 /* WGOverHeightGoodItem.h */,
 				BE43FB871EFF5FC500B0A415 /* WGOverHeightGoodItem.m */,
+				BE7234631F1AFD49003C7E69 /* WGOrderExpireGood.h */,
+				BE7234641F1AFD49003C7E69 /* WGOrderExpireGood.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2306,6 +2332,10 @@
 				BE43FB8D1EFF7EA000B0A415 /* WGOverHeightDeleteRequest.m */,
 				BE43FB921EFF7ED200B0A415 /* WGOverHeightResetRequest.h */,
 				BE43FB931EFF7ED200B0A415 /* WGOverHeightResetRequest.m */,
+				BE72345D1F1AFD10003C7E69 /* WGCommitOrderUpdateTimeRequest.h */,
+				BE72345E1F1AFD10003C7E69 /* WGCommitOrderUpdateTimeRequest.m */,
+				BE7234661F1B151B003C7E69 /* WGCommitOrderDeleteExpireGoodRequest.h */,
+				BE7234671F1B151B003C7E69 /* WGCommitOrderDeleteExpireGoodRequest.m */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -2323,6 +2353,10 @@
 				BE43FB901EFF7EB000B0A415 /* WGOverHeightDeleteResponse.m */,
 				BE43FB951EFF7EE600B0A415 /* WGOverHeightResetResponse.h */,
 				BE43FB961EFF7EE600B0A415 /* WGOverHeightResetResponse.m */,
+				BE7234601F1AFD21003C7E69 /* WGCommitOrderUpdateTimeResponse.h */,
+				BE7234611F1AFD21003C7E69 /* WGCommitOrderUpdateTimeResponse.m */,
+				BE7234691F1B153A003C7E69 /* WGCommitOrderDeleteExpireGoodResponse.h */,
+				BE72346A1F1B153A003C7E69 /* WGCommitOrderDeleteExpireGoodResponse.m */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -2429,6 +2463,8 @@
 				BEF8ED5D1E8A683A00E15C8F /* WGCancelCollectGoodRequest.m */,
 				BE622A0A1E77C613002BFEDB /* WGAddGoodToCartRequest.h */,
 				BE622A0B1E77C613002BFEDB /* WGAddGoodToCartRequest.m */,
+				BEBE1BDF1F1A654800BDC9A9 /* WGGoodDetailRecommendRequest.h */,
+				BEBE1BE01F1A654800BDC9A9 /* WGGoodDetailRecommendRequest.m */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -2444,6 +2480,8 @@
 				BEF8ED601E8A695C00E15C8F /* WGCancelCollectGoodResponse.m */,
 				BE622A0D1E77C627002BFEDB /* WGAddGoodToCartResponse.h */,
 				BE622A0E1E77C627002BFEDB /* WGAddGoodToCartResponse.m */,
+				BEBE1BE31F1A655900BDC9A9 /* WGGoodDetailRecommendResponse.h */,
+				BEBE1BE41F1A655900BDC9A9 /* WGGoodDetailRecommendResponse.m */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -3380,6 +3418,8 @@
 				BEFDFA091EF82985004C79A9 /* WGCountdownTimeView.m */,
 				BE43FB791EFF589A00B0A415 /* WGOverweightView.h */,
 				BE43FB7A1EFF589A00B0A415 /* WGOverweightView.m */,
+				BE7234591F1AFCA0003C7E69 /* WGOrderExpireGoodView.h */,
+				BE72345A1F1AFCA0003C7E69 /* WGOrderExpireGoodView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -4409,6 +4449,7 @@
 				BE9F93371E6B24B80051B054 /* WGCSCCommonItemRequest.m in Sources */,
 				BE6753C91E94673F00250BA8 /* WGDeliverPriceView.m in Sources */,
 				BEF685571E31F6D2003B745B /* WGClassifyItem.m in Sources */,
+				BE72345F1F1AFD10003C7E69 /* WGCommitOrderUpdateTimeRequest.m in Sources */,
 				BE8CB27D1EBB586E002480CA /* WGKeywordSearchGoodListRequest.m in Sources */,
 				BE6753A81E9332BB00250BA8 /* WGShopCartGiftResponse.m in Sources */,
 				BEF6AF8D1EC175F800B8DE1E /* WGClassifyDetailGoodGridItemCell.m in Sources */,
@@ -4427,6 +4468,7 @@
 				BE6753A21E932FAA00250BA8 /* WGUpdateProductsResponse.m in Sources */,
 				BE6BE8F41E7F913600A081BA /* WGCommitOrderViewController+Request.m in Sources */,
 				BE52EDD11E2DCC6C0022EF5B /* WGTabShopCartViewController.m in Sources */,
+				BEBE1BE51F1A655900BDC9A9 /* WGGoodDetailRecommendResponse.m in Sources */,
 				BE62CD771EA0BEB10076BD69 /* WGScanJump.m in Sources */,
 				BEA734291E8126F400C74ED2 /* WGCouponListRequest.m in Sources */,
 				BEF8ED5E1E8A683A00E15C8F /* WGCancelCollectGoodRequest.m in Sources */,
@@ -4440,6 +4482,7 @@
 				BE6229E41E765BA5002BFEDB /* WGGoodDetailViewController+Request.m in Sources */,
 				BEB2D9621DFBED4100F2E74B /* WGSegmentView.m in Sources */,
 				BE52EFBE1E2F4A570022EF5B /* WGCouponCode.m in Sources */,
+				BEBE1BE11F1A654800BDC9A9 /* WGGoodDetailRecommendRequest.m in Sources */,
 				BE52EDDA1E2DDD160022EF5B /* WGShopCart.m in Sources */,
 				BE63A6DD1E7BBC0B00F77282 /* WGOrderDetailViewController.m in Sources */,
 				BE622A061E77C55E002BFEDB /* WGCollectGoodRequest.m in Sources */,
@@ -4541,6 +4584,7 @@
 				BE32F9891EA3B3760063B38F /* WGSetPostCodeRequest.m in Sources */,
 				BEE937B71E825BC800875131 /* WGInvitationDescription.m in Sources */,
 				BE6229ED1E765BF6002BFEDB /* WGGoodDetailResponse.m in Sources */,
+				BE72345B1F1AFCA0003C7E69 /* WGOrderExpireGoodView.m in Sources */,
 				BEE937CC1E825F8300875131 /* WGInvitationViewController+Request.m in Sources */,
 				BE49E3B71E45BAA100ECDEE5 /* WGCallBaseRequest.m in Sources */,
 				BEB2D95C1DFBED1500F2E74B /* WGRequest.m in Sources */,
@@ -4568,6 +4612,7 @@
 				BE99E7A21E1C947F00210546 /* WGHomeFloorContentGoodItem.m in Sources */,
 				BE5210031E89102C004BD34E /* AppDelegate+Init.m in Sources */,
 				BE2B42CB1E8B87900010BCB7 /* PooCodeView.m in Sources */,
+				BE7234681F1B151B003C7E69 /* WGCommitOrderDeleteExpireGoodRequest.m in Sources */,
 				BE57D15F1E7DBD1200149738 /* WGMessageReadResponse.m in Sources */,
 				BEB8D09A1E46D5B300BB9BA3 /* WGApplication+Operation.m in Sources */,
 				BEC772081E83AD3400678D0B /* WGSearchViewController+Request.m in Sources */,
@@ -4585,6 +4630,7 @@
 				BEB8D0971E46D46600BB9BA3 /* WGApplication+Request.m in Sources */,
 				BEEC20F51E9A3DCD0065DE90 /* WGAddressCityListResponse.m in Sources */,
 				BEB8D1581E49A12800BB9BA3 /* WGForgetPasswordViewController.m in Sources */,
+				BE72346B1F1B153A003C7E69 /* WGCommitOrderDeleteExpireGoodResponse.m in Sources */,
 				BEEC21471E9BC6D50065DE90 /* WGCommitOrderViewController+PickerView.m in Sources */,
 				BE8CB2891EBB5DE3002480CA /* WGHotSearchViewController.m in Sources */,
 				BEF286BD1E35F4F300274FCA /* WGUniversalViewController.m in Sources */,
@@ -4686,6 +4732,7 @@
 				BE52EDB01E2DBB770022EF5B /* WGAddress.m in Sources */,
 				BE622A001E779D79002BFEDB /* WGGoodAddView.m in Sources */,
 				BEEC20EF1E9A3A130065DE90 /* WGReceiptCountryListResponse.m in Sources */,
+				BE7234621F1AFD21003C7E69 /* WGCommitOrderUpdateTimeResponse.m in Sources */,
 				BEF8ED661E8A742C00E15C8F /* WGCollectionListRequest.m in Sources */,
 				BEFEC3321E963FA2002FCF1F /* WGClassifyDetailRequest.m in Sources */,
 				BEEC20D71E9923F80065DE90 /* WGAddAddressRequest.m in Sources */,
@@ -4707,6 +4754,7 @@
 				BE6229EA1E765BE6002BFEDB /* WGGoodDetailRequest.m in Sources */,
 				BEEC20F21E9A3DBE0065DE90 /* WGAddressCityListRequest.m in Sources */,
 				BE62E4631DF937F8004510A5 /* AppDelegate+UI.m in Sources */,
+				BE7234651F1AFD49003C7E69 /* WGOrderExpireGood.m in Sources */,
 				BEB9A6021E9FCC8A0089B1BE /* WGRebuyOrderRequest.m in Sources */,
 				BE6BE90F1E7FA80300A081BA /* WGCommitOrderLookMoreCell.m in Sources */,
 				BE63A6DA1E7BBC0B00F77282 /* WGOrderDetail.m in Sources */,
@@ -4915,7 +4963,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Libraries/KochavaTracker",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.weygo.test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.weygo.weygo;
 				PRODUCT_NAME = Weygo;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -4955,7 +5003,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Libraries/KochavaTracker",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.weygo.test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.weygo.weygo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Submodules/JHKit/** $(PROJECT_DIR)/Libraries/Facebook";

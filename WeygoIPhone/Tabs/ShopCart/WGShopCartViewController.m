@@ -101,7 +101,7 @@
     [_confirmBtn setBackgroundColor:WGAppFooterButtonColor];
     _confirmBtn.layer.cornerRadius = kAppAdaptHeight(20);
     
-    [_confirmBtn setTitle:kStr(@"Confirm") forState:UIControlStateNormal];
+    [_confirmBtn setTitle:kStr(@"ShopCart_Confirm") forState:UIControlStateNormal];
     _confirmBtn.titleLabel.font = kAppAdaptFont(14);
     [_confirmBtn setTitleColor:kWhiteColor forState:UIControlStateNormal];
     [_confirmBtn addTarget:self action:@selector(touchConfirmBtnBtn:) forControlEvents:UIControlEventTouchUpInside];

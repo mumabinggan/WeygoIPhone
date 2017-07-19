@@ -20,4 +20,8 @@
 
 - (void)loadOverHeightReset:(NSArray *)array;
 
+- (void)loadDeleteExpireGoodRequest;
+
+- (void)loadUpdateTimeRequest;
+
 @end

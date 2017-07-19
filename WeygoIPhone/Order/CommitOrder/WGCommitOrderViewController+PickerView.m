@@ -7,6 +7,7 @@
 //
 
 #import "WGCommitOrderViewController+PickerView.h"
+#import "WGCommitOrderViewController+Request.h"
 
 @implementation WGCommitOrderViewController (PickerView)
 
@@ -108,12 +109,14 @@
         NSArray *dates = _commitOrderDetail.deliverTime.deliverTimes;
         WGSettlementDate *item = dates[row];
         _commitOrderDetail.deliverTime.currentDateId = item.id;
-        _commitOrderDetail.deliverTime.currentTimeId = @"";
+        _commitOrderDetail.deliverTime.currentTimeId = _commitOrderDetail.deliverTime.defaultTimeId;
+        [self loadUpdateTimeRequest];
     }
     else if (_pickerView.tag == 1001) {
         NSArray *times = _commitOrderDetail.deliverTime.currentTimes;
         WGSettlementTime *item = times[row];
         _commitOrderDetail.deliverTime.currentTimeId = item.id;
+        [self loadUpdateTimeRequest];
     }
     else if (_pickerView.tag == 1002) {
         NSArray *payMethods = _commitOrderDetail.payMothod.payMethods;

@@ -23,6 +23,10 @@
 #import "WGOverHeightResetResponse.h"
 #import "WGOverweightView.h"
 #import "WGOverHeightGoodItem.h"
+#import "WGCommitOrderUpdateTimeRequest.h"
+#import "WGCommitOrderUpdateTimeResponse.h"
+#import "WGCommitOrderDeleteExpireGoodRequest.h"
+#import "WGCommitOrderDeleteExpireGoodResponse.h"
 
 @implementation WGCommitOrderViewController (Request)
 
@@ -42,13 +46,64 @@
         [[WGEvent shareInstance] checkOutStart:@([WGApplication sharedApplication].user.userId).stringValue sum:@(response.data.goodsCount).stringValue];
         _commitOrderDetail = [[WGCommitOrderDetail alloc] initWithSettlementResult:response.data];
         [self refreshUI];
-        if (response.data.overHeightDetail && response.data.overHeightDetail.count > 0) {
-            _overWeightArray = response.data.overHeightDetail;
-            [self showOverWeightView];
+        WGOrderExpireGood *expireGood = response.data.expireGood;
+        if (expireGood) {
+            expireGood.canChangeTime = NO;
+            [self showExpireGood:expireGood];
+        }
+        else {
+            if (response.data.overHeightDetail && response.data.overHeightDetail.count > 0) {
+                _overWeightArray = response.data.overHeightDetail;
+                [self showOverWeightView];
+            }
         }
     }
     else if (response.emptyShopCart) {
         [self.navigationController popViewControllerAnimated:YES];
+    }
+    else {
+        [self showWarningMessage:response.message];
+    }
+}
+
+- (void)loadUpdateTimeRequest {
+    WGCommitOrderUpdateTimeRequest *request = [[WGCommitOrderUpdateTimeRequest alloc] init];
+    request.timeId = _commitOrderDetail.deliverTime.currentTimeId;
+    __weak typeof(self) weakSelf = self;
+    [self post:request forResponseClass:[WGCommitOrderUpdateTimeResponse class] success:^(JHResponse *response) {
+        [weakSelf handleUpdateTimeResponse:(WGCommitOrderUpdateTimeResponse *)response];
+    } failure:^(NSError *error) {
+        [weakSelf showWarningMessage:kStr(@"Request Failed")];
+    }];
+}
+
+- (void)handleUpdateTimeResponse:(WGCommitOrderUpdateTimeResponse *)response {
+    if (response.success) {
+        if (response.data && response.data.expireGood) {
+            response.data.expireGood.canChangeTime = YES;
+            [self showExpireGood:response.data.expireGood];
+        }
+    }
+    else {
+        [self showWarningMessage:response.message];
+    }
+}
+
+- (void)loadDeleteExpireGoodRequest {
+    WGCommitOrderDeleteExpireGoodRequest *request = [[WGCommitOrderDeleteExpireGoodRequest alloc] init];
+    request.timeId = _commitOrderDetail.deliverTime.currentTimeId;
+    __weak typeof(self) weakSelf = self;
+    [self post:request forResponseClass:[WGCommitOrderDeleteExpireGoodResponse class] success:^(JHResponse *response) {
+        [weakSelf handleDeleteExpireGoodResponse:(WGCommitOrderDeleteExpireGoodResponse *)response];
+    } failure:^(NSError *error) {
+        [weakSelf showWarningMessage:kStr(@"Request Failed")];
+    }];
+}
+
+- (void)handleDeleteExpireGoodResponse:(WGCommitOrderDeleteExpireGoodResponse *)response {
+    if (response.success) {
+        [_expireGoodView close];
+        [self loadSettlementResultDetail];
     }
     else {
         [self showWarningMessage:response.message];
@@ -113,6 +168,9 @@
     else if (response.overWeight) {
         [self loadOverHeightDetail];
     }
+    else if (response.hasExpireGood) {
+        [self loadUpdateTimeRequest];
+    }
     else if (response.belowMinPrice) {
         [self showWarningMessage:response.message];
     }
@@ -139,9 +197,16 @@
             [_commitOrderDetail.deliverTime resetWithTimes:response.data.deliverTimes];
             _commitOrderDetail.minPriceTips = response.data.minPriceTips;
             _commitOrderDetail.consumePrice = response.data.price;
-            [_tableView reloadData];
-            if (_overWeightArray && _overWeightArray.count > 0) {
-                [self showOverWeightView];
+            [self refreshUI];
+            WGOrderExpireGood *expireGood = response.data.expireGood;
+            if (expireGood) {
+                expireGood.canChangeTime = NO;
+                [self showExpireGood:expireGood];
+            }
+            else {
+                if (_overWeightArray && _overWeightArray.count > 0) {
+                    [self showOverWeightView];
+                }
             }
         }
     }

@@ -18,6 +18,8 @@
 
 - (BOOL)belowMinPrice;
 
+- (BOOL)hasExpireGood;
+
 @end
 
 @interface WGCommitOrderData : JHObject
@@ -27,5 +29,7 @@
 @property (nonatomic, strong) NSString *actionSuccess;
 
 @property (nonatomic, strong) NSString *orderId;
+
+//@property (nonatomic, strong) NSString *
 
 @end

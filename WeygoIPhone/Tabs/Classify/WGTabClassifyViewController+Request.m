@@ -34,7 +34,7 @@
     }
     
     WGClassifyRequest *request = [[WGClassifyRequest alloc] init];
-    request.is_hot = 1;
+    request.is_hot = 0;
     if (_data) {
         request.showsLoadingView = NO;
     }

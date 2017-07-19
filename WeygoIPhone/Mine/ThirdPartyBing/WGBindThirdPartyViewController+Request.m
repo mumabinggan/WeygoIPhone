@@ -20,7 +20,7 @@
     request.uniqueId = self.uniqueId;
     request.username = _mobileTextField.text;
     request.verifyCode = _unRegisterCodeTextField.text;
-    request.password = _passwordTextField.text;
+    request.password = _unRegisterPasswordTextField.text;
     request.confirmPassword = _confirmPasswordTextField.text;
     request.firstname = _nameTextField.text;
     request.lastname = _surnameTextField.text;

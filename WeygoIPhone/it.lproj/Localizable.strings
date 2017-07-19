@@ -69,14 +69,14 @@
 "Svuota cache" = "Svuota cache";
 "Seleziona lingua" = "Seleziona lingua";
 "Italiano" = "Italiano";
-"China" = "China";
+"China" = "中国";
 "Log out" = "Log out";
 "Clean_Cache_Success" = "Lo svuotamento della cache è avvenuto con successo.";
 
 //分类 Tab
 "Hot Sale" = "PIÙ VENDUTI";
 //分类详情
-"Default Sort" = "Rilevanza";
+"Default Sort" = "Default";
 "Filtro" = "Filtro";
 "Vista" = "Vista";
 "Brand Sort" = "marchi";
@@ -207,6 +207,9 @@
 "Order Pay Totale" = "Totale: %@";
 "Order Good Number" = "x%d";
 "Order Rebuy" = "Riordina";
+"Order Delete Good" = "ELIMINA I PRODOTTI";
+"Order Change Deliver Time" = "ANTICIPA LA CONSEGNA";
+"Order Detail Load More" = "GUARDALI TUTTI";
 
 //商品详情(完成)
 "Good Detail Price With .2 Unit" = "€%.2f";
@@ -295,6 +298,7 @@
 "ShopCart_GiftGoodThree" = "INVITO ALL'ASSAGGIO:PER OGNI SPESA EFFETTUATAWEYGO REGALA";
 "ShopCart_DeliverPrice_Title" = "Informazioni per la consegna";
 "ShopCart_DeliverPrice_Ok" = "Chiudi";
+"ShopCart_Confirm" = "conferma";
 
 //个人信息
 "PersonInfo_Sex_Select" = "Seleziona";
@@ -338,7 +342,7 @@
 "GoodDetail_Grid_Instock" = "Non Disp.";
 
 //搜索
-"Search_Hot_Title" = "I più ricercati";
+"Search_Hot_Title" = "I più cercati";
 "Search_History_Title" = "Cronologia di ricerca";
 "Search_Keyword" = "Risultati per \"%@\"";
 

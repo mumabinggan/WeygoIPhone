@@ -7,7 +7,10 @@
 //
 
 #import "JHTableViewCell.h"
+#import "WGHomeFloorContentGoodItem.h"
 
 @interface WGOrderGoodPriceCell : JHTableViewCell
+
+@property (nonatomic, copy) void (^onPurchase)(WGHomeFloorContentGoodItem *object, CGPoint fromPoint);
 
 @end

@@ -11,3 +11,7 @@
 @implementation WGCheckFailureProductsResponse
 
 @end
+
+@implementation WGCheckFailureProductsData
+
+@end

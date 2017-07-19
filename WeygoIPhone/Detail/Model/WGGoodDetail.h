@@ -39,6 +39,8 @@
 
 @property (nonatomic, assign) long long hasFavorited; //0为没有收藏，>0为收藏并且为收藏 id
 
+@property (nonatomic, strong) NSString *sku;
+
 //for self use
 @property (nonatomic, strong, readonly) NSArray *carouselFiguresPictureArray;
 

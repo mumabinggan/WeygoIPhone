@@ -69,7 +69,6 @@
         if (completion) {
             completion((WGClassifyDetailResponse *)response, refresh, pulling);
         }
-        //[weakSelf handleClassifyDetailResponse:(WGClassifyDetailResponse *)response refresh:refresh pulling:pulling];
     } failure:^(NSError *error) {
         if (completion) {
             completion(nil, refresh, pulling);
@@ -84,6 +83,9 @@
         return;
     }
     if (response.success) {
+        if (response.data && response.data.recommendedArray && response.data.recommendedArray.count > 0) {
+            _isGrid = YES;
+        }
         NSInteger scrollRow = _data.goodArray.count / (_isGrid ? 2 : 1);
         if (refresh) {
             _data = response.data;
@@ -100,11 +102,12 @@
         if (self.onResponse) {
             self.onResponse(_data);
         }
-        if (_data.recommendedArray && _data.recommendedArray.count > 0) {
-            _isGrid = YES;
-        }
+//        if (_data.recommendedArray && _data.recommendedArray.count > 0) {
+//            _isGrid = YES;
+//        }
         [self refreshUI];
-        if (!refresh && scrollRow < _data.goodArray.count) {
+        NSInteger newScrollRow = _data.goodArray.count / (_isGrid ? 2 : 1);
+        if (!refresh && scrollRow < newScrollRow) {
             NSIndexPath *indexPath = [NSIndexPath indexPathForRow:scrollRow inSection:1];
             [_tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
         }

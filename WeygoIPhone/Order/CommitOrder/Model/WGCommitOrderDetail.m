@@ -120,6 +120,15 @@
     return nil;
 }
 
+- (NSString *)defaultTimeId {
+    NSArray *times = [self currentTimes];
+    if (times.count > 0) {
+        WGSettlementTime *time = times[0];
+        return time.id;
+    }
+    return nil;
+}
+
 @end
 
 @implementation WGCommitOrderPay

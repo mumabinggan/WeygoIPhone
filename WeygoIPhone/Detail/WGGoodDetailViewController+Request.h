@@ -14,6 +14,8 @@
 
 - (void)loadGoodDetail;
 
+- (void)loadGoodDetailRecommend;
+
 - (void)requestCollectGood:(BOOL)collect;
 
 @end

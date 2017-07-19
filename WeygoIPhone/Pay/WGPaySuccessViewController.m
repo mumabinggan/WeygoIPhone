@@ -28,9 +28,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = kStr(@"PaySuccess_Title");
-    if ([NSString isNullOrEmpty:_orderId]) {
-        [self loadPaySuccess];
-    }
+    [self loadPaySuccess];
+//    if ([NSString isNullOrEmpty:_orderId]) {
+//        [self loadPaySuccess];
+//    }
 }
 
 - (void)initSubView {

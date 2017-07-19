@@ -24,10 +24,10 @@ static const NSString *WGTopButtonKey = @"WGTopButtonKey";
 - (JHButton *)createTopButton {
     if (!self.topButton) {
         JHButton *backButton = [JHButton buttonWithType:UIButtonTypeCustom];
-        [backButton setImage:[UIImage imageNamed:@"to_top_icon"] forState:UIControlStateNormal];
+        [backButton setBackgroundImage:[UIImage imageNamed:@"to_top_icon"] forState:UIControlStateNormal];
         backButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
         [backButton setTitle:nil forState:UIControlStateNormal];
-        backButton.frame = CGRectMake(kDeviceWidth - 33 - 28, self.view.height - 45-28, 33, 80);
+        backButton.frame = CGRectMake(kDeviceWidth - 36, self.view.height - 80, 36, 40);
         backButton.layer.shadowColor = [UIColor blackColor].CGColor;//shadowColor阴影颜色
         backButton.layer.shadowOffset = CGSizeMake(2,2);//shadowOffset阴影偏移,x向右偏移4，y向下偏移4，默认(0, -3),这个跟shadowRadius配合使用
         backButton.layer.shadowOpacity = 0.5;//阴影透明度，默认0
@@ -46,7 +46,7 @@ static const NSString *WGTopButtonKey = @"WGTopButtonKey";
     }
     self.topButton = [self createTopButton];
     if (!show) {
-        [self.topButton setImage:[UIImage imageNamed:@"to_top_icon"] forState:UIControlStateNormal];
+        [self.topButton setBackgroundImage:[UIImage imageNamed:@"to_top_icon"] forState:UIControlStateNormal];
     }
     [UIView animateWithDuration:0.25 animations:^() {
         if (show) {
@@ -67,7 +67,7 @@ static const NSString *WGTopButtonKey = @"WGTopButtonKey";
 }
 
 - (void)scrollToTop {
-    [self.topButton setImage:[UIImage imageNamed:@"to_top_fly_icon"] forState:UIControlStateNormal];
+    //[self.topButton setImage:[UIImage imageNamed:@"to_top_fly_icon"] forState:UIControlStateNormal];
 }
 
 @end

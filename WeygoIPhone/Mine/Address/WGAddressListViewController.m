@@ -32,14 +32,16 @@
 - (void)touchAddBtn:(JHButton *)sender {
     WGEditAddressViewController *editAddressViewController = [[WGEditAddressViewController alloc] init];
     __weak id weakSelf = self;
-    editAddressViewController.onApply = ^() {
-        [weakSelf handleEditAddressCompletion];
+    editAddressViewController.onApply = ^(WGAddress *address) {
+        [weakSelf handleEditAddressCompletion:address];
     };
     [self.navigationController pushViewController:editAddressViewController animated:YES];
 }
 
-- (void)handleEditAddressCompletion {
-    [self.navigationController popToViewController:self animated:YES];
+- (void)handleEditAddressCompletion:(WGAddress *)address {
+    if (self.onUse) {
+        self.onUse(address);
+    }
 }
 
 - (void)handleDefault:(WGObject *)object {
@@ -61,10 +63,12 @@
 
 - (void)handleModify:(WGObject *)object {
     WGEditAddressViewController *editReceiptViewController = [[WGEditAddressViewController alloc] init];
-    editReceiptViewController.addressId = ((WGAddress *)object).addressId;
+    long long addressId = ((WGAddress *)object).addressId;
+    editReceiptViewController.addressId = addressId;
+    editReceiptViewController.needRefresh = (addressId == _addressId) ? YES : NO;
     __weak id weakSelf = self;
-    editReceiptViewController.onApply = ^() {
-        [weakSelf handleEditAddressCompletion];
+    editReceiptViewController.onApply = ^(WGAddress *address) {
+        [weakSelf handleEditAddressCompletion:address];
     };
     [self.navigationController pushViewController:editReceiptViewController animated:YES];
 }

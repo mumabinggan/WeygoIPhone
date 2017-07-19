@@ -134,6 +134,7 @@
             [history arrayByAddingObjectsFromArray:response.data.history];
             _integrationDetail.history = history;
             _integrationDetail.totalCount = response.data.totalCount;
+            _integrationDetail.tip = response.data.tip;
         }
         [self refreshUI];
     }

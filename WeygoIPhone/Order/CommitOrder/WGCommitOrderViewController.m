@@ -25,6 +25,8 @@
 #import "WGUseIntegrationViewController.h"
 #import "WGCommitOrderViewController+PickerView.h"
 #import "WGIntegrationHelpView.h"
+#import "WGOrderExpireGoodView.h"
+#import "WGOrderExpireGood.h"
 
 @interface WGCommitOrderViewController ()
 {
@@ -145,11 +147,39 @@
     [view showInView:self.view];
 }
 
+- (void)showExpireGood:(WGOrderExpireGood *)expireGood {
+    WeakSelf;
+    _expireGoodView = [[WGOrderExpireGoodView alloc] initWithFrame:self.view.frame expireGood:expireGood];
+    _expireGoodView.onChangeTime = ^() {
+        [weakSelf handleChangeTime];
+    };
+    _expireGoodView.onDeleteExpireGood = ^() {
+        [weakSelf handleDeleteExpireGood];
+    };
+    [_expireGoodView show];
+}
+
+- (void)handleChangeTime {
+    _commitOrderDetail.deliverTime.currentDateId = nil;
+    _commitOrderDetail.deliverTime.currentTimeId = nil;
+    [self refreshUI];
+}
+
+- (void)handleDeleteExpireGood {
+    [self loadDeleteExpireGoodRequest];
+}
+
 - (void)handleAddress:(WGAddress *)address {
     _commitOrderDetail.address = address;
     [self loadOverHeightDetail];
-    [self refreshUI];
+    //[self refreshUI];
 }
+
+//- (void)didReceiveNotification:(NSInteger)notification {
+//    if (notification == WGRefreshNotificationTypeChangeAddressCap) {
+//        [self loadOverHeightDetail];
+//    }
+//}
 
 - (void)handleReceipt:(WGReceipt *)receipt {
     _commitOrderDetail.receipt = receipt;
@@ -375,11 +405,11 @@
             }
             else if (section == 5) {
                 if (1 == row) {
-                    __weak id weakSelf = self;
+                    //__weak id weakSelf = self;
                     WGOrderListGoodsCell *goodsCell = [[WGOrderListGoodsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"fasdfasdafsa"];
-                    goodsCell.onApply = ^(WGOrderGoodItem *good) {
-                        [weakSelf handleGood:good];
-                    };
+//                    goodsCell.onApply = ^(WGOrderGoodItem *good) {
+//                        [weakSelf handleGood:good];
+//                    };
                     cell = goodsCell;
                 }
                 else {
@@ -490,6 +520,7 @@
     if (section == 0) {
         WGAddressListViewController *vc = [[WGAddressListViewController alloc] init];
         vc.type = WGAddressListTypeCanUse;
+        vc.addressId = _commitOrderDetail.address.addressId;
         vc.onUse = ^(JHObject *object) {
             [weakSelf handleAddress:(WGAddress *)object];
         };

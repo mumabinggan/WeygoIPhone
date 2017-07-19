@@ -41,6 +41,7 @@
     // Do any additional setup after loading the view.
     
     [self loadGoodDetail];
+    [self loadGoodDetailRecommend];
 }
 
 - (void)initSubView {

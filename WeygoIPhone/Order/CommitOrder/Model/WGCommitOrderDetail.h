@@ -61,6 +61,8 @@
 
 @property (nonatomic, strong) NSString *currentTimeId;
 
+@property (nonatomic, strong) NSString *defaultTimeId;
+
 //from settlement
 @property (nonatomic, strong) NSArray *deliverTimes;
 

@@ -46,7 +46,7 @@
     _reducePriceLabel.frame = frame;
     
     _specificationLabel = [[JHLabel alloc] initWithFrame:CGRectMake(_nameLabel.x, _currentPriceLabel.maxY + kAppAdaptHeight(10), self.width - kAppAdaptWidth(20), kAppAdaptHeight(20))];
-    _specificationLabel.font = kAppAdaptFont(14);
+    _specificationLabel.font = kAppAdaptFont(13);
     _specificationLabel.textColor = WGAppNameLabelColor;
     [self addSubview:_specificationLabel];
     

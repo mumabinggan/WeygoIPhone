@@ -52,6 +52,8 @@
 #import "WGOverweightView.h"
 #import "WGOverHeightDetail.h"
 #import "WGOverHeightGoodItem.h"
+#import "WGOrderExpireGoodView.h"
+#import "WGOrderExpireGood.h"
 
 @interface WGHomeSliderViewController ()
 {
@@ -142,6 +144,17 @@
 }
 
 - (void)handleOnScan {
+//    WGHomeFloorContentGoodItem *item = [[WGHomeFloorContentGoodItem alloc] init];
+//    item.name = @"我们是枯要要要要要林要要要要要要要要要要要要要要要";
+//    item.briefDescription = @"ww";
+//    item.expiredTime = @"过期时间:1900-11-22";
+//    WGOrderExpireGood *good = [[WGOrderExpireGood alloc] init];
+//    //good.canChangeTime = YES;
+//    good.tips = @"et the latest beta releases of Xcode, macOS, iOS, watchOS, tvOS, and more.";
+//    good.goods = @[item, item];
+//    WGOrderExpireGoodView *view = [[WGOrderExpireGoodView alloc] initWithFrame:self.view.bounds expireGood:good];
+//    [view show];
+//    return;
 //    WGOverHeightDetail *detail = [[WGOverHeightDetail alloc] init];
 //    detail.title = @"asdfasdfkasd;fklasldkfkasdfasdf";
 //    detail.maxRise = @"90";
@@ -411,6 +424,7 @@
             //cell.accessoryType = [self cannotEditPostCode] ?  UITableViewCellAccessoryNone: UITableViewCellAccessoryDisclosureIndicator;
             cell.textLabel.textColor = WGAppBaseColor;
             cell.contentView.backgroundColor = kHRGB(0xF8FAFA);
+            cell.textLabel.text = [WGApplication sharedApplication].currentPostCode;
         }
     }
     else if (indexPath.section == 1) {

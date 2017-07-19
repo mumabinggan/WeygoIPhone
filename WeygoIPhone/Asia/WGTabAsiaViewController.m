@@ -49,7 +49,7 @@
     if (!_contentVC) {
         _contentVC = [[WGHomeTabContentViewController alloc] init];
         __weak id weakSelf = self;
-        _contentVC.view.frame = CGRectMake(0, 0, kDeviceWidth, kDeviceHeight - kAppNavigationVCY - kAppTabBarHeight);
+        _contentVC.view.frame = CGRectMake(0, 0, kDeviceWidth, kDeviceHeight - kAppTabBarHeight);
         _contentVC.onTopRefresh = ^(void) {
             [weakSelf handleRefresh];
         };

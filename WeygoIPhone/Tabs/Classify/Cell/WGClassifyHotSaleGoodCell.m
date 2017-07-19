@@ -30,7 +30,8 @@
     [self.contentView addSubview:contentView];
     
     _imageView = [[JHImageView alloc] initWithFrame:CGRectMake(0, 0, kAppAdaptWidth(199), kAppAdaptHeight(128))];
-    _imageView.contentMode = UIViewContentModeScaleToFill;
+    _imageView.contentMode = UIViewContentModeScaleAspectFill;
+    _imageView.clipsToBounds = YES;
     [contentView addSubview:_imageView];
     
     _expiredTimeLabel = [[JHLabel alloc] initWithFrame:CGRectMake(0, _imageView.height - kAppAdaptWidth(30), _imageView.width, kAppAdaptHeight(30))];
@@ -45,7 +46,7 @@
     _hotNumberImageView.contentMode = UIViewContentModeScaleAspectFill;
     [_imageView addSubview:_hotNumberImageView];
     
-    _nameLabel = [[JHLabel alloc] initWithFrame:CGRectMake(0, _imageView.maxY + kAppAdaptHeight(12), _imageView.width, kAppAdaptHeight(32))];
+    _nameLabel = [[JHLabel alloc] initWithFrame:CGRectMake(0, _imageView.maxY + kAppAdaptHeight(12), _imageView.width, kAppAdaptHeight(34))];
     _nameLabel.font = kAppAdaptFontBold(14);
     _nameLabel.textColor = kRGBA(0, 0, 0, 0.87);
     _nameLabel.textAlignment = NSTextAlignmentCenter;

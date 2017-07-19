@@ -18,6 +18,7 @@
 #import "WGOrderDetailViewController+Request.h"
 #import "WGViewController+ShopCart.h"
 #import "WGViewController+TopButton.h"
+#import "WGPostCodePopoverView.h"
 
 @interface WGOrderDetailViewController ()
 {
@@ -126,6 +127,29 @@
         }
     }
     return number;
+}
+
+- (void)handleOnPurchase:(WGHomeFloorContentGoodItem *)item fromPoint:(CGPoint)fromPoint {
+    if ([NSString isNullOrEmpty:[WGApplication sharedApplication].currentPostCode]) {
+        UIWindow *window = [UIApplication sharedApplication].keyWindow;
+        WGPostCodePopoverView *view = [[WGPostCodePopoverView alloc] initWithFrame:window.bounds];
+        [view showInView:window];
+        return;
+    }
+    WeakSelf;
+    [[WGApplication sharedApplication] loadAddGoodToCart:item.id count:1 onCompletion:^(WGAddGoodToCartResponse *response) {
+        [weakSelf handleShopCartCount:response];
+    }];
+    [[WGApplication sharedApplication] addShopToCart:item.pictureURL fromPoint:fromPoint];
+}
+
+- (void)handleShopCartCount:(WGAddGoodToCartResponse *)response {
+    if (response.success) {
+        [[WGApplication sharedApplication] handleShopCartGoodCount:response.data.goodCount];
+    }
+    else {
+        [self showWarningMessage:response.message];
+    }
 }
 
 @end
@@ -265,7 +289,12 @@
             else if (section == 2) {
                 NSInteger count = [self numberOfGoodsRow];
                 if (row < count - 1) {
-                    cell = [[WGOrderGoodPriceCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+                    WGOrderGoodPriceCell *tempCell = [[WGOrderGoodPriceCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+                    WeakSelf;
+                    tempCell.onPurchase = ^(WGHomeFloorContentGoodItem *item, CGPoint fromPoint) {
+                        [weakSelf handleOnPurchase:item fromPoint:fromPoint];
+                    };
+                    cell = tempCell;
                 }
                 else {
                     __weak id weakSelf = self;

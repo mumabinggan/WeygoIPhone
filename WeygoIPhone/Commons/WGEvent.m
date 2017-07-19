@@ -27,11 +27,13 @@ static WGEvent *_sharedInstance = nil;
 }
 
 - (void)initBuried {
+    return;
     NSMutableDictionary *parametersDictionary = [NSMutableDictionary dictionary];
     parametersDictionary[kKVAParamAppGUIDStringKey] = @"koweygo-ios-7ijs7qpt";
     _kochavaTracker = [[KochavaTracker alloc] initWithParametersDictionary:parametersDictionary delegate:self];
 }
 
+//Register
 - (void)registerCompletion:(NSString *)userId from:(NSString *)from {
     if (_kochavaTracker) {
         KochavaEvent *event = [KochavaEvent eventWithEventTypeEnum:KochavaEventTypeEnumRegistrationComplete];
@@ -42,6 +44,7 @@ static WGEvent *_sharedInstance = nil;
     }
 }
 
+//CheckOutStart
 - (void)checkOutStart:(NSString *)userId sum:(NSString *)sum {
     if (_kochavaTracker) {
         KochavaEvent *event = [KochavaEvent eventWithEventTypeEnum:KochavaEventTypeEnumCheckoutStart];
@@ -52,11 +55,12 @@ static WGEvent *_sharedInstance = nil;
     }
 }
 
+//Purchase
 - (void)purchase:(NSString *)sum orderId:(NSString *)orderId {
     if (_kochavaTracker) {
         KochavaEvent *event = [KochavaEvent eventWithEventTypeEnum:KochavaEventTypeEnumCheckoutStart];
         if (event) {
-            event.infoDictionary = @{@"Sum" : sum, @"Order Id" : orderId};
+            event.infoDictionary = @{@"Sum" : [NSString safeString:sum], @"Order Id" : [NSString safeString:orderId]};
             [_kochavaTracker sendEvent:event];
         }
     }

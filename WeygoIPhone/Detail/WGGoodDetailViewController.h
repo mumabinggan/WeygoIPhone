@@ -13,6 +13,7 @@
 {
     JHTableView *_tableView;
     WGGoodDetail *_goodDetail;
+    NSArray *_recommendGoods;
 }
 
 @property (nonatomic, assign) long long goodId;

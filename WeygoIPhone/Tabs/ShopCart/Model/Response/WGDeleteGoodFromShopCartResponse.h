@@ -11,6 +11,6 @@
 
 @interface WGDeleteGoodFromShopCartResponse : WGResponse
 
-@property (nonatomic, strong) WGShopCartPrice *data;
+@property (nonatomic, strong) WGShopCart *data;
 
 @end

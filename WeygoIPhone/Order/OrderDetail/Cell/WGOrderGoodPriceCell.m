@@ -10,6 +10,7 @@
 #import "WGHomeFloorGoodListItemView.h"
 #import "WGOrderGoodItem.h"
 #import "WGOrderCountView.h"
+#import "WGPostCodePopoverView.h"
 
 @interface WGOrderGoodPriceCell ()
 {
@@ -27,6 +28,10 @@
     [super loadSubviews];
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     _itemView = [[WGHomeFloorGoodListItemView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kAppAdaptHeight(124))];
+    WeakSelf;
+    _itemView.onPurchase = ^(WGHomeFloorContentGoodItem *item, CGPoint fromPoint) {
+        [weakSelf handlePurchase:item fromPoint:fromPoint];
+    };
     [self.contentView addSubview:_itemView];
     
     _countView = [[WGOrderCountView alloc] initWithFrame:CGRectMake(kAppAdaptWidth(8), kAppAdaptHeight(8), kAppAdaptWidth(24), kAppAdaptWidth(24))];
@@ -65,6 +70,12 @@
     JHView *footerLine = [[JHView alloc] initWithFrame:CGRectMake(0, laterView.maxY - kAppSepratorLineHeight, kDeviceWidth, kAppSepratorLineHeight)];
     footerLine.backgroundColor = WGAppSeparateLineColor;
     [self.contentView addSubview:footerLine];
+}
+
+- (void)handlePurchase:(WGHomeFloorContentGoodItem *)item fromPoint:(CGPoint)fromPoint {
+    if (self.onPurchase) {
+        self.onPurchase(item, fromPoint);
+    }
 }
 
 - (void)showWithData:(JHObject *)data {
