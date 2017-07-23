@@ -50,7 +50,7 @@
     WGHomeTabTitleRequest *request = [[WGHomeTabTitleRequest alloc] init];
     request.showsLoadingView = _dataResponse ? NO : YES;
     __weak typeof(self) weakSelf = self;
-    [self get:request forResponseClass:[WGHomeTabTitleResponse class] success:^(JHResponse *response) {
+    [self post:request forResponseClass:[WGHomeTabTitleResponse class] success:^(JHResponse *response) {
         if (completion) {
             completion((WGHomeTabTitleResponse *)response);
         }

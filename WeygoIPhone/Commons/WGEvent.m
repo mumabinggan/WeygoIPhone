@@ -27,7 +27,6 @@ static WGEvent *_sharedInstance = nil;
 }
 
 - (void)initBuried {
-    return;
     NSMutableDictionary *parametersDictionary = [NSMutableDictionary dictionary];
     parametersDictionary[kKVAParamAppGUIDStringKey] = @"koweygo-ios-7ijs7qpt";
     _kochavaTracker = [[KochavaTracker alloc] initWithParametersDictionary:parametersDictionary delegate:self];
@@ -58,7 +57,7 @@ static WGEvent *_sharedInstance = nil;
 //Purchase
 - (void)purchase:(NSString *)sum orderId:(NSString *)orderId {
     if (_kochavaTracker) {
-        KochavaEvent *event = [KochavaEvent eventWithEventTypeEnum:KochavaEventTypeEnumCheckoutStart];
+        KochavaEvent *event = [KochavaEvent eventWithEventTypeEnum:KochavaEventTypeEnumPurchase];
         if (event) {
             event.infoDictionary = @{@"Sum" : [NSString safeString:sum], @"Order Id" : [NSString safeString:orderId]};
             [_kochavaTracker sendEvent:event];

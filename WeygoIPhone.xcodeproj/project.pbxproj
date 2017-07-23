@@ -105,7 +105,6 @@
 		BE58BC801E49C62F00B4D2E1 /* WGBindThirdPartyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE58BC7F1E49C62F00B4D2E1 /* WGBindThirdPartyViewController.m */; };
 		BE5E4C181E249ADB00ACA48F /* WGHomeTabContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5E4C171E249ADB00ACA48F /* WGHomeTabContentViewController.m */; };
 		BE5E4C441E24F9E200ACA48F /* WGHomeTabBaseContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5E4C431E24F9E200ACA48F /* WGHomeTabBaseContentViewController.m */; };
-		BE5E4C471E2526D900ACA48F /* WGHomeTabViewController+Contents.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5E4C461E2526D900ACA48F /* WGHomeTabViewController+Contents.m */; };
 		BE5F047D1E9CD22200A701CB /* WGPaySuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5F047C1E9CD22200A701CB /* WGPaySuccessViewController.m */; };
 		BE5F04841E9CF82700A701CB /* WGLogoutRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5F04831E9CF82700A701CB /* WGLogoutRequest.m */; };
 		BE5F04871E9CF84F00A701CB /* WGLogoutResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5F04861E9CF84F00A701CB /* WGLogoutResponse.m */; };
@@ -344,8 +343,6 @@
 		BEB2D95E1DFBED1500F2E74B /* WGTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB2D9561DFBED1500F2E74B /* WGTabViewController.m */; };
 		BEB2D95F1DFBED1500F2E74B /* WGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB2D9581DFBED1500F2E74B /* WGViewController.m */; };
 		BEB2D9621DFBED4100F2E74B /* WGSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB2D9611DFBED4100F2E74B /* WGSegmentView.m */; };
-		BEB2D9691DFC054B00F2E74B /* WGHomeTabViewController+Segment.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB2D9681DFC054B00F2E74B /* WGHomeTabViewController+Segment.m */; };
-		BEB2D96C1DFC579400F2E74B /* WGHomeTabViewController+Scroll.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB2D96B1DFC579400F2E74B /* WGHomeTabViewController+Scroll.m */; };
 		BEB2D9751DFD933600F2E74B /* WGScrollImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB2D9741DFD933600F2E74B /* WGScrollImageView.m */; };
 		BEB2D9851DFE3FF400F2E74B /* WGHomeTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB2D9841DFE3FF400F2E74B /* WGHomeTitleView.m */; };
 		BEB2D9931DFE77C100F2E74B /* WGScrollAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB2D9921DFE77C000F2E74B /* WGScrollAdView.m */; };
@@ -766,8 +763,6 @@
 		BE5E4C171E249ADB00ACA48F /* WGHomeTabContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGHomeTabContentViewController.m; sourceTree = "<group>"; };
 		BE5E4C421E24F9E200ACA48F /* WGHomeTabBaseContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGHomeTabBaseContentViewController.h; sourceTree = "<group>"; };
 		BE5E4C431E24F9E200ACA48F /* WGHomeTabBaseContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGHomeTabBaseContentViewController.m; sourceTree = "<group>"; };
-		BE5E4C451E2526D900ACA48F /* WGHomeTabViewController+Contents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGHomeTabViewController+Contents.h"; sourceTree = "<group>"; };
-		BE5E4C461E2526D900ACA48F /* WGHomeTabViewController+Contents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGHomeTabViewController+Contents.m"; sourceTree = "<group>"; };
 		BE5F047B1E9CD22200A701CB /* WGPaySuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGPaySuccessViewController.h; sourceTree = "<group>"; };
 		BE5F047C1E9CD22200A701CB /* WGPaySuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGPaySuccessViewController.m; sourceTree = "<group>"; };
 		BE5F04821E9CF82700A701CB /* WGLogoutRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGLogoutRequest.h; sourceTree = "<group>"; };
@@ -1242,10 +1237,6 @@
 		BEB2D9581DFBED1500F2E74B /* WGViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGViewController.m; sourceTree = "<group>"; };
 		BEB2D9601DFBED4100F2E74B /* WGSegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGSegmentView.h; sourceTree = "<group>"; };
 		BEB2D9611DFBED4100F2E74B /* WGSegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGSegmentView.m; sourceTree = "<group>"; };
-		BEB2D9671DFC054B00F2E74B /* WGHomeTabViewController+Segment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGHomeTabViewController+Segment.h"; sourceTree = "<group>"; };
-		BEB2D9681DFC054B00F2E74B /* WGHomeTabViewController+Segment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGHomeTabViewController+Segment.m"; sourceTree = "<group>"; };
-		BEB2D96A1DFC579400F2E74B /* WGHomeTabViewController+Scroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WGHomeTabViewController+Scroll.h"; sourceTree = "<group>"; };
-		BEB2D96B1DFC579400F2E74B /* WGHomeTabViewController+Scroll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WGHomeTabViewController+Scroll.m"; sourceTree = "<group>"; };
 		BEB2D9731DFD933600F2E74B /* WGScrollImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGScrollImageView.h; sourceTree = "<group>"; };
 		BEB2D9741DFD933600F2E74B /* WGScrollImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGScrollImageView.m; sourceTree = "<group>"; };
 		BEB2D9831DFE3FF400F2E74B /* WGHomeTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGHomeTitleView.h; sourceTree = "<group>"; };
@@ -3314,12 +3305,6 @@
 				BEB2D91A1DFBDFE900F2E74B /* WGHomeTabViewController.m */,
 				BEB2D9231DFBE25300F2E74B /* WGHomeTabViewController+NavigationBar.h */,
 				BEB2D9241DFBE25300F2E74B /* WGHomeTabViewController+NavigationBar.m */,
-				BEB2D9671DFC054B00F2E74B /* WGHomeTabViewController+Segment.h */,
-				BEB2D9681DFC054B00F2E74B /* WGHomeTabViewController+Segment.m */,
-				BEB2D96A1DFC579400F2E74B /* WGHomeTabViewController+Scroll.h */,
-				BEB2D96B1DFC579400F2E74B /* WGHomeTabViewController+Scroll.m */,
-				BE5E4C451E2526D900ACA48F /* WGHomeTabViewController+Contents.h */,
-				BE5E4C461E2526D900ACA48F /* WGHomeTabViewController+Contents.m */,
 				BE5E4C421E24F9E200ACA48F /* WGHomeTabBaseContentViewController.h */,
 				BE5E4C431E24F9E200ACA48F /* WGHomeTabBaseContentViewController.m */,
 				BE5E4C161E249ADB00ACA48F /* WGHomeTabContentViewController.h */,
@@ -4428,7 +4413,6 @@
 				BE6BE92A1E7FD7A600A081BA /* WGCommitOrderDeliverTipCell.m in Sources */,
 				BE9F933A1E6B24CA0051B054 /* WGCSCCommonItemResponse.m in Sources */,
 				BE6CC1B51E294098003755FF /* WGHomeFloorClassifyColumnCell.m in Sources */,
-				BE5E4C471E2526D900ACA48F /* WGHomeTabViewController+Contents.m in Sources */,
 				BE52EDBA1E2DBF9D0022EF5B /* WGEditAddressViewController.m in Sources */,
 				BE9055B51ED9E4A900BEF52C /* WGUpdateResponse.m in Sources */,
 				BE49E3C61E45CF6900ECDEE5 /* WGClassifyRequest.m in Sources */,
@@ -4544,7 +4528,6 @@
 				BE6CC1961E28B163003755FF /* WGHomeCarouselFiguresCell.m in Sources */,
 				BE6CC1B81E2940DB003755FF /* WGHomeFloorCountryCell.m in Sources */,
 				BED4717A1ECDDDAC00F9FCC9 /* WGBindRegisteredResponse.m in Sources */,
-				BEB2D96C1DFC579400F2E74B /* WGHomeTabViewController+Scroll.m in Sources */,
 				BE8CB2A71EBB8BFA002480CA /* WGBorderLabel.m in Sources */,
 				BEF8ED521E8A549400E15C8F /* WGTabClassifyViewController+Request.m in Sources */,
 				BECBE3191E87D13100ADAD6C /* WGCommonViewController+Data.m in Sources */,
@@ -4576,7 +4559,6 @@
 				BE6753CC1E948DDC00250BA8 /* WGMainViewController+TabBarDelegate.m in Sources */,
 				BE6BE8FD1E7FA6EB00A081BA /* WGCommitOrderAddressCell.m in Sources */,
 				BEF8ED611E8A695C00E15C8F /* WGCancelCollectGoodResponse.m in Sources */,
-				BEB2D9691DFC054B00F2E74B /* WGHomeTabViewController+Segment.m in Sources */,
 				BE57D14C1E7DAC1900149738 /* WGMessageResponse.m in Sources */,
 				BE5F61A31E94E7A900FBA32A /* WGGetVerifyCodeRequest.m in Sources */,
 				BE6BE90C1E7FA7C100A081BA /* WGCommitOrderRemarkCell.m in Sources */,

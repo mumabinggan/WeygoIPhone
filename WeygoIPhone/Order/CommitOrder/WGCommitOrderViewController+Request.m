@@ -154,7 +154,7 @@
                 }];
             }
             else {
-                [[WGEvent shareInstance] purchase:_commitOrderDetail.consumePrice.currentTotalPriceUnUnit orderId:response.data.orderId];
+                //[[WGEvent shareInstance] purchase:_commitOrderDetail.consumePrice.currentTotalPriceUnUnit orderId:response.data.orderId];
                 WGPaySuccessViewController *vc = [[WGPaySuccessViewController alloc] init];
                 vc.orderId = response.data.orderId;
                 [self.navigationController pushViewController:vc animated:YES];
