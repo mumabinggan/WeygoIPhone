@@ -11,12 +11,6 @@
 #import "WGClassifyFilterCondition.h"
 #import "WGClassifyDetailResponse.h"
 
-typedef NS_ENUM(NSInteger, WGClassifyDetailType) {
-    WGClassifyDetailTypeNormal,
-    WGClassifyDetailTypeCountry,
-    WGClassifyDetailTypeBenefit,
-};
-
 typedef NS_ENUM(NSInteger, WGClassifySortType) {
     WGClassifySortTypeDefault,
     WGClassifySortTypeBranch,
@@ -39,8 +33,6 @@ typedef NS_ENUM(NSInteger, WGClassifySortType) {
 }
 
 @property (nonatomic, assign) long long classifyId;
-
-@property (nonatomic, assign) WGClassifyDetailType type;
 
 @property (nonatomic, strong) void (^onResponse)(WGClassifyDetail *classifyDetail);
 

@@ -54,7 +54,7 @@
 }
 
 - (NSString *)useIntegrationString {
-    return (_useIntegration == 1) ? kStr(@"CommitOrder_Use_Score") : kStr(@"CommitOrder_No_Use_Score");
+    return (_useIntegration == 1) ? kStr(@"CommitOrder_Use_Score_YES") : kStr(@"CommitOrder_No_Use_Score");
 }
 
 @end

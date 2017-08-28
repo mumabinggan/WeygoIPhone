@@ -103,6 +103,8 @@
 		BE57D1651E7E35CC00149738 /* WGDeleteMessageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE57D1641E7E35CC00149738 /* WGDeleteMessageRequest.m */; };
 		BE57D1681E7E35EC00149738 /* WGDeleteMessageResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BE57D1671E7E35EC00149738 /* WGDeleteMessageResponse.m */; };
 		BE58BC801E49C62F00B4D2E1 /* WGBindThirdPartyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE58BC7F1E49C62F00B4D2E1 /* WGBindThirdPartyViewController.m */; };
+		BE5988BA1F384BF900677D3E /* Stripe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE5988B91F384BF900677D3E /* Stripe.framework */; };
+		BE5988BC1F384C5000677D3E /* Stripe.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE5988B91F384BF900677D3E /* Stripe.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BE5E4C181E249ADB00ACA48F /* WGHomeTabContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5E4C171E249ADB00ACA48F /* WGHomeTabContentViewController.m */; };
 		BE5E4C441E24F9E200ACA48F /* WGHomeTabBaseContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5E4C431E24F9E200ACA48F /* WGHomeTabBaseContentViewController.m */; };
 		BE5F047D1E9CD22200A701CB /* WGPaySuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5F047C1E9CD22200A701CB /* WGPaySuccessViewController.m */; };
@@ -570,6 +572,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				BE5988BC1F384C5000677D3E /* Stripe.framework in Embed Frameworks */,
 				BEE085391EA75F4600DC2CC3 /* FMDB.framework in Embed Frameworks */,
 				BEE0853A1EA75F4600DC2CC3 /* AFNetworking.framework in Embed Frameworks */,
 				BEE0853B1EA75F4600DC2CC3 /* IQKeyboardManager.framework in Embed Frameworks */,
@@ -759,6 +762,7 @@
 		BE57D1671E7E35EC00149738 /* WGDeleteMessageResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGDeleteMessageResponse.m; sourceTree = "<group>"; };
 		BE58BC7E1E49C62F00B4D2E1 /* WGBindThirdPartyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGBindThirdPartyViewController.h; sourceTree = "<group>"; };
 		BE58BC7F1E49C62F00B4D2E1 /* WGBindThirdPartyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGBindThirdPartyViewController.m; sourceTree = "<group>"; };
+		BE5988B91F384BF900677D3E /* Stripe.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Stripe.framework; sourceTree = "<group>"; };
 		BE5E4C161E249ADB00ACA48F /* WGHomeTabContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGHomeTabContentViewController.h; sourceTree = "<group>"; };
 		BE5E4C171E249ADB00ACA48F /* WGHomeTabContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGHomeTabContentViewController.m; sourceTree = "<group>"; };
 		BE5E4C421E24F9E200ACA48F /* WGHomeTabBaseContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGHomeTabBaseContentViewController.h; sourceTree = "<group>"; };
@@ -1540,6 +1544,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE5988BA1F384BF900677D3E /* Stripe.framework in Frameworks */,
 				BECFEAAE1EFAA9AB0001AE49 /* AVFoundation.framework in Frameworks */,
 				BECFEAAC1EFAA9A20001AE49 /* WebKit.framework in Frameworks */,
 				BECFEAAA1EFAA94B0001AE49 /* SystemConfiguration.framework in Frameworks */,
@@ -2359,6 +2364,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		BE5988B81F384BF900677D3E /* Stripe */ = {
+			isa = PBXGroup;
+			children = (
+				BE5988B91F384BF900677D3E /* Stripe.framework */,
+			);
+			path = Stripe;
+			sourceTree = "<group>";
+		};
 		BE5F04771E9CCEB000A701CB /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -2923,6 +2936,7 @@
 		BE97E8091EAE3DE100E9667C /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				BE5988B81F384BF900677D3E /* Stripe */,
 				BECFEA9F1EFAA8DD0001AE49 /* KochavaTracker */,
 				BE0B6BC11ECAD1FD0096FAC2 /* Facebook */,
 				BEED6B6C1EAF8BFE00B56455 /* Zendesk */,
@@ -4322,7 +4336,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./Fabric.framework/run 822086e38faa11be65913ddd4e0773223c018fb9 e7d1abe437bb7dd9303549d0ea0f33be7ac2887017dd57a3d36542ae0acca673";
+			shellScript = "./Fabric.framework/run 822086e38faa11be65913ddd4e0773223c018fb9 e7d1abe437bb7dd9303549d0ea0f33be7ac2887017dd57a3d36542ae0acca673\nbash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stripe.framework/integrate-dynamic-framework.sh\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -4935,6 +4949,7 @@
 					"$(PROJECT_DIR)/Libraries/Zendesk",
 					"$(PROJECT_DIR)/Libraries/Facebook",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Libraries/Stripe",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WeygoIPhone/WeygoIPhone-Prefix.pch";
@@ -4945,7 +4960,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Libraries/KochavaTracker",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.weygo.weygo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.weygo.test;
 				PRODUCT_NAME = Weygo;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -4975,6 +4990,7 @@
 					"$(PROJECT_DIR)/Libraries/Zendesk",
 					"$(PROJECT_DIR)/Libraries/Facebook",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Libraries/Stripe",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WeygoIPhone/WeygoIPhone-Prefix.pch";
@@ -4985,7 +5001,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Libraries/KochavaTracker",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.weygo.weygo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.weygo.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Submodules/JHKit/** $(PROJECT_DIR)/Libraries/Facebook";

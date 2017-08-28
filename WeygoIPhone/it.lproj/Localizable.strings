@@ -254,7 +254,7 @@
 "CommitOrder Confirm" = "Conferma";
 "CommitOrder Score" = "Punti spesa :";
 "CommitOrder Use Score" = "Utilizza i punti spesa";
-"CommitOrder_Use_Score" = "Si";
+"CommitOrder_Use_Score_YES" = "Si";
 "CommitOrder_No_Use_Score" = "No";
 "CommitOrder_OrderPrice_Tip_Title" = "PRODOTTI A PESO VARIABILE";
 "CommitOrder_OverHeight_Rise" = "L";
