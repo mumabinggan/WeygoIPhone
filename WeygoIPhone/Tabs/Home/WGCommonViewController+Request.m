@@ -131,33 +131,6 @@
                 [_hadReadContentCacheDictionary setObject:@(YES) forKey:@(menuId)];
             }
         }
-//        if (item && !readBool.boolValue) {
-//            if (completion) {
-//                WGHomeTabContentResponse *response = [[WGHomeTabContentResponse alloc] init];
-//                response.data = item.data;
-//                response.code = 1;
-//                completion(response, menuId);
-//                if (cacheType == WGCacheTypeCachePrior) {
-//                    return;
-//                }
-//                [_hadReadContentCacheDictionary setObject:@(YES) forKey:@(menuId)];
-//            }
-//        }
-//        if (item) {
-//            if (completion) {
-//                if (item.data) {
-//                    WGHomeTabContentResponse *response = [[WGHomeTabContentResponse alloc] init];
-//                    response.data = item.data;
-//                    response.code = 1;
-//                    completion(response, menuId);
-//                }
-//                
-//                
-//            }
-//        }
-//        if (item.data && cacheType == WGCacheTypeCachePrior) {
-//            return;
-//        }
     }
     WGHomeTabContentRequest *request = [[WGHomeTabContentRequest alloc] init];
     request.menuId = menuId;

@@ -102,6 +102,7 @@
 		BE57D1621E7DBD4200149738 /* WGMessageItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE57D1611E7DBD4200149738 /* WGMessageItemCell.m */; };
 		BE57D1651E7E35CC00149738 /* WGDeleteMessageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE57D1641E7E35CC00149738 /* WGDeleteMessageRequest.m */; };
 		BE57D1681E7E35EC00149738 /* WGDeleteMessageResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BE57D1671E7E35EC00149738 /* WGDeleteMessageResponse.m */; };
+		BE588B281FA56CC100A543C3 /* INKClipImageV.m in Sources */ = {isa = PBXBuildFile; fileRef = BE588B261FA56CC100A543C3 /* INKClipImageV.m */; };
 		BE58BC801E49C62F00B4D2E1 /* WGBindThirdPartyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE58BC7F1E49C62F00B4D2E1 /* WGBindThirdPartyViewController.m */; };
 		BE5988BA1F384BF900677D3E /* Stripe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE5988B91F384BF900677D3E /* Stripe.framework */; };
 		BE5988BC1F384C5000677D3E /* Stripe.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE5988B91F384BF900677D3E /* Stripe.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -760,6 +761,8 @@
 		BE57D1641E7E35CC00149738 /* WGDeleteMessageRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGDeleteMessageRequest.m; sourceTree = "<group>"; };
 		BE57D1661E7E35EC00149738 /* WGDeleteMessageResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGDeleteMessageResponse.h; sourceTree = "<group>"; };
 		BE57D1671E7E35EC00149738 /* WGDeleteMessageResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGDeleteMessageResponse.m; sourceTree = "<group>"; };
+		BE588B261FA56CC100A543C3 /* INKClipImageV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INKClipImageV.m; sourceTree = "<group>"; };
+		BE588B2A1FA56D4400A543C3 /* INKClipImageV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = INKClipImageV.h; sourceTree = "<group>"; };
 		BE58BC7E1E49C62F00B4D2E1 /* WGBindThirdPartyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGBindThirdPartyViewController.h; sourceTree = "<group>"; };
 		BE58BC7F1E49C62F00B4D2E1 /* WGBindThirdPartyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGBindThirdPartyViewController.m; sourceTree = "<group>"; };
 		BE5988B91F384BF900677D3E /* Stripe.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Stripe.framework; sourceTree = "<group>"; };
@@ -2614,6 +2617,8 @@
 		BE62E22B1DF92176004510A5 /* WeygoIPhone */ = {
 			isa = PBXGroup;
 			children = (
+				BE588B261FA56CC100A543C3 /* INKClipImageV.m */,
+				BE588B2A1FA56D4400A543C3 /* INKClipImageV.h */,
 				BEB670431ECDF72B002173D7 /* Weygo.entitlements */,
 				BE62CD9E1EA246DB0076BD69 /* SpecialClassify */,
 				BECBE30D1E87C41900ADAD6C /* Asia */,
@@ -4170,6 +4175,9 @@
 							com.apple.Keychain = {
 								enabled = 1;
 							};
+							com.apple.Push = {
+								enabled = 1;
+							};
 						};
 					};
 					BE62E2411DF92176004510A5 = {
@@ -4336,7 +4344,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./Fabric.framework/run 822086e38faa11be65913ddd4e0773223c018fb9 e7d1abe437bb7dd9303549d0ea0f33be7ac2887017dd57a3d36542ae0acca673\nbash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stripe.framework/integrate-dynamic-framework.sh\"\n";
+			shellScript = "./Fabric.framework/run 822086e38faa11be65913ddd4e0773223c018fb9 e7d1abe437bb7dd9303549d0ea0f33be7ac2887017dd57a3d36542ae0acca673\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -4567,6 +4575,7 @@
 				BEA3751F1E3501D20054B8E6 /* WGClassifyKeyword.m in Sources */,
 				BEB8D0911E46CEEB00BB9BA3 /* WGBaseServiceInfo.m in Sources */,
 				BE62CD7A1EA0BF890076BD69 /* WGScanJumpBody.m in Sources */,
+				BE588B281FA56CC100A543C3 /* INKClipImageV.m in Sources */,
 				BE62CD931EA20E510076BD69 /* WGClientServiceCenterRequest.m in Sources */,
 				BEA3749D1E347C500054B8E6 /* WGGoodDetailViewController.m in Sources */,
 				BE63A7001E7BC7BF00F77282 /* WGOrderListRebuyCell.m in Sources */,
@@ -4936,7 +4945,9 @@
 				CODE_SIGN_ENTITLEMENTS = WeygoIPhone/Weygo.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 646D5H398Z;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Submodules/JHKit/Submodules/AFNetworking/build/Debug-iphoneos",
@@ -4962,6 +4973,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.weygo.test;
 				PRODUCT_NAME = Weygo;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Submodules/JHKit/** $(PROJECT_DIR)/Libraries/Facebook";
@@ -4977,7 +4990,9 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = WeygoIPhone/Weygo.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 646D5H398Z;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Submodules/JHKit/Submodules/AFNetworking/build/Debug-iphoneos",
@@ -5003,6 +5018,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.weygo.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Submodules/JHKit/** $(PROJECT_DIR)/Libraries/Facebook";
 			};

@@ -66,7 +66,7 @@
     
     JHImageView *deleteImageView = [[JHImageView alloc] initWithFrame:CGRectMake(kAppAdaptWidth(16), kAppAdaptHeight(19), kAppAdaptWidth(17), kAppAdaptHeight(17))];
     deleteImageView.image = [UIImage imageNamed:@"shopcart_clean"];
-    [_footView addSubview:deleteImageView];
+    [_footView.contentView addSubview:deleteImageView];
     deleteImageView.userInteractionEnabled = YES;
     _footView.layer.opacity = 0.0f;
     
@@ -77,24 +77,24 @@
     deleteLabel.text = kStr(@"ShopCart_Clean");
     deleteLabel.textColor = WGAppTitleColor;
     deleteLabel.userInteractionEnabled = YES;
-    [_footView addSubview:deleteLabel];
+    [_footView.contentView addSubview:deleteLabel];
     [deleteLabel addSingleTapGestureRecognizerWithTarget:self action:@selector(touchCleanShopCart:)];
     
     JHImageView *deliveryImageView = [[JHImageView alloc] initWithFrame:CGRectMake(kDeviceWidth/2 - kAppAdaptWidth(22), kAppAdaptHeight(20), kAppAdaptWidth(20), kAppAdaptHeight(14))];
     deliveryImageView.image = [UIImage imageNamed:@"deliver_car"];
-    [_footView addSubview:deliveryImageView];
+    [_footView.contentView addSubview:deliveryImageView];
     _footView.layer.opacity = 0.0f;
     
     _deliveryPriceLabel = [[JHLabel alloc] initWithFrame:CGRectMake(deliveryImageView.maxX + kAppAdaptWidth(5), kAppAdaptHeight(18), kDeviceWidth/2 - kAppAdaptWidth(16 + 20 + 5), kAppAdaptHeight(20))];
     _deliveryPriceLabel.font = kAppAdaptFont(14);
     _deliveryPriceLabel.textColor = WGAppTitleColor;
-    [_footView addSubview:_deliveryPriceLabel];
+    [_footView.contentView addSubview:_deliveryPriceLabel];
     
     _totalePriceLabel = [[JHLabel alloc] initWithFrame:CGRectMake(kDeviceWidth/2, kAppAdaptHeight(18), kDeviceWidth/2 - kAppAdaptWidth(16), kAppAdaptHeight(20))];
     _totalePriceLabel.font = kAppAdaptFont(14);
     _totalePriceLabel.textColor = WGAppBaseColor;
     _totalePriceLabel.textAlignment = NSTextAlignmentRight;
-    [_footView addSubview:_totalePriceLabel];
+    [_footView.contentView addSubview:_totalePriceLabel];
     
     //_confirmBtn = [[JHButton alloc] initWithFrame:CGRectMake(kAppAdaptWidth(16), kAppAdaptHeight(52), kDeviceWidth - kAppAdaptWidth(32), kAppAdaptHeight(40)) difRadius:JHRadiusMake(kAppAdaptWidth(20), kAppAdaptWidth(20), kAppAdaptWidth(20), kAppAdaptWidth(20)) backgroundColor:WGAppFooterButtonColor];
     _confirmBtn = [[UIButton alloc] initWithFrame:CGRectMake(kAppAdaptWidth(16), kAppAdaptHeight(52), kDeviceWidth - kAppAdaptWidth(32), kAppAdaptHeight(40))];
@@ -105,7 +105,7 @@
     _confirmBtn.titleLabel.font = kAppAdaptFont(14);
     [_confirmBtn setTitleColor:kWhiteColor forState:UIControlStateNormal];
     [_confirmBtn addTarget:self action:@selector(touchConfirmBtnBtn:) forControlEvents:UIControlEventTouchUpInside];
-    [_footView addSubview:_confirmBtn];
+    [_footView.contentView addSubview:_confirmBtn];
     //[self refreshTableView];
 }
 

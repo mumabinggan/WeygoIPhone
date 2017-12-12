@@ -77,7 +77,7 @@
     WGAddGoodToCartRequest *request = [[WGAddGoodToCartRequest alloc] init];
     request.goodId = goodId;
     request.count = count;
-    [[JHNetworkManager sharedManager] get:request forResponseClass:[WGAddGoodToCartResponse class] success:^(JHResponse *response) {
+    [[JHNetworkManager sharedManager] post:request forResponseClass:[WGAddGoodToCartResponse class] success:^(JHResponse *response) {
         if (completion) {
             completion((WGAddGoodToCartResponse *)response);
         }
